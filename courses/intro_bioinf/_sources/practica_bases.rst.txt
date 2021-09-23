@@ -1,0 +1,200 @@
+========================
+Bases datos de secuencia
+========================
+
+Introducción
+============
+
+Esta práctica se basa en el tutorial_ preparado por el NCBI para introducir a los usuarios en el Entrez.
+
+Entrez es un sistema de búsqueda desarrollado por el NCBI que permite acceder a bases de datos de:
+
+ *   Bibliografia.
+ *   Secuencias de nucleótidos.
+ *   Secuencias de proteínas.
+ *   Genomas completos.
+ *   Estructuras.
+ *   Etc.
+
+Para ver como funciona el Entrez vamos a buscar la información disponible sobre MLH1, un gen humano implicado en el cáncer de colon.
+
+Los objetivos son buscar:
+
+ * el mRNA más representativo del gen,
+ * las referencias bibliográficas relevantes,
+ * las secuencias de proteínas,
+ * los dominios conservados de las proteínas,
+ * las proteínas similares,
+ * las mutaciones descritas,
+ * la estructura de la proteína,
+ * la región del genoma humano en la que se encuentra el gen.
+
+Un par de trucos:
+
+ * Se pueden buscar distintos términos a la vez, por ejemplo MLH1 y Human utilizando AND (debe estar en mayúsculas). La búsqueda sería MLH1 AND Human.
+ * Se puede restringir la búsqueda a un campo concreto. Por ejemplo podemos exigir que la especie sea humana. Para hacerlo hay que poner, a continuación del término buscado, el código del campo. En este caso sería MLH1 AND Human[ORGN].
+
+
+Principales campos en el formato Genbank
+========================================
+
+Más información sobre el formato en el NCBI_.
+
+================= ==========================================================================  ==================
+Campo	          Descripción	                                                              Búsqueda en Entrez
+================= ==========================================================================  ==================
+Locus name        Un nombre único para la secuencia                                           [ACCN]
+Sequence length	  Longitud de la secuencia	                                              [SLEN]
+Molecule Type	  ADN, genómico, mRNA, etc.	                                              [PROP]
+Genbank Division  División a la que pertenece la secuencia	                              [PROP]
+Modification Date Fecha de la última modificación	                                      [MDAT]
+Definition	  Breve descrición de la seucuencia 	                                      [TITL]
+Accession	  Identificador único de entrada, no varía aunuque se modifique la secuencia  [ACCN]
+Version           Número de versión de la secuencia	                                       All fields
+GI	          Identificador único de la secuencia, cambia con las modificaciones	       All fiedls
+Keywords	  Palabras clave que describen la secuencia	                              [KYWD]
+Source	          Nombre del organismo	                                                      [ORGN]
+Organism	  Nombre científico del organismo	                                      [ORGN]
+Reference	  Publicaciones relacionadas	                                              [TITL] [AUTH] [JOUR]
+Features	  Información sobre las regiones de interés	                              [FKEY]
+source	          Longitud de la secuencia, nombre del organismo, taxón ID	              [ALL]
+Taxon	          Taxón ID	
+CDS	          Secuencia codificante                                                       [FKEY]
+protein_id	  Identificador de la secuencia protéica	                              All fields
+GI	          Identificador único de la secuencia protéica	                              All fields
+Translation	  Traducción	
+gene	          Región cubierta por un gen	                                              [FKEY]
+================= ==========================================================================  ==================
+
+
+En cualquier resultado de búsqueda junto a cada entrada aparece la palabra "link".
+Si hacemos click en ella aparecen enlaces a información referente a esa entrada en otras bases de datos.
+
+mRNA
+====
+
+En el Entrez_ hay varias bases de datos de nucleótidos.
+
+¿Cuantas referencias se encuentran si buscamos colon cáncer directamente en la sección de nucleótidos?
+
+¿Y si buscamos MLH1?
+
+¿Por qué hay tantas secuencias?
+
+Para buscar secuencias con anotaciones de alta calidad, lo mejor es utilizar la base de datos RefSeq.
+Para buscar en RefSeq hay que elegir la base de datos CoreNucleotide y en "Only From" elegir RefSeq.
+Podemos además elegir en que campos buscar o excluir algunos resultados de la búsqueda como los ESTs.
+
+¿Cuantos resultados se obtienen en RefSeq para "colon cancer" buscando sólo en el campo "TITL"?
+
+En estos resultados hay secuencias que no son humanas.
+Para limitar la búsqueda a humano se hace una nueva búsqueda limitando 'organism' a 'human' y utilizando la historia.
+
+La búsqueda será similar a: human and #1
+
+¿Cuántos resultados se obtienen?
+
+Se podría haber buscado por el nombre completo del gen, pero esto a veces puede ser problemático porque pueden haber sinónimos.
+
+Buscar en los resultados el gen MLH1.
+
+
+Referencias bibliográficas
+==========================
+
+Los enlaces presentes a la derecha en la página de búsqueda permiten encontrar información relativa al gen en otras bases de datos. Podemos buscar las citas bibliográficas en PubMed directamente.
+
+¿Cuantos artículos aparecen?
+
+En la página de resultados del PubMed se pueden distinguir las referencias que incluyen el texto completo del artículo, el resumen o sólo el título por el gráfico que aparece junto a cada entrada.
+
+Muchos artículos con texto completo restringido son accesibles desde dentro de la Universidad porque la biblioteca está suscrita al servicio.
+
+En cualquiera de los artículos se puede pinchar en 'Similar articles' para ver una lista de artículos relacionados.
+
+Proteína
+========
+
+En los enlaces que aparecen en la entrada del gen también se puede elegir la proteína.
+
+Para obtener otras proteínas similares se pude usar el enlace 'Related Sequences' en la página de la proteína.
+
+Búsqueda Blast
+==============
+
+En la proteína nos aparecen nuevos enlaces que nos proporcionan información adicional.
+
+El Blink nos permite ver los resultados de una búsqueda BLAST.
+En esta página podemos elegir las secuencias correspondientes a una de las secciones taxonómicas de la Genbank o restringir la búsqueda a las secuencias con estructura.
+
+Dominios conservados
+====================
+
+Los dominios conservados informan sobre la función de las proteínas.
+Todas las proteínas en Entrez se comparan con la CDD (Conserved Domain Database).
+En 'Show Domain Relatives' podemos ver que otras proteínas comparten estos dominios conservados.
+
+¿Qué dominios hay?
+
+¿Qué funciones tienen?
+
+¿Qué otras proteínas tienen estos dominios?
+
+Mutaciones
+==========
+
+En el NCBI también tienen una base de datos con mutaciones asociadas a los genes.
+Se pueden ver estas mutaciones en el link SNP del gen.
+
+En la página de los SNP se puede acceder a GeneView, un página en la que están todas las mutaciones.
+
+¿Hay alguna mutación con la estructura 3D resuelta?
+
+¿Alguna mutación con enlaces a la OMIM?
+
+Estructuras
+===========
+
+Hay pocas proteínas con la estructura resuelta.
+De los 2.7 millones de proteínas en Entrez sólo 20000 tienen estructura.
+Si en los enlaces de la proteína no está 'structure' es que la estructura no ha sido resuelta.
+
+Se pueden buscar las proteínas similares que sí tienen estructura utilizando el Blink y después seleccionando solamente las entradas con estructura 3D.
+
+¿Qué proteínas similares tienen una estructura resuelta?
+
+
+Región genómica
+===============
+
+Puede ser útil obtener la región del cromosoma en la que se localiza el gen.
+
+El enlace 'Genome' nos devolverá el cromosoma completo.
+
+Para obtener una representación gráfica de la región hay que ir a 'Map Viewer'.
+
+En este mapa podemos obtener la secuencia de la región, ver los genes de alrededor, estudiar la estructura de intrones y exones del gen, descargar los mRNAs secuenciados del gen, etc.
+
+Ejercicio 1
+===========
+
+Buscar y hacer un resumen de la información más relevante para alguno de los genes humanos FXN, OCA2 o FOXP2
+
+Buscar:
+
+ * Función molecular del gen.
+ * Consecuencias de las mutaciones.
+ * Estructura genómica.
+ * Secuencia de la proteína.
+ * Homólogos en otras especies.
+
+Ejercicio 2
+===========
+
+¿Hay genes descritos para la hipercolesterolemia (HYPERCHOLESTEROLEMIA)? 
+
+.. _tutorial: http://www.ncbi.nlm.nih.gov/entrez/query/static/help/entrez_tutorial_BIB.pdf
+.. _NCBI: http://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html#LocusB
+.. _Entrez: http://www.ncbi.nlm.nih.gov/sites/gquery
+
+:doc:`Ir a la teoría del tema<bases_datos>`

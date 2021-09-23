@@ -1,0 +1,573 @@
+pandas
+======
+
+`pandas <http://pandas.pydata.org/>`_ es un paquete de Python que proporciona estructuras de datos similares a los dataframes de R.
+Pandas depende de Numpy, la librería que añade un potente tipo matricial a Python.
+Los principales tipos de datos que pueden representarse con pandas son:
+
+  * Datos tabulares con columnas de tipo heterogéneo con etiquetas en columnas y filas.
+  * Series temporales.
+
+Pandas proporciona herramientas que permiten: 
+
+  * leer y escribir datos en diferentes formatos: CSV, Microsoft Excel, bases SQL y formato HDF5
+  * seleccionar y filtrar de manera sencilla tablas de datos en función de posición, valor o etiquetas
+  * fusionar y unir datos
+  * transformar datos aplicando funciones tanto en global como por ventanas
+  * manipulación de series temporales
+  * hacer gráficas
+
+En pandas existen tres tipos básicos de objetos todos ellos basados a su vez en Numpy:
+
+  * Series (listas, 1D),
+  * DataFrame (tablas, 2D) y
+  *  Panels (tablas 3D).
+
+Nosotros vamos a ver el uso básico de los dos primeros tipos de objetos, para un mayor detalle puedes consultar su `manual <http://pandas.pydata.org/pandas-docs/stable/dsintro.html>`_.
+
+pandas tiene una `documentación <http://pandas.pydata.org/pandas-docs/stable/index.html>`_ muy completa y diversos `tutoriales <http://pandas.pydata.org/pandas-docs/stable/tutorials.html>`_.
+
+
+Series 
+------
+
+Las Series se pueden crear tanto a partir de listas como de diccionarios.
+De manera opcional podemos especificar una lista con las etiquetas de las filas.
+
+Primero necesitamos cargar la librería correspondiente::
+
+ >>> from pandas import Series
+
+::
+
+ >>> serie = Series(['a', 'b', 'c'])
+ >>> serie
+ 0	a
+ 1	b
+ 2	c
+
+::
+
+ >>> serie = Series(['a', 'b', 'c'], index=['pregunta1', 'pregunta2', 'pregunta3'])
+ >>> serie
+ pregunta1	a
+ pregunta2	b
+ pregunta3	c
+
+En el caso de que usemos un diccionario, el nombre de las filas toma el valor de las keys del diccionario (**index**). 
+
+::
+
+ >>> dict = {'pregunta1': 'a', 'pregunta2': 'b', 'pregunta3': 'c'}
+ >>> serie = Series(dict)
+ >>> serie
+ pregunta1	a
+ pregunta2	b
+ pregunta3	c
+
+Podemos controlar tanto los datos que queremos incluir como su orden especificando el index::
+
+ >>> serie = Series(dict, index=['pregunta3', 'pregunta1', 'pregunta4')
+ >>> serie
+ pregunta3	c
+ pregunta1	a
+ pregunta4	NaN
+
+
+DataFrame
+---------
+
+Los DataFrame se pueden crear de diferentes maneras, una forma común de crearlos es partir de listas o diccionarios de listas, de diccionarios o de Series.
+En los DataFrame tenemos la opción de especificar tanto el **index** (el nombre de las filas) como **columns** (el nombre de las columnas).
+
+::
+
+  >>> form pandas import DataFrame
+  >>> list_listas = [[1, 2, 3, 4],[4, 3, 2, 1]]
+  >>> dataframe = DataFrame(list_listas, columns=['uno', 'dos'])
+  >>> dataframe
+     uno  dos
+  0    1    4
+  1    2    3
+  2    3    2
+  3    4    1
+
+::
+
+  >>> dict_listas = {'uno' : [1, 2, 3, 4], 'dos' : [4, 3, 2, 1]}
+  >>> dataframe = DataFrame(dict_listas)
+  >>> dataframe
+     uno  dos
+  0    1    4
+  1    2    3
+  2    3    2
+  3    4    1
+
+::
+
+  >>> dataframe = DataFrame(dict_listas, index=['a', 'b', 'c', 'd'])
+  >>> dataframe
+     uno  dos
+  a    1    4
+  b    2    3
+  c    3    2
+  d    4    1
+
+::
+
+  >>> dict_series = {'uno' : Series([1, 2, 3], index=['a', 'b', 'c']), 
+   'dos' : Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+  >>> dataframe = DataFrame(dict_series)
+  >>> dataframe
+    uno  dos
+  a    1    1
+  b    2    2
+  c    3    3
+  d  NaN    4 
+
+Al igual que con las Series, podemos controlar tanto los datos que queremos incluir como su orden especificando el index y/o columnas que nos interesen:
+
+::
+
+  >>> dataframe = DataFrame(dict_series, index=['d', 'b', 'a'])
+  >>> dataframe
+     uno  dos
+  d  NaN    4
+  b    2    2
+  a    1    1
+
+::
+
+  >>> dataframe = DataFrame(d, index=['d', 'b', 'a'], columns=['dos', 'tres'])
+  >>> dataframe
+     dos tres
+  d    4   NaN
+  b    2   NaN
+  a    1   NaN 
+
+Extraer y filtrar datos
+-----------------------
+
+Para seleccionar datos usamos los métodos *loc*, *iloc* e *ix*.
+*loc* permite seleccionar dato usando las etiquetas de filas y columnas, *iloc* basándose en posición e *ix* basándose tanto en etiquetas como posición.
+En el caso de una Serie, devuelve un único valor y en el caso de los DataFrame puede devolver tanto una Serie si sólo se indica la posición de fila, o un valor único si se indican fila y columna.
+
+::
+
+  Series loc[etiqueta_fila]
+  Series iloc[indice_fila]
+  Series ix[indice/etiqueta_fila]
+
+::
+
+  DataFrame loc[etiqueta_fila, etiqueta_columna]
+  DataFrame iloc[indice_fila, indice_columna]
+  DataFrame iloc[indice/etiqueta_fila, indice/etiqueta_columna]
+
+::
+
+  >>> serie = Series([1,2,3,4], index=['a','b','c','d'])
+  >>> serie.loc['a']
+  1
+  >>> serie.iloc[2]
+  3
+  >>> serie.ix[2]
+  3
+  >>> serie.ix['b']
+  2
+
+::
+
+  >>> dataframe = DataFrame({'uno' : Series([1, 2, 3], index=['a', 'b', 'c']), 
+   'dos' : Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])})
+  >>> dataframe 
+    dos  uno
+  a    1    1
+  b    2    2
+  c    3    3
+  d    4  NaN 
+  >>> dataframe.loc['a']
+  dos    1
+  uno    1
+  >>> dataframe.loc['a', 'dos']
+  1.0
+  >>> dataframe.iloc[1]
+  dos    2
+  uno    2
+  >>> dataframe.iloc[1,0]
+  2.0
+  >>> dataframe.ix[1]
+  dos    2
+  uno    2
+  >>> dataframe.ix['b',1]
+  2.0
+
+Para filtrar datos, le podemos pasar a la Serie o al DataFrame una lista de valores lógicos (verdaderos y falsos) indicando las filas que nos son de interés.
+
+::
+
+  >>> serie = Series([1,2,3,4], index=['a','b','c','d'])
+  >>> serie[[True, False, True, False]]
+  a    1
+  c    3
+
+::
+
+  >>> dataframe = DataFrame({'uno' : Series([1, 2, 3], index=['a', 'b', 'c']), 
+   'dos' : Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])})
+  >>> dataframe[[True, True, False, False]]
+     dos  uno
+  a    1    1
+  b    2    2
+ 
+En lugar de pasar una lista de valores lógicos podemos pasar directamente una prueba lógica.
+
+::
+
+  >>> serie[serie>=3]
+  c    3
+  d    4
+  >>> dataframe[dataframe['dos'] > 1]
+     dos  uno
+  b    2    2
+  c    3    3
+  d    4  NaN
+  >>> dataframe[dataframe.index == 'c']
+     dos  uno
+  c    3    3
+
+
+Fusionar datos
+--------------
+
+*concat* permite concatenar Series y DataFrame.
+Mediante la opción axis, podemos controlar si la unión se debe hacer por filas o por columnas. 
+
+::
+
+  >>> from pandas import concat
+  >>> s1 = Series([1,2,3,4], index=['a','b','c','d'])
+  >>> s1
+  a    1
+  b    2
+  c    3
+  d    4
+  >>> s2 = Series([5,6,7,8], index=['a','b','c','d'])
+  >>> s2
+  a    5
+  b    6
+  c    7
+  d    8
+  >>> concat([s1, s2])
+  a    1
+  b    2
+  c    3
+  d    4
+  a    5
+  b    6
+  c    7
+  d    8
+
+::
+
+  >>> from numpy.random import randn
+  >>> df1 = DataFrame(randn(4,2), index=['a', 'b', 'c', 'd'], columns=['c1', 'c2'])
+  >>> df         
+  	c1        c2
+  a -0.329392 -0.115486
+  b  0.526083 -0.015882
+  c -1.105332 -2.153606
+  d -0.660344  0.368734
+
+  >>> df2 = DataFrame(randn(4,2), index=['a', 'b', 'c', 'd'], columns=['c1', 'c2'])
+  >>> df2
+           c1        c2
+  a -0.400525 -0.536067
+  b  2.379793 -1.032417
+  c -1.995624  0.056289
+  d  2.200032  0.916020
+
+  >>> concat([df1, df2], axis=0)
+          c1        c2
+  a -0.329392 -0.115486
+  b  0.526083 -0.015882
+  c -1.105332 -2.153606
+  d -0.660344  0.368734
+  a -0.400525 -0.536067
+  b  2.379793 -1.032417
+  c -1.995624  0.056289
+  d  2.200032  0.916020
+
+  >>> concat([df1, df2], axis=1)
+          c1        c2        c1        c2
+  a -0.329392 -0.115486 -0.400525 -0.536067
+  b  0.526083 -0.015882  2.379793 -1.032417
+  c -1.105332 -2.153606 -1.995624  0.056289
+  d -0.660344  0.368734  2.200032  0.916020
+
+
+*join* es un método para combinar DataFrame que puedan tener diferentes etiquetas de filas en un único DataFrame.
+
+::
+
+  >>> from numpy.random import randn
+  >>> df1 = DataFrame(randn(4,2), index=['a', 'b', 'c', 'd'], columns=['c1', 'c2'])
+  >>> df1
+          c1        c2
+  a -1.761308  0.383365
+  b -0.238843  0.543742
+  c -2.179007 -0.402793
+  d  1.030833  2.659904
+
+  >>> df2 = DataFrame(nprand.randn(4,2), index=['b', 'c', 'd', 'e'], columns=['c3', 'c4'])
+  >>> df2
+          c3        c4
+  b  0.894880 -0.099466
+  c -0.628744 -0.786378
+  d  0.575577  0.815826
+  e  1.948499 -1.053409
+
+  >>> df1.join(df2)
+           c1        c2        c3        c4
+  a -1.761308  0.383365       NaN       NaN
+  b -0.238843  0.543742  0.894880 -0.099466
+  c -2.179007 -0.402793 -0.628744 -0.786378
+  d  1.030833  2.659904  0.575577  0.815826
+
+join mantiene todos las filas presentes en el df1 pese a que no se encuentren en el df2 y completando con NaN los datos faltantes.
+Este comportamiento se puede modificar usando la opción *how*.
+*how='outer'* incluirá también las filas presentes en el df2 y que no están en el df1 y *how='inner'* sólo mostrará las filas comunes a los dos DataFrame.
+
+::
+
+  >>> df1.join(df2, how='outer')
+           c1        c2        c3        c4
+  a -1.761308  0.383365       NaN       NaN
+  b -0.238843  0.543742  0.894880 -0.099466
+  c -2.179007 -0.402793 -0.628744 -0.786378
+  d  1.030833  2.659904  0.575577  0.815826
+  e       NaN       NaN  1.948499 -1.053409
+
+  >>> df1.join(df2, how='inner') 
+           c1        c2        c3        c4
+  b -0.238843  0.543742  0.894880 -0.099466
+  c -2.179007 -0.402793 -0.628744 -0.786378
+  d  1.030833  2.659904  0.575577  0.815826
+
+
+Métodos de interés
+------------------
+
+Existen múltiples métodos que nos permiten visualizar y modificar los datos almacenados en Series y DataFrame.
+Aquí vamos a ver sólo unos cuantos ejemplos de métodos que pueden ser de utilidad:
+
+*head* y *tail*	permiten ver una pequeña parte de los datos tanto del principio como del final.
+
+::
+
+  >>> serie = Series(nprand.random(1000))
+  >>> serie.head()
+  0    0.587525
+  1    0.298493
+  2    0.639990
+  3    0.662683
+  4    0.143679
+
+*groupby* permite agrupar los datos en función de un criterio dado.
+Devuelve un objeto GroupBy, y uno de sus atributos (*groups*) es un diccionario dónde las claves son los grupos y los valores son las etiquetas de las filas que pertenecen a dicho grupo
+
+::
+
+  >>> dict_series = {'uno' : Series(['a', 'b', 'b', 'a'], index=['ind1', 'ind2', 'ind3', 'ind4']), 
+  		   'dos' : Series([1, 1, 2, 2], index=['ind1', 'ind2', 'ind3', 'ind4'])}
+  >>> df = DataFrame(dict_series)
+  >>> df.groupby('uno').groups
+  {'a': ['ind1', 'ind4'], 'b': ['ind2', 'ind3']}
+  >>> df.groupby('dos').groups
+  {1: ['ind1', 'ind2'], 2: ['ind3', 'ind4']}
+
+
+*map* y *applymap* sirven para aplicar una función a cada uno de los elementos de una Serie y un DataFrame respectivamente
+
+*iteritems* y *iterrows* permiten iterar sobre un DataFrame.
+El primero devuelve el DataFrame columna por columna y el segundo por filas. 
+
+::
+
+  >>> dict_series = {'uno' : Series(['a', 'b', 'b', 'a'], index=['ind1', 'ind2', 'ind3', 'ind4']), 
+  		   'dos' : Series([1, 1, 2, 2], index=['ind1', 'ind2', 'ind3', 'ind4'])}
+  >>> df = DataFrame(dict_series)
+  >>> for column, values in df.iteritems():
+      print column
+      print list(values)
+
+
+pandas tiene además implementados diversos métodos estadísticos para operar en Series y DataFrames.
+En el caso de las Series se aplican directamente, mientras que en DataFrame hay que especificar si se tiene que aplicar por filas (axis=1) o por columnas (axis=0, valor por defecto).
+Además existen métodos para el calculo de estadísticos mediante el uso de ventanas deslizantes a lo largo de series de datos.
+Algunos ejemplos de estos métodos son: 
+
+  * *count* Número de observaciones no nulas
+  * *sum*		Suma de valores
+  * *mean*	Media
+  * *median*	Mediana
+  * *min*		Mínimo
+  * *max*		Máximo
+  * *mode*	Moda
+  * *abs*		Valor absoluto
+  * *std*		Desviacion estándar
+  * *var*		Varianza
+  * *quantile* Quartil
+  * *corr*	Cálculo de correlaciones
+  * *cov*		Cálculo de covarianza
+
+::
+
+  >>> dict_series = {'uno' : Series([1, 2, 3], index=['a', 'b', 'c']), 
+                     'dos' : Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+  >>> df = DataFrame(dict_series)
+  >>> df.count(0)
+  dos    4
+  uno    3
+  >>> df.count(1)
+  a    2
+  b    2
+  c    2
+  d    1
+
+Leer y escribir archivos
+------------------------
+
+Los objetos de pandas permiten tanto leer datos en diversos formatos (*read_csv, read_excel, read_json, read_html, read_pickle....*) como escribir en ellos (*to_csv, to_excel, to_json, to_html, to_pickle....*).
+Permite incluso leer y escribir en el portapapeles (*read_clipboard, to_clipboard*).
+Veamos un par de ejemplos sencillo de cómo leer y escribir un archivo CSV (comma separated value) 
+
+Empezamos importando la funcion que necesitamos
+
+:: 
+
+  >>> from pandas import read_csv
+
+Alguno de los argumentos, además del nombre del archivo, que se le pueden pasar a la función *read_csv* son:
+
+  * sep: el delimitador que divide los campos del csv
+  * header: el número de fila que contiene los nombres de las columnas. Por defecto es la primera línea (linea 0), si no existe cabecera header=None
+  * index_col: el número de columna que contiene los nombre para usar como indexa. Por defecto no considera ninguna
+
+Supongamos que tenemos el siguiente archivo csv llamado 'fichero1.csv':
+
+::
+
+  individuo,p1,p2,p3
+  indi,1,2,3
+  ind2,4,5,6
+  ind3,7,8,9
+
+::
+
+  >>> read_csv('fichero1.csv')
+    individuo p1 p2 p3
+  0 indi 1 2 3
+  1 ind2 4 5 6
+  2 ind3 7 8 9
+
+Si queremos especificar que el nombre de las filas se encuentra en la primera columna:
+
+::
+
+  >>> read_csv('fichero1.csv', index_col=0)
+  individuo p1 p2 p3
+  indi 1 2 3
+  ind2 4 5 6
+  nd3 7 8 9
+
+Si en lugar de comas tuviéramos algún otro delimitador habría que especificarlo, por ejemplo si fueran tabuladores habría que pasarle a la función sep='\t'.
+O si nuestro fichero no incluyera una fila con columnas o no fuera la primera línea habría que especificarlo mediante header=None o el número que correspondiera.
+
+Para escribir un DataFrame a un csv simplemente basta con:
+
+::
+
+  >>> df.to_cvs('nombre_archivo.csv')
+
+
+Ejercicios
+----------
+
+Tenemos un :download:`fichero <../demo_data/ejer_pandas.csv>` csv con datos sobre origen, peso y tamaño de diferentes individuos de una especie
+
+1. Lee el fichero
+
+2. ¿Qué peso tiene el segundo individuo? ¿Y los individuos cam01, tur03 y pet05?
+
+3. ¿Cuál es el mayor tamaño registrado? ¿Y el mayor peso?
+
+4. ¿Cuál es la media de tamaño de los individuos por lugar de origen?
+
+5. ¿Existe correlación entre el peso y el tamaño?
+
+6. Guarda en un fichero los datos de los individuos de Inglaterra
+
+1. Lee el fichero
+
+::
+
+  >>> from pandas import DataFrame, read_csv
+  >>> datos = read_csv('analisis.csv', sep=';', skiprows=1, index_col=0)
+
+2. ¿Qué peso tiene el segundo individuo? ¿Y los individuos cam01, tur03 y pet05?
+
+::
+
+  >>> datos.ix[1, 'peso'] 
+
+o bien
+
+::
+
+  >>> datos['peso'].ix[1] 
+
+::
+
+  >>> datos.ix[['cam01', 'tur03', 'pet05'], 'peso']
+
+3. ¿Cuál es el mayor tamaño registrado? ¿Y el mayor peso?
+
+::
+
+  >>> datos['tamano'].max
+  >>> datos['peso'].max
+
+o bien
+
+::
+
+  >>> datos.max(0)
+
+4. ¿Cuál es la media de tamaño de los individuos por lugar de origen?
+
+::
+
+  >>> groups = datos.groupby('origen').groups
+  >>> for country, indvs in groups.viewitems():
+  >>>		print country
+  >>>		print datos['tamano'].ix[indvs].mean()
+
+5. ¿Existe correlación entre el peso y el tamaño?
+
+::
+
+  >>> datos.corr()
+
+o bien
+
+::
+
+  >>> datos['tamano'].corr(datos['peso'])
+
+6. Guarda en un fichero los datos de los individuos de Inglaterra
+
+::
+
+  >>> datos[datos['origen'] == 'Inglaterra'].to_csv('datos_inglaterra.csv')
+

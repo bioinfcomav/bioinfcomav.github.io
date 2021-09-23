@@ -1,0 +1,547 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>BEDTools &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Maize SNP calling walkthrough" href="maize_snp_calling.html" />
+    <link rel="prev" title="Dealing with big result files" href="text_files.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sequencing_technologies.html">Sequencing technologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ngs_applications_examples.html">NGS application examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_analysis_software.html">NGS analysis software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmd_primer.html">Command line primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_file_formats.html">NGS sequence file formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read_cleaning.html">NGS read cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assembly.html">Sequence assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Sequence mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snp_calling.html">SNP calling and filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html">NGS expression analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html#practical-tasks">Practical tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_files.html">Dealing with big result files</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BEDTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maize_snp_calling.html">Maize SNP calling practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice.html">Final practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice_walkthrough.html">Final practice walkthrough</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="bedtools">
+<h1>BEDTools<a class="headerlink" href="#bedtools" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://github.com/arq5x/bedtools2">BEDTools</a> allow a fast and flexible way of comparing large datasets of genomic features.
+The BEDtools utilities allow one to address common genomics tasks such as finding feature overlaps and computing coverage.
+Its name is due to an historical reason because nowadays they can process the most commonly used feature file formats like: <a class="reference external" href="http://genome.ucsc.edu/FAQ/FAQformat.html#format1">BED</a>, <a class="reference external" href="http://www.sequenceontology.org/gff3.shtml">GFF</a>, <a class="reference external" href="http://www.1000genomes.org/wiki/analysis/vcf4.0">VCF</a>, and <a class="reference external" href="http://samtools.sourceforge.net/">SAM</a>.
+The following are examples of common questions that one can address with BEDTools:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Which SNPs are in a coding region?</p></li>
+<li><p>Which are the exonic and intronic coverages?</p></li>
+<li><p>How many positions have a coverage greater than 8?</p></li>
+<li><p>Which SNPs are shared by two predictions done by two different SNP callers?</p></li>
+</ul>
+</div></blockquote>
+<p>The following notes a partially taken from the excellent BEDTools <a class="reference external" href="http://bedtools.readthedocs.org/en/latest/">manual</a>.
+It is important to read this manual before using BEDTools in a real question.</p>
+<section id="bedtools-usage">
+<h2>BEDTools usage<a class="headerlink" href="#bedtools-usage" title="Permalink to this headline">¶</a></h2>
+<p>Some examples taken from the excellent BEDTools manual.</p>
+<p>Report the base-pair overlap between the features in two BED files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$intersectBed -a reads.bed -b genes.bed
+</pre></div>
+</div>
+<p>Report those entries in A that overlap NO entries in B:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ intersectBed -a reads.bed -b genes.bed –v
+</pre></div>
+</div>
+<p>Read BED A from stdin. Useful for stringing together commands. For example, find genes that overlap LINEs but not SINEs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ intersectBed -a genes.bed -b LINES.bed | intersectBed -a stdin -b SINEs.bed –v
+</pre></div>
+</div>
+<p>Find the closest ALU to each gene:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ closestBed -a genes.bed -b ALUs.bed
+</pre></div>
+</div>
+<p>Merge overlapping repetitive elements into a single entry, returning the number of entries merged:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mergeBed -i repeatMasker.bed -n
+</pre></div>
+</div>
+<p>Merge nearby repetitive elements into a single entry, so long as they are within 1000 bp of one another:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mergeBed -i repeatMasker.bed -d 1000
+</pre></div>
+</div>
+</section>
+<section id="summary-of-the-main-bedtools">
+<h2>Summary of the main BEDTools<a class="headerlink" href="#summary-of-the-main-bedtools" title="Permalink to this headline">¶</a></h2>
+<section id="intersectbed">
+<h3>intersectBed<a class="headerlink" href="#intersectbed" title="Permalink to this headline">¶</a></h3>
+<p>This tools answers the question of which features of two sets overlap.
+It works with BED/GFF/VCF and BAM files.</p>
+<p>intersectBed can report different overlaps.
+By default it will report the overlapping segment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chromosome</span>  <span class="o">================================================================</span>
+<span class="n">BED</span><span class="o">/</span><span class="n">BAM</span> <span class="n">A</span>       <span class="o">================</span>                 <span class="o">===============</span>
+<span class="n">BED</span> <span class="n">File</span> <span class="n">B</span>             <span class="o">===============</span>
+<span class="n">Result</span>                 <span class="o">=========</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat A.bed
+chr1 100  200
+chr1 300  400
+$ cat B.bed
+chr1 150  250
+$ intersectBed –a A.bed -b B.bed
+chr1 150  200
+</pre></div>
+</div>
+<p>It can also report eh original A (-wa) feature or the original B feature (-wb).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chromosome</span>  <span class="o">================================================================</span>
+<span class="n">BED</span><span class="o">/</span><span class="n">BAM</span> <span class="n">A</span>       <span class="o">================</span>                 <span class="o">===============</span>
+<span class="n">BED</span> <span class="n">File</span> <span class="n">B</span>             <span class="o">===============</span>
+<span class="n">Result</span>          <span class="o">================</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ intersectBed –a A.bed –b B.bed -wa
+chr1 100  200
+</pre></div>
+</div>
+<p>If –wb is used, the overlapping portion of A will be reported followed by the original “B”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ intersectBed –a A.bed –b B.bed -wb
+chr1 150  200  chr1   150  250
+</pre></div>
+</div>
+<p>intersectBed can also count, with the <em>-c</em> parameter,  the number of features that overlap in every region defined in the a file.</p>
+<p>intersectBed has many other features and possibilities that are explained in its manual, like minimum fraction of overlap or strandedness.</p>
+</section>
+<section id="windowbed">
+<h3>windowBed<a class="headerlink" href="#windowbed" title="Permalink to this headline">¶</a></h3>
+<p>Similar to intersectBed, windowBed searches for overlapping features in A and B.
+However, windowBed adds a specified number (1000, by default) of base pairs upstream and downstream of each feature in A.
+In effect, this allows features in B that are “near” features in A to be detected.
+If an overlap is found in B, both the original A feature and the original B feature are reported.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chromosome</span>  <span class="o">================================================================</span>
+<span class="n">BED</span> <span class="n">File</span> <span class="n">A</span>          <span class="o">&lt;----------=============----------&gt;</span>
+<span class="n">BED</span> <span class="n">File</span> <span class="n">B</span>     <span class="o">========</span>                                    <span class="o">==========</span>
+<span class="n">Result</span>         <span class="o">========</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat A.bed
+chr1 1000 1500
+$ cat B.bed
+chr1 100  300
+chr1 2800 3200
+$ windowBed –a A.bed –b B.bed
+chr1 1000 1500  chr1 100  300
+</pre></div>
+</div>
+</section>
+<section id="closestbed">
+<h3>closestBed<a class="headerlink" href="#closestbed" title="Permalink to this headline">¶</a></h3>
+<p>Similar to intersectBed, closestBed searches for overlapping features in A and B.
+In the event that no feature in B overlaps the current feature in A, closestBed will report the closest (that is, least genomic distance from the start or end of A) feature in B.
+For example, one might want to find which is the closest gene to a significant GWAS polymorphism. Note that closestBed will report an overlapping feature as the closest.
+That is, it does not restrict to closest non-overlapping feature.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chromosome</span>   <span class="o">================================================================</span>
+<span class="n">BED</span> <span class="n">File</span> <span class="n">A</span>                                  <span class="o">========</span>
+<span class="n">BED</span> <span class="n">File</span> <span class="n">B</span>        <span class="o">========</span>                              <span class="o">======</span>
+<span class="n">Result</span>                                                  <span class="o">======</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat A.bed
+chr1 600  700
+$ cat B.bed
+chr1 100  200
+chr1 900  1000
+$ closestBed –a A.bed –b B.bed
+chr1 600  700  chr1  900  1000
+</pre></div>
+</div>
+</section>
+<section id="subtractbed">
+<h3>subtractBed<a class="headerlink" href="#subtractbed" title="Permalink to this headline">¶</a></h3>
+<p>subtractBed searches for features in B that overlap A.
+If an overlapping feature is found in B, the overlapping portion is removed from A and the remaining portion of A is reported.
+If a feature in B overlaps all of a feature in A, the A feature will not be reported.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chromosome</span>    <span class="o">================================================================</span>
+<span class="n">BED</span> <span class="n">File</span> <span class="n">A</span>             <span class="o">===========</span>                        <span class="o">=======</span>
+<span class="n">BED</span> <span class="n">File</span> <span class="n">B</span>       <span class="o">=========</span>                            <span class="o">=============</span>
+<span class="n">Result</span>                    <span class="o">========</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat A.bed
+chr1 10  30
+chr1 80  90
+$ cat B.bed
+chr1 5   20
+chr1 70  95
+$ subtractBed –a A.bed –b B.bed
+chr1 20  30
+</pre></div>
+</div>
+</section>
+<section id="mergebed">
+<h3>mergeBed<a class="headerlink" href="#mergebed" title="Permalink to this headline">¶</a></h3>
+<p>mergeBed combines overlapping or “book-ended” (that is, one base pair away) features in a feature file into a single feature which spans all of the combined features.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chromosome</span>    <span class="o">================================================================</span>
+<span class="n">BED</span> <span class="n">File</span> <span class="n">A</span>             <span class="o">===========</span>                             <span class="o">=======</span>
+                 <span class="o">=========</span>                            <span class="o">=============</span>   <span class="o">====</span>
+<span class="n">Result</span>           <span class="o">=================</span>                    <span class="o">====================</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat A.bed
+chr1 100  200
+chr1 180  250
+chr1 700  800
+chr1 600  750
+chr1 800  850
+$ mergeBed –i A.bed
+chr1 100  250
+chr1 600  850
+</pre></div>
+</div>
+</section>
+<section id="coveragebed">
+<h3>coverageBed<a class="headerlink" href="#coveragebed" title="Permalink to this headline">¶</a></h3>
+<p>coverageBed computes both the depth and breadth of coverage of features in file A across the features in file B. For example, coverageBed can compute the coverage of sequence alignments (file A) across 1 kilobase (arbitrary) windows (file B) tiling a genome of interest.
+One advantage that coverageBed offers is that it not only counts the number of features that overlap an interval in file B, it also computes the fraction of bases in B interval that were overlapped by one or more features.
+Thus, coverageBed also computes the breadth of coverage for each interval in B.</p>
+<dl class="simple">
+<dt>After each interval in B, coverageBed will report:</dt><dd><ul class="simple">
+<li><p>The number of features in A that overlapped (by at least one base pair) the B interval.</p></li>
+<li><p>The number of bases in B that had non-zero coverage from features in A.</p></li>
+<li><p>The length of the entry in B.</p></li>
+<li><p>The fraction of bases in B that had non-zero coverage from features in A.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chromosome</span>  <span class="o">================================================================</span>
+<span class="n">BED</span> <span class="n">File</span> <span class="n">B</span>   <span class="o">===============</span>    <span class="o">================</span>    <span class="o">======</span>    <span class="o">=============</span>
+<span class="n">BED</span> <span class="n">File</span> <span class="n">A</span>   <span class="o">====</span> <span class="o">====</span>             <span class="o">==</span>             <span class="o">=========</span>    <span class="o">===</span> <span class="o">==</span> <span class="o">====</span>
+<span class="n">BED</span> <span class="n">File</span> <span class="n">A</span>     <span class="o">========</span>                                     <span class="o">=====</span> <span class="o">=====</span> <span class="o">==</span>
+<span class="n">Result</span>        <span class="p">[</span> <span class="n">N</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="o">/</span><span class="mi">15</span> <span class="p">]</span>     <span class="p">[</span> <span class="n">N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">/</span><span class="mi">16</span> <span class="p">]</span>    <span class="p">[</span><span class="n">N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="o">/</span><span class="mi">6</span><span class="p">]</span>   <span class="p">[</span><span class="n">N</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="o">/</span><span class="mi">12</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat A.bed
+chr1  10  20
+chr1  20  30
+chr1  30  40
+chr1  100 200
+$ cat B.bed
+chr1  0   100
+chr1  100 200
+chr2  0   100
+$ coverageBed –a A.bed –b B.bed
+chr1  0   100  3  30   100  0.3000000
+chr1  100 200  1  100  100  1.0000000
+chr2  0   100  0  0    100  0.0000000
+</pre></div>
+</div>
+</section>
+<section id="genomecoveragebed">
+<h3>genomeCoverageBed<a class="headerlink" href="#genomecoveragebed" title="Permalink to this headline">¶</a></h3>
+<p>genomeCoverageBed computes a histogram of feature coverage (e.g., aligned sequences) for a given genome.
+Optionally, by using the –d option, it will report the depth of coverage at each base on each chromosome in the genome file (-g).</p>
+<dl class="simple">
+<dt>The default output format is as follows:</dt><dd><ul class="simple">
+<li><p>chromosome (or entire genome)</p></li>
+<li><p>depth of coverage from features in input file</p></li>
+<li><p>number of bases on chromosome (or genome) with depth equal to column 2.</p></li>
+<li><p>size of chromosome (or entire genome) in base pairs</p></li>
+<li><p>fraction of bases on chromosome (or entire genome) with depth equal to column 2.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat A.bed
+chr1  10  20
+chr1  20  30
+chr2  0   500
+$ cat my.genome
+chr1 1000
+chr2 500
+$ genomeCoverageBed –i A.bed –g my.genome
+chr1 0  980  1000 0.98
+chr1 1  20   1000 0.02
+chr2 1  500  500  1
+genome  0    980  1500 0.653333
+genome  1    520  1500 0.346667
+</pre></div>
+</div>
+</section>
+<section id="fastafrombed">
+<h3>fastaFromBed<a class="headerlink" href="#fastafrombed" title="Permalink to this headline">¶</a></h3>
+<p>fastaFromBed extracts sequences from a FASTA file for each of the intervals defined in a BED file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat test.fa
+&gt;chr1
+AAAAAAAACCCCCCCCCCCCCGCTACTGGGGGGGGGGGGGGGGGG
+$ cat test.bed
+chr1 5  10
+$ fastaFromBed -fi test.fa -bed test.bed -fo test.fa.out
+$ cat test.fa.out
+&gt;chr1:5-10
+AAACC
+</pre></div>
+</div>
+</section>
+<section id="sortbed">
+<h3>SortBed<a class="headerlink" href="#sortbed" title="Permalink to this headline">¶</a></h3>
+<p>sortBed sorts a feature file by chromosome and other criteria.</p>
+<p>By default, sortBed sorts a BED file by chromosome and then by start position in ascending order.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat A.bed
+chr1  800 1000
+chr1  80  180
+chr1  1   10
+chr1  750 10000
+$ sortBed –i A.bed
+chr1  1   10
+chr1  80  180
+chr1  750 10000
+chr1  800 1000
+</pre></div>
+</div>
+<p>It should be noted that sortBed is merely a convenience utility, as the UNIX sort utility will sort BED files more quickly while using less memory.
+For example, UNIX sort will sort a BED file by chromosome then by start position in the following manner:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sort -k 1,1 -k2,2 -n a.bed
+chr1  1   10
+chr1  80  180
+chr1  750 10000
+chr1  800 1000
+</pre></div>
+</div>
+</section>
+</section>
+<section id="other-files-used-by-bedtools">
+<h2>Other files used by BEDTools<a class="headerlink" href="#other-files-used-by-bedtools" title="Permalink to this headline">¶</a></h2>
+<p>Some tools need the length of the genome being used.
+In those cases a tab-delimited <em>genome file</em> with the length of the molecules of the genome has to be provided.
+An example would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chrI</span>  <span class="mi">15072421</span>
+<span class="n">chrII</span> <span class="mi">15279323</span>
+<span class="o">...</span>
+<span class="n">chrX</span>  <span class="mi">1771885</span>
+<span class="n">chrM</span>  <span class="mi">13794</span>
+</pre></div>
+</div>
+<p>Another format used by BEDTools is BEDPE.
+This format is used to represent disjoint features like the paired-end sequence alignments.</p>
+</section>
+<section id="notes-regarding-usage">
+<h2>Notes regarding usage<a class="headerlink" href="#notes-regarding-usage" title="Permalink to this headline">¶</a></h2>
+<p>All BEDTools load the “B” file into memory and process the “A” file one-by-one against the features in “B”.
+Therefore when possible, one should make set the smaller of the two files to be the “B” file.
+For example, you’ll discover that finding overlaps between a list of 30,000 genes and 100 million aligned sequences will work much more efficiently with the genes file set as BED file “B”.</p>
+<p>Most of the BEDTools allow the “A” file to be passed via standard input for use in UNIX “streams” or “pipelines”. In order to do this, use “-a stdin”. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat reads.bed | intersectBed -a stdin -b genes.bed &gt; readsToGenes.bed
+</pre></div>
+</div>
+</section>
+<section id="practical-task">
+<h2>Practical Task<a class="headerlink" href="#practical-task" title="Permalink to this headline">¶</a></h2>
+<p>Given the following genome calculate some statistics:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                      <span class="mi">11111111112222222222333333333344444444445555555555</span>
+             <span class="mi">12345678901234567890123456789012345678901234567890123456789</span>
+             <span class="mi">00000000000000000000000000000000000000000000000000000000000</span>
+<span class="n">Chromosome</span>   <span class="o">===========================================================</span>
+<span class="n">genes</span>           <span class="o">===============&gt;</span>                <span class="o">===============&gt;</span>
+<span class="n">CDSs</span>              <span class="o">=========&gt;</span>                      <span class="o">========&gt;</span>
+<span class="n">exons</span>           <span class="o">====</span>  <span class="o">===</span> <span class="o">=====&gt;</span>                <span class="o">===</span> <span class="o">===</span> <span class="o">=======&gt;</span>
+<span class="n">reads</span>           <span class="o">---&gt;</span>  <span class="o">-&gt;</span>   <span class="o">--&gt;</span>
+                  <span class="o">-&gt;</span>  <span class="o">--&gt;</span> <span class="o">--&gt;</span>
+                <span class="o">--&gt;</span>
+<span class="n">SNPs</span>          <span class="o">*</span> <span class="o">*</span>     <span class="o">*</span>     <span class="o">*</span>    <span class="o">*</span>  <span class="o">*</span>   <span class="o">*</span>   <span class="o">*</span>  <span class="o">*</span> <span class="o">*</span>       <span class="o">*</span>
+</pre></div>
+</div>
+<p>Download and extract the bed files required for the practice are in the file: <a class="reference download internal" download="" href="_downloads/f5038a181dd111e13b77c03af9c7522b/bed.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">bed.tar.gz</span></code></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ pwd
+/home/ngs_user
+~$ tar -xvzf bed.tar.gz
+~$ cd bed
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Which are the exon regions in the CDSs?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/bed$ intersectBed -a cds.bed -b exons.bed &gt; cds.exon.bed
+~/bed$ cat cds.exon.bed
+chr   59      70      cds1
+chr   99      120     cds1
+chr   139     150     cds1
+chr   379     380     cds2
+chr   399     420     cds2
+chr   439     460     cds2
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Store the UTR regions in a new bed file.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/bed$ subtractBed -a exons.bed -b cds.bed &gt; utrs.bed
+~/bed$ cat utrs.bed
+chr   39      59      exon11
+chr   150     190     exon13
+chr   359     379     exon21
+chr   460     510     exon23
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>How many SNPs are in every gene?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/bed$ intersectBed -a genes.bed -b snps.bed -c
+chr  39      190     gene1   3
+chr  359     510     gene2   2
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>And how many in the UTRs and in the CDSs?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/bed$ intersectBed -a utrs.bed -b snps.bed -c
+chr   39      59      exon11  1
+chr   150     190     exon13  1
+chr   359     379     exon21  1
+chr   460     510     exon23  0
+~/bed$ intersectBed -a cds.exon.bed -b snps.bed -c
+chr   59      70      cds1    0
+chr   99      120     cds1    1
+chr   139     150     cds1    0
+chr   379     380     cds2    0
+chr   399     420     cds2    0
+chr   439     460     cds2    1
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>How many reads cover each gene?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/bed$ coverageBed -b reads.bed -a genes.bed
+chr   39      190     gene1   7       83      151     0.5496688
+chr   359     510     gene2   0       0       151     0.0000000
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Which is the distribution of read coverages along the chromosome?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/bed$ genomeCoverageBed -i reads.bed -g chr.genome
+chr   0       507     590     0.859322
+chr   1       30      590     0.0508475
+chr   2       52      590     0.0881356
+chr   3       1       590     0.00169492
+genome        0       507     590     0.859322
+genome        1       30      590     0.0508475
+genome        2       52      590     0.0881356
+genome        3       1       590     0.00169492
+</pre></div>
+</div>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="text_files.html">Dealing with big result files</a>-->
+                    <a class="prev" href="text_files.html" title="Dealing with big result files">previous</a>
+                    |
+                    <!--<a class="next" href="maize_snp_calling.html">Maize SNP calling walkthrough</a>-->
+                    <a class="next" href="maize_snp_calling.html" title="Maize SNP calling walkthrough">next</a>
+                    |
+
+                <a class="index" href="/courses/sequence_analysis/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

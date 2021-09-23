@@ -1,0 +1,377 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Búsqueda de secuencias en bases de datos &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Búsqueda de secuencias utilizando BLAST" href="practica_blast.html" />
+    <link rel="prev" title="Alineamiento de secuencias" href="practica_alineamientos.html" /> 
+  </head>
+  <body>
+    <nav class="global_navigation">
+        <ul>
+            <li class="current_site_item" ><a href="http://bioinf.comav.upv.es">bioinf</a></li>
+            <li><a href="http://cucurbigene.net">cucurbigene</a></li>
+            <li><a href="http://melogene.net">melogene</a></li>
+        </ul>
+    </nav>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+    
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="http://www.melogene.net/">Melogene</a></li>
+                    <li><a href="http://www.cucurbigene.net/">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bases_datos.html">Bases de datos biológicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_bases.html">Práctica bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alineamientos.html">Alineamientos de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_jemboss.html">Práctica jemboss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_alineamientos.html">Práctica de alineamientos</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Búsqueda de secuencias en bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast.html">Práctica Blast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediccion.html">Métodos predictivos en ADN y ARN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_prediccion.html">Práctica predicción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">Alineamientos múltiples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_multiple.html">Práctica alineamiento múltiple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filogenias.html">Introducción al análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_filogenias.html">Práctica análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast2go.html">Práctica anotación con Blast2GO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_visores.html">Prácticas bases de datos genómicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion.html">Ejercicio anotación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion2.html">Ejercicio prediccion 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sanger.html">Secuenciación de Sanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ensamblaje.html">Ensamblaje de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_ensamblaje.html">Práctica ensamblaje de secuencias</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="busqueda-de-secuencias-en-bases-de-datos">
+<h1>Búsqueda de secuencias en bases de datos<a class="headerlink" href="#busqueda-de-secuencias-en-bases-de-datos" title="Permalink to this headline">¶</a></h1>
+<p>Una vez que sabemos alinear dos secuencias podemos alinear una secuencia con todas las de una base de datos.</p>
+<p>Si buscamos los alineamientos significativos encontramos qué secuencias se parecen a nuestra secuencia query.</p>
+<p>Para hacer esto se necesita un algoritmo muy rápido porque hay millones de alineamientos que procesar.</p>
+<p><a class="reference external" href="http://en.wikipedia.org/wiki/BLAST">BLAST</a> (Basic Local Alignment Search Tool) utiliza un algoritmo muy rápido basado en palabras (word, k-tuple o kmers)</p>
+<section id="blast">
+<h2>BLAST<a class="headerlink" href="#blast" title="Permalink to this headline">¶</a></h2>
+<p>BLAST se utiliza habitualmente para comparar una secuencia dada contra toda una base de datos de millones de secuencias.</p>
+<p>Producen alineamientos locales entre cada pareja de secuencias.</p>
+<p>Además generan un valor se significación estadística para cada alineamiento.</p>
+<section id="algoritmo">
+<h3>Algoritmo<a class="headerlink" href="#algoritmo" title="Permalink to this headline">¶</a></h3>
+<p>Si se utilizase un algoritmo como el de Smith y Waterman para alinear un secuencia de N letras con una base de datos de M letras se necesitarían NxM comparaciones.</p>
+<p>Para simplificar la búsqueda, antes de comenzar, se genera un índice de todas las palabras cortas contenidas en la secuencia problema.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DSFASPUIVH</span>
+<span class="n">DSF</span>
+ <span class="n">SFA</span>
+  <span class="n">FAS</span>
+   <span class="n">ASP</span>
+    <span class="n">SPU</span>
+     <span class="n">PUI</span>
+      <span class="n">UIV</span>
+       <span class="n">IVH</span>
+</pre></div>
+</div>
+<p>Se buscan las secuencias de la base de datos que presentan alguna de las palabras de la lista anterior.</p>
+<p>El tamaño de las palabras influye en la sensibilidad del BLAST.</p>
+<p>Cuanto más pequeñas sean las palabras más sensible será la búsqueda, pero más lenta.</p>
+<p>Se buscan diagonales en la matriz que presenten palabras comunes.
+A estos fragmentos se les denomina high scoring pair (HSP).</p>
+<p>Los HSP se extienden hasta que la puntuación del alineamiento comienza a disminuir.</p>
+<p>Si el HSP acaba teniendo un valor de significación mayor que el dado se incluirá en el alineamiento final.</p>
+<p>Con este algoritmo la búsqueda requiere (N-2) + (M -2) operaciones en vez de NxM.</p>
+<p>Para determinar si un alineamiento es significativo se compara su puntuación con la de alineamientos de secuencias al azar.</p>
+</section>
+<section id="e-value">
+<h3>e-value<a class="headerlink" href="#e-value" title="Permalink to this headline">¶</a></h3>
+<p>Una vez obtenido el alineamiento hay que preguntarse si es significativo.</p>
+<p>Alineamiento obtenido entre dos proteínas seleccionadas al azar.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Query</span><span class="o">=</span> <span class="n">unknown</span>
+         <span class="p">(</span><span class="mi">207</span> <span class="n">letters</span><span class="p">)</span>
+
+<span class="o">&gt;</span><span class="n">unknown</span>
+          <span class="n">Length</span> <span class="o">=</span> <span class="mi">333</span>
+
+ <span class="n">Score</span> <span class="o">=</span> <span class="mf">14.2</span> <span class="n">bits</span> <span class="p">(</span><span class="mi">25</span><span class="p">),</span> <span class="n">Expect</span> <span class="o">=</span> <span class="mf">2.9</span>
+ <span class="n">Identities</span> <span class="o">=</span> <span class="mi">4</span><span class="o">/</span><span class="mi">16</span> <span class="p">(</span><span class="mi">25</span><span class="o">%</span><span class="p">),</span> <span class="n">Positives</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="mi">16</span> <span class="p">(</span><span class="mi">50</span><span class="o">%</span><span class="p">)</span>
+
+<span class="n">Query</span><span class="p">:</span> <span class="mi">160</span> <span class="n">PKRYDWTGKNWVYSHD</span> <span class="mi">175</span>
+           <span class="n">P</span> <span class="o">++</span> <span class="n">W</span>      <span class="o">+</span><span class="n">SH</span><span class="o">+</span>
+<span class="n">Sbjct</span><span class="p">:</span> <span class="mi">146</span> <span class="n">PTKHAWQEIGKEFSHE</span> <span class="mi">161</span>
+</pre></div>
+</div>
+<p>¿Cual es la probabilidad de que un alineamiento con una puntuación (score) similar se obtenga por azar entre dos secuencias no relacionadas.</p>
+<p>El e-value (Expect) es el número de alineamientos que esperamos para una puntuación (score) X (o superior) en la búsqueda que estamos realizando si la base de datos fuese una colección de letras al azar.</p>
+<p>Para calcular esta probabilidad se pueden generar secuencias al azar de la misma longitud y composición que la query y se alinean.</p>
+<p>Si la base de datos es suficientemente grande y contiene mayoritariamente secuencias no relacionadas la distribución de scores observados debe coincidir con la distribución de scores esperados por azar.</p>
+<p>A partir de estos alineamientos se estudia la distribución de scores.</p>
+<figure class="align-center">
+<img alt="_images/score.jpg" src="_images/score.jpg" />
+</figure>
+<p>Se espera encontrar muchos alineamientos al azar con puntuaciones bajas, pero muy pocos con puntuaciones altas.</p>
+<p>Para puntuaciones muy altas se espera encontrar un número insignificante de alineamientos por simple azar y los e-values son, por lo tanto, muy bajos.</p>
+<p>El valor e-value dado por el blast depende de la base de datos empleada y de la longitud de la secuencia.</p>
+<p>El número de alineamientos con un score &gt; S se incrementa linealmente con el tamaño de la base de datos.</p>
+<p>Una secuencia, un alineamiento con un score S, encontrada en una búsqueda contra un genoma bacteriano con 1000-5000 secuencias va a ser 50-250 veces más significativa que un alineamiento con exactamente el mismo score en una base de datos con 250,000.</p>
+<p>En búsquedas reales son comunes e-values de entre 10e-6 y 10e-100.</p>
+</section>
+<section id="ejemplo-de-blast">
+<h3>Ejemplo de BLAST<a class="headerlink" href="#ejemplo-de-blast" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Blast</span> <span class="n">of</span> <span class="n">sequence</span> <span class="n">c15d_01</span><span class="o">-</span><span class="n">D10</span><span class="o">-</span><span class="n">M13R_c</span> <span class="n">against</span> <span class="n">database</span> <span class="n">arabidopsis</span>
+<span class="n">BLASTX</span> <span class="mf">2.2.10</span> <span class="p">[</span><span class="n">Oct</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">2004</span><span class="p">]</span>
+
+
+<span class="n">Reference</span><span class="p">:</span> <span class="n">Altschul</span><span class="p">,</span> <span class="n">Stephen</span> <span class="n">F</span><span class="o">.</span><span class="p">,</span> <span class="n">Thomas</span> <span class="n">L</span><span class="o">.</span> <span class="n">Madden</span><span class="p">,</span> <span class="n">Alejandro</span> <span class="n">A</span><span class="o">.</span> <span class="n">Schaffer</span><span class="p">,</span>
+<span class="n">Jinghui</span> <span class="n">Zhang</span><span class="p">,</span> <span class="n">Zheng</span> <span class="n">Zhang</span><span class="p">,</span> <span class="n">Webb</span> <span class="n">Miller</span><span class="p">,</span> <span class="ow">and</span> <span class="n">David</span> <span class="n">J</span><span class="o">.</span> <span class="n">Lipman</span> <span class="p">(</span><span class="mi">1997</span><span class="p">),</span>
+<span class="s2">&quot;Gapped BLAST and PSI-BLAST: a new generation of protein database search</span>
+<span class="n">programs</span><span class="s2">&quot;,  Nucleic Acids Res. 25:3389-3402.</span>
+
+<span class="n">Query</span><span class="o">=</span> <span class="n">c15d_01</span><span class="o">-</span><span class="n">D10</span><span class="o">-</span><span class="n">M13R_c</span>
+ <span class="p">(</span><span class="mi">892</span> <span class="n">letters</span><span class="p">)</span>
+
+<span class="n">Database</span><span class="p">:</span> <span class="n">tair6</span>
+           <span class="mi">30</span><span class="p">,</span><span class="mi">690</span> <span class="n">sequences</span><span class="p">;</span> <span class="mi">12</span><span class="p">,</span><span class="mi">653</span><span class="p">,</span><span class="mi">157</span> <span class="n">total</span> <span class="n">letters</span>
+
+<span class="n">Searching</span><span class="o">..................................................</span><span class="n">done</span>
+
+                                                                 <span class="n">Score</span>    <span class="n">E</span>
+<span class="n">Sequences</span> <span class="n">producing</span> <span class="n">significant</span> <span class="n">alignments</span><span class="p">:</span>                      <span class="p">(</span><span class="n">bits</span><span class="p">)</span> <span class="n">Value</span>
+
+<span class="n">AT3G28480</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">oxidoreductase</span><span class="p">,</span> <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenas</span><span class="o">...</span>   <span class="mi">280</span>   <span class="mf">6e-76</span>
+<span class="n">AT3G28490</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">oxidoreductase</span><span class="p">,</span> <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenas</span><span class="o">...</span>   <span class="mi">258</span>   <span class="mf">3e-69</span>
+<span class="n">AT5G18900</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">oxidoreductase</span><span class="p">,</span> <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenas</span><span class="o">...</span>   <span class="mi">244</span>   <span class="mf">4e-65</span>
+<span class="n">AT3G06300</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="n">AT</span><span class="o">-</span><span class="n">P4H</span><span class="o">-</span><span class="mi">2</span> <span class="o">|</span> <span class="n">Encodes</span> <span class="n">a</span> <span class="n">prolyl</span><span class="o">-</span><span class="mi">4</span> <span class="n">hydroxylase</span> <span class="o">...</span>   <span class="mi">234</span>   <span class="mf">4e-62</span>
+<span class="n">AT1G20270</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">oxidoreductase</span><span class="p">,</span> <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenas</span><span class="o">...</span>   <span class="mi">213</span>   <span class="mf">1e-55</span>
+<span class="n">AT4G35810</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">oxidoreductase</span><span class="p">,</span> <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenas</span><span class="o">...</span>   <span class="mi">201</span>   <span class="mf">4e-52</span>
+<span class="n">AT2G17720</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">oxidoreductase</span><span class="p">,</span> <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenas</span><span class="o">...</span>   <span class="mi">192</span>   <span class="mf">2e-49</span>
+<span class="n">AT5G66060</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">oxidoreductase</span><span class="p">,</span> <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenas</span><span class="o">...</span>   <span class="mi">186</span>   <span class="mf">2e-47</span>
+<span class="n">AT4G35820</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">oxidoreductase</span><span class="p">,</span> <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenas</span><span class="o">...</span>   <span class="mi">159</span>   <span class="mf">2e-39</span>
+<span class="n">AT4G33910</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">oxidoreductase</span><span class="p">,</span> <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenas</span><span class="o">...</span>   <span class="mi">149</span>   <span class="mf">3e-36</span>
+<span class="n">AT2G43080</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="n">AT</span><span class="o">-</span><span class="n">P4H</span><span class="o">-</span><span class="mi">1</span> <span class="o">|</span> <span class="n">Encodes</span> <span class="n">a</span> <span class="n">prolyl</span><span class="o">-</span><span class="mi">4</span> <span class="n">hydroxylase</span> <span class="o">...</span>   <span class="mi">147</span>   <span class="mf">1e-35</span>
+<span class="n">AT2G23096</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">oxidoreductase</span><span class="p">,</span> <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenas</span><span class="o">...</span>   <span class="mi">137</span>   <span class="mf">7e-33</span>
+<span class="n">AT4G25600</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">ShTK</span> <span class="n">domain</span><span class="o">-</span><span class="n">containing</span> <span class="n">protein</span><span class="p">,</span> <span class="n">sim</span><span class="o">...</span>   <span class="mi">131</span>   <span class="mf">6e-31</span>
+
+<span class="o">&gt;</span><span class="n">AT3G28480</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">oxidoreductase</span><span class="p">,</span> <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenase</span> <span class="n">family</span>
+           <span class="n">protein</span><span class="p">,</span> <span class="n">similar</span> <span class="n">to</span> <span class="n">prolyl</span> <span class="mi">4</span><span class="o">-</span><span class="n">hydroxylase</span><span class="p">,</span> <span class="n">alpha</span> <span class="n">subunit</span><span class="p">,</span>
+           <span class="kn">from</span> <span class="nn">Gallus</span> <span class="n">gallus</span> <span class="p">(</span><span class="n">GI</span><span class="p">:</span><span class="mi">212530</span><span class="p">),</span> <span class="n">Rattus</span> <span class="n">norvegicus</span>
+           <span class="p">(</span><span class="n">GI</span><span class="p">:</span><span class="mi">474940</span><span class="p">),</span> <span class="n">Mus</span> <span class="n">musculus</span> <span class="p">(</span><span class="n">SP</span><span class="p">:</span><span class="n">Q60715</span><span class="p">);</span> <span class="n">contains</span> <span class="n">PF03171</span>
+           <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenase</span> <span class="n">superfamily</span> <span class="n">domain</span> <span class="o">|</span>
+           <span class="n">chr3</span><span class="p">:</span><span class="mi">10677275</span><span class="o">-</span><span class="mi">10679525</span> <span class="n">REVERSE</span> <span class="o">|</span> <span class="n">Aliases</span><span class="p">:</span> <span class="n">MFJ20</span><span class="mf">.16</span>
+          <span class="n">Length</span> <span class="o">=</span> <span class="mi">316</span>
+
+ <span class="n">Score</span> <span class="o">=</span>  <span class="mi">280</span> <span class="n">bits</span> <span class="p">(</span><span class="mi">717</span><span class="p">),</span> <span class="n">Expect</span> <span class="o">=</span> <span class="mf">6e-76</span>
+ <span class="n">Identities</span> <span class="o">=</span> <span class="mi">141</span><span class="o">/</span><span class="mi">235</span> <span class="p">(</span><span class="mi">60</span><span class="o">%</span><span class="p">),</span> <span class="n">Positives</span> <span class="o">=</span> <span class="mi">174</span><span class="o">/</span><span class="mi">235</span> <span class="p">(</span><span class="mi">74</span><span class="o">%</span><span class="p">),</span> <span class="n">Gaps</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">235</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)</span>
+ <span class="n">Frame</span> <span class="o">=</span> <span class="o">+</span><span class="mi">2</span>
+
+<span class="n">Query</span><span class="p">:</span> <span class="mi">191</span> <span class="n">NRFPKMLLHNNDMYESVIRMKTGGSAITIDPTRVIQLSSKPRAFLYEGFLSYEECQHLIH</span> <span class="mi">370</span>
+           <span class="n">NRF</span>  <span class="o">+</span>   <span class="o">+</span><span class="n">N</span>    <span class="n">SVI</span><span class="o">+</span><span class="n">MKT</span>  <span class="n">S</span><span class="o">+</span>   <span class="n">DPTRV</span> <span class="n">QLS</span>  <span class="n">PR</span> <span class="n">FLYEGFLS</span> <span class="n">EEC</span> <span class="n">H</span> <span class="n">I</span>
+<span class="n">Sbjct</span><span class="p">:</span> <span class="mi">25</span>  <span class="n">NRF</span><span class="o">--</span><span class="n">LTRSSNTRDGSVIKMKTSASSFGFDPTRVTQLSWTPRVFLYEGFLSDEECDHFIK</span> <span class="mi">82</span>
+
+<span class="n">Query</span><span class="p">:</span> <span class="mi">371</span> <span class="n">LAKGKLRQSLVAAG</span><span class="o">-</span><span class="n">TGESVASKERTSTGMFLRKAQGKIVARIESRIAAWTFLPLDNGEP</span> <span class="mi">547</span>
+           <span class="n">LAKGKL</span> <span class="o">+</span><span class="n">S</span><span class="o">+</span><span class="n">VA</span>   <span class="o">+</span><span class="n">GESV</span> <span class="n">S</span><span class="o">+</span> <span class="n">RTS</span><span class="o">+</span><span class="n">GMFL</span> <span class="n">K</span> <span class="n">Q</span>  <span class="n">IV</span><span class="o">+</span> <span class="o">+</span><span class="n">E</span><span class="o">+++</span><span class="n">AAWTFLP</span> <span class="o">+</span><span class="n">NGE</span>
+<span class="n">Sbjct</span><span class="p">:</span> <span class="mi">83</span>  <span class="n">LAKGKLEKSMVADNDSGESVESEVRTSSGMFLSKRQDDIVSNVEAKLAAWTFLPEENGES</span> <span class="mi">142</span>
+
+<span class="n">Query</span><span class="p">:</span> <span class="mi">548</span> <span class="n">IQILRYENGQKYEPHFDFFQDPGNIAIGGHRIATILMYLSDVEKGGETVFPNSPVKLSEE</span> <span class="mi">727</span>
+           <span class="o">+</span><span class="n">QIL</span> <span class="n">YENGQKYEPHFD</span><span class="o">+</span><span class="n">F</span> <span class="n">D</span>  <span class="n">N</span><span class="o">+</span> <span class="o">+</span><span class="n">GGHRIAT</span><span class="o">+</span><span class="n">LMYLS</span><span class="o">+</span><span class="n">VEKGGETVFP</span>    <span class="n">K</span> <span class="o">++</span>
+<span class="n">Sbjct</span><span class="p">:</span> <span class="mi">143</span> <span class="n">MQILHYENGQKYEPHFDYFHDQANLELGGHRIATVLMYLSNVEKGGETVFPMWKGKATQL</span> <span class="mi">202</span>
+
+<span class="n">Query</span><span class="p">:</span> <span class="mi">728</span> <span class="n">EKGDLSECAXVGYGVRPKLGDALLFFSMNPNVTPDATSYHGSCPVIEGEKMVCTK</span> <span class="mi">892</span>
+           <span class="o">+</span>    <span class="o">+</span><span class="n">ECA</span>  <span class="n">GY</span> <span class="n">V</span><span class="o">+</span><span class="n">P</span><span class="o">+</span> <span class="n">GDALLFF</span><span class="o">+++</span><span class="n">PN</span> <span class="n">T</span> <span class="n">D</span><span class="o">+</span> <span class="n">S</span> <span class="n">HGSCPV</span><span class="o">+</span><span class="n">EGEK</span>   <span class="n">T</span><span class="o">+</span>
+<span class="n">Sbjct</span><span class="p">:</span> <span class="mi">203</span> <span class="n">KDDSWTECAKQGYAVKPRKGDALLFFNLHPNATTDSNSLHGSCPVVEGEKWSATR</span> <span class="mi">257</span>
+
+
+<span class="o">&gt;</span><span class="n">AT3G28490</span><span class="mf">.1</span> <span class="o">|</span> <span class="n">Symbol</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">oxidoreductase</span><span class="p">,</span> <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenase</span> <span class="n">family</span>
+           <span class="n">protein</span><span class="p">,</span> <span class="n">similar</span> <span class="n">to</span> <span class="n">prolyl</span> <span class="mi">4</span><span class="o">-</span><span class="n">hydroxylase</span><span class="p">,</span> <span class="n">alpha</span> <span class="n">subunit</span><span class="p">,</span>
+           <span class="kn">from</span> <span class="nn">Caenorhabditis</span> <span class="n">elegans</span> <span class="p">(</span><span class="n">GI</span><span class="p">:</span><span class="mi">607947</span><span class="p">),</span> <span class="n">Mus</span> <span class="n">musculus</span>
+           <span class="p">(</span><span class="n">SP</span><span class="p">:</span><span class="n">Q60715</span><span class="p">),</span> <span class="n">Homo</span> <span class="n">sapiens</span> <span class="p">(</span><span class="n">GI</span><span class="p">:</span><span class="mi">18073925</span><span class="p">);</span> <span class="n">contains</span>
+           <span class="n">PF03171</span> <span class="mi">2</span><span class="n">OG</span><span class="o">-</span><span class="n">Fe</span><span class="p">(</span><span class="n">II</span><span class="p">)</span> <span class="n">oxygenase</span> <span class="n">superfamily</span> <span class="n">domain</span> <span class="o">|</span>
+           <span class="n">chr3</span><span class="p">:</span><span class="mi">10680286</span><span class="o">-</span><span class="mi">10681891</span> <span class="n">REVERSE</span> <span class="o">|</span> <span class="n">Aliases</span><span class="p">:</span> <span class="n">MFJ20</span><span class="mf">.17</span>
+          <span class="n">Length</span> <span class="o">=</span> <span class="mi">288</span>
+
+ <span class="n">Score</span> <span class="o">=</span>  <span class="mi">258</span> <span class="n">bits</span> <span class="p">(</span><span class="mi">659</span><span class="p">),</span> <span class="n">Expect</span> <span class="o">=</span> <span class="mf">3e-69</span>
+ <span class="n">Identities</span> <span class="o">=</span> <span class="mi">128</span><span class="o">/</span><span class="mi">211</span> <span class="p">(</span><span class="mi">60</span><span class="o">%</span><span class="p">),</span> <span class="n">Positives</span> <span class="o">=</span> <span class="mi">159</span><span class="o">/</span><span class="mi">211</span> <span class="p">(</span><span class="mi">75</span><span class="o">%</span><span class="p">),</span> <span class="n">Gaps</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">211</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)</span>
+ <span class="n">Frame</span> <span class="o">=</span> <span class="o">+</span><span class="mi">2</span>
+
+<span class="n">Query</span><span class="p">:</span> <span class="mi">266</span> <span class="n">AITIDPTRVIQLSSKPRAFLYEGFLSYEECQHLIHLAKGKLRQSLVAAG</span><span class="o">--</span><span class="n">TGESVASKE</span> <span class="mi">439</span>
+           <span class="o">+</span> <span class="o">++</span><span class="n">DPTR</span><span class="o">+</span> <span class="n">QLS</span>  <span class="n">PRAFLY</span><span class="o">+</span><span class="n">GFLS</span> <span class="n">EEC</span> <span class="n">HLI</span> <span class="n">LAKGKL</span> <span class="o">+</span><span class="n">S</span><span class="o">+</span><span class="n">V</span> <span class="n">A</span>   <span class="o">+</span><span class="n">GES</span>  <span class="n">S</span><span class="o">+</span>
+<span class="n">Sbjct</span><span class="p">:</span> <span class="mi">24</span>  <span class="n">SFSVDPTRITQLSWTPRAFLYKGFLSDEECDHLIKLAKGKLEKSMVVADVDSGESEDSEV</span> <span class="mi">83</span>
+
+<span class="n">Query</span><span class="p">:</span> <span class="mi">440</span> <span class="n">RTSTGMFLRKAQGKIVARIESRIAAWTFLPLDNGEPIQILRYENGQKYEPHFDFFQDPGN</span> <span class="mi">619</span>
+           <span class="n">RTS</span><span class="o">+</span><span class="n">GMFL</span> <span class="n">K</span> <span class="n">Q</span>  <span class="n">IVA</span> <span class="o">+</span><span class="n">E</span><span class="o">+++</span><span class="n">AAWTFLP</span> <span class="o">+</span><span class="n">NGE</span> <span class="o">+</span><span class="n">QIL</span> <span class="n">YENGQKY</span><span class="o">+</span><span class="n">PHFD</span><span class="o">+</span><span class="n">F</span> <span class="n">D</span>
+<span class="n">Sbjct</span><span class="p">:</span> <span class="mi">84</span>  <span class="n">RTSSGMFLTKRQDDIVANVEAKLAAWTFLPEENGEALQILHYENGQKYDPHFDYFYDKKA</span> <span class="mi">143</span>
+
+<span class="n">Query</span><span class="p">:</span> <span class="mi">620</span> <span class="n">IAIGGHRIATILMYLSDVEKGGETVFPNSPVKLSEEEKGDLSECAXVGYGVRPKLGDALL</span> <span class="mi">799</span>
+           <span class="o">+</span> <span class="o">+</span><span class="n">GGHRIAT</span><span class="o">+</span><span class="n">LMYLS</span><span class="o">+</span><span class="n">V</span> <span class="n">KGGETVFPN</span>   <span class="n">K</span>  <span class="o">+</span> <span class="o">+</span>    <span class="n">S</span><span class="o">+</span><span class="n">CA</span>  <span class="n">GY</span> <span class="n">V</span><span class="o">+</span><span class="n">P</span><span class="o">+</span> <span class="n">GDALL</span>
+<span class="n">Sbjct</span><span class="p">:</span> <span class="mi">144</span> <span class="n">LELGGHRIATVLMYLSNVTKGGETVFPNWKGKTPQLKDDSWSKCAKQGYAVKPRKGDALL</span> <span class="mi">203</span>
+
+<span class="n">Query</span><span class="p">:</span> <span class="mi">800</span> <span class="n">FFSMNPNVTPDATSYHGSCPVIEGEKMVCTK</span> <span class="mi">892</span>
+           <span class="n">FF</span><span class="o">+++</span> <span class="n">N</span> <span class="n">T</span> <span class="n">D</span>  <span class="n">S</span> <span class="n">HGSCPVIEGEK</span>   <span class="n">T</span><span class="o">+</span>
+<span class="n">Sbjct</span><span class="p">:</span> <span class="mi">204</span> <span class="n">FFNLHLNGTTDPNSLHGSCPVIEGEKWSATR</span> <span class="mi">234</span>
+</pre></div>
+</div>
+</section>
+<section id="versiones-del-blast">
+<h3>Versiones del BLAST<a class="headerlink" href="#versiones-del-blast" title="Permalink to this headline">¶</a></h3>
+<p>Existen varios programas BLAST dependiendo de las secuencias que queramos comparar:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>BLASTP: compara proteínas con una base de datos de proteínas.</p></li>
+<li><p>BLASTN: compara nucleótidos con una base de datos de nucleótidos.</p></li>
+<li><p>BLASTX: compara nucleótidos (antes los traduce) con una base de datos de proteínas.</p></li>
+<li><p>TBLASTN: compara proteínas contra una base de datos de nucleótidos (antes los traduce).</p></li>
+<li><p>TBLASTX: compara nucleótidos con una base de datos de nucleótidos traduciendo todas las secuencias.</p></li>
+</ul>
+</div></blockquote>
+<p>BLASTN se utiliza para comparar secuencias de nucleótidos próximas filogenéticamente.
+BLASTN no se recomienda para buscar proteínas homólogas de otros organismos.
+Es mejor hacer las búsquedas con proteínas.</p>
+<p>Cuando las secuencias son muy distintas y codifican proteínas TBLASTX puede dar mejores resultados, aunque es más costoso computacionalmente.
+Las búsquedas con proteínas son más sensibles y permiten encontrar secuencias más alejadas evolutivamente.
+Al estar el código genetico degenerado los cambios en el ADN no siempre se traducen en un cambio en las proteínas.</p>
+<p>Las versiones de BLAST que realizan traducciones lo hacen en las 6 pautas de lectura posibles.</p>
+</section>
+<section id="megablast">
+<h3>Megablast<a class="headerlink" href="#megablast" title="Permalink to this headline">¶</a></h3>
+<p>Utiliza un algoritmo modificado para encontrar alineamientos largos entre secuencias muy similares.</p>
+<p>Es mucho más rápido que BLAST, pero algo menos sensible.</p>
+<p>Se utiliza para encontrar secuencias muy similares a la secuencia problema.</p>
+<p>Si queremos comprobar si una secuencia ya está descrita en la base de datos esta es la mejor opción.</p>
+</section>
+<section id="blast-2-sequences">
+<h3>BLAST 2 Sequences<a class="headerlink" href="#blast-2-sequences" title="Permalink to this headline">¶</a></h3>
+<p>Utiliza el algoritmo del blast para alinear dos secuencias.</p>
+<p>No utiliza ninguna base de datos.</p>
+</section>
+<section id="psi-blast">
+<h3>PSI-BLAST<a class="headerlink" href="#psi-blast" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://www.ncbi.nlm.nih.gov/blast/Why.shtml">Position-Specific</a> <a class="reference external" href="http://www.ncbi.nlm.nih.gov/blast/Why.shtml">Iterated (PSI)-BLAST</a> es el BLAST más sensible.</p>
+<p>Es capaz de encontrar proteínas muy alejadas filogenéticamente.</p>
+<p>PSI-BLAST parte de un BLAST de proteína con proteína estándar.</p>
+<p>A partir del alineamiento de los mejores resultados construye una matrix PSSM (Position-specific scoring matrix) (también conocido como Profile o Motif (motivo)).</p>
+<p>En una matriz de puntuación PSSM las puntuaciones de cambio entre aminoácidos dependen de la posición en el alineamiento.</p>
+<p>Un cambio Tyr-Trp puede tener una puntuación diferente en dos posiciones distintas de la secuencia.</p>
+<p>Los PSSM o profiles se utilizan para describir dominios conservados en las proteínas.</p>
+<p>Para cada posición se almacena cuáles son las frecuencias de cada carácter.</p>
+<p>Ejemplo de dominio conservado.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="n">B7B_B</span>        <span class="mi">3</span> <span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">KMVVALGGNAILS</span><span class="o">.</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">LVQTSA</span><span class="o">.</span><span class="p">[</span> <span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">Q</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">HRLIVSHGNG</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">Q</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">GNLLLQQQAAD</span><span class="o">.</span><span class="p">[</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span> <span class="mi">69</span>
+<span class="n">gi</span> <span class="mi">22653947</span>   <span class="mi">1</span> <span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">RIVITIGGSIIIS</span><span class="o">.</span><span class="p">[</span> <span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">FRAYAD</span><span class="o">.</span><span class="p">[</span> <span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">E</span>     <span class="n">HDLFVVVGGG</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">P</span>     <span class="n">ARDYIGVAREL</span><span class="o">.</span><span class="p">[</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span> <span class="mi">58</span>
+<span class="n">gi</span> <span class="mi">81344717</span>   <span class="mi">1</span> <span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">VTVLSLGGSIVAP</span><span class="o">.</span><span class="p">[</span> <span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">LGRFVR</span><span class="o">.</span><span class="p">[</span> <span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">RKLIVVSGGG</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">P</span>     <span class="n">ARTYQNAYRAL</span><span class="o">.</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">.</span> <span class="mi">88</span>
+<span class="n">gi</span> <span class="mi">81342918</span>   <span class="mi">1</span> <span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">LEIISLGGGVINS</span><span class="o">.</span><span class="p">[</span> <span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">IKNFKN</span><span class="o">.</span><span class="p">[</span> <span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">E</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">RKIILIVGGG</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">V</span>     <span class="n">AREYQDAYKKI</span><span class="o">.</span><span class="p">[</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span> <span class="mi">64</span>
+<span class="n">gi</span> <span class="mi">2495997</span>    <span class="mi">1</span>      <span class="n">MHIVKIGGSLTYD</span><span class="o">.</span><span class="p">[</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">LLKALK</span><span class="o">.</span><span class="p">[</span> <span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">N</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">KKIVIIPGGG</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">F</span>     <span class="n">ANVVRKIDKAL</span><span class="o">.</span><span class="p">[</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span> <span class="mi">53</span>
+<span class="n">gi</span> <span class="mi">74510802</span>  <span class="mi">13</span> <span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">EWVVKIGGSLFPE</span><span class="o">.</span><span class="p">[</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">ALLESL</span>      <span class="n">E</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">TGAAVVCGGG</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">F</span>     <span class="n">ADMVRYHDRKF</span><span class="o">.</span><span class="p">[</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span> <span class="mi">61</span>
+<span class="n">gi</span> <span class="mi">2495760</span>    <span class="mi">1</span> <span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">LTILKLGGSILSD</span><span class="o">.</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">LERIAM</span><span class="o">.</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">.</span><span class="n">K</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">IKLILVHGGG</span>     <span class="n">A</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">GHPVAKKYLKI</span><span class="o">.</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">.</span> <span class="mi">81</span>
+<span class="n">gi</span> <span class="mi">74507521</span>   <span class="mi">1</span>      <span class="n">MIILKLGGSVITR</span><span class="o">.</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">.</span><span class="n">LERIAS</span><span class="o">.</span><span class="p">[</span> <span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">P</span>     <span class="n">SSLMIVHGAG</span>     <span class="n">S</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">GHPFAGEYRIG</span><span class="o">.</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">.</span> <span class="mi">75</span>
+<span class="n">gi</span> <span class="mi">74571552</span>   <span class="mi">1</span>      <span class="n">MIIIKIGGSVLSD</span><span class="o">.</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">VKSIAY</span><span class="o">.</span><span class="p">[</span> <span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">P</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">EKFIVVHGGG</span>     <span class="n">S</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">GHPLAKEFAIR</span><span class="o">.</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span> <span class="mi">71</span>
+<span class="n">gi</span> <span class="mi">74548980</span>   <span class="mi">7</span> <span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">VTILKIGGSVITD</span><span class="o">.</span><span class="p">[</span> <span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">KERELR</span><span class="o">.</span><span class="p">[</span> <span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">K</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">RNLIVVHGAG</span>     <span class="n">S</span><span class="o">.</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">GHPHVKKFGLS</span><span class="o">.</span><span class="p">[</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span> <span class="mi">70</span>
+</pre></div>
+</div>
+<p>En la segunda iteración el PSSM se convierte en la query de la búsqueda.</p>
+<p>Las secuencias encontradas en la nueva búsqueda se incluyen en un nuevo PSSM que se utiliza de nuevo para hacer otra búsqueda.</p>
+<p>La búsqueda PSI-BLAST concluye cuando ya no se encuentran nuevas secuencias en las posteriores iteraciones.</p>
+</section>
+<section id="otros-programas">
+<h3>Otros programas<a class="headerlink" href="#otros-programas" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://genome.ucsc.edu/FAQ/FAQblat.html">BLAT</a>, <a class="reference external" href="http://www.genome.iastate.edu/bioinfo/resources/manuals/wu-blast/">WU-BLAST</a>, <a class="reference external" href="http://hmmer.janelia.org/">HMMER</a>, <a class="reference external" href="http://www.ebi.ac.uk/Tools/Wise2/doc_wise2.html">WISE2</a>, etc.</p>
+<p><a class="reference internal" href="practica_blast.html"><span class="doc">Ir a la práctica del tema</span></a></p>
+</section>
+</section>
+</section>
+
+
+            
+        
+        
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="practica_alineamientos.html">Alineamiento de secuencias</a>-->
+                    <a class="prev" href="practica_alineamientos.html" title="Alineamiento de secuencias">previous</a>
+                    |
+                    <!--<a class="next" href="practica_blast.html">Búsqueda de secuencias utilizando BLAST</a>-->
+                    <a class="next" href="practica_blast.html" title="Búsqueda de secuencias utilizando BLAST">next</a>
+                    |
+                
+                <a class="index" href="/courses/intro_bioinf/index.html" title="Index">index</a>
+                
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

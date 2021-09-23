@@ -1,0 +1,570 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Módulos &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Paquetes útiles en biología" href="biopython.html" />
+    <link rel="prev" title="Generadores" href="generadores.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Iniciación a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html#el-sistema-de-ficheros">El sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_de_flujo.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html#sets">Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ficheros.html">Ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generadores.html">Generadores</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modulos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">os</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">shutil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">os.path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">subprocess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">sys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soluciones">Soluciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#para-saber-mas">Para saber más</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="biopython.html">Biopython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html">Ejercicios finales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html#soluciones">Soluciones</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="modulos">
+<h1>Módulos<a class="headerlink" href="#modulos" title="Permalink to this headline">¶</a></h1>
+<p>Cuando vamos a escribir un programa además de disponer de las sentencias y funciones que constituyen el lenguaje de programación para construir el programa podemos hacer uso del código anterior que nosotros mismos u otros usuarios hayan generado.
+Por ejemplo, si necesitamos leer un fichero de secuencias <em>fasta</em> y anteriormente escribimos una función capaz de realizar el trabajo sería absurdo volver a repetir la faena.
+Una alternativa sencilla sería copiar la función desde el programa anterior.
+Esto, que puede funcionar para problemas sencillos, sería muy complicado de mantener para proyectos un poco más grandes.
+¿Qué pasa si el código lo ha escrito otro?
+¿Y si la funcionalidad no está escrita en unas pocas líneas sino que es algo complejo?
+¿Si se soluciona un fallo en la función original debemos estar atentos y arreglar también nuestra copia?</p>
+<p>Los programadores procuran no repetir un mismo trabajo varias veces por lo que los lenguajes de programación incluyen formas de utilizar código anterior (<a class="reference external" href="http://es.wikipedia.org/wiki/No_te_repitas">DRY</a>, <a href="#id8"><span class="problematic" id="id9">`DRTW&lt;https://en.wikipedia.org/wiki/Reinventing_the_wheel&gt;`_</span></a>).
+En Python utilizar una función de un programa anterior es muy sencillo, simplemente hemos de importarla al nuevo programa.
+Supongamos que tiempo atrás escribimos un programa llamado <em>analisis_secuencia</em> que incluía una función llamada <em>leer_secuencias_fasta</em>, para poder utilizar esta función en un nuevo programa lo que debemos hacer es importarla:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">analisis_secuencia</span> <span class="kn">import</span> <span class="n">leer_secuencias_fasta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">leer_secuencias_fasta</span><span class="p">(</span><span class="s1">&#39;secuencias.fasta&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A partir de este momento podremos utilizar la función como si la hubiésemos escrito en nuestro nuevo programa.</p>
+<p>La sintaxis anterior no es la única, otra posibilidad es importar <em>analisis_secuencia</em> y después utilizar la función <em>leer_secuencias_fasta</em> refiriéndose al programa en el que se encuentra:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">analisis_secuencia</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">analisis_secuencia</span><span class="o">.</span><span class="n">leer_secuencias_fasta</span><span class="p">(</span><span class="s1">&#39;secuencias.fasta&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Además de importar funciones de otros programas <em>import</em> nos puede servir para dividir un programa largo en secciones o módulos.
+Resultaría muy complicado organizar un programa de miles de líneas en un solo fichero.
+En este caso lo más recomendable sería dividir este programa en módulos y utilizar <em>import</em> para importar las funcionalidades de unos en otros.</p>
+<p>Python dispone de un gran número de funcionalidades listas para ser importadas.
+Se suele decir que Python viene con las pilas incluidas por la cantidad de funciones que incluyen sus librerías.
+Los ficheros que incluyen estas funciones y clases no suelen ser llamados programas sino módulos.
+Un módulo es una librería de funciones y clases listas para ser importadas.
+Disponemos de una lista de todos los módulos distribuidos con la instalación estándar de Python en su <a class="reference external" href="http://docs.python.org/2/py-modindex.html">documentación</a>.</p>
+<p>Cuando en un proyecto se crean numerosos módulos estos se pueden organizar en directorios dando lugar a paquetes de módulos (<em>packages</em>).
+Un ejemplo típico de paquete lo constituye Biopython.</p>
+<p>Estas librerías son utilizadas como bloques de construcción con los que podemos crear nuestros propios programas.
+En la mayoría de las ocasiones los programas no se escriben creando todas las funcionalidades desde cero.
+Lo habitual es combinar los bloques ofrecidos por una o varias librerías para solucionar nuestro problema.</p>
+<p>Python dispone de un <em>PYTHONPATH</em> análogo al <em>PATH</em> de Unix.
+Cuando tratemos de importar un módulo Python lo buscará en todos los directorios de su <em>PYTHONPATH</em> además de en el directorio en el que se encuentra el programa actual.
+Si no se encuentra un módulo lanzará un error.</p>
+<p>Algunos de los módulos de la librería estándar que nos pueden ser de más utilidad a la hora de hacer nuestros propios programas son:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://docs.python.org/library/os.html">os</a>, utilidades del sistema operativo como cambio o creación de directorios o listado de ficheros.</p></li>
+<li><p><a class="reference external" href="http://docs.python.org/library/shutil.html#module-shutil">shutil</a>, copia y borrado de ficheros y directorios.</p></li>
+<li><p><a class="reference external" href="http://docs.python.org/library/os.path.html">os.path</a>, manipulación de rutas y nombres de archivo.</p></li>
+<li><p><a class="reference external" href="http://docs.python.org/library/subprocess.html">subprocess</a>, ejecución de programas externos.</p></li>
+<li><p><a class="reference external" href="http://docs.python.org/library/sys.html">sys</a>, interacción con el shell.</p></li>
+<li><p><a class="reference external" href="http://docs.python.org/library/csv.html">csv</a>, lectura y escritura de ficheros CSV.</p></li>
+<li><p><a class="reference external" href="http://docs.python.org/library/re.html">re</a>, expresiones regulares.</p></li>
+<li><p><a class="reference external" href="http://docs.python.org/library/tempfile.html">tempfile</a>, creación de ficheros temporales.</p></li>
+</ul>
+</div></blockquote>
+<p>A continuación se citan las funcionalidades más útiles para un biólogo de estos módulos comunes.
+En todo los casos los módulos ofrecen muchas más funcionalidades que las descritas en este breve resumen, es recomendable leer la documentación oficial para conocer los módulos con detalle.</p>
+<section id="id1">
+<h2>os<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>os.getcwd(), devuelve el directorio de trabajo.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="go">&#39;/home/jose&#39;</span>
+</pre></div>
+</div>
+<p>os.listdir(path), devuelve una lista con los contenidos del directorio.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/home/usuario/&#39;</span><span class="p">)</span>
+<span class="go">[&#39;busqueda_leukemia_100.txt&#39;, &#39;datos_2.txt&#39;, &#39;.profile&#39;,</span>
+<span class="go">&#39;listado.txt&#39;, &#39;.bash_logout&#39;, &#39;.viminfo&#39;,</span>
+<span class="go">&#39;microarray_adenoma_hk69.csv&#39;, &#39;datos_1.txt&#39;, &#39;.bashrc&#39;]</span>
+</pre></div>
+</div>
+<p>os.makedirs(path), crea un directorio y todos los intermedios necesarios.</p>
+<p>os.remove(path), elimina un fichero.</p>
+<p>os.removedirs(path), elimina directorios recursivamente.</p>
+<p>os.rename(src, dst), cambia el nombre de los ficheros.</p>
+<p>os.rmdir(path), elimina un directorio, pero antes debe estar vacío.</p>
+</section>
+<section id="id2">
+<h2>shutil<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>shutil.copyfile(src, dst), copia un fichero.</p>
+<p>shutil.copy(src, dst), copia un fichero o directorio.</p>
+<p>shutil.copytree(src, dst), copia recursivamente un directorio completo.</p>
+<p>shutil.rmtree(path), elimina recursivamente un directorio completo.</p>
+<p>shutil.move(src, dst), mueve un fichero de un lugar a otro.</p>
+</section>
+<section id="id3">
+<h2>os.path<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>os.path.abspath(path), devuelve una versión absoluta y normalizada de la ruta.</p>
+<p>os.path.basename(path), devuelve el nombre del fichero a partir de la ruta.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s1">&#39;/home/usuario/fichero.txt&#39;</span><span class="p">)</span>
+<span class="go">&#39;fichero.txt&#39;</span>
+</pre></div>
+</div>
+<p>os.path.dirname(path), devuelve el nombre del directorio.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s1">&#39;/home/usuario/fichero.txt&#39;</span><span class="p">)</span>
+<span class="go">&#39;/home/usuario&#39;</span>
+</pre></div>
+</div>
+<p>os.path.exists(path), devuelve True si el fichero o el directorio existen, sino False.</p>
+<p>os.path.expanduser(path), expande el directorio de usuario.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~/fichero.txt&#39;</span><span class="p">)</span>
+<span class="go">&#39;/home/jose/fichero.txt&#39;</span>
+</pre></div>
+</div>
+<p>os.path.join(path1[, path2[, …]]), une dos rutas.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/home&#39;</span><span class="p">,</span> <span class="s1">&#39;usuario&#39;</span><span class="p">,</span> <span class="s1">&#39;fichero.txt&#39;</span><span class="p">)</span>
+<span class="go">&#39;/home/usuario/fichero.txt&#39;</span>
+</pre></div>
+</div>
+<p>os.path.split(path), divide el nombre del directorio y del fichero.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/home/usuario/fichero.txt&#39;</span><span class="p">)</span>
+<span class="go">(&#39;/home/usuario&#39;, &#39;fichero.txt&#39;)</span>
+</pre></div>
+</div>
+<p>os.path.splitext(path), divide el nombre del fichero y la extensión.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="s1">&#39;/home/usuario/fichero.txt&#39;</span><span class="p">)</span>
+<span class="go">(&#39;/home/usuario/fichero&#39;, &#39;.txt&#39;)</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>subprocess<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><em>subprocess</em> nos permite ejecutar programas externos desde Python.
+El modo más potente de usar <em>subprocess</em> es mediante la clase <a class="reference external" href="http://docs.python.org/library/subprocess.html#using-the-subprocess-module">Popen</a>, pero aquí sólo vamos a ver las funciones sencillas.</p>
+<p>subprocess.call(cmd), ejecuta el comando. El comando debe darse como una lista de parámetros.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">retcode</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s2">&quot;ls&quot;</span><span class="p">,</span> <span class="s2">&quot;-l&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>subprocess.check_call(cmd), ejecuta el comando. Si el retcode no es cero se creará un error.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">([</span><span class="s2">&quot;ls&quot;</span><span class="p">,</span> <span class="s2">&quot;-l&quot;</span><span class="p">])</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>sys<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Da acceso al <em>shell</em> en el que se está ejecutando nuestro programa Python.</p>
+<p>sys.argv, devuelve una lista con los argumentos con los que se ha ejecutado el programa.</p>
+<p>sys.exit(int), sale del programa con retcode dado por el número. Este número es opcional, si no se indica será 0.</p>
+</section>
+<section id="id6">
+<h2>csv<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p><em>csv</em> es un módulo muy útil que nos permite leer ficheros tabulares:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="n">edad</span> <span class="n">diabetico</span>
+<span class="s2">&quot;Juan Pablo&quot;</span> <span class="mi">30</span> <span class="n">Si</span>
+<span class="n">Alicia</span> <span class="mi">35</span> <span class="n">No</span>
+<span class="n">Pedro</span> <span class="mi">20</span> <span class="n">Si</span>
+</pre></div>
+</div>
+<p>Estos ficheros <em>CSV</em> pueden ser importados y exportados con facilidad por los programas de hoja de cálculo como <em>Excel</em> y <em>Calc</em> por lo que son una magnífica forma de incorporar estos datos en nuestros programas Python.</p>
+<p>Para leer el fichero haríamos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="n">lector</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datos.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">),</span>
+                    <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span>
+                    <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">lector</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="n">fila</span>
+</pre></div>
+</div>
+<p>La función <em>reader</em> nos devuelve un iterador sobre las filas del archivo.
+El archivo a leer podría estar separado por espacios, comas, tabuladores o cualquier otro carácter.
+Podemos cambiar este carácter con el parámetro <em>delimiter</em> de la función <em>reader</em>.
+El carácter utilizado para rodear los datos se puede definir con <em>quotechar</em>.
+Para que el módulo funcione correctamente el fichero <em>CSV</em> debe estar abierto en modo binario a pesar de que sea un fichero de texto.</p>
+<p>Las filas devueltas por <em>reader</em> son listas con los valores para cada uno de los campos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">,</span> <span class="s1">&#39;edad&#39;</span><span class="p">,</span> <span class="s1">&#39;diabetico&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;Juan Pablo&#39;</span><span class="p">,</span> <span class="s1">&#39;30&#39;</span><span class="p">,</span> <span class="s1">&#39;Si&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;Alicia&#39;</span><span class="p">,</span> <span class="s1">&#39;35&#39;</span><span class="p">,</span> <span class="s1">&#39;No&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;Pedro&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">,</span> <span class="s1">&#39;Si&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Alternativamente podríamos hacer uso de <em>DictReader</em> para que las filas obtenidas sean diccionarios en vez de listas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lector</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datos.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">),</span>
+                        <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span>
+                        <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="s1">&#39;30&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;Juan Pablo&#39;</span><span class="p">,</span> <span class="s1">&#39;diabetico&#39;</span><span class="p">:</span> <span class="s1">&#39;Si&#39;</span><span class="p">}</span>
+<span class="p">{</span><span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="s1">&#39;35&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;Alicia&#39;</span><span class="p">,</span> <span class="s1">&#39;diabetico&#39;</span><span class="p">:</span> <span class="s1">&#39;No&#39;</span><span class="p">}</span>
+<span class="p">{</span><span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="s1">&#39;20&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;Pedro&#39;</span><span class="p">,</span> <span class="s1">&#39;diabetico&#39;</span><span class="p">:</span> <span class="s1">&#39;Si&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Si lo que deseamos es escribir un fichero <em>CSV</em> a partir de una lista de lista de listas o de una lista de diccionarios podemos usar <em>writer</em> y <em>DictWriter</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">datos</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;nombre&#39;</span><span class="p">,</span> <span class="s1">&#39;edad&#39;</span><span class="p">,</span> <span class="s1">&#39;diabetico&#39;</span><span class="p">],</span>
+         <span class="p">[</span><span class="s1">&#39;Juan Pablo&#39;</span><span class="p">,</span> <span class="s1">&#39;30&#39;</span><span class="p">,</span> <span class="s1">&#39;Si&#39;</span><span class="p">],</span>
+         <span class="p">[</span><span class="s1">&#39;Alicia&#39;</span><span class="p">,</span> <span class="s1">&#39;35&#39;</span><span class="p">,</span> <span class="s1">&#39;No&#39;</span><span class="p">],</span>
+         <span class="p">[</span><span class="s1">&#39;Pedro&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">,</span> <span class="s1">&#39;Si&#39;</span><span class="p">]]</span>
+
+<span class="n">escritor</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datos.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">),</span>
+                      <span class="n">delimiter</span><span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+                      <span class="n">quotechar</span><span class="o">=</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">datos</span><span class="p">:</span>
+    <span class="n">escritor</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">datos</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="s1">&#39;30&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;Juan Pablo&#39;</span><span class="p">,</span> <span class="s1">&#39;diabetico&#39;</span><span class="p">:</span> <span class="s1">&#39;Si&#39;</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="s1">&#39;35&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;Alicia&#39;</span><span class="p">,</span> <span class="s1">&#39;diabetico&#39;</span><span class="p">:</span> <span class="s1">&#39;No&#39;</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="s1">&#39;20&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;Pedro&#39;</span><span class="p">,</span> <span class="s1">&#39;diabetico&#39;</span><span class="p">:</span> <span class="s1">&#39;Si&#39;</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="s1">&#39;50&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;Alberto&#39;</span><span class="p">}]</span>
+
+<span class="n">escritor</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datos.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">),</span>
+                          <span class="n">fieldnames</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">,</span> <span class="s1">&#39;edad&#39;</span><span class="p">,</span> <span class="s1">&#39;diabetico&#39;</span><span class="p">],</span>
+                          <span class="n">delimiter</span><span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
+                          <span class="n">quotechar</span><span class="o">=</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">,</span>
+                          <span class="n">restval</span><span class="o">=</span><span class="s1">&#39;n.d&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">datos</span><span class="p">:</span>
+    <span class="n">escritor</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="n">edad</span> <span class="n">diabetico</span>
+<span class="s2">&quot;Juan Pablo&quot;</span> <span class="mi">30</span> <span class="n">Si</span>
+<span class="n">Alicia</span> <span class="mi">35</span> <span class="n">No</span>
+<span class="n">Pedro</span> <span class="mi">20</span> <span class="n">Si</span>
+</pre></div>
+</div>
+<p>En el caso del <em>DictWriter</em> hemos de proporcionar obligatoriamente el parámetro <em>fieldnames</em> ya que los diccionarios no están ordenados y necesitamos indicar el orden en el que deseamos imprimir las columnas.
+Adicionalmente disponemos del argumento <em>restval</em> en el que podemos indicar cual es la cadena de texto que queremos imprimir para los datos faltantes.</p>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Dado el programa <em>saluda.py</em> de Python:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saluda</span><span class="p">():</span>
+     <span class="nb">print</span> <span class="s1">&#39;Hola&#39;</span>
+</pre></div>
+</div>
+<p>Crea un programa que importe la función <em>saluda</em> e imprima un saludo.</p>
+<ol class="arabic simple" start="2">
+<li><p>Crea un directorio llamado <em>prueba desde Python, después escribe en él un fichero *hola.txt</em> que contenga la línea  <em>Hola</em>’, léelo y después bórralo todo.</p></li>
+</ol>
+<p>3. ¿Cuál es el directorio de trabajo actual?
+¿Hay algún fichero en él?
+¿Del primero de los ficheros que aparecen en el listado, cuál es la ruta completa?
+¿Se podría extraer de esta ruta el nombre del directorio y el fichero?
+¿Cuál es la <em>$HOME</em> de nuestro usuario?
+¿Del fichero ‘programa.py’ cuáles son el nombre y la extensión?</p>
+<ol class="arabic simple" start="4">
+<li><p>Utilizando el módulo <em>subprocess</em> ejecuta el comando <em>ls</em>. ¿Qué se obtiene? ?Qué significa el cero que aparece al final?</p></li>
+<li><p>Crea un programa que lea la información del fichero <em>tomates.txt</em>:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="n">color</span> <span class="n">grado_de_madurez</span>
+<span class="n">big_red</span> <span class="n">rojo</span> <span class="mi">5</span>
+<span class="n">italiano</span> <span class="n">amarillo</span> <span class="mi">3</span>
+<span class="n">valenciano</span> <span class="n">verde</span> <span class="mi">1</span>
+<span class="n">penjar</span> <span class="n">rojo</span> <span class="mi">4</span>
+<span class="n">canario</span> <span class="n">rojo</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>El programa debe imprimir la información relativa a una entrada y después volver a escribir la información, pero esta vez separada por comas.</p>
+</section>
+<section id="soluciones">
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Dado el programa <em>saluda.py</em> de Python:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saluda</span><span class="p">():</span>
+     <span class="nb">print</span> <span class="s1">&#39;Hola&#39;</span>
+</pre></div>
+</div>
+<p>Crea un programa que importe la función <em>saluda</em> e imprima un saludo.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">saluda</span> <span class="kn">import</span> <span class="n">saluda</span>
+
+<span class="n">saluda</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Crea un directorio llamado <em>prueba desde Python, después escribe en él un fichero *hola.txt</em> que contenga la línea  <em>Hola</em>’, léelo y después bórralo todo.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="go">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;prueba&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="go">[&#39;prueba&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;prueba/hola.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hola</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;prueba/hola.txt&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="go">&#39;Hola\n&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;prueba/hola.txt&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">removedirs</span><span class="p">(</span><span class="s1">&#39;prueba&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>3. ¿Cuál es el directorio de trabajo actual?
+¿Hay algún fichero en él?
+¿Del primero de los ficheros que aparecen en el listado, cuál es la ruta completa?
+¿Se podría extraer de esta ruta el nombre del directorio y el fichero?
+¿Cuál es la <em>$HOME</em> de nuestro usuario?
+¿Del fichero ‘programa.py’ cuáles son el nombre y la extensión?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="go">&#39;/home/jose/tmp/curso/curso&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">working_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">working_dir</span><span class="p">)</span>
+<span class="go">[&#39;contar_colores.py&#39;, &#39;fasta_parser.py&#39;, &#39;import_saluda.py&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_dir</span><span class="p">,</span> <span class="s1">&#39;contar_colores.py&#39;</span><span class="p">)</span>
+<span class="go">&#39;/home/jose/tmp/curso/contar_colores.py&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ruta</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_dir</span><span class="p">,</span> <span class="s1">&#39;contar_colores.py&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">ruta</span><span class="p">)</span>
+<span class="go">(&#39;/home/jose/tmp/curso&#39;, &#39;contar_colores.py&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">)</span>
+<span class="go">&#39;/home/jose&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="s1">&#39;programa.py&#39;</span><span class="p">)</span>
+<span class="go">(&#39;programa&#39;, &#39;.py&#39;)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Utilizando el módulo <em>subprocess</em> ejecuta el comando <em>ls</em>. ¿Qué se obtiene? ?Qué significa el cero que aparece al final?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s1">&#39;ls&#39;</span><span class="p">])</span>
+<span class="go">bowtie-0.12.7                  leer_csv.py</span>
+<span class="go">bowtie-0.12.7-linux-x86_64.zip leer_palabras.py</span>
+<span class="go">bowtie-0.12.7-src.zip          leer_tabla.py</span>
+<span class="go">calcular_medias_triplicados.py microarray_adenoma_hk69.csv</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<p>El cero es el código de salida del programa ejecutado, en este caso <em>ls</em>.
+Quiere decir que programa ha acabado sin errores, si hubiese ocurrido algún error durante la ejecución el número sería distinto a cero.</p>
+<ol class="arabic simple" start="5">
+<li><p>Crea un programa que lea la información del fichero <em>tomates.txt</em>:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="n">color</span> <span class="n">grado_de_madurez</span>
+<span class="n">big_red</span> <span class="n">rojo</span> <span class="mi">5</span>
+<span class="n">italiano</span> <span class="n">amarillo</span> <span class="mi">3</span>
+<span class="n">valenciano</span> <span class="n">verde</span> <span class="mi">1</span>
+<span class="n">penjar</span> <span class="n">rojo</span> <span class="mi">4</span>
+<span class="n">canario</span> <span class="n">rojo</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>El programa debe imprimir la información relativa a una entrada y después volver a escribir la información, pero esta vez separada por comas.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">def</span> <span class="nf">leer_tomates</span><span class="p">(</span><span class="n">nombre_fichero</span><span class="p">):</span>
+    <span class="s1">&#39;Lee un fichero CSV&#39;</span>
+
+    <span class="n">tomates</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">tomate</span> <span class="ow">in</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">nombre_fichero</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">),</span>
+                                 <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">):</span>
+        <span class="n">tomates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tomate</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">tomates</span>
+
+<span class="k">def</span> <span class="nf">escribir_tomates</span><span class="p">(</span><span class="n">tomates</span><span class="p">,</span> <span class="n">nombre_fichero</span><span class="p">):</span>
+    <span class="s1">&#39;Escribe la informacion de la lista de tomates&#39;</span>
+
+    <span class="c1">#necesitamos saber el nombre de los campos para</span>
+    <span class="c1">#poder escribir la cabecera del fichero y para</span>
+    <span class="c1">#determinar el orden.</span>
+    <span class="c1">#en cualquier tomate tenemos el nombre de los campos</span>
+    <span class="n">un_tomate</span> <span class="o">=</span> <span class="n">tomates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1">#el nombre de los campos son las claves del diccionario</span>
+    <span class="n">campos</span> <span class="o">=</span> <span class="n">tomates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+    <span class="c1">#vamos a ordenar los campos por orden alfabetico</span>
+    <span class="n">campos</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+    <span class="c1">#abrimos el fichero para escribir</span>
+    <span class="n">fhand</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">nombre_fichero</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
+
+    <span class="n">escritor</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">fhand</span><span class="p">,</span>
+                              <span class="n">fieldnames</span><span class="o">=</span> <span class="n">campos</span><span class="p">,</span>
+                              <span class="n">delimiter</span><span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span>
+                              <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span>
+    <span class="c1">#antes de escribir las filas para cada tomate debemos</span>
+    <span class="c1">#escribir la cabecera</span>
+    <span class="n">cabezera</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">campos</span><span class="p">)</span>
+    <span class="n">fhand</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cabezera</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1">#en python 2.7 podriamos haber escrito</span>
+    <span class="c1">#escritor.writeheader()</span>
+
+    <span class="c1">#ahora podemos escribir una fila para cada tomate</span>
+    <span class="n">escritor</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">tomates</span><span class="p">)</span>
+
+    <span class="c1">#Alternativamente podriamos haber escrito</span>
+    <span class="c1">#for tomate in tomates:</span>
+    <span class="c1">#    escritor.writerow(tomate)</span>
+
+    <span class="n">fhand</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">leer_y_escribir</span><span class="p">():</span>
+    <span class="s1">&#39;Lee un fichero y lo vuelve a escribir&#39;</span>
+
+    <span class="n">tomates</span> <span class="o">=</span> <span class="n">leer_tomates</span><span class="p">(</span><span class="s1">&#39;tomates.txt&#39;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="n">tomates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">escribir_tomates</span><span class="p">(</span><span class="n">tomates</span><span class="p">,</span> <span class="s1">&#39;tomates_comas.txt&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">leer_y_escribir</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="para-saber-mas">
+<h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Permalink to this headline">¶</a></h2>
+<p>Se puede consultar la sección dedicada a los <a class="reference external" href="http://docs.python.org/tutorial/modules.html">módulos</a> del tutorial oficial de Python, así como la documentación de los distintos módulos y paquetes.</p>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="generadores.html">Generadores</a>-->
+                    <a class="prev" href="generadores.html" title="Generadores">previous</a>
+                    |
+                    <!--<a class="next" href="biopython.html">Paquetes útiles en biología</a>-->
+                    <a class="next" href="biopython.html" title="Paquetes útiles en biología">next</a>
+                    |
+
+                <a class="index" href="/courses/linux/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

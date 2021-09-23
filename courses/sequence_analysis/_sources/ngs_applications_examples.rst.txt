@@ -1,0 +1,10 @@
+
+NGS applications
+----------------
+
+.. figure:: _images/ngs_applications.png
+   :width: 400px
+
+   :download:`NGS application examples <downloads/ngs_application_examples.odp>` (:download:`pdf <downloads/ngs_application_examples.pdf>`)
+
+

@@ -1,0 +1,166 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>EJERCICIO 1: ANOTACIÓN DE UNA REGIÓN GENÓMICA &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="EJERCICIO 2: ESTUDIO DE LOS GENES IDENTIFICADOS" href="ejercicio_prediccion2.html" />
+    <link rel="prev" title="Prácticas bases de datos genómicas" href="practica_visores.html" /> 
+  </head>
+  <body>
+    <nav class="global_navigation">
+        <ul>
+            <li class="current_site_item" ><a href="http://bioinf.comav.upv.es">bioinf</a></li>
+            <li><a href="http://cucurbigene.net">cucurbigene</a></li>
+            <li><a href="http://melogene.net">melogene</a></li>
+        </ul>
+    </nav>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+    
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="http://www.melogene.net/">Melogene</a></li>
+                    <li><a href="http://www.cucurbigene.net/">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bases_datos.html">Bases de datos biológicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_bases.html">Práctica bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alineamientos.html">Alineamientos de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_jemboss.html">Práctica jemboss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_alineamientos.html">Práctica de alineamientos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blast.html">Búsqueda de secuencias en bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast.html">Práctica Blast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediccion.html">Métodos predictivos en ADN y ARN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_prediccion.html">Práctica predicción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">Alineamientos múltiples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_multiple.html">Práctica alineamiento múltiple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filogenias.html">Introducción al análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_filogenias.html">Práctica análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast2go.html">Práctica anotación con Blast2GO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_visores.html">Prácticas bases de datos genómicas</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ejercicio anotación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion2.html">Ejercicio prediccion 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sanger.html">Secuenciación de Sanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ensamblaje.html">Ensamblaje de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_ensamblaje.html">Práctica ensamblaje de secuencias</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="ejercicio-1-anotacion-de-una-region-genomica">
+<h1>EJERCICIO 1: ANOTACIÓN DE UNA REGIÓN GENÓMICA<a class="headerlink" href="#ejercicio-1-anotacion-de-una-region-genomica" title="Permalink to this headline">¶</a></h1>
+<p>El objetivo de la práctica es realizar la anotación de una pequeña región genómica. Hay que identificar la estructura de los genes que se encuentran en ella, determinar la secuencia de las proteínas sintetizadas, analizar la posible función de las proteínas utilizando la homología con otras proteínas conocidas e identificar el organismo al que pertenece la secuencia. Debéis de utilizar los conocimientos adquiridos para realizar la práctica; recordar que en la página web tenéis las instrucciones para el manejo de los diferentes programas. Tener en cuenta que es intersante comparar los resultados obtenidos con distintas tecnologías, que muchas veces son complementarias. Al final del curso, colgaré la solución guiada del ejercicio, para que tengais tiempo de realizarlo. Si teneis alguna duda me la podeis consultar, ya sea en persona, por teléfono o por mail.</p>
+<p>Para la realización de la práctica os proporcionamos los ficheros de:</p>
+<p>Secuencia genómica: <a class="reference download internal" download="" href="_downloads/6021181cd87e54b82934280f0e2d3c35/genomico.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genomico.fasta</span></code></a>.
+Varios ficheros de posibles cDNAs presentes en la zona (Incluye cDNAs localizados en la región y cDNAs que no están, debéis de identificarlos vosotros):</p>
+<p><a class="reference download internal" download="" href="_downloads/c792b33a347ddabfa786833b550857cc/cDNA1.fasta"><code class="xref download docutils literal notranslate"><span class="pre">cDNA1.fasta</span></code></a></p>
+<p><a class="reference download internal" download="" href="_downloads/a00a6fdfe0c24404d47a7d0441f0e9d3/cDNA2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">cDNA2.fasta</span></code></a></p>
+<p><a class="reference download internal" download="" href="_downloads/dd07a69036d38c4f174319fe73276874/cDNA3.fasta"><code class="xref download docutils literal notranslate"><span class="pre">cDNA3.fasta</span></code></a></p>
+<p><a class="reference download internal" download="" href="_downloads/c74694547a606414b51933583cb5c914/cDNA4.fasta"><code class="xref download docutils literal notranslate"><span class="pre">cDNA4.fasta</span></code></a></p>
+<p><a class="reference download internal" download="" href="_downloads/716e83ca8ecbcc696c4d4a82c917f23a/est1.fasta"><code class="xref download docutils literal notranslate"><span class="pre">est1.fasta</span></code></a></p>
+<p><a class="reference download internal" download="" href="_downloads/825372eff506fa414fe18cb71b8809af/est2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">est2.fasta</span></code></a></p>
+<p><a class="reference download internal" download="" href="_downloads/084b4f6c473ab993cccc4c94124a676c/est3.fasta"><code class="xref download docutils literal notranslate"><span class="pre">est3.fasta</span></code></a></p>
+<p><a class="reference download internal" download="" href="_downloads/14e2c21f793253596e7756b766d55a0b/est4.fasta"><code class="xref download docutils literal notranslate"><span class="pre">est4.fasta</span></code></a></p>
+<p><a class="reference download internal" download="" href="_downloads/5c604af6b3a774abd8d519e072aadb4c/est5.fasta"><code class="xref download docutils literal notranslate"><span class="pre">est5.fasta</span></code></a></p>
+<p><a class="reference download internal" download="" href="_downloads/7d8e4d0e2917eadbb4be8b4cd8b6a57a/est6.fasta"><code class="xref download docutils literal notranslate"><span class="pre">est6.fasta</span></code></a></p>
+<p><a class="reference download internal" download="" href="_downloads/f323f1a508f154efbc29e9b7370caf05/correccion_ejercicio.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Ejercicio</span> <span class="pre">corregido</span></code></a></p>
+<p><a class="reference download internal" download="" href="_downloads/2f250ea095780b0b871b7d566c161ab6/genomico_genmark.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Fichero</span> <span class="pre">GenMark</span></code></a></p>
+</section>
+
+
+            
+        
+        
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="practica_visores.html">Prácticas bases de datos genómicas</a>-->
+                    <a class="prev" href="practica_visores.html" title="Prácticas bases de datos genómicas">previous</a>
+                    |
+                    <!--<a class="next" href="ejercicio_prediccion2.html">EJERCICIO 2: ESTUDIO DE LOS GENES IDENTIFICADOS</a>-->
+                    <a class="next" href="ejercicio_prediccion2.html" title="EJERCICIO 2: ESTUDIO DE LOS GENES IDENTIFICADOS">next</a>
+                    |
+                
+                <a class="index" href="/courses/intro_bioinf/index.html" title="Index">index</a>
+                
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

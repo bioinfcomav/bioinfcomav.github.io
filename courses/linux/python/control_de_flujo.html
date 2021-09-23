@@ -1,0 +1,578 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Control de flujo &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Diccionarios" href="estructuras_de_datos.html" />
+    <link rel="prev" title="Nuestro primer programa" href="primer_programa.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Iniciación a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html#el-sistema-de-ficheros">El sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Control de flujo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sentencia-if">Sentencia <em>if</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#booleanos">Booleanos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bucle-for">Bucle <em>for</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#while">while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soluciones">Soluciones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html#sets">Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ficheros.html">Ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generadores.html">Generadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulos.html">Modulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biopython.html">Biopython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html">Ejercicios finales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html#soluciones">Soluciones</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="control-de-flujo">
+<h1>Control de flujo<a class="headerlink" href="#control-de-flujo" title="Permalink to this headline">¶</a></h1>
+<p>En el apartado anterior, en el que hicimos nuestro primer programa, vimos que los programas normalmente no se ejecutan línea por línea desde la primera hasta la última.
+Esto podría ser adecuado para resolver problemas muy sencillos, pero en la práctica resultaría muy limitado.
+En la mayoría de las ocasiones reales el programa deberá responder de un modo u otro dependiendo de las circunstancias.
+Ya vimos el ejemplo de los bucles que se repetían para cada línea leída desde el fichero.
+Pero hay otros casos, por ejemplo, supongamos que el ejemplo anterior el fichero incluyese una primera línea con el nombre de las columnas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_gen</span> <span class="n">muestra_1_1</span> <span class="n">muestra_1_2</span> <span class="n">muestra_1_3</span> <span class="n">muestra_2_1</span> <span class="n">muestra_2_2</span> <span class="n">muestra_2_3</span>
+<span class="n">gen1</span> <span class="mf">1.2</span> <span class="mf">1.3</span> <span class="mf">1.4</span> <span class="mf">7.6</span> <span class="mf">6.5</span> <span class="mf">8.7</span>
+<span class="n">gen2</span> <span class="mf">4.5</span> <span class="mf">3.4</span> <span class="mf">3.9</span> <span class="mf">2.5</span> <span class="mf">3.2</span> <span class="mf">3.3</span>
+<span class="n">gen3</span> <span class="mf">9.6</span> <span class="mf">8.7</span> <span class="mf">8.3</span> <span class="mf">5.5</span> <span class="mf">5.4</span> <span class="mf">4.5</span>
+</pre></div>
+</div>
+<p>Si intentásemos ejecutar el programa que habíamos escrito con este fichero de entrada, se generará un error puesto que nuestro programa intentará convertir la cadena de texto <em>muestra_1_1</em> en un número <em>float</em>.
+Para evitarlo deberíamos introducir una salvaguarda, deberíamos hacer algo similar a:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fichero</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;expresion.txt&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">fichero</span><span class="p">:</span>
+     <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;nombre_gen&#39;</span><span class="p">):</span>
+         <span class="nb">print</span> <span class="n">line</span>
+     <span class="k">else</span><span class="p">:</span>
+         <span class="n">elementos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+         <span class="n">gen</span> <span class="o">=</span> <span class="n">elementos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+         <span class="n">media1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> <span class="o">/</span> <span class="mf">3.0</span>
+         <span class="n">media2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">6</span><span class="p">]))</span> <span class="o">/</span> <span class="mf">3.0</span>
+         <span class="nb">print</span> <span class="n">gen</span><span class="p">,</span> <span class="n">media1</span><span class="p">,</span> <span class="n">media2</span>
+</pre></div>
+</div>
+<p>La sentencia condicional <em>if</em> permite alterar el flujo del programa.
+Si se da el caso de que la línea comienza por la cadena de texto <em>nombre_gen</em> simplemente hay que imprimirla, en cualquier otro caso debemos proceder a realizar el cálculo de la media antes de imprimir el resultado.
+Veamos algunos otros detalles de la sentencia <em>if</em>.</p>
+<section id="sentencia-if">
+<h2>Sentencia <em>if</em><a class="headerlink" href="#sentencia-if" title="Permalink to this headline">¶</a></h2>
+<p>La sentencia <em>if</em> permite elegir ejecutar un bloque del programa u otro en función de que la condición que evalúa sea cierta o falsa.
+En su versión más simple <em>if</em> simplemente determina si el código se ejecutará o no, por ejemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">numero</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s1">&#39;El numero es negativo&#39;</span>
+</pre></div>
+</div>
+<p>Ya hemos visto antes que se puede también hacer uso de <em>else</em> para ejecutar un bloque alternativo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">numero</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s1">&#39;El numero es negativo&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s1">&#39;El numero es positivo o cero&#39;</span>
+</pre></div>
+</div>
+<p>Por último, existe otra palabra relacionada, <em>elif</em>, que nos servirá para poder utilizar varias condiciones alternativas.
+<em>elif</em> es una contracción de <em>else if</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">numero</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s1">&#39;El numero es negativo&#39;</span>
+<span class="k">elif</span> <span class="n">numero</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s1">&#39;El numero es cero&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s1">&#39;El numero es positivo&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="booleanos">
+<h2>Booleanos<a class="headerlink" href="#booleanos" title="Permalink to this headline">¶</a></h2>
+<p>Cuando una sentencia <em>if</em> se evalúa lo que en realidad se hace es comprobar la validez de la condición que le sigue, en el caso anterior: <em>número &lt; 0</em>.
+Si la condición es verdadera se ejecutará un bloque de código y si es falsa otro.
+En Python la verdad y la falsedad se representan mediante un tipo especial denominado booleano (<em>bool</em>).
+Las variables booleanas sólo pueden adquirir dos valores: <em>True</em> y <em>False</em>.</p>
+<p>Cuando se escribe una condición en una sentencia <em>if</em> la condición es evaluada y el resultado debe ser <em>True</em> o <em>False</em>.
+Ejemplos de condiciones válidas son:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="p">(</span><span class="n">a</span> <span class="n">mayor</span> <span class="n">que</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="p">(</span><span class="n">a</span> <span class="n">menor</span> <span class="n">que</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="p">(</span><span class="n">a</span> <span class="n">igual</span> <span class="n">a</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span> <span class="p">(</span><span class="n">a</span> <span class="n">menor</span> <span class="n">o</span> <span class="n">igual</span> <span class="n">a</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span> <span class="p">(</span><span class="n">a</span> <span class="n">mayor</span> <span class="n">o</span> <span class="n">igual</span> <span class="n">a</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Todas estas condiciones son bastante fáciles de entender, pero hay que hacer notar la sintaxis de la igualdad: <em>a == b</em>.
+Se utiliza un signo doble de igualdad para distinguir la condición de la asignación.
+<em>a = b</em> significa que la variable <em>a</em> se asigna al valor que contenga la variable <em>b</em>.
+Esto no es ni verdadero ni falso y por lo tanto escribir lo que sigue es un error sintáctico:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">:</span>
+    <span class="c1">#generará un error.</span>
+</pre></div>
+</div>
+<p>Además de estas comparaciones en Python hay valores de las variables que son verdaderos y valores que son falsos por ejemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>El número cero y la cadena de texto vacía son falsos y cualquier otro número y cualquier cadena de texto no vacía son verdaderos.
+Además las listas vacías también son falsas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">([])</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Esto permite escribir condiciones del tipo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">numeros</span><span class="p">:</span>
+    <span class="c1">#calcular la media</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s1">&#39;No hay números para calcular la media&#39;</span>
+</pre></div>
+</div>
+<p>Además de disponer de los operadores anteriores disponemos de un operador denominado <em>in</em> que permite evaluar si en una cadena de texto aparece una subcadena o si en una lista está presente un elemento:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;ATG&#39;</span> <span class="ow">in</span> <span class="s1">&#39;AACGTATGAGC&#39;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;ATG&#39;</span> <span class="ow">in</span> <span class="s1">&#39;AACGTATgAGC&#39;</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">4</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Ya veremos que este operador <em>in</em> también funciona con los <em>sets</em> y diccionarios.</p>
+<p>En las condiciones <em>if</em> se puede además utilizar cualquier función o método que devuelva un valor booleano.
+Por ejemplo las cadenas de texto disponen de métodos que evalúan si la cadena está compuesta sólo por números o está constituida sólo por espacios en blanco:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;42&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;4.2&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;spam&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;spam 1000&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;spam 1000&#39;</span><span class="o">.</span><span class="n">isalnum</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;spam1000&#39;</span><span class="o">.</span><span class="n">isalnum</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;           &#39;</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;spam&#39;</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;SPAM&#39;</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Además de disponer de todas estas expresiones evaluables a <em>True</em> o <em>False</em> los valores booleanos disponen de los operadores <em>and</em>, <em>or</em> y <em>not</em>, lo cual les permite construir una aritmética combinando condiciones:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">True</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">False</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">True</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kc">False</span> <span class="ow">or</span> <span class="kc">True</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kc">False</span> <span class="ow">or</span> <span class="kc">False</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="ow">not</span> <span class="kc">True</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="ow">not</span> <span class="kc">False</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Con todos estos elementos podemos construir expresiones complejas del tipo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">adn</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">proteina</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s1">&#39;La secuencia es no codificante&#39;</span>
+<span class="k">elif</span> <span class="n">adn</span> <span class="ow">and</span> <span class="n">proteina</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s1">&#39;La secuencia es codificante&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s1">&#39;No hay secuencia&#39;</span>
+</pre></div>
+</div>
+<p>Además de poder utilizar las comparaciones que hemos visto existe otra comparación llamada <em>is</em>.
+Este operador compara la identidad de los objetos.
+En este caso el resultado sólo será verdadero si las dos variables hacen referencia al mismo objeto.
+Comúnmente este operador se utiliza para verificar si un objeto es None:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">secuencia</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+   <span class="nb">print</span> <span class="s1">&#39;No hay secuencia&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="bucle-for">
+<h2>Bucle <em>for</em><a class="headerlink" href="#bucle-for" title="Permalink to this headline">¶</a></h2>
+<p>La sentencia <em>for</em> ejecuta un bloque de código para una serie de elementos presentes en un iterador.
+Este iterador puede ser por ejemplo una lista.
+Por ejemplo sumemos los enteros entre 1 y 5:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">entero</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
+    <span class="n">suma</span> <span class="o">=</span> <span class="n">suma</span> <span class="o">+</span> <span class="n">numero</span>     <span class="c1">#podría escribirse como suma += numero</span>
+<span class="nb">print</span> <span class="s1">&#39;La suma es:&#39;</span><span class="p">,</span> <span class="n">numero</span>
+
+<span class="c1"># lo anterior en realidad se podría hacer en una sola línea</span>
+<span class="c1"># print &#39;La suma es:&#39;, sum(range(5))</span>
+</pre></div>
+</div>
+<p>Él bloque de código localizado dentro del bucle <em>for</em> se ejecutará secuencialmente para cada uno de los elementos de la lista.
+En realidad <em>for</em> no requiere una lista sino un iterador, es decir cualquier secuencia de elementos.
+Recordemos también que el bloque de código que forma parte del bucle será el que comparta la indentación un nivel por debajo del de la sentencia <em>for</em>.</p>
+<p>Un uso muy común del bucle <em>for</em> es la lectura de archivos de texto y la ejecución de un bloque de código para cada línea:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;fichero.txt&#39;</span><span class="p">):</span>
+   <span class="c1">#procesar la linea de algun modo</span>
+   <span class="nb">print</span> <span class="n">linea</span>
+</pre></div>
+</div>
+<p>Si lo que queremos es ejecutar el bucle un número determinado de veces podemos utilizar la función <em>range</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+   <span class="nb">print</span> <span class="s1">&#39;El numero es&#39;</span><span class="p">,</span> <span class="n">numero</span>
+</pre></div>
+</div>
+<p>El bucle anterior se ejecutará 100 veces.
+<em>range</em> crea una lista de números de la que el bucle después se va alimentando.
+En Python 3.x <em>range</em> no crea una lista sino un iterador.</p>
+<p>En algunas ocasiones puede que nos interese controlar la ejecución los bucles con más detalle.
+Disponemos de dos sentencias que nos permiten modificar el flujo de ejecución del bucle <em>continue</em> y <em>break</em>.
+<em>continue</em> hace que la iteración actual se detenga y se devuelva el flujo del programa al comienzo del bucle con la siguiente iteración.
+Por ejemplo, si quisiésemos leer un fichero con una cabecera en la primera línea y quisiéramos ignorar tanto la primera línea como las posibles líneas en blanco que aparezcan, podríamos hacer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">primera_linea</span> <span class="o">=</span> <span class="kc">True</span>   <span class="c1">#cuando entremos en el bucle</span>
+                       <span class="c1">#estaremos analizando la primera linea</span>
+<span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;fichero.txt&#39;</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">primera_linea</span><span class="p">:</span>
+              <span class="n">primera_linea</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1">#en este momento ya hemos analizado</span>
+                                     <span class="c1">#la primera linea.</span>
+                                     <span class="c1">#en realidad solo pretendemos ignorarla</span>
+              <span class="k">continue</span>        <span class="c1">#ya no se ejecutara nada mas en esta iteracion</span>
+                              <span class="c1">#desde aqui el flujo del programa vuelve al for</span>
+       <span class="n">linea</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>  <span class="c1">#eliminamos el retorno de carro y los espacios</span>
+                              <span class="c1">#en blanco de principio y el final de la linea</span>
+       <span class="k">if</span> <span class="ow">not</span> <span class="n">linea</span><span class="p">:</span>          <span class="c1">#Si la linea esta vacia:</span>
+              <span class="k">continue</span>        <span class="c1">#       no ejecutar nada mas en esta iteracion</span>
+       <span class="c1">#a partir de aqui procesariamos las lineas del cuerpo del archivo.</span>
+       <span class="nb">print</span> <span class="s1">&#39;Esta linea no es de la cabezera -&gt;&#39;</span><span class="p">,</span> <span class="n">linea</span>
+</pre></div>
+</div>
+<p><em>break</em> permite abortar el bucle en cualquier momento aunque queden más elementos por analizar.
+A diferencia de <em>continue</em> el bucle no continuará con el siguiente elemento, el flujo del programa saltará a la siguiente línea después del <em>for</em>.
+Por ejemplo del bucle siguiente ninguna línea se ejecutará:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+      <span class="k">break</span>
+      <span class="nb">print</span> <span class="s1">&#39;Esta linea nunca se imprimira&#39;</span>
+<span class="nb">print</span> <span class="s1">&#39;Despues del break se continua por aqui&#39;</span>
+</pre></div>
+</div>
+<p><em>break</em> puede resultar bastante útil en muchas ocasiones.
+Por ejemplo, cuando buscamos en una lista algo, tras encontrarlo podemos utilizar el <em>break</em> para no seguir analizando los siguientes elementos.</p>
+<p><em>for</em> además dispone de un <em>else</em> en el que podemos incluir código que queremos que se ejecute cuando el el bucle haya acabado sin que ningún <em>break</em> se haya ejecutado.</p>
+</section>
+<section id="while">
+<h2>while<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h2>
+<p><em>while</em> es otro tipo de bucle.
+En este caso el bloque de código se ejecutará mientras la condición sea verdadera.
+Por ejemplo podríamos hacer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+      <span class="c1">#hacer lo que sea</span>
+      <span class="k">if</span> <span class="n">condicion_de_finalizacion</span><span class="p">:</span>
+              <span class="k">break</span>
+</pre></div>
+</div>
+<p>El bucle <em>while</em> se suele utilizar cuando no estamos tratando con una lista o con un iterador sino que estamos recorriendo un blucle un número indeterminado de veces y queremos detenerlo sólo cuando una cierta condición sea satisfecha, no cuando una lista de elementos haya sido consumida.</p>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<p>1. Leer un fichero que contiene una lista de palabras y guardar las palabras en una
+lista.</p>
+<dl class="simple">
+<dt>Pistas:</dt><dd><ul class="simple">
+<li><p>Los retornos de carro y espacios del principio y final de una cadena de texto se eliminan con el método <em>strip</em>.</p></li>
+<li><p>Las cadenas de texto se dividen en listas de palabras con el método <em>split</em>.</p></li>
+<li><p>A las listas se les añade otra lista al final con el método <em>extend</em>.</p></li>
+</ul>
+</dd>
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Escribir un programa equivalente a wc que cuente las líneas, las palabras y los caracteres.</p></li>
+<li><p>Crear un programa similar al <em>grep</em> que permita seleccionar las lineas que coincidan con un patron dado.</p></li>
+</ol>
+<dl class="simple">
+<dt>Pista:</dt><dd><ul class="simple">
+<li><p>Para buscar una cadena de texto dentro de otra podemos utilizar la expresión: subcadena in cadena.</p></li>
+</ul>
+</dd>
+</dl>
+<ol class="arabic simple" start="4">
+<li><p>Revisar el programa anterior para que pueda funcionar con una lista de patrones.</p></li>
+</ol>
+<dl class="simple">
+<dt>Pista:</dt><dd><ul class="simple">
+<li><p>Los bucles <em>for</em> pueden ser anidados, podemos poner un <em>for</em> dentro de otro.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="soluciones">
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<p>1. Leer un fichero que contiene una lista de palabras y guardar las palabras en una
+lista.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="c1">#Lee todas las palabras de un fichero y las guarda en una lista</span>
+
+<span class="n">nombre_fichero</span> <span class="o">=</span> <span class="s1">&#39;fichero.txt&#39;</span>
+
+<span class="n">lista_palabras</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#creamos una lista vacia en la que guardaremos</span>
+                    <span class="c1">#las palabras</span>
+
+<span class="c1">#El bucle que se repetira para cada linea</span>
+<span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;fichero.txt&#39;</span><span class="p">):</span>
+
+    <span class="c1">#eliminamos los espacios y los retornos de carro del principio</span>
+    <span class="c1">#y el final de la linea</span>
+    <span class="n">linea</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">palabras_linea</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">lista_palabras</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">palabras_linea</span><span class="p">)</span>   <span class="c1">#anyadimos las palabras</span>
+                                            <span class="c1">#a la lista</span>
+    <span class="c1">#hasta aqui llega el bucle for porque hasta aqui la indentacion</span>
+    <span class="c1">#se mantiene</span>
+
+<span class="c1">#Una vez fuera del bucle podemos imprimir el resultado</span>
+<span class="nb">print</span> <span class="n">lista_palabras</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Escribir un programa equivalente a wc que cuente las líneas, las palabras y los caracteres.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env</span>
+
+<span class="c1"># Dado un fichero cuenta las lineas, las palabras y los caracteres.</span>
+
+<span class="n">nombre_fichero</span> <span class="o">=</span> <span class="s1">&#39;fichero.txt&#39;</span>
+
+<span class="c1">#creamos los contadores que iran almacenando los resultados parciales.</span>
+<span class="n">lineas</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">palabras</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">caracteres</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1">#este bucle se repetira para cada linea del fichero</span>
+<span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">nombre_fichero</span><span class="p">):</span>
+    <span class="c1">#sumamos una linea cada vez que pasamos por aqui</span>
+    <span class="n">linea</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1">#sinonimo de -&gt; linea = linea + 1</span>
+
+    <span class="c1">#Que palabras hay en la linea?</span>
+    <span class="n">palabras_linea</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="c1">#cuantas palabras son?</span>
+    <span class="n">num_palabras_linea</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">palabras_linea</span><span class="p">)</span>
+    <span class="n">palabras</span> <span class="o">+=</span> <span class="n">num_palabras_linea</span>
+    <span class="c1">#lo anterior se podia escribir como</span>
+    <span class="c1"># palabras += len(linea.split())</span>
+
+    <span class="n">num_caracteres_linea</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+    <span class="n">caracteres</span> <span class="o">+=</span> <span class="n">num_caracteres_linea</span>
+
+    <span class="c1">#hasta aqui llega el bucle for, porque estamos</span>
+    <span class="c1">#en la misma indentacion</span>
+
+<span class="c1">#aqui cambia la indentacion, esto ya no pertenece al bucle</span>
+<span class="c1">#Ahora que lo hemos contado todo podemos escribir el resultado</span>
+<span class="nb">print</span> <span class="s1">&#39;Numero de lineas&#39;</span><span class="p">,</span> <span class="n">lineas</span>
+<span class="nb">print</span> <span class="s1">&#39;Numero de palabras&#39;</span><span class="p">,</span> <span class="n">palabras</span>
+<span class="nb">print</span> <span class="s1">&#39;Numero de caracteres&#39;</span><span class="p">,</span> <span class="n">caracteres</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Crear un programa similar al <em>grep</em> que permita seleccionar las lineas que coincidan con un patron dado.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="c1"># Dado un fichero de texto como entrada busca un patron</span>
+<span class="c1"># de texto e imprime las lineas coincidentes</span>
+
+<span class="n">nombre_fichero</span> <span class="o">=</span> <span class="s1">&#39;prueba.txt&#39;</span>
+
+<span class="n">patron</span> <span class="o">=</span> <span class="s1">&#39;texto1&#39;</span>
+
+<span class="c1">#este bucle se ejecutara una vez por cada linea</span>
+<span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;nombre_fichero&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">patron</span> <span class="ow">in</span> <span class="n">linea</span><span class="p">:</span> <span class="c1">#si el patron se encuentra dentro de la linea</span>
+                        <span class="c1">#esto sera cierto</span>
+        <span class="nb">print</span> <span class="n">linea</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Revisar el programa anterior para que pueda funcionar con una lista de patrones.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="c1"># Dado un fichero de texto como entrada busca una lista de</span>
+<span class="c1"># patrones de texto e imprime las lineas coincidentes</span>
+
+<span class="n">nombre_fichero</span> <span class="o">=</span> <span class="s1">&#39;prueba.txt&#39;</span>
+
+<span class="n">patrones</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;texto1&#39;</span><span class="p">,</span> <span class="s1">&#39;texto2&#39;</span><span class="p">]</span>
+
+<span class="c1">#este bucle se ejecutara una vez por cada linea</span>
+<span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;nombre_fichero&#39;</span><span class="p">):</span>
+
+    <span class="c1">#hemos de comprobar si algun patron esta en la lista</span>
+    <span class="c1">#hacemos un bucle que recorra todos los patrones</span>
+    <span class="n">algun_patron_en_linea</span> <span class="o">=</span> <span class="kc">False</span>   <span class="c1">#por defecto asumimos que</span>
+                                    <span class="c1">#ningun patron se encuentra</span>
+                                    <span class="c1">#en la linea</span>
+    <span class="k">for</span> <span class="n">patron</span> <span class="ow">in</span> <span class="n">patrones</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">patron</span> <span class="ow">in</span> <span class="n">linea</span><span class="p">:</span>
+            <span class="n">algun_patron_en_linena</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="c1">#como hemos encontrado al menos un patron no</span>
+            <span class="c1">#es necesario continuar con el bucle</span>
+            <span class="k">break</span>
+
+    <span class="c1">#una vez sabemos si para la presente linea hay algun</span>
+    <span class="c1">#patron coincidente o no podemos imprimirla</span>
+    <span class="k">if</span> <span class="n">algun_patron_en_linea</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="n">linea</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="primer_programa.html">Nuestro primer programa</a>-->
+                    <a class="prev" href="primer_programa.html" title="Nuestro primer programa">previous</a>
+                    |
+                    <!--<a class="next" href="estructuras_de_datos.html">Diccionarios</a>-->
+                    <a class="next" href="estructuras_de_datos.html" title="Diccionarios">next</a>
+                    |
+
+                <a class="index" href="/courses/linux/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

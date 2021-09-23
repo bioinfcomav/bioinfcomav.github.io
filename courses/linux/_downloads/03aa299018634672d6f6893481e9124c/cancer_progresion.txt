@@ -1,0 +1,12 @@
+id	nombre	provincia	progresión
+1	Pepe	Granada	buena
+2	Juan	Lugo	muy buena
+3	Alicia	Valencia	muy buena
+4	Mónica	Madrid	mala
+5	Alberto	Madrid	regular
+6	Toni	Toledo	mala
+7	Óscar	Barcelona	mala
+8	Trini	Valencia	muy buena
+9	Pepe	Valencia	buena
+10	Jordi	Barcelona	mala
+11	Manolo	Sevilla	desconocido

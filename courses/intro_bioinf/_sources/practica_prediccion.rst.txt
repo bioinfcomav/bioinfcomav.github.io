@@ -1,0 +1,116 @@
+==================================
+Métodos de predicción de ADN y ARN
+==================================
+
+
+Detección gráfica de ORF
+========================
+
+Vamos a localizar pautas abiertas de lectura en dos secuencias. Utilizaremos el programa plotorf.
+
+Descargar las secuencias  :download:`genomic_frataxin.fasta <datos/practica_prediccion/genomic_frataxin.fasta>` y :download:`mRNA_frataxin.fasta <datos/practica_prediccion/mRNA_frataxin.fasta>`.
+
+El programa que vamos a utilizar es plotorf.
+
+::
+
+	plotorf 'sequence'
+
+Analizar ambas secuencias, localizar las ORFs y describir las diferencias.
+
+Construcción de mapas de restricción
+====================================
+
+Existen varios programas que nos indican las dianas de corte de enzimas de restricción. Nosotros vamos a utilizar remap y la secuencia mRNA_frataxin.fasta.
+
+::
+
+	remap 'file'
+
+Vamos a seleccionar todos los enzimas con sitio de corte 6pb.
+
+Traducción de pautas de lectura
+===============================
+
+Ahora vamos a traducir la pauta de lectura que contiene la ORF en el mRNA de la frataxina.
+
+::
+
+	transeq -frame 'x' 'sequence'
+
+En un editor de textos vamos a eliminar las regiones no traducidas, el 5' antes de la metionina y los aminoácidos desde el stop al 3'.Salvar el fichero una vez modificado.
+
+¿Como sabemos cual es la metionina de inicio?. Para ello, necesitamos o datos experimentales o comparar con proteinas conocidas.
+Hacer un blastp con esta secuencia contra la base de datos nr de la NCBI_.
+
+Corregir si es necesario la secuencia de la proteína.
+
+Detección de la pauta de lectura y la estructura intrón/exón en el genómico
+===========================================================================
+
+En el genómico no podemos traducir directamente, primero tenemos que determinar la estructura exónica. Vamos a realizarlo de dos modos.
+
+Mediante comparación de bases de datos
+--------------------------------------
+
+Un modo fácil es comparar nuestra secuencia con proteinas conocidas.
+
+Realizar un blastx contra la refseq con la secuencia genomic_frataxin.fasta en la NCBI_.
+
+Con la información que nos proporcionan los alineamientos de los diferentes HSPs podemos reconstruir la estructura exónica.
+
+Anotar y reconstruir sobre papel la estructura del gen.
+
+Mediante comparación con mRNA del gen
+-------------------------------------
+
+Otra forma de hacerlo es alinear ESTs o mensajeros del gen con la región genómica. Existen programas especialmente diseñados para este proposito: Est2genome y Esim4.
+
+::
+
+	est2genome 'mrna_seq' 'genomic_seq'
+
+Comparar esta estructura del gen con la que habeis hecho vosotros utilizando el bastx.
+
+¿Son equivalentes? ¿A qué se deben las diferencias?.
+
+
+Predicción de estructuras génicas. GeneMark
+===========================================
+
+Existen programas que van a combinar la información del uso del tercer codón, las pautas y los sitios aceptores y dadores del procesado para realizar predicciones de las estructuras del gen y pautas codificantes. Nosotros vamos a ver el Augustus_.
+
+
+
+Utilizaremos la secuencia :download:`genomic_frataxin.fasta <datos/practica_prediccion/genomic_frataxin.fasta>`.
+
+Seleccionar las opciones: Drosophila melanogaster.
+
+
+
+Analizar los resultados y compararlos con nuestras predicciones de proteina. Podeis hacer un blastp con la proteina predicha por Augustus y comprobar si esta bien predicha
+
+Repetir el ejercicio con la secuencia :download:`genomic_frataxin2.fasta <datos/practica_prediccion/genomic_frataxin2.fasta>`.
+
+
+¿Son diferentes las predicciones? ¿Son diferentes las proteínas predichas?.
+
+Para comprobar que hay de diferente en las secuencias alinear ambas secuencias (genomic_frataxin.fasta y genomic_frataxin2.fasta).
+
+::
+
+	water 'file' 'file'
+
+Comentar que ha sucedido y como lo ha solucionado el programa.
+
+Diseño de cebadores para amplificación de exones
+================================================
+
+Estamos interesados en amplificar los exones del 1 y 2 del gen :download:`c-fos <datos/practica_prediccion/fos.fasta>` humano. Identifica los exones e intrones del gen y utilizando el programa Primer3_ (está en el Jemboss) diseña cebadores flanqueantes a los exones 1 y 2. Intenta que ambos productos puedan ser amplificados con las mismas condiciones de PCR. 
+
+
+:doc:`Ir a la teoría del tema<prediccion>`
+
+.. _NCBI: http://www.ncbi.nlm.nih.gov/blast/Blast.cgi
+.. _Augustus: http://bioinf.uni-greifswald.de/augustus/submission.php
+.. _Primer3: http://primer3.sourceforge.net/

@@ -1,0 +1,68 @@
+
+NGS expression analysis
+-----------------------
+
+.. figure:: _images/expression_presentation.png
+   :width: 400px
+
+   :download:`RNA-seq <downloads/rnaseq.odp>` (:download:`pdf <downloads/rnaseq.odp>`)
+
+There are several interesting RNA-Seq reviews: `A survey of best practices for RNA-seq data analysis <https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-8>`_, `RNA-seq workflow: gene-level exploratory analysis and differential expression <http://www.bioconductor.org/help/workflows/rnaseqGene/>`_, `From RNA-seq reads to differential expression results <http://genomebiology.com/2010/11/12/220>`_, `Microarrays, deep sequencing and the true measure of the transcriptome <http://www.biomedcentral.com/1741-7007/9/34>`_, `Computational methods for transcriptome annotation and quantification using RNA-seq <http://www.nature.com/nmeth/journal/v8/n6/full/nmeth.1613.html>`_, `Next-generation transcriptome assembly <http://www.nature.com/nrg/journal/v12/n10/full/nrg3068.html>`_, `An opinionated guide to the proper care and feeding of your transcriptome <http://biorxiv.org/content/early/2016/02/18/035642>`_ and `Evaluation of de novo transcriptome assemblies from RNA-Seq data <https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0553-5>`_.
+
+There are also some interesting studies regarding the `post-processing <http://www.biomedcentral.com/1471-2164/14/328>`_, `quality <http://www.biomedcentral.com/content/pdf/1471-2164-14-465.pdf>`_ of the assembled transcriptomes, the `alternative transcript <http://biorxiv.org/content/biorxiv/early/2014/07/14/007088.full.pdf>`_ reconstruction success of different algorithms, the `evaluation <http://genomebiology.com/2014/15/12/553/abstract>`_ of different assembly strategies.
+
+`StringTie <http://www.nature.com/nbt/journal/v33/n3/full/nbt.3122.html>`_ reconstruction algorithm.
+
+`transrate <http://hibberdlab.com/transrate/>`_, a software to evaluate the transcriptome assembly quality.
+
+Practical tasks
+---------------
+
+Mapping and count sequences
+___________________________
+
+The objective is to map and count redas using an :download:`example file <downloads/SRR45_region.fastq>`  of a RNAseq experience  with only a sample. We use `TopHat <https://ccb.jhu.edu/software/tophat/index.shtml>`_  to map read againt the :download:`genome <downloads/sl2.fasta>` and `Cufflinks <http://cole-trapnell-lab.github.io/cufflinks/manual/>`_ to count the reads.
+
+First we create an index of genome file.
+
+::
+
+  ngs_user@machine:~/rnaseq$ mkdir rnaseq
+  ngs_user@machine:~$ cd rnaseq      
+  ngs_user@machine:~/rnaseq$ bowtie2-build sl2.fasta sl2
+
+Now, we map the reads.
+
+::
+
+  ngs_user@machine:~/rnaseq$ tophat sl2 SRR45_region.fastq
+
+  ngs_user@machine:~/rnaseq$ cd tophat_out
+
+  ngs_user@machine:~/rnaseq/tophat_out$ less align_summary.txt
+
+
+We sort and index the bam file to open with IGV.
+
+::
+
+  ngs_user@machine:~/rnaseq/tophat_out$ samtools sort accepted_hits.bam -o accepted_hits.sort.bam
+
+  ngs_user@machine:~/rnaseq/tophat_out$ samtools index accepted_hits.sort.bam
+
+
+Now, we can construct the transcripts and the number of reads in each transcript. We need also the :download:`genome annotation file <downloads/sl2.gff3>`
+
+::
+
+  ngs_user@machine:~/rnaseq/tophat_out$ cufflinks -g sl2.gff3 accepted_hits.bam
+
+  ngs_user@machine:~/rnaseq/tophat_out$ ls
+
+  ngs_user@machine:~/rnaseq/tophat_out$ less transcripts.gtf
+
+  ngs_user@machine:~/rnaseq/tophat_out$ less genes.fpkm_tracking
+
+
+
+Load the accepted_hits.sort.bam file, the transcripts.gtf and the annotation file sl2.gff3 on the IGV to test the mapping and transcript assembly done with Cufflinks. The next steps will be integrate all transcript assemblies of all samples to create a new annotation file and use it to quantify again the reads of each sample. After that we will start the normalization, differential analysis, etc.

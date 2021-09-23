@@ -1,0 +1,239 @@
+
+Maize SNP calling walkthrough
+=============================
+
+We have some 454 and Illumina maize reads and we want to look for SNPs in the the maize transcriptome.
+We are going to write down the commands to do the complete practice to document one possible route to obtain the SNPs, but other approaches could be used.
+
+Download the sequence files :download:`sequence files <downloads/snp_calling_practice.tar.gz>` into a directory named maize.
+
+Read quality evaluation
+_______________________
+
+::
+
+  ngs_user@machine:~$ cd
+  ngs_user@machine:~$ mkdir maize
+  ngs_user@machine:~$ cd maize/
+  ngs_user@machine:~/maize$ ls
+  snp_calling_practice.tar.gz
+  ngs_user@machine:~/maize$ tar -xvzf snp_calling_practice.tar.gz 
+  snp_calling/
+  snp_calling/maize_unigenes.fasta
+  snp_calling/sm_B73XMo17.lb_MB_14day.pl_illumina.sfastq
+  snp_calling/sm_Mo17.lb_Mo17_root.pl_454.sfastq
+  ngs_user@machine:~/maize$ mkdir raw_reads
+  ngs_user@machine:~/maize$ mv snp_calling/sm_Mo17.lb_Mo17_root.pl_454.sfastq raw_reads/mo17.454.fastq
+  ngs_user@machine:~/maize$ mv snp_calling/sm_B73XMo17.lb_MB_14day.pl_illumina.sfastq raw_reads/b73xmo17.illumina.fastq
+
+Evaluate the quality with using fastqc or calculate_stats from seq_crumbs.
+
+::
+
+  ngs_user@machine:~/maize$ calculate_stats raw_reads/mo17.454.fastq | head -n 40
+  Length stats and distribution.
+  ------------------------------
+  minimum: 45
+  maximum: 310
+  average: 211.73
+  num. seqs.: 4888
+  Quality stats and distribution.
+  -------------------------------
+  Q20: 93.35
+  Q30: 79.86
+  average: 32.53
+  ngs_user@machine:~/maize$ calculate_stats raw_reads/b73xmo17.illumina.fastq | head -n 40
+  Length stats and distribution.
+  ------------------------------
+  minimum: 35
+  maximum: 35
+  average: 35.00
+  num. seqs.: 16084
+  Quality stats and distribution.
+  -------------------------------
+  Q20: 93.38
+  Q30: 68.61
+  average: 29.47
+
+
+Read cleaning
+_____________
+
+::
+
+  ngs_user@machine:~/maize$ mkdir clean_reads
+  ngs_user@machine:~/maize$ trim_quality raw_reads/mo17.454.fastq | filter_by_length -n 150 > clean_reads/mo17.454.fastq
+  ngs_user@machine:~/maize$ trim_quality -q 20 raw_reads/b73xmo17.illumina.fastq | filter_by_length -n 30 > clean_reads/b73xmo17.illumina.fastq
+  ngs_user@machine:~/maize$ ls clean_reads
+  b73xmo17.illumina.fastq  mo17.454.fastq
+
+Evaluate the result.
+
+::
+
+  ngs_user@machine:~/maize$ calculate_stats clean_reads/mo17.454.fastq | head -n 20
+  Length stats and distribution.
+  ------------------------------
+  minimum: 150
+  maximum: 303
+  average: 226.81
+  num. seqs.: 2004
+  Quality stats and distribution.
+  -------------------------------
+  Q20: 99.81
+  Q30: 96.59
+  average: 35.95
+  ngs_user@machine:~/maize$ calculate_stats clean_reads/b73xmo17.illumina.fastq | head -n 40
+  Length stats and distribution.
+  ------------------------------
+  minimum: 30
+  maximum: 35
+  average: 34.70
+  num. seqs.: 14415
+  Quality stats and distribution.
+  -------------------------------
+  Q20: 95.71
+  Q30: 72.56
+  average: 30.18
+
+Mapping to the reference
+________________________
+
+We are going to map the 454 reads with bwasw and the Illumina reads with Illumina.
+
+bwasw mapping
+*************
+
+We create the reference::
+
+  ngs_user@machine:~/maize$ mkdir mapping
+  ngs_user@machine:~/maize$ cp snp_calling/maize_unigenes.fasta mapping/reference.fasta
+  ngs_user@machine:~/maize$ cd mapping
+  ngs_user@machine:~/maize/mapping$ bwa index -p reference -a bwtsw reference.fasta
+  [bwa_index] Pack FASTA... 0.02 sec
+  [bwa_index] Construct BWT for the packed sequence...
+  [main] Real time: 0.892 sec; CPU: 0.548 sec
+
+Now we can map::
+
+  ngs_user@machine:~/maize/mapping$ bwa bwasw reference ../clean_reads/mo17.454.fastq > mapped_454.sam
+  [bsw2_aln] read 2004 sequences/pairs (454536 bp) ...
+  [main] Version: 0.7.2-r351
+  [main] CMD: bwa bwasw reference ../clean_reads/mo17.454.fastq
+  [main] Real time: 3.163 sec; CPU: 2.672 sec
+  ngs_user@machine:~/maize/mapping$ samtools view -b -S -o mapped_454.bam mapped_454.sam 
+  [samopen] SAM header is present: 100 sequences.
+  ngs_user@machine:~/maize/mapping$ rm mapped_454.sam  
+  ngs_user@machine:~/maize/mapping$ ls mapped_454.bam 
+  mapped_454.bam
+
+bowtie2 mapping
+***************
+
+We create a bowtie2 index::
+
+  ngs_user@machine:~/maize/mapping$ bowtie2-build reference.fasta reference
+  Wrote 4312022 bytes to primary EBWT file: reference.rev.1.bt2
+  Wrote 76768 bytes to secondary EBWT file: reference.rev.2.bt2
+  Re-opening _in1 and _in2 as input streams
+  Returning from Ebwt constructor
+
+We map the Illumina reads::
+
+  ngs_user@machine:~/maize/mapping$ bowtie2 --very-sensitive-local -x reference -U ../clean_reads/b73xmo17.illumina.fastq -S illumina.sam
+
+  14415 reads; of these:
+  14415 (100.00%) were unpaired; of these:
+    210 (1.46%) aligned 0 times
+    13192 (91.52%) aligned exactly 1 time
+    1013 (7.03%) aligned >1 times
+  98.54% overall alignment rate
+  ngs_user@machine:~/maize/mapping$ samtools view -b -S -o mapped_illumina.bam illumina.sam 
+  [samopen] SAM header is present: 100 sequences.
+  ngs_user@machine:~/maize/mapping$ rm illumina.sam 
+  
+Merge, sort and index
+*********************
+
+We add the read groups to the 454 and Illumina BAMs to be able to differentiate the reads once we merge the BAM files
+
+::
+
+  ngs_user@machine:~/maize/mapping$ picard-tools AddOrReplaceReadGroups ID=illumina LB=illumina PL=illumina PU=none SM=b73xmo17 SORT_ORDER=coordinate INPUT=mapped_illumina.bam OUTPUT=illumina.bam
+  ngs_user@machine:~/maize/mapping$ picard-tools AddOrReplaceReadGroups ID=454 LB=454 PL=454 PU=none SM=mo17 SORT_ORDER=coordinate INPUT=mapped_454.bam OUTPUT=454.bam
+  ngs_user@machine:~/maize/mapping$ rm  mapped_*
+
+Now that we have the read groups set we can merge both BAM files::
+
+  ngs_user@machine:~/maize/mapping$ picard-tools MergeSamFiles SORT_ORDER=coordinate ASSUME_SORTED=true INPUT=454.bam INPUT=illumina.bam OUTPUT=maize.bam
+
+Finally we can index the BAM file::
+
+  ngs_user@machine:~/maize/mapping$ samtools index maize.bam
+
+BAM statistics
+**************
+
+::
+
+  ngs_user@machine:~/maize/mapping$ samtools flagstat maize.bam
+  16526 + 0 in total (QC-passed reads + QC-failed reads)
+  0 + 0 duplicates
+  16211 + 0 mapped (98.09%:-nan%)
+  0 + 0 paired in sequencing
+  0 + 0 read1
+  0 + 0 read2
+  0 + 0 properly paired (-nan%:-nan%)
+  0 + 0 with itself and mate mapped
+  0 + 0 singletons (-nan%:-nan%)
+  0 + 0 with mate mapped to a different chr
+  0 + 0 with mate mapped to a different chr (mapQ>=5)
+  ngs_user@machine:~/maize/mapping$ samtools idxstats maize.bam
+  TC458157      8763    34      0
+  TC458158      7672    321     0
+  TC458159      6012    404     0
+  TC458160      4906    364     0
+  TC458161      5087    476     0
+  TC458162      4895    274     0
+  TC458163      3960    19      0
+  (...)
+
+It would be also advisable to check the coverage and MAPQ distributions obtained.
+
+Take a look at the BAM files obtained with IGV.
+
+SNPs calling
+____________
+
+Use Varscan or other software to identify the SNPs. 
+
+First change BAM format to mpileup format.
+
+::
+
+  ngs_user@machine:~/maize/mapping$ cd ..
+  ngs_user@machine:~/maize$ cd snp_calling
+  ngs_user@machine:~/maize/snp_calling$ samtools mpileup -f maize_unigenes.fasta ../mapping/maize.bam > maize.mpileup
+
+Now we can look for SNPs with Varscan:
+
+::
+
+  ngs_user@machine:~/maize/snp_calling$ java -jar /home/ngs_user/software/VarScan.v2.3.7.jar mpileup2snp maize.mpileup --strand-filter 0  -output-vcf 1 >maize_snp.vcf
+
+  Only SNPs will be reported
+  Warning: No p-value threshold provided, so p-values will not be calculated
+  Min coverage:	8
+  Min reads2:	2
+  Min var freq:	0.2
+  Min avg qual:	15
+  P-value thresh:	0.01
+  Reading input from maize.mpileup
+  161738 bases in pileup file
+  120 variant positions (120 SNP, 0 indel)
+  0 were failed by the strand-filter
+  120 variant positions reported (120 SNP, 0 indel)
+
+
+ 
+

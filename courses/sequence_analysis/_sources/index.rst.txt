@@ -1,0 +1,76 @@
+ 
+NGS sequence analysis
+=====================
+
+The course deals with the analysis from NGS reads from the 454, Solid and Illumina sequencers.
+The main topics are:
+
+  * read quality control,
+  * read cleaning,
+  * assembly,
+  * mapping,
+  * SNP calling,
+
+.. figure:: _images/ngs_map.png
+   :width: 600px
+
+The lessons will be mostly practical with a little theoretical introduction. Several exercises will be proposed to introduce to the students in a gradual way to the field.
+All software used in the course will be free software freely available in the web.
+
+Despite that a small introduction to unix console usage is included in this course, could be interesting to the students  to practice  with the basic orders before to assist to the course. There are several interesting courses on line, such as:
+
+`Informática para las ciencias de la vida: Unix y Python <http://bioinf.comav.upv.es/courses/linux/index.html>`_
+
+`Unix Tutorial for Beginners <http://www.open-of-course.org/courses/course/view.php?id=45>`_
+
+
+Although some topics related with the analysis of RNA samples, the quantification of the RNA expression will not be covered in this course. 
+
+Professors: Joaquín Cañizares Sales, Jose Blanca, Peio Ziarsolo
+
+Lessons
+_______
+
+.. toctree::
+   :maxdepth: 1
+
+   Sequencing technologies <sequencing_technologies>
+   NGS application examples <ngs_applications_examples>
+   NGS analysis software <sequence_analysis_software>
+   Command line primer <cmd_primer>
+   NGS sequence file formats <sequence_file_formats>
+   NGS read cleaning <read_cleaning>
+   Sequence assembly <assembly>
+   Sequence mapping <mapping>
+   SNP calling and filtering <snp_calling>
+   RNA-Seq <rnaseq.rst>
+   Dealing with big result files <text_files>
+   BEDTools <bedtools>
+   Maize SNP calling practice <maize_snp_calling>
+   Final practice <final_practice>
+   Final practice walkthrough <final_practice_walkthrough>
+
+
+Software
+________
+
+All linux software required to follow this course is available  and installed in a `Virtual Box <http://www.virtualbox.org/>`_ image that you can freely `download <http://bioinf.comav.upv.es/downloads/ngs_machine.ova>`_.
+All Windows software used in the course are free and available  in the respective repositories.
+
+License
+_______
+
+Except where otherwise noted this course is licence under the `Creative Commons Attribution-NonCommercial-ShareAlike <http://creativecommons.org/licenses/by-nc-sa/3.0/>`_ 3.0 Unported license.
+
+
+Related courses
+_______________
+
+The `Michigan State University Bioinformatics <http://bioinformatics.msu.edu/>`_ have created a list of `bioinformatics related courses <http://ged.msu.edu/angus/bioinformatics-courses.html>`_.
+Some of the courses listed that include on-line materials are:
+
+  * `NGS course <http://ged.msu.edu/angus/index.html>`_ by MSU.
+  * `Informatics on High Throughput Sequencing Data <http://bioinformatics.ca/workshops/2012/informatics-high-throughput-sequencing-data>`_ by Canadian Bioinformatics Workshops.
+  * `Bioinformatics Short Course <http://training.bioinformatics.ucdavis.edu/docs/2012/09/BSC/index.html>`_ by UC Davis.
+  * `NGS workshop <https://github.com/nathanhaigh/ngs_workshop/downloads>`_ by Nathan S. Watson-Haigh.
+

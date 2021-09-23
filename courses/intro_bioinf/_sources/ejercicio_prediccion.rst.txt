@@ -1,0 +1,34 @@
+=============================================
+EJERCICIO 1: ANOTACIÓN DE UNA REGIÓN GENÓMICA
+=============================================
+
+El objetivo de la práctica es realizar la anotación de una pequeña región genómica. Hay que identificar la estructura de los genes que se encuentran en ella, determinar la secuencia de las proteínas sintetizadas, analizar la posible función de las proteínas utilizando la homología con otras proteínas conocidas e identificar el organismo al que pertenece la secuencia. Debéis de utilizar los conocimientos adquiridos para realizar la práctica; recordar que en la página web tenéis las instrucciones para el manejo de los diferentes programas. Tener en cuenta que es intersante comparar los resultados obtenidos con distintas tecnologías, que muchas veces son complementarias. Al final del curso, colgaré la solución guiada del ejercicio, para que tengais tiempo de realizarlo. Si teneis alguna duda me la podeis consultar, ya sea en persona, por teléfono o por mail.
+
+Para la realización de la práctica os proporcionamos los ficheros de:
+
+Secuencia genómica: :download:`genomico.fasta <datos/ejercicio_prediccion/genomico.fasta>`.
+Varios ficheros de posibles cDNAs presentes en la zona (Incluye cDNAs localizados en la región y cDNAs que no están, debéis de identificarlos vosotros):
+
+:download:`cDNA1.fasta <datos/ejercicio_prediccion/cDNA1.fasta>`
+
+:download:`cDNA2.fasta <datos/ejercicio_prediccion/cDNA2.fasta>`
+
+:download:`cDNA3.fasta <datos/ejercicio_prediccion/cDNA3.fasta>`
+
+:download:`cDNA4.fasta <datos/ejercicio_prediccion/cDNA4.fasta>`
+
+:download:`est1.fasta <datos/ejercicio_prediccion/est1.fasta>`
+
+:download:`est2.fasta <datos/ejercicio_prediccion/est2.fasta>`
+
+:download:`est3.fasta <datos/ejercicio_prediccion/est3.fasta>`
+
+:download:`est4.fasta <datos/ejercicio_prediccion/est4.fasta>`
+
+:download:`est5.fasta <datos/ejercicio_prediccion/est5.fasta>`
+
+:download:`est6.fasta <datos/ejercicio_prediccion/est6.fasta>`
+
+:download:`Ejercicio corregido <datos/ejercicio_prediccion/correccion_ejercicio.pdf>`
+
+:download:`Fichero GenMark <datos/ejercicio_prediccion/genomico_genmark.pdf>`

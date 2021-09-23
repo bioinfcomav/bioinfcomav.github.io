@@ -1,0 +1,101 @@
+.. linux course documentation master file, created by
+   sphinx-quickstart on Tue Jul 20 12:17:10 2010.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Informática para las ciencias de la vida: Unix y Python
+=======================================================
+
+.. toctree::
+   :maxdepth: 2
+
+   Presentación del curso <presentacion_del_curso.rst>
+
+   Introducción a Unix <unix/introduccion.rst>
+
+   Ubuntu <unix/ubuntu.rst>
+
+   Unix shell <unix/shell.rst>
+
+   Procesamiento de ficheros de texto <unix/procesamiento_texto.rst>
+
+   Expresiones regulares <unix/expresiones_regulares.rst>
+
+   Procesos <unix/procesos.rst>
+
+   Administración de software <unix/administracion_software.rst>
+
+   Introducción a Python <python/introduccion.rst>
+
+   Cadenas de texto <python/cadenas_de_texto.rst>
+
+   Listas <python/listas.rst>
+
+   Un primer programa <python/primer_programa.rst>
+
+   Control de flujo <python/control_de_flujo.rst>
+
+   Más estructuras de datos <python/estructuras_de_datos.rst>
+
+   Ejercicios de repaso <python/ejercicios_repaso.rst>
+
+   Funciones <python/funciones.rst>
+
+   Ficheros <python/ficheros.rst>
+
+   Generadores <python/generadores.rst>
+
+   Modulos <python/modulos.rst>
+   
+   Biopython <python/biopython.rst>
+
+   Python científico <python/scipy.rst>
+
+   pandas <python/pandas.rst>
+   
+   Ejercicios finales <ejercicios_finales.rst>
+
+Licencia
+========
+
+Este curso ha sido escrito por Jose Blanca de la Universidad Politécnica de Valencia.
+Esta obra está bajo una licencia Attribution 3.0 Unported de Creative Commons. Para ver una copia de esta licencia, visite `http://creativecommons.org/licenses/by/3.0/ <http://creativecommons.org/licenses/by/3.0/>`_ o envie una carta a Creative Commons, 171 Second Street, Suite 300, San Francisco, California 94105, USA.
+
+
+..  Lo que falta por hacer
+  ======================
+  File formats (1h)
+    text and binary files, csv, xml, html
+  Classes and objects (1 h)
+    What's a class? What's a method? str, dict, list. Special methods.
+  Modules and the std library (2 h)
+   What's a module? Which are the main std modules? How to install a new module? os, os.path, subprocess.
+  Biopython, Numpy (2 h)
+  Advanced programing tools (1 h)
+    virtualenv, tests, text editors (vim, emacs), version controls (svn, git), diff.
+ Practical session (7 h)
+  Build a program using the tools learned.
+ Course evaluation (1 h)
+  Lesson structure
+  ================
+  Introduction
+  Objectives
+  Main explanation
+  The meat of the matter
+  Prctice
+   with worked examples
+  Advanced topics
+   where to go from here
+  Bibliography
+   some texts to read
+  Other courses
+  -------------
+  http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2010/
+
+.. Índices y tablas
+  ==================
+
+.. * :ref:`genindex`
+  * :ref:`modindex`
+  * :ref:`search`
+

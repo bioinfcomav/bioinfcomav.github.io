@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="manual_alignment_reads.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2"
+     inkscape:cx="201.60864"
+     inkscape:cy="947.86719"
+     inkscape:document-units="px"
+     inkscape:current-layer="g3750"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1024"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3774"
+       transform="translate(270.14067,-365.38694)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-8"
+         d="m 79.075265,577.99346 0,3.88693 -77.8626714,0 0,9.95165 77.8626714,0 0,3.88693 12.653201,-4.43138 12.646304,-4.43138 -12.646304,-4.43137 -12.653201,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-9"
+         y="589.82495"
+         x="2.3839564"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="589.82495"
+           x="2.3839564"
+           id="tspan3760-4"
+           sodipodi:role="line"><tspan
+   id="tspan3868-6"
+   style="fill:#d45500">0000</tspan>1111111111<tspan
+   id="tspan3762-2"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#800000;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">22222</tspan></tspan></text>
+    </g>
+    <g
+       id="g3806"
+       transform="translate(-34.758953,-450.81398)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-0-7"
+         d="m 146.41553,596.73449 0,3.88693 -77.862664,0 0,9.95164 77.862664,0 0,3.88694 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-4-1"
+         y="608.56598"
+         x="69.724228"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="608.56598"
+           x="69.724228"
+           id="tspan3760-5-1"
+           sodipodi:role="line"><tspan
+   id="tspan3791-2"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#800000;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">22222</tspan>AAAAAAAAA<tspan
+   id="tspan3793-3"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#008000;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">TTTTT</tspan></tspan></text>
+    </g>
+    <g
+       id="g3798"
+       transform="translate(17.270728,-436.22098)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-0-5-98"
+         d="m 213.16553,615.48449 0,3.88693 -77.86267,0 0,9.95164 77.86267,0 0,3.88694 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-4-6-3"
+         y="627.31598"
+         x="136.47423"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="627.31598"
+           x="136.47423"
+           id="tspan3760-5-2-8"
+           sodipodi:role="line"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#008000;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+             id="tspan3829-5">TTTTT</tspan><tspan
+             id="tspan3791-7-7"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#800000;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">DDDDDDDDDDD</tspan><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#0000ff;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+             id="tspan3831-3">EE</tspan></tspan></text>
+    </g>
+    <g
+       id="g3255-9"
+       transform="translate(-197.94736,-68.20181)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-0-5-9-1"
+         d="m 309.60394,180.77931 0,3.88693 -77.86267,0 0,9.95164 77.86267,0 0,3.88694 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-4-6-9-7"
+         y="192.61082"
+         x="232.91264"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#0000ff;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="192.61082"
+           x="232.91264"
+           id="tspan3760-5-2-0-4"
+           sodipodi:role="line">E<tspan
+   style="fill:#ff8080"
+   id="tspan3132">????????????</tspan><tspan
+   id="tspan3872-6"
+   style="fill:#ffcc00">JJJJJJ</tspan></tspan></text>
+    </g>
+    <g
+       id="g3789"
+       transform="translate(-102.25896,-359.94195)">
+      <g
+         transform="translate(-14.116044,521.23506)"
+         id="g3262-3">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 228.03158,117.99943 0,3.88693 -77.86267,0 0,9.95164 77.86267,0 0,3.88694 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43138 -12.6532,-4.43137 z"
+           id="rect2985-0-5-5-7"
+           inkscape:connector-curvature="0" />
+        <text
+           xml:space="preserve"
+           style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="151.34027"
+           y="129.83093"
+           id="text3758-4-6-7-8"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3760-5-2-1-7"
+             x="151.34027"
+             y="129.83093"
+             style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"><tspan
+               id="tspan3829-7-5"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#008000;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">TTTTT</tspan><tspan
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#800000;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+               id="tspan3791-7-2-8">DDDDDDDDDDD</tspan><tspan
+               id="tspan3831-9-0"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#0000ff;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">EE</tspan></tspan></text>
+      </g>
+    </g>
+    <g
+       id="g3827"
+       transform="translate(17.770728,-454.65699)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-0-5-3-96"
+         d="m 212.66553,567.23449 0,3.88693 -77.86267,0 0,9.95164 77.86267,0 0,3.88694 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43138 -12.6532,-4.43137 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-4-6-4-9"
+         y="579.06598"
+         x="135.97423"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="579.06598"
+           x="135.97423"
+           id="tspan3760-5-2-2-5"
+           sodipodi:role="line"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#008000;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+             id="tspan3829-8-4">TTTTT</tspan><tspan
+             id="tspan3791-7-5-4"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#800000;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">DDDDDDDDDDD<tspan
+   id="tspan4453-5"
+   style="fill:#00ff00">PP</tspan></tspan></tspan></text>
+    </g>
+    <g
+       id="g3835"
+       transform="translate(-99.50895,-290.53496)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-0-5-6-5"
+         d="m 211.16553,536.48449 0,3.88693 -77.86267,0 0,9.95164 77.86267,0 0,3.88694 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43138 -12.6532,-4.43137 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-4-6-6-7"
+         y="548.31598"
+         x="134.47423"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="548.31598"
+           x="134.47423"
+           id="tspan3760-5-2-11-7"
+           sodipodi:role="line"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#008000;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+             id="tspan3829-3-0">TTTTT</tspan><tspan
+             id="tspan3791-7-8-6"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#800000;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">DDDDDDDDDDD<tspan
+   id="tspan4457-7"
+   style="fill:#d40000">QQ</tspan></tspan></tspan></text>
+    </g>
+    <g
+       id="g3813"
+       transform="translate(59.800406,-338.78496)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-0-5-3-9-6"
+         d="m 289.41553,584.73449 0,3.88693 -77.86267,0 0,9.95164 77.86267,0 0,3.88694 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43138 -12.6532,-4.43137 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-4-6-4-7-7"
+         y="596.56598"
+         x="212.72423"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#00ff00;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="596.56598"
+           x="212.72423"
+           id="tspan3760-5-2-2-2-3"
+           sodipodi:role="line">PP<tspan
+   id="tspan4492-3"
+   style="fill:#2a2aff">RRRRRRRRRRRR</tspan><tspan
+   id="tspan4494-2"
+   style="fill:#6f6f91">SSSSS</tspan></tspan></text>
+    </g>
+    <g
+       id="g3820"
+       transform="translate(-178.75895,-472)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-0-5-6-9-4"
+         d="m 290.41553,551.23449 0,3.88693 -77.86267,0 0,9.95164 77.86267,0 0,3.88694 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43138 -12.6532,-4.43137 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-4-6-6-9-4"
+         y="563.06598"
+         x="213.72423"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#d40000;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="563.06598"
+           x="213.72423"
+           id="tspan3760-5-2-11-2-0"
+           sodipodi:role="line">QQQQ<tspan
+   id="tspan4561-1"
+   style="fill:#373e48">XXXXXXXXXXX</tspan><tspan
+   id="tspan4563-7"
+   style="fill:#ab37c8">ZZZ</tspan></tspan></text>
+    </g>
+    <g
+       id="g3766"
+       transform="translate(-169.56564,-478.04693)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-7-3"
+         d="m 518.78158,590.62443 0,3.88693 -77.86267,0 0,9.95165 77.86267,0 0,3.88693 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-2-8"
+         y="602.45593"
+         x="442.09027"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="602.45593"
+           x="442.09027"
+           id="tspan3760-1-43"
+           sodipodi:role="line"><tspan
+             style="fill:#44aa00"
+             id="tspan3910-4">666</tspan><tspan
+             style="fill:#6f916f"
+             id="tspan3912-3">HHHHHHHHHH</tspan><tspan
+             id="tspan3868-8-6"
+             style="fill:#37c8ab">GGGGG</tspan></tspan></text>
+    </g>
+    <g
+       id="g3758"
+       transform="translate(-470.125,-430.61092)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-7-4-7"
+         d="m 581.78158,609.87443 0,3.88693 -77.86267,0 0,9.95165 77.86267,0 0,3.88693 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-2-2-8"
+         y="621.70593"
+         x="505.09027"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="621.70593"
+           x="505.09027"
+           id="tspan3760-1-4-2"
+           sodipodi:role="line"><tspan
+             id="tspan3868-8-8-3"
+             style="fill:#37c8ab">GGGGG</tspan><tspan
+             style="fill:#892ca0"
+             id="tspan3953-8">UUUUUUUUUU</tspan><tspan
+             style="fill:#d40055"
+             id="tspan3951-3">5555</tspan></tspan></text>
+    </g>
+    <g
+       id="g3750"
+       transform="translate(-169.31564,-553.63994)">
+      <g
+         id="g3134">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 518.53158,632.87443 0,3.88693 -77.86267,0 0,9.95165 77.86267,0 0,3.88693 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+           id="rect2985-7-9-2"
+           inkscape:connector-curvature="0" />
+        <text
+           xml:space="preserve"
+           style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="441.84027"
+           y="644.70593"
+           id="text3758-2-0-8"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3760-1-49-9"
+             x="441.84027"
+             y="644.70593"
+             style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"><tspan
+               id="tspan3910-2-8"
+               style="fill:#44aa00">666</tspan><tspan
+               id="tspan3994-9"
+               style="fill:#916f7c">ÑÑÑÑÑÑÑÑÑÑ</tspan><tspan
+               id="tspan3992-5"
+               style="fill:#280b22">ÇÇÇÇ</tspan></tspan></text>
+      </g>
+    </g>
+    <g
+       id="g3742"
+       transform="translate(-234.81564,-474.11092)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-7-9-7-1"
+         d="m 584.03158,653.37443 0,3.88693 -77.86267,0 0,9.95165 77.86267,0 0,3.88693 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-2-0-1-7"
+         y="665.20593"
+         x="507.34027"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="665.20593"
+           x="507.34027"
+           id="tspan3760-1-49-8-0"
+           sodipodi:role="line"><tspan
+             style="fill:#280b22"
+             id="tspan3992-3-3">ÇÇÇÇ</tspan><tspan
+             style="fill:#0000ff"
+             id="tspan4035-4">HHHHHHHHHH</tspan><tspan
+             style="fill:#6f8a91"
+             id="tspan4033-7">IIII</tspan></tspan></text>
+    </g>
+    <g
+       id="g3734"
+       transform="translate(-288.59532,-432.1749)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-7-9-6-3"
+         d="m 519.03158,678.12443 0,3.88693 -77.86267,0 0,9.95165 77.86267,0 0,3.88693 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-2-0-0-4"
+         y="689.95593"
+         x="442.34027"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="689.95593"
+           x="442.34027"
+           id="tspan3760-1-49-2-8"
+           sodipodi:role="line"><tspan
+             style="fill:#44aa00"
+             id="tspan3910-2-2-9">666</tspan><tspan
+             style="fill:#0066ff"
+             id="tspan4076-2">VVVVVVVVVV&gt;&gt;&gt;&gt;&gt;</tspan></tspan></text>
+    </g>
+    <g
+       id="g3726"
+       transform="translate(-289.34532,-627.13994)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-7-9-6-0-3"
+         d="m 519.78158,706.37443 0,3.88693 -77.86267,0 0,9.95165 77.86267,0 0,3.88693 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-2-0-0-9-1"
+         y="718.20593"
+         x="443.09027"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="718.20593"
+           x="443.09027"
+           id="tspan3760-1-49-2-9-3"
+           sodipodi:role="line"><tspan
+             style="fill:#44aa00"
+             id="tspan3910-2-2-5-6">666</tspan><tspan
+             style="fill:#217821"
+             id="tspan4117-7">7777777777</tspan><tspan
+             style="fill:#6c5367"
+             id="tspan4115-8">88888</tspan></tspan></text>
+    </g>
+    <g
+       id="g3718"
+       transform="translate(140.77968,-452.95689)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-7-8-2"
+         d="m 89.65658,732.24943 0,3.88693 -77.86267,0 0,9.95165 77.86267,0 0,3.88693 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-2-20-3"
+         y="744.08093"
+         x="12.965271"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="744.08093"
+           x="12.965271"
+           id="tspan3760-1-2-53"
+           sodipodi:role="line"><tspan
+             style="fill:#44aa00"
+             id="tspan3910-0-1">BBBB</tspan><tspan
+             style="fill:#53536c"
+             id="tspan4158-4">CCCCCCCCCC</tspan><tspan
+             style="fill:#800033"
+             id="tspan4156-83">FFFFF</tspan></tspan></text>
+    </g>
+    <g
+       id="g3710"
+       transform="translate(190.80936,-606.82892)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-7-8-5-1"
+         d="m 158.40658,752.74943 0,3.88693 -77.86267,0 0,9.95165 77.86267,0 0,3.88693 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-2-20-0-1"
+         y="764.58093"
+         x="81.715271"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="764.58093"
+           x="81.715271"
+           id="tspan3760-1-2-5-8"
+           sodipodi:role="line"><tspan
+             style="fill:#800033"
+             id="tspan4156-8-58">FFFFF</tspan><tspan
+             style="fill:#0055d4"
+             id="tspan4199-1">JJJJJJJJ</tspan><tspan
+             style="fill:#892ca0"
+             id="tspan4197-2">KKKKK</tspan></tspan></text>
+    </g>
+    <g
+       id="g3702"
+       transform="translate(259.18436,-502.70689)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-7-8-6-7"
+         d="m 90.03158,781.99943 0,3.88693 -77.86267,0 0,9.95165 77.86267,0 0,3.88693 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-2-20-7-1"
+         y="793.83093"
+         x="13.340271"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="793.83093"
+           x="13.340271"
+           id="tspan3760-1-2-2-4"
+           sodipodi:role="line"><tspan
+             style="fill:#44aa00"
+             id="tspan3910-0-4-5">BBBB</tspan><tspan
+             style="fill:#53536c"
+             id="tspan4158-9-6">CCCCCCCCCC</tspan><tspan
+             style="fill:#800033"
+             id="tspan4156-4-7">FFFFF</tspan></tspan></text>
+    </g>
+    <g
+       id="g3687"
+       transform="translate(71.654678,-589.89291)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-7-8-5-8-0"
+         d="m 158.78158,802.49943 0,3.88693 -77.86267,0 0,9.95165 77.86267,0 0,3.88693 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-2-20-0-9-2"
+         y="814.33093"
+         x="82.090271"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="814.33093"
+           x="82.090271"
+           id="tspan3760-1-2-5-2-7"
+           sodipodi:role="line"><tspan
+             style="fill:#800033"
+             id="tspan4156-8-5-9">FFFF</tspan><tspan
+             style="fill:#ff2a7f"
+             id="tspan4258-8">LLLLLLLLL</tspan><tspan
+             style="fill:#5555ff"
+             id="tspan4256-4">MMMMM</tspan></tspan></text>
+    </g>
+    <g
+       id="g3695"
+       transform="translate(7.529678,-626.32892)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-7-8-5-9-5"
+         d="m 222.90658,772.24943 0,3.88693 -77.86267,0 0,9.95165 77.86267,0 0,3.88693 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-2-20-0-6-6"
+         y="784.08093"
+         x="146.21527"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="784.08093"
+           x="146.21527"
+           id="tspan3760-1-2-5-3-6"
+           sodipodi:role="line"><tspan
+             style="fill:#892ca0"
+             id="tspan4197-0-2">KKKKK</tspan><tspan
+             style="fill:#00ffcc"
+             id="tspan4314-8">NNNNNNNNNNNNN</tspan></tspan></text>
+    </g>
+    <g
+       id="g3680"
+       transform="translate(-110,-608.14291)">
+      <path
+         inkscape:connector-curvature="0"
+         id="rect2985-7-8-5-8-6-9"
+         d="m 221.65658,820.74943 0,3.88693 -77.86267,0 0,9.95165 77.86267,0 0,3.88693 12.6532,-4.43138 12.64631,-4.43138 -12.64631,-4.43137 -12.6532,-4.43138 z"
+         style="fill:none;stroke:#000000;stroke-width:0.61749822;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3758-2-20-0-9-5-7"
+         y="832.58093"
+         x="144.96527"
+         style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="832.58093"
+           x="144.96527"
+           id="tspan3760-1-2-5-2-4-4"
+           sodipodi:role="line"><tspan
+             style="fill:#5555ff"
+             id="tspan4256-7-3">MMMMM</tspan><tspan
+             style="fill:#88aa00"
+             id="tspan4351-3">OOOOOOOOOOOOO</tspan></tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="37.163086"
+       y="51.994019"
+       id="text4567-8-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4569-4-6"
+         x="37.163086"
+         y="51.994019"
+         style="font-size:28px">reads</tspan></text>
+  </g>
+</svg>

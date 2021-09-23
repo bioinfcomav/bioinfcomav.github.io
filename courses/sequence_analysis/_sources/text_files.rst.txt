@@ -1,0 +1,105 @@
+Dealing with big result files
+=============================
+
+In a lot of genomic analyses our troubles are not over once we get the results.
+Usually these results consists of huge text files.
+For instance a file with all SNPs found between to plant varieties or with all SNPs found in a particular human individual would be a vcf file with thousands of lines.
+The Unix-like operating systems offer a set of tools prepared to deal with those files.
+We can open the file, search in it, merge it, etc.
+In these practice several of these tools are used to extract interesting genomic information from some results.
+
+Before trying to do the practice be sure to take a good look at the `text files <https://bioinf.comav.upv.es/courses/unix/procesamiento_texto.html>`_ section of the Unix course.
+
+Practical task: Dealing with text files
+---------------------------------------
+
+Somebody has analyzed the cucurbita transcriptome for us and has send us the :download:`result <downloads/cucurbita.tar.gz>`.
+These results include two files, a binary spreadsheet file with the functional annotation of the genes and a VCF file with the SNPs found in them.
+
+We are asked to extract the following information from those results:
+
+1. The list of all SNPs (not INDELs) located in genes related to transcription processes
+#. The list of transcription related SNPs that can be detected by low cost restriction enzymes
+#. The number of transcription related SNPs that can be detected by EcoRI
+
+Notes:
+
+- Remember that the Unix tools to deal with text files that we have seen cannot be used with binary files
+- The VCF file holds information about several analysis done on the SNPs. This information is explained in the header section of the file. For instance, in the cucurbita.vcf file there is information about which SNPs are really SNPs (filter VKS), and about which genes are detectable by restriction enzymes among other information.
+
+Steps:
+
+- Find out which are the genes related to transcription
+- Extract the list of SNPs (not INDELs) located on those genes
+- Filter that list to find out which ones can be detected by low cost restriction enzymes
+- Extract those SNPs that can be detected by EcoRI
+
+
+Practical task: Dealing with text files
+---------------------------------------
+
+1 Convert the binary spreadsheet file to a csv text format by using OpenOffice.
+
+2 Find the list of "transcription" related genes. How many genes are?
+
+We could do::
+
+  $ grep transcription  blast_hits.csv  | wc
+       622   10945  112640
+
+But it would be better to ignore the case::
+
+  $ grep -i transcription blast_hits.csv  | wc
+      684   12281  125171
+
+It would be even better to look for a GO term, but we would have to consider the hierarchy and for that we would have to use a specialized tool.
+
+To save just the names of the genes:
+
+::
+
+  $ grep -i transcription blast_hits.csv  | cut -f 1 -d, > transcription_genes.txt
+
+Another possibility would be::
+
+  $ grep -i transcription blast_hits.csv  | cut -c 1-10 > transcription_genes.txt
+
+
+3 Look for SNPs (not INDELS) in the transcription related genes.
+
+We could do this search gene by gene. We would have to search for each gene of the list obtained in the previous step in the VCF. For example:
+::
+
+  $ grep CUTC005474 cucurbita.vcf
+  CUTC005474      211     .       T       G       49
+  CUTC005474      642     .       R       A,G     115
+  CUTC005474      755     .       Y       C,T     116
+  CUTC005474      782     .       C       A       59
+
+However it would be easier if we look for those SNPs directly using the list from the previous exercise.
+
+::
+
+  $ grep -f transcription_genes.txt cucurbita.vcf
+
+
+We need to filter the SNPs to get those that are really SNPs (they are not INDELs): in the VCF header we can read that the filter VKS marks those SNPs that are not SNPs.
+
+::
+
+  $  grep -f transcription_genes.txt cucurbita.vcf | grep -v VKS > snps.txt
+
+
+4 Which transcription related SNPs are testable in the laboratory by using low cost restriction enzyme?
+
+We would have to look in the VCF header if there is any filter marking those SNPs that are detectable by restriction enzymes.
+
+::
+
+  $ grep -f transcription_genes.txt cucurbita.vcf | grep -v VKS | grep -v CEF > CAP_snps.txt
+
+5 Which transcription related SNPs are testable in the laboratory by using EcoRI?
+
+::
+
+  $ grep -f transcription_genes.txt cucurbita.vcf | grep -v VKS | grep EcoRI > EcoRI_snps.txt

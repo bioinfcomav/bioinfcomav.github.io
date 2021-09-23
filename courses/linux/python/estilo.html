@@ -1,0 +1,267 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PEP 8 - La guía de estilo para Python &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul>
+<li class="toctree-l1"><a class="reference internal" href="../presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Iniciación a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html#el-sistema-de-ficheros">El sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_de_flujo.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html#sets">Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ficheros.html">Ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generadores.html">Generadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulos.html">Modulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biopython.html">Biopython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html">Ejercicios finales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html#soluciones">Soluciones</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="pep-8-la-guia-de-estilo-para-python">
+<h1>PEP 8 - La guía de estilo para Python<a class="headerlink" href="#pep-8-la-guia-de-estilo-para-python" title="Permalink to this headline">¶</a></h1>
+<p>La comunidad de usuarios de Python ha adoptado una guía de estilo que facilita la lectura del código y la consistencia entre programas de distintos usuarios.
+Esta guía no es de seguimiento obligatorio, pero es altamente recomendable.
+El documento completo se denomina <a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">PEP 8</a>.
+En este resumen vamos a ver algunas de las recomendaciones relativas a las materias que hemos visto en este curso.</p>
+<section id="indentacion">
+<h2>Indentación<a class="headerlink" href="#indentacion" title="Permalink to this headline">¶</a></h2>
+<p>Utilizar siempre 4 espacios y nunca mezclar tabuladores y espacios.</p>
+<p>Si se continua una línea hay dos opciones aceptables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Si</span><span class="p">:</span> <span class="c1"># opcion 1</span>
+    <span class="n">foo</span> <span class="o">=</span> <span class="n">funcion_que_crea_bar</span><span class="p">(</span><span class="n">variable_1</span><span class="p">,</span> <span class="n">variable2</span>
+                               <span class="n">variable_3</span><span class="p">)</span>
+    <span class="c1"># opcion 2</span>
+    <span class="n">foo</span> <span class="o">=</span> <span class="n">funcion_que_crea_bar</span><span class="p">(</span>
+                  <span class="n">variable_1</span><span class="p">,</span> <span class="n">variable2</span>
+                  <span class="n">variable_3</span><span class="p">)</span>
+<span class="n">No</span><span class="p">:</span>
+    <span class="n">foo</span> <span class="o">=</span> <span class="n">funcion_que_crea_bar</span><span class="p">(</span><span class="n">variable_1</span><span class="p">,</span> <span class="n">variable2</span>
+                  <span class="n">variable_3</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="tamano-maximo-de-linea">
+<h2>Tamaño máximo de línea<a class="headerlink" href="#tamano-maximo-de-linea" title="Permalink to this headline">¶</a></h2>
+<p>Las líneas deben limitarse a un máximo de 79 caracteres.</p>
+</section>
+<section id="lineas-en-blanco">
+<h2>Líneas en blanco<a class="headerlink" href="#lineas-en-blanco" title="Permalink to this headline">¶</a></h2>
+<p>Separar las definiciones de las clases y funciones con dos líneas en blanco.
+Los métodos dentro de clases se separan con una línea en blanco.
+Se recomienda utilizar líneas en blanco para separar partes del código, por ejemplo dentro de una función, que realizan tareas diferenciadas.</p>
+</section>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+<p>Los imports de distintos módulos deben estar en líneas diferentes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Si</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">No</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+</pre></div>
+</div>
+<p>Sí se pueden poner en una línea los elementos que se importan de un mismo módulo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
+</pre></div>
+</div>
+<p>Los imports deben ponerse siempre al principio del fichero, justo después de los comentarios y de la documentación y antes de la definición de las variables globales y las constantes.</p>
+<p>Los imports deben agruparse en el siguiente orden:</p>
+<blockquote>
+<div><p>1. standard library.
+1. 3rd party libraries.
+1. local application.</p>
+</div></blockquote>
+<p>Cada grupo de imports debe estar separado por una línea en blanco.</p>
+</section>
+<section id="espacios-en-blanco-en-expresiones">
+<h2>Espacios en blanco en expresiones<a class="headerlink" href="#espacios-en-blanco-en-expresiones" title="Permalink to this headline">¶</a></h2>
+<p>Evitar espacios en blanco extra en:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Dentro de paréntesis.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">spam</span><span class="p">(</span><span class="n">ham</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">{</span><span class="n">eggs</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="n">No</span><span class="p">:</span>  <span class="n">spam</span><span class="p">(</span> <span class="n">ham</span><span class="p">[</span> <span class="mi">1</span> <span class="p">],</span> <span class="p">{</span> <span class="n">eggs</span><span class="p">:</span> <span class="mi">2</span> <span class="p">})</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Después de una coma.</p></li>
+</ul>
+<dl class="simple">
+<dt>::</dt><dd><p>Yes: if x == 4: print x, y; x, y = y, x
+No:  if x == 4 : print x , y ; x , y = y , x</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Antes del paréntesis de una llamada a una función.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">spam</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">No</span><span class="p">:</span>  <span class="n">spam</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Antes del paréntesis de un índice.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+<span class="n">No</span><span class="p">:</span>  <span class="nb">dict</span> <span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span> <span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Always surround these binary operators with a single space on
+either side: assignment (=), augmented assignment (+=, -= etc.),
+comparisons (==, &lt;, &gt;, !=, &lt;&gt;, &lt;=, &gt;=, in, not in, is, is not),
+Booleans (and, or, not).</p></li>
+<li><p>Use spaces around arithmetic operators:</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">submitted</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">hypot2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="n">No</span><span class="p">:</span>
+
+    <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">submitted</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">hypot2</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="el-zen-de-python">
+<h1>El zen de Python<a class="headerlink" href="#el-zen-de-python" title="Permalink to this headline">¶</a></h1>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+
+                <a class="index" href="/courses/linux/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

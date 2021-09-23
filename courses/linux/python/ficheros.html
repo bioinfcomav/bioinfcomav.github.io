@@ -1,0 +1,450 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Leyendo y escribiendo ficheros &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Generadores" href="generadores.html" />
+    <link rel="prev" title="Funciones" href="funciones.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Iniciación a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html#el-sistema-de-ficheros">El sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_de_flujo.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html#sets">Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones.html">Funciones</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ficheros</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soluciones">Soluciones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="generadores.html">Generadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulos.html">Modulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biopython.html">Biopython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html">Ejercicios finales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html#soluciones">Soluciones</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="leyendo-y-escribiendo-ficheros">
+<h1>Leyendo y escribiendo ficheros<a class="headerlink" href="#leyendo-y-escribiendo-ficheros" title="Permalink to this headline">¶</a></h1>
+<p>En numerosas ocasiones hemos utilizado <em>open</em> para abrir un fichero y leer de él:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ruta/del/fichero&#39;</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="n">linea</span>
+</pre></div>
+</div>
+<p>Usándolo de este modo el fichero de texto se ha comportado como una lista, en realidad iterador, de líneas, pero <em>open</em> en realidad puede utilizarse no sólo para leer sino también para escribir y lo que devuelve es un objeto que además de comportarse como un iterador de líneas tiene otros métodos que exponen funcionalidades adicionales.
+Por lo tanto con <em>open</em> además de abrir ficheros de texto para leer, se pueden para abrir ficheros para escribir y para abrir ficheros binarios.
+El modo en el que deseamos abrir el fichero se especifica en el segundo argumento de <em>open</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/ruta/del/fichero&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Este segundo argumento es opcional, si no se lo damos su valor por defecto será ‘r’.
+‘r’ implica que el fichero se abrirá para leer en él y que se trata de un fichero de texto.
+Si lo que deseamos es abrir el fichero para escribir en él debemos utilizar el modo ‘w’.
+Al abrir un fichero con modo ‘w’ si el fichero no existe se crea y si ya existiese se borraría.
+Para poder añadir contenidos al final de un fichero existente hemos de utilizar el modo ‘a’ (<em>append</em>).
+Si quisiésemos abrir un fichero binario deberíamos añadir al modo utilizado la letra ‘b’.</p>
+<p><em>open</em> crea un objeto <em>file</em>.
+Este objeto tiene una serie de funciones que exponen su funcionalidad asociada, como leer una línea, leer el contenido completo o escribir un texto en el fichero.
+Lo más habitual es que queramos leer los ficheros línea por línea, para esto se puede utilizar el método <em>next</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;seq.fasta&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="go">&#39;&gt;seq&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="go">&#39;CGATCTGATCGTTTGTGCAATCTATGCTGATCGTAGCTATG&#39;</span>
+</pre></div>
+</div>
+<p><em>for</em> utiliza este método de forma implícita para leer el fichero línea por línea.
+Normalmente no necesitamos más que esta forma de acceder al contenido del fichero, pero si quisiésemos leer el fichero completo de golpe podríamos utilizar el método <em>read</em>.
+Con este método conseguiríamos todo el contenido del fichero de una sola vez.
+Asimismo, este método <em>read</em> se puede utilizar para leer unos cuantos bytes.
+<em>read</em> no tendrá en cuenta las líneas, si necesitamos leer todas las líneas de golpe podemos utilizar <em>readlines</em>.
+<em>readlines</em> nos devolverá una lista de <em>strs</em> con un elemento por línea.</p>
+<p>Si hemos abierto el fichero para escribir en él tendremos disponible el método <em>write</em>.
+<em>write</em> acepta cadenas de texto y las escribe en el fichero.
+A diferencia de <em>print</em>, <em>write</em> no añade retornos de carro después de las cadenas de texto por lo que seremos nosotros quienes se las proporcionemos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;seq.fasta&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&gt;seq</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;CGATCATGCTAGTCGTATGCTATGCTATTGCATG&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;ACATCGATGTCTATGTTTGTGTTGAGGAGCTATG</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>write</em> sólo acepta cadenas de texto, para escribir números primero debemos convertirlos en cadenas de texto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;La respuesta es &#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Una vez que hemos terminado de escribir en el fichero es recomendable ejecutar el método <em>close</em>.
+Esto escribirá cualquier texto pendiente en el fichero y lo cerrará, sin que podamos volver a escribir en él utilizando el actual objeto <em>file</em>.</p>
+<p>El método <em>write</em> es el modo más utilizado no sólo de escribir en los archivos sino también de imprimir texto en el <em>standard output</em>.
+Hasta el momento hemos hecho uso de <em>print</em>, pero si vamos a utilizar Python seriamente es recomendable dejar de utilizarlo.
+Para poder escribir en el <em>standard ouput</em> utilizando <em>write</em> necesitamos un objeto <em>file</em> que lo represente.
+En el módulo <em>sys</em> existe un objeto de tipo <em>file</em> llamado <em>stdout</em> que podemos utilizar para estos menesteres:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdout</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hola</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="go">Hola</span>
+</pre></div>
+</div>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Escribir en un fichero llamado <em>secuencias.fasta</em> la siguiente secuencia:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">seq1</span>
+<span class="n">ACTG</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Añadir al fichero anterior la secuencia:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">seq2</span>
+<span class="n">GATA</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Escribir los números del 1 al 100 en un fichero.</p></li>
+<li><p>Escribir en un fichero separado por tabuladores la información de un paciente que tenemos disponible en el siguiente diccionario:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">paciente</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;Daniel&#39;</span><span class="p">,</span> <span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span> <span class="s1">&#39;Diabetico&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Dado el siguiente fichero con información sobre pacientes:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nombre</span> <span class="n">edad</span> <span class="n">Diabetico</span>
+<span class="n">Daniel</span> <span class="mi">42</span> <span class="n">Si</span>
+<span class="n">Jose</span> <span class="mi">15</span> <span class="n">Si</span>
+<span class="n">Manolo</span> <span class="mi">50</span> <span class="n">No</span>
+<span class="n">Alicia</span> <span class="mi">12</span> <span class="n">No</span>
+</pre></div>
+</div>
+<p>Imprimir en un nuevo fichero los pacientes que tienen más de 20 años y no son diabéticos.</p>
+<p>Pista: La estructura del programa puede ser:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#leemos los pacientes a una lista de diccionarios</span>
+<span class="n">pacientes</span> <span class="o">=</span> <span class="n">leer_fichero_pacientes</span><span class="p">(</span><span class="s1">&#39;pacientes.txt&#39;</span><span class="p">)</span>
+<span class="n">filtrar_pacientes</span><span class="p">(</span><span class="n">pacientes</span><span class="p">)</span>
+<span class="n">escribir_fichero_pacientes</span><span class="p">(</span><span class="n">pacientes</span><span class="p">,</span> <span class="s1">&#39;pacientes_filtrados.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">paciente</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;Daniel&#39;</span><span class="p">,</span> <span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span> <span class="s1">&#39;Diabetico&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Pista. Podemos añadir todo lo que queramos escribir a una lista de cadenas de texto y después utilizar el método <em>join</em> de la cadena ‘\t’.</p>
+</section>
+<section id="soluciones">
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Escribir en un fichero llamado <em>secuencias.fasta</em> la siguiente secuencia:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">seq1</span>
+<span class="n">ACTG</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&gt;seq1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;ACTG</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Añadir al fichero anterior la secuencia:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">seq2</span>
+<span class="n">GATA</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secuencias.fasta&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&gt;seq2</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;GATA</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Escribir los números del 1 al 100 en un fichero.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="n">fhand</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;numeros.txt&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+    <span class="n">fhand</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">numero</span><span class="p">))</span>
+    <span class="n">fhand</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">fhand</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Escribir en un fichero separado por tabuladores la información de un paciente que tenemos disponible en el siguiente diccionario:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">paciente</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;Daniel&#39;</span><span class="p">,</span> <span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span> <span class="s1">&#39;Diabetico&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Pista. Podemos añadir todo lo que queramos escribir a una lista de cadenas de texto y después utilizar el método <em>join</em> de la cadena ‘\t’.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pacientes.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">towrite</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">towrite</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;nombre&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">towrite</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">paciente</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">towrite</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;edad&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">towrite</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">paciente</span><span class="p">[</span><span class="s1">&#39;edad&#39;</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">towrite</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Diabetico&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">towrite</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">paciente</span><span class="p">[</span><span class="s1">&#39;Diabetico&#39;</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">towrite</span>
+<span class="go">[&#39;nombre&#39;, &#39;Daniel&#39;, &#39;edad&#39;, &#39;42&#39;, &#39;Diabetico&#39;, &#39;True&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">towrite</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fhand</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Dado el siguiente fichero con información sobre pacientes:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nombre</span> <span class="n">edad</span> <span class="n">Diabetico</span>
+<span class="n">Daniel</span> <span class="mi">42</span> <span class="n">Si</span>
+<span class="n">Jose</span> <span class="mi">15</span> <span class="n">Si</span>
+<span class="n">Manolo</span> <span class="mi">50</span> <span class="n">No</span>
+<span class="n">Alicia</span> <span class="mi">12</span> <span class="n">No</span>
+</pre></div>
+</div>
+<p>Imprimir en un nuevo fichero los pacientes que tienen más de 20 años y no son diabéticos.</p>
+<p>Pista: La estructura del programa puede ser:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#leemos los pacientes a una lista de diccionarios</span>
+<span class="n">pacientes</span> <span class="o">=</span> <span class="n">leer_fichero_pacientes</span><span class="p">(</span><span class="s1">&#39;pacientes.txt&#39;</span><span class="p">)</span>
+<span class="n">filtrar_pacientes</span><span class="p">(</span><span class="n">pacientes</span><span class="p">)</span>
+<span class="n">escribir_fichero_pacientes</span><span class="p">(</span><span class="n">pacientes</span><span class="p">,</span> <span class="s1">&#39;pacientes_filtrados.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+
+<span class="k">def</span> <span class="nf">leer_fichero_pacientes</span><span class="p">(</span><span class="n">entrada</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Lee el fichero de pacientes</span>
+
+<span class="sd">    Debe ser un fichero separado por espacios o tabuladores,</span>
+<span class="sd">    sin datos faltantes y con los campos: nombre, edad y diabetico.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">pacientes</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1">#una lista a la que anyadiremos los pacientes</span>
+
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">entrada</span><span class="p">):</span>
+        <span class="c1">#la primera linea se ignora porque es la cabecera</span>
+        <span class="k">if</span> <span class="s1">&#39;nombre&#39;</span> <span class="ow">in</span> <span class="n">linea</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="k">continue</span>
+
+        <span class="n">linea</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">nombre</span><span class="p">,</span> <span class="n">edad</span><span class="p">,</span> <span class="n">diabetico</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+        <span class="c1">#La edad es un enterio</span>
+        <span class="n">edad</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span>
+
+        <span class="c1">#la enfermedad la pasamos a bool</span>
+        <span class="k">if</span> <span class="n">diabetico</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;si&#39;</span><span class="p">:</span>
+            <span class="n">diabetico</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">diabetico</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="c1">#esto se podria escribir como</span>
+        <span class="c1">#diabetico = True if diabetico.lower() == &#39;si&#39; else False</span>
+
+        <span class="c1">#creamos un diccionario para cada paciente</span>
+        <span class="n">paciente</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="n">nombre</span><span class="p">,</span>
+                    <span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="n">edad</span><span class="p">,</span>
+                    <span class="s1">&#39;diabetico&#39;</span><span class="p">:</span> <span class="n">diabetico</span><span class="p">}</span>
+
+        <span class="c1">#anadimos el paciente a la lista de pacientes</span>
+        <span class="n">pacientes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">paciente</span><span class="p">)</span>
+
+    <span class="c1">#esta funcion devuelve a lista de pacientes completa</span>
+    <span class="k">return</span> <span class="n">pacientes</span>
+
+<span class="k">def</span> <span class="nf">filtrar_pacientes</span><span class="p">(</span><span class="n">pacientes</span><span class="p">,</span> <span class="n">min_edad</span><span class="p">,</span> <span class="n">diabetico</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Filtra los pacientes</span>
+
+<span class="sd">    Esta funcion requiere una lista de pacientes y devuelve</span>
+<span class="sd">    una lista nueva con los pacientes filtrados.</span>
+
+<span class="sd">    min_edad es la edad minima con la que se acepta un paciente</span>
+<span class="sd">    diabetico indica que clase de pacientes se acepta.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="c1">#creamos una lista para los pacientes que cumplen los</span>
+    <span class="c1">#requisitos</span>
+    <span class="n">pacientes_filtrados</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">paciente</span> <span class="ow">in</span> <span class="n">pacientes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">paciente</span><span class="p">[</span><span class="s1">&#39;edad&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min_edad</span> <span class="ow">or</span>
+                <span class="n">paciente</span><span class="p">[</span><span class="s1">&#39;diabetico&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">diabetico</span><span class="p">):</span>
+            <span class="n">pacientes_filtrados</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">paciente</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pacientes_filtrados</span>
+
+<span class="k">def</span> <span class="nf">formatear_paciente</span><span class="p">(</span><span class="n">paciente</span><span class="p">):</span>
+    <span class="s1">&#39;Dado un paciente devuelve la linea a imprimir&#39;</span>
+
+    <span class="n">linea</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1">#una lista con los str a imprimir</span>
+    <span class="n">linea</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">paciente</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">])</span>
+    <span class="n">linea</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">paciente</span><span class="p">[</span><span class="s1">&#39;edad&#39;</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="n">paciente</span><span class="p">[</span><span class="s1">&#39;diabetico&#39;</span><span class="p">]:</span>
+        <span class="n">linea</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Si&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">linea</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;No&#39;</span><span class="p">)</span>
+
+    <span class="n">linea</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+    <span class="n">linea</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+    <span class="k">return</span> <span class="n">linea</span>
+
+<span class="k">def</span> <span class="nf">escribir_fichero_pacientes</span><span class="p">(</span><span class="n">fichero</span><span class="p">,</span> <span class="n">pacientes</span><span class="p">):</span>
+    <span class="s1">&#39;Escribe el fichero de pacientes separado por espacios&#39;</span>
+
+    <span class="n">fhand</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fichero</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+    <span class="c1">#escribimos la cabecera</span>
+    <span class="n">fhand</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Nombre Edad Diabetico</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">paciente</span> <span class="ow">in</span> <span class="n">pacientes</span><span class="p">:</span>  <span class="c1">#recorremos todos los pacientes</span>
+        <span class="n">linea</span> <span class="o">=</span> <span class="n">formatear_paciente</span><span class="p">(</span><span class="n">paciente</span><span class="p">)</span>
+        <span class="n">fhand</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">escribe_pacientes_filtrados</span><span class="p">(</span><span class="n">entrada</span><span class="p">,</span> <span class="n">salida</span><span class="p">):</span>
+    <span class="s1">&#39;Filtra el fichero de entrada y escribe el de salida&#39;</span>
+
+    <span class="n">pacientes</span> <span class="o">=</span> <span class="n">leer_fichero_pacientes</span><span class="p">(</span><span class="n">entrada</span><span class="p">)</span>
+    <span class="n">pacientes</span> <span class="o">=</span> <span class="n">filtrar_pacientes</span><span class="p">(</span><span class="n">pacientes</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">escribir_fichero_pacientes</span><span class="p">(</span><span class="n">salida</span><span class="p">,</span> <span class="n">pacientes</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">escribe_pacientes_filtrados</span><span class="p">(</span><span class="s1">&#39;pacientes.txt&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;pacientes_filtrados.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="funciones.html">Funciones</a>-->
+                    <a class="prev" href="funciones.html" title="Funciones">previous</a>
+                    |
+                    <!--<a class="next" href="generadores.html">Generadores</a>-->
+                    <a class="next" href="generadores.html" title="Generadores">next</a>
+                    |
+
+                <a class="index" href="/courses/linux/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

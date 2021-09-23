@@ -1,0 +1,1051 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Ejercicios finales &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="prev" title="pandas" href="python/pandas.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/ubuntu.html">Iniciación a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/shell.html#el-sistema-de-ficheros">El sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/introduccion.html">Introducción a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/control_de_flujo.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/estructuras_de_datos.html#sets">Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/ficheros.html">Ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/generadores.html">Generadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/modulos.html">Modulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/biopython.html">Biopython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/pandas.html">pandas</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ejercicios finales</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios-linux">Ejercicios linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contar-genes-y-sondas">Contar genes y sondas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comparar-listas-de-genes">Comparar listas de genes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cambiar-nombres">Cambiar nombres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recortar-ficheros-fasta">Recortar ficheros fasta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extrayendo-una-lista-de-secuencias-de-un-fichero">Extrayendo una lista de secuencias de un fichero</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calcular-la-calidad-media-de-las-secuencias-en-un-fichero-fastq">Calcular la calidad media de las secuencias en un fichero fastq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contar-contigs-por-genoteca">Contar contigs por genoteca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#copiar-anotacion-go">Copiar anotación GO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enumerar-k-mers">Enumerar K-mers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#soluciones">Soluciones</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Ejercicios linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Contar genes y sondas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Comparar listas de genes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Cambiar nombres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">Recortar ficheros fasta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">Extrayendo una lista de secuencias de un fichero</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">Calcular la calidad media de las secuencias en un fichero fastq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contigs-por-genoteca">Contigs por genoteca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">Copiar anotación GO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">Enumerar K-mers</a></li>
+</ul>
+</li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="ejercicios-finales">
+<h1>Ejercicios finales<a class="headerlink" href="#ejercicios-finales" title="Permalink to this headline">¶</a></h1>
+<section id="ejercicios-linux">
+<h2>Ejercicios linux<a class="headerlink" href="#ejercicios-linux" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Seleccionar la linea 123 del fichero <a class="reference download internal" download="" href="_downloads/9bce0e4eba7e74591baab487df7ca394/microarray_adenoma_hk69.csv"><code class="xref download docutils literal notranslate"><span class="pre">microarray_adenoma_hk69.csv</span></code></a>.</p></li>
+<li><p>Usa el fichero con el formato <a class="reference external" href="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41">vcf</a>  <a class="reference download internal" download="" href="_downloads/77a1884c326c63564ea49e4fd13f7798/test.vcf"><code class="xref download docutils literal notranslate"><span class="pre">test.vcf</span></code></a> selecciona aquellos snps que han pasado todos los filtros. Selecciona tambien aquellos snps que no han pasado el filtro de calidad.</p></li>
+</ol>
+<p>3. Tenemos un nuevo <a class="reference download internal" download="" href="_downloads/0e13cf9a8f13dddf8f1a03d7d49bf3ed/test2.vcf"><code class="xref download docutils literal notranslate"><span class="pre">test2.vcf</span></code></a> que ha perdido la informacion de la cabecera.
+Sabemos que la cabecera del fichero <a class="reference download internal" download="" href="_downloads/77a1884c326c63564ea49e4fd13f7798/test.vcf"><code class="xref download docutils literal notranslate"><span class="pre">test.vcf</span></code></a> nos vale, añadir la cabecera de test.vcf al fichero test2.vcf creando un nuevo fichero.
+Pista: No se puede hacer con un solo comando.</p>
+<ol class="arabic simple" start="4">
+<li><p>A partir del fichero <a class="reference download internal" download="" href="_downloads/77a1884c326c63564ea49e4fd13f7798/test.vcf"><code class="xref download docutils literal notranslate"><span class="pre">test.vcf</span></code></a> crear un identificador para cada snv que una el chromosoma y la posición (chrom_pos). Hacer un listado de las ids.</p></li>
+</ol>
+<p>5. Tengo un fichero de <a class="reference download internal" download="" href="_downloads/65aa124ddd9eaa5acc1065a504cdcaeb/conf.txt"><code class="xref download docutils literal notranslate"><span class="pre">configuracion</span></code></a> para un programa que necesitamos.
+El fichero se configura con clave=valor.
+En él, hay claves que no tienen valor.
+El ejercicio consiste en mostrar el nombre de las claves que no tienen valor.</p>
+</section>
+<section id="contar-genes-y-sondas">
+<h2>Contar genes y sondas<a class="headerlink" href="#contar-genes-y-sondas" title="Permalink to this headline">¶</a></h2>
+<p>Hemos hecho un programa que cuenta genes y sondas, pero no lo hace bien, ¿podrías arreglarlo?</p>
+<p>El fichero de entrada es:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gen</span><span class="p">,</span><span class="n">sonda</span><span class="p">,</span><span class="n">expresion</span>
+<span class="n">gen1</span><span class="p">,</span><span class="n">sonda1</span><span class="p">,</span><span class="mf">1.4</span>
+<span class="n">gen1</span><span class="p">,</span><span class="n">sonda2</span><span class="p">,</span><span class="mf">1.5</span>
+<span class="n">gen2</span><span class="p">,</span><span class="n">sonda3</span><span class="p">,</span><span class="mf">1.1</span>
+<span class="n">gen3</span><span class="p">,</span><span class="n">sonda4</span><span class="p">,</span><span class="mf">0.7</span>
+</pre></div>
+</div>
+<p>El programa es:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">DictReader</span>
+
+
+<span class="k">def</span> <span class="nf">contar_sondas</span><span class="p">(</span><span class="n">fichero_in</span><span class="p">):</span>
+    <span class="n">genes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">sondas</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">DictReader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">fichero_in</span><span class="p">))</span>
+        <span class="n">genes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">linea</span><span class="p">[</span><span class="s1">&#39;gen&#39;</span><span class="p">])</span>
+        <span class="n">sondas</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">linea</span><span class="p">[</span><span class="s1">&#39;sonda&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">genes</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">sondas</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">ruta_fichero_in</span> <span class="o">=</span> <span class="s1">&#39;sondas.txt&#39;</span>
+    <span class="n">n_genes</span><span class="p">,</span> <span class="n">n_sondas</span> <span class="o">=</span> <span class="n">contar_sondas</span><span class="p">(</span><span class="n">ruta_fichero_in</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;Num. genes: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n_genes</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;Num. sondas: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n_sondas</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="comparar-listas-de-genes">
+<h2>Comparar listas de genes<a class="headerlink" href="#comparar-listas-de-genes" title="Permalink to this headline">¶</a></h2>
+<p>Queremos comparar dos listas de genes y obtener cuales son exclusivos en ambas listas y cuales compartidos.
+Las listas provienen de la primera columna de los siguientes ficheros:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gen1</span> <span class="mf">1.4</span> <span class="mf">1.5</span>
+<span class="n">gen2</span> <span class="mf">2.5</span>
+<span class="n">gen3</span> <span class="mf">1.7</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">,</span><span class="n">implicado</span>
+<span class="n">Gen2</span><span class="p">,</span><span class="n">si</span>
+<span class="n">Gen3</span><span class="p">,</span><span class="n">no</span>
+<span class="n">Gen4</span><span class="p">,</span><span class="n">si</span>
+</pre></div>
+</div>
+<p>Hemos escrito el siguiente programa, pero no funciona, ¿podrías arreglarlo?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">DictReader</span><span class="p">,</span> <span class="n">reader</span>
+
+<span class="k">def</span> <span class="nf">leer_genes1</span><span class="p">(</span><span class="n">ruta</span><span class="p">):</span>
+    <span class="n">genes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">ruta</span><span class="p">),</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">linea</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">genes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">linea</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">genes</span>
+
+
+<span class="k">def</span> <span class="nf">leer_genes2</span><span class="p">(</span><span class="n">ruta</span><span class="p">):</span>
+    <span class="n">genes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">DictReader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">ruta</span><span class="p">),</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">linea</span>
+            <span class="k">continue</span>
+        <span class="n">genes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">linea</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">genes</span>
+
+
+<span class="k">def</span> <span class="nf">comparar_genes</span><span class="p">(</span><span class="n">ruta_genes1</span><span class="p">,</span> <span class="n">ruta_genes2</span><span class="p">):</span>
+    <span class="n">genes1</span> <span class="o">=</span> <span class="n">leer_genes1</span><span class="p">(</span><span class="n">ruta_genes1</span><span class="p">)</span>
+    <span class="n">genes2</span> <span class="o">=</span> <span class="n">leer_genes2</span><span class="p">(</span><span class="n">ruta_genes2</span><span class="p">)</span>
+    <span class="n">exclu1</span> <span class="o">=</span> <span class="n">genes1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">genes2</span><span class="p">)</span>
+    <span class="n">exclu2</span> <span class="o">=</span> <span class="n">genes2</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">genes1</span><span class="p">)</span>
+    <span class="n">compartidos</span> <span class="o">=</span> <span class="n">genes1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">genes2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">exclu1</span><span class="p">,</span> <span class="n">exclu2</span><span class="p">,</span> <span class="n">compartidos</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">ruta_genes_1</span> <span class="o">=</span> <span class="s1">&#39;genes1.txt&#39;</span>
+    <span class="n">ruta_genes_2</span> <span class="o">=</span> <span class="s1">&#39;genes2.txt&#39;</span>
+    <span class="n">exclu1</span><span class="p">,</span> <span class="n">exclu2</span><span class="p">,</span> <span class="n">compartidos</span> <span class="o">=</span> <span class="n">comparar_genes</span><span class="p">(</span><span class="n">ruta_genes_1</span><span class="p">,</span> <span class="n">ruta_genes_2</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;Exclusivos 1&#39;</span>
+    <span class="nb">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">exclu1</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;Exclusivos 2&#39;</span>
+    <span class="nb">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">exclu2</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;Compartidos&#39;</span>
+    <span class="nb">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">compartidos</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="cambiar-nombres">
+<h2>Cambiar nombres<a class="headerlink" href="#cambiar-nombres" title="Permalink to this headline">¶</a></h2>
+<p>Tenemos un fichero que incluye una columna con nombres de muestras y queremos modificar esos nombres para que estén normalizados.</p>
+<p>Fichero entrada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ECU</span><span class="o">-</span><span class="mi">1</span> <span class="n">grande</span> <span class="mf">1.7</span>
+<span class="n">ECU2</span> <span class="n">pequeña</span> <span class="mf">1.2</span>
+<span class="n">ecu03</span> <span class="n">grande</span> <span class="mf">0.3</span>
+<span class="n">Mex_4</span> <span class="n">mediana</span> <span class="mf">2.1</span>
+</pre></div>
+</div>
+<p>Fichero deseado de salida:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ECU</span><span class="o">-</span><span class="mi">01</span> <span class="n">grande</span> <span class="mf">1.7</span>
+<span class="n">ECU</span><span class="o">-</span><span class="mi">02</span> <span class="n">pequeña</span> <span class="mf">1.2</span>
+<span class="n">ECU</span><span class="o">-</span><span class="mi">03</span> <span class="n">grande</span> <span class="mf">0.3</span>
+<span class="n">MEX</span><span class="o">-</span><span class="mi">04</span> <span class="n">mediana</span> <span class="mf">2.1</span>
+</pre></div>
+</div>
+<p>Hemos escrito el siguente programa, pero no nos funciona, ¿podrías arreglarlo?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">reader</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+
+<span class="k">def</span> <span class="nf">arreglar_nombres</span><span class="p">(</span><span class="n">ruta_fichero_in</span><span class="p">,</span> <span class="n">ruta_fichero_out</span><span class="p">):</span>
+
+    <span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;([a-zA-Z]+)[._-]?([0-9]+)&#39;</span><span class="p">)</span>
+
+    <span class="n">fichero_out</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">ruta_fichero_out</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">ruta_fichero_in</span><span class="p">),</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">linea</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="n">regex</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">linea</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+            <span class="n">cod_letras</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">cod_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+            <span class="n">cod</span> <span class="o">=</span> <span class="n">cod_letras</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%03d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">cod_num</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cod</span> <span class="o">=</span> <span class="n">linea</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">linea</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">cod</span>
+        <span class="n">linea_str</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+        <span class="n">fichero_out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">linea_str</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">ruta_fichero_in</span> <span class="o">=</span> <span class="s1">&#39;lista_muestras.txt&#39;</span>
+    <span class="n">ruta_fichero_out</span> <span class="o">=</span> <span class="s1">&#39;lista_muestras_arregladas.txt&#39;</span>
+    <span class="n">arreglar_nombres</span><span class="p">(</span><span class="n">ruta_fichero_in</span><span class="p">,</span> <span class="n">ruta_fichero_out</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="recortar-ficheros-fasta">
+<h2>Recortar ficheros fasta<a class="headerlink" href="#recortar-ficheros-fasta" title="Permalink to this headline">¶</a></h2>
+<p>Dado un fichero fasta queremos obtener un nuevo fichero en el que a cada secuencia le hayamos cortado un número de bases dado por el principio (left_clip) y por el final (right_clip). Si la secuencia resultante fuese más corta que un tamaño mínimo (min_len) debería descartarse y no incluirse en el fichero final.</p>
+</section>
+<section id="extrayendo-una-lista-de-secuencias-de-un-fichero">
+<h2>Extrayendo una lista de secuencias de un fichero<a class="headerlink" href="#extrayendo-una-lista-de-secuencias-de-un-fichero" title="Permalink to this headline">¶</a></h2>
+<p>Dado un fichero con miles de secuencias, ¿cómo podríamos extraer unas cuantas de las que conocemos el nombre?</p>
+</section>
+<section id="calcular-la-calidad-media-de-las-secuencias-en-un-fichero-fastq">
+<h2>Calcular la calidad media de las secuencias en un fichero fastq<a class="headerlink" href="#calcular-la-calidad-media-de-las-secuencias-en-un-fichero-fastq" title="Permalink to this headline">¶</a></h2>
+<p>Los ficheros <a class="reference external" href="http://en.wikipedia.org/wiki/FASTQ_format">fastq</a> utilizados principalmente en análisis NGS son similares a los ficheros fasta y tienen el formato:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>@seq1
+ATTGNGCATTTCAAATAACTTGAAACATAAACGAGTTCCCACAC
++
+@@&lt;D#2ADHFFHHIGGGIIIGIIIIIIHHIIIHBHHIIIIIICH
+@seq2
+CGCACACGCCAAGCCCCATCCTATGCTATGTGCGATACATGTCC
++
+@@@FFFFDFDFFFGIDII3CGGEG99?CF?BF@GFDHG@?F*?F
+@seq3
+ATTAGGATACTTTCTCGTTATGTTATGTTAGTACGAATGTGTAC
++
+CBCFFDFFHHFHHJIIJIIJGHCDHHEFH&gt;&lt;&lt;BGGGJI&gt;DF&lt;DD
+@seq4
+AGAAATGTCGACTGTATTAAAACAATATAACTTTCCGAAAATTG
++
+AFEGIIICHHEEBEFEEE;BCCCBDCD;&gt;CC:@3@CBB?B&lt;CCC
+@seq5
+TAGAGGGTGCAAAGAATCCAGCAGACATGTTGACAAAATGTGTT
++
+HD7=CEH;;?CCCCCB;;;&gt;CCCA(595&gt;CD@C,:&gt;&lt;(:C:@##
+@seq6
+AGATATCGGTCTGCAATATGCATAAAACCTATTGTAACGACTCG
++
+8?BAFGI&lt;GIB&lt;@DEE=?A&gt;E@H&gt;CCDFFCEACC&gt;&gt;CCDDDB8?
+</pre></div>
+</div>
+<p>En los ficheros fastq habitualmente hay cuatro líneas por cada secuencia:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>La primera comienza por &#64; e incluye el nombre de la secuencia y, opcionalmente, un espacio y a continuación una descripción</p></li>
+<li><p>La segunda línea incluye la secuencia de nucleótidos.</p></li>
+<li><p>La tercera es un +, opcionalmente seguido del nombre de la secuencia y la descripción</p></li>
+<li><p>La cuarta línea codifica la calidad.</p></li>
+</ul>
+</div></blockquote>
+<p>Crea un programa que calcule la calidad media de las secuencias de un fichero fastq y que genere un fichero de salida con las secuencias con una calidad media superior a un cierto umbral.</p>
+<p>Ayuda:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>BioPython es capaz de leer y escribir ficheros fastq</p></li>
+<li><p>En los objetos SeqRecord de BioPython la calidad está disponible en: seq.letter_annotations[‘phred_quality’]</p></li>
+<li><p>La calidad está codificada utilizando caracteres ASCII. Para obtener el valor de la calidad hay que tomar el valor del carácter ASCII (en Python se puede hacer con la función <em>ord</em>) y restándole un valor fijo, que depende del tipo de fichero fastq, pero que suele ser 33 en la mayoría de los casos. El valor de la calidad para un carácter de la línea de calidades se obtendría como: ord(caracter) - 33. En el caso de utilizar BioPython sus funciones de lectura y escritura se encargan de esta codificación.</p></li>
+</ul>
+</div></blockquote>
+<p>Para prácticar puedes intentar hacer el programa de nuevo, pero esta vez sin utilizar BioPython.</p>
+</section>
+<section id="contar-contigs-por-genoteca">
+<h2>Contar contigs por genoteca<a class="headerlink" href="#contar-contigs-por-genoteca" title="Permalink to this headline">¶</a></h2>
+<p>Hemos realizado un alineamiento de secuencias 454 y Sanger con el ensamblador <a class="reference external" href="http://www.chevreux.org/projects_mira.html">MIRA</a>.
+Uno de los ficheros de resultados contiene la lista de lecturas que contribuyen a cada contig.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># contig_name read_name</span>
+<span class="c1">#</span>
+<span class="n">melon_c1</span>      <span class="n">CI_46</span><span class="o">-</span><span class="n">C02</span><span class="o">-</span><span class="n">M13R</span>
+<span class="n">melon_c1</span>      <span class="n">A_32</span><span class="o">-</span><span class="n">H07</span><span class="o">-</span><span class="n">M13R</span>
+<span class="n">melon_c1</span>      <span class="n">HS_31</span><span class="o">-</span><span class="n">E03</span><span class="o">-</span><span class="n">M13R</span>
+<span class="n">melon_c1</span>      <span class="n">MEES627390</span>
+<span class="n">melon_c2</span>      <span class="n">MEES365006</span>
+<span class="n">melon_c2</span>      <span class="n">MEES315192</span>
+<span class="n">melon_c2</span>      <span class="n">MEES525849</span>
+</pre></div>
+</div>
+<p>A partir de este fichero necesitamos calcular a cúantos contigs contribuye cada genoteca.
+El nombre de la genoteca a la que pertenece cada lectura coincide con las tres primeras letras del nombre de la lectura correspondiente.
+El resultado que pretendemos obtener debe ser similar a:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">genoteca</span> <span class="n">numero</span> <span class="n">de</span> <span class="n">contigs</span>
+<span class="n">AI_</span> <span class="mi">14</span>
+<span class="n">TEa</span> <span class="mi">34</span>
+<span class="n">IA6</span> <span class="mi">1</span>
+<span class="n">BA9</span> <span class="mi">1</span>
+<span class="n">KA4</span> <span class="mi">1</span>
+<span class="n">LA4</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="copiar-anotacion-go">
+<h2>Copiar anotación GO<a class="headerlink" href="#copiar-anotacion-go" title="Permalink to this headline">¶</a></h2>
+<p>Hemos realizado un blast de unos genes de S. stercoralis contra la base de datos de proteínas de C. elegans.
+El blast lo hemos transformado en un <a class="reference download internal" download="" href="_downloads/17575fe718cb4180cc55adf3fd5298d2/unigenes_blast_report.txt"><code class="xref download docutils literal notranslate"><span class="pre">informe</span></code></a>, con el siguiente formato:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sstercoralis_12317</span> <span class="n">WBGene00000064</span> <span class="n">WBGene00000066</span> <span class="n">WBGene00000066</span>
+<span class="n">Sstercoralis_12265</span> <span class="n">WBGene00003370</span> <span class="n">WBGene00003369</span>
+<span class="n">Sstercoralis_12253</span> <span class="n">WBGene00006727</span>
+</pre></div>
+</div>
+<p>Además disponemos de la <a class="reference download internal" download="" href="_downloads/2bb63b1701d4533415064b3e75100bfd/C_elegans_gene_association.wb"><code class="xref download docutils literal notranslate"><span class="pre">anotación</span> <span class="pre">GO</span></code></a> de los genes de C. elegans:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!Organism: Caenorhabditis elegans
+!Database_Project_Name: WormBase WS214/WS215
+WB      WBGene00000001  aap-1           GO:0005515      PMID:12520011
+WB      WBGene00000001  aap-1           GO:0005942      PMID:12520011
+</pre></div>
+</div>
+<p>La conversión entre <a class="reference download internal" download="" href="_downloads/a854fca778f58b3f2201cf258732eb33/GO.terms_and_ids"><code class="xref download docutils literal notranslate"><span class="pre">términos</span> <span class="pre">GO</span></code></a> y descripciones se encuentra en el fichero proporcionado por el consorcio GO:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>! GO IDs (primary only) and name text strings
+! GO:0000000 [tab] text string [tab] F|P|C
+! where F = molecular function, P = biological process, C = cellular component
+!
+GO:0000001      mitochondrion inheritance       P
+GO:0000002      mitochondrial genome maintenance        P
+GO:0000003      reproduction    P
+GO:0000005      ribosomal chaperone activity    F
+</pre></div>
+</div>
+<p>Queremos obtener un fichero en el que a cada unigen de S. stercoralis se le asocien los términos GO que le correspondan a partir de las proteinas de C. elegans.</p>
+</section>
+<section id="enumerar-k-mers">
+<h2>Enumerar K-mers<a class="headerlink" href="#enumerar-k-mers" title="Permalink to this headline">¶</a></h2>
+<p>Tenemos un fichero de secuencias en formato fasta <a class="reference download internal" download="" href="_downloads/971c581adfdef80790024f480c41cdac/seqs_5.fasta"><code class="xref download docutils literal notranslate"><span class="pre">seqs_5.fasta</span></code></a>, y queremos contar las apariciones de todos las trozos de secuencia de un tamaño determinado, en este caso el tamaño de los trozos que vamos a contar será de 20 bases.:  Muetra por pantalla el resultado del conteo.</p>
+<p>Ayuda:Si tenemos una secuencia ATCGT, y pedimos un tamaño de secuencia de 3, los trozos de secuencia que tenemos son: ATC, TCG, CGT</p>
+</section>
+</section>
+<section id="soluciones">
+<h1>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h1>
+<section id="id1">
+<h2>Ejercicios linux<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Seleccionar la linea 123 del fichero microarray_adenoma_hk69.csv</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ head -n 123 microarray_adenoma_hk69.csv |tail -n 1
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Usa el fichero con el formato <a class="reference external" href="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41">vcf</a>  <a class="reference download internal" download="" href="_downloads/77a1884c326c63564ea49e4fd13f7798/test.vcf"><code class="xref download docutils literal notranslate"><span class="pre">test.vcf</span></code></a> selecciona aquellos snps que han pasado todos los filtros. Selecciona tambien aquellos snps que no han pasado el filtro de calidad.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep  -v &quot;^#&quot; test.vcf |grep PASS
+$ grep  -v &quot;^#&quot; test.vcf |grep q10
+</pre></div>
+</div>
+<p>3. Tenemos un nuevo <a class="reference download internal" download="" href="_downloads/0e13cf9a8f13dddf8f1a03d7d49bf3ed/test2.vcf"><code class="xref download docutils literal notranslate"><span class="pre">test2.vcf</span></code></a> que ha perdido la informacion de la cabecera.
+Sabemos que la cabecera del fichero <a class="reference download internal" download="" href="_downloads/77a1884c326c63564ea49e4fd13f7798/test.vcf"><code class="xref download docutils literal notranslate"><span class="pre">test.vcf</span></code></a> nos vale, añadir la cabecera de test.vcf al fichero test2.vcf creando un nuevo fichero.
+Pista: No se puede hacer con un solo comando.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep   &quot;^#&quot; test.vcf  &gt; new_file.vcf
+$ cat test2.vcf &gt;&gt; new_file.vcf
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>A partir del fichero <a class="reference download internal" download="" href="_downloads/77a1884c326c63564ea49e4fd13f7798/test.vcf"><code class="xref download docutils literal notranslate"><span class="pre">test.vcf</span></code></a> crear un identificador para cada snv que una el chromosoma y la posición (chrom_pos). Hacer un listado de las ids.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$grep -v &quot;^#&quot; test.vcf|cut -f 1,2|sed &quot;s/\t/_/&quot;
+</pre></div>
+</div>
+<p>5. Tengo un fichero de <a class="reference download internal" download="" href="_downloads/65aa124ddd9eaa5acc1065a504cdcaeb/conf.txt"><code class="xref download docutils literal notranslate"><span class="pre">configuracion</span></code></a> para un programa que necesitamos.
+El fichero se configura con clave=valor.
+En él, hay claves que no tienen valor.
+El ejercicio consiste en mostrar el nombre de las claves que no tienen valor.</p>
+<dl class="simple">
+<dt>::</dt><dd><p>$ grep  -v “^#” conf.txt|grep -E  “^[a-z]+ ?=[[:blank:]]?$”</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>Contar genes y sondas<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">DictReader</span>
+
+
+<span class="k">def</span> <span class="nf">contar_sondas</span><span class="p">(</span><span class="n">fichero_in</span><span class="p">):</span>
+    <span class="n">genes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">sondas</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">DictReader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">fichero_in</span><span class="p">)):</span>
+        <span class="n">genes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">linea</span><span class="p">[</span><span class="s1">&#39;gen&#39;</span><span class="p">])</span>
+        <span class="n">sondas</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">linea</span><span class="p">[</span><span class="s1">&#39;sonda&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">genes</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">sondas</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">ruta_fichero_in</span> <span class="o">=</span> <span class="s1">&#39;sondas.txt&#39;</span>
+    <span class="n">n_genes</span><span class="p">,</span> <span class="n">n_sondas</span> <span class="o">=</span> <span class="n">contar_sondas</span><span class="p">(</span><span class="n">ruta_fichero_in</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;Num. genes: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n_genes</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;Num. sondas: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n_sondas</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>Comparar listas de genes<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">DictReader</span><span class="p">,</span> <span class="n">reader</span>
+
+<span class="k">def</span> <span class="nf">leer_genes1</span><span class="p">(</span><span class="n">ruta</span><span class="p">):</span>
+    <span class="n">genes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">ruta</span><span class="p">),</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">linea</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">genes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">linea</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">genes</span>
+
+
+<span class="k">def</span> <span class="nf">leer_genes2</span><span class="p">(</span><span class="n">ruta</span><span class="p">):</span>
+    <span class="n">genes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">DictReader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">ruta</span><span class="p">),</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">linea</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">genes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">linea</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">genes</span>
+
+
+<span class="k">def</span> <span class="nf">comparar_genes</span><span class="p">(</span><span class="n">ruta_genes1</span><span class="p">,</span> <span class="n">ruta_genes2</span><span class="p">):</span>
+    <span class="n">genes1</span> <span class="o">=</span> <span class="n">leer_genes1</span><span class="p">(</span><span class="n">ruta_genes1</span><span class="p">)</span>
+    <span class="n">genes2</span> <span class="o">=</span> <span class="n">leer_genes2</span><span class="p">(</span><span class="n">ruta_genes2</span><span class="p">)</span>
+    <span class="n">exclu1</span> <span class="o">=</span> <span class="n">genes1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">genes2</span><span class="p">)</span>
+    <span class="n">exclu2</span> <span class="o">=</span> <span class="n">genes2</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">genes1</span><span class="p">)</span>
+    <span class="n">compartidos</span> <span class="o">=</span> <span class="n">genes1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">genes2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">exclu1</span><span class="p">,</span> <span class="n">exclu2</span><span class="p">,</span> <span class="n">compartidos</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">ruta_genes_1</span> <span class="o">=</span> <span class="s1">&#39;genes1.txt&#39;</span>
+    <span class="n">ruta_genes_2</span> <span class="o">=</span> <span class="s1">&#39;genes2.txt&#39;</span>
+    <span class="n">exclu1</span><span class="p">,</span> <span class="n">exclu2</span><span class="p">,</span> <span class="n">compartidos</span> <span class="o">=</span> <span class="n">comparar_genes</span><span class="p">(</span><span class="n">ruta_genes_1</span><span class="p">,</span> <span class="n">ruta_genes_2</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;Exclusivos 1&#39;</span>
+    <span class="nb">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">exclu1</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;Exclusivos 2&#39;</span>
+    <span class="nb">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">exclu2</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;Compartidos&#39;</span>
+    <span class="nb">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">compartidos</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>Cambiar nombres<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">reader</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+
+<span class="k">def</span> <span class="nf">arreglar_nombres</span><span class="p">(</span><span class="n">ruta_fichero_in</span><span class="p">,</span> <span class="n">ruta_fichero_out</span><span class="p">):</span>
+
+    <span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;([a-zA-Z]+)[._-]?([0-9]+)&#39;</span><span class="p">)</span>
+
+    <span class="n">fichero_out</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">ruta_fichero_out</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">ruta_fichero_in</span><span class="p">),</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">linea</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="n">regex</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">linea</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+            <span class="n">cod_letras</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+            <span class="n">cod_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+            <span class="n">cod</span> <span class="o">=</span> <span class="n">cod_letras</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%03d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">cod_num</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cod</span> <span class="o">=</span> <span class="n">linea</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">linea</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">cod</span>
+        <span class="n">linea_str</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="n">fichero_out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">linea_str</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">ruta_fichero_in</span> <span class="o">=</span> <span class="s1">&#39;lista_muestras.txt&#39;</span>
+    <span class="n">ruta_fichero_out</span> <span class="o">=</span> <span class="s1">&#39;lista_muestras_arregladas.txt&#39;</span>
+    <span class="n">arreglar_nombres</span><span class="p">(</span><span class="n">ruta_fichero_in</span><span class="p">,</span> <span class="n">ruta_fichero_out</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2>Recortar ficheros fasta<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+
+<span class="k">def</span> <span class="nf">recortar_secuencias</span><span class="p">(</span><span class="n">in_fname</span><span class="p">,</span> <span class="n">out_fname</span><span class="p">,</span> <span class="n">left_clip</span><span class="p">,</span> <span class="n">right_clip</span><span class="p">,</span> <span class="n">min_len</span><span class="p">):</span>
+
+        <span class="n">seqs_cortadas</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">seq</span> <span class="ow">in</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">in_fname</span><span class="p">,</span> <span class="s1">&#39;fasta&#39;</span><span class="p">):</span>
+            <span class="n">left</span> <span class="o">=</span> <span class="n">left_clip</span>
+            <span class="n">right</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="o">-</span> <span class="n">right_clip</span>
+            <span class="k">if</span> <span class="n">right</span> <span class="o">&lt;=</span> <span class="n">left</span><span class="p">:</span>
+                <span class="c1">#no queda secuencia</span>
+                <span class="k">continue</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">min_len</span><span class="p">:</span>
+                <span class="c1">#la secuencia es demasiado corta</span>
+                <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">seq</span> <span class="o">=</span> <span class="n">seq</span><span class="p">[</span><span class="n">left</span><span class="p">:</span><span class="n">right</span><span class="p">]</span>
+                <span class="n">seqs_cortadas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+        <span class="n">SeqIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">seqs_cortadas</span><span class="p">,</span> <span class="n">out_fname</span><span class="p">,</span> <span class="s1">&#39;fasta&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">in_fname</span> <span class="o">=</span> <span class="s1">&#39;seqs.fasta&#39;</span>
+    <span class="n">out_fname</span> <span class="o">=</span> <span class="s1">&#39;seqs.trimmed.fasta&#39;</span>
+    <span class="n">left_clip</span> <span class="o">=</span> <span class="mi">50</span>
+    <span class="n">right_clip</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">min_len</span> <span class="o">=</span> <span class="mi">40</span>
+    <span class="n">recortar_secuencias</span><span class="p">(</span><span class="n">in_fname</span><span class="p">,</span> <span class="n">out_fname</span><span class="p">,</span> <span class="n">left_clip</span><span class="p">,</span> <span class="n">right_clip</span><span class="p">,</span> <span class="n">min_len</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h2>Extrayendo una lista de secuencias de un fichero<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+
+<span class="k">def</span> <span class="nf">extraer_secuencias</span><span class="p">(</span><span class="n">seq_names</span><span class="p">,</span> <span class="n">in_fname</span><span class="p">,</span> <span class="n">out_fname</span><span class="p">):</span>
+    <span class="n">seqs_en_input</span> <span class="o">=</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">in_fname</span><span class="p">,</span> <span class="s1">&#39;fasta&#39;</span><span class="p">)</span>
+    <span class="n">seqs_extraidas</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">seq_name</span> <span class="ow">in</span> <span class="n">seq_names</span><span class="p">:</span>
+        <span class="n">una_seq</span> <span class="o">=</span> <span class="n">seqs_en_input</span><span class="p">[</span><span class="n">seq_name</span><span class="p">]</span>
+        <span class="n">seqs_extraidas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">una_seq</span><span class="p">)</span>
+    <span class="n">SeqIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">seqs_extraidas</span><span class="p">,</span> <span class="n">out_fname</span><span class="p">,</span> <span class="s1">&#39;fasta&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">seq_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;seq1&#39;</span><span class="p">,</span> <span class="s1">&#39;seq3&#39;</span><span class="p">,</span> <span class="s1">&#39;seq7&#39;</span><span class="p">]</span>
+    <span class="n">in_fname</span> <span class="o">=</span> <span class="s1">&#39;seqs.fasta&#39;</span>
+    <span class="n">out_fname</span> <span class="o">=</span> <span class="s1">&#39;seqs.out.fasta&#39;</span>
+    <span class="n">extraer_secuencias</span><span class="p">(</span><span class="n">seq_names</span><span class="p">,</span> <span class="n">in_fname</span><span class="p">,</span> <span class="n">out_fname</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h2>Calcular la calidad media de las secuencias en un fichero fastq<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Solución 1 utilizando BioPython:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+
+<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+
+<span class="k">def</span> <span class="nf">filtra_seqs_por_calidad</span><span class="p">(</span><span class="n">nombre_fichero_in</span><span class="p">,</span>
+                            <span class="n">nombre_fichero_out</span><span class="p">,</span>
+                            <span class="n">umbral_qual</span><span class="p">):</span>
+    <span class="n">seqs</span> <span class="o">=</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">nombre_fichero_in</span><span class="p">),</span> <span class="s1">&#39;fastq&#39;</span><span class="p">)</span>
+    <span class="n">seqs_buenas</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">seq</span> <span class="ow">in</span> <span class="n">seqs</span><span class="p">:</span>
+        <span class="n">quals</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">letter_annotations</span><span class="p">[</span><span class="s1">&#39;phred_quality&#39;</span><span class="p">]</span>
+        <span class="n">media_quals</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">quals</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">quals</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">media_quals</span> <span class="o">&gt;=</span> <span class="n">umbral_qual</span><span class="p">:</span>
+            <span class="c1"># guardamos las secuencias buenas en una</span>
+            <span class="c1"># lista en memoria para poder escribirlas</span>
+            <span class="c1"># despues</span>
+            <span class="n">seqs_buenas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+
+    <span class="n">fichero_out</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">nombre_fichero_out</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">SeqIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">seqs_buenas</span><span class="p">,</span> <span class="n">fichero_out</span><span class="p">,</span> <span class="s1">&#39;fastq&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">umbral_qual</span> <span class="o">=</span> <span class="mi">25</span>
+    <span class="n">nombre_fichero_in</span> <span class="o">=</span> <span class="s1">&#39;250_seqs.fastq&#39;</span>
+    <span class="n">nombre_fichero_out</span> <span class="o">=</span> <span class="s1">&#39;seqs_buenas.fastq&#39;</span>
+    <span class="n">filtra_seqs_por_calidad</span><span class="p">(</span><span class="n">nombre_fichero_in</span><span class="p">,</span>
+                            <span class="n">nombre_fichero_out</span><span class="p">,</span>
+                            <span class="n">umbral_qual</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>¿Cuántas secuencias han quedado?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grep</span> <span class="s1">&#39;^+$&#39;</span> <span class="n">seqs_buenas</span><span class="o">.</span><span class="n">fastq</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+<span class="mi">244</span>
+</pre></div>
+</div>
+<p>El problema de esta solución es que almacena todas las secuencias en memoria en la lista seqs_buenas.
+Alternativamente se puede hacer que las secuencias sean procesadas de una en una utilizando un generador que nos sirva para filtrar las secuencias que no nos interesan.</p>
+<p>Solución 2</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+
+<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+
+
+<span class="k">def</span> <span class="nf">elimina_seqs_mala_calidad</span><span class="p">(</span><span class="n">seqs</span><span class="p">,</span> <span class="n">umbral_qual</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">seq</span> <span class="ow">in</span> <span class="n">seqs</span><span class="p">:</span>
+        <span class="n">quals</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">letter_annotations</span><span class="p">[</span><span class="s1">&#39;phred_quality&#39;</span><span class="p">]</span>
+        <span class="n">media_quals</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">quals</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">quals</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">media_quals</span> <span class="o">&gt;=</span> <span class="n">umbral_qual</span><span class="p">:</span>
+            <span class="c1"># devolvemos las secuencias buenas de una en</span>
+            <span class="c1"># una utilizando un generador</span>
+            <span class="k">yield</span> <span class="n">seq</span>
+
+
+<span class="k">def</span> <span class="nf">filtra_seqs_por_calidad</span><span class="p">(</span><span class="n">nombre_fichero_in</span><span class="p">,</span>
+                            <span class="n">nombre_fichero_out</span><span class="p">,</span>
+                            <span class="n">umbral_qual</span><span class="p">):</span>
+    <span class="n">seqs</span> <span class="o">=</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">nombre_fichero_in</span><span class="p">),</span> <span class="s1">&#39;fastq&#39;</span><span class="p">)</span>
+    <span class="c1"># En este caso seqs_buenas no es una lista sino un</span>
+    <span class="c1"># iterador</span>
+    <span class="n">seqs_buenas</span> <span class="o">=</span> <span class="n">elimina_seqs_mala_calidad</span><span class="p">(</span><span class="n">seqs</span><span class="p">,</span> <span class="n">umbral_qual</span><span class="p">)</span>
+
+    <span class="n">fichero_out</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">nombre_fichero_out</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">SeqIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">seqs_buenas</span><span class="p">,</span> <span class="n">fichero_out</span><span class="p">,</span> <span class="s1">&#39;fastq&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">umbral_qual</span> <span class="o">=</span> <span class="mi">25</span>
+    <span class="n">nombre_fichero_in</span> <span class="o">=</span> <span class="s1">&#39;250_seqs.fastq&#39;</span>
+    <span class="n">nombre_fichero_out</span> <span class="o">=</span> <span class="s1">&#39;seqs_buenas.fastq&#39;</span>
+    <span class="n">filtra_seqs_por_calidad</span><span class="p">(</span><span class="n">nombre_fichero_in</span><span class="p">,</span>
+                            <span class="n">nombre_fichero_out</span><span class="p">,</span>
+                            <span class="n">umbral_qual</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Solución 3</p>
+<p>Sin utilizar BioPython.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+
+
+<span class="k">def</span> <span class="nf">quals_a_numeros</span><span class="p">(</span><span class="n">qual_str</span><span class="p">):</span>
+    <span class="n">quals</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">qual</span> <span class="ow">in</span> <span class="n">qual_str</span><span class="p">:</span>
+        <span class="n">quals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">qual</span><span class="p">)</span> <span class="o">-</span> <span class="mi">33</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">quals</span>
+
+
+<span class="k">def</span> <span class="nf">num_quals_a_str</span><span class="p">(</span><span class="n">phred_quals</span><span class="p">):</span>
+    <span class="n">str_qual</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">qual</span> <span class="ow">in</span> <span class="n">phred_quals</span><span class="p">:</span>
+        <span class="n">str_qual</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">qual</span> <span class="o">+</span> <span class="mi">33</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">str_qual</span>
+
+
+<span class="k">def</span> <span class="nf">lee_fastq</span><span class="p">(</span><span class="n">nombre_fichero_in</span><span class="p">):</span>
+    <span class="n">num_linea</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">nombre_fichero_in</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">num_linea</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">nombre</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">elif</span> <span class="n">num_linea</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">seq</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">num_linea</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">pass</span>  <span class="c1"># ignoramos la linea con el +</span>
+        <span class="k">elif</span> <span class="n">num_linea</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">quals</span> <span class="o">=</span> <span class="n">quals_a_numeros</span><span class="p">(</span><span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="c1"># Seria mejor devolver una named tuple, pero</span>
+            <span class="c1"># no lo hemos visto en el curso.</span>
+            <span class="k">yield</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">quals</span>
+            <span class="n">num_linea</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;El numero de linea no puede ser mayor de 3&#39;</span><span class="p">)</span>
+        <span class="n">num_linea</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+
+<span class="k">def</span> <span class="nf">escribe_fastq</span><span class="p">(</span><span class="n">seqs</span><span class="p">,</span> <span class="n">nombre_fichero_out</span><span class="p">):</span>
+    <span class="n">fichero_out</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">nombre_fichero_out</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">seq</span> <span class="ow">in</span> <span class="n">seqs</span><span class="p">:</span>
+        <span class="n">fichero_out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;@&#39;</span> <span class="o">+</span> <span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">fichero_out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">fichero_out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;+</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">fichero_out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">num_quals_a_str</span><span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">elimina_seqs_mala_calidad</span><span class="p">(</span><span class="n">seqs</span><span class="p">,</span> <span class="n">umbral_qual</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">seq</span> <span class="ow">in</span> <span class="n">seqs</span><span class="p">:</span>
+        <span class="n">quals</span> <span class="o">=</span> <span class="n">seq</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">media_quals</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">quals</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">quals</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">media_quals</span> <span class="o">&gt;=</span> <span class="n">umbral_qual</span><span class="p">:</span>
+            <span class="c1"># devolvemos las secuencias buenas de una en</span>
+            <span class="c1"># una utilizando un generador</span>
+            <span class="k">yield</span> <span class="n">seq</span>
+
+
+<span class="k">def</span> <span class="nf">filtra_seqs_por_calidad</span><span class="p">(</span><span class="n">nombre_fichero_in</span><span class="p">,</span>
+                            <span class="n">nombre_fichero_out</span><span class="p">,</span>
+                            <span class="n">umbral_qual</span><span class="p">):</span>
+    <span class="n">seqs</span> <span class="o">=</span> <span class="n">lee_fastq</span><span class="p">(</span><span class="n">nombre_fichero_in</span><span class="p">)</span>
+    <span class="c1"># En este caso seqs_buenas no es una lista sino un</span>
+    <span class="c1"># iterador</span>
+    <span class="n">seqs_buenas</span> <span class="o">=</span> <span class="n">elimina_seqs_mala_calidad</span><span class="p">(</span><span class="n">seqs</span><span class="p">,</span> <span class="n">umbral_qual</span><span class="p">)</span>
+
+    <span class="n">escribe_fastq</span><span class="p">(</span><span class="n">seqs_buenas</span><span class="p">,</span> <span class="n">nombre_fichero_out</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">umbral_qual</span> <span class="o">=</span> <span class="mi">25</span>
+    <span class="n">nombre_fichero_in</span> <span class="o">=</span> <span class="s1">&#39;250_seqs.fastq&#39;</span>
+    <span class="n">nombre_fichero_out</span> <span class="o">=</span> <span class="s1">&#39;seqs_buenas.fastq&#39;</span>
+    <span class="n">filtra_seqs_por_calidad</span><span class="p">(</span><span class="n">nombre_fichero_in</span><span class="p">,</span>
+                            <span class="n">nombre_fichero_out</span><span class="p">,</span>
+                            <span class="n">umbral_qual</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="contigs-por-genoteca">
+<h2>Contigs por genoteca<a class="headerlink" href="#contigs-por-genoteca" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/env python</span>
+
+<span class="c1">#en cuantos contigs participa cada una de las genotecas?</span>
+
+
+<span class="k">def</span> <span class="nf">contig_stats</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Calcula la distribucion del numero de reads por genoteca</span>
+<span class="sd">    para un contig.</span>
+
+<span class="sd">    El nombre de la genoteca son las tres primeras letras del</span>
+<span class="sd">    nombre del read.</span>
+<span class="sd">    Genera un diccionario con las cuentas de cada contig.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">stats</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">contig_anterior</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
+        <span class="c1">#ignoramos la cabecera</span>
+        <span class="k">if</span> <span class="n">linea</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="n">contig</span><span class="p">,</span> <span class="n">read</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="c1">#el nombre de la genoteca son las tres primeras letras</span>
+        <span class="n">genoteca</span> <span class="o">=</span> <span class="n">read</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="c1">#si el contig de esta linea es distinto al anterior</span>
+        <span class="c1">#es que habiamos acabado con el contig anterior</span>
+        <span class="k">if</span> <span class="n">contig_anterior</span> <span class="o">!=</span> <span class="n">contig</span> <span class="ow">and</span> <span class="n">contig</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">stats</span>    <span class="c1">#devolvemos las stats de este contig</span>
+            <span class="n">stats</span> <span class="o">=</span> <span class="p">{}</span>     <span class="c1">#volvemos a inicializar las stas para</span>
+                           <span class="c1">#el siguiente contig</span>
+
+        <span class="c1">#ha aparecido la genoteca en este contig antes?</span>
+        <span class="k">if</span> <span class="n">genoteca</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stats</span><span class="p">:</span>
+            <span class="n">stats</span><span class="p">[</span><span class="n">genoteca</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1">#sumamos la genoteca de esta linea</span>
+        <span class="n">stats</span><span class="p">[</span><span class="n">genoteca</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="c1">#el contig de esta linea ha sido procesado, pasa</span>
+        <span class="c1">#a ser el contig anterior</span>
+        <span class="n">contig_anterior</span> <span class="o">=</span> <span class="n">contig</span>
+    <span class="c1">#las stats del ultimo contig debemos devolverlo</span>
+    <span class="k">if</span> <span class="n">stats</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">stats</span>
+
+<span class="k">def</span> <span class="nf">hacer_stats_contigs</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Calcula la distribucion del numero de reads por genoteca.</span>
+
+<span class="sd">    El nombre de la genoteca son las tres primeras letras del</span>
+<span class="sd">    nombre del read.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">cuentas_genotecas</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">contig_stat</span> <span class="ow">in</span> <span class="n">contig_stats</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
+        <span class="c1">#que genotecas hay en este contig?</span>
+        <span class="k">for</span> <span class="n">genoteca</span> <span class="ow">in</span> <span class="n">contig_stat</span><span class="p">:</span>
+            <span class="c1">#cuento la genoteca como que participa en un contig</span>
+            <span class="k">if</span> <span class="n">genoteca</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cuentas_genotecas</span><span class="p">:</span>
+                <span class="n">cuentas_genotecas</span><span class="p">[</span><span class="n">genoteca</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">cuentas_genotecas</span><span class="p">[</span><span class="n">genoteca</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1">#ahora imprimimos el resultado</span>
+    <span class="nb">print</span> <span class="s1">&#39;genoteca&#39;</span><span class="p">,</span> <span class="s1">&#39;numero de contigs&#39;</span>
+    <span class="k">for</span> <span class="n">genoteca</span><span class="p">,</span> <span class="n">cuenta</span> <span class="ow">in</span> <span class="n">cuentas_genotecas</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span> <span class="n">genoteca</span><span class="p">,</span> <span class="n">cuenta</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">hacer_stats_contigs</span><span class="p">(</span><span class="s1">&#39;contiglist.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h2>Copiar anotación GO<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="k">def</span> <span class="nf">leer_go_desc</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Lee el fichero de GO id y devuelve un diccionario.</span>
+
+<span class="sd">    El fichero tiene el formato:</span>
+<span class="sd">    !comentarios</span>
+<span class="sd">    GO:0000001      mitochondrion inheritance       P</span>
+<span class="sd">    GO:0000002      mitochondrial genome maintenance        P</span>
+
+<span class="sd">    El dict que devuelve es:</span>
+<span class="sd">    {&#39;GO:0000001&#39;: {&#39;desc&#39;: &#39;mitochondrion inheritance&#39;,</span>
+<span class="sd">                    &#39;ontologia&#39;: &#39;biological proces&#39;},</span>
+<span class="sd">     &#39;GO:0000002&#39;: {&#39;desc&#39;: &#39;mitochondrial genome maintenance&#39;</span>
+<span class="sd">                    &#39;ontologia&#39;: &#39;biological proces&#39;}}</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">ontologias</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="s1">&#39;molecular function&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;P&#39;</span><span class="p">:</span> <span class="s1">&#39;biological process&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;cellular component&#39;</span><span class="p">}</span>
+
+    <span class="c1">#diccionario para los resultados</span>
+    <span class="n">gos</span> <span class="o">=</span><span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">linea</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="n">linea</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">go</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">ontologia</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">ontologia</span> <span class="o">=</span> <span class="n">ontologias</span><span class="p">[</span><span class="n">ontologia</span><span class="p">]</span>
+        <span class="n">gos</span><span class="p">[</span><span class="n">go</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;desc&#39;</span><span class="p">:</span> <span class="n">desc</span><span class="p">,</span>
+                   <span class="s1">&#39;ontologia&#39;</span><span class="p">:</span> <span class="n">ontologia</span><span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">gos</span>
+
+<span class="k">def</span> <span class="nf">leer_c_elegans_go_annot</span><span class="p">(</span><span class="n">celegans_annot</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Lee la anotacion y devuelve un dict</span>
+
+<span class="sd">    La anotacion debe tener el formato:</span>
+<span class="sd">    !comentarios</span>
+<span class="sd">    WB      WBGene00000001  aap-1           GO:0005515      PMID:12520011</span>
+<span class="sd">    WB      WBGene00000001  aap-1           GO:0005942      PMID:12520011</span>
+
+<span class="sd">    Devuelve un diccionario con los genes como keys</span>
+<span class="sd">    y los GOs como valores.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">#creamos un dict para guardar los resultados</span>
+    <span class="n">genes_gos</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1">#Necesitamos saber cual es el gen de la linea</span>
+    <span class="c1">#anterior para saber cuando cambiamos de gen</span>
+    <span class="n">gen_anterior</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">celegans_annot</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">gen</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">go</span>  <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+        <span class="c1">#a veces el go no esta claro y lo ignoramos</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">go</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;GO&#39;</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">gen</span> <span class="o">!=</span> <span class="n">gen_anterior</span><span class="p">:</span>
+            <span class="c1">#si habia un gen anterior lo anayadimos al</span>
+            <span class="c1">#resultado</span>
+            <span class="k">if</span> <span class="n">gen_anterior</span><span class="p">:</span>
+                <span class="n">genes_gos</span><span class="p">[</span><span class="n">gen_anterior</span><span class="p">]</span> <span class="o">=</span> <span class="n">gos</span>
+            <span class="c1">#al iniciar un nuevo gen creamos un conjunto de</span>
+            <span class="c1">#gos con el go actual</span>
+            <span class="n">gos</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">go</span><span class="p">])</span>
+            <span class="c1">#a partir de este momento el gen anterior sera este</span>
+            <span class="c1">#nuevo</span>
+            <span class="n">gen_anterior</span> <span class="o">=</span> <span class="n">gen</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">gos</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">go</span><span class="p">)</span>
+    <span class="c1">#debemos anyadir el ultimo gen</span>
+    <span class="k">if</span> <span class="n">gen_anterior</span><span class="p">:</span>
+        <span class="n">genes_gos</span><span class="p">[</span><span class="n">gen_anterior</span><span class="p">]</span> <span class="o">=</span> <span class="n">gos</span>
+
+    <span class="k">return</span> <span class="n">genes_gos</span>
+
+<span class="k">def</span> <span class="nf">transformar_blast_report</span><span class="p">(</span><span class="n">fichero</span><span class="p">,</span> <span class="n">annot</span><span class="p">,</span> <span class="n">go_desc</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Lee un blast report y le anyade los Gos.</span>
+
+<span class="sd">    El blast report debe tener el formato:</span>
+<span class="sd">    query1 hit1 hit1 hit2 hit3</span>
+<span class="sd">    query2 hit1 hit4</span>
+
+<span class="sd">    El resultado sera:</span>
+<span class="sd">    query1 hit1,hit2,hit3 GO1,GO2</span>
+<span class="sd">    query2 hit1,hit4 GO1,GO4</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
+        <span class="n">linea</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">query</span><span class="p">,</span> <span class="n">hits</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1">#pasamos los hits a una lista</span>
+        <span class="n">hits</span> <span class="o">=</span> <span class="n">hits</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="c1">#elimiminamos los repetidos</span>
+        <span class="n">hits</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">hits</span><span class="p">)</span>
+
+        <span class="c1">#debemos anayir los gos que correspondan</span>
+        <span class="c1">#a cada hit</span>
+        <span class="n">gos</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">hit</span> <span class="ow">in</span> <span class="n">hits</span><span class="p">:</span>
+            <span class="c1">#tiene este hit gos asociados?</span>
+            <span class="k">if</span> <span class="n">hit</span> <span class="ow">in</span> <span class="n">annot</span><span class="p">:</span>
+                <span class="n">gos</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">annot</span><span class="p">[</span><span class="n">hit</span><span class="p">])</span>
+
+        <span class="c1">#transformamos los GO id en GO desc</span>
+        <span class="n">go_descs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">go</span> <span class="ow">in</span> <span class="n">gos</span><span class="p">:</span>
+            <span class="n">go_descs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">go_desc</span><span class="p">[</span><span class="n">go</span><span class="p">][</span><span class="s1">&#39;desc&#39;</span><span class="p">])</span>
+
+        <span class="c1">#imprimimos el resultado</span>
+        <span class="nb">print</span> <span class="n">query</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">hits</span><span class="p">),</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">go_descs</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">blast_report</span> <span class="o">=</span> <span class="s1">&#39;unigenes_blast_report.txt&#39;</span>
+    <span class="n">celegans_annot</span> <span class="o">=</span> <span class="s1">&#39;C_elegans_gene_association.wb&#39;</span>
+    <span class="n">go_desc</span> <span class="o">=</span> <span class="s1">&#39;GO.terms_and_ids&#39;</span>
+    <span class="n">go_desc</span> <span class="o">=</span> <span class="n">leer_go_desc</span><span class="p">(</span><span class="n">go_desc</span><span class="p">)</span>
+    <span class="n">annot</span> <span class="o">=</span> <span class="n">leer_c_elegans_go_annot</span><span class="p">(</span><span class="n">celegans_annot</span><span class="p">)</span>
+    <span class="n">transformar_blast_report</span><span class="p">(</span><span class="n">blast_report</span><span class="p">,</span> <span class="n">annot</span><span class="p">,</span> <span class="n">go_desc</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h2>Enumerar K-mers<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+
+
+<span class="k">def</span> <span class="nf">kmers_in_seq</span><span class="p">(</span><span class="n">seqrecord</span><span class="p">,</span> <span class="n">kmer_size</span><span class="p">):</span>
+        <span class="s1">&#39;devuelve todos los kmers de un seqrecord&#39;</span>
+        <span class="n">kmers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">secuencia</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">seqrecord</span><span class="o">.</span><span class="n">seq</span><span class="p">)</span>
+        <span class="n">len_secuencia</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">secuencia</span><span class="p">)</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">20</span>
+            <span class="k">if</span> <span class="n">end</span> <span class="o">&gt;</span> <span class="n">len_secuencia</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">kmer</span> <span class="o">=</span> <span class="n">secuencia</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">start</span> <span class="o">+</span> <span class="mi">20</span><span class="p">]</span>
+            <span class="n">kmers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kmer</span><span class="p">)</span>
+            <span class="n">start</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">kmers</span>
+
+
+<span class="k">def</span> <span class="nf">funcion_principal</span><span class="p">(</span><span class="n">fichero_entrada</span><span class="p">,</span> <span class="n">formato_entrada</span><span class="p">,</span> <span class="n">kmer_size</span><span class="p">):</span>
+        <span class="s1">&#39;La funcion principal&#39;</span>
+        <span class="n">conteo_kmers</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">seqrecord</span> <span class="ow">in</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">fichero_entrada</span><span class="p">,</span> <span class="n">formato_entrada</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">kmer</span> <span class="ow">in</span> <span class="n">kmers_in_seq</span><span class="p">(</span><span class="n">seqrecord</span><span class="p">,</span> <span class="n">kmer_size</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">kmer</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">conteo_kmers</span><span class="p">:</span>
+                    <span class="n">conteo_kmers</span><span class="p">[</span><span class="n">kmer</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">conteo_kmers</span><span class="p">[</span><span class="n">kmer</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+        <span class="n">fichero_entrada</span> <span class="o">=</span> <span class="s1">&#39;seqs_5.fasta&#39;</span>
+        <span class="n">formato_entrada</span> <span class="o">=</span> <span class="s1">&#39;fasta&#39;</span>
+        <span class="n">kmer_size</span> <span class="o">=</span> <span class="mi">20</span>
+        <span class="n">funcion_principal</span><span class="p">(</span><span class="n">fichero_entrada</span><span class="p">,</span> <span class="n">formato_entrada</span><span class="p">,</span> <span class="n">kmer_size</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="next" href=""></a>-->
+                    <a class="next" href="" title="">next</a>
+                    |
+
+                <a class="index" href="/courses/linux/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

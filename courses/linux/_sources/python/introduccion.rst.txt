@@ -1,0 +1,319 @@
+.. raw:: html
+
+    <!-- dependencies for pytutor.js -->
+    <script type="text/javascript" src="../_downloads/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_downloads/js/jquery-1.6.min.js"></script>
+    <script type="text/javascript" src="../_downloads/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_downloads/js/jquery.jsPlumb-1.3.10-all-min.js "></script>
+    <script type="text/javascript" src="../_downloads/js/jquery-ui-1.8.21.custom.min.js"></script>
+    <link type="text/css" href="../_downloads/css/ui-lightness/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
+    <script type="text/javascript" src="../_downloads/js/pytutor.js"></script>
+    <link rel="stylesheet" href="../_downloads/css/pytutor.css"/>
+    <!-- End dependencies for pytutor.js -->
+
+
+Introducción a Python
+=====================
+
+¿Porqué Python?
+---------------
+
+Programar consiste en escribir una serie de instrucciones que el ordenador interpretará.
+Estas instrucciones constituirán una herramienta.
+Por ejemplo, podemos escribir un programa para hacer medias aritméticas.
+Las instrucciones, el programa, serían algo parecido a:
+
+  * Lee los números
+  * suma los valores y guarda el resultado
+  * cuenta los valores y guarda el resultado
+  * divide la suma por el número de valores
+  * imprime el resultado final
+ 
+Por desgracia el programa anterior no podría ser entendido por ningún ordenador actual.
+Para que el ordenador pueda entender el programa primero debemos escribirlo en un lenguaje que él entienda.
+
+Existen infinidad de lenguajes de programación.
+Algunos de ellos se parecen bastante al código anterior, son lenguajes cercanos a los seres humanos, como `Python <http://es.wikipedia.org/wiki/Python>`_ o `Basic <http://es.wikipedia.org/wiki/Basic>`_, otros son muy parecidos a lo que la máquina realmente entiende como `C <http://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n_C>`_ o `ensamblador <http://es.wikipedia.org/wiki/Ensamblador>`_.
+Cuanto más cercano sea el lenguaje a la máquina más eficiente podrá llegar a ser su ejecución, pero más tiempo nos llevará desarrollarlo.
+Por ejemplo, si queremos escribir un programa que imprima un saludo de bienvenida en C deberíamos escribir::
+
+  #include <stdio.h>
+ 
+  int main(void) {
+        printf("Hello, World!\n");
+     
+        return 0;
+  }
+
+Mientras que en Python escribiríamos::
+
+  print("Hola mundo")
+
+Además el programa de C no puede ser ejecutado directamente, antes debemos compilarlo creando un archivo binario ejecutable que la máquina pueda entender.
+Python es un lenguaje interpretado, lo que quiere decir que los archivos de texto con el código escrito se ejecutan directamente sin que debamos antes hacer nada especial con ellos, Python se encarga de estas tareas sin que nosotros debamos intervenir en ellas.
+
+Dados los problemas que vamos a tener que resolver como biólogos y el tiempo que disponemos para resolverlos, elegir un lenguaje similar a Python es una buena idea.
+Tradicionalmente en bioinformática se ha hecho más uso de otro lenguaje similar, `Perl <http://es.wikipedia.org/wiki/Perl>`_.
+Este curso podría darse completamente en Perl, pero hemos elegido Python porque tiene una sintaxis mucho más sencilla.
+De hecho Python fue creado por un profesor y uno de sus objetivos declarados fue que el lenguaje fuese fácil de aprender.
+Esta sencillez no limita en modo alguno al lenguaje, de hecho Python es más moderno y más potente que Perl y una gran parte de la bioinformática se está moviendo día a día hacia este lenguaje.
+
+Python:
+  * es interpretado.
+  * es sencillo.
+  * es libre.
+  * es multiplataforma (funciona en windows sin problemas).
+  * se utiliza ampliamente.
+  * está muy bien documentado.
+  * está bien soportado en bioinformática, aunque menos que Perl.
+
+Creando y ejecutando "Hola mundo"
+---------------------------------
+
+Para seguir la tradición informática lo primero que vamos a hacer es escribir un programa que imprima "Hola mundo".
+Para ello vamos a abrir un interprete de comandos de Python escribiendo python en la línea de comandos::
+
+  $ python
+  Python 2.6.6 (r266:84292, Sep 15 2010, 16:22:56) 
+  [GCC 4.4.5] on linux2
+  Type "help", "copyright", "credits" or "license" for more information.
+  >>> print('hola mundo')
+  hola mundo
+  >>> 
+
+Al ejecutar el comando python sin ningún argumento extra se abre un interprete en el que podemos ejecutar comandos en Python.
+En el caso del ejemplo nos indica que estamos utilizando la versión 2.6.6 del lenguaje.
+Python tiene distintas versiones, la más moderna es la 3.3, pero las más utilizadas son todavía las de la serie 2.x.
+Este curso está escrito para las versiones 2.x porque las 3.x todavía no son usadas ampliamente.
+De todos modos las diferencias entre ambas versiones son mínimas y lo que vamos a ver en el curso es aplicable a ambas.
+
+Tras la información sobre la versión y sobre algún otro asunto aparecen tres símbolos "mayor que"::
+
+  >>>
+
+Este es un prompt similar al del shell al que ya estamos acostumbrados.
+Python nos indica que está listo para recibir órdenes.
+Si escribimos una orden como *print('hola mundo')*, Python la ejecutará y nos mostrará el resultado::
+
+  >>> print('Hola mundo!')
+  Hola mundo!
+
+Una vez cumplida nuestra primera misión podemos salir del interprete de Python escribiendo quit() o pulsando las teclas control y d.
+
+python es el interprete que se distribuye con el lenguaje, pero como interprete interactivo `IPython <http://es.wikipedia.org/wiki/IPython>`_ nos puede resultar más útil.
+IPython colorea la sintaxis y completa los comandos por nosotros pulsando la tecla tabulador.
+
+Aunque el interprete de python es muy útil, normalmente los programas no los vamos a escribir utilizándolo.
+Python tiene otro modo de ejecutar los comandos.
+Lo que haremos será escribir los comandos uno tras otro en un fichero de texto y después le pediremos a python que los ejecute secuencialmente.
+Por ejemplo podemos crear el siguiente fichero utilizando un editor de textos::
+
+  hola_mundo.py:
+
+  print("Hola mundo")
+
+Una vez escrito y guardado el fichero podemos ejecutarlo escribiendo lo siguiente en la línea de comandos::
+
+  $ python hola_mundo.py
+  Hola mundo
+
+La ventaja de este sistema frente al del interprete es que el programa queda escrito en un fichero y lo podemos ejecutar tantas veces como queramos sin tener que reescribirlo.
+
+Normalmente haremos que los ficheros que contienen código Python tengan la extensión *.py*.
+Esto no es un requisito obligatorio, pero nuestro trabajo será más sencillo si lo hacemos así.
+
+En realidad la versión que recomendaríamos como esqueleto básico de programa ejecutable sería::
+
+  #!/bin/env python
+
+  print "Hola mundo"
+
+Este fichero puede ser hecho ejecutable y ser ejecutado sin tener que escribir python dado que el propio fichero indica cómo buscar el comando python en el sistema.
+
+::
+
+  $ chmod u+x hola_mundo.py
+  $ ./hola_mundo.py
+  Hola mundo
+  $ python hola_mundo.py
+  Hola mundo
+
+Cuando hemos ejecutado el fichero directamente lo hemos hecho dando la ruta relativa completa al fichero (*./hola_mundo.py*).
+Hemos de hacerlo así porque normalmente el directorio de trabajo no se encuentra en el *$PATH* que el *shell* utiliza para buscar los ficheros ejecutables.
+Si hubiésemos intentado ejecutarlo directamente habríamos obtenido un error::
+  
+  $ hola_mundo.py
+  hola_mundo.py: orden no encontrada
+ 
+
+Aritmética básica
+-----------------
+
+Python puede ser utilizado como una calculadora::
+
+
+  $ python
+  >>> 1 + 1
+  2
+  >>> 2 * 2
+  4
+  >>> 3.5 / 2
+  1.75
+
+Potencias::
+
+  >>> 2 ** 3
+  8
+
+En algunas ocasiones los operadores no hacen lo que esperamos::
+
+  >>> 3 / 2
+  1
+  >>> 3 / 2.0
+  1.5
+
+En Python 2.x cuando en la división hay números enteros la operación nos devolverá un número entero.
+Afortunadamente este comportamiento del operador división ha sido corregido en la versión 3.x.
+
+Además de estos operadores básicos hay otro denominado módulo capaz de calcular resto de la división::
+
+  >>> 4 % 3
+  1
+
+Este operador nos puede ser de mucha utilidad para cálculos con codones.
+
+En Python además de números enteros y con coma flotante también hay cadenas de texto y existe también una aritmética definida para ellas::
+
+  >>> "Monty" + "Python"
+  'MontyPython'
+  >>> "Spam" * 3
+  'SpamSpamSpam'
+
+Las cadenas de texto se pueden introducir entre comillas dobles o sencillas, en Python ambas opciones son equivalentes::
+
+  >>> "Hola" == 'Hola'
+  True
+
+
+Variables
+---------
+
+Además de hacer aritmética podemos guardar los resultados para utilizarlos posteriormente::
+
+  >>> a = 2 + 2
+  >>> b = a ** 2
+  >>> print b
+  16
+
+En el caso anterior *a* y *b* son variables.
+Una variable puede ser representada como una caja en la que guardar un elemento.
+En este caso en la *a* hemos guardado un 4 y para más tarde hacer uso de él.
+La memoria del ordenador podría ser representada como un conjunto de cajas en las que almacenar los datos que más tarde queramos volver a utilizar.
+Si por ejemplo queremos guardar el número 4 en la memoria deberíamos escribir::
+
+  >>> a = 4
+
+Una vez hecho esto el cuatro queda guardado en la memoria y listo para volver a ser utilizado cuando lo deseemos.
+Aunque a primera vista lo que hemos hecho parezca trivial merece la pena profundizar algo más.
+En realidad lo primero que hemos hecho ha sido crear un número 4, después lo hemos guardado en una de las cajas que componen la memoria del ordenador y por último hemos etiquetado esa caja con la letra a.
+En este momento tal vez nos parezca que el modelo del objeto, la caja y la etiqueta es demasiado complejo, pero nos será de utilidad entender que al hacer "a = 4" la a no se convierte en el cuatro sino que tan sólo apunta a él.
+Si no hemos entendido lo anterior lo que sigue nos parecerá muy extraño::
+
+  >>> a= 42
+  >>> b = a
+  >>> a = 'spam'
+  >>> print b
+  42
+
+.. image:: ../_images/variables.png
+   :width: 600 px
+   :align: center
+
+¿Por qué al final *b* es igual a 42 y no a "spam"? Veámoslo paso a paso:
+
+  * a = 42. Creamos el número 42, lo guardamos en una caja en la memoria y etiquetamos la caja con la etiqueta "a".
+  * b = a. Añadimos otra etiqueta ("b") a la caja que tenía la etiqueta "a". En este momento la caja que contiene el 42 tiene dos etiquetas "a" y "b"
+  * a = 'spam'. Primero creamos la cadena de texto "spam", la metemos en otra caja de memoria, tomamos la etiqueta "a" de la caja vieja y hacemos que se refiera a la nueva caja.
+
+Después de terminar el proceso la caja original, la que contenía el 42 tiene todavía la etiqueta "b" y la nueva, la que contiene "spam" tiene la etiqueta "a".
+
+.. raw:: html
+
+   <script type="text/javascript" src="../_downloads/variables_code_run.js"></script>
+   <div id="VariablesDiv"></div>
+
+Podríamos continuar programando en Python y en la mayoría de las ocasiones no nos enfrentaríamos a ningún problema grave si no entendiésemos qué representan realmente las variables, pero al final nos acabaríamos topando con este comportamiento.
+Técnicamente podríamos decir que en Python las variables representan referencias a los objetos, no a los objetos en sí.
+
+Nombres de variables
+--------------------
+
+Podemos nombrar las variables prácticamente como queramos, pero hay que tener en cuenta algunas restricciones:
+
+  * El primer carácter debe ser una letra del alfabeto o "_" (este último caso se suele reservar para casos especiales).
+  * El resto de caracteres pueden ser alfanuméricos, pero no pueden contener espacios.
+  * Las mayúsculas y las minúsculas importan, "a" es distinto de "A".
+  * Hay algunos nombres reservados que no podemos y no debemos utilizar, como *print*, *while*, *for*, etc.
+
+Además, aunque esto no es una regla que deba obedecerse obligatoriamente, es conveniente que demos a las variables nombres que más tarde podamos recordar.
+Si abrimos un programa nuestro tres meses después de haberlo escrito y nos encontramos con la expresión "m = 3.5" nos será difícil entender que hace el programa.
+Habría sido mucho más claro nombrar la variable como "media = 3.5".
+
+Tipos de objetos
+----------------
+
+En Python los objetos con los que trabajamos pueden ser de distinto tipo, como: enteros (INTeger), números con parte decimal (FLOAT) o cadenas de texto (STRing).
+Podemos pedirle a Python que nos informe sobre el tipo de cualquier objeto con la orden *type*::
+
+  >>> type(42)
+  <type 'int'>
+  >>> type('spam')
+  <type 'str'>
+  >>> type('Spanish Inquisition')
+  <type 'str'>
+  >>> type(3.14)
+  <type 'float'>
+
+A veces será necesario que tengamos en cuenta el tipo de objeto con el que estamos tratando puesto que el resultado de una operación puede ser diferente en un caso u otro.
+
+Por ejemplo, ya habíamos visto que la aritmética no es la misma para enteros y cadenas de texto, el comportamiento de los objetos depende de su tipo::
+
+  >>> 21 * 2
+  42
+  >>> '21' * 2
+  '2121'
+
+Siempre que lo deseemos podremos convertir los objetos de un tipo a otro::
+
+  >>> int('21') * 2
+  42
+  >>> str(42)
+  '42'
+  >>> float(42)
+  42.0
+
+Hay que tener en cuenta el tipo de los objetos a la hora de compararlos.
+Por ejemplo, el 3 representado como un entero o como una cadena de texto no es lo mismo::
+
+  >>> 3 == '3'
+  False
+
+
+Herramientas avanzadas
+----------------------
+
+- Los editores de texto potentes como vi o emacs pueden ser una gran ayuda cuando se programa, aunque su aprendizaje no es trivial.
+- IDEs para Python. Si todavía no sabes lo que es un IDE o te preguntas si lo necesitas o no es que todavía no lo necesitas, pero para programadores avanzados los IDEs como Eclipse con Pydev pueden ser muy útiles.
+
+Bibliografía
+------------
+
+- En el sitio principal de Python mantienen una gran lista de tutoriales y libros para `aprender Python <http://wiki.python.org/moin/BeginnersGuide/NonProgrammers>`_.
+
+- El `tutorial informal <http://docs.python.org/tutorial/index.html>`_ de Python, disponible en `castellano <http://docs.python.org.ar/tutorial/appetite.html>`_ está también orientado a usuarios noveles y utiliza una aproximación similar a este.
+
+- El instituto Pasteur tiene un curso de `Python para biólogos <http://www.pasteur.fr/formation/infobio/python/>`_ orientado al uso de Python en bioinformática para el análisis de secuencias.
+
+- Una vez conocidos los conceptos básicos podemos estudiar algunos de los libros que describen el lenguaje con una mayor profundidad como `Learning Python <http://shop.oreilly.com/product/9780596158071.do>`_ o `Core Python Programming <http://www.amazon.com/Core-Python-Programming-Wesley-Chun/dp/0132269937>`_.
+
+- Para practicar hay una página excelente con problemas de bioinformática para resolver `Rosalind <http://rosalind.info/>`_.

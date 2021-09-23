@@ -1,0 +1,551 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Alineamiento de secuencias &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Jemboss" href="practica_jemboss.html" />
+    <link rel="prev" title="Bases datos de secuencia" href="practica_bases.html" /> 
+  </head>
+  <body>
+    <nav class="global_navigation">
+        <ul>
+            <li class="current_site_item" ><a href="http://bioinf.comav.upv.es">bioinf</a></li>
+            <li><a href="http://cucurbigene.net">cucurbigene</a></li>
+            <li><a href="http://melogene.net">melogene</a></li>
+        </ul>
+    </nav>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+    
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="http://www.melogene.net/">Melogene</a></li>
+                    <li><a href="http://www.cucurbigene.net/">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bases_datos.html">Bases de datos biológicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_bases.html">Práctica bases de datos</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Alineamientos de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_jemboss.html">Práctica jemboss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_alineamientos.html">Práctica de alineamientos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blast.html">Búsqueda de secuencias en bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast.html">Práctica Blast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediccion.html">Métodos predictivos en ADN y ARN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_prediccion.html">Práctica predicción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">Alineamientos múltiples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_multiple.html">Práctica alineamiento múltiple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filogenias.html">Introducción al análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_filogenias.html">Práctica análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast2go.html">Práctica anotación con Blast2GO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_visores.html">Prácticas bases de datos genómicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion.html">Ejercicio anotación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion2.html">Ejercicio prediccion 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sanger.html">Secuenciación de Sanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ensamblaje.html">Ensamblaje de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_ensamblaje.html">Práctica ensamblaje de secuencias</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="alineamiento-de-secuencias">
+<h1>Alineamiento de secuencias<a class="headerlink" href="#alineamiento-de-secuencias" title="Permalink to this headline">¶</a></h1>
+<section id="significado-biologico">
+<h2>Significado biológico<a class="headerlink" href="#significado-biologico" title="Permalink to this headline">¶</a></h2>
+<p>Las secuencias de ADN y proteína definen la función de las proteínas en los seres vivos.</p>
+<p>Cuando más similares sean dos secuencias más similares tenderán a ser las funciones de las proteínas codificadas por ellas.</p>
+<p>Las secuencias de un mismo gen en un conjunto de especies serán más distintas cuanto más alejadas filogenéticamente estén las especies comparadas.</p>
+<figure class="align-center">
+<img alt="_images/finches.jpg" src="_images/finches.jpg" />
+</figure>
+<p>(From BSCS, Biological Science: Molecules to Man, Houghton Mifflin Co., 1963).</p>
+<figure class="align-center">
+<img alt="_images/finch_tree.png" src="_images/finch_tree.png" />
+</figure>
+<p>Normalmente dos secuencias tienen una alta similitud porque son homólogas, es decir comparten un ancestro común.</p>
+<p>A diferencia de la similitud, la homología no es un término cuantitativo, dos secuencias o son homólogas, derivan del mismo ancestro, o no lo son.</p>
+<p>A partir de la similitud de las secuencias inferimos la homología.</p>
+<p>La acumulación de mutaciones en el ADN a lo largo del tiempo es la causa de que las secuencias de un mismo gen en dos especies distintas no sean idénticas.</p>
+<p>Cuanto más tiempo pase desde el último antecesor común más diferentes serán las secuencias.</p>
+<figure class="align-center">
+<img alt="_images/sequence_tree.png" src="_images/sequence_tree.png" />
+</figure>
+<p>En las secuencias, además de sustituciones de un residuo por otro pueden darse inserciones o deleciones.</p>
+</section>
+<section id="utilidad">
+<h2>Utilidad<a class="headerlink" href="#utilidad" title="Permalink to this headline">¶</a></h2>
+<p>Los alineamientos sirven, entre otras cosas para:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Asegurarse de que dos secuencias son similares y cunatificar su similitud.</p></li>
+<li><p>Encontrar dominios funcionales.</p></li>
+<li><p>Comparar un gen y su producto.</p></li>
+<li><p>Buscar posiciones homólogas en las secuencias.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id1">
+<h2>Alineamiento de secuencias<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Para poder cuantificar el grado de similitud de dos secuencias lo primero que hay que hacer es alinearlas.</p>
+<p>Sin alinear</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CGATGCTAGCGTATCGTAGTCTATCGTAC</span>
+             <span class="o">|</span>     <span class="o">||</span>
+<span class="n">ACGATGCTAGCGTTTCGTATCATCGTA</span>
+</pre></div>
+</div>
+<p>Alineadas</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">CGATGCTAGCGTATCGTAGTCTATCGTAC</span>
+ <span class="o">||||||||||||</span> <span class="o">|||||||||||||||</span>
+<span class="n">ACGATGCTAGCGTTTCGTA</span><span class="o">-</span><span class="n">TC</span><span class="o">-</span><span class="n">ATCGTA</span><span class="o">-</span>
+</pre></div>
+</div>
+<p>Una sustitución es un cambio de un residuo por otro.</p>
+<p>Cuando falta una base decimos que hay un gap.</p>
+<p>Un gap puede corresponder tanto a una deleción como a una inserción.</p>
+<p>Debido a la existencia de gaps y sustituciones alinear dos secuencia no es trivial.</p>
+<p>Pueden existir diferentes alineamientos dependiendo del número de gaps que permitamos introducir.</p>
+<p>Sin gaps (10 coincidencias):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">:</span>  <span class="n">ATATTGCTACGTATATCAT</span>
+        <span class="o">||||||||||</span>
+<span class="n">b</span><span class="p">:</span> <span class="n">ATATATGCTACGTATCAT</span>
+</pre></div>
+</div>
+<p>Con gaps en a (14 coincidencias):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">:</span> <span class="n">ATAT</span><span class="o">-</span><span class="n">TGCTACGTATATCAT</span>
+   <span class="o">||||</span> <span class="o">||||||||||</span>
+<span class="n">b</span><span class="p">:</span> <span class="n">ATATATGCTACGTATCAT</span>
+</pre></div>
+</div>
+<p>Con gaps en a y b (16 coincidencias):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">:</span> <span class="n">ATAT</span><span class="o">-</span><span class="n">TGCTACGTATATCAT</span>
+   <span class="o">||||</span> <span class="o">|||||||</span>  <span class="o">||||||</span>
+<span class="n">b</span><span class="p">:</span> <span class="n">ATATATGCTACG</span><span class="o">--</span><span class="n">TATCAT</span>
+</pre></div>
+</div>
+<p>El objetivo del alineamiento es conseguir alinear las posiciones homólogas.</p>
+</section>
+<section id="puntuacion-de-los-alineamientos">
+<h2>Puntuación de los alineamientos<a class="headerlink" href="#puntuacion-de-los-alineamientos" title="Permalink to this headline">¶</a></h2>
+<p>El alineamiento con mejor puntuación debería ser el más razonable desde un punto de vista biológico, el que alinea más posiciones homólogas.</p>
+<p>Se recurre a medidas objetivas.</p>
+<p>Para comparar distintos alineamientos entre sí se pueden asignar puntuaciones.</p>
+<p>Ejemplos de sistemas de puntuación:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Número de letras que coinciden</p></li>
+<li><p>Porcentaje de identidad, número de coincidencias cada cien posiciones.</p></li>
+<li><p>Porcentaje de similitud, tiene en cuenta la similitud fisicoquímica de los diferentes aminoácidos.</p></li>
+</ul>
+</div></blockquote>
+<p>En la práctica se suelen utilizar sistemas de puntuación más complejos que también tienen en cuenta los gaps.</p>
+<p>Se suelen incluir dos penalizaciones para los gaps, una para abrir el gap y otra para extenderlo.
+Este último suele ser menos costoso.</p>
+<p>De entre todos los alineamientos posibles el óptimo es el que presenta una máxima puntuación para el sistema de puntuación dado.</p>
+<p>Ejemplo de puntuación de un alineamiento.</p>
+<p>Sistema de puntuación: match: +1, mismatch: 0, gap: -1</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">-</span><span class="n">ATESLIKESCHEESE</span>
+<span class="o">|</span> <span class="o">|||</span>      <span class="o">||||||</span>
+<span class="n">GRATED</span><span class="o">-----</span><span class="n">CHEESE</span>
+
+<span class="n">puntuación</span><span class="p">:</span> <span class="mi">10</span> <span class="n">matches</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="n">mimatch</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">6</span> <span class="n">gaps</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>Para buscar el alineamiento óptimo se han desarrollado varios algoritmos y programas.</p>
+</section>
+<section id="alineamientos-globales-y-locales">
+<h2>Alineamientos globales y locales<a class="headerlink" href="#alineamientos-globales-y-locales" title="Permalink to this headline">¶</a></h2>
+<p>Hay dos tipos de alineamientos principales: globales y locales.</p>
+<p>En el global se intenta que el alineamiento cubra las dos secuencias completamente introduciendo los gaps que sean necesarios.</p>
+<p>En el local se alinean sólo las zonas más parecidas.</p>
+<p>El gobal sirve para alinear secuencias que se empiecen y acaben en la misma región, por ejemplo genes homólogos de especies similares.</p>
+<p>El alineamiento local suele ser la mejor opción a no ser que se esté seguro de que las los secuencias deben de parecerse a lo largo de toda sus extensión.
+En muchos casos las secuencias homólogas se parecen sólo en las regiones más conservadas.</p>
+<p>Local</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TAGCTA</span><span class="o">-</span><span class="n">TCGTAG</span>
+<span class="o">||||||</span> <span class="o">||||||</span>
+<span class="n">TAGCTAGTCGTAG</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Global</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TACGGGGCTAGCTA</span><span class="o">-</span><span class="n">TCGTAG</span>
+<span class="o">||||</span>    <span class="o">|||</span>    <span class="o">||||||</span>
+<span class="n">TAGC</span><span class="o">----</span><span class="n">TAG</span><span class="o">----</span><span class="n">TCGTAG</span>
+</pre></div>
+</div>
+<p>El método a elegir dependerá del objetivo.
+Se puede hacer un alineamiento para ver si dos proteínas tienen dominios similares, si pertenecen a la misma familia, si tienen un antecesor común.</p>
+<p>Entre otras decisiones que hay que tomar hay que decidir si queremos hacer un alineamiento global o local, la matriz de puntuación (scoring matrix), el valor de la penalización por gaps o por no coincidencias (mismatches).</p>
+<p>Los programas vienen con valores por defectos que han sido pensados para resolver de forma óptima un problema concreto, si ese es nuestro problema esos son los mejores valores para los parámetros.
+Si no es así debemos preocuparnos por entender como funciona el programa y como afectan los distintos parámetros.</p>
+<p>Es muy fácil hacer un alineamiento cuando las secuencias son muy parecidas, pero a medida que se diferencian más el asunto se complica.
+El límite para las secuencias de proteínas está alrededor del 25% de identidad.</p>
+</section>
+<section id="metodos-de-alineamiento">
+<h2>Métodos de alineamiento<a class="headerlink" href="#metodos-de-alineamiento" title="Permalink to this headline">¶</a></h2>
+<section id="matriz-de-puntos-dot-matrix-o-dot-plot">
+<h3>Matriz de puntos (dot matrix o dot plot)<a class="headerlink" href="#matriz-de-puntos-dot-matrix-o-dot-plot" title="Permalink to this headline">¶</a></h3>
+<p>Representa los alineamientos gráficamente.</p>
+<p>Da unos resultados intuitivos e informa de posibles alineamientos alternativos.</p>
+<p>Sirve para descubrir repeticiones, inserciones, deleciones (largas).</p>
+<p>También se puede utilizar para identificar regiones similares que después podemos alinear por otro método.</p>
+<p>Una ventaja y a la vez una desventaja es que el resultado es gráfico.
+En la horizontal del gráfico se representa una secuencia y en la vertical otra.</p>
+<p>El algoritmo consiste en recorrer la secuencia A base por base (o utilizando una ventana de varias bases).
+Para cada posición de la secuencia A se estudian todas las posiciones de la secuencia B, si las posiciones son iguales se pone un punto, si son distintas no se pone.</p>
+<p>Los segmentos de secuencia similar se detectan como diagonales.</p>
+<figure class="align-center">
+<img alt="_images/dot.png" src="_images/dot.png" />
+</figure>
+<p>El número de letras de las palabras (words) determina la sensibilidad.</p>
+<p>Se suelen aplicar filtros para mejorar el gráfico eliminando parecidos espúreos.</p>
+<p>Normalmente no se comparan las secuencias letra por letra sino grupos de bases (words).</p>
+<p>Se comparan todas las palabras (words) de una secuencia con las de la otra y se dibuja una pequeña diagonal cuando son suficientemente parecidas.</p>
+<p>Para determinar si dos palabras son suficientemente similares se aplican los métodos de puntuación que veremos después.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">P05049</span><span class="o">|</span><span class="n">SNAK_DROME</span> <span class="n">Serine</span> <span class="n">protease</span> <span class="n">snake</span> <span class="o">-</span> <span class="n">Drosophila</span> <span class="n">melanogaster</span> <span class="p">(</span><span class="n">Fruit</span> <span class="n">fly</span><span class="p">)</span><span class="o">.</span>
+<span class="n">MIILWSLIVHLQLTCLHLILQTPNLEALDALEIINYQTTKYTIPEVWKEQPVATIGEDVD</span>
+<span class="n">DQDTEDEESYLKFGDDAEVRTSVSEGLHEGAFCRRSFDGRSGYCILAYQCLHVIREYRVH</span>
+<span class="n">GTRIDICTHRNNVPVICCPLADKHVLAQRISATKCQEYNAAARRLHLTDTGRTFSGKQCV</span>
+<span class="n">PSVPLIVGGTPTRHGLFPHMAALGWTQGSGSKDQDIKWGCGGALVSELYVLTAAHCATSG</span>
+<span class="n">SKPPDMVRLGARQLNETSATQQDIKILIIVLHPKYRSSAYYHDIALLKLTRRVKFSEQVR</span>
+<span class="n">PACLWQLPELQIPTVVAAGWGRTEFLGAKSNALRQVDLDVVPQMTCKQIYRKERRLPRGI</span>
+<span class="n">IEGQFCAGYLPGGRDTCQGDSGGPIHALLPEYNCVAFVVGITSFGKFCAAPNAPGVYTRL</span>
+<span class="n">YSYLDWIEKIAFKQH</span>
+
+<span class="o">&gt;</span><span class="n">gi</span><span class="o">|</span><span class="mi">129688</span><span class="o">|</span><span class="n">sp</span><span class="o">|</span><span class="n">P21902</span><span class="o">|</span><span class="n">PCE_TACTR</span> <span class="n">Proclotting</span> <span class="n">enzyme</span> <span class="n">precursor</span>
+<span class="n">MLVNNVFSLLCFPLLMSVVRCSTLSRQRRQFVFPDEEELCSNRFTEEGTCKNVLDCRILLQKNDYNLLKE</span>
+<span class="n">SICGFEGITPKVCCPKSSHVISSTQAPPETTTTERPPKQIPPNLPEVCGIHNTTTTRIIGGREAPIGAWP</span>
+<span class="n">WMTAVYIKQGGIRSVQCGGALVTNRHVITASHCVVNSAGTDVMPADVFSVRLGEHNLYSTDDDSNPIDFA</span>
+<span class="n">VTSVKHHEHFVLATYLNDIAILTLNDTVTFTDRIRPICLPYRKLRYDDLAMRKPFITGWGTTAFNGPSSA</span>
+<span class="n">VLREVQLPIWEHEACRQAYEKDLNITNVYMCAGFADGGKDACQGDSGGPMMLPVKTGEFYLIGIVSFGKK</span>
+<span class="n">CALPGFPGVYTKVTEFLDWIAEHMV</span>
+</pre></div>
+</div>
+<p>El alineamiento de estas dos secuencias se ve bien con word size <a class="reference download internal" download="" href="_downloads/eda21d8511b497ce1da880326b0ca53b/protein_dottup_3.png"><code class="xref download docutils literal notranslate"><span class="pre">3</span></code></a> o <a class="reference download internal" download="" href="_downloads/bb5f0ea32b47420518214cde2f2f77bc/protein_dottup_4.png"><code class="xref download docutils literal notranslate"><span class="pre">4</span></code></a>.</p>
+<p>Hay varios programas para aplicar este método, uno de ellos es el <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/dotmatcher.html">dotmatcher</a> del <a class="reference external" href="http://emboss.sourceforge.net/">emboss</a>.</p>
+<p>Es fácil detectar inserciones y deleciones grandes, repeticiones directas e invertidas.</p>
+<figure class="align-center">
+<img alt="_images/del_dotmatrix.png" src="_images/del_dotmatrix.png" />
+</figure>
+<p>Gen duplicado en tandem.</p>
+<figure class="align-center">
+<img alt="_images/duplicacion_dotmatrix.png" src="_images/duplicacion_dotmatrix.png" />
+</figure>
+<p>Análisis del genoma de Arabidopsis. <a class="reference external" href="http://www.arabidopsis.org/">http://www.arabidopsis.org/</a></p>
+<figure class="align-center">
+<img alt="_images/arabidopsis.png" src="_images/arabidopsis.png" />
+</figure>
+<p>Los gráficos dotplot sugieren caminos a través del espacio de alinamientos posibles.</p>
+<p>Estas rutas son un alinamiento.</p>
+<figure class="align-center">
+<img alt="_images/path.png" src="_images/path.png" />
+</figure>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PLAU</span>  <span class="mi">90</span>  <span class="n">EPKKVKDHCSKHSPCQKGGTCVNMP</span><span class="o">--</span><span class="n">SGPH</span><span class="o">-</span><span class="n">CLCPQHLTGNHCQKEK</span><span class="o">---</span><span class="n">CFE</span>  <span class="mi">137</span>
+<span class="n">PLAT</span>  <span class="mi">23</span>  <span class="n">ELHQVPSNCD</span><span class="o">----</span><span class="n">CLNGGTCVSNKYFSNIHWCNCPKKFGGQHCEIDKSKTCYE</span>   <span class="mi">72</span>
+</pre></div>
+</div>
+<p>El método tiene una limitación importante, nos muestra las regiones similares, pero no obtenemos un alineamiento.</p>
+</section>
+<section id="algoritmo-de-programacion-dinamica">
+<h3>Algoritmo de programación dinámica<a class="headerlink" href="#algoritmo-de-programacion-dinamica" title="Permalink to this headline">¶</a></h3>
+<p>Este método permite encontrar el alineamiento óptimo dadas dos secuencias y un esquema de puntuación determinado.</p>
+<p>En principio estos alineamientos se corresponden con las diagonales del método gráfico.</p>
+<p>Fue utilizado por primera vez por <a class="reference external" href="http://es.wikipedia.org/wiki/Algoritmo_Needleman-Wunsch">Needleman y Wunsch</a> para hacer alineamientos globales</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">########################################</span>
+<span class="c1"># Program:  needle</span>
+<span class="c1"># Rundate:  Tue Oct 02 10:58:05 2007</span>
+<span class="c1"># Align_format: srspair</span>
+<span class="c1"># Report_file: /ebi/extserv/old-work/needle-20071002-10580428983041.output</span>
+<span class="c1">########################################</span>
+
+<span class="c1">#=======================================</span>
+<span class="c1">#</span>
+<span class="c1"># Aligned_sequences: 2</span>
+<span class="c1"># 1: SNAK_DROME</span>
+<span class="c1"># 2: PCE_TACTR</span>
+<span class="c1"># Matrix: EBLOSUM62</span>
+<span class="c1"># Gap_penalty: 10.0</span>
+<span class="c1"># Extend_penalty: 0.5</span>
+<span class="c1">#</span>
+<span class="c1"># Length: 462</span>
+<span class="c1"># Identity:     126/462 (27.3%)</span>
+<span class="c1"># Similarity:   184/462 (39.8%)</span>
+<span class="c1"># Gaps:         114/462 (24.7%)</span>
+<span class="c1"># Score: 440.5</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#=======================================</span>
+
+<span class="n">SNAK_DROME</span>         <span class="mi">1</span> <span class="n">MIILWSLIVH</span><span class="o">--</span><span class="n">LQLTCLHLILQTPNLEALDALEIINYQTTKYTIPEVWK</span>     <span class="mi">48</span>
+                           <span class="p">::</span><span class="o">|</span><span class="p">:</span>  <span class="o">..|.|..|</span><span class="p">::</span><span class="o">.......|</span>      <span class="p">:</span><span class="o">.|..</span><span class="p">::</span><span class="o">..|</span>
+<span class="n">PCE_TACTR</span>          <span class="mi">1</span>       <span class="n">MLVNNVFSLLCFPLLMSVVRCSTL</span><span class="o">------</span><span class="n">SRQRRQFVFP</span><span class="o">----</span>     <span class="mi">34</span>
+
+<span class="n">SNAK_DROME</span>        <span class="mi">49</span> <span class="n">EQPVATIGEDVDDQDTEDEESYLKFGDDAEVRTSVSEGLHEGAFCRRSFD</span>     <span class="mi">98</span>
+                                      <span class="o">|||.</span>                      <span class="o">.|...|.</span>
+<span class="n">PCE_TACTR</span>         <span class="mi">35</span> <span class="o">-----------------</span><span class="n">DEEE</span><span class="o">----------------------</span><span class="n">LCSNRFT</span>     <span class="mi">45</span>
+
+<span class="n">SNAK_DROME</span>        <span class="mi">99</span> <span class="n">GRSGYCILAYQCLHVIREYRVHGTRIDICTHRNNVPVICCPLADKHVLAQ</span>    <span class="mi">148</span>
+                      <span class="o">..|.|.....|..</span><span class="p">::::</span><span class="o">...</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">..||......|.</span><span class="p">:</span><span class="o">|||</span> <span class="o">...||</span>
+<span class="n">PCE_TACTR</span>         <span class="mi">46</span> <span class="o">-</span><span class="n">EEGTCKNVLDCRILLQKNDYNLLKESICGFEGITPKVCCP</span><span class="o">-</span><span class="n">KSSHV</span><span class="o">---</span>     <span class="mi">90</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">149</span> <span class="n">RISATKCQEYNAAARRLHLTDTGRTFSGKQCVPSVP</span><span class="o">-----------</span><span class="n">LIV</span>    <span class="mi">187</span>
+                      <span class="o">||</span><span class="p">:</span><span class="o">|</span><span class="p">:</span><span class="o">.........|</span>          <span class="o">..||..|</span><span class="p">::</span><span class="o">|</span>           <span class="o">.|</span><span class="p">:</span>
+<span class="n">PCE_TACTR</span>         <span class="mi">91</span> <span class="o">-</span><span class="n">ISSTQAPPETTTTER</span><span class="o">----------</span><span class="n">PPKQIPPNLPEVCGIHNTTTTRII</span>    <span class="mi">129</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">188</span> <span class="n">GGTPTRHGLFPHMAALGWTQGSGSKDQDIKWGCGGALVSELYVLTAAHCA</span>    <span class="mi">237</span>
+                     <span class="o">||.....|.</span><span class="p">:</span><span class="o">|.|.|</span><span class="p">:</span><span class="o">...||.....|</span>     <span class="o">||||||</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">|</span><span class="p">:</span><span class="o">||</span><span class="p">:</span><span class="o">||.</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">130</span> <span class="n">GGREAPIGAWPWMTAVYIKQGGIRSVQ</span><span class="o">-----</span><span class="n">CGGALVTNRHVITASHCV</span>    <span class="mi">174</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">238</span> <span class="n">TSGS</span><span class="o">----</span><span class="n">KPPDM</span><span class="o">--</span><span class="n">VRLGARQLNET</span><span class="o">--</span><span class="n">SATQQDIKILIIVLHPKYRSSA</span>    <span class="mi">279</span>
+                     <span class="o">.</span><span class="p">:</span><span class="o">.</span><span class="p">:</span>    <span class="o">.|.|</span><span class="p">:</span>  <span class="o">||||...|..|</span>  <span class="o">.</span><span class="p">:</span><span class="o">...|..</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">..|..</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">.</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">175</span> <span class="n">VNSAGTDVMPADVFSVRLGEHNLYSTDDDSNPIDFAVTSVKHHEHFVLAT</span>    <span class="mi">224</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">280</span> <span class="n">YYHDIALLKLTRRVKFSEQVRPACL</span><span class="o">----</span><span class="n">WQLPELQIPTVVAAGWGRTEF</span>    <span class="mi">325</span>
+                     <span class="o">|.</span><span class="p">:</span><span class="o">|||</span><span class="p">:</span><span class="o">|.|...|.|</span><span class="p">::::</span><span class="o">||.||</span>    <span class="o">.</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">|.</span><span class="p">:</span><span class="o">......|||.|.|</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">225</span> <span class="n">YLNDIAILTLNDTVTFTDRIRPICLPYRKLRYDDLAMRKPFITGWGTTAF</span>    <span class="mi">274</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">326</span> <span class="n">LGAKSNALRQVDLDVVPQMTCKQIYRKERRLPRGIIEGQFCAGYLPGGRD</span>    <span class="mi">375</span>
+                     <span class="o">.|..|..||</span><span class="p">:</span><span class="o">|.|.</span><span class="p">:</span><span class="o">.....|</span><span class="p">:</span><span class="o">|.|.|</span><span class="p">:</span>    <span class="o">..|.....|||</span><span class="p">:</span><span class="o">..||</span><span class="p">:</span><span class="o">|</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">275</span> <span class="n">NGPSSAVLREVQLPIWEHEACRQAYEKD</span><span class="o">----</span><span class="n">LNITNVYMCAGFADGGKD</span>    <span class="mi">320</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">376</span> <span class="n">TCQGDSGGPIHALLPEYNCVAFVVGITSFGKFCAAPNAPGVYTRLYSYLD</span>    <span class="mi">425</span>
+                     <span class="o">.||||||||</span><span class="p">:</span>  <span class="p">:</span><span class="o">||......</span><span class="p">:::</span><span class="o">||.||||.||.|..|||||</span><span class="p">::</span><span class="o">..</span><span class="p">:</span><span class="o">||</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">321</span> <span class="n">ACQGDSGGPM</span><span class="o">--</span><span class="n">MLPVKTGEFYLIGIVSFGKKCALPGFPGVYTKVTEFLD</span>    <span class="mi">368</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">426</span> <span class="n">WIEKIAFKQH</span>      <span class="mi">435</span>
+                     <span class="o">||</span>     <span class="o">.</span><span class="p">:</span><span class="o">|</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">369</span> <span class="n">WI</span><span class="o">-----</span><span class="n">AEHMV</span>    <span class="mi">375</span>
+</pre></div>
+</div>
+<p>Hay que utilizar un alineamiento global sólo cuando sabemos que las dos secuencias se parecen a lo largo de toda su extensión.
+Esto lo podemos averiguar con un dot plot.</p>
+<p>Más tarde fue adaptado por <a class="reference external" href="http://es.wikipedia.org/wiki/Algoritmo_Smith-Waterman">Smith y Waterman</a> para alineamientos locales.</p>
+<p>Los alineamientos locales se utilizan cuando sólo tenemos un fragmento de la secuencia o cuando las secuencias son distantes y sólo una parte se parece.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">########################################</span>
+<span class="c1"># Program:  water</span>
+<span class="c1"># Rundate:  Tue Oct 02 11:00:39 2007</span>
+<span class="c1"># Align_format: srspair</span>
+<span class="c1"># Report_file: /ebi/extserv/old-work/water-20071002-11003873398600.output</span>
+<span class="c1">########################################</span>
+
+<span class="c1">#=======================================</span>
+<span class="c1">#</span>
+<span class="c1"># Aligned_sequences: 2</span>
+<span class="c1"># 1: SNAK_DROME</span>
+<span class="c1"># 2: PCE_TACTR</span>
+<span class="c1"># Matrix: EBLOSUM62</span>
+<span class="c1"># Gap_penalty: 10.0</span>
+<span class="c1"># Extend_penalty: 0.5</span>
+<span class="c1">#</span>
+<span class="c1"># Length: 362</span>
+<span class="c1"># Identity:     116/362 (32.0%)</span>
+<span class="c1"># Similarity:   165/362 (45.6%)</span>
+<span class="c1"># Gaps:          50/362 (13.8%)</span>
+<span class="c1"># Score: 452.0</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#=======================================</span>
+
+<span class="n">SNAK_DROME</span>        <span class="mi">89</span> <span class="n">EGAFCRRSFDGRSGYCILAYQCLHVIREYRVHGTRIDICTHRNNVPVICC</span>    <span class="mi">138</span>
+                     <span class="o">|...|...|.</span> <span class="o">..|.|.....|..</span><span class="p">::::</span><span class="o">...</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">..||......|.</span><span class="p">:</span><span class="o">||</span>
+<span class="n">PCE_TACTR</span>         <span class="mi">36</span> <span class="n">EEELCSNRFT</span><span class="o">-</span><span class="n">EEGTCKNVLDCRILLQKNDYNLLKESICGFEGITPKVCC</span>     <span class="mi">84</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">139</span> <span class="n">PLADKHVLAQRISATKCQEYNAAARRLHLTDTGRTFSGKQCVPSVP</span><span class="o">----</span>    <span class="mi">184</span>
+                     <span class="o">|</span> <span class="o">...||</span>    <span class="o">||</span><span class="p">:</span><span class="o">|</span><span class="p">:</span><span class="o">.........|</span>          <span class="o">..||..|</span><span class="p">::</span><span class="o">|</span>
+<span class="n">PCE_TACTR</span>         <span class="mi">85</span> <span class="n">P</span><span class="o">-</span><span class="n">KSSHV</span><span class="o">----</span><span class="n">ISSTQAPPETTTTER</span><span class="o">----------</span><span class="n">PPKQIPPNLPEVCG</span>    <span class="mi">119</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">185</span> <span class="o">-------</span><span class="n">LIVGGTPTRHGLFPHMAALGWTQGSGSKDQDIKWGCGGALVSE</span>    <span class="mi">227</span>
+                            <span class="o">.|</span><span class="p">:</span><span class="o">||.....|.</span><span class="p">:</span><span class="o">|.|.|</span><span class="p">:</span><span class="o">...||.....|</span>     <span class="o">||||||</span><span class="p">:</span><span class="o">.</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">120</span> <span class="n">IHNTTTTRIIGGREAPIGAWPWMTAVYIKQGGIRSVQ</span><span class="o">-----</span><span class="n">CGGALVTN</span>    <span class="mi">164</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">228</span> <span class="n">LYVLTAAHCATSGS</span><span class="o">----</span><span class="n">KPPDM</span><span class="o">--</span><span class="n">VRLGARQLNET</span><span class="o">--</span><span class="n">SATQQDIKILII</span>    <span class="mi">269</span>
+                     <span class="o">.</span><span class="p">:</span><span class="o">|</span><span class="p">:</span><span class="o">||</span><span class="p">:</span><span class="o">||..</span><span class="p">:</span><span class="o">.</span><span class="p">:</span>    <span class="o">.|.|</span><span class="p">:</span>  <span class="o">||||...|..|</span>  <span class="o">.</span><span class="p">:</span><span class="o">...|..</span><span class="p">:</span><span class="o">..</span><span class="p">:</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">165</span> <span class="n">RHVITASHCVVNSAGTDVMPADVFSVRLGEHNLYSTDDDSNPIDFAVTSV</span>    <span class="mi">214</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">270</span> <span class="n">VLHPKYRSSAYYHDIALLKLTRRVKFSEQVRPACL</span><span class="o">----</span><span class="n">WQLPELQIPTV</span>    <span class="mi">315</span>
+                     <span class="o">..|..</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">.|.</span><span class="p">:</span><span class="o">|||</span><span class="p">:</span><span class="o">|.|...|.|</span><span class="p">::::</span><span class="o">||.||</span>    <span class="o">.</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">|.</span><span class="p">:</span><span class="o">...</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">215</span> <span class="n">KHHEHFVLATYLNDIAILTLNDTVTFTDRIRPICLPYRKLRYDDLAMRKP</span>    <span class="mi">264</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">316</span> <span class="n">VAAGWGRTEFLGAKSNALRQVDLDVVPQMTCKQIYRKERRLPRGIIEGQF</span>    <span class="mi">365</span>
+                     <span class="o">...|||.|.|.|..|..||</span><span class="p">:</span><span class="o">|.|.</span><span class="p">:</span><span class="o">.....|</span><span class="p">:</span><span class="o">|.|.|</span><span class="p">:</span>    <span class="o">..|.....</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">265</span> <span class="n">FITGWGTTAFNGPSSAVLREVQLPIWEHEACRQAYEKD</span><span class="o">----</span><span class="n">LNITNVYM</span>    <span class="mi">310</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">366</span> <span class="n">CAGYLPGGRDTCQGDSGGPIHALLPEYNCVAFVVGITSFGKFCAAPNAPG</span>    <span class="mi">415</span>
+                     <span class="o">|||</span><span class="p">:</span><span class="o">..||</span><span class="p">:</span><span class="o">|.||||||||</span><span class="p">:</span>  <span class="p">:</span><span class="o">||......</span><span class="p">:::</span><span class="o">||.||||.||.|..||</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">311</span> <span class="n">CAGFADGGKDACQGDSGGPM</span><span class="o">--</span><span class="n">MLPVKTGEFYLIGIVSFGKKCALPGFPG</span>    <span class="mi">358</span>
+
+<span class="n">SNAK_DROME</span>       <span class="mi">416</span> <span class="n">VYTRLYSYLDWI</span>    <span class="mi">427</span>
+                     <span class="o">|||</span><span class="p">::</span><span class="o">..</span><span class="p">:</span><span class="o">||||</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">359</span> <span class="n">VYTKVTEFLDWI</span>    <span class="mi">370</span>
+</pre></div>
+</div>
+<p>Los alineamientos globales se utilizan sobre todo dentro de alineamientos múltiples.</p>
+<p>Los alineamientos locales generan alineamientos de las zonas más similares de las secuencias.</p>
+<p>El algoritmo genera una matriz que representa todos los posibles alineamientos entre las dos secuencias, de modo análogo al gráfico del dot matrix, pero ahora en vez de dibujar puntos se asignan puntuaciones.</p>
+<p>Se comienza en los extremos de las secuencias y se intenta alinear todos los posibles pares de caracteres en las secuencias dando una puntuación a las coincidencias, las no coincidencias y los gaps.</p>
+<p>El mejor conjunto de puntuaciones altas consecutivas en la matriz define el alineamiento óptimo.</p>
+<p>El alineamiento dependerá de los parámetros utilizados: gaps, coincidencias, no coincidencias y similaridad.</p>
+<p>Es un método matemáticamente muy estricto, pero lento.</p>
+<p>El tiempo de ejecución crece con el producto de las longitudes de las secuencias a alinear.</p>
+<p>Hay muchos programas que utilizan estos algoritmos.
+Dos de los más utilizados son <a class="reference external" href="http://emboss.bioinformatics.nl/cgi-bin/emboss/help/needle">needle</a> y <a class="reference external" href="http://emboss.bioinformatics.nl/cgi-bin/emboss/help/water">water</a> del EMBOSS.</p>
+</section>
+</section>
+<section id="matrices-de-sustitucion">
+<h2>Matrices de sustitución<a class="headerlink" href="#matrices-de-sustitucion" title="Permalink to this headline">¶</a></h2>
+<p>Dos nucleótidos pueden o ser iguales o diferentes, pero en el caso de los aminoácidos la situación es más compleja.</p>
+<p>Dos aminoácidos pueden ser iguales, diferentes o más o menos parecidos.
+Por ejemplo un aminoácido neutro se parecerá más a otro aminoácido neutro que a uno ácido.</p>
+<p>Ejemplo de posible sistema de puntuación para aminoácidos.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Tipos</span> <span class="n">de</span> <span class="n">aminoácidos</span><span class="p">:</span>
+
+ <span class="n">hidrofóbicos</span><span class="p">:</span> <span class="n">Ile</span><span class="p">,</span> <span class="n">Val</span><span class="p">,</span> <span class="n">Leu</span><span class="p">,</span> <span class="n">Ala</span>
+
+ <span class="n">Polares</span> <span class="p">(</span><span class="o">+</span><span class="p">):</span> <span class="n">Lys</span><span class="p">,</span> <span class="n">Arg</span>
+
+ <span class="n">Polares</span> <span class="p">(</span><span class="o">-</span><span class="p">):</span> <span class="n">Glu</span><span class="p">,</span> <span class="n">Asp</span>
+
+ <span class="n">Aromáticos</span><span class="p">:</span> <span class="n">Phe</span><span class="p">,</span> <span class="n">Tyr</span><span class="p">,</span> <span class="n">Trp</span>
+
+ <span class="n">etc</span><span class="o">.</span>
+
+ <span class="o">*</span> <span class="n">Puntuaciones</span><span class="p">:</span>
+
+ <span class="n">Ile</span> <span class="n">x</span> <span class="n">Val</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+ <span class="n">Ile</span> <span class="n">x</span> <span class="n">Asp</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+
+ <span class="n">Phe</span> <span class="n">x</span> <span class="n">Tyr</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+ <span class="n">Phe</span> <span class="n">x</span> <span class="n">Gly</span> <span class="o">=</span> <span class="o">-</span><span class="mi">8</span>
+</pre></div>
+</div>
+<p>Una forma de cuantificar el parecido entre diferentes aminoácidos es estudiar cuantas veces suelen aparecer en la misma posición en proteínas homólogas.</p>
+<p>Si los dos aminoácidos suelen aparecer en las mismas posiciones debe ser porque funcionalmente son más equivalentes que dos aminoácidos que no suelen aparecer en las mismas posiciones.</p>
+<p>En estas matrices se comparan todos los aminoácidos con todos los demás.
+A cada comparación se le da una puntuación que indica como es de frecuente que un aminoácido sea sustituido por otro en proteínas homólogas.</p>
+<p>Una de estas matrices es la <a class="reference external" href="http://en.wikipedia.org/wiki/Point_accepted_mutation">PAM</a> (Percent Accepted Mutation).</p>
+<p>Hay matrices PAM preparadas a partir de comparaciones entre secuencias que se parecen mucho y entre secuencias que se parecen menos.</p>
+<p>PAM 250 se utiliza para secuencias proteicas que se parecen muy poco entre sí (~25%), para secuencias que se parecen un 40%, 50% o 60% es mejor utilizar PAM120, PAM80 Y PAM60 respectivamente.</p>
+<p>Otras matrices utilizadas para comparar proteínas son las <a class="reference external" href="http://en.wikipedia.org/wiki/BLOSUM">BLOSUM</a>.</p>
+<p>Están preparadas a partir de alineamientos de regiones conservadas de proteínas llamadas bloques.</p>
+<p>Las hay preparadas a partir de bloques con un 80% o 60% de identidad, BLOSUM80 y BLOSUM 60 respectivamente.</p>
+<p>Las PAM se suelen utilizar en estudios filogenéticos y las BLOSUM en búsquedas de dominios conservados.</p>
+<p>Existen otras matrices de sustitución creadas con fines específicos, por ejemplo para buscar proteínas con estructuras similares.</p>
+</section>
+<section id="penalizaciones-por-gaps-gap-penalties">
+<h2>Penalizaciones por gaps (Gap penalties)<a class="headerlink" href="#penalizaciones-por-gaps-gap-penalties" title="Permalink to this headline">¶</a></h2>
+<p>Sirven para indicar al algoritmo si queremos favorecer la aparición de gaps en el alineamiento o no.</p>
+<p>Normalmente se pueden modificar dos gap penalties, el de creación de un nuevo gap y el de extensión del gap.</p>
+<p>Si se ponen unos gap penalties muy altos no aparecerán gaps en el alineamiento, si son muy bajos aparecerán demasiados.</p>
+<p>Es una buena idea utilizar los valores por defecto a no ser que tengamos alguna razón para cambiarlos.</p>
+</section>
+<section id="significacion-de-los-alineamientos">
+<h2>Significación de los alineamientos<a class="headerlink" href="#significacion-de-los-alineamientos" title="Permalink to this headline">¶</a></h2>
+<p>Siempre que alimentemos una algoritmo de alineamiento con un par de secuencias obtendremos un alineamiento, incluso aunque las secuencias estén compuestas por letras al azar y no se parezcan nada entre sí.</p>
+<p>Por lo tanto además de hacer el alineamiento hay que estimar la significación estadística del mismo.</p>
+<p>Si trabajamos con secuencias de ADN es fácil hacerse una idea de lo bueno que es el alineamiento puesto que al valorar positivamente sólo la identidad los alineamientos obtenidos por azar suelen ser muy cortos.</p>
+<p>Con las secuencias de proteínas el asunto es más complejo porque se valoran positivamente también los parecidos de aminoácidos que no son idénticos, pero que son químicamente similares y esto conduce a que los alineamientos de las secuencias al azar puedan confundirse con alineamientos realmente significativos.</p>
+<p>Casi todos los programas de alineamiento suelen calcular también índices que indican la significación.
+Hay que estudiar estos índices para no confundir alineamientos espúreos con reales.</p>
+<p><a class="reference internal" href="practica_alineamientos.html"><span class="doc">Ir a la práctica del tema</span></a></p>
+</section>
+</section>
+
+
+            
+        
+        
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="practica_bases.html">Bases datos de secuencia</a>-->
+                    <a class="prev" href="practica_bases.html" title="Bases datos de secuencia">previous</a>
+                    |
+                    <!--<a class="next" href="practica_jemboss.html">Jemboss</a>-->
+                    <a class="next" href="practica_jemboss.html" title="Jemboss">next</a>
+                    |
+                
+                <a class="index" href="/courses/intro_bioinf/index.html" title="Index">index</a>
+                
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

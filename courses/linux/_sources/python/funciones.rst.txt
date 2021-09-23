@@ -1,0 +1,642 @@
+.. raw:: html
+
+    <!-- dependencies for pytutor.js -->
+    <script type="text/javascript" src="../_downloads/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_downloads/js/jquery-1.6.min.js"></script>
+    <script type="text/javascript" src="../_downloads/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_downloads/js/jquery.jsPlumb-1.3.10-all-min.js "></script>
+    <script type="text/javascript" src="../_downloads/js/jquery-ui-1.8.21.custom.min.js"></script>
+    <link type="text/css" href="../_downloads/css/ui-lightness/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
+    <script type="text/javascript" src="../_downloads/js/pytutor.js"></script>
+    <link rel="stylesheet" href="../_downloads/css/pytutor.css"/>
+    <!-- End dependencies for pytutor.js -->
+
+
+Funciones
+=========
+
+Hasta el momento en los programas que hemos hecho el flujo de ejecución ha sido más o menos lineal.
+Los programas comenzaban a ejecutarse por la primera línea y continuaban línea por línea hasta llegar a la última, en la que el programa terminaba.
+Es cierto que hemos alterado el flujo de ejecución mediante sentencias condicionales (*if*) y bucles (*for* y *while*), que nos han permitido ejecutar un bloque del código dependiendo de si una cierta condición se cumplía o no, pero este modo de programación lineal y no estructurada es un tanto limitado.
+Existen numerosos problemas que no se prestan bien a este flujo de programación lineal.
+Imaginemos, por ejemplo, que queremos escribir un programa que calcule medias aritméticas para una serie de diez conjuntos de valores, ¿escribiremos diez veces el código que calcula la media?
+Resultaría mucho más eficiente crear una función que tomase un conjunto de valores, hiciese el cálculo y devolviese la media resultante. La estructura del programa podría ser parecida a::
+
+  definir función calcular_media(valores):
+     calcular la media
+     devolver el resultado
+
+  repetir 10 veces: (bucle for)
+     valores = Leer valores
+     resultado = calcular_media(valores)
+     imprimir resultado
+
+La función *calcular_media* definida tiene un comportamiento similar a una función matemática, toma unos valores, los transforma de algún modo y devuelve el resultado.
+
+Este concepto de función no nos debe resultar ajeno ya que habíamos trabajado antes con funciones del sistema como *len*.
+*len* toma una cadena de texto, calcula cuantos caracteres tiene y devuelve el resultado.
+Python nos permite definir nuevas funciones de un modo muy sencillo.
+Por ejemplo definamos una función que dada una lista de números calcule y devuelva la media::
+
+  def calcular_media(numeros):
+    media = sum(numeros) / float(len(numeros))
+    return media
+
+  #ejemplos de utilizacion
+  media = calcular_media([4.7, 3.5])
+  print media
+
+  nums = [1, 2, 3]
+  print calcular_media(nums)
+ 
+Para poder crear la función hemos hecho uso de dos nuevas palabras de Python: *def* y *return*.
+*def* indica al lenguaje que en esa línea vamos a comenzar a definir una nueva función.
+A continuación del *def* debemos escribir el nombre de la función, *calcular_media* en este caso, y tras el nombre la lista de argumentos que pasamos a la función entre paréntesis.
+Tras la línea de la definición del nombre viene el bloque de código que se ejecutará cada vez que llamemos a la función.
+Como siempre en Python los bloques de código quedan definidos por la indentación.
+Por último, una vez realizado el cálculo utilizamos la palabra *return* para devolver el resultado.
+Una vez definida la función podríamos utilizarla tantas veces como queramos.
+Ya no será necesario que escribamos el código del calculo de la media nunca más, puesto que siempre podremos llamar a la función.
+
+.. raw:: html
+
+   <script type="text/javascript" src="../_downloads/medias_code_run.js"></script>
+   <div id="MediasDiv"></div>
+
+Hemos presentado las funciones utilizando su equivalente matemático, pero en realidad una función es simplemente un bloque de código que podemos ejecutar.
+A una función podemos pasarle argumentos y nos puede devolver valores, pero ambas cosas son opcionales.
+Por ejemplo podríamos crear una función que imprimiese un saludo::
+
+  def imprimir_saludo():
+    print 'Hola'
+
+A esta función no le hemos pasado ningún parámetro y no nos ha devuelto ningún valor.
+Simplemente cada vez que la llamemos imprimirá *Hola*.
+El uso de funciones que no requieren parámetros o no devuelven valores es más habitual de lo que podríamos pensar, de hecho son la base de una forma de construir programas denominada programación estructurada.
+
+El modo de resolver un problema complejo es dividirlo en partes.
+Escribir un bloque de código que resuelva una tarea compleja puede ser muy difícil, pero si partimos ese problema en pequeños trozos sencillos nos será fácil crear un conjunto de funciones que resuelvan esas pequeñas tareas.
+Este es el uso más habitual de las funciones, dividir problemas grandes en problemas pequeños.
+Podemos pensar en las funciones como acciones a realizar dentro del programa que estamos escribiendo.
+Algunas de estas acciones requerirán parámetros o devolverán resultados mientras que otras no.
+
+Otra ventaja de las funciones es que nos permiten reutilizar partes del código.
+Por ejemplo si tenemos que leer una tabla de datos en un programa y creamos una función para resolver el problema cuando en otro programa necesitemos leer otra tabla podremos utilizar la función que previamente habíamos definido.
+
+return
+------
+
+Las funciones pueden tener cero, uno o varias sentencias *return*.
+Podríamos, por ejemplo, crear una función que determinase si un número es impar con dos *return* .
+
+::
+
+  def es_impar(numero):
+      if not numero % 2:
+          return False
+      else
+          return True
+
+También hemos visto anteriormente que las funciones pueden no tener ningún *return*.
+En realidad, en este caso, cuando el bloque de código termine de ejecutarse se devuelve *None*.
+
+*return* también se puede utilizar para devolver varios valores::
+
+  def dividir_definicion_fasta(linea):
+      nombre, definicion = linea.strip().split(' ', 1)
+      nombre = nombre[1:]  #elimina el >
+      return nombre, definicion
+
+  nombre, definicion = dividir_definicion_fasta(una_linea_cualquiera)
+
+Internamente estos valores múltiples funcionan como *tuples* (*lists* inmutables).
+
+Las funciones en Python presentan un amplio abanico de posibilidades que no vamos a estudiar en este tutorial como: argumentos con valores por defecto, argumentos con nombre y argumentos agrupados.
+
+
+Documentando las funciones
+--------------------------
+
+Para mantener el código legible conviene documentar qué hace la función, cuál es su objetivo, qué parámetros requiere y qué resultado va a devolver.
+Esto lo podríamos escribir en comentarios cercanos a la línea de la definición de la función, pero Python dispone de un sencillo mecanismo de documentación de funciones.
+Basta con crear una cadena de texto en la línea siguiente a la función para que la función quede comentada.
+Este texto será el que nos aparezca cuando pidamos la ayuda sobre el uso de la función.
+
+::
+
+  def calcular_media(valores):
+     '''Dada una lista de valores numericos devuelve la media aritmetica.
+
+     Requiere una lista de valores.
+     Devuelve un float con la media aritmetica de los valores.
+     '''
+
+Por convención en la primera línea de la documentación se suele escribir una sucinta descripción de la función y en las siguientes se dan los detalles relevantes.
+
+main
+----
+
+Hasta el momento hemos creado nuestros pequeños programas sin estructura alguna.
+Simplemente hemos escrito los comandos a ejecutar uno tras otros, pero este no es el formato habitual en el que los usuarios de Python utilizan el lenguaje.
+Lo normal es incluir todo el código en alguna función.
+Por ejemplo, el programa 'Hola mundo' quedaría como::
+
+  def decir_hola():
+      print 'Hola mundo'
+
+  decir_hola()
+
+En otros lenguajes de programación esta estructura es obligatoria.
+En Python podemos elegir utilizarla o no, pero lo habitual es que el código se estructure de este modo.
+De hecho por razones que ahora no vienen al caso y que tienen que ver con los módulos lo que un programador con experiencia en Python escribiría sería::
+
+  def decir_hola():
+      print 'Hola mundo'
+
+  if __name__ == '__main__':
+      decir_hola()
+
+Ejercicios
+----------
+
+1. Corrige el siguiente programa para calcular el área de un triángulo.
+
+::
+
+  from math import sqrt
+  def calcular_area_triangulo(lado1, lado2, lado3):
+      semiperimetro = (lado1 + lado2 + lado3) / 2.0
+      area2 = semiperimetro * (semiperimetro - lado1) * (semiperimetro - lado2) * (semiperimetro - lado3)
+      area = sqrt(area2)
+
+  print(calcular_area_triangulo(4, 5, 3))
+  calcular_area_triangulo(1, 2, 3)
+
+2. Escribe un programa que calcule el área de un triángulo utilizando la fórmula: base * altura / 2.
+
+3. Corrige el siguiente programa para calcular el factorial.
+
+::
+
+  def factorial(numero):
+      acumulado = 1
+      for indice in range(1, numero + 1):
+          acumulado = indice
+      return acumulado
+
+  print(factorial(10))
+
+4. Escribe un programa que sume los números de una lista.
+
+5. Corrige el siguiente programa que busca palabras comunes entre dos frases.
+
+::
+
+  def palabras_comuns(frase1, frase2):
+      set1 = set(frase1.strip().split())
+      set2 = set(frase2.strip())
+      comunes = set1.union(set2)
+
+  print(palabras_comunes('Hola caracola', 'La caracola enterrada'))
+
+6. Escribe una función que cuente las palabras dada una lista de frases.
+
+7. Como solución al problema de comparación de dos listas de proteínas planteado en la sección de estructuras de datos creamos un programa que repetía el bloque en el que se leían los ficheros con las listas de proteínas.
+Reescribir el programa utilizando funciones.
+
+::
+
+  albumina
+  inmunoglobulina
+  antitripsina
+  lipoproteina
+
+::
+
+  transferrina
+  inmunoglobulina
+  antitripsina
+  protombina
+
+Generar, a partir de esta información, las listas de proteinas exclusivas de la muestra 1 y 2 así como las proteínas que aparecen en ambos experimentos.
+
+8. Crear un programa que contenga una función a la que podamos darle el nombre de un fichero, una lista de palabras y que imprima las líneas que contengan una de esas palabras.
+
+9. Reescribir el programa que calcula la media entre triplicados de un experimento de microarrays utilizando funciones.
+
+::
+
+  nombre_gen muestra_1_1 muestra_1_2 muestra_1_3 muestra_2_1 muestra_2_2 muestra_2_3
+  gen1 1.2 1.3 1.4 7.6 6.5 8.7
+  gen2 4.5 3.4 3.9 2.5 3.2 3.3
+  gen3 9.6 8.7 8.3 5.5 5.4 4.5
+  gen4 2.3 3.2 2.1 3.1 2.9 3.2
+
+10. Dado el siguiente fichero de genotipado masivo:
+
+::
+
+  marcador padre madre f1 hib1 hib2 hib3
+  snp1 GG CC GC GG GC CC
+  snp2 AA TT AT    AT TT
+  snp3 AA CC AC CC AC AC
+
+Esbribir un fichero en el que el genotipo del padre sea A, la madre B y los híbridos sean H (heterocigoto), A, B o X (desconocido)::
+
+  marcador hib1 hib2 hib3
+  snp1 A H B
+  snp2 X H B
+  snp3 B H H
+
+La estructura del programa debe ser parecida a::
+ 
+  def transformar_formato(genotipo):
+    return formato arreglado
+
+  def cambiar_formato_genotipo(fichero):
+    for linea in fichero:
+      Si primera linea:
+        imprimir
+      else:
+        marcador, genotipo = linea.split
+        genotipo = transformar_formato(genotipo)
+        imprimir marcador y genotipo
+
+  cambiar_formato_genotipo(fichero)
+
+Soluciones
+----------
+
+1. Corrige el siguiente programa para calcular el área de un triángulo.
+
+::
+
+  from math import sqrt
+  def calcular_area_triangulo(lado1, lado2, lado3):
+      semiperimetro = (lado1 + lado2 + lado3) / 2.0
+      area2 = semiperimetro * (semiperimetro - lado1) * (semiperimetro - lado2) * (semiperimetro - lado3)
+      area = sqrt(area2)
+      return area
+
+  print(calcular_area_triangulo(4, 5, 3))
+  print(calcular_area_triangulo(1, 2, 3))
+
+2. Escribe un programa que calcule el área de un triángulo utilizando la fórmula: base * altura / 2.
+
+::
+  def calcular_area_triangulo(base, altura):
+      area = base * altura / 2.0
+      return area
+  print(calcular_area_triangulo(3, 5))
+  print(calcular_area_triangulo(7, 3))
+
+3. Corrige el siguiente programa para calcular el factorial.
+
+::
+
+  def factorial(numero):
+      acumulado = 1
+      for indice in range(1, numero + 1):
+          acumulado *= indice
+      return acumulado
+
+  print(factorial(10))
+
+4. Escribe un programa que sume los números de una lista.
+
+::
+
+ def suma_lista(lista):
+      acumulado = 0
+      for numero in lista:
+          acumulado += numero
+      return acumulado
+
+  print(suma_lista([1, 2, 3, 4]))
+
+5. Corrige el siguiente programa que busca palabras comunes entre dos frases.
+
+::
+
+  def palabras_comunes(frase1, frase2):
+      set1 = set(frase1.strip().split())
+      set2 = set(frase2.strip().split())
+      comunes = set1.intersection(set2)
+      return comunes
+
+  print(palabras_comunes('Hola caracola', 'La caracola enterrada'))
+
+6. Escribe una función que cuente las palabras dada una lista de frases.
+
+::
+
+  def contar_palabras(lista_frases):
+      contador = {}
+      for frase in lista_frases:
+          palabras = frase.strip().split()
+          for palabra in palabras:
+              if palabra not in contador:
+                  contador[palabra] = 0
+              contador[palabra] += 1
+      return contador
+
+  print(contar_palabras(['Hola caracola', 'La caracola enterrada']))
+
+7. Como solución al problema de comparación de dos listas de proteínas planteado en la sección de estructuras de datos creamos un programa que repetía el bloque en el que se leían los ficheros con las listas de proteínas.
+Reescribir el programa utilizando funciones.
+
+::
+
+  albumina
+  inmunoglobulina
+  antitripsina
+  lipoproteina
+
+::
+
+  transferrina
+  inmunoglobulina
+  antitripsina
+  protombina
+
+
+Generar, a partir de esta información, las listas de proteinas exclusivas de la muestra 1 y 2 así como las proteínas que aparecen en ambos experimentos.
+
+::
+
+  def leer_proteinas(nombre_fichero):
+      'Leer las palabras de un fichero y las devuelve en un set'
+
+      proteinas = set()
+      for linea in open(nombre_fichero'):
+          proteina = linea.strip()
+          proteinas.add(proteina)
+      return proteinas
+
+
+  def comparar_proteinas(fichero1, fichero2):
+      'Compara las proteinas presentes en dos ficheros'
+
+      #leemos la primera lista de proteinas y
+      #la guardamos en un set
+      proteinas1 = leer_proteinas(fichero1)
+      proteinas2 = leer_proteinas(fichero2)
+ 
+ 
+      #Ahora podemos hacer las comparaciones entre los
+      #conjuntos de proteinas
+      print 'Proteinas comunes'
+      print proteinas1.intersection(proteinas2)
+ 
+      print 'Proteinas exclusivas de la lista 1'
+      print proteinas1.difference(proteinas2)
+ 
+      print 'Proteinas exclusivas de la lista 2'
+      print proteinas2.difference(proteinas1)
+
+  if __name__ == '__main__':
+      comparar_proteinas('proteinas1.txt', 'proteinas2.txt')
+
+8. Crear un programa que contenga una función a la que podamos darle el nombre de un fichero, una lista de palabras y que imprima las líneas que contengan una de esas palabras.
+
+::
+
+  #!/usr/bin/env python
+  # Dado un fichero de texto como entrada busca una lista de
+  # patrones de texto e imprime las lineas coincidentes
+ 
+  def imprimir_lineas_coincidentes(nombre_fichero, patrones):
+      '''Dado un fichero y unos patrones imprime las lineas coincidentes
+      Para cada linea del fichero se evaluara si incluye uno de los patrones
+      o no. Si uno de los patrones esta presente la linea se imprimira.
+
+      Los patrones deben ser una lista de cadenas de texto.
+      '''
+
+      #este bucle se ejecutara una vez por cada linea
+      for linea in open('nombre_fichero'):
+ 
+          #hemos de comprobar si algun patron esta en la lista
+          #hacemos un bucle que recorra todos los patrones
+          algun_patron_en_linea = False   #por defecto asumimos que
+                                          #ningun patron se encuentra
+                                          #en la linea
+         for patron in patrones:
+             if patron in linea:
+                 algun_patron_en_linena = True
+                 #como hemos encontrado al menos un patron
+                 #no es necesario continuar con el bucle
+                 break
+
+         #una vez sabemos si para la presente linea hay algun
+         #patron coincidente o no podemos imprimirla
+         if algun_patron_en_linea:
+             print linea
+ 
+  if __name__ == '__main__':
+ 
+      nombre_fichero = 'prueba.txt'
+      patrones = ['texto1', 'texto2']
+      imprimir_lineas_coincidentes(nombre_fichero, patrones)
+ 
+9. Reescribir el programa que calcula la media entre triplicados de un experimento de microarrays utilizando funciones.
+
+::
+
+  nombre_gen muestra_1_1 muestra_1_2 muestra_1_3 muestra_2_1 muestra_2_2 muestra_2_3
+  gen1 1.2 1.3 1.4 7.6 6.5 8.7
+  gen2 4.5 3.4 3.9 2.5 3.2 3.3
+  gen3 9.6 8.7 8.3 5.5 5.4 4.5
+  gen4 2.3 3.2 2.1 3.1 2.9 3.2
+
+::
+
+  #!/usr/bin/env python
+  #Dado un fichero de texto con el formato:
+  # nombre_gen muestra_1_1 muestra_1_2 muestra_1_3 muestra_2_1 muestra_2_2 muestra_2_3
+  # gen1 1.2 1.3 1.4 7.6 6.5 8.7
+  # gen2 4.5 3.4 3.9 2.5 3.2 3.3
+  # gen3 9.6 8.7 8.3 5.5 5.4 4.5
+  #Calcula la media entre de los tres primeros valores y los tres segundos.
+
+  def calcular_media(valores):
+     '''Dada una lista de valores devuelve la media.
+
+      Los valores pueden ser cadenas de texto, int o float.
+      '''
+      #pasamos todos los valores a float
+      valores = map(float, valores)
+
+      media = sum(valores) / len(valores)
+      return media
+
+
+  def calcular_medias(fichero):
+      'Calcula las medias para los triplicados de un microarray'
+
+      for linea in open(fichero):
+          linea = linea.strip()   #eliminamos el retorno de carro
+
+          #La primera linea solo hay que imprimirla
+          if 'nombre_gen' in linea:
+              print linea
+              #para esta linea no hay que ejecutar nada
+              #mas en el bucle for
+              continue
+
+          items = linea.split()
+          nombre_gen = items[0]
+          valores1 = items[1:4]
+          valores2 = items[4:7]
+          print valores1
+          print valores2
+
+          media1 = calcular_media(valores1)
+          media2 = calcular_media(valores2)
+
+          print nombre_gen, media1, media2
+
+  if __name__ == '__main__':
+
+      calcular_medias('microarray.txt')
+
+10. Dado el siguiente fichero de genotipado masivo:
+
+::
+
+  marcador padre madre f1 hib1 hib2 hib3
+  snp1 GG CC GC GG GC CC
+  snp2 AA TT AT    AT TT
+  snp3 AA CC AC CC AC AC
+
+Esbribir un fichero en el que el genotipo del padre sea A, la madre B y los híbridos sean H (heterocigoto), A, B o X (desconocido)::
+
+  marcador hib1 hib2 hib3
+  snp1 A H B
+  snp2 X H B
+  snp3 B H H
+
+La estructura del programa debe ser parecida a::
+ 
+  def transformar_formato(genotipo):
+    return formato arreglado
+
+  def cambiar_formato_genotipo(fichero):
+    for linea in fichero:
+      Si primera linea:
+        imprimir
+      else:
+        marcador, genotipo = linea.split
+        genotipo = transformar_formato(genotipo)
+        imprimir marcador y genotipo
+
+  cambiar_formato_genotipo(fichero)
+
+::
+
+  def transformar_genotipo(linea_genotipo):
+      '''Transforma una linea de genotipo
+  
+      desde:
+         snp1 GG CC GC GG GC CC
+      a:
+         snp1 A H B
+      '''
+  
+      #no podemos hacer:
+      #items = linea_genotipo.split()
+      #
+      #porque los datos faltantes estan codificados
+      #por espacios
+  
+      marcador, genotipos = linea_genotipo.split(' ', 1)
+  
+      #dividimos el resto de genotipos
+      #los genotipos ahora son -> GG CC GC GG GC CC
+      genotipos_separados = []
+      for posicion in range(0, len(genotipos), 3):
+          genotipo = genotipos[posicion: posicion + 2]
+          genotipos_separados.append(genotipo)
+      #los genotipos ahora son una lista:
+      # ['GG ', 'CC ', 'GC ', 'GG ', 'GC ', 'CC ']
+  
+  
+      genotipo_padre = genotipos_separados.pop(0)
+      # ['CC ', 'GC ', 'GG ', 'GC ', 'CC ']
+      genotipo_madre = genotipos_separados.pop(0)
+      # ['GC ', 'GG ', 'GC ', 'CC ']
+      genotipo_hib   = genotipos_separados.pop(0)
+      # ['GG ', 'GC ', 'CC ']
+  
+      #ahora debemos transformar cada uno de los genotipos
+      #de los hibridos
+      genotipos_transformados = []
+      for genotipo in genotipos_separados:
+          if genotipo == '  ':
+              genotipo = 'X'
+          elif genotipo == genotipo_padre:
+              genotipo = 'A'
+          elif genotipo == genotipo_madre:
+              genotipo = 'B'
+          elif genotipo == genotipo_hib:
+              genotipo = 'H'
+          else:
+              print 'Ha habido un fallo, genotipo desconocido', genotipo
+          genotipos_transformados.append(genotipo)
+  
+      #los items de la linea transformada
+      items = [marcador] + genotipos_transformados
+      #la linea tiene los items separados por comas
+      linea = ' '.join(items)
+  
+      return linea
+  
+  
+  def cambiar_formato_genotipos(fichero):
+      '''Transforma un fichero de genotipado a otro formato.
+  
+      El formato de entrada debe ser:
+  
+         marcador padre madre f1 hib1 hib2 hib3
+         snp1 GG CC GC GG GC CC
+         snp2 AA TT AT    AT TT
+         snp3 AA CC AC CC AC AC
+  
+      Y el de salida:
+  
+         marcador hib1 hib2 hib3
+         snp1 A H B
+         snp2 X H B
+         snp3 B H H
+  
+      A -> Homocigoto como el padre
+      H -> heterocigoto
+      B -> Homocigoto como la madre
+      X -> Dato faltante
+      '''
+  
+      for linea in open('genotipos.txt'):
+          linea = linea.strip()
+          if 'padre' in linea:    #es la primera linea
+              items = linea.split()
+              print items[0], ' '.join(items[4:])
+                                   #items[0] sera marcador
+                                   #items[4:] imprime el nombre
+                                   #de los hibridos
+              continue    #En esta iteracion abandonamos el bucle aqui
+  
+          #esto se ejecutara para cada linea excepto
+          #la de la cabecera
+          print transformar_genotipo(linea)
+  
+  if __name__ == '__main__':
+      cambiar_formato_genotipos('genotipos.txt')
+  
+
+
+Para saber más
+--------------
+
+Una vez nos acostumbremos a utilizar la funcionalidad básica que hemos visto en esta sección sería recomendable estudiar estas características avanzadas en el `tutorial oficial <http://docs.python.org/tutorial/controlflow.html#defining-functions>`_ o en un texto como el `Core Python programming <http://cpp.wesc.webfactional.com/>`_ de Chun.
+
+

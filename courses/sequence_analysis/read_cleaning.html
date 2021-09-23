@@ -1,0 +1,437 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Read QA and Cleaning &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Sequence assembly" href="assembly.html" />
+    <link rel="prev" title="NGS file formats" href="sequence_file_formats.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sequencing_technologies.html">Sequencing technologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ngs_applications_examples.html">NGS application examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_analysis_software.html">NGS analysis software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmd_primer.html">Command line primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_file_formats.html">NGS sequence file formats</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NGS read cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assembly.html">Sequence assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Sequence mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snp_calling.html">SNP calling and filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html">NGS expression analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html#practical-tasks">Practical tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_files.html">Dealing with big result files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bedtools.html">BEDTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maize_snp_calling.html">Maize SNP calling practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice.html">Final practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice_walkthrough.html">Final practice walkthrough</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="read-qa-and-cleaning">
+<h1>Read QA and Cleaning<a class="headerlink" href="#read-qa-and-cleaning" title="Permalink to this headline">¶</a></h1>
+<p>Before using the raw sequences generated by the sequencing machines we have to check their quality and eventually to clean them to get rid of adaptor, contaminants and low quality regions.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/ngs_map_read_cleaning.png"><img alt="_images/ngs_map_read_cleaning.png" src="_images/ngs_map_read_cleaning.png" style="width: 600px;" /></a>
+</figure>
+<section id="assessing-the-read-quality">
+<h2>Assessing the read quality<a class="headerlink" href="#assessing-the-read-quality" title="Permalink to this headline">¶</a></h2>
+<p>We can assess the quality of the reads by taking a look at their length distribution, phred quality distribution, nucleotide frequencies and complexity.
+It is highly recommended to take a look at the excellent documentation found in the <a class="reference external" href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">fastqc</a> and <a class="reference external" href="http://prinseq.sourceforge.net/manual.html">prinseq</a> sites.</p>
+<p>The length distribution of the reads is a basic quality check.
+We have to make sure that the length distribution complies with the expected distribution for the sequencing technology that we have used.</p>
+<a class="reference internal image-reference" href="_images/454_length_distribution.png"><img alt="_images/454_length_distribution.png" src="_images/454_length_distribution.png" style="width: 450px;" /></a>
+<p>For Illumina it would be typical to obtain the same sequence length for all reads.</p>
+<p>We should also evaluate the sequence quality.
+We can do it by calculating some statistics like: mean quality, Q20 and Q30.
+Q30 is the percentage of bases in the reads with a phred quality equal or bigger than 30.
+For instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Q20</span><span class="p">:</span> <span class="mf">86.85</span>
+<span class="n">Q30</span><span class="p">:</span> <span class="mf">82.39</span>
+<span class="n">minimum</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">maximum</span><span class="p">:</span> <span class="mi">41</span>
+<span class="n">average</span><span class="p">:</span> <span class="mf">32.32</span>
+</pre></div>
+</div>
+<p>We can also evaluate the quality by taking a look at the quality distribution.</p>
+<a class="reference internal image-reference" href="_images/illumina_qual_distrib.png"><img alt="_images/illumina_qual_distrib.png" src="_images/illumina_qual_distrib.png" style="width: 450px;" /></a>
+<p>Another very useful and common way of evaluating the quality is to generate a boxplot with the qualities per position along de reads.</p>
+<a class="reference internal image-reference" href="_images/454_qual_boxplot.png"><img alt="_images/454_qual_boxplot.png" src="_images/454_qual_boxplot.png" style="width: 450px;" /></a>
+<p>Also, to spot the presence of adaptors at the first positions of the reads it is common to represent the frequency of each nucleotide for each position.
+Ideally, in these charts, all positions should have the same nucleotide frequencies, but it is common to find adapter contamination or biases produced during the library construction protocol.</p>
+<a class="reference internal image-reference" href="_images/nucl_freq_adapter.png"><img alt="_images/nucl_freq_adapter.png" src="_images/nucl_freq_adapter.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="_images/nucl_freq_bias.png"><img alt="_images/nucl_freq_bias.png" src="_images/nucl_freq_bias.png" style="width: 450px;" /></a>
+<p>It can be also quite useful to study the k-mer composition of the reads.
+This will give us an idea of the overall complexity of the sequence and also it can serve to spot highly repetitive k-mers corresponding to adapters, poli-A or repetitive sequences.</p>
+</section>
+<section id="practical-tasks-read-quality-assessment">
+<h2>Practical tasks: Read quality assessment<a class="headerlink" href="#practical-tasks-read-quality-assessment" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Analyze the quality of the given <a class="reference download internal" download="" href="_downloads/26d7450f248fc92d99d35f16f54d7aa1/454_reads.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">454</span> <span class="pre">reads</span></code></a> by using the software FastQC.</p></li>
+</ol>
+<p>The first step will be to download the reads file into a folder named practice.
+Once we have the file we can open it with the FastQC utility.
+To run FastQC open a terminal and execute the program in the terminal by writing  <em>fastqc</em>.
+FastQC will create very interesting statistics regarding our reads.</p>
+<a class="reference internal image-reference" href="_images/fastqc_qual_boxplot.png"><img alt="_images/fastqc_qual_boxplot.png" src="_images/fastqc_qual_boxplot.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="_images/fastqc_len_distrib.png"><img alt="_images/fastqc_len_distrib.png" src="_images/fastqc_len_distrib.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="_images/fastqc_nucl_freqs.png"><img alt="_images/fastqc_nucl_freqs.png" src="_images/fastqc_nucl_freqs.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="_images/fastq_kmers.png"><img alt="_images/fastq_kmers.png" src="_images/fastq_kmers.png" style="width: 450px;" /></a>
+<p>2. Analyze the following reads files and determine: the sequencing technology employed, the overall quality and the possible problems and solutions.
+Files: <a class="reference download internal" download="" href="_downloads/a05e8b0c7d089632feccac2dd149ccf7/reads_1.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads_1</span></code></a>, <a class="reference download internal" download="" href="_downloads/f75cda1411f3bf13092722a950e790dd/reads_2.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads_2</span></code></a> and <a class="reference download internal" download="" href="_downloads/966d9015762f0f5381b423e9af0229f3/reads_3.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads_3</span></code></a>.</p>
+<section id="specific-problems">
+<h3>Specific problems<a class="headerlink" href="#specific-problems" title="Permalink to this headline">¶</a></h3>
+<p>Using FastQC software detect the problems and the possible causes in these examples:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="_downloads/46dafed711e5dbaad224cc36526191be/raw_gbs.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">Raw</span> <span class="pre">GBS</span> <span class="pre">sequencing</span> <span class="pre">sample</span></code></a> and <a class="reference download internal" download="" href="_downloads/945be01583f6a6840592e87d79fb0f97/clean_gbs.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">clean</span> <span class="pre">GBS</span> <span class="pre">sequencing</span> <span class="pre">sample</span></code></a> .</p></li>
+<li><p><a class="reference download internal" download="" href="_downloads/c14593d734a8b22a0a31b25b9f4a2ab3/sampleA.pro.sfastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">RNA</span> <span class="pre">sample</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="_downloads/49b637676df7438ed97979562fe720c5/brca1-2.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">A</span> <span class="pre">sample</span> <span class="pre">of</span> <span class="pre">an</span> <span class="pre">amplicon</span> <span class="pre">sequencing</span> <span class="pre">of</span> <span class="pre">brca1</span> <span class="pre">and</span> <span class="pre">bcra2</span> <span class="pre">coding</span> <span class="pre">regions</span></code></a> . Data from BMC Clinical Pathology 2015, 15:5  doi:10.1186/s12907-015-0004-6.</p></li>
+</ul>
+</section>
+</section>
+<section id="read-cleaning">
+<h2>Read cleaning<a class="headerlink" href="#read-cleaning" title="Permalink to this headline">¶</a></h2>
+<p>The raw sequences can have some regions that could be problematic, for instance vector or adapter sequences and that it would be advisable to remove to avoid problems with downstream analyses.
+Some of these problems are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Vectors</p></li>
+<li><p>Adapters</p></li>
+<li><p>Low quality</p></li>
+<li><p>Low complexity</p></li>
+<li><p>Contaminants</p></li>
+<li><p>Duplicates</p></li>
+<li><p>Error correction</p></li>
+</ul>
+</div></blockquote>
+<p>It would be OK to keep these regions if the downstream analysis software is prepared to use this noisy information or if at least would not be negatively affected by it, but in a lot of real world scenarios the downstream software will be negatively affected or can even choke if we do not get rid of this extra noise.
+For instance, if we want to map the reads with a local mapper (e.g. bowtie2) not trimming the reads wouldn’t be so problematic, because the mapper would be capable of even mapping reads with adapters in it.
+But if we plan to use a global mapper we would be better off trimming the adapters and the bad quality regions to be able to map more reads.</p>
+<p>The cleaning programs could be classified in filters and trimmers.
+The filtering software remove the reads that do not meet the criteria and the trimming software clip only certain regions.</p>
+</section>
+<section id="vectors">
+<h2>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">¶</a></h2>
+<p>During the cloning and sequencing processes several vectors and adapters are usually added to the sequences.
+If we were to use these raw sequences these vectors are likely to interfere with the rest of the analyses, although this is highly dependent on the analysis and the software that will be applied to the reads.
+If we know for sure that the software that we are using is prepared to deal with these vectors we could go on without the cleaning, but otherwise it is advisable to do it.</p>
+<p>It is not common to find cloning vectors in the NGS reads because the cloning step is skip in most of these experiments, but they are common in the Sanger sequences.
+If we want to remove them there are two main approaches to find them.
+If we know the exact vector and cloning site sequence we could use <a class="reference external" href="http://lucy.sourceforge.net/">lucy</a>.
+lucy looks carefully for the cloning sites and for the given vectors and recommends how to trim the sequences.
+If we are not sure about which sequencing vector was used we could blast our reads against the <a class="reference external" href="http://www.ncbi.nlm.nih.gov/VecScreen/UniVec.html">UniVec</a> database and trim the regions with significant blast matches.</p>
+</section>
+<section id="adapters">
+<h2>Adapters<a class="headerlink" href="#adapters" title="Permalink to this headline">¶</a></h2>
+<p>The main practical difference, in the context of the sequence analysis, between the vectors and adapters is the sequence length, the adaptors are short sequences and they are common in the NGS reads.
+For the long vectors we could use Blast, but to look for the adapters, that are short, with the standard Blast algorithm is not the best approach.
+It is better to use the blast-short algorithm also implemented by the NCBI Blast software.</p>
+<p>When the adapters are shorter than 15 base pairs the algorithms used by the aligners might fail.
+An alternative in these case it to look for exact matches or to use the <a class="reference external" href="http://code.google.com/p/cutadapt/">cutadapt</a> software.</p>
+<p>The blast-short algorithm is used by seq_crumbs.</p>
+</section>
+<section id="quality">
+<h2>Quality<a class="headerlink" href="#quality" title="Permalink to this headline">¶</a></h2>
+<p>For some analyses it could be advisable to remove the regions of bad quality.
+Some people advise against the low quality trimming of the sequences, because even the low quality regions have information in them.
+But it is common for the downstream software not to deal particularly well with the low quality regions of the reads, in this case it is important to remove these regions.
+The usual approach to get rid of the low quality regions is to do a window analysis setting a threshold for the quality.
+prinseq or seq_crumbs can do this cleaning.
+Alternatively lucy can clean the long reads.</p>
+<p>If the reads have no quality we can estimate which regions had a poor sequencing quality by looking at the density of Ns found in the sequence.</p>
+</section>
+<section id="duplicates">
+<h2>Duplicates<a class="headerlink" href="#duplicates" title="Permalink to this headline">¶</a></h2>
+<p>In theory, we would like to obtain one read from every molecule (template) of the original library, but this is not always the case.
+Due to the PCR amplification and to the detection systems we could end up with even thousands of reads of some molecules.
+This PCR amplification problem is particularly noteworthy in the systems that use emulsion PCR and in the mate-pair Illumina libraries.
+In Illumina there are also optical duplicates due to a cluster being read twice.
+These optical duplicates can be detected because they will appear very close in the slide.
+The number of expected sequence duplicates depends on the depth of the sequencing, the type of library and the sequencing technology used.</p>
+<p>If we do not remove these duplicated reads from the analysis we could calculate skewed allele frequencies in a SNP calling experiment, or false expression profiles in a RNA-seq experiment, or we could give false assurance to an assembler.
+The problem with the duplication filtering is that when the reads are removed we could be removing reads covering the same region, but that come originally from different molecules, for instance from the different chromosomes of a diploid individual.
+By removing them we could lose some information.</p>
+<p>Ideally, two duplicated reads should had the same sequence and we could look for them just by searching for identical sequences, but due to the sequencing errors they could be not identical but merely very similar.
+If we have a reference genome a usual method to remove these duplicates is to remove them once we have align them to the reference.
+If we don’t have a reference we could look at least for reads that are identical.
+The software <a class="reference external" href="http://prinseq.sourceforge.net/manual.html">PRINSEQ</a> has a module to filter identical duplicated reads.</p>
+<p>Some people do not recommend to remove the duplicates using the existing methods.
+For instance in a thread on <a class="reference external" href="http://seqanswers.com/forums/showthread.php?t=6854">seqanswers</a> a couple of users comment:</p>
+<blockquote>
+<div><p>NGSfan: For example, there was a recent whole exome <a class="reference external" href="http://genomebiology.com/2010/11/6/R62">paper</a> where they did both single end and paired end sequencing. They marked duplicates in both, and found ~28% and ~8% duplicates respectively. In fact, when they treated the paired ends as single ends (removing the connection between paired ends), the 8% jumped back up to 28%. That is a massive amount of data loss. So, those who have been throwing away duplicates, particularly single ends and based solely on coordinates, are losing a lot of data.</p>
+<p>kmcarr: Even that 8% may be an overestimate of the true PCR duplicates. I recently attended the Illumina Midwest Users Group meeting and an Illumina scientist presented some data on duplicate identification (it may have been the data you referred to since the percentages sound about the same). However they went a step further in distinguishing fragment duplicates from PCR duplicates. They prepared their paired end libraries using Illumina MID tagged style adapters, but instead of a finite set of known MID sequences, the adapters were constructed with random bases where the barcode would be. Now for each cluster they had three data points to compare, reads 1 and 2 and their respective alignment positions on the reference genome, plus the random, 6bp sequence in the MID position. A read would need to match all three of these to be called a PCR duplicate. When they added these random tags they found that the number of identified duplicates dropped from 8% to ~1%.</p>
+<p>lh3: The first time I and a few others learned about the PCR duplicates was around the middle of 2007, when Illumina (at that time Solexa) were collaborating with Sanger on SNP discovery in data from a flow-sorted X chromosome. Because Illumina/Solexa was short of DNA, they used very little remaining DNA to construct the library. When we looked at structural variation and SNP calls from that data set, we found many recurrent “sequencing” errors. Richard pointed out that this was likely to be caused by PCR. I then implemented the “rmdup” component in maq. When we applied that, we got much cleaner SNP/SV calls. In the end, the paper on this data set was published in Nature in 2008 as one the first three whole-genome resequencing papers using Illumina. PCR duplicates really affect SNP calling. It is true that when the duplicate rate is low, they probably have little impact to the final results, but for most resequencing project, removing duplicates does almost no harm. Why not do that?</p>
+<p>Michael.James.Clark: Removing duplicates has been demonstrated a number of times to improve SNP detection, particularly on samples sequenced at low read depths and in cancer samples.</p>
+</div></blockquote>
+<p>The read duplication can also be an essential step to ease the de novo assemblies.</p>
+</section>
+<section id="low-complexity">
+<h2>Low complexity<a class="headerlink" href="#low-complexity" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastDocs&amp;DOC_TYPE=FAQ#LCR">Low complexity</a> reads can impact several downstream analyses.
+These low complex reads can be a burden specially for the assemblers, so, in some cases, it could be advisable to filter them out.
+The NCBI Blast distribution includes dust, a program to mask low complexity regions.</p>
+</section>
+<section id="contaminants">
+<h2>Contaminants<a class="headerlink" href="#contaminants" title="Permalink to this headline">¶</a></h2>
+<p>In the samples to analyze there can be different kinds of contaminants:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Due to the sample preparation, e.g. E. coli.</p></li>
+<li><p>Mitochondrial and chloroplastic in genomic samples.</p></li>
+<li><p>rRNA in transcriptomes</p></li>
+<li><p>pathogens in infected samples</p></li>
+</ul>
+</div></blockquote>
+<p>This contaminants should be minimized during the sample preparation, for instance extracting the genomic DNA from isolated nuclei, but if we have them in our reads we can filter them out by running blast searchers.</p>
+</section>
+<section id="error-correction">
+<h2>Error correction<a class="headerlink" href="#error-correction" title="Permalink to this headline">¶</a></h2>
+<p>By trimming and purging the reads the mean sequencing quality of the resulting reads can be improved, but some information is lost.
+An alternative has been developed and implemented in several programs that tries to correct the errors in the reads.
+The overall idea is based on gathering the reads, or parts of them, that correspond to the same genomic region and to assume that the changes in low frequency should be due to sequencing errors.
+This method has been commonly used in the SOLiD world and a review have been recently published: <a class="reference external" href="http://bib.oxfordjournals.org/content/14/1/56">A survey of error-correction methods for next-generation sequencing</a>.</p>
+<p>Some conclusions can be derived from the mentioned review.
+The proposed algorithms and methods are quite new and differ in some key points: quality of the result, memory and time consumed, and scalability.
+Different methods have been derived for 454/Ion Torrent and Illumina due to their different error models.
+As the review explains “error correction with respect to a specific genomic position can be achieved by laying out all the reads covering the position, and examining the base in that specific position from all these reads. As errors are infrequent and random, reads that contain an error in a specific position can be corrected using the majority of the reads that have this base correctly.”</p>
+<p>There are methods based on the study of the k-mers frequencies and based on multiple sequence alignments.
+The authors conclude that these methods are more mature for the Illumina reads due to the popularity and the abundance of them.
+For Illumina Reptile, HiTEC and ECHO are generally more accurate and have better scalability than other methods.
+The drawback is that most of the software tested failed with some datasets.
+Only four programs: HSHREC, Reptile, SOAPec and Coral—succeeded in generating results for all data sets.
+For 454 and ion-torrent the authors recommend Coral over HSHREC.</p>
+<p>The study carried out in this review was done in bacteria and in Drosophila.</p>
+<p>After the mentioned review a new method based on a different <a class="reference external" href="http://biorxiv.org/content/biorxiv/early/2014/05/27/005579.full.pdf">algorithm</a> has been proposed and implemented in the software <a class="reference external" href="https://github.com/mourisl/Lighter">lighter</a>.
+The authors claim that this algorithm is faster and requires much less memory despite having a comparable accuracy to the other algorithms.
+I’ve tried <a class="reference external" href="http://sourceforge.net/p/bless-ec/wiki/Home/">bless</a> with good results.</p>
+<p>Caution should be taken when applying these methods to pooled samples or to polyploids.</p>
+</section>
+<section id="to-trim-or-not-to-trim">
+<h2>To trim or not to trim<a class="headerlink" href="#to-trim-or-not-to-trim" title="Permalink to this headline">¶</a></h2>
+<p>Should we trim/clean the reads? And if yes how much?
+Of course, the answer will depend on the analysis that we are doing.
+The requirements of a de novo assembly, a RNA-Seq expression analysis and a SNP calling are quite different.
+Some reflections about this issue have been published: <a class="reference external" href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0085024#">An Extensive Evaluation of Read Trimming Effects on Illumina NGS Data Analysis</a> and <a class="reference external" href="http://www.homolog.us/blogs/blog/2014/01/01/cross-post-trimming-beneficial-rna-seq/">Is trimming beneficial for RNA-Seq?</a>.</p>
+</section>
+<section id="usual-read-cleaning-software">
+<h2>Usual read cleaning software<a class="headerlink" href="#usual-read-cleaning-software" title="Permalink to this headline">¶</a></h2>
+<p>There are plenty of software to process the reads, but some that we have used are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://prinseq.sourceforge.net/manual.html">Prinseq</a>.</p></li>
+<li><p><a class="reference external" href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a>.</p></li>
+<li><p><a class="reference external" href="http://code.google.com/p/cutadapt/">cutadapt</a></p></li>
+<li><p><a class="reference external" href="http://staden.sourceforge.net/">pregap4</a> (only for Sanger)</p></li>
+<li><p><a class="reference external" href="http://lucy.sourceforge.net/">lucy</a> (long reads, created for Sanger)</p></li>
+</ul>
+</div></blockquote>
+<p>In the seqanswers <a class="reference external" href="http://seqanswers.com/wiki/Special:BrowseData">wiki</a> they keep a more comprehensive list.</p>
+</section>
+<section id="practical-tasks">
+<h2>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this headline">¶</a></h2>
+<section id="cleaning-adaptor-and-quality-with-ngs-crumbs">
+<h3>Cleaning adaptor and quality with ngs_crumbs<a class="headerlink" href="#cleaning-adaptor-and-quality-with-ngs-crumbs" title="Permalink to this headline">¶</a></h3>
+<p>We have detected in the quality check of some reads the presence of some adapter introduced during the cloning of the library.
+We are informed that the adapters used were: “AAGCAGTGGTATCAACGCAGAGTACATGGG” and “AAGCAGTGGTATCAACGCAGAGTACTTTTT”.
+We are going to clean this adaptor and we will also trim the bad quality regions.
+Once we have finished the process we will compare the statistics of the reads before and after the cleaning process.</p>
+<p>We can clean sequences with various aplications, first we will try with <a class="reference external" href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a>.</p>
+<p>First download the reads <a class="reference download internal" download="" href="_downloads/a05e8b0c7d089632feccac2dd149ccf7/reads_1.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads_1</span></code></a> and the fasta file with the <a class="reference download internal" download="" href="_downloads/78f5374d24c4806cf05091bd18af5b15/trimmo_adapters.fasta"><code class="xref download docutils literal notranslate"><span class="pre">adapters</span></code></a> to the directory practice.
+Check that the files are in the correct directory and make that directory your working directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/practice$ cd
+ngs_user@machine:~$ cd practice/
+ngs_user@machine:~/practice$ pwd
+/home/ngs_user/practice
+ngs_user@machine:~/practice$ ls
+reads_1.fastq.gz
+trimmo_adapters.fasta
+</pre></div>
+</div>
+<p>With trimmomatic we can add as many steps as we need.
+First, we are going to remove the adapters(ILLUMINACLIP:trimmo_adapters.fasta:2:30:10),
+then we will perform a quality trimming (SLIDINGWINDOW:4:15) and finally, we will remove remaining shorter than 40 nucletide sequences(MINLEN:40).
+All steps are configured in the same command.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/practice$ TrimmomaticSE  reads_1.fastq.gz reads_1.clean.fastq.gz ILLUMINACLIP:trimmo_adapters.fasta:2:30:10 SLIDINGWINDOW:4:15 MINLEN:40
+  TrimmomaticSE: Started with arguments:
+    reads_1.fastq.gz reads_1.clean.fastq.gz ILLUMINACLIP:adapters.fasta:2:30:10 SLIDINGWINDOW:4:15 MINLEN:40
+  Automatically using 1 threads
+  Using Long Clipping Sequence: &#39;AAGCAGTGGTATCAACGCAGAGTACATGGG&#39;
+  Using Long Clipping Sequence: &#39;AAGCAGTGGTATCAACGCAGAGTACTTTTT&#39;
+  ILLUMINACLIP: Using 0 prefix pairs, 2 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+  Quality encoding detected as phred33
+  Input Reads: 10000 Surviving: 6075 (60,75%) Dropped: 3925 (39,25%)
+  TrimmomaticSE: Completed successfully
+</pre></div>
+</div>
+<p>Once that we have the reads cleaned it would be advisable to check the performance of the cleaning process with the programs FastQC or calculate_stats.</p>
+<p>Nucleotide frequencies, before:</p>
+<a class="reference internal image-reference" href="_images/cleaning_nucl_freq_before.png"><img alt="_images/cleaning_nucl_freq_before.png" src="_images/cleaning_nucl_freq_before.png" style="width: 450px;" /></a>
+<p>Nucleotide frequencies, after:</p>
+<a class="reference internal image-reference" href="_images/cleaning_nucl_freq_after.png"><img alt="_images/cleaning_nucl_freq_after.png" src="_images/cleaning_nucl_freq_after.png" style="width: 450px;" /></a>
+<p>Length distribution, before:</p>
+<a class="reference internal image-reference" href="_images/cleaning_length_before.png"><img alt="_images/cleaning_length_before.png" src="_images/cleaning_length_before.png" style="width: 450px;" /></a>
+<p>Length distribution, after:</p>
+<a class="reference internal image-reference" href="_images/cleaning_length_after.png"><img alt="_images/cleaning_length_after.png" src="_images/cleaning_length_after.png" style="width: 450px;" /></a>
+<p>Quality boxplot, before:</p>
+<a class="reference internal image-reference" href="_images/cleaning_qual_boxplot_before.png"><img alt="_images/cleaning_qual_boxplot_before.png" src="_images/cleaning_qual_boxplot_before.png" style="width: 450px;" /></a>
+<p>Quality boxplot, after:</p>
+<a class="reference internal image-reference" href="_images/cleaning_qual_boxplot_after.png"><img alt="_images/cleaning_qual_boxplot_after.png" src="_images/cleaning_qual_boxplot_after.png" style="width: 450px;" /></a>
+<p>In this other case to clean the reads we will use the programs included in seq_crumbs: trim_blast_short and trim_quality.</p>
+<p>First download the reads <a class="reference download internal" download="" href="_downloads/a05e8b0c7d089632feccac2dd149ccf7/reads_1.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads_1</span></code></a> to the directory practice.
+Check that the file is the correct directory and make that directory your working directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/practice$ cd
+ngs_user@machine:~$ cd practice/
+ngs_user@machine:~/practice$ pwd
+/home/ngs_user/practice
+ngs_user@machine:~/practice$ ls
+reads_1.fastq.gz
+</pre></div>
+</div>
+<p>As a first step we will use the blast-short algorithm to remove the adapters.
+After that we will trim the bad quality edges and finally we will discard the reads that have end up being too small (less than 40 nucleotides):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/practice$ trim_blast_short -l AAGCAGTGGTATCAACGCAGAGTACATGGG -l AAGCAGTGGTATCAACGCAGAGTACTTTTT -o reads_no_adapt.fastq reads_1.fastq.gz
+ngs_user@machine:~/practice$ trim_quality -o reads_qual_trim.fastq reads_no_adapt.fastq
+ngs_user@machine:~/practice$ filter_by_length -Z -n 40 -o reads_cleaned.fastq.gz reads_qual_trim.fastq
+</pre></div>
+</div>
+<p>We could have done exactly the same process using much less disk in just one step using Unix pipes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/practice$ trim_blast_short -l AAGCAGTGGTATCAACGCAGAGTACATGGG -l AAGCAGTGGTATCAACGCAGAGTACTTTTT reads_1.fastq.gz | trim_quality | filter_by_length -Z -n 40 -o reads_cleaned.fastq.gz
+</pre></div>
+</div>
+</section>
+<section id="clean-the-454-and-illumina-maize-reads">
+<h3>Clean the 454 and Illumina maize reads<a class="headerlink" href="#clean-the-454-and-illumina-maize-reads" title="Permalink to this headline">¶</a></h3>
+<p>We are going to replicate a complete SNP calling project along the different sections of the course.
+As a real world example we have prepared some public maize 454 and Illumina reads obtained from the <a class="reference external" href="http://www.ncbi.nlm.nih.gov/sra">SRA</a> NCBI section.
+These new NGS sequences are not in the usual Genbank sections.
+The NCBI has created a new section called SRA (Sequence Read Archive) prepared for these reads.
+We will clean, map and analyze for SNPs these sequences.</p>
+<p>First we will evaluate their quality and clean them.</p>
+<p>If you have any problem with this practice you can read the complete <a class="reference internal" href="maize_snp_calling.html"><span class="doc">walkthrough</span></a> for this maize practice.</p>
+<p>You can create a maize directory, download the <a class="reference download internal" download="" href="_downloads/947c0cfdf67128981e9c4081f5b0f059/snp_calling_practice.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">sequence</span> <span class="pre">files</span></code></a> and start with the practice.</p>
+</section>
+</section>
+<section id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<p>There are other documents with very useful documentation regarding the read Quality Assessment and Cleaning:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/">Fastqc help</a></p></li>
+<li><p><a class="reference external" href="http://prinseq.sourceforge.net/manual.html">Prinseq manual</a></p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="sequence_file_formats.html">NGS file formats</a>-->
+                    <a class="prev" href="sequence_file_formats.html" title="NGS file formats">previous</a>
+                    |
+                    <!--<a class="next" href="assembly.html">Sequence assembly</a>-->
+                    <a class="next" href="assembly.html" title="Sequence assembly">next</a>
+                    |
+
+                <a class="index" href="/courses/sequence_analysis/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

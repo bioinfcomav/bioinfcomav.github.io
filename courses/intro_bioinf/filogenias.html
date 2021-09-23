@@ -1,0 +1,499 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Filogenias &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Prácticas filogenias" href="practica_filogenias.html" />
+    <link rel="prev" title="PRÁCTICA DE ALINEAMIENTOS MÚLTIPLES" href="practica_multiple.html" /> 
+  </head>
+  <body>
+    <nav class="global_navigation">
+        <ul>
+            <li class="current_site_item" ><a href="http://bioinf.comav.upv.es">bioinf</a></li>
+            <li><a href="http://cucurbigene.net">cucurbigene</a></li>
+            <li><a href="http://melogene.net">melogene</a></li>
+        </ul>
+    </nav>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+    
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="http://www.melogene.net/">Melogene</a></li>
+                    <li><a href="http://www.cucurbigene.net/">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bases_datos.html">Bases de datos biológicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_bases.html">Práctica bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alineamientos.html">Alineamientos de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_jemboss.html">Práctica jemboss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_alineamientos.html">Práctica de alineamientos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blast.html">Búsqueda de secuencias en bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast.html">Práctica Blast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediccion.html">Métodos predictivos en ADN y ARN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_prediccion.html">Práctica predicción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">Alineamientos múltiples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_multiple.html">Práctica alineamiento múltiple</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introducción al análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_filogenias.html">Práctica análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast2go.html">Práctica anotación con Blast2GO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_visores.html">Prácticas bases de datos genómicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion.html">Ejercicio anotación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion2.html">Ejercicio prediccion 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sanger.html">Secuenciación de Sanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ensamblaje.html">Ensamblaje de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_ensamblaje.html">Práctica ensamblaje de secuencias</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="filogenias">
+<h1>Filogenias<a class="headerlink" href="#filogenias" title="Permalink to this headline">¶</a></h1>
+<p>La filogenia es el estudio de las relaciones evolutivas.
+Un análisis filogenético no sólo nos indica las relaciones evolutivas entre las secuencias o especies, cuales descienden de ancestros comunes, también puede indicarnos cuales son las distancias entre ellas.
+Los métodos de reconstrucción filogenética más habituales asumen que todas las secuencias o especies provienen de partir un ancestro común mediante bifurcaciones.</p>
+<figure class="align-center">
+<img alt="_images/arbol_bifur.png" src="_images/arbol_bifur.png" />
+</figure>
+<figure class="align-center">
+<img alt="_images/arbol_red.png" src="_images/arbol_red.png" />
+</figure>
+<p>Asímismo asumen que todas las secuencias o especies de las que tenemos información son especies actuales y que ninguna de ellas es un antepasado de cualquiera de las otras.</p>
+<figure class="align-center">
+<img alt="_images/arbol_seq_antigua.png" src="_images/arbol_seq_antigua.png" />
+</figure>
+<p>Si estas condiciones no se cumpliesen no sería correcto intentar reconstruir una filogenia mediante los métodos que vamos a comentar.
+Por ejemplo, si estamos comparando poblaciones pertenecientes a una especie no tiene por que cumplirse que las distintas poblaciones se hayan originado por una simple bifurcación de las anteriores.
+Es común que varias poblaciones se mezclen por migración y esto no se tiene en cuenta en los métodos de reconstrucción filogenética.</p>
+<p>Los métodos filogenéticos nos permiten reconstruir su el árbol que representa la historia evolutiva de las especies a partir de las evidencias experimentales de las que dispongamos.
+Algunos tipos de evidencias que pueden ser utilizados son:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Datos morfológicos</p></li>
+<li><p>Genotipos</p></li>
+<li><p>Secuencias de ADN o de proteínas.</p></li>
+</ul>
+</div></blockquote>
+<p>Algunas de las metodologías utilizadas por la filogenética, cómo por ejemplo los árboles UPGMA, son también utilizadas comúnmente en otros ámbitos como, por ejemplo, en el de la taxonomía.
+En estos casos no se está reconstruyendo una historia evolutiva sino únicamente las relaciones de similitud entre los distintos grupos o individuos clasificados.</p>
+<p><a class="reference download internal" download="" href="_downloads/434c81b822719325cd7333776a5bf434/filogenias.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Presentación</span> <span class="pre">filogenia</span></code></a></p>
+<p>Estrictamente hablando las especies no tienen porqué tener una única filogenia. Distintos genes pueden haber tenido una historia distinta. En este caso se podría calcular la filogenia de cada gen o una filogenia consenso de la especie.</p>
+<section id="introduccion-a-la-filogenia">
+<h2>Introducción a la filogenia<a class="headerlink" href="#introduccion-a-la-filogenia" title="Permalink to this headline">¶</a></h2>
+<p>Los métodos filogenéticos reconstruyen árboles (dendrogramas) en los que las ramas y los nodos unen diferentes taxones.
+Estos taxones pueden ser especies, individuos, genes, etc.
+Al recorrer las ramas desde los nodos terminales hacia nodo original recorremos la historia evolutiva de ese gen o organismo.</p>
+<p>En filogénia se suele utilizar una serie de términos específicos.</p>
+<p>Un dendograma es un árbol que representa las relaciones entre los distintos nodos.</p>
+<p>Un Clado es una rama del árbol. Representa un conjunto de especies emparentadas por un antepasado común.</p>
+<p>Un taxón es un clado al que le ha asignado una categoría taxonómica.</p>
+<p>Un filograma es un dendograma en el que la longitud de las ramas se corresponde con el número de cambios o con las distancia entre los nodos.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>    <span class="o">--------------</span> <span class="n">A</span>
+<span class="o">|</span> <span class="o">|--|</span>
+<span class="o">|</span> <span class="o">|</span>  <span class="o">---------</span> <span class="n">B</span>
+<span class="o">|</span> <span class="o">|</span>
+<span class="o">|</span> <span class="o">-------------------------</span><span class="n">C</span>
+</pre></div>
+</div>
+<p>En un árbol ultramétrico todas las ramas desde el antepasado común hasta el actual tienen el mismo tamaño.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>       <span class="o">---------</span> <span class="n">A</span>
+<span class="o">|</span> <span class="o">------|</span>
+<span class="o">|</span> <span class="o">|</span>     <span class="o">---------</span> <span class="n">B</span>
+<span class="o">|</span> <span class="o">|</span>
+<span class="o">|</span> <span class="o">----------------</span><span class="n">C</span>
+</pre></div>
+</div>
+<p>La raíz es la base de todas las ramas.
+Los árboles pueden clasificarse en árboles con y sin raíz.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>         <span class="o">---------</span> <span class="n">A</span>
+<span class="o">|</span>   <span class="o">------|</span>
+<span class="o">|</span>   <span class="o">|</span>     <span class="o">---------</span> <span class="n">B</span>
+<span class="o">|</span> <span class="o">--|</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">----------------</span><span class="n">C</span>
+<span class="o">|</span>
+<span class="o">|</span>         <span class="o">---------</span> <span class="n">A</span>
+<span class="o">|</span>   <span class="o">------|</span>
+<span class="o">|</span>   <span class="o">|</span>     <span class="o">---------</span> <span class="n">B</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">----------------</span><span class="n">C</span>
+</pre></div>
+</div>
+<p>Monofilético el el grupo que sólo incluye ramas que provienen de un único antecesor común.
+Un grupo polifilético incluye ramas que provienen de varios antepasados, por ejemplo, el de los gusanos sería un grupo polifilético.
+Por último un grupo se denomina parafilético si todos sus miembros provienen de un antepasado común, pero no incluye todos los descendientes del mismo, los reptiles son un ejemplo de grupo parafilético puesto que no incluye a las aves.</p>
+<figure class="align-center">
+<img alt="_images/monofilia.png" src="_images/monofilia.png" />
+</figure>
+<p>Una politomía es un nodo sin resolver del que parten varias ramas.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>   <span class="o">---------------</span> <span class="n">A</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|--------------</span> <span class="n">B</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">----------------</span><span class="n">C</span>
+</pre></div>
+</div>
+<section id="topologia">
+<h3>Topología<a class="headerlink" href="#topologia" title="Permalink to this headline">¶</a></h3>
+<p>Un dendograma puede ser representado gráficamente de distintos modos equivalentes.
+Hemos de ser cautos a la hora de decidir qué dendogramas son distintos y cuales no lo son.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>         <span class="o">---------</span> <span class="n">A</span>
+<span class="o">|</span>   <span class="o">------|</span>
+<span class="o">|</span>   <span class="o">|</span>     <span class="o">---------</span> <span class="n">B</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span>       <span class="o">--------</span><span class="n">C</span>
+<span class="o">|</span>   <span class="o">--------|</span>
+<span class="o">|</span>           <span class="o">--------</span><span class="n">D</span>
+<span class="o">|</span>
+<span class="o">|</span>         <span class="o">---------</span> <span class="n">B</span>
+<span class="o">|</span>   <span class="o">------|</span>
+<span class="o">|</span>   <span class="o">|</span>     <span class="o">---------</span> <span class="n">A</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span>       <span class="o">--------</span><span class="n">C</span>
+<span class="o">|</span>   <span class="o">--------|</span>
+<span class="o">|</span>           <span class="o">--------</span><span class="n">D</span>
+<span class="o">|</span>
+<span class="o">|</span>         <span class="o">---------</span> <span class="n">B</span>
+<span class="o">|</span>   <span class="o">------|</span>
+<span class="o">|</span>   <span class="o">|</span>     <span class="o">---------</span> <span class="n">A</span>
+<span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span>       <span class="o">--------</span><span class="n">D</span>
+<span class="o">|</span>   <span class="o">--------|</span>
+<span class="o">|</span>           <span class="o">--------</span><span class="n">C</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="filogenias-basadas-en-secuencias">
+<h2>filogenias basadas en secuencias<a class="headerlink" href="#filogenias-basadas-en-secuencias" title="Permalink to this headline">¶</a></h2>
+<p>Las filogenias pueden construirse con datos de muchos tipos, pero en este curso nos centraremos en las creadas a partir de secuencias de ADN o proteína.
+Al utilizar un método de reconstrucción filogenética estaremos asumiendo una serie de premisas:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Cada secuencia es correcta y pertenece a su organismo.</p></li>
+<li><p>Las secuencias son homólogas y se han originado a partir de un ancestro común.</p></li>
+<li><p>Cada posición de una secuencia del alineamiento es homóloga a la del resto de secuencias.</p></li>
+<li><p>Las secuencias evolucionan con un patrón al azar.</p></li>
+<li><p>Las posiciones del alineamiento evolucionan independientemente unas de otras.</p></li>
+<li><p>No existe intercambio de información genética entre los diferentes organismos (recombinación).</p></li>
+</ul>
+</div></blockquote>
+<p>Además, al hacer el árbol asumimos que las secuencias utilizadas incluyen información suficiente como para resolver el problema.
+Esta es una asunción que podemos y debemos comprobar por algún método estadístico.</p>
+<p>Por último, hay que tener en cuenta que si pretendemos reconstruir un árbol de especies y estamos utilizando una o varias secuencias para hacerlo hemos de asumir que las secuencias elegidas son representativas de las especies incluidas en el análisis.
+Si no fuese así estaríamos generando un árbol correcto de secuencias, pero no de especies.</p>
+<p>Conviene recordar cuales son los distintos tipos de homologías:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Ortólogo: Secuencias homólogas de dos especies diferentes y que provienen de una secuencia común.</p></li>
+<li><p>Parálogo: Secuencias homólogas de un mismo organismo. Provenientes de duplicaciones génicas.</p></li>
+<li><p>Xenólogo: Secuencias homólogas de dos especies diferentes pero provienen de una transferencia horizontal.</p></li>
+</ul>
+</div></blockquote>
+<section id="alineamientos-de-secuencias-como-base-de-los-arboles-filogeneticos">
+<h3>Alineamientos de secuencias como base de los árboles filogenéticos<a class="headerlink" href="#alineamientos-de-secuencias-como-base-de-los-arboles-filogeneticos" title="Permalink to this headline">¶</a></h3>
+<p>Los árboles filogenéticos se pueden construir a partir de alineamientos múltiples de secuencias.
+Ya hemos mencionado que en este caso estamos asumiendo que cada posición en el alineamiento es homóloga.
+Por lo tanto, construir un buen alineamiento es esencial para la resolución del árbol.</p>
+<p>La edición manual de los alineamientos es habitual para conseguir el mejor posible.
+Como vimos la mayoría de los programas de alineamiento nos dan una solución subóptima (la mejor posible utilizando pocos recursos del sistema), por lo tanto resulta conveniente revisar los alineamientos antes de realizar los árboles.</p>
+<p>En general los problemas suelen acumularse en las regiones más variables en las que hay muchas sustituciones o muchos gaps.
+En estos casos podríamos estar incluyendo posiciones que no son homólogas con lo que estaríamos introduciendo una información espúrea en el análisis.
+Esta revisión de los alineamiento podemos realizarla con programas desarrollados para tal fin.
+El <a class="reference external" href="http://molevol.cmima.csic.es/castresana/Gblocks/Gblocks_documentation.html">Gbloks</a> selecciona bloques según su nivel de conservación y elimina aquellas regiones con gaps o no conservadas para obtener bloques altamente conservados.
+El <a class="reference external" href="http://trimal.cgenomics.org/">trimAI</a> elimina  regiones no conservadas y espúreas teniendo en cuenta diferentes parámetros como el número de secuencias con gaps en una posición, regiones con nivel bajo de similitud, etc.</p>
+</section>
+</section>
+<section id="metodos-de-construccion-de-arboles">
+<h2>Métodos de construcción de árboles<a class="headerlink" href="#metodos-de-construccion-de-arboles" title="Permalink to this headline">¶</a></h2>
+<p>Existen muchos métodos de construcción de árboles.
+Pueden ser clasificados en distintas familias según se basen en:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>distancias.</p></li>
+<li><p>parsimonia.</p></li>
+<li><p>máxima verosimilitud.</p></li>
+<li><p>bayesianos.</p></li>
+</ul>
+</div></blockquote>
+<section id="calculo-de-distancias">
+<h3>Cálculo de distancias<a class="headerlink" href="#calculo-de-distancias" title="Permalink to this headline">¶</a></h3>
+<p>La distancia es una medida del grado de divergencia entre dos secuencias.
+Utilizamos la distancia como una aproximación al tiempo desde que las dos secuencias se separaron.
+En este caso lo primero que se hace es generar una matriz de distancias por parejas de secuencias a partir del alineamiento múltiple.
+En estos métodos toda la información de similitudes y diferencias entre dos secuencias queda resumida por un simple número.</p>
+<p>Existen diferentes estadísticos para calcular la distancia entre dos secuencias.
+En teoría podríamos utilizar un estadístico tan sencillo como el porcentaje de posiciones cambiadas entre dos secuencias, pero la mayoría de los estadísticos tienen en cuenta que las posiciones pueden estar saturadas, es decir en el alineamiento vemos los cambios definitivos pero no aquellos que han afectado a la misma posición varias veces.
+Nuestro objetivo es tener una media de distancia que se comporte linealmente con el tiempo.
+Debido al problema saturación llegará un momento que aunque aumente el tiempo desde que dos secuencias se separaron las mutaciones quedarán enmascaradas por actuar sobre la misma posición y será difícil contabilizarlas para la distancia.
+Para solucionar este problema se suele utilizar un modelo de mutación mediante el que intentamos evaluar la distancia real en base a las mutaciones que podemos observar.</p>
+</section>
+<section id="modelos-de-sustitucion">
+<h3>Modelos de sustitución<a class="headerlink" href="#modelos-de-sustitucion" title="Permalink to this headline">¶</a></h3>
+<figure class="align-center">
+<img alt="_images/modelos.png" src="_images/modelos.png" />
+</figure>
+<p>Podemos calcular las distancias entre las secuencias asumiendo distintos modelos de mutación.
+Hay modelos más sencillos y otros más complejos.
+Los más sencillos suelen ser modelos demasiado simplificados que no se corresponden demasiado bien con la realidad.
+Los más complejos tienen el inconveniente de repartir la información filogenética existente en el alineamiento entre demasiados parámetros por lo estos suelen estar peor determinados y sus varianzas suelen aumentar.
+Según los datos de los que dispongamos el modelo de mutación óptimo puede ser uno u otro.
+Existen programas, como <a class="reference external" href="https://github.com/ddarriba/jmodeltest2">jModelTest</a>, que pueden probar todos estos modelos en nuestros datos y nos pueden recomendar qué modelo debemos utilizar para realizar un árbol de forma óptima.</p>
+<p>A continuación describimos algunos de los modelos de mutación.</p>
+<section id="modelo-jukes-cantor">
+<h4>Modelo Jukes-Cantor<a class="headerlink" href="#modelo-jukes-cantor" title="Permalink to this headline">¶</a></h4>
+<p>Todas las posiciones evolucionan independientemente.
+Todas las bases están a igual frecuencia.
+Todos los cambios se producen a la misma frecuencia.
+Las mutaciones son fenómenos raros.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span> <span class="n">ln</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="n">p</span><span class="p">)</span>
+<span class="n">p</span> <span class="n">proporción</span> <span class="n">de</span> <span class="n">cambios</span> <span class="n">entre</span> <span class="n">las</span> <span class="n">dos</span> <span class="n">secuencias</span>
+</pre></div>
+</div>
+</section>
+<section id="modelo-kimura2-parametros">
+<h4>Modelo Kimura2-parametros<a class="headerlink" href="#modelo-kimura2-parametros" title="Permalink to this headline">¶</a></h4>
+<p>Distingue entre transiciones (purina a purina o pirimidina a pirimidina) y transversiones (purina a pirimidina y viceversa) y asume que frecuencia de los diferentes nucleótidos es igual.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="n">ln</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="n">p</span><span class="o">-</span><span class="n">q</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="n">ln</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="n">q</span><span class="p">)</span>
+<span class="n">p</span> <span class="n">proporción</span> <span class="n">de</span> <span class="n">transiciones</span> <span class="n">y</span> <span class="n">q</span> <span class="n">proporción</span> <span class="n">de</span> <span class="n">transversiones</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="modelo-general">
+<h4>Modelo general<a class="headerlink" href="#modelo-general" title="Permalink to this headline">¶</a></h4>
+<p>Este es uno de los modelos mas complejos.
+La frecuencia de los distintos nucleótidos es distinta y la tasa de cambios entre los nucleótidos es diferente para cada tipo.
+Además a este modelo se le puede añadir que no todas las regiones de la secuencia evolucionan a la misma velocidad (las tasas de sustitución pueden variar a lo largo de la secuencia (Distribución gamma).</p>
+<figure class="align-center">
+<img alt="_images/Gamma_distribution.png" src="_images/Gamma_distribution.png" />
+</figure>
+</section>
+</section>
+<section id="arboles-basados-en-distancias">
+<h3>Árboles basados en distancias<a class="headerlink" href="#arboles-basados-en-distancias" title="Permalink to this headline">¶</a></h3>
+<p>A partir de una matriz de distancia podemos utilizar distintos métodos estadísticos para reconstruir un árbol.
+Existen numerosos métodos, pero los más utilizados son el UPGMA y el Neighbor-joining.
+Estos métodos de creación de árboles no son específicos de la filogenia por lo que los veremos comúnmente utilizados para resolver otros tipos de problemas en los que se pretende obtener una clasificación jerárquica.</p>
+<p>Estos métodos basados en matrices de distancias son muy rápidos y permiten utilizar secuencias muy largas en un gran número de individuos con unos recursos computacionales de memoria y tiempo muy limitados.</p>
+<p>Una vez hemos creado el árbol podemos estudiar cómo de preciso es el ajuste del mismo a la matriz de datos original realizando un test de correlación cofenético.
+En este test a partir del árbol se calcula una nueva matriz de distancias y esta matriz se compara con la original para estudiar como de bien se correlacionan.
+También podemos realizar un análisis de bootstrap para validar el árbol.</p>
+<section id="upgma">
+<h4>UPGMA<a class="headerlink" href="#upgma" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="http://en.wikipedia.org/wiki/UPGMA">UPGMA</a> es un método de clustering (clasificación) que se basa en la identificación de las parejas más similares y en el cálculo de la media de las distancias entre ellas y el resto de las secuencias para reconstruir el árbol.
+Resulta conveniente usarlo solo si se cumple la hipótesis del reloj molecular (todas las secuencias han evolucionado a la misma velocidad) dado que genera árboles ultramétricos.</p>
+</section>
+<section id="neighbor-joining">
+<h4>Neighbor-joining<a class="headerlink" href="#neighbor-joining" title="Permalink to this headline">¶</a></h4>
+<p>El método de <a class="reference external" href="http://en.wikipedia.org/wiki/Neighbor-joining">neighbor-joining</a> es un método muy utilizado en las filogenias de secuencias.
+La principal diferencia respecto al UPGMA es que los árboles que genera no son ultraméticos, es por lo tanto el más recomendable si no estamos seguros de que se cumple la hipótesis del reloj molecular, es decir si esperamos que distintas ramas puedan haber evolucionado a distinta velocidad.</p>
+</section>
+</section>
+<section id="maxima-parsimonia">
+<h3>Máxima parsimonia<a class="headerlink" href="#maxima-parsimonia" title="Permalink to this headline">¶</a></h3>
+<p>El método de <a class="reference external" href="http://en.wikipedia.org/wiki/Maximum_parsimony">máxima parsimonia</a> se basa en la filosofía de que la explicación más simple, la que requiere menos cambios debe ser la correcta.
+Mediante este método se obtienen árboles que ordenan las ramas de modo tal que se minimiza el número de mutaciones que deben haber ocurrido.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/arboles_parsimonia.png"><img alt="_images/arboles_parsimonia.png" src="_images/arboles_parsimonia.png" style="width: 600px;" /></a>
+</figure>
+<p>Para elegir el mejor árbol, el árbol que implicase menos cambios, en teoría habría que evaluar todos los árboles posibles.
+Este evaluación podría hacerse si el número de taxa es pequeño, pero a medida que este número aumenta el número de árbol crece desmesuradamente y no es factible evaluar todos los árboles posibles.
+En la práctica los programas utilizan un método heurístico para evaluar sólo los árboles más razonables y desechar directamente los más improbables.</p>
+<p>El resultado final de un algoritmo de máxima parsimonia no tiene porque ser un único árbol puesto que puede que existan varios árboles que impliquen un mismo número de mutaciones.</p>
+<p>Los caracteres pueden ser clasificados en informativos y no informativos.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span>   <span class="n">aat</span> <span class="n">tcg</span> <span class="n">ctt</span> <span class="n">cta</span> <span class="n">gga</span> <span class="n">atc</span> <span class="n">tgc</span> <span class="n">cta</span> <span class="n">atc</span> <span class="n">ctg</span>
+<span class="n">B</span>   <span class="o">...</span> <span class="o">..</span><span class="n">a</span> <span class="o">..</span><span class="n">g</span> <span class="o">...</span> <span class="o">.</span><span class="n">t</span><span class="o">.</span> <span class="o">...</span> <span class="o">...</span> <span class="n">t</span><span class="o">..</span> <span class="o">...</span> <span class="o">..</span><span class="n">a</span>
+<span class="n">C</span>   <span class="o">...</span> <span class="o">..</span><span class="n">a</span> <span class="o">..</span><span class="n">c</span> <span class="o">...</span> <span class="o">...</span> <span class="o">..</span><span class="n">t</span> <span class="o">...</span> <span class="o">...</span> <span class="o">...</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span>
+<span class="n">D</span>   <span class="o">...</span> <span class="o">..</span><span class="n">a</span> <span class="o">..</span><span class="n">a</span> <span class="o">...</span> <span class="o">..</span><span class="n">g</span> <span class="o">..</span><span class="n">t</span> <span class="o">...</span> <span class="n">t</span><span class="o">.</span><span class="n">t</span> <span class="o">..</span><span class="n">t</span> <span class="n">t</span><span class="o">..</span>
+    <span class="mi">1</span>     <span class="mi">2</span>   <span class="mi">3</span>           <span class="mi">4</span>               <span class="mi">5</span>
+</pre></div>
+</div>
+<p>La posición 1 no es informativa porque no es variable.</p>
+<p>La posición 2 sí varía, pero tampoco es informativa puesto que en cualquier árbol que podamos imaginar siempre contribuirá con una mutación.
+Este tipo de caracteres se denominan <a class="reference external" href="http://es.wikipedia.org/wiki/Autoapomorfia">autoapomorfías</a>.</p>
+<p>La posición 3 es demasiado variable puesto que cambia en todos los individuos.
+En cualquier árbol siempre contribuirá con un mismo número de mutaciones, 3.</p>
+<p>Las posiciones 4 y 5 sí son informativas puesto que indican que dos de los individuos son más cercanos.
+Estas posiciones no serían explicadas con el mismo número de mutaciones en todos los árboles y por lo tanto pueden utilizarse para discriminar entre ellos.
+Este tipo de caracteres representan caracteres homólogos derivados (<a class="reference external" href="http://es.wikipedia.org/wiki/Sinapomorfia">sinapomorfías</a>).</p>
+<p>El método de parsimonia ha sido tradicionalmente el preferido por bastantes investigadores, pero presenta algunos <a class="reference external" href="http://en.wikipedia.org/wiki/Maximum_parsimony#Problems_with_maximum_parsimony_phylogeny_estimation">problemas estadísticos</a> sistemáticos.
+Se ha demostrado que éste método, en algunos casos, no garantiza encontrar el árbol correcto incluso teniendo información de un gran número de caracteres informativos.
+Uno de los casos en los que éste método falla sistemáticamente es el caso en el que algunas ramas sean mucho más largas que otras.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>      <span class="o">----</span><span class="n">A</span>
+<span class="o">|</span> <span class="o">-----|</span>
+<span class="o">|</span> <span class="o">|</span>    <span class="o">----------------------------</span><span class="n">B</span>
+<span class="o">|</span> <span class="o">|</span>
+<span class="o">|</span> <span class="o">|</span>    <span class="o">--------------------------</span><span class="n">C</span>
+<span class="o">|</span> <span class="o">-----|</span>
+<span class="o">|</span>      <span class="o">----</span><span class="n">D</span>
+<span class="o">|</span>
+</pre></div>
+</div>
+</section>
+<section id="maxima-verosimilitud">
+<h3>Máxima verosimilitud<a class="headerlink" href="#maxima-verosimilitud" title="Permalink to this headline">¶</a></h3>
+<p>El método de máxima verosimilitud busca el árbol máximoverosímil, es decir, el árbol que es más probable que haya generado los datos que hemos observado.
+En este método partimos de los datos y de un modelo de evolución.
+Partiendo de esta base se calcula la probabilidad de que nuestros datos hayan sido generado por los distintos árboles posibles y se devuelve el árbol que presenta una máxima probabilidad.</p>
+<p>Para poder calcular uno de estos árboles es imprescindible elegir un modelo de mutación a priori.
+Una vez determinado el modelo, el algoritmo hará una estima maximoverosímil de los parámetros relativos a las tasas de mutación así como del árbol.</p>
+<p>De modo análogo al método de parsimonia en este caso para calcular el árbol más verosímil también deberían explorarse todos los árboles posibles, pero dado que eso es computacionalmente imposible de llevar a cabo también se utilizan métodos heurísticos para explorar tan sólo los árboles más razonables.</p>
+<p>Este método tiene la ventaja frente a los de máxima verosimilitud y de parsimonia de utilizar con mayor eficiencia la información filogenética contenida en el alineamiento múltiple.
+Es decir, dado un mismo alineamiento éste método tiende a generar un resultado más cercano a la realidad.
+Este método, por ejemplo, no presenta el problema sistemático con las ramas de distinto tamaño que describimos en el método de máxima parsimonia.</p>
+<p>La desventaja principal del método es el coste de computación que conlleva.
+Hasta que los ordenadores no tuvieron una potencia suficiente este método no pudo aplicarse e incluso en los ordenadores modernos puede ser costoso si el número de taxa o la longitud del alineamiento son grandes.</p>
+</section>
+<section id="metodos-bayesianos">
+<h3>Métodos Bayesianos<a class="headerlink" href="#metodos-bayesianos" title="Permalink to this headline">¶</a></h3>
+<p>La <a class="reference external" href="http://en.wikipedia.org/wiki/Bayesian_inference">inferencia bayesiana</a> calcula una probabilidad posterior para cada árbol posible dado un modelo de evolución y unas observaciones.
+Es decir, dadas unas observaciones la inferencia bayesiana actualiza las probabilidades de que los árboles sean correctos.</p>
+<p>En caso de la <a class="reference external" href="http://en.wikipedia.org/wiki/Bayesian_inference_in_phylogeny">filogenia bayesiana</a> dados los datos que hemos observado, normalmente una serie de secuencias, y unas probabilidades a priori se generan unas probabilidades tanto para el conjunto de posibles árboles como para los parámetros del modelo de mutación.
+En este caso el modelo de mutación también debe ser elegido antes de comenzar la reconstrucción filogenética.</p>
+<p>En este método también debería calcularse la probabilidad a posteriori de todos los árboles, pero esto no es computacionalmente posible.
+La alternativa utilizada consiste en recurrir a cadenas de Markov que permiten ir explorando los árboles más verosímiles.
+Las cadenas de Markov tienen el inconveniente de caer en mínimos locales por lo que se suelen utilizar con el algoritmo Metropolis-coupled Montecarlo vía Cadenas de Marvok (MCMCMC).</p>
+<p>La implementación de referencia en este tipo de reconstrucción filogenética es el software <a class="reference external" href="http://mrbayes.sourceforge.net/">MrBayes</a>.</p>
+<p>Este método es el que más tiempo y recursos computacionales requiere, pero suele considerarse como el método que arroja unos mejores resultados.</p>
+<figure class="align-center">
+<img alt="_images/bayesiano.png" src="_images/bayesiano.png" />
+</figure>
+</section>
+</section>
+<section id="arboles-con-raiz">
+<h2>Árboles con raíz<a class="headerlink" href="#arboles-con-raiz" title="Permalink to this headline">¶</a></h2>
+<p>Los métodos que hemos visto producen árboles sin raíz.
+Un modo de asignar la raíz comúnmente utilizado es incluir un taxa que sabemos a priori que está más alejado filogenéticamente del resto.
+Por ejemplo, una secuencia de plantas cuando estamos analizando una filogenia de todo el reino animal.
+Un problema es que en algunos casos si escogemos una secuencia demasiado distinta se puede distorsionar el resto del árbol.
+Otro modo, menos común, de situar la raíz es asumir que se cumple la hipótesis del reloj molecular de modo que podamos elegir la secuencia más distinta como la más antigua.</p>
+</section>
+<section id="metodos-de-validacion-de-arboles">
+<h2>Métodos de validación de árboles<a class="headerlink" href="#metodos-de-validacion-de-arboles" title="Permalink to this headline">¶</a></h2>
+<p>Un árbol no tiene demasiada utilidad si no evaluamos su significación estadística.
+Un método filogenético siempre generará un resultado a partir de cualquier conjunto de datos, pero esto no implica que este resultado sea fiable.
+De algún modo debemos decidir en qué nodos del dendograma podemos confiar y en cuales no.</p>
+<p>En los métodos bayesianos los nodos tienen asociados una probabilidad posterior que indica la confianza que podemos tener en ellos, pero en el resto de metodologías debemos utilizar algún método para hacer esta evaluación.
+Un método ideal consistiría en obtener varios conjuntos de datos independientes y generar a partir de ellos distintos árboles.
+Comparando qué nodos son compartidos por estos árboles y cuales no podríamos hacernos una idea de qué resulta fiable y qué no.
+Desgraciadamente este método no resulta práctico en muchas ocasiones por lo que se han desarrollado otros algoritmos que nos ofrecen algo similar a tener varios conjuntos de datos para obtener distintos árboles.
+Uno de los más utilizados es el bootstrap.</p>
+<p>Este método se puede aplicar a todos los métodos y consiste en crear réplicas de los alineamientos a partir del original, eliminando cierto número de posiciones al azar en cada replica.
+El número final de posiciones se mantiene constante, añadiendo duplicaciones de los sitios que han permanecido.
+Para cada una de estas réplicas aplicaremos el método de reconstrucción filogenética y generaremos un árbol.
+El paso final será evaluar para cada nodo el porcentaje de árboles en los que aparece.
+Los nodos con un alto valor de bootstrap tienen, si se cumplen las asunciones del método utilizado, una probabilidad alta de ser correctos mientras que los que tienen un bajo valor de bootstrap podrían haberse generado simplemente por azar.</p>
+<p>Se ha discutido mucho cuales son los valores límite que indicarían que un nodo es fiable y no se ha llegado a conclusiones demasiado claras.
+Evidentemente un nodo que aparece en el 95 % de los árboles tiene una apariencia de ser sólido mientras que uno que aparezca en un 50% de los árboles no parece demasiado fiable.
+Pero en los casos intermedios es difícil llegar a una conclusión demasiado clara.
+Resulta común encontrar dendogramas en los que la discusión se centra en los nodos con valores de bootstrap mayores de 70.</p>
+<p>Si generamos el árbol consenso con el programa consense del paquete phylip hay que tener en cuenta que las distancias del árbol obtenido no se corresponden con las distancias basadas en la matriz de distancias o en el número de mutaciones sino con el valor de bootstrap.
+En este caso particular lo único que nos debe importar es la topología.
+Para obtener el árbol correcto debemos aplicar los valores de bootstrap obtenidos mediante el remuestreo al árbol obtenido con todos la matriz de datos completa, sin hacer bootstrap.</p>
+</section>
+<section id="programas-de-filogenias">
+<h2>Programas de filogenias<a class="headerlink" href="#programas-de-filogenias" title="Permalink to this headline">¶</a></h2>
+<p>Existen numerosos programas para realizar filogenias: <a class="reference external" href="http://evolution.genetics.washington.edu/phylip.html">Phylip</a>, <a class="reference external" href="http://www.megasoftware.net/">MEGA</a>, <a class="reference external" href="http://mrbayes.sourceforge.net/">MrBayes</a>, <a class="reference external" href="http://phylemon.bioinfo.cipf.es/">Phylemon</a>, etc.</p>
+<p>Nos vamos a centrar en el MEGA. Es en realidad un paquete de programas que nos permite realizar alineamientos, análisis y árboles filogenéticos mediante diferentes métodos a partir de alineamientos de ADN o proteínas.</p>
+<p><a class="reference internal" href="practica_filogenias.html"><span class="doc">Ir a la práctica del tema</span></a></p>
+</section>
+</section>
+
+
+            
+        
+        
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="practica_multiple.html">PRÁCTICA DE ALINEAMIENTOS MÚLTIPLES</a>-->
+                    <a class="prev" href="practica_multiple.html" title="PRÁCTICA DE ALINEAMIENTOS MÚLTIPLES">previous</a>
+                    |
+                    <!--<a class="next" href="practica_filogenias.html">Prácticas filogenias</a>-->
+                    <a class="next" href="practica_filogenias.html" title="Prácticas filogenias">next</a>
+                    |
+                
+                <a class="index" href="/courses/intro_bioinf/index.html" title="Index">index</a>
+                
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

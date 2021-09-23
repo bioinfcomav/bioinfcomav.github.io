@@ -1,0 +1,11 @@
+
+NGS analysis software
+---------------------
+
+.. figure:: _images/sequence_software_presentation.png
+   :width: 400px
+
+   :download:`Sequence analysis software <downloads/sequence_analysis_software.odp>` (:download:`pdf <downloads/sequence_analysis_software.pdf>`)
+
+`A survey of tools for variant analysis of next-generation genome sequencing data <http://bib.oxfordjournals.org/content/early/2013/01/21/bib.bbs086.full>`_.
+

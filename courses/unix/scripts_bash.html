@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Scripts de bash</title>
+  <meta name="description" content="Introduction to the Linux command line.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/scripts_bash.html">
+  <link rel="alternate" type="application/rss+xml" title="Curso Unix" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Curso Unix</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/index.html">Curso Unix</a>
+          
+        
+          
+          <a class="page-link" href="/unix_intro.html">Unix y Linux</a>
+          
+        
+          
+          <a class="page-link" href="/sistema_de_ficheros.html">El sistema de ficheros</a>
+          
+        
+          
+          <a class="page-link" href="/control_procesos.html">Procesos</a>
+          
+        
+          
+          <a class="page-link" href="/pipes.html">Flujos de información</a>
+          
+        
+          
+          <a class="page-link" href="/procesamiento_texto.html">Procesamiento de ficheros de texto</a>
+          
+        
+          
+          <a class="page-link" href="/expresiones_regulares.html">Expresiones regulares</a>
+          
+        
+          
+          <a class="page-link" href="/scripts_bash.html">Scripts de bash</a>
+          
+        
+          
+          <a class="page-link" href="/administrador.html">Administrador</a>
+          
+        
+          
+          <a class="page-link" href="/administracion_software1.html">Administracion de software 1</a>
+          
+        
+          
+          <a class="page-link" href="/variables_de_entorno.html">Variables de entorno</a>
+          
+        
+          
+          <a class="page-link" href="/administracion_software2.html">Administracion de software 2</a>
+          
+        
+          
+          <a class="page-link" href="/redes.html">Redes</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Scripts de bash</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#variables" id="markdown-toc-variables">Variables</a>    <ul>
+      <li><a href="#nombre-de-las-variables" id="markdown-toc-nombre-de-las-variables">Nombre de las variables</a></li>
+    </ul>
+  </li>
+  <li><a href="#control-de-flujo" id="markdown-toc-control-de-flujo">Control de flujo</a>    <ul>
+      <li><a href="#bucles-for" id="markdown-toc-bucles-for">Bucles (<em>for</em>)</a></li>
+      <li><a href="#condicionales-if" id="markdown-toc-condicionales-if">Condicionales (<em>if</em>)</a>        <ul>
+          <li><a href="#condicionales-con-números" id="markdown-toc-condicionales-con-números">Condicionales con números</a></li>
+          <li><a href="#condicionales-con-cadenas-de-texto" id="markdown-toc-condicionales-con-cadenas-de-texto">Condicionales con cadenas de texto</a></li>
+          <li><a href="#condicionales-con-archivos" id="markdown-toc-condicionales-con-archivos">Condicionales con archivos</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#manipulación-de-cadenas-de-texto" id="markdown-toc-manipulación-de-cadenas-de-texto">Manipulación de cadenas de texto</a>    <ul>
+      <li><a href="#extraer-subcadena" id="markdown-toc-extraer-subcadena">Extraer subcadena</a></li>
+      <li><a href="#borrar-subcadena" id="markdown-toc-borrar-subcadena">Borrar subcadena</a></li>
+      <li><a href="#reemplazar-subcadena" id="markdown-toc-reemplazar-subcadena">Reemplazar subcadena</a></li>
+    </ul>
+  </li>
+  <li><a href="#operaciones-aritméticas" id="markdown-toc-operaciones-aritméticas">Operaciones aritméticas</a></li>
+  <li><a href="#parallel" id="markdown-toc-parallel">Parallel</a></li>
+  <li><a href="#ejercicios" id="markdown-toc-ejercicios">Ejercicios</a></li>
+</ul>
+
+<p>En esta sección del curso vamos a aprender a hacer algunos scripts básicos que nos permitan automatizar y acelerar el trabajo. Un script no es más que un archivo que contiene un conjunto de órdenes para realizar una acción.</p>
+
+<p>Vamos a crear nuestro primer script. Para ello en un editor de texto escribiremos lo siguente y lo guardaremos con el nombre *hola.sh *</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
+	<span class="c"># Este es nuestro primer progrma</span>
+	<span class="nb">echo </span>Hola Mundo
+</code></pre>
+</div>
+
+<p>A continuación iremos a la terminal y lo ejecutaremos:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code> ~$ ./hola.sh.
+</code></pre>
+</div>
+
+<p>La primera línea de nuestro script le indica al sistema que tiene que usar la shell BASH. La segunda línea es un comentario para consumo humano, todas las líneas que comiencen por <code class="highlighter-rouge">#</code> son ignoradas por la máquina y nos sirven para incluir comentarios destinados a programadores o usuarios. En la tercera línea tenemos el comando <code class="highlighter-rouge">echo</code>que sirve para imprimir texto en la pantalla.</p>
+
+<h2 id="variables">Variables</h2>
+
+<p>Como cualquier otro lenguaje de programación, necesitamos variables que nos servirán para guardar datos en la memoria del ordenador hasta el momento que los necesitemos. Podemos pensar en una variable como una caja en la que podemos guardar un elemento (e.g, un número, una cadena de texto, la dirección de un archivo…) y, siguiendo con el símil, la memoria del ordenador no sería más que el conjunto de esas cajas.</p>
+
+<p>Para asignar el valor a una variable simplemente simplemente debemos usar el signo <code class="highlighter-rouge">=</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>nombre_variable=valor_variable
+</code></pre>
+</div>
+
+<p>Es importante no dejar espacios ni antes ni después del <code class="highlighter-rouge">=</code>.</p>
+
+<p>Para recuperar el valor de dicha variable sólo hay que anteponer el símbolo de dolar <code class="highlighter-rouge">$</code> antes del nombre de la variable:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$nombre_variable
+</code></pre>
+</div>
+
+<p>A lo largo de un script podemos asignarle diferentes valores a una misma variable:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
+	<span class="nv">to_print</span><span class="o">=</span><span class="s1">'Hola mundo'</span>
+	<span class="nb">echo</span> <span class="nv">$to_print</span>
+	<span class="nv">to_print</span><span class="o">=</span>5.5
+	<span class="nb">echo</span> <span class="nv">$to_print</span>
+</code></pre>
+</div>
+
+<h3 id="nombre-de-las-variables">Nombre de las variables</h3>
+
+<p>Las variables pueden tomar prácticamente cualquier nombre, sin embargo, existen algunas restricciones:</p>
+
+<ul>
+  <li>Sólo puede contener caracteres alfanuméricos y guiones bajos</li>
+  <li>El primer carácter debe ser una letra del alfabeto o “_” (este último caso se suele reservar para casos especiales).</li>
+  <li>No pueden contener espacios.</li>
+  <li>Las mayúsculas y las minúsculas importan, “a” es distinto de “A”.</li>
+  <li>Algunos nombres som usado como variables de entorno y no los debemos utilizar para evitar sobrescribirlas (e.g.,PATH).</li>
+</ul>
+
+<p>De manera general, y para evitar problemas con las variables de entorno que siempre están escritas en mayúscula, deberemos escribir el nombre de las variables en minúscula.</p>
+
+<p>Además, aunque esto no es una regla que deba obedecerse obligatoriamente, es conveniente que demos a las variables nombres que más tarde podamos recordar.
+Si abrimos un script tres meses después de haberlo escrito y nos encontramos con la expresión “m=3.5” nos será difícil entender que hace el programa.
+Habría sido mucho más claro nombrar la variable como “media=3.5”.</p>
+
+<h2 id="control-de-flujo">Control de flujo</h2>
+
+<p>Como hemos visto los scripts se ejecutan línea a línea hasta llegar al final, sin embargo, muchas veces nos interesará modificar ese comportamiento de manera que el programa pueda responder de un modo u otro dependiendo de las cirscunstancias o pueda repetir trozos de código.</p>
+
+<p><img src="./static/for_if.png" alt="flow control" /></p>
+
+<p>En este curso nos vamos a centrar en los controles de flujo más importantes:</p>
+
+<ul>
+  <li>bucles (<em>for loops</em>)</li>
+  <li>condicionales (<em>if</em>)</li>
+</ul>
+
+<h3 id="bucles-for">Bucles (<em>for</em>)</h3>
+
+<p>La sintaxis general de los bucles es la siguiente:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>for VARIABLE in LISTA_VALORES;
+do
+	COMANDO 1
+	COMANDO 2
+	...
+	COMANDO N
+done
+</code></pre>
+</div>
+
+<p>Donde la lista de valores puede ser un rango númerico:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	for VARIABLE in 1 2 3 4 5 6 7 8 9 10;
+	for VARIABLE in {1..10};
+</code></pre>
+</div>
+
+<p>una serie de valores:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	for VARIABLE in file1 file2 file3;
+</code></pre>
+</div>
+
+<p>o el resutlado de la ejecución de un comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	for VARIABLE in $(ls /bin | grep -E 'c.[aeiou]');
+</code></pre>
+</div>
+
+<p>Hay que tener en cuenta que si pasamos un listado de valores pero lo ponemos entrecomillado, el ordenador lo enterá como un única línea:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	for VARIABLE in "file1 file2 file3";
+</code></pre>
+</div>
+
+<p>Un ejemplo simple de <em>for</em> sería:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
+	<span class="k">for </span>numero <span class="k">in</span> <span class="o">{</span>1..20..2<span class="o">}</span>;
+	<span class="k">do
+	  </span><span class="nb">echo </span>Este es el número: <span class="nv">$numero</span>
+	<span class="k">done</span>
+</code></pre>
+</div>
+
+<h3 id="condicionales-if">Condicionales (<em>if</em>)</h3>
+
+<p>La sintaxis básica de un condicional es la siguiente</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	if [[ CONDICIÓN ]];
+	then
+	  COMANDO 1 si se cumple la condición
+	fi
+</code></pre>
+</div>
+
+<p>También se puede especificar qué hacer si la condición no se cumple:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	if [[ CONDICIÓN ]];
+	then
+	  COMANDO 1 si se cumple la condición
+	else
+	  COMANDO 2 si no se cumple la condición
+	fi
+</code></pre>
+</div>
+
+<p>Incluso se pueden añadir más condiciones concatenando más <em>if</em>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	if [[ CONDICIÓN 1 ]];
+	then
+	  COMANDO 1 si se cumple la condición 1
+	elif [[ CONDICIÓN 2 ]];
+	then
+	  COMANDO 2 si se cumple la condición 2
+	else
+	  COMANDO 3 si no se cumple la condición 2
+	fi
+</code></pre>
+</div>
+
+<h4 id="condicionales-con-números">Condicionales con números</h4>
+
+<p>Al comparar números podemos realizar las siguientes operaciones:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">operador</th>
+      <th>significado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">-lt</td>
+      <td>menor que (&lt;)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-gt</td>
+      <td>mayor que (&gt;)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-le</td>
+      <td>menor o igual que (&lt;=)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-ge</td>
+      <td>mayor o igual que (&gt;=)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-eq</td>
+      <td>igual (==)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-ne</td>
+      <td>no igual (!=)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
+	<span class="nv">num1</span><span class="o">=</span><span class="nv">$1</span>  <span class="c"># la variable toma el primer valor que le pasamos al script</span>
+	<span class="nv">num2</span><span class="o">=</span><span class="nv">$2</span>  <span class="c"># la variable toma el segundo valor que le pasamos al script</span>
+	<span class="k">if</span> <span class="o">[[</span> <span class="nv">$num1</span> -gt <span class="nv">$num2</span> <span class="o">]]</span>;
+	<span class="k">then
+	  </span><span class="nb">echo</span> <span class="nv">$num1</span> es mayor que <span class="nv">$num2</span>
+	<span class="k">else
+	  </span><span class="nb">echo</span> <span class="nv">$num2</span> es mayor que <span class="nv">$num1</span>
+	<span class="k">fi</span>
+</code></pre>
+</div>
+
+<h4 id="condicionales-con-cadenas-de-texto">Condicionales con cadenas de texto</h4>
+
+<p>A la hora de comparar cadenas de texto:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">operador</th>
+      <th>significado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">=</td>
+      <td>igual, las dos cadenas de texto son exactamente idénticas</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">!=</td>
+      <td>no igual, las cadenas de texto no son exactamente idénticas</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&lt;</td>
+      <td>es menor que (en orden alfabético ASCII)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&gt;</td>
+      <td>es mayor que (en orden alfabético ASCII)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-n</td>
+      <td>la cadena no está vacía</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-z</td>
+      <td>la cadena está vacía</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
+	<span class="nv">string1</span><span class="o">=</span><span class="s1">'reo'</span>
+	<span class="nv">string2</span><span class="o">=</span><span class="s1">'teo'</span>
+	<span class="k">if</span> <span class="o">[[</span> <span class="nv">$string1</span> &gt; <span class="nv">$string2</span> <span class="o">]]</span>;
+	<span class="k">then
+	  </span><span class="nb">echo </span>Eso es verdad
+	<span class="k">else
+	  </span><span class="nb">echo </span>Eso es mentira
+	<span class="k">fi</span>
+</code></pre>
+</div>
+
+<p>También podemos hacer comparaciones haciendo uso de <em>wildcards</em>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
+	<span class="nv">string1</span><span class="o">=</span><span class="s1">'reo'</span>
+	<span class="k">if</span> <span class="o">[[</span> <span class="nv">$string1</span> <span class="o">=</span> <span class="k">*</span>e<span class="k">*</span> <span class="o">]]</span>;
+	<span class="k">then
+	  </span><span class="nb">echo </span>Eso es verdad
+	<span class="k">else
+	  </span><span class="nb">echo </span>Eso es mentira
+	<span class="k">fi</span>
+</code></pre>
+</div>
+
+<h4 id="condicionales-con-archivos">Condicionales con archivos</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>operador</th>
+      <th>Devuelve <em>true</em> si</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-e name</td>
+      <td><em>name</em> existe</td>
+    </tr>
+    <tr>
+      <td>-f name</td>
+      <td><em>name</em> es un archivo normal (no es un directorio)</td>
+    </tr>
+    <tr>
+      <td>-s name</td>
+      <td><em>name</em> NO tiene tamaño cero</td>
+    </tr>
+    <tr>
+      <td>-d name</td>
+      <td><em>name</em> es un directorio</td>
+    </tr>
+    <tr>
+      <td>-r name</td>
+      <td><em>name</em> tiene permiso de lectura para el user que corre el script</td>
+    </tr>
+    <tr>
+      <td>-w name</td>
+      <td><em>name</em> tiene permiso de escritura para el user que corre el script</td>
+    </tr>
+    <tr>
+      <td>-x name</td>
+      <td><em>name</em> tiene permiso de ejecución para el user que corre el script</td>
+    </tr>
+  </tbody>
+</table>
+
+<p></p>
+<p>Por ejemplo, podemos hacer un script que nos informe sobre el contenido de un directorio:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
+	<span class="k">for </span>file <span class="k">in</span> <span class="k">$(</span>ls<span class="k">)</span>;
+	<span class="k">do
+	  if</span> <span class="o">[[</span> -d <span class="nv">$file</span> <span class="o">]]</span>;
+	  <span class="k">then
+	    </span><span class="nb">echo </span>directorio: <span class="nv">$file</span>
+	  <span class="k">else
+	    if</span> <span class="o">[[</span> -x <span class="nv">$file</span> <span class="o">]]</span>;
+	    <span class="k">then
+	      </span><span class="nb">echo </span>archivo ejecutable: <span class="nv">$file</span>
+	    <span class="k">else
+	      </span><span class="nb">echo </span>archivo no ejecutable: <span class="nv">$file</span>
+	    <span class="k">fi
+	  fi
+	done</span>
+</code></pre>
+</div>
+
+<h2 id="manipulación-de-cadenas-de-texto">Manipulación de cadenas de texto</h2>
+
+<h3 id="extraer-subcadena">Extraer subcadena</h3>
+
+<p>Mediante <code class="highlighter-rouge">${cadena:posicion:longitud}</code> podemos extraer una subcadena de otra cadena. Si omitimos :longitud, entonces extraerá todos los caracteres hasta el final de cadena.</p>
+
+<p>Por ejemplo en la cadena <code class="highlighter-rouge">string=abcABC123ABCabc</code>:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">echo ${string:0}</code> : abcABC123ABCabc</li>
+  <li><code class="highlighter-rouge">echo ${string:0:1}</code> : a (primer caracter)</li>
+  <li><code class="highlighter-rouge">echo ${string:7} :</code>  23ABCabc</li>
+  <li><code class="highlighter-rouge">echo ${string:7:3}</code> : 23A (3 caracteres desde posición 7)</li>
+  <li><code class="highlighter-rouge">echo ${string:7:-3}</code> : 23ABCabc (desde posición 7 hasta el final)</li>
+  <li><code class="highlighter-rouge">echo ${string: -4}</code> : Cabc (atención al espacio antes del menos)</li>
+  <li><code class="highlighter-rouge">echo ${string: -4:2}</code> : Ca (atención al espacio antes del menos)</li>
+</ul>
+
+<h3 id="borrar-subcadena">Borrar subcadena</h3>
+
+<p>Hay diferentes formas de borrar subcadenas de una cadena:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">${cadena#subcadena}</code> : borra la coincidencia más corta de subcadena desde el principio de cadena</li>
+  <li><code class="highlighter-rouge">${cadena##subcadena}</code> : borra la coincidencia más larga de subcadena desde el principio de cadena</li>
+</ul>
+
+<p>Por ejemplo, en la cadena <code class="highlighter-rouge">string=abcABC123ABCabc</code>:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">echo ${string#a*C}</code> : 123ABCabc</li>
+  <li><code class="highlighter-rouge">echo ${string##a*C}</code> : abc</li>
+</ul>
+
+<h3 id="reemplazar-subcadena">Reemplazar subcadena</h3>
+
+<p>También existen diferentes formas de reemplazar subcadenas de una cadena:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">${cadena/buscar/reemplazar}</code> : Sustituye la primera coincidencia de <em>buscar</em> con <em>reemplazar</em></li>
+  <li><code class="highlighter-rouge">${cadena//buscar/reemplazar}</code> : Sustituye todas las coincidencias de <em>buscar</em> con <em>reemplazar</em></li>
+</ul>
+
+<p>Por ejemplo, en la cadena <code class="highlighter-rouge">string=abcABC123ABCabc</code>:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">echo ${string/abc/xyz}</code> : xyzABC123ABCabc.</li>
+  <li><code class="highlighter-rouge">echo ${string//abc/xyz}</code> : xyzABC123ABCxyz.</li>
+</ul>
+
+<h2 id="operaciones-aritméticas">Operaciones aritméticas</h2>
+
+<p>Por último, Bash también permite la operaciones aritméticas con número enteros:</p>
+<ul>
+  <li>+ - : suma, resta</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ $num=10
+  ~$ echo $((num + 2))
+</code></pre>
+</div>
+<ul>
+  <li>** : potencia</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ echo $((num ** 2))
+</code></pre>
+</div>
+<ul>
+  <li>* / % : multiplicación, división, resto (módulo)</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ echo $((num * 2))
+  ~$ echo $((num / 2))
+  ~$ echo $((num % 2))
+</code></pre>
+</div>
+<ul>
+  <li>VAR++ VAR– : post-incrementa, post-decrementa</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ echo $((num++))
+  ~$ echo $num
+</code></pre>
+</div>
+<ul>
+  <li>++VAR –VAR : pre-incrementa, pre-decrementa</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ echo $((++num))
+  ~$ echo $num
+</code></pre>
+</div>
+
+<h2 id="parallel">Parallel</h2>
+
+<p><em>parallel</em> es un programa que permite la ejecución en paralelo de diferentes trabajos siempre que dispongamos de un ordenador o  ordenadores con más de un procesador.</p>
+
+<p>Aunque este programa no tiene nada que ver con los scripts de Bash,  sí que hacer uso de éstos no resultará muy útil para preparar el archivo de entrada para <em>parallel</em>.  Este programa requiere pasarle un archivo donde cada línea es trabajo a realizar y puede consistir tanto en un comando como en un pequeño script a ejecutar. Y es ahí donde saber algo de scripting en Bash nos puede facilitar la tarea. Veamos un ejemplo de <em>input</em> para <em>parallel</em>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	to_run.txt:
+	zcat file1.fasta.gz | grep '&gt;' | sed 's/&gt;//' | bgzip &gt; sample_names1.txt.gz
+	zcat file2.fasta.gz | grep '&gt;' | sed 's/&gt;//' | bgzip &gt; sample_names2.txt.gz
+	zcat file3.fasta.gz | grep '&gt;' | sed 's/&gt;//' | bgzip &gt; sample_names3.txt.gz
+	zcat file4.fasta.gz | grep '&gt;' | sed 's/&gt;//' | bgzip &gt; sample_names4.txt.gz
+	zcat file5.fasta.gz | grep '&gt;' | sed 's/&gt;//' | bgzip &gt; sample_names5.txt.gz
+	zcat file6.fasta.gz | grep '&gt;' | sed 's/&gt;//' | bgzip &gt; sample_names6.txt.gz
+</code></pre>
+</div>
+
+<p><em>parallel</em> no viene instalado por defecto en algunas distribuciones Linux, por tanto, lo primero que debemos hacer es instalarlo:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	~$ sudo apt-get install parallel
+</code></pre>
+</div>
+
+<p>Con la opción <em>-j</em> podemos especificarle el número de trabajos simultáneos. Así pues, si tenemos 4 procesadores disponibles y queremos correr un trabajo por procesador correríamos:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	~$ parallel -j 4 to_run.txt
+</code></pre>
+</div>
+
+<h2 id="ejercicios">Ejercicios</h2>
+
+<ol>
+  <li>
+    <p>Haz un script que cree 40 archivos <em>.txt</em> en una carpeta de tu escritorio (usa <em>touch</em> para crearlos)</p>
+  </li>
+  <li>
+    <p>Haz un script que comprima con <em>gzip</em> sólo los archivos 25 y 29.</p>
+  </li>
+  <li>
+    <p>Escribe un script que cambie la extensión de los ficheros que contengan un 3 en su nombre de <em>.txt</em> a <em>.md</em>.</p>
+  </li>
+  <li>
+    <p>Crea un script que copie todos los archivos (no directorios) <em>/etc</em> a una carpeta de tu escritorio.</p>
+  </li>
+  <li>
+    <p>Prepara un script que cuenta el número de directorios y archivos que hay en <em>/etc</em></p>
+  </li>
+  <li>
+    <p>Haz un script que devuelva el número de archivos que has guardado</p>
+  </li>
+  <li>
+    <p>Supon que tenemos un programa en Python llamado <em>scan_qtl.py</em> que requiere tres parámetros de entrada <em>a</em>, <em>b</em>. Queremos correr todas la combinaciones paramétricas posibles para <em>a</em> de 1 a 10 de 1 en 1 y <em>b</em> = [pop1, pop2, pop3, all]. Prepa el archivo de entrada para usar en <em>parallel</em>. La línea de ejecución del programa sería algo similar a <code class="highlighter-rouge">python scan_qtl.py 1 pop1 &gt; results.txt</code></p>
+  </li>
+  <li>
+    <p>En una nueva versión de <em>scan_qtl.py</em>, el programa admite un tercer parámetro <em>c</em> = [1, 10, 100 y 1000]. Prepara el archivo de entrada para usar en <em>parallel</em> con todas las combinaciones paramétricas de <em>a</em>, <em>b</em> y <em>c</em>. La línea de ejecución del programa sería algo similar a <code class="highlighter-rouge">python scan_qtl.py 1 pop1 100 &gt; results.txt</code></p>
+  </li>
+</ol>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Curso Unix</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Curso Unix
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Introduction to the Linux command line.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

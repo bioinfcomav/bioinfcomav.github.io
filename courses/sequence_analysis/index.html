@@ -1,0 +1,200 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>NGS sequence analysis &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="#" />
+    <link rel="next" title="Sequencing Platforms" href="sequencing_technologies.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul>
+<li class="toctree-l1"><a class="reference internal" href="sequencing_technologies.html">Sequencing technologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ngs_applications_examples.html">NGS application examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_analysis_software.html">NGS analysis software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmd_primer.html">Command line primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_file_formats.html">NGS sequence file formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read_cleaning.html">NGS read cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assembly.html">Sequence assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Sequence mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snp_calling.html">SNP calling and filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html">NGS expression analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html#practical-tasks">Practical tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_files.html">Dealing with big result files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bedtools.html">BEDTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maize_snp_calling.html">Maize SNP calling practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice.html">Final practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice_walkthrough.html">Final practice walkthrough</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="ngs-sequence-analysis">
+<h1>NGS sequence analysis<a class="headerlink" href="#ngs-sequence-analysis" title="Permalink to this headline">¶</a></h1>
+<p>The course deals with the analysis from NGS reads from the 454, Solid and Illumina sequencers.
+The main topics are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>read quality control,</p></li>
+<li><p>read cleaning,</p></li>
+<li><p>assembly,</p></li>
+<li><p>mapping,</p></li>
+<li><p>SNP calling,</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/ngs_map.png"><img alt="_images/ngs_map.png" src="_images/ngs_map.png" style="width: 600px;" /></a>
+</figure>
+<p>The lessons will be mostly practical with a little theoretical introduction. Several exercises will be proposed to introduce to the students in a gradual way to the field.
+All software used in the course will be free software freely available in the web.</p>
+<p>Despite that a small introduction to unix console usage is included in this course, could be interesting to the students  to practice  with the basic orders before to assist to the course. There are several interesting courses on line, such as:</p>
+<p><a class="reference external" href="http://bioinf.comav.upv.es/courses/linux/index.html">Informática para las ciencias de la vida: Unix y Python</a></p>
+<p><a class="reference external" href="http://www.open-of-course.org/courses/course/view.php?id=45">Unix Tutorial for Beginners</a></p>
+<p>Although some topics related with the analysis of RNA samples, the quantification of the RNA expression will not be covered in this course.</p>
+<p>Professors: Joaquín Cañizares Sales, Jose Blanca, Peio Ziarsolo</p>
+<section id="lessons">
+<h2>Lessons<a class="headerlink" href="#lessons" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sequencing_technologies.html">Sequencing technologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ngs_applications_examples.html">NGS application examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_analysis_software.html">NGS analysis software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmd_primer.html">Command line primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_file_formats.html">NGS sequence file formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read_cleaning.html">NGS read cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assembly.html">Sequence assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Sequence mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snp_calling.html">SNP calling and filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html">NGS expression analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html#practical-tasks">Practical tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_files.html">Dealing with big result files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bedtools.html">BEDTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maize_snp_calling.html">Maize SNP calling practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice.html">Final practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice_walkthrough.html">Final practice walkthrough</a></li>
+</ul>
+</div>
+</section>
+<section id="software">
+<h2>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h2>
+<p>All linux software required to follow this course is available  and installed in a <a class="reference external" href="http://www.virtualbox.org/">Virtual Box</a> image that you can freely <a class="reference external" href="http://bioinf.comav.upv.es/downloads/ngs_machine.ova">download</a>.
+All Windows software used in the course are free and available  in the respective repositories.</p>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>Except where otherwise noted this course is licence under the <a class="reference external" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike</a> 3.0 Unported license.</p>
+</section>
+<section id="related-courses">
+<h2>Related courses<a class="headerlink" href="#related-courses" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://bioinformatics.msu.edu/">Michigan State University Bioinformatics</a> have created a list of <a class="reference external" href="http://ged.msu.edu/angus/bioinformatics-courses.html">bioinformatics related courses</a>.
+Some of the courses listed that include on-line materials are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://ged.msu.edu/angus/index.html">NGS course</a> by MSU.</p></li>
+<li><p><a class="reference external" href="http://bioinformatics.ca/workshops/2012/informatics-high-throughput-sequencing-data">Informatics on High Throughput Sequencing Data</a> by Canadian Bioinformatics Workshops.</p></li>
+<li><p><a class="reference external" href="http://training.bioinformatics.ucdavis.edu/docs/2012/09/BSC/index.html">Bioinformatics Short Course</a> by UC Davis.</p></li>
+<li><p><a class="reference external" href="https://github.com/nathanhaigh/ngs_workshop/downloads">NGS workshop</a> by Nathan S. Watson-Haigh.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Unix y Linux</title>
+  <meta name="description" content="Introduction to the Linux command line.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/unix_intro.html">
+  <link rel="alternate" type="application/rss+xml" title="Curso Unix" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Curso Unix</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/index.html">Curso Unix</a>
+          
+        
+          
+          <a class="page-link" href="/unix_intro.html">Unix y Linux</a>
+          
+        
+          
+          <a class="page-link" href="/sistema_de_ficheros.html">El sistema de ficheros</a>
+          
+        
+          
+          <a class="page-link" href="/control_procesos.html">Procesos</a>
+          
+        
+          
+          <a class="page-link" href="/pipes.html">Flujos de información</a>
+          
+        
+          
+          <a class="page-link" href="/procesamiento_texto.html">Procesamiento de ficheros de texto</a>
+          
+        
+          
+          <a class="page-link" href="/expresiones_regulares.html">Expresiones regulares</a>
+          
+        
+          
+          <a class="page-link" href="/scripts_bash.html">Scripts de bash</a>
+          
+        
+          
+          <a class="page-link" href="/administrador.html">Administrador</a>
+          
+        
+          
+          <a class="page-link" href="/administracion_software1.html">Administracion de software 1</a>
+          
+        
+          
+          <a class="page-link" href="/variables_de_entorno.html">Variables de entorno</a>
+          
+        
+          
+          <a class="page-link" href="/administracion_software2.html">Administracion de software 2</a>
+          
+        
+          
+          <a class="page-link" href="/redes.html">Redes</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Unix y Linux</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#unix" id="markdown-toc-unix">Unix</a></li>
+  <li><a href="#linux" id="markdown-toc-linux">Linux</a></li>
+  <li><a href="#distribuciones" id="markdown-toc-distribuciones">Distribuciones</a></li>
+  <li><a href="#software-libre" id="markdown-toc-software-libre">Software libre</a></li>
+  <li><a href="#introducción-a-ubuntu" id="markdown-toc-introducción-a-ubuntu">Introducción a Ubuntu</a>    <ul>
+      <li><a href="#los-usuarios" id="markdown-toc-los-usuarios">Los usuarios</a></li>
+      <li><a href="#el-escritorio" id="markdown-toc-el-escritorio">El escritorio</a></li>
+      <li><a href="#navegando-por-el-sistema-de-ficheros" id="markdown-toc-navegando-por-el-sistema-de-ficheros">Navegando por el sistema de ficheros</a></li>
+      <li><a href="#ejercicios" id="markdown-toc-ejercicios">Ejercicios</a></li>
+    </ul>
+  </li>
+  <li><a href="#la-terminal-de-unix" id="markdown-toc-la-terminal-de-unix">La terminal de UNIX</a>    <ul>
+      <li><a href="#ayuda" id="markdown-toc-ayuda">Ayuda</a></li>
+      <li><a href="#completado-automático-e-historia" id="markdown-toc-completado-automático-e-historia">Completado automático e historia</a></li>
+      <li><a href="#ejercicio" id="markdown-toc-ejercicio">Ejercicio</a></li>
+    </ul>
+  </li>
+  <li><a href="#bibliografía" id="markdown-toc-bibliografía">Bibliografía</a></li>
+</ul>
+
+<h2 id="unix">Unix</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Unix">Unix</a> es una familia de sistemas operativos.
+La primera versión de Linux fue desarrollada a partir de 1969.
+Unix se caracteriza por ser portable y multitarea.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Unix#/media/File:Unix_history-simple.svg"><img src="static/unix_history.png" alt="Unix history" /></a></p>
+
+<p>Hoy en día los sistemas operativos Unix son ampliamente utilizados en multitud de dispositivos que abarcan desde los supercomputadores más capaces hasta los teléfonos móviles más populares, pasando por los ordenadores que utilizamos diariamente en nuestros escritorios.
+La filosofía de los sistemas Unix se caracteriza por:</p>
+
+<ul>
+  <li>un sistema de ficheros jerárquico,</li>
+  <li>una gran colección de pequeños programas que pueden trabajar en serie,</li>
+  <li>el uso de ficheros de texto para almacenar los datos,</li>
+  <li>tratar los dispositivos como ficheros.</li>
+</ul>
+
+<p><a href="https://en.wikipedia.org/wiki/Linux">Linux</a> y MacOS X son ejemplos de sistemas Unix.</p>
+
+<p><a href="http://es.wikipedia.org/wiki/Unix">Unix</a> es un sistema operativo portable, multitarea y multiusuario desarrollado a partir de 1969.</p>
+
+<h2 id="linux">Linux</h2>
+
+<p><a href="http://es.wikipedia.org/wiki/Linux">Linux</a> es una familia de sistemas operativos de tipo Unix que utilizan el kernel Linux.
+Linux puede instalarse en prácticamente cualquier ordenador personal además en en teléfonos móviles y supercomputadores.</p>
+
+<p><img src="static/tux.png" alt="Tux" /></p>
+
+<p>El nombre proviene del programador original, un estudiante llamado Linus Torvals, que en 1991 completando las herramientas GNU desarrolladas por el proyecto GNU de la <a href="http://www.fsf.org/">Fundación del Software Libre</a>, creó la primera versión de este sistema operativo.
+El papel fundamental jugado por estas herramientas libres del proyecto GNU hace que este sistema operativo sea denominado también como GNU/Linux, pero en este texto utilizaremos la denominación más sencilla y corta.</p>
+
+<p>El desarrollo de Linux es uno de los ejemplos más claros de desarrollo de software libre por una comunidad dispersa de programadores.
+Cualquiera puede usar el sistema operativo, estudiarlo y modificarlo.
+Estos derechos están protegidos por la licencia <a href="http://es.wikipedia.org/wiki/GPL">GPL</a> (GNU General Public License).</p>
+
+<h2 id="distribuciones">Distribuciones</h2>
+
+<p>Linux, como cualquier otro sistema operativo, se compone de un gran número de piezas, que, en este caso, son desarrolladas de forma independiente por miles de programadores y proyectos.
+Normalmente estas piezas son integradas por un distribuidor y Linux es suministrado como una <a href="http://es.wikipedia.org/wiki/Distribuci%C3%B3n_linux">distribución Linux</a>.
+Las distribuciones Linux incluyen todo el software necesario para instalar un servidor o un escritorio.
+Algunas de las aplicaciones comúnmente incluidas incluyen: el navegador web Firefox y las aplicaciones de oficina LibreOffice.</p>
+
+<p>Existen cientos de distribuciones Linux.
+Estas distribuciones están adaptadas para usuarios o tareas específicas.
+Algunas de estas distribuciones están desarrolladas o apoyadas por empresas como Fedora (Red Hat) y <a href="http://www.ubuntu.com/">Ubuntu</a> (Canonical) mientras que otras son mantenidas por la propia comunidad de usuarios como <a href="http://www.debian.org/">Debian</a>.</p>
+
+<h2 id="software-libre">Software libre</h2>
+
+<p>El <a href="http://es.wikipedia.org/wiki/Software_libre">software libre</a> es software que puede ser utilizado, estudiado, modificado, copiado y redistribuido sin restricciones.
+Habitualmente el software libre suele ser además gratuito, pero ese no tiene por que ser necesariamente el caso.</p>
+
+<p><img src="static/gpl_logo.png" alt="GPL Logo" /></p>
+
+<p>En la práctica el software libre se distribuye junto al código fuente que lo hace posible y junto a una nota en la que se explican cuales son los derechos y las obligaciones del usuario final.
+Esta nota se denomina licencia.
+El movimiento del software libre fue iniciado por Richard Stallman en 1983.
+Stallman decidió crear un sistema compatible con Unix completamente libre al que llamó GNU (GNU is Not Unix).
+Con el tiempo este sistema acabaría uniéndose al kernel de Linus para formar un sistema operativo completo.</p>
+
+<p>Dado que las aplicaciones del software libre suelen ser gratuitas, su modelo de negocio suele basarse en el cobro de los servicios de soporte al usuario y de adaptación del software.</p>
+
+<h1 id="introducción-a-ubuntu">Introducción a Ubuntu</h1>
+
+<p><a href="http://es.wikipedia.org/wiki/Ubuntu">Ubuntu</a> es una distribución Linux mantenida por la empresa Canonical.
+Está orientada a usuarios de escritorio y sus puntos fuertes son su facilidad de uso y de instalación.
+Aunque el escritorio es algo distinto al de Windows o Mac OS X familiarizarse con él para un usuario acostumbrado a cualquiera de los otros sistemas operativos no debería presentar muchos problemas.</p>
+
+<p><img src="static/ubuntu_logo.png" alt="Ubuntu logo" /></p>
+
+<p>Su instalación resulta muy sencilla.
+Al instalarla, una gran cantidad de software se instala de forma automática para facilitar su uso como escritorio.
+Ejemplos de estos programas son LibreOffice o Firefox.
+Además de estos programas instalados por defecto una enorme cantidad de programas se encuentra disponible para ser instalados con unos pocos clicks de ratón.</p>
+
+<p>Ubuntu está basada en una distribución mantenida por la comunidad de usuarios llamada <a href="http://www.debian.org/">Debian</a>.
+El principal objetivo de Debian es crear un sistema operativo robusto que incluya la mayor proporción posible de programas libres.</p>
+
+<p><img src="static/debian_logo.png" alt="Debian" /></p>
+
+<p>Existen numerosos manuales de utilización de Ubuntu, pero algunas de las guías más completas son la <a href="https://help.ubuntu.com/lts/ubuntu-help/index.html">Ubuntu Desktop Guide</a> y el manual <a href="http://ubuntu-manual.org/">Getting Started with Ubuntu</a>.
+Vamos a recorrer lo principales conceptos de este sistema operativo basandonos en este <a href="documentacion/Getting Started with Ubuntu 16.04.pdf">manual</a>.</p>
+
+<h2 id="los-usuarios">Los usuarios</h2>
+
+<p>Los sistemas Unix son multiusuario, es decir soportan que varios usuarios los utilicen simultáneamente.
+Todos los usuarios, excepto uno, tienen unos privilegios bastante restringidos y no pueden modificar el sistema.
+De este modo unos usuarios se ven protegidos de las acciones de los otros.</p>
+
+<p>Existe un usuario especial llamado <em>root</em> con privilegios de administración absolutos sobre el sistema.
+Para realizar las tareas cotidianas nunca hay que acceder al sistema como <em>root</em>.
+En Ubuntu este usuario está deshabilitado por defecto y sólo se pueden adquirir los privilegios de administrador temporalmente.</p>
+
+<h2 id="el-escritorio">El escritorio</h2>
+
+<p>Todos las distribciones basadas en entronos graficos (GUI) suelen tener varios entornos de escritorio para eleguir. Los entornos de escritorio suelen diferir por:</p>
+
+<ul>
+  <li>El estilo y apariencia del entorno</li>
+  <li>La forma en la que los diferentes elementos se disponen en la pantalla</li>
+  <li>La forma en la que el ususario navega por el escritorio</li>
+</ul>
+
+<p>En el caso de Ubuntu el entorno de escritorio por defecto se denomina Unity.
+Se caracteriza por tener dos barras, la denominada Menu Bar y el Launcher.
+El Menu Bar incorpora por una lado los menus de las aplicaciones que estań activas y, por otro, un area de indicadores que nos ofrecen informacion actualizada del sistema en todo momento.
+El Launcher es la barra vertical que facilita el acceso a las aplicaciones mas usadas y a su estado, además de a los discos montados y a la papelera.
+Además tenemos el selector de escritorios virtuales.
+En el launcher encontramos varias aplicaciones especiales:</p>
+
+<ul>
+  <li>El menu</li>
+  <li>El selector de escritorios virtuales</li>
+  <li>La papelera</li>
+</ul>
+
+<p>Los escritorios virtuales sirven para ampliar la zona de trabajo.
+Por defecto hay 4 escritorios virtuales que amplían nuestro monitor por cuatro.</p>
+
+<h2 id="navegando-por-el-sistema-de-ficheros">Navegando por el sistema de ficheros</h2>
+
+<p>Al sistema de ficheros se accede a traves del menu.
+Tenemos la posibilidad de buscar en la barra de busqueda o navegar directamente por el menu.
+Una vez que seleccionemos la carpeta se abrirá una ventana del navegador de ficheros con la carpeta seleccionada.
+Por cierto, los términos carpeta y directorio son sinónimos, al igual que fichero y archivo.</p>
+
+<p>Desde el launcher también podemos acceder a nuestra carpeta personal.
+Este directorio personal y sus subdirectorios son los únicos lugares en los que podremos almacenar nuestros archivos personales.
+El resto del sistema de archivos estará restringido para funciones de administración del sistema.</p>
+
+<h2 id="ejercicios">Ejercicios</h2>
+
+<p>Para comprobar que no tenemos problemas de manejo del sistema vamos a realizar una serie de tareas:</p>
+
+<ul>
+  <li>
+    <p>Explorar el escritorio abriendo programas, moviéndote entre escritorios virtuales, minimizando y maximizando las aplicaciones, etc.</p>
+  </li>
+  <li>
+    <p>Navegar al directorio “Documentos” y comprobar si tenemos algún archivo guardado.</p>
+  </li>
+  <li>
+    <p>Crear un subdirectorio llamado “curso” dentro del directorio “Documentos”.</p>
+  </li>
+  <li>
+    <p>Crear un fichero de texto mediante el editor de textos gedit y guardarlo en el directorio que acabamos de crear.</p>
+  </li>
+  <li>
+    <p>Copiar el fichero anterior al directorio personal.</p>
+  </li>
+  <li>
+    <p>Eliminar el fichero original.</p>
+  </li>
+  <li>
+    <p>Reinicia el sistema operativo.</p>
+  </li>
+  <li>
+    <p>Bloquea la sesión de tu usuario y vuelve a entrar en ella</p>
+  </li>
+  <li>
+    <p>Añade un nuevo usuario al sistema</p>
+  </li>
+  <li>
+    <p>Sal de tu usuario actual y entra como el nuevo usuario</p>
+  </li>
+  <li>
+    <p>Cambiar el password del nuevo usuario</p>
+  </li>
+  <li>
+    <p>Configura el protector de pantalla para que se inicie a los 10 minutos de inactividad</p>
+  </li>
+  <li>
+    <p>Modifica los ajustes de la aplicación terminal para que el tipo de letra tenga un tamaño de 11 puntos</p>
+  </li>
+  <li>
+    <p>Ancla la aplicación terminal a la barra de aplicaciones y desancla el editor de hojas de cálculo LibreOffice</p>
+  </li>
+</ul>
+
+<h1 id="la-terminal-de-unix">La terminal de UNIX</h1>
+
+<p>La <a href="https://en.wikipedia.org/wiki/Command-line_interface">Shell</a> (o terminal) es un interprete de comandos.
+Es simplemente un modo alternativo de controlar un ordenador basado en una interfaz de texto.
+La terminal nos permite ejecutar software escribiendo el nombre del programa que queremos ejecutar en la terminal.
+Podemos pedirle al ordenador que ejecute un programa mediante el ratón ciclando en distintos lugares del escritorio o podemos escribir una orden para conseguir el mismo objetivo.
+Por ejemplo, para pedirle al ordenador que nos de una lista de los archivos presentes en un directorio podemos abrir un navegador de archivos o podemos escribir en la terminal:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ls folder_name
+file_1.txt
+file_2.txt
+</code></pre>
+</div>
+
+<p>Ninguna de las dos formas de comunicarse con el ordenador es mejor que la otra aunque en ciertas ocasiones puede resultar más conveniente utilizar una u otra
+Las ventajas de la línea de comandos son:</p>
+
+<ul>
+  <li>
+    <p>Necesidad. Existe mucho software que está sólo disponible en la terminal. Esto es especialmente cierto en el área de la bioinformática.</p>
+  </li>
+  <li>
+    <p>Flexibilidad. Los programas gráficos suelen ser muy adecuados para realizar la tarea para la que han sido creados, pero son difíciles de adaptar para otras tareas. Los programas diseñados para ser usados en la línea de comandos suelen ser muy versátiles.</p>
+  </li>
+  <li>
+    <p>Reproducibilidad. Documentar y repetir el proceso seguido para realizar un análisis con un programa gráfico es muy costoso puesto que es difícil describir la secuencia de clicks y doble clicks que hemos realizado. Por el contrario, los procesos realizados mediante la línea de comandos son muy fáciles de documentar puesto que tan sólo debemos guardar el texto que hemos introducido en la pantalla.</p>
+  </li>
+  <li>
+    <p>Fiabilidad. Los programas básicos de Unix fueron creados en los años 70 y han sido probados por innumerables usuarios por lo que se han convertido en piezas de código extraordinariamente confiables.</p>
+  </li>
+  <li>
+    <p>Recursos. Las interfaces gráficas suelen consumir muchos recursos mientras que los programas que funcionan en línea de comandos suelen ser extraordinariamente livianos y rápidos. Este poco uso de recursos facilita, por ejemplo, que se utilice a través de la red.</p>
+  </li>
+</ul>
+
+<p>El problema de la terminal es que para poder utilizarla debemos saber previamente qué queremos hacer y cómo.
+Es habitual descubrir como funciona un programa con una interfaz gráfica sin tener que leer un manual, esto no sucede en la terminal.</p>
+
+<p>Para usar la línea de comandos hay que abrir una terminal.
+Se abrirá una terminal con un mensaje similar a:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>usuario $
+</code></pre>
+</div>
+
+<p>Este pequeño mensaje se denomina <em><a href="https://en.wikipedia.org/wiki/Command-line_interface#Command_prompt">prompt</a></em> y el cursor parpadeante que aparece junto al él indica que el ordenador está esperando una orden.
+El mensaje exacto que aparece en el <em>prompt</em> puede variar ligeramente, pero en Ubuntu suele ser similar a:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>usuario@ordenador:~/documentos$
+</code></pre>
+</div>
+
+<p>En el <em>prompt</em> de Ubuntu se nos muestra el nombre del usuario, el nombre del ordenador y el directorio en el que nos encontramos actualmente, es decir, el directorio de trabajo actual.</p>
+
+<p>Cuando el <em>prompt</em> se muestra podemos ejecutar cualquier cosa, por ejemplo le podemos pedir que liste los ficheros mediante el comando <em>ls</em> (LiSt)::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>usuario $ ls
+lista_libros.txt
+rectas_cocina/
+</code></pre>
+</div>
+
+<p><em>ls</em>, como cualquier otro comando, es en realidad un programa que el ordenador ejecuta.
+Cuando escribimos la orden (y pulsamos enter) el programa se ejecuta.
+Mientras el programa está ejecutándose el <em>prompt</em> desaparece y no podemos ejecutar ningún otro comando.
+Pasado el tiempo el programa termina su ejecución y el <em>prompt</em> vuelve a aparecer.
+En el caso del comando <em>ls</em> el tiempo de ejecución es tan pequeño que suele ser imperceptible.</p>
+
+<p>Los programas suelen tener unas entradas y unas salidas.
+Dependiendo del caso estas pueden ser ficheros o caracteres introducidos o impresos en la pantalla.
+Por ejemplo, el resultado de <em>ls</em> es simplemente una lista impresa de ficheros y directorios en la interfaz de comandos.</p>
+
+<p>Normalmente el comportamiento de los programas puede ser modificado pasándoles parámetros.
+Por ejemplo, podríamos pedirle al programa <em>ls</em> que nos imprima una lista de ficheros más detallada escribiendo:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ls -l
+</code></pre>
+</div>
+
+<h2 id="ayuda">Ayuda</h2>
+
+<p>Cada comando tiene unos parámetros y opciones distintos.
+La forma estándar de pedirles que nos enseñen cuales son estos parámetros suele ser utilizar las opciones ‘–help’, ‘-h’ o ‘-help’, aunque esto puede variar en comandos no estándar.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ls --help
+Modo de empleo: ls [OPCIÓN]... [FICHERO]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort.
+</code></pre>
+</div>
+
+<p>Otro modo de acceder a una documentación más detallada es acceder al manual del programa utilizando el comando <em>man</em> (MANual):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ man ls
+(para terminar pulsar "q")
+</code></pre>
+</div>
+
+<p><em>man</em> es un programa interactivo, cuando ejecutamos el comando el programa se abre y el <em>prompt</em> desaparece.
+<em>man</em> es en realidad un visor de ficheros de texto por lo que cuando lo ejecutamos la pantalla se rellena con la ayuda del programa que hemos solicitado.
+Podemos ir hacia abajo o hacia arriba y podemos buscar en el contenido de la ayuda.
+El <em>prompt</em> y la posibilidad de ejecutar otro programa no volverán a aparecer hasta que no cerremos el programa interactivo.
+En el caso de man para cerrar el programa hay que pulsar la tecla “q”.</p>
+
+<h2 id="completado-automático-e-historia">Completado automático e historia</h2>
+
+<p>El intérprete de comandos dispone de algunas utilidades para facilitarnos su uso.
+Una de las más utilizadas es el completado automático.
+Podemos evitarnos escribir una gran parte de los comandos haciendo uso de la tecla tabulador.
+Si empezamos a escribir un comando y pulsamos la tecla tabulador el sistema completará el comando por nosotros.
+Para probarlo creemos los ficheros datos_1.txt, datos_2.txt y tesis.txt::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~$ touch datos_1.txt
+~$ touch datos_2.txt
+~$ touch experimento.txt
+</code></pre>
+</div>
+
+<p>Si ahora empezamos a escribir <em>cp e</em> y pulsamos el tabulador dos veces, el intérprete de comandos completará el comando automáticamente::</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~$ cp e
+~$ cp experimento.txt
+</code></pre>
+</div>
+
+<p>Si el intérprete encuentra varias alternativas completará el comando hasta el punto en el que no haya ambigüedad.
+Si deseamos que imprima una lista de todas las alternativas disponibles para continuar con el comando deberemos pulsar el tabulador dos veces.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~$ cp d
+$ cp datos_
+datos_1.txt  datos_2.txt
+~$ cp datos_
+</code></pre>
+</div>
+
+<p>Otra de las funcionalidades que más nos pueden ayudar es la historia.
+El intérprete recuerda todos los comandos que hemos introducido anteriormente.
+Si queremos podemos obtener una lista de todo lo que hemos ejecutado utilizando el comando history.
+Pero lo más socorrido es simplemente utilizar los cursores arriba y abajo para revisar los comandos anteriores.
+Otra forma de acceder a la historia es utilizar la combinación de teclas control y r.
+De este modo podemos buscar comandos antiguos sencillamente.</p>
+
+<h2 id="ejercicio">Ejercicio</h2>
+
+<ul>
+  <li>Lista todos los comandos que empiezan por apt</li>
+</ul>
+
+<h1 id="bibliografía">Bibliografía</h1>
+
+<p>Existen numerosas fuentes sobre la historia y la filosofía de Unix, de Linux y del software libre. Entre ellas se encuentran:</p>
+
+<ul>
+  <li>
+    <p>Las páginas de la wikipedia sobre: <a href="http://es.wikipedia.org/wiki/Unix">Unix</a>, <a href="http://es.wikipedia.org/wiki/Linux">Linux</a>, <a href="http://es.wikipedia.org/wiki/Ubuntu">Ubuntu</a> y <a href="&lt;http://es.wikipedia.org/wiki/Software_libre">software libre</a>.</p>
+  </li>
+  <li>
+    <p><a href="http://www.amazon.com/Rebel-Code-Linux-Source-Revolution/dp/0738203335">Rebel Code</a>, un libro de Glyn Moody dedicado a la historia del movimiento del software libre.</p>
+  </li>
+  <li>
+    <p><a href="http://oreilly.com/catalog/9780596001087">La catedral y el bazar</a> de Eric S. Raymond. Un ensayo sobre los beneficios del modelo de desarrollo asociados al software libre.</p>
+  </li>
+  <li>
+    <p><a href="http://catb.org/~esr/writings/taoup/">The Art of Unix Programming</a> (<a href="/documentacion/bibliography/the_art_of_unix_programming.pdf">pdf</a> de Eric S. Raymond. Dedicado a la filosofía de los sistemas Unix.</p>
+  </li>
+  <li>
+    <p>El excelente <a href="&lt;http://ubuntu-manual.org/">Ubuntu manual</a> <a href="&lt;documentacion/Getting Started with Ubuntu 16.04.pdf">pdf</a>.</p>
+  </li>
+  <li>
+    <p>La documentación <a href="https://help.ubuntu.com/">oficial</a> y de la <a href="https://help.ubuntu.com/community">comunidad</a> de Ubuntu.</p>
+  </li>
+</ul>
+
+<p>Hay varios cursos para iniciarse en el uso de la línea de comandos de Unix, como:</p>
+
+<ul>
+  <li>
+    <p><a href="http://en.flossmanuals.net/gnulinux&gt;">Put Yourself in Command</a> de la Free Software Fundation, copia en <a href="documentacion/fsf_cmd_manual.pdf&gt;">pdf</a>.</p>
+  </li>
+  <li>
+    <p><a href="http://linuxcommand.org/learning_the_shell.php">Learning the shell</a> de <a href="http://linuxcommand.org/lc3_learning_the_shell.php">Linuxcommand.org</a>.</p>
+  </li>
+  <li>
+    <p><a href="http://rlworkman.net/howtos/rute/">Rute User’s Tutorial and Exposition</a> de Paul Sheer, copia en <a href="documentacion/rute.pdf">pdf</a>.</p>
+  </li>
+  <li>
+    <p><a href="http://oreilly.com/catalog/9780596002619">Learning the Unix Operating System</a>.</p>
+  </li>
+</ul>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Curso Unix</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Curso Unix
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Introduction to the Linux command line.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,124 @@
+
+Unix para biólogos
+
+intro unix
+  multiusuario
+    root, usuarios
+    sudo, su
+  filosofía unix
+  Linux
+  Distribuciones
+  ubuntu
+
+	ejercicios
+	apagarlo
+	bloquear
+	configurar
+	abrir una aplicación
+	ajustes del terminal
+	anclar en la barra
+
+1.5 h
+
+
+shell
+  history
+  autocompletado
+
+sistema de archivos
+  HFS
+  rutas: absolutas y relativas
+  pwd
+  $HOME y default wd
+  moviendo archivos
+  permisos: chmod, chgrp, chown
+	ln -s -h
+  file
+  particiones: mount, df, du
+
+3h
+
+Compresión de archivos
+ tar
+ gzip
+ zip
+
+Control de Procesos
+  &
+  ps
+  pstree
+  top, htop
+  kill
+  byobu, screen
+1 h
+
+Acceso remoto
+	ssh
+	scp
+	rsync
+	wget
+	star wars
+0.5
+
+---------------------------------------------
+
+pipes
+  stdout
+  stdin
+  stderr
+
+0.5
+
+ficheros de texto
+	añadir shuffle
+  expresiones regulares
+  nano
+
+4.5h
+
+
+Scripts bash
+	for, if, echo ``
+parallel
+2h
+
+Administración de software
+  Actualizar software
+  apt-get, apt-file, apt-cache, dpkg -l -L
+	repositorios
+  variables de entorno
+  $PATH
+  $HOME
+  export, source
+  bashrc
+  jerarquías /, /usr, /usr/local
+  programas C
+    README
+    compilados
+    build-essential
+    paquetes-dev
+    ./configure, make, make install
+  python
+  java
+  perl
+  R
+	servicios
+5h
+
+Instalar windows y linux
+	livecd. cambiar particiones, espacio libre desfragmentado
+	arranque: winbot, grub
+	orden de arranque
+
+redes básico
+	ip
+	dns
+	gateway
+	ifconfig
+	ping
+	dispositivos de red
+
+ejercicio libre
+	instalar ubuntu
+	instalar debian
+	instalar programas propios o de biología

@@ -1,0 +1,192 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Usage &mdash; Bioinformatics at COMAV  documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV  documentation" href="../index.html" />
+    <link rel="up" title="sff_extract" href="index.html" />
+    <link rel="next" title="Download" href="download.html" />
+    <link rel="prev" title="sff_extract" href="index.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                
+    
+  <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<p>The most basic use of sff_extract is fairly trivial. To extract the sequence, quality and ancilliary information just run it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sff_extract my_454_file.sff
+</pre></div>
+</div>
+<p>This should create three files: my_454_file.fasta (the sequences), my_454_file.fasta.qual (the qualities), and my_454_file.xml (the clippings).</p>
+<section id="output-file-names">
+<h3>Output file names<a class="headerlink" href="#output-file-names" title="Permalink to this headline">¶</a></h3>
+<p>There are three options to change the names of the output files:</p>
+<ul class="simple">
+<li><p>s for the sequence file,</p></li>
+<li><p>q for the quality file and</p></li>
+<li><p>x for the ancilliary xml file.</p></li>
+</ul>
+<p>Let’s supose that we want to change every output file name, we would do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sff_extract -s seq.fasta -q qual.fasta -x anci.xml my_454_file.sff
+</pre></div>
+</div>
+<p>It is also posible to define a common base name for all output files. If the we define the basename as reads the output names would be: reads.fasta, reads.fasta.qual, and reads.xml:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sff_extract -o reads my_454_file.sff
+</pre></div>
+</div>
+</section>
+<section id="extracting-several-sff-files">
+<h3>Extracting several sff files<a class="headerlink" href="#extracting-several-sff-files" title="Permalink to this headline">¶</a></h3>
+<p>sff_extract supports the extraction of several sff files. The resulting output files will hold all the reads concatenated. If we have two sff files named 1.sff and 2.sff with 200000 reads in each one we can obtain the output files with 400000 reads just using the name of both files as two arguments.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sff_extract 1.sff 2.sff
+</pre></div>
+</div>
+</section>
+<section id="mixing-cases">
+<h3>Mixing cases<a class="headerlink" href="#mixing-cases" title="Permalink to this headline">¶</a></h3>
+<p>By default the bases to be clippled will be written in lower case, but you can tell sff_extract to write all bases in upper clase using the option m. This behavior was introduced in the 0.2.1 version, in the older versions the m option did just the oposite.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sff_extract -m my_454_file.sff
+</pre></div>
+</div>
+</section>
+<section id="clipping-sequences">
+<h3>Clipping sequences<a class="headerlink" href="#clipping-sequences" title="Permalink to this headline">¶</a></h3>
+<p>If you want to clip the fragments recommended by the 454 software, just use the c option. When this option is in use the sequences and qualities will be clipped and the ancilliary xml file won’t be produced.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sff_extract -c my_454_file.sff
+</pre></div>
+</div>
+</section>
+<section id="extra-left-clippings">
+<h3>Extra left clippings<a class="headerlink" href="#extra-left-clippings" title="Permalink to this headline">¶</a></h3>
+<p>Some 454 datasets with wrong clipping information have been detected. In these sff files left sequences that should be clipped were not marked to be clipped. You can tell sff_extract to clip at least a number of bases. For instance if you would like to clip at least 13 bases you could do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sff_extract --min_left_clip=13 my_454_file.sff
+</pre></div>
+</div>
+<p>Also an internal check has been added to detect such miscliplings. If sff_extract detects that a lot of clipped reads begin with the same sequence will continue to produce the output files, but it will print a warning and it will exit with a 1 status.</p>
+</section>
+<section id="paired-en-data">
+<h3>Paired-en data<a class="headerlink" href="#paired-en-data" title="Permalink to this headline">¶</a></h3>
+<p>The 454 paired-end protocol will generate reads which contain the forward and reverse direction in one read, separated by a linker. sff_extract can look for the linker in a read and split the fragments at both sides of the linker into two new reads. To do it you have to put that linker sequence into a FASTA file. To look for the linker in the reads sff_extract uses the SSAHA2 software, so you would need to install it in order to use this option. To extract the sequences you would do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sff_extract -l linker.fasta my_454_file.sff
+</pre></div>
+</div>
+</section>
+<section id="adding-extra-information-to-the-xml-file">
+<h3>Adding extra information to the xml file<a class="headerlink" href="#adding-extra-information-to-the-xml-file" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes the generated xml file will be used by some software that would use some information not present in the sff file. We can provide this extra information in the command line. Let’s suppose that we want to add to the xml file the species and basecaller. We would use the i option and the extra information would be added as pairs of keys and values.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sff_extract -i &quot;species:9606,basecaller:454_basecaller&quot; my_454_file.sff
+</pre></div>
+</div>
+<p>That would add the following two lines to every read in the xml file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">species</span><span class="o">&gt;</span><span class="mi">9606</span><span class="o">&lt;/</span><span class="n">species</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">basecaller</span><span class="o">&gt;</span><span class="mi">454</span><span class="n">_basecaller</span><span class="o">&lt;/</span><span class="n">basecaller</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>If we’re dealing with several file we can assing different information for the reads that come from each file using the following syntax.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sff_extract -i &quot;1.sff{species:9606};2.sff{species:63221}&quot; 1.sff 2.sff
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

@@ -1,0 +1,193 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PRÁCTICA DE ALINEAMIENTOS MÚLTIPLES &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Filogenias" href="filogenias.html" />
+    <link rel="prev" title="ALINANEAMIENTOS MULTIPLES" href="multiple.html" /> 
+  </head>
+  <body>
+    <nav class="global_navigation">
+        <ul>
+            <li class="current_site_item" ><a href="http://bioinf.comav.upv.es">bioinf</a></li>
+            <li><a href="http://cucurbigene.net">cucurbigene</a></li>
+            <li><a href="http://melogene.net">melogene</a></li>
+        </ul>
+    </nav>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+    
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="http://www.melogene.net/">Melogene</a></li>
+                    <li><a href="http://www.cucurbigene.net/">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bases_datos.html">Bases de datos biológicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_bases.html">Práctica bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alineamientos.html">Alineamientos de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_jemboss.html">Práctica jemboss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_alineamientos.html">Práctica de alineamientos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blast.html">Búsqueda de secuencias en bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast.html">Práctica Blast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediccion.html">Métodos predictivos en ADN y ARN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_prediccion.html">Práctica predicción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">Alineamientos múltiples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Práctica alineamiento múltiple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filogenias.html">Introducción al análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_filogenias.html">Práctica análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast2go.html">Práctica anotación con Blast2GO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_visores.html">Prácticas bases de datos genómicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion.html">Ejercicio anotación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion2.html">Ejercicio prediccion 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sanger.html">Secuenciación de Sanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ensamblaje.html">Ensamblaje de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_ensamblaje.html">Práctica ensamblaje de secuencias</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="practica-de-alineamientos-multiples">
+<h1>PRÁCTICA DE ALINEAMIENTOS MÚLTIPLES<a class="headerlink" href="#practica-de-alineamientos-multiples" title="Permalink to this headline">¶</a></h1>
+<p>Vamos a utilizar la versión gráfica del Clustal en windows (Clustalx), en esta guía también se incluyen los comandos utilizados si se trabaja con la versión texto (ClustalW) en Linux.</p>
+<p>Guardar el fichero <a class="reference download internal" download="" href="_downloads/aeecb9af947a378d22697573d2073502/frataxin_mamiferos.fasta"><code class="xref download docutils literal notranslate"><span class="pre">frataxin_mamiferos.fasta</span></code></a></p>
+<p>Vamos a analizar varias proteínas homólogas a la frataxina humana, proteína implicada en la enfermedad ataxia de Friedreich.
+Podemos encontrar servidores online y la documentación del programa en la pagina web del <a class="reference external" href="http://www.clustal.org/">Clustal</a>.</p>
+<section id="alineamiento-con-clustalx">
+<h2>Alineamiento con ClustalX<a class="headerlink" href="#alineamiento-con-clustalx" title="Permalink to this headline">¶</a></h2>
+<p>Ejecutar el progama: clustalx</p>
+<p>Ver las opciones que nos permite modificar.</p>
+<p>Cargar el fichero frataxin_mamiferos.fasta.</p>
+<p>Realizar el alineamiento con las opciones por defecto. Ver los resultados.</p>
+<p>¿Qué problema hay?.</p>
+<p>Modificar la penalización por inicio de gap y por extension.
+¿Qué sucede?
+Ojo, Guardar el resultado con otro nombre para no sobreescribir el fichero anterior.</p>
+<section id="que-sucederia-si-eliminamos-las-tres-secuencias-mas-diferentes">
+<h3>¿Qué sucedería si eliminamos las tres secuencias mas diferentes?<a class="headerlink" href="#que-sucederia-si-eliminamos-las-tres-secuencias-mas-diferentes" title="Permalink to this headline">¶</a></h3>
+<p>Descargar el fichero <a class="reference download internal" download="" href="_downloads/734678a6345d0ee4c91e029b06eb9261/frataxin_mamiferos_cercanos.fasta"><code class="xref download docutils literal notranslate"><span class="pre">frataxin_mamiferos_cercanos.fasta</span></code></a>.</p>
+<p>Realizar el alineamiento y compararlo con el anterior.</p>
+</section>
+<section id="alineamiento-con-secuencias-mas-divergentes">
+<h3>Alineamiento con secuencias mas divergentes<a class="headerlink" href="#alineamiento-con-secuencias-mas-divergentes" title="Permalink to this headline">¶</a></h3>
+<p>Descargar el fichero <a class="reference download internal" download="" href="_downloads/9a5d0dc1e64bcddede5c5bb7a300c26b/frataxin_prot.fasta"><code class="xref download docutils literal notranslate"><span class="pre">frataxin_prot.fasta</span></code></a>.</p>
+<p>Realizar el alineamiento con el programa clustalx.</p>
+<p>Comparar con el alineamiento de mamifero.</p>
+</section>
+<section id="comparacion-con-el-dominio-de-la-frataxin">
+<h3>Comparación con el dominio de la frataxin<a class="headerlink" href="#comparacion-con-el-dominio-de-la-frataxin" title="Permalink to this headline">¶</a></h3>
+<p>Conectarse a la base de datos de dominios de la NCBI en al entrada de la <a class="reference external" href="http://www.ncbi.nlm.nih.gov/Structure/cdd/cddsrv.cgi?uid=29607">frataxina</a>.</p>
+<p>Entrar en la información del dominio. Visualizar el alineamiento.</p>
+<p>¿Se parece a nuestro último alineamiento?.</p>
+</section>
+</section>
+<section id="alineamiento-de-secuencias-de-adn">
+<h2>Alineamiento de secuencias de ADN<a class="headerlink" href="#alineamiento-de-secuencias-de-adn" title="Permalink to this headline">¶</a></h2>
+<p>El Clustal también nos permite alinear secuencias de ADN, lo cual es útil tanto para detección de SNPs o mutaciones y estudios filogenéticos.
+En este ejercicio vamos a buscar SNPs en del gen CT099 de <em>Lycopersicon pimpinellifolium</em>, para ello vamos a utilizar las secuencias de varios individuos de esta especie.
+Alinear las secuencias del fichero <a class="reference download internal" download="" href="_downloads/1e84d6eec3c0d38eb19b28cc990f2325/seq_dna.fasta"><code class="xref download docutils literal notranslate"><span class="pre">seq_dna.fasta</span></code></a> e identificar los cambios presentes en las secuencias.</p>
+</section>
+<section id="edicion-de-alineamientos-multiples">
+<h2>Edición de alineamientos múltiples.<a class="headerlink" href="#edicion-de-alineamientos-multiples" title="Permalink to this headline">¶</a></h2>
+<p>Abrir alguno de los alineamientos realizados con <a class="reference external" href="http://www.mbio.ncsu.edu/bioedit/bioedit.html">Bioedit</a> y practicar con las diferentes formas de edición y modificación del alineamiento.</p>
+<p><a class="reference internal" href="multiple.html"><span class="doc">Ir a la teoría del tema</span></a></p>
+</section>
+</section>
+
+
+            
+        
+        
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="multiple.html">ALINANEAMIENTOS MULTIPLES</a>-->
+                    <a class="prev" href="multiple.html" title="ALINANEAMIENTOS MULTIPLES">previous</a>
+                    |
+                    <!--<a class="next" href="filogenias.html">Filogenias</a>-->
+                    <a class="next" href="filogenias.html" title="Filogenias">next</a>
+                    |
+                
+                <a class="index" href="/courses/intro_bioinf/index.html" title="Index">index</a>
+                
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

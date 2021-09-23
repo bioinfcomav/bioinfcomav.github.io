@@ -1,0 +1,89 @@
+
+Ejercicios de repaso
+====================
+
+Escribe en mayúsculas la siguiente cadena de texto::
+
+  s = 'hola alicia perez'
+
+Divide la anterior cadena de texto en una lista de palabras y selecciona el nombre y el apellido
+
+Elimina los espacios y retornos de carro extra de la siguiente cadena de texto::
+
+  s = '   hola \n'
+
+Une la siguiente lista de palabras en una cadena de texto en la que las palabras estén separadas por comas::
+  l = ['una', 'lista', 'con', 'palabras']
+
+Reemplaza las comas por tabuladores en la siguiente cadena de texto::
+
+  s = 'una,dos,tres,cuatro'
+
+¿Está la palabra "uno" contenida en las siguientes cadenas de texto?
+
+::
+  s1 = 'tres, dos, uno'
+  s2 = 'spam, spam, spam'
+
+¿Comienzan las siguientes cadenas de texto por "#"? Si es así eliminalá.
+
+::
+  s1 = '#explicacion de los campos'
+  s2 = 'campo1, campo2, campo2'
+
+Dada la siguiente lista de cadena de texto filtra las que comienzan por "#" y obtén una nueva lista con las cadenas filtradas.
+
+::
+
+  l = ['#explicacion, campos', '#campo1, campo2, campo2']
+
+Selecciona los primeros tres elementos de la siguiente línea. Después los tres últimos.
+
+::
+
+  l = ['uno', 'dos', 'tres', 'cuatro', 5, 6, 7]
+
+Calcula el número de elementos de los que se compone la lista anterior.
+
+Dado el siguiente código en python, ¿cuál será el resultado que obtendremos?
+
+  a = [1, 2, 3]
+  b = a
+  b.append(4)
+  print(a)
+
+¿Qué pasaría si ejecutásemos el siguiente código?
+
+  a = '123'
+  b = a
+  b = a + '4'
+  print(a)
+
+¿Por qué el diferente comportamiento en los dos ejercicios anteriores?
+
+Imprime las claves ordenadas del siguiente diccionario (Recuerda que los diccionarios no tiene por que estar ordenados en memoria). Después los valores ordenados.
+
+::
+
+  d = {1 : 'Noether', 2: 'Albert', 3: 'Isaac'}
+
+¿Cuál será el resultado del siguiente código?
+
+::
+
+  print(bool(1))
+  print(bool(0))
+  print(bool([1, 2]))
+  print(bool([]))
+  print(bool({}))
+  print(bool({1: 'si', 2: 'no'}))
+  print(bool('no'))
+  print(bool(''))
+  print(bool('1' and ''))
+  print(bool('' or '2'))
+  print(bool(not 'si'))
+
+¿Está la clave 'hola' en el siguiente diccionario?
+
+  d = {'spam': 'hola', 'monty': 'spam'}
+

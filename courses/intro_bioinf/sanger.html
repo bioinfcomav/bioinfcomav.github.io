@@ -1,0 +1,363 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>SECUENCIACIÓN DE SANGER &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Ensamblaje y mapeo de secuencias tipo Sanger" href="ensamblaje.html" />
+    <link rel="prev" title="EJERCICIO 2: ESTUDIO DE LOS GENES IDENTIFICADOS" href="ejercicio_prediccion2.html" /> 
+  </head>
+  <body>
+    <nav class="global_navigation">
+        <ul>
+            <li class="current_site_item" ><a href="http://bioinf.comav.upv.es">bioinf</a></li>
+            <li><a href="http://cucurbigene.net">cucurbigene</a></li>
+            <li><a href="http://melogene.net">melogene</a></li>
+        </ul>
+    </nav>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+    
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="http://www.melogene.net/">Melogene</a></li>
+                    <li><a href="http://www.cucurbigene.net/">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bases_datos.html">Bases de datos biológicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_bases.html">Práctica bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alineamientos.html">Alineamientos de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_jemboss.html">Práctica jemboss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_alineamientos.html">Práctica de alineamientos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blast.html">Búsqueda de secuencias en bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast.html">Práctica Blast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediccion.html">Métodos predictivos en ADN y ARN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_prediccion.html">Práctica predicción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">Alineamientos múltiples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_multiple.html">Práctica alineamiento múltiple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filogenias.html">Introducción al análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_filogenias.html">Práctica análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast2go.html">Práctica anotación con Blast2GO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_visores.html">Prácticas bases de datos genómicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion.html">Ejercicio anotación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion2.html">Ejercicio prediccion 2</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Secuenciación de Sanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ensamblaje.html">Ensamblaje de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_ensamblaje.html">Práctica ensamblaje de secuencias</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="secuenciacion-de-sanger">
+<h1>SECUENCIACIÓN DE SANGER<a class="headerlink" href="#secuenciacion-de-sanger" title="Permalink to this headline">¶</a></h1>
+<section id="secuenciacion-mediante-sanger">
+<h2>Secuenciación mediante Sanger<a class="headerlink" href="#secuenciacion-mediante-sanger" title="Permalink to this headline">¶</a></h2>
+<p>La secuenciación de Sanger se basa en la polimerización del ADN y el uso de dideoxinucleótidos  que sirven como terminadores de la reacción.
+En la actualidad la reacción de secuenciación se basa en una modificación de la PCR con dideoxinucleótidos marcados con fluoróforos y se resuelve mediante una electroforesis capilar.
+El sistema más utilizado es el desarrollado por <a class="reference external" href="http://www.appliedbiosystems.com/">Applied Biosystems</a> .
+Podéis encontrar numerosos documentos sobre la secuenciación de Sanger, pero para comenzar esta entrada de la <a class="reference external" href="http://en.wikipedia.org/wiki/Sanger_sequencing">wikipedia</a> .</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/secuenciacion_sanger.png"><img alt="_images/secuenciacion_sanger.png" src="_images/secuenciacion_sanger.png" style="width: 600px;" /></a>
+</figure>
+<p>Cromatograma.</p>
+<figure class="align-center">
+<img alt="_images/seq_error.jpg" src="_images/seq_error.jpg" />
+</figure>
+</section>
+<section id="cromatogramas">
+<h2>Cromatogramas<a class="headerlink" href="#cromatogramas" title="Permalink to this headline">¶</a></h2>
+<p>La información obtenida en los secuenciadores automáticos se guarda en ficheros binarios.</p>
+<p>Estos ficheros pueden incluir, además del cromatograma procesado (trace), el dato crudo leído por el secuenciador automático, la secuencia de nucleótidos y las calidades.</p>
+<p>Hasta el momento el mercado de la secuenciación automática basada en el método de Sanger está controlado principalmente por Applied Biosystems.</p>
+<p>Los secuenciadores de Applied generan los datos en formato abi.</p>
+<p>Estos ficheros abi se pueden leer con distintos programas: <a class="reference external" href="http://www.technelysium.com.au/chromas.html">chromas</a> (Win), el <a class="reference external" href="https://products.appliedbiosystems.com/ab/en/US/adirect/?cmd=catNavigate2&amp;catID=600583">Sequence Scanner</a> (Win) o el trev del paquete de análisis <a class="reference external" href="http://staden.sourceforge.net/">Staden</a> (Mac, Pc, Linux).</p>
+<p>Otro formato en el que se guardan los cromatogramas es el scf.</p>
+<p>scf es un formato libre no controlado por una empresa.</p>
+<p>scf sólo incluye el cromatograma procesado y la secuencia.</p>
+<p>En el <a class="reference external" href="http://www.ncbi.nlm.nih.gov/Traces/trace.cgi">NCBI</a> se depositan algunos de los cromatogramas obtenidos en los proyectos de secuenciación.</p>
+<section id="basecalling">
+<h3>Basecalling<a class="headerlink" href="#basecalling" title="Permalink to this headline">¶</a></h3>
+<p>A partir de los cromatogramas hay que obtener la secuencia de nucleótidos.</p>
+<p>Este proceso lo hacen automáticamente los programas que leen los cromatogramas, pero conviene que revisarlo manualmente porque en muchas ocasiones se producen fallos al asignar las bases.</p>
+<p>La secuencia propuesta por el software del secuenciador automático casi siempre tiene una gran parte al final que hay que eliminar.</p>
+</section>
+</section>
+<section id="calidad">
+<h2>Calidad<a class="headerlink" href="#calidad" title="Permalink to this headline">¶</a></h2>
+<p>Todos los sistemas de secuenciación estiman la probabilidad de que cada uno de los nucleótidos secuenciados sean erróneos, a este parámetro se le suele denominar calidad.
+Esta estimación del error es específica de cada tecnología y la calcula el software del equipo.
+Para facilitar el análisis y la interpretación de los resultados, estos valores se suelen cambiar a una escala normalizada que utilizan todas las tecnologías de secuenciación, la escala de <a class="reference external" href="http://www.phrap.com/phred/">Phred</a>.
+Phred era originalmente un programa de basecalling, pero ahora es sobretodo conocido como la escala del valor de calidad.
+Está se define como:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Phred</span> <span class="n">score</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">10</span> <span class="n">log</span> <span class="p">(</span><span class="n">prob</span> <span class="n">error</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>De este modo es fácil interpretar la probabilidad de error según su valor.</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Phred score</p></th>
+<th class="head"><p>Probabilidad de error de lectura en esa base</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>1/10</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>1/100</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>1/1000</p></td>
+</tr>
+<tr class="row-odd"><td><p>40</p></td>
+<td><p>1/10000</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+<section id="interpretacion-de-los-cromatogramas-de-secuencia">
+<h2>Interpretación de los cromatogramas de secuencia<a class="headerlink" href="#interpretacion-de-los-cromatogramas-de-secuencia" title="Permalink to this headline">¶</a></h2>
+<p>Ejemplos obtenidos de la <a class="reference external" href="http://seqcore.brcf.med.umich.edu/doc/dnaseq/trouble/badseq.html">web</a> del servicio de secuenciación de la Universidad de Michigan.</p>
+<section id="ruido">
+<h3>Ruido<a class="headerlink" href="#ruido" title="Permalink to this headline">¶</a></h3>
+<p>En teoría un cromatograma siempre debería ser perfecto, pero no siempre es así.</p>
+<figure class="align-default">
+<img alt="_images/no_noise.gif" src="_images/no_noise.gif" />
+</figure>
+<p>Un buen cromatograma.</p>
+<figure class="align-default">
+<img alt="_images/some_noise.gif" src="_images/some_noise.gif" />
+</figure>
+<p>Cromatograma con algo de ruido.</p>
+<figure class="align-default">
+<img alt="_images/bad_noise.gif" src="_images/bad_noise.gif" />
+</figure>
+<p>Cromatograma con mucho ruido.</p>
+<p>Posibles causas del ruido de fondo son: una contaminación de otro ADN o una contaminación con otro cebador (normalmente el cebador reverso utilizado en la PCR).</p>
+</section>
+<section id="errores-en-el-basecalling">
+<h3>Errores en el basecalling<a class="headerlink" href="#errores-en-el-basecalling" title="Permalink to this headline">¶</a></h3>
+<p>Algunas veces el secuenciador automático no es capaz de colocar los picos correspondientes a las distintas bases a una distancia equidistante. Por ejemplo esto sucede con frecuencia en el dinucleótido GA.</p>
+<figure class="align-default">
+<img alt="_images/GA_space.gif" src="_images/GA_space.gif" />
+</figure>
+<p>Mal espaciado bien interpretado.</p>
+<figure class="align-default">
+<img alt="_images/gap_n.gif" src="_images/gap_n.gif" />
+</figure>
+<p>Mal espaciado que introduce una N extra.</p>
+<figure class="align-default">
+<img alt="_images/bgnd_g.gif" src="_images/bgnd_g.gif" />
+</figure>
+<p>Mal espaciado y fondo que introduce una base extra.</p>
+</section>
+<section id="heterocigotos">
+<h3>Heterocigotos<a class="headerlink" href="#heterocigotos" title="Permalink to this headline">¶</a></h3>
+<p>Los programas de basecalling suelen interpretar los heterocigotos como N.</p>
+<p>Hay programas especializados en detectar estos picos dobles y en etiquetarlos adecuadamente.</p>
+<figure class="align-default">
+<img alt="_images/het_n.gif" src="_images/het_n.gif" />
+</figure>
+<p>Heterocigoto C/T.</p>
+</section>
+<section id="perdida-de-resolucion">
+<h3>Pérdida de resolución<a class="headerlink" href="#perdida-de-resolucion" title="Permalink to this headline">¶</a></h3>
+<p>Incluso las buenas secuencias pierden resolución al avanzar la secuencia, debido a la cromatografía.</p>
+<p>Este es uno de los motivos que hacen que las lecturas no tenga más de 700-800 pb.</p>
+<figure class="align-default">
+<img alt="_images/normal3730.gif" src="_images/normal3730.gif" />
+</figure>
+<p>Resolución buena.</p>
+<figure class="align-default">
+<img alt="_images/fair3730.gif" src="_images/fair3730.gif" />
+</figure>
+<p>Resolución aceptable.</p>
+<figure class="align-default">
+<img alt="_images/late3730.gif" src="_images/late3730.gif" />
+</figure>
+<p>Resolución mala.</p>
+</section>
+<section id="problemas-durante-la-reaccion-de-secuenciacion">
+<h3>Problemas durante la reacción de secuenciación<a class="headerlink" href="#problemas-durante-la-reaccion-de-secuenciacion" title="Permalink to this headline">¶</a></h3>
+<p>En algunas ocasiones pueden haber problemas en la reacción de secuenciación que impiden tener una buena secuencia.</p>
+<p>Es necesario diagnosticar el problema para solucionarlo.</p>
+<p>Posibles causas para los problemas en las secuencias.</p>
+<p>No hay señal:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>No había ADN molde.</p></li>
+<li><p>No había cebador.</p></li>
+<li><p>El cebador no ha reconocido al molde.</p></li>
+</ul>
+</div></blockquote>
+<p>La señal es muy débil:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Había poco ADN molde.</p></li>
+<li><p>El cebador no ha reconocido bien al molde.</p></li>
+</ul>
+</div></blockquote>
+<p>Hay señal, pero la resolución es mala desde el principio:</p>
+<figure class="align-default">
+<img alt="_images/okres.gif" src="_images/okres.gif" />
+</figure>
+<p>Puede que haya un contaminante en la muestra que afecta a la cromatografía.</p>
+<p>La señal y la resolución son buenas, pero hay varias bandas en cada posición:</p>
+<figure class="align-default">
+<img alt="_images/mixed.gif" src="_images/mixed.gif" />
+</figure>
+<p>Varios moldes en la reacción:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>El cebador se une en varias posiciones del molde.</p></li>
+<li><p>Se están secuenciando varios productos.</p></li>
+<li><p>Los cebadores de la PCR original no se han eliminado.</p></li>
+</ul>
+</div></blockquote>
+<p>Pérdida gradual de señal en los tamaños grandes:</p>
+<figure class="align-default">
+<img alt="_images/skislope.gif" src="_images/skislope.gif" />
+</figure>
+<p>La señal es buena al principio, pero disminuye rápidamente:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Exceso de sales en el molde.</p></li>
+<li><p>Exceso de ADN molde.</p></li>
+<li><p>Contaminante que inhibe a la polimerasa.</p></li>
+</ul>
+</div></blockquote>
+<p>Un gran pico rompe la secuencia en un punto concreto.</p>
+<figure class="align-default">
+<img alt="_images/blob.gif" src="_images/blob.gif" />
+</figure>
+<p>ddNTPs mal eliminados de la reacción de secuenciación.</p>
+<p>La señal es buena hasta un punto concreto y después disminuye bruscamente:</p>
+<figure class="align-default">
+<img alt="_images/secstruct.gif" src="_images/secstruct.gif" />
+</figure>
+<p>Estructura secundaria en el ADN molde.</p>
+</section>
+</section>
+<section id="visualizacion-de-cromatogramas">
+<h2>Visualización de cromatogramas<a class="headerlink" href="#visualizacion-de-cromatogramas" title="Permalink to this headline">¶</a></h2>
+<p>Descargar los el fichero cromprimido de cromatogramas de <a class="reference download internal" download="" href="_downloads/523b29e755cbaf748f37700d4c04ee83/cromatogramas.zip"><code class="xref download docutils literal notranslate"><span class="pre">ejemplo</span></code></a>.</p>
+<p>Abrir los cromatogramas que habíamos descargado con el trev de uno en uno y comprobar su calidad.</p>
+<p>Conviene pedir al trev que marque la calidad de la asignación de cada base (view -&gt; display confidence).</p>
+<p>Marcar las regiones de mala calidad del principio y el final de las secuencias (edit -&gt; left quality, edit -&gt; right quality).</p>
+<p>Evaluar para cada un de ellos:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>¿Tiene señal? ¿Se ven bandas o es todo ruido?</p></li>
+<li><p>¿Dónde comienza la región de buena calidad? ¿Dónde termina?</p></li>
+<li><p>¿Acaba la región de mala calidad de forma brusca?</p></li>
+<li><p>Posible diagnóstico de los problemas.</p></li>
+<li><p>¿Hay bases mal interpretadas por el basecaller?</p></li>
+<li><p>¿Hay mucho ruido de fondo?</p></li>
+<li><p>Guardar la secuencia obtenida en texto plano.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+            
+        
+        
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="ejercicio_prediccion2.html">EJERCICIO 2: ESTUDIO DE LOS GENES IDENTIFICADOS</a>-->
+                    <a class="prev" href="ejercicio_prediccion2.html" title="EJERCICIO 2: ESTUDIO DE LOS GENES IDENTIFICADOS">previous</a>
+                    |
+                    <!--<a class="next" href="ensamblaje.html">Ensamblaje y mapeo de secuencias tipo Sanger</a>-->
+                    <a class="next" href="ensamblaje.html" title="Ensamblaje y mapeo de secuencias tipo Sanger">next</a>
+                    |
+                
+                <a class="index" href="/courses/intro_bioinf/index.html" title="Index">index</a>
+                
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

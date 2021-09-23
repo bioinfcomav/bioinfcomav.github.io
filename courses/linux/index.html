@@ -1,0 +1,369 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Informática para las ciencias de la vida: Unix y Python &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="#" />
+    <link rel="next" title="Presentación del curso" href="presentacion_del_curso.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul>
+<li class="toctree-l1"><a class="reference internal" href="presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/ubuntu.html">Iniciación a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/shell.html#el-sistema-de-ficheros">El sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/introduccion.html">Introducción a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/control_de_flujo.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/estructuras_de_datos.html#sets">Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/ficheros.html">Ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/generadores.html">Generadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/modulos.html">Modulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/biopython.html">Biopython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_finales.html">Ejercicios finales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_finales.html#soluciones">Soluciones</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="informatica-para-las-ciencias-de-la-vida-unix-y-python">
+<h1>Informática para las ciencias de la vida: Unix y Python<a class="headerlink" href="#informatica-para-las-ciencias-de-la-vida-unix-y-python" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="presentacion_del_curso.html">Presentación del curso</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="presentacion_del_curso.html#algunos-ejemplos">Algunos ejemplos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="presentacion_del_curso.html#sobre-la-eleccion-de-las-herramientas">Sobre la elección de las herramientas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="presentacion_del_curso.html#despues-del-curso">Después del curso</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix/introduccion.html">Introducción a Unix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unix/introduccion.html#unix">Unix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/introduccion.html#linux">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/introduccion.html#distribuciones">Distribuciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/introduccion.html#ubuntu">Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/introduccion.html#software-libre">Software libre</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/introduccion.html#bibliografia">Bibliografía</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix/ubuntu.html">Iniciación a Ubuntu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unix/ubuntu.html#los-usuarios">Los usuarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/ubuntu.html#el-escritorio">El escritorio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/ubuntu.html#navegando-por-el-sistema-de-ficheros">Navegando por el sistema de ficheros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/ubuntu.html#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix/ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix/shell.html#el-sistema-de-ficheros">El sistema de ficheros</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#nombres-de-directorios-y-archivos">Nombres de directorios y archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#el-directorio-de-trabajo">El directorio de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#permisos">Permisos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#rutas-relativas-y-absolutas">Rutas relativas y absolutas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#moviendo-renombrando-y-copiando-ficheros">Moviendo, renombrando y copiando ficheros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#wildcards">WildCards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#obteniendo-informacion-sobre-el-sistema-de-archivos">Obteniendo información sobre el sistema de archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#completado-automatico-e-historia">Completado automático e historia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#donde-estan-los-ejecutables-path">¿Donde están los ejecutables? $PATH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#pipes">Pipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#soluciones">Soluciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#otras-herramientas">Otras herramientas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/shell.html#bibliografia">Bibliografía</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix/procesamiento_texto.html">Procesamiento de ficheros de texto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#ficheros-de-texto-y-binarios">Ficheros de texto y binarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#imprimiendo-ficheros-cat-head-y-tail">Imprimiendo ficheros <em>cat</em>, <em>head</em> y <em>tail</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#navegando-por-un-fichero-de-texto">Navegando por un fichero de texto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#grep"><em>grep</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#wc"><em>wc</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#cut"><em>cut</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#sed"><em>sed</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#sort"><em>sort</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#uniq"><em>uniq</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#paste"><em>paste</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#join"><em>join</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#codificacion-de-caracteres">Codificación de caracteres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#fin-de-linea">Fin de línea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#soluciones">Soluciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#otras-herramientas">Otras herramientas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesamiento_texto.html#bibliografia">Bibliografía</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix/expresiones_regulares.html">Expresiones regulares</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unix/expresiones_regulares.html#expresiones-alternativas">Expresiones alternativas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/expresiones_regulares.html#contenedores">Contenedores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/expresiones_regulares.html#cuantificadores">Cuantificadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/expresiones_regulares.html#puntos-de-anclaje">Puntos de anclaje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/expresiones_regulares.html#substituciones">Substituciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/expresiones_regulares.html#escapes">Escapes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/expresiones_regulares.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/expresiones_regulares.html#soluciones">Soluciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/expresiones_regulares.html#bibliografia">Bibliografía</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix/procesos.html">Procesos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unix/procesos.html#procesos">Procesos</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix/administracion_software.html">Administración de software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unix/administracion_software.html#estandar-de-jerarquia-del-sistema-de-archivos">Estándar de jerarquía del sistema de archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix/administracion_software.html#instalando-programas-compilados">Instalando programas compilados</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/introduccion.html">Introducción a Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/introduccion.html#porque-python">¿Porqué Python?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/introduccion.html#creando-y-ejecutando-hola-mundo">Creando y ejecutando “Hola mundo”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/introduccion.html#aritmetica-basica">Aritmética básica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/introduccion.html#variables">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/introduccion.html#nombres-de-variables">Nombres de variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/introduccion.html#tipos-de-objetos">Tipos de objetos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/introduccion.html#herramientas-avanzadas">Herramientas avanzadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/introduccion.html#bibliografia">Bibliografía</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/cadenas_de_texto.html">Cadenas de texto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/cadenas_de_texto.html#las-cadenas-de-texto-son-objetos">Las cadenas de texto son objetos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/cadenas_de_texto.html#funcionalidades-de-las-cadenas-de-texto">Funcionalidades de las cadenas de texto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/cadenas_de_texto.html#indices">Índices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/cadenas_de_texto.html#herramientas-avanzadas">Herramientas avanzadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/cadenas_de_texto.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/cadenas_de_texto.html#soluciones">Soluciones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/listas.html">Listas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/listas.html#min-max-sum">min, max, sum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/listas.html#funcion-map">Función map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/listas.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/listas.html#soluciones">Soluciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/listas.html#para-saber-mas">Para saber más</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/control_de_flujo.html">Control de flujo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/control_de_flujo.html#sentencia-if">Sentencia <em>if</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/control_de_flujo.html#booleanos">Booleanos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/control_de_flujo.html#bucle-for">Bucle <em>for</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/control_de_flujo.html#while">while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/control_de_flujo.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/control_de_flujo.html#soluciones">Soluciones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/estructuras_de_datos.html#sets">Sets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/estructuras_de_datos.html#estructuras-de-datos-anidadas">Estructuras de datos anidadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/estructuras_de_datos.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/estructuras_de_datos.html#soluciones">Soluciones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/funciones.html">Funciones</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/funciones.html#return">return</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/funciones.html#documentando-las-funciones">Documentando las funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/funciones.html#main">main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/funciones.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/funciones.html#soluciones">Soluciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/funciones.html#para-saber-mas">Para saber más</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/ficheros.html">Ficheros</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/ficheros.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/ficheros.html#soluciones">Soluciones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/generadores.html">Generadores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/generadores.html#convertir-iterador-en-lista">Convertir iterador en lista</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/generadores.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/generadores.html#soluciones">Soluciones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/modulos.html">Modulos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/modulos.html#id1">os</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/modulos.html#id2">shutil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/modulos.html#id3">os.path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/modulos.html#id4">subprocess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/modulos.html#id5">sys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/modulos.html#id6">csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/modulos.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/modulos.html#soluciones">Soluciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/modulos.html#para-saber-mas">Para saber más</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/biopython.html">Biopython</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/biopython.html#biopython">Biopython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/biopython.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/biopython.html#soluciones">Soluciones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/scipy.html">Numpy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/scipy.html#python-en-ciencia">Python en ciencia</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/scipy.html#rpy">Rpy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/scipy.html#tutorial-de-matplotlib">Tutorial de matplotlib</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/pandas.html">pandas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#series">Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#dataframe">DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#extraer-y-filtrar-datos">Extraer y filtrar datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#fusionar-datos">Fusionar datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#metodos-de-interes">Métodos de interés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#leer-y-escribir-archivos">Leer y escribir archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_finales.html">Ejercicios finales</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#ejercicios-linux">Ejercicios linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#contar-genes-y-sondas">Contar genes y sondas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#comparar-listas-de-genes">Comparar listas de genes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#cambiar-nombres">Cambiar nombres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#recortar-ficheros-fasta">Recortar ficheros fasta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#extrayendo-una-lista-de-secuencias-de-un-fichero">Extrayendo una lista de secuencias de un fichero</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#calcular-la-calidad-media-de-las-secuencias-en-un-fichero-fastq">Calcular la calidad media de las secuencias en un fichero fastq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#contar-contigs-por-genoteca">Contar contigs por genoteca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#copiar-anotacion-go">Copiar anotación GO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#enumerar-k-mers">Enumerar K-mers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_finales.html#soluciones">Soluciones</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#id1">Ejercicios linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#id3">Contar genes y sondas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#id4">Comparar listas de genes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#id5">Cambiar nombres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#id6">Recortar ficheros fasta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#id7">Extrayendo una lista de secuencias de un fichero</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#id8">Calcular la calidad media de las secuencias en un fichero fastq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#contigs-por-genoteca">Contigs por genoteca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#id9">Copiar anotación GO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ejercicios_finales.html#id10">Enumerar K-mers</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="licencia">
+<h1>Licencia<a class="headerlink" href="#licencia" title="Permalink to this headline">¶</a></h1>
+<p>Este curso ha sido escrito por Jose Blanca de la Universidad Politécnica de Valencia.
+Esta obra está bajo una licencia Attribution 3.0 Unported de Creative Commons. Para ver una copia de esta licencia, visite <a class="reference external" href="http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/licenses/by/3.0/</a> o envie una carta a Creative Commons, 171 Second Street, Suite 300, San Francisco, California 94105, USA.</p>
+</section>
+
+
+
+        
+
+    </main>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

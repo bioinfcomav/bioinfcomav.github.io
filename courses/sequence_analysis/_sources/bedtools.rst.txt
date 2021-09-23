@@ -1,0 +1,439 @@
+
+BEDTools
+========
+
+The `BEDTools <https://github.com/arq5x/bedtools2>`_ allow a fast and flexible way of comparing large datasets of genomic features.
+The BEDtools utilities allow one to address common genomics tasks such as finding feature overlaps and computing coverage.
+Its name is due to an historical reason because nowadays they can process the most commonly used feature file formats like: `BED <http://genome.ucsc.edu/FAQ/FAQformat.html#format1>`_, `GFF <http://www.sequenceontology.org/gff3.shtml>`_, `VCF <http://www.1000genomes.org/wiki/analysis/vcf4.0>`_, and `SAM <http://samtools.sourceforge.net/>`_.
+The following are examples of common questions that one can address with BEDTools:
+
+  * Which SNPs are in a coding region?
+  * Which are the exonic and intronic coverages?
+  * How many positions have a coverage greater than 8?
+  * Which SNPs are shared by two predictions done by two different SNP callers?
+
+The following notes a partially taken from the excellent BEDTools `manual <http://bedtools.readthedocs.org/en/latest/>`_.
+It is important to read this manual before using BEDTools in a real question.
+
+
+BEDTools usage
+--------------
+
+Some examples taken from the excellent BEDTools manual.
+
+Report the base-pair overlap between the features in two BED files::
+
+  $intersectBed -a reads.bed -b genes.bed
+
+Report those entries in A that overlap NO entries in B::
+
+  $ intersectBed -a reads.bed -b genes.bed –v
+
+Read BED A from stdin. Useful for stringing together commands. For example, find genes that overlap LINEs but not SINEs::
+
+  $ intersectBed -a genes.bed -b LINES.bed | intersectBed -a stdin -b SINEs.bed –v
+
+Find the closest ALU to each gene::
+
+  $ closestBed -a genes.bed -b ALUs.bed
+
+Merge overlapping repetitive elements into a single entry, returning the number of entries merged::
+
+  $ mergeBed -i repeatMasker.bed -n
+
+Merge nearby repetitive elements into a single entry, so long as they are within 1000 bp of one another::
+
+  $ mergeBed -i repeatMasker.bed -d 1000
+
+Summary of the main BEDTools
+----------------------------
+
+intersectBed
+____________
+
+This tools answers the question of which features of two sets overlap.
+It works with BED/GFF/VCF and BAM files.
+
+intersectBed can report different overlaps.
+By default it will report the overlapping segment::
+
+  Chromosome  ================================================================
+  BED/BAM A       ================                 ===============
+  BED File B             ===============
+  Result                 =========
+
+For example::
+
+  $ cat A.bed
+  chr1 100  200
+  chr1 300  400
+  $ cat B.bed
+  chr1 150  250
+  $ intersectBed –a A.bed -b B.bed
+  chr1 150  200
+
+It can also report eh original A (-wa) feature or the original B feature (-wb).
+
+::
+
+  Chromosome  ================================================================
+  BED/BAM A       ================                 ===============
+  BED File B             ===============
+  Result          ================
+ 
+::
+
+  $ intersectBed –a A.bed –b B.bed -wa
+  chr1 100  200
+
+If –wb is used, the overlapping portion of A will be reported followed by the original “B”::
+
+  $ intersectBed –a A.bed –b B.bed -wb
+  chr1 150  200  chr1   150  250
+
+intersectBed can also count, with the *-c* parameter,  the number of features that overlap in every region defined in the a file.
+
+intersectBed has many other features and possibilities that are explained in its manual, like minimum fraction of overlap or strandedness.
+
+
+windowBed
+_________
+
+Similar to intersectBed, windowBed searches for overlapping features in A and B.
+However, windowBed adds a specified number (1000, by default) of base pairs upstream and downstream of each feature in A.
+In effect, this allows features in B that are “near” features in A to be detected.
+If an overlap is found in B, both the original A feature and the original B feature are reported.
+
+::
+
+  Chromosome  ================================================================
+  BED File A          <----------=============---------->
+  BED File B     ========                                    ==========
+  Result         ========
+
+::
+ 
+  $ cat A.bed
+  chr1 1000 1500
+  $ cat B.bed
+  chr1 100  300
+  chr1 2800 3200
+  $ windowBed –a A.bed –b B.bed
+  chr1 1000 1500  chr1 100  300
+
+closestBed
+__________
+
+Similar to intersectBed, closestBed searches for overlapping features in A and B.
+In the event that no feature in B overlaps the current feature in A, closestBed will report the closest (that is, least genomic distance from the start or end of A) feature in B.
+For example, one might want to find which is the closest gene to a significant GWAS polymorphism. Note that closestBed will report an overlapping feature as the closest. 
+That is, it does not restrict to closest non-overlapping feature.
+
+::
+
+  Chromosome   ================================================================
+  BED File A                                  ========
+  BED File B        ========                              ======
+  Result                                                  ======
+
+::
+
+  $ cat A.bed
+  chr1 600  700
+  $ cat B.bed
+  chr1 100  200
+  chr1 900  1000
+  $ closestBed –a A.bed –b B.bed
+  chr1 600  700  chr1  900  1000
+
+subtractBed
+___________
+
+subtractBed searches for features in B that overlap A.
+If an overlapping feature is found in B, the overlapping portion is removed from A and the remaining portion of A is reported.
+If a feature in B overlaps all of a feature in A, the A feature will not be reported.
+
+::
+
+  Chromosome    ================================================================
+  BED File A             ===========                        =======
+  BED File B       =========                            =============
+  Result                    ========
+
+::
+
+  $ cat A.bed
+  chr1 10  30
+  chr1 80  90
+  $ cat B.bed
+  chr1 5   20
+  chr1 70  95
+  $ subtractBed –a A.bed –b B.bed
+  chr1 20  30
+
+mergeBed
+________
+
+mergeBed combines overlapping or “book-ended” (that is, one base pair away) features in a feature file into a single feature which spans all of the combined features.
+
+::
+
+  Chromosome    ================================================================
+  BED File A             ===========                             =======
+                   =========                            =============   ====
+  Result           =================                    ====================
+
+::
+
+  $ cat A.bed
+  chr1 100  200
+  chr1 180  250
+  chr1 700  800
+  chr1 600  750
+  chr1 800  850
+  $ mergeBed –i A.bed
+  chr1 100  250
+  chr1 600  850
+
+coverageBed
+___________
+
+coverageBed computes both the depth and breadth of coverage of features in file A across the features in file B. For example, coverageBed can compute the coverage of sequence alignments (file A) across 1 kilobase (arbitrary) windows (file B) tiling a genome of interest.
+One advantage that coverageBed offers is that it not only counts the number of features that overlap an interval in file B, it also computes the fraction of bases in B interval that were overlapped by one or more features.
+Thus, coverageBed also computes the breadth of coverage for each interval in B.
+
+After each interval in B, coverageBed will report:
+  - The number of features in A that overlapped (by at least one base pair) the B interval.
+  - The number of bases in B that had non-zero coverage from features in A.
+  - The length of the entry in B.
+  - The fraction of bases in B that had non-zero coverage from features in A.
+
+::
+
+  Chromosome  ================================================================
+  BED File B   ===============    ================    ======    =============
+  BED File A   ==== ====             ==             =========    === == ====
+  BED File A     ========                                     ===== ===== ==
+  Result        [ N=3, 10/15 ]     [ N=1, 2/16 ]    [N=1,6/6]   [N=6, 11/12]  
+  
+::
+
+  $ cat A.bed
+  chr1  10  20
+  chr1  20  30
+  chr1  30  40
+  chr1  100 200
+  $ cat B.bed
+  chr1  0   100
+  chr1  100 200
+  chr2  0   100
+  $ coverageBed –a A.bed –b B.bed
+  chr1  0   100  3  30   100  0.3000000
+  chr1  100 200  1  100  100  1.0000000
+  chr2  0   100  0  0    100  0.0000000
+
+genomeCoverageBed
+_________________
+
+genomeCoverageBed computes a histogram of feature coverage (e.g., aligned sequences) for a given genome.
+Optionally, by using the –d option, it will report the depth of coverage at each base on each chromosome in the genome file (-g).
+
+The default output format is as follows:
+  - chromosome (or entire genome)
+  - depth of coverage from features in input file
+  - number of bases on chromosome (or genome) with depth equal to column 2.
+  - size of chromosome (or entire genome) in base pairs
+  - fraction of bases on chromosome (or entire genome) with depth equal to column 2.
+ 
+::
+
+  $ cat A.bed
+  chr1  10  20
+  chr1  20  30
+  chr2  0   500
+  $ cat my.genome
+  chr1 1000
+  chr2 500
+  $ genomeCoverageBed –i A.bed –g my.genome
+  chr1 0  980  1000 0.98
+  chr1 1  20   1000 0.02
+  chr2 1  500  500  1
+  genome  0    980  1500 0.653333
+  genome  1    520  1500 0.346667
+
+fastaFromBed
+____________
+
+fastaFromBed extracts sequences from a FASTA file for each of the intervals defined in a BED file.
+
+::
+
+  $ cat test.fa
+  >chr1
+  AAAAAAAACCCCCCCCCCCCCGCTACTGGGGGGGGGGGGGGGGGG
+  $ cat test.bed
+  chr1 5  10
+  $ fastaFromBed -fi test.fa -bed test.bed -fo test.fa.out
+  $ cat test.fa.out
+  >chr1:5-10
+  AAACC
+
+SortBed
+_______
+
+sortBed sorts a feature file by chromosome and other criteria.
+
+By default, sortBed sorts a BED file by chromosome and then by start position in ascending order.
+
+::
+
+  $ cat A.bed
+  chr1  800 1000
+  chr1  80  180
+  chr1  1   10
+  chr1  750 10000
+  $ sortBed –i A.bed
+  chr1  1   10
+  chr1  80  180
+  chr1  750 10000
+  chr1  800 1000
+
+It should be noted that sortBed is merely a convenience utility, as the UNIX sort utility will sort BED files more quickly while using less memory.
+For example, UNIX sort will sort a BED file by chromosome then by start position in the following manner::
+
+  $ sort -k 1,1 -k2,2 -n a.bed
+  chr1  1   10
+  chr1  80  180
+  chr1  750 10000
+  chr1  800 1000
+
+
+
+Other files used by BEDTools
+----------------------------
+
+Some tools need the length of the genome being used.
+In those cases a tab-delimited *genome file* with the length of the molecules of the genome has to be provided.
+An example would be::
+
+  chrI  15072421
+  chrII 15279323
+  ...
+  chrX  1771885
+  chrM  13794
+
+Another format used by BEDTools is BEDPE.
+This format is used to represent disjoint features like the paired-end sequence alignments.
+
+
+
+Notes regarding usage
+---------------------
+
+All BEDTools load the "B" file into memory and process the "A" file one-by-one against the features in "B".
+Therefore when possible, one should make set the smaller of the two files to be the "B" file.
+For example, you'll discover that finding overlaps between a list of 30,000 genes and 100 million aligned sequences will work much more efficiently with the genes file set as BED file "B". 
+
+Most of the BEDTools allow the "A" file to be passed via standard input for use in UNIX "streams" or "pipelines". In order to do this, use "-a stdin". For example::
+
+  $ cat reads.bed | intersectBed -a stdin -b genes.bed > readsToGenes.bed
+
+Practical Task
+--------------
+
+Given the following genome calculate some statistics::
+
+
+                        11111111112222222222333333333344444444445555555555 
+               12345678901234567890123456789012345678901234567890123456789
+               00000000000000000000000000000000000000000000000000000000000
+  Chromosome   ===========================================================
+  genes           ===============>                ===============>
+  CDSs              =========>                      ========>
+  exons           ====  === =====>                === === =======>
+  reads           --->  ->   -->
+                    ->  --> -->
+                  -->
+  SNPs          * *     *     *    *  *   *   *  * *       *   
+
+Download and extract the bed files required for the practice are in the file: :download:`bed.tar.gz <downloads/bed.tar.gz>`.
+
+::
+
+  ~$ pwd
+  /home/ngs_user
+  ~$ tar -xvzf bed.tar.gz
+  ~$ cd bed
+
+1. Which are the exon regions in the CDSs?
+
+::
+
+  ~/bed$ intersectBed -a cds.bed -b exons.bed > cds.exon.bed
+  ~/bed$ cat cds.exon.bed
+  chr   59      70      cds1
+  chr   99      120     cds1
+  chr   139     150     cds1
+  chr   379     380     cds2
+  chr   399     420     cds2
+  chr   439     460     cds2
+
+2. Store the UTR regions in a new bed file.
+
+:: 
+
+  ~/bed$ subtractBed -a exons.bed -b cds.bed > utrs.bed
+  ~/bed$ cat utrs.bed 
+  chr   39      59      exon11
+  chr   150     190     exon13
+  chr   359     379     exon21
+  chr   460     510     exon23
+
+3. How many SNPs are in every gene?
+
+::
+
+   ~/bed$ intersectBed -a genes.bed -b snps.bed -c
+   chr  39      190     gene1   3
+   chr  359     510     gene2   2
+
+4. And how many in the UTRs and in the CDSs?
+
+::
+
+  ~/bed$ intersectBed -a utrs.bed -b snps.bed -c
+  chr   39      59      exon11  1
+  chr   150     190     exon13  1
+  chr   359     379     exon21  1
+  chr   460     510     exon23  0
+  ~/bed$ intersectBed -a cds.exon.bed -b snps.bed -c
+  chr   59      70      cds1    0
+  chr   99      120     cds1    1
+  chr   139     150     cds1    0
+  chr   379     380     cds2    0
+  chr   399     420     cds2    0
+  chr   439     460     cds2    1
+
+5. How many reads cover each gene?
+
+::
+
+  ~/bed$ coverageBed -b reads.bed -a genes.bed 
+  chr   39      190     gene1   7       83      151     0.5496688
+  chr   359     510     gene2   0       0       151     0.0000000
+
+6. Which is the distribution of read coverages along the chromosome?
+
+::
+
+  ~/bed$ genomeCoverageBed -i reads.bed -g chr.genome 
+  chr   0       507     590     0.859322
+  chr   1       30      590     0.0508475
+  chr   2       52      590     0.0881356
+  chr   3       1       590     0.00169492
+  genome        0       507     590     0.859322
+  genome        1       30      590     0.0508475
+  genome        2       52      590     0.0881356
+  genome        3       1       590     0.00169492
+
+

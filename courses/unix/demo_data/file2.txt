@@ -1,0 +1,5 @@
+num id atributo
+1 abc ttt
+3 klm fff
+5 opq jjj
+9 rst ttt

@@ -1,0 +1,507 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Listas &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Nuestro primer programa" href="primer_programa.html" />
+    <link rel="prev" title="Cadenas de texto" href="cadenas_de_texto.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Iniciación a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html#el-sistema-de-ficheros">El sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Listas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#min-max-sum">min, max, sum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#funcion-map">Función map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soluciones">Soluciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#para-saber-mas">Para saber más</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_de_flujo.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html#sets">Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ficheros.html">Ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generadores.html">Generadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulos.html">Modulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biopython.html">Biopython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html">Ejercicios finales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html#soluciones">Soluciones</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="listas">
+<h1>Listas<a class="headerlink" href="#listas" title="Permalink to this headline">¶</a></h1>
+<p>Una lista es una colección ordenada de elementos, similar a una matriz unidimensional.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span>
+<span class="go">[1, 2, 3]</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/python_list.png"><img alt="../_images/python_list.png" class="align-center" src="../_images/python_list.png" style="width: 400px;" /></a>
+<p>Las listas tienen un sistema de índices equivalente al que vimos para las cadenas de texto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">[1, 2]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="go">[1, 2, 3, 4]</span>
+</pre></div>
+</div>
+<p>También de forma análoga al caso de las cadenas de texto, todas estas operaciones devuelven una nueva lista o un elemento que podemos guardar en una variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nueva_lista</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nueva_lista</span>
+<span class="go">[2, 3]</span>
+</pre></div>
+</div>
+<p>Si a la lista le pedimos un rango devolverá una nueva lista, mientras que si lo que le pedimos es un sólo elemento devolverá un solo elemento, no una lista con un elemento.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">[1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>En este comportamiento las listas se diferencian ligeramente de las cadenas de texto.
+Mientras las cadenas de texto siempre devuelven cadenas de texto, ya estén compuestas éstas por uno o varios caracteres, las listas pueden devolver elementos individuales o pequeñas listas.
+En el ejemplo anterior cuando pedimos un rango (<em>slice</em>) (<em>[:1]</em>) se nos devuelve una lista con un elemento dentro (<em>[1]</em>), mientras que cuando pedimos un sólo elemento (<em>[1]</em>) se nos devuelve un elemento (<em>1</em>).</p>
+<p>Podemos conocer la longitud de una lista utilizando la función <em>len</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>En Python hay varios clases de objetos que pueden ser tratados de este modo, como: <em>str</em> (cadenas de texto), <em>unicode</em> (cadenas de texto con codificación), <em>list</em> (listas), <em>tuple</em> (listas inmutables) y <em>arrays</em>.
+De estos tipos de datos se dice que son secuencias, porque son en realidad secuencias ordenadas.</p>
+<p>Dentro de las listas podemos guardar cualquier clase de elemento.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista_heterogenea</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Monty&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>También podríamos guardar otras listas en cada una de las posiciones de la lista.
+En este caso habríamos definido una matriz bidimensional:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matriz</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;00&#39;</span><span class="p">,</span> <span class="s1">&#39;01&#39;</span><span class="p">,</span> <span class="s1">&#39;02&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;12&#39;</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matriz</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">&#39;00&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matriz</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;01&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matriz</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">&#39;12&#39;</span>
+</pre></div>
+</div>
+<p>A diferencia de los <em>str</em> las listas son mutables, es decir se pueden modificar sus elementos y podemos añadir nuevos elementos.
+Por ejemplo, podemos crear una lista y más tarde modificarla:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span>
+<span class="go">[10, 11, 12, 13]</span>
+</pre></div>
+</div>
+<p>Además las listas posen varios métodos para añadir y eliminar elementos.
+<em>append</em> añade un nuevo elemento al final:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span>
+<span class="go">[10, 11, 12, 13, 14]</span>
+</pre></div>
+</div>
+<p>Si queremos añadir no sólo un elemento sino toda una nueva lista de elementos al final podemos utilizar <em>extend</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">lista2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span>
+<span class="go">[10, 11, 12, 13, 14, 15, 16, 17, 18]</span>
+</pre></div>
+</div>
+<p>Podemos eliminar elementos del final utilizando el método <em>pop</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="go">18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span>
+<span class="go">[10, 11, 12, 13, 14, 15, 16, 17]</span>
+</pre></div>
+</div>
+<p>Al ejecutar el método pop se nos devuelve el elemento que hemos eliminado y la lista queda mermada.
+Por supuesto el elemento devuelto podríamos haberlo guardado en una variable para trabajar con él.
+<em>pop</em> acepta un índice, por lo que también podríamos utilizarlo para eliminar un elemento del principio:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">primer_elemento</span> <span class="o">=</span> <span class="n">lista</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">primer_elemento</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span>
+<span class="go">[11, 12, 13, 14, 15, 16, 17]</span>
+</pre></div>
+</div>
+<p>Otro método que puede resultar útil es <em>reverse</em>.
+<em>reverse</em> invertirá el orden de los elementos de la lista:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span>
+<span class="go">[17, 16, 15, 14, 13, 12, 11]</span>
+</pre></div>
+</div>
+<p>Si lo que deseamos es obtener una nueva lista invertida sin modificar la lista original podríamos haber utilizado la función reversed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">lista</span><span class="p">))</span>
+<span class="go">[11, 12, 13, 14, 15, 16, 17]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span>
+<span class="go">[17, 16, 15, 14, 13, 12, 11]</span>
+</pre></div>
+</div>
+<p><em>reversed</em> no devuelve una lista directamente sino un iterador.
+Más adelante vermos cual es la diferencia entre los iteradores y las listas.</p>
+<p>Si lo que deseamos es ordenar la lista podemos utilizar el método sort:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span>
+<span class="go">[11, 12, 13, 14, 15, 16, 17]</span>
+</pre></div>
+</div>
+<p>Si queremos obtener una nueva lista ordenada dejando intacta la antigua podríamos utilizar la  función <em>sorted</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="go">[11, 12, 13, 14, 15, 16, 17]</span>
+</pre></div>
+</div>
+<p><em>sorted</em> admite distintos parámetros, que se escapan un poco de esta pequeña introducción, pero que nos pueden resultar útiles si el orden que obtenemos no es el que deseamos o si estamos intentando ordenar listas en las que los elementos son objetos más complejos que un simple número o una cadena de texto.</p>
+<p>Las diferencias de comportamiento entre métodos tan similares como <em>reverse</em> y <em>reversed</em> pueden resultar algo confusas para el programador neófito, pero lo importante es simplemente recordar que estos comportamientos alternativos existen.
+Si en cualquier momento tenemos dudas sobre qué comportamiento tiene cualquiera de los métodos o funciones siempre podemos abrir un intérprete de Python y hacer una pequeña prueba con una lista.
+Por lo tanto no necesitamos memorizar cual es el comportamiento exacto de cada función sino comprender cuales son estos posibles comportamientos.</p>
+<section id="min-max-sum">
+<h2>min, max, sum<a class="headerlink" href="#min-max-sum" title="Permalink to this headline">¶</a></h2>
+<p>Python dispone de unas cuantas funciones que facilitan el trabajo con las listas, como por ejemplo <em>min</em>, <em>max</em> y <em>sum</em>.
+Estas funciones en realidad pueden operar sobre cualquier iterador y su funcionamiento es el que su nombre implica:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">min</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">max</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</section>
+<section id="funcion-map">
+<h2>Función map<a class="headerlink" href="#funcion-map" title="Permalink to this headline">¶</a></h2>
+<p>En muchas ocasiones nos puede interesar aplicar una función, un cálculo, sobre cada uno de los elementos de una lista o iterador.
+Esto podemos hacerlo con la función <em>map</em>.
+<em>map</em> necesita dos argumentos, la función a aplicar y la lista o iterador sobre el que aplicarlo.
+El resultado será una nueva lista, la resultante de aplicar la función a cada uno de los elementos de la lista original:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="go">[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]</span>
+</pre></div>
+</div>
+<p>Además de estos elementos de programación funcional Python dispone de una función <em>filter</em> que permite filtrar los elementos de una lista dependiendo de que verifiquen o no una condición dada.
+Una sintaxsis alternativa que permite obtener resultados similares es la de las <em>list comprenhensions</em>.</p>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Separa la lista [‘id_paciente’, ‘fase1’, ‘37.1’, ‘39.3’, ‘38.1’] en tres variables: id_paciente, fase_ensayo, serie_temperaturas.</p></li>
+<li><p>Convierte los números (que están representados por cadenas de texto) de la serie de temperaturas anterior en números con coma flotante.</p></li>
+<li><p>Añade a la lista de números una nueva temperatura, 37.2.</p></li>
+<li><p>Añade a las temperaturas la lista: [36.5, 37.3].</p></li>
+<li><p>¿Cuántas temperaturas tenemos en total?</p></li>
+<li><p>Obtén una cadena de texto con las temperaturas separadas por comas.</p></li>
+<li><p>Ordena las temperaturas de mayor a menor y viceversa.</p></li>
+<li><p>Obtén la media de las temperaturas.</p></li>
+<li><p>¿Cuáles son las temperaturas máxima y mínima?</p></li>
+<li><p>Crea una lista con los números del 0 al 9 y extrae los pares, los impares, los 5 primeros y los 5 últimos por separado.</p></li>
+<li><p>Dada la siguiente secuencia:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;inquisicion&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ordenada</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ordenada</span>
+<span class="go">[&#39;inquisicion&#39;, &#39;python&#39;, &#39;spam&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span>
+<span class="go">[&#39;spam&#39;, &#39;python&#39;, &#39;inquisicion&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ordenada</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ordenada</span>
+<span class="go">[&#39;spam&#39;, &#39;python&#39;, &#39;inquisicion&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ordenada</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inversa</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">ordenada</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>¿Por qué queda intacta la primera lista después de haberla ordenado con <em>sorted</em>?
+¿Por qué no sucede lo mismo cuando aplicamos <em>reverse</em> a la lista ordenada?
+¿Cuál es la diferencia de comportamiento entre el método <em>reverse</em> y la función <em>reversed</em>?
+¿Qué pasaría si hacemos inversa = lista.reverse(), a qué sería igual la variable inversa?</p>
+</section>
+<section id="soluciones">
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Separa la lista [‘id_paciente’, ‘fase1’, ‘37.1’, ‘39.3’, ‘38.1’] en tres variables: id_paciente, fase_ensayo, serie_temperaturas.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id_paciente&#39;</span><span class="p">,</span> <span class="s1">&#39;fase1&#39;</span><span class="p">,</span> <span class="s1">&#39;37.1&#39;</span><span class="p">,</span> <span class="s1">&#39;39.3&#39;</span><span class="p">,</span> <span class="s1">&#39;38.1&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">id_paciente</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fase_ensayo</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serie_temperaturas</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">id_paciente</span>
+<span class="go">&#39;id_paciente&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fase_ensayo</span>
+<span class="go">&#39;fase1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serie_temperaturas</span>
+<span class="go">[&#39;37.1&#39;, &#39;39.3&#39;, &#39;38.1&#39;]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Convierte los números (que están representados por cadenas de texto) de la serie de temperaturas anterior en números con coma flotante.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">serie_temperaturas</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">serie_temperaturas</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serie_temperaturas</span>
+<span class="go">[37.100000000000001, 39.299999999999997, 38.100000000000001]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Añade a la lista de números una nueva temperatura, 37.2.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">serie_temperaturas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">37.2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serie_temperaturas</span>
+<span class="go">[37.100000000000001, 39.299999999999997, 38.100000000000001,</span>
+<span class="go">37.200000000000003]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Añade a las temperaturas la lista: [36.5, 37.3].</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">serie_temperaturas</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mf">36.5</span><span class="p">,</span> <span class="mf">37.3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serie_temperaturas</span>
+<span class="go">[37.100000000000001, 39.299999999999997, 38.100000000000001,</span>
+<span class="go">37.200000000000003, 36.5, 37.299999999999997]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>¿Cuántas temperaturas tenemos en total?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">serie_temperaturas</span><span class="p">)</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Obtén una cadena de texto con las temperaturas separadas por comas.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">serie_temperaturas</span><span class="p">))</span>
+<span class="go">&#39;37.1,39.3,38.1,37.2,36.5,37.3&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Ordena las temperaturas de mayor a menor y viceversa.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">serie_temperaturas</span><span class="p">)</span>
+<span class="go">[36.5, 37.100000000000001, 37.200000000000003, 37.299999999999997,</span>
+<span class="go">38.100000000000001, 39.299999999999997]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">serie_temperaturas</span><span class="p">)))</span>
+<span class="go">[39.299999999999997, 38.100000000000001, 37.299999999999997,</span>
+<span class="go">37.200000000000003, 37.100000000000001, 36.5]</span>
+</pre></div>
+</div>
+<p>O alternativamente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">serie_ordenada</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">serie_temperaturas</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serie_ordenada</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serie_ordenada</span>
+<span class="go">[39.299999999999997, 38.100000000000001, 37.299999999999997,</span>
+<span class="go">37.200000000000003, 37.100000000000001, 36.5]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Obtén la media de las temperaturas.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="n">serie_temperaturas</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">serie_temperaturas</span><span class="p">)</span>
+<span class="go">37.583333333333336</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>¿Cuáles son las temperaturas máxima y mínima?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">max</span><span class="p">(</span><span class="n">serie_temperaturas</span><span class="p">)</span>
+<span class="go">39.299999999999997</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">min</span><span class="p">(</span><span class="n">serie_temperaturas</span><span class="p">)</span>
+<span class="go">36.5</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Crea una lista con los números del 0 al 9 y extrae los pares, los impares, los 5 primeros y los 5 últimos por separado.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pares</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pares</span>
+<span class="go">[0, 2, 4, 6, 8]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">impares</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">impares</span>
+<span class="go">[1, 3, 5, 7, 9]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">primeros</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">primeros</span>
+<span class="go">[0, 1, 2, 3, 4]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ultimos</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ultimos</span>
+<span class="go">[5, 6, 7, 8, 9]</span>
+</pre></div>
+</div>
+<p>Alternativamente podríamos haber creado la lista con la función range():</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</pre></div>
+</div>
+<p>En Python 3.x range es un iterador y deberíamos haber utilizado la expresión:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="go">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="11">
+<li><p>Dada la siguiente secuencia:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;inquisicion&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ordenada</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ordenada</span>
+<span class="go">[&#39;inquisicion&#39;, &#39;python&#39;, &#39;spam&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span>
+<span class="go">[&#39;spam&#39;, &#39;python&#39;, &#39;inquisicion&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ordenada</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ordenada</span>
+<span class="go">[&#39;spam&#39;, &#39;python&#39;, &#39;inquisicion&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ordenada</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inversa</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">ordenada</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>¿Por qué queda intacta la primera lista después de haberla ordenado con <em>sorted</em>?</p>
+<p>Porque la función <em>sorted</em> crea una nueva lista dejando la original intacta.</p>
+<p>¿Por qué no sucede lo mismo cuando aplicamos <em>reverse</em> a la lista ordenada?</p>
+<p>Porque el método <em>reverse</em> da la vuelta a la lista sin crear una nueva, aprovecha el hecho de que la lista es mutable y la modifica.</p>
+<p>¿Cuál es la diferencia de comportamiento entre el método <em>reverse</em> y la función <em>reversed</em>?</p>
+<p>El método <em>reverse</em> modifica la lista original, pero la función <em>reversed</em> de modo análogo a la función <em>sorted</em> no modifica la lista original sino que devuelve un nuevo iterador que podemos transformar en una lista.</p>
+<p>¿Qué pasaría si hacemos inversa = lista.reverse(), a qué sería igual la variable inversa?</p>
+<p>El método <em>reverse</em> modifica la lista y por lo tanto no devuelve una nueva lista.
+La variable a la que asignemos el resultado quedará vacía.</p>
+</section>
+<section id="para-saber-mas">
+<h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Las secciones correspondientes a las listas en el tutorial oficial de Python (<a class="reference external" href="http://docs.python.org/tutorial/introduction.html#lists">1</a> y <a class="reference external" href="http://docs.python.org/tutorial/datastructures.html#more-on-lists">2</a>), pueden ser una buena continuación a este breve tutorial.</p></li>
+<li><p>Como para cualquier otra clase de objetos la ayuda disponible en el intérprete puede también ser muy útil. En este caso: <em>help(list)</em></p></li>
+</ul>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="cadenas_de_texto.html">Cadenas de texto</a>-->
+                    <a class="prev" href="cadenas_de_texto.html" title="Cadenas de texto">previous</a>
+                    |
+                    <!--<a class="next" href="primer_programa.html">Nuestro primer programa</a>-->
+                    <a class="next" href="primer_programa.html" title="Nuestro primer programa">next</a>
+                    |
+
+                <a class="index" href="/courses/linux/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

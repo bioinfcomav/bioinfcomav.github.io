@@ -1,0 +1,367 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Paquetes útiles en biología &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Numpy" href="scipy.html" />
+    <link rel="prev" title="Módulos" href="modulos.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Iniciación a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html#el-sistema-de-ficheros">El sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_de_flujo.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html#sets">Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ficheros.html">Ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generadores.html">Generadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulos.html">Modulos</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Biopython</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#biopython">Biopython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soluciones">Soluciones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html">Ejercicios finales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html#soluciones">Soluciones</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="paquetes-utiles-en-biologia">
+<h1>Paquetes útiles en biología<a class="headerlink" href="#paquetes-utiles-en-biologia" title="Permalink to this headline">¶</a></h1>
+<section id="biopython">
+<h2>Biopython<a class="headerlink" href="#biopython" title="Permalink to this headline">¶</a></h2>
+<p>Biopython es una librería que recoge utilidades para trabajar con datos biológicos.
+Algunas de sus utilidades incluyen funciones y clases para trabajar con secuencias, resultados Blast, estructuras de proteínas y árboles filogenéticos.
+Para familirizarnos con Biopython estudiaremos su <a class="reference external" href="http://biopython.org/DIST/docs/tutorial/Tutorial.html">tutorial</a>, centrándonos en los capítulos:</p>
+<blockquote>
+<div><ul class="simple">
+<li><ol class="arabic simple" start="3">
+<li><p>Sequence objects</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p>Sequence Record objects</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="5">
+<li><p>Reading and writing sequence files</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="7">
+<li><p>Running and parsing BLAST</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="19">
+<li><p>Mailing lists</p></li>
+</ol>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<p>1. Crea un objeto Seq con la secuencia ‘ATCG’. ¿Cuántos residuos tiene?
+¿Cuáles son las tres primeras letras? ¿Y la última? ¿Cuántas adeninas tiene?
+Convierte la secuencia en una cadena de texto normal sin alfabeto.</p>
+<ol class="arabic simple" start="2">
+<li><p>Crea la secuencia reversa y complementaria de ‘ATCG’.</p></li>
+<li><p>Traduce la secuencia ‘ATGGCCATTGT’ a proteína.</p></li>
+<li><p>Crea dos secuencias ‘ATGGCCATTGT’ y comprueba si son iguales.</p></li>
+<li><p>Crea un SeqRecord con la secuencia ‘ATCG’, la id ‘secuencia’ y la descripción ‘prueba’.</p></li>
+<li><p>Leer un fichero de secuencias <a class="reference download internal" download="" href="../_downloads/a434e93019e9b8a9dede3c8744094ef1/seqs_2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">fasta</span></code></a> y hacerlas todas minúsculas.</p></li>
+<li><p>Pasar un fichero de <a class="reference download internal" download="" href="../_downloads/e6bd4ef5390df7bb1e3b35d49ffd2251/sequence.gb"><code class="xref download docutils literal notranslate"><span class="pre">genbank</span></code></a> a fasta.</p></li>
+<li><p>Filtrar las secuencias de un fichero <a class="reference download internal" download="" href="../_downloads/5f90ad3839d6d4610b7f18a584df3d82/seqs_illumina.fastq"><code class="xref download docutils literal notranslate"><span class="pre">sanger</span> <span class="pre">fastq</span></code></a> por calidad media.</p></li>
+</ol>
+</section>
+<section id="soluciones">
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<p>1. Crea un objeto Seq con la secuencia ‘ATCG’. ¿Cuántos residuos tiene?
+¿Cuáles son las tres primeras letras? ¿Y la última? ¿Cuántas adeninas tiene?
+Convierte la secuencia en una cadena de texto normal sin alfabeto.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">Bio.Seq</span> <span class="kn">import</span> <span class="n">Seq</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">secuencia</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="s1">&#39;ATCG&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">secuencia</span>
+<span class="go">Seq(&#39;ATCG&#39;, Alphabet())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">secuencia</span>
+<span class="go">ATCG</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">secuencia</span><span class="p">)</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">secuencia</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">Seq(&#39;ATC&#39;, Alphabet())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">secuencia</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;G&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">secuencia</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">secuencia</span><span class="p">)</span>
+<span class="go">&#39;ATCG&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Crea la secuencia reversa y complementaria de ‘ATCG’.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">secuencia</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="s1">&#39;ATCG&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">secuencia</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()</span>
+<span class="go">Seq(&#39;CGAT&#39;, Alphabet())</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Traduce la secuencia ‘ATGGCCATTGT’ a proteína.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">secuencia</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="s1">&#39;ATGGCCATTGT&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">secuencia</span><span class="o">.</span><span class="n">translate</span><span class="p">()</span>
+<span class="go">Seq(&#39;MAI&#39;, ExtendedIUPACProtein())</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Crea dos secuencias ‘ATGGCCATTGT’ y comprueba si son iguales.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">secuencia</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="s1">&#39;ATGGCCATTGT&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">secuencia2</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="s1">&#39;ATGGCCATTGT&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">secuencia</span> <span class="o">==</span> <span class="n">secuencia2</span>
+<span class="go">/usr/local/lib/python2.6/dist-packages/biopython-1.55-py2.6-linux-x86_64.egg/Bio/Seq.py:197:</span>
+<span class="go">FutureWarning: In future comparing Seq objects will use string comparison</span>
+<span class="go">(not object comparison). Incompatible alphabets will trigger a warning</span>
+<span class="go">(not an exception). In the interim please use id(seq1)==id(seq2) or</span>
+<span class="go">str(seq1)==str(seq2) to make your code explicit and to avoid this warning.</span>
+<span class="go">&quot;and to avoid this warning.&quot;, FutureWarning)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">secuencia</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">secuencia2</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span><span class="p">(</span><span class="n">secuencia</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">secuencia2</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span><span class="p">(</span><span class="n">secuencia</span><span class="p">)</span>
+<span class="go">140353539658896</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span><span class="p">(</span><span class="n">secuencia2</span><span class="p">)</span>
+<span class="go">140353539660880</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Crea un SeqRecord con la secuencia ‘ATCG’, la id ‘secuencia’ y la descripción ‘prueba’.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">Bio.Seq</span> <span class="kn">import</span> <span class="n">SeqRecord</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SeqRecord</span><span class="p">(</span><span class="n">Seq</span><span class="p">(</span><span class="s1">&#39;ATCG&#39;</span><span class="p">),</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;secuencia&#39;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;prueba&#39;</span><span class="p">)</span>
+<span class="go">SeqRecord(seq=Seq(&#39;ATCG&#39;, Alphabet()), id=&#39;secuencia&#39;,</span>
+<span class="go">          name=&#39;&lt;unknown name&gt;&#39;, description=&#39;prueba&#39;, dbxrefs=[])</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Leer un fichero de secuencias <a class="reference download internal" download="" href="../_downloads/a434e93019e9b8a9dede3c8744094ef1/seqs_2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">fasta</span></code></a> y hacerlas todas minúsculas.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+
+<span class="k">def</span> <span class="nf">hacer_fasta_minusculas</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
+    <span class="s1">&#39;Lee las secuencias de un fichero y las hace minusculas&#39;</span>
+
+    <span class="k">for</span> <span class="n">seq_record</span> <span class="ow">in</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">fichero</span><span class="p">,</span> <span class="s1">&#39;fasta&#39;</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="s1">&#39;&gt;&#39;</span> <span class="o">+</span> <span class="n">seq_record</span><span class="o">.</span><span class="n">id</span>
+        <span class="nb">print</span> <span class="nb">str</span><span class="p">(</span><span class="n">seq_record</span><span class="o">.</span><span class="n">seq</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">hacer_fasta_minusculas</span><span class="p">(</span><span class="s1">&#39;secuencias.fasta&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Pasar un fichero de <a class="reference download internal" download="" href="../_downloads/e6bd4ef5390df7bb1e3b35d49ffd2251/sequence.gb"><code class="xref download docutils literal notranslate"><span class="pre">genbank</span></code></a> a fasta.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+
+<span class="k">def</span> <span class="nf">convertir_secuencia</span><span class="p">(</span><span class="n">fichero_entrada</span><span class="p">,</span> <span class="n">formato_entrada</span><span class="p">,</span>
+                        <span class="n">fichero_salida</span><span class="p">,</span>  <span class="n">formato_salida</span><span class="p">):</span>
+    <span class="s1">&#39;Convierte un fichero de secuencia de un formato a otro&#39;</span>
+
+    <span class="n">secuencias</span> <span class="o">=</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">fichero_entrada</span><span class="p">,</span> <span class="n">formato_entrada</span><span class="p">)</span>
+    <span class="n">SeqIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">secuencias</span><span class="p">,</span> <span class="n">fichero_salida</span><span class="p">,</span> <span class="n">formato_salida</span><span class="p">)</span>
+
+    <span class="c1">#Alternativamente se podria utilizar la funcion convert</span>
+    <span class="c1">#esto es mas eficiente</span>
+    <span class="c1">#SeqIO.convert(fichero_entrada, formato_entrada,</span>
+    <span class="c1">#              fichero_salida, formato_salida)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">formato_entrada</span> <span class="o">=</span> <span class="s1">&#39;genbank&#39;</span>
+    <span class="n">fichero_entrada</span> <span class="o">=</span> <span class="s1">&#39;sequence.gb&#39;</span>
+    <span class="n">formato_salida</span>  <span class="o">=</span> <span class="s1">&#39;fasta&#39;</span>
+    <span class="n">fichero_salida</span>  <span class="o">=</span> <span class="s1">&#39;sequence.fasta&#39;</span>
+    <span class="n">convertir_secuencia</span><span class="p">(</span><span class="n">fichero_entrada</span><span class="p">,</span> <span class="n">formato_entrada</span><span class="p">,</span>
+                        <span class="n">fichero_salida</span><span class="p">,</span>  <span class="n">formato_salida</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Filtrar las secuencias de un fichero <a class="reference download internal" download="" href="../_downloads/5f90ad3839d6d4610b7f18a584df3d82/seqs_illumina.fastq"><code class="xref download docutils literal notranslate"><span class="pre">sanger</span> <span class="pre">fastq</span></code></a> por calidad media.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+
+<span class="k">def</span> <span class="nf">filtrar_secuencias</span><span class="p">(</span><span class="n">fichero_entrada</span><span class="p">,</span> <span class="n">fichero_salida</span><span class="p">,</span>
+                       <span class="n">umbral_calidad</span><span class="p">):</span>
+    <span class="s1">&#39;Dado un fichero fastq filtra las secuencias por calidad&#39;</span>
+
+    <span class="n">formato</span> <span class="o">=</span> <span class="s1">&#39;fastq&#39;</span>
+
+    <span class="c1">#Esto no funcionara para millones de secuencias</span>
+    <span class="c1">#porque lo carga todo en memoria, habria que usar</span>
+    <span class="c1">#generadores</span>
+    <span class="n">secuencias_filtradas</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">seq_record</span> <span class="ow">in</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">fichero_entrada</span><span class="p">,</span>
+                                  <span class="n">formato</span><span class="p">):</span>
+        <span class="n">calidades</span> <span class="o">=</span> <span class="n">seq_record</span><span class="o">.</span><span class="n">letter_annotations</span><span class="p">[</span><span class="s1">&#39;phred_quality&#39;</span><span class="p">]</span>
+
+        <span class="n">calidad_media</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">calidades</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">calidades</span><span class="p">)</span>
+
+        <span class="nb">print</span> <span class="n">calidad_media</span>
+
+        <span class="k">if</span> <span class="n">calidad_media</span> <span class="o">&lt;</span> <span class="n">umbral_calidad</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">secuencias_filtradas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seq_record</span><span class="p">)</span>
+
+    <span class="n">SeqIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">secuencias_filtradas</span><span class="p">,</span> <span class="n">fichero_salida</span><span class="p">,</span> <span class="n">formato</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">filtrar_secuencias</span><span class="p">(</span><span class="s1">&#39;seqs_illumina.fastq&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;seqs_filtradas.fastq&#39;</span><span class="p">,</span>
+                       <span class="mi">35</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="modulos.html">Módulos</a>-->
+                    <a class="prev" href="modulos.html" title="Módulos">previous</a>
+                    |
+                    <!--<a class="next" href="scipy.html">Numpy</a>-->
+                    <a class="next" href="scipy.html" title="Numpy">next</a>
+                    |
+
+                <a class="index" href="/courses/linux/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

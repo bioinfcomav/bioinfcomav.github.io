@@ -1,0 +1,103 @@
+
+Nuestro primer programa
+=======================
+
+Tal vez la mejor forma de aprender a programar sea haciéndolo, de modo que antes de explicar nada más sobre Python vamos a crear un programa que realice un análisis sencillo.
+En nuestro trabajo como biólogos una de las tareas más habituales consiste en leer unos datos, analizarlos y escribir el resultado.
+El proceso puede resumirse como:
+
+  * Leer un fichero.
+  * Realizar un análisis con los datos leídos.
+  * Imprimir o escribir los resultados en un nuevo fichero o en la pantalla.
+
+Python dispone de métodos que permiten leer ficheros de una forma muy sencilla.
+Esto no es casual ya que una de las razones que convierten a Python en una buena elección para el procesamiento de datos biológicos es precisamente esta.
+
+El problema que queremos resolver deriva de un experimento de expresión génica.
+Con un *microarray* hemos determinado la intensidad de la expresión de una serie de genes.
+El experimento se ha repetido tres veces y en el fichero de resultado tenemos el resultado de las tres réplicas para todas las muestras.
+Nuestro objetivo es crear un nuevo fichero en el que cada muestra esté representada por una sola columna promedio.
+El fichero de resultados del experimento de expresión tiene el formato::
+
+  gen1 1.2 1.3 1.4 7.6 6.5 8.7
+  gen2 4.5 3.4 3.9 2.5 3.2 3.3
+  gen3 9.6 8.7 8.3 5.5 5.4 4.5
+
+En cada línea hay tres tripletes de números que hemos de promediar.
+Para resolver el problema deberíamos escribir un programa que haga lo siguiente::
+
+  Para cada línea en el fichero:
+    * Dividir la línea en una lista de varios elementos
+    * Promediar los elementos de tres en tres
+    * Imprimir el resultado
+
+El programa anterior consiste en una serie de acciones que deben ser ejecutadas secuencialmente.
+En primer lugar se ejecuta la primera línea, se pasa depués a la segunda y se continua secuencialmente hasta que el programa termina.
+
+Este pseudocódigo podríamos traducirlo a sentencias y funciones de Python casi línea por línea::
+
+ fichero = open('expresion.txt')
+ for linea in fichero:
+      elementos = linea.strip().split()
+      gen = elementos[0]
+      media1 = (float(elementos[1]) + float(elementos[2]) + float(elementos[3])) / 3.0
+      media2 = (float(elementos[4]) + float(elementos[5]) + float(elementos[6])) / 3.0
+      print gen, media1, media2
+
+Veamos cual es la función de cada una de las líneas de este pequeño programa.
+
+::
+
+  fichero = open('expresion.txt')
+   
+En esta línea se abre el fichero de texto con la función *open* para más tarde poder leer las líneas que en él hay contenidas.
+Una vez abierto el objeto fichero queda listo para leer líneas en él de forma secuencial.
+
+::
+
+ for linea in fichero:
+
+La sentencia *for* podría traducirse como *para cada*, en este caso "para cada línea en el fichero" realizar las siguientes acciones.
+En casi todos los lenguajes de programación hay sentencias *for* similares a esta.
+Una vez el programa llega a este punto entra en un bucle que se repetirá tantas veces como elementos haya disponibles para el *for*.
+En ese caso el bucle se repetirá para cada una de las líneas.
+
+La serie de acciones a realizar para cada una de las líneas se especifican en las líneas siguentes.
+¿Cómo sabe Python cuáles de las líneas siguientes son las que deben ser aplicadas a cada una de las líneas que la sentencia *for* obtenga? Por la indentación.
+En Python la indentación tiene un significado sintáctico, las líneas con una misma indentación pertenecen a un mismo bloque del programa.
+En el ejemplo que nos ocupa las cinco siguientes líneas al *for* están indentadas con cuatro espacios extra.
+Python interpreta esta indentación como que estas cuatro líneas deben ser ejecutadas en cada una de las iteraciones del bucle.
+
+::
+
+      elementos = linea.strip().split()
+
+La línea que es una cadena de texto terminada en un retorno de carro se divide en una lista de cadena de texto.
+Para cada línea se obtendrá una lista de los elementos que se encuentren separados por espacios.
+
+::
+
+      gen = elementos[0]
+
+El nombre del gen, presente en la el primer elmento de la lista, se guarda en la variable gen.
+
+::
+
+      media1 = (float(elementos[1]) + float(elementos[2]) + float(elementos[3])) / 3.0
+      media2 = (float(elementos[4]) + float(elementos[5]) + float(elementos[6])) / 3.0
+
+Calculamos la media de los elementos correspondientes a la primera y la segunda muestras.
+Dado que las líneas del texto se han leido como cadenas de texto para poder sumarlas debemos primero convertirlas en números con coma flotante (*float*).
+
+Debemos tener la precaución, cuando hagamos divisiones en Python 2.x, de recordar que si tanto el dividendo como el divisor son enteros la división arrojará un resultado entero.
+En este caso tanto el dividendo como el divisor son *float* por lo que esto no sucederá.
+
+::
+
+       print gen, media1, media2
+
+Por último, para cada línea imprimimos el resultado utilizando la sentencia *print*.
+*print* escribe en la salida estándar (*standard output*).
+Si damos a *print* varios elementos para imprimir introducirá una espacio para separar cada pareja.
+Además *print* añadirá un retorno de carro tras imprimir todos los elmentos con lo que todo quedará listo para imprimir una nueva línea.
+

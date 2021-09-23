@@ -1,0 +1,575 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Mapping &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="SNP calling" href="snp_calling.html" />
+    <link rel="prev" title="Sequence assembly" href="assembly.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sequencing_technologies.html">Sequencing technologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ngs_applications_examples.html">NGS application examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_analysis_software.html">NGS analysis software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmd_primer.html">Command line primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_file_formats.html">NGS sequence file formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read_cleaning.html">NGS read cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assembly.html">Sequence assembly</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sequence mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snp_calling.html">SNP calling and filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html">NGS expression analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html#practical-tasks">Practical tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_files.html">Dealing with big result files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bedtools.html">BEDTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maize_snp_calling.html">Maize SNP calling practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice.html">Final practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice_walkthrough.html">Final practice walkthrough</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="mapping">
+<h1>Mapping<a class="headerlink" href="#mapping" title="Permalink to this headline">¶</a></h1>
+<section id="assembly-versus-mapping">
+<h2>Assembly versus mapping<a class="headerlink" href="#assembly-versus-mapping" title="Permalink to this headline">¶</a></h2>
+<p>Once we have a collection of reads there are two different kinds of analyses.
+If we do not have any previous genomic information we would have to assemble the reads into a genome or transcriptome, as we have already seen in the assembly section.
+Alternatively, if we had genome already available we could map our reads against that genome.
+Although both analyses could seem to be similar they are very different.
+To assemble a genome is computationally much costly than to do a mapping.
+Assembling the human genome was a difficult task, re-sequencing and mapping the reads from a new individual is much more amenable.</p>
+<p>The main computational difference is that the typical software used to assemble requires a time that depends on the total reads length squared or the genome length squared (or quite a lot of memory) while the mapping is just lineal with the reads length.
+For a review take a look at <a class="reference external" href="http://www.nature.com/nmeth/journal/v6/n11s/abs/nmeth.1376.html">Sense from sequence reads</a>, but the take home message is that the assembly is time and memory consuming while the mapping can be done in standard computer.</p>
+<p>Also, it is important to notice that the read length is a critical parameter for the assemblies, but this is not the case for the mapping.
+We can map short reads with ease and high accuracy in most cases.
+<a class="reference external" href="http://www.plosone.org/article/info:doi/10.1371/journal.pone.0006323">Palmieri and Schlötterer</a> reviewed this aspect in 2009.</p>
+</section>
+<section id="id1">
+<h2>Mapping<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The mapping is the process of comparing each one of the reads with the reference genome.
+We will obtain one alignment, or more, between each read and the genome.</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="_images/mapping_presentation.png"><img alt="_images/mapping_presentation.png" src="_images/mapping_presentation.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="_downloads/4ca00b3556425c9d64f5c464a2e8ae7e/mapping.odp"><code class="xref download docutils literal notranslate"><span class="pre">Sequence</span> <span class="pre">Mapping</span></code></a> (<a class="reference download internal" download="" href="_downloads/ade1c54cc4e85d94048945d2ce47d14d/mapping.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Like for any other bioinformatic task there is a lot of mapping software available.
+The most commonly used programs are <a class="reference external" href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">bowtie2</a> and <a class="reference external" href="http://bio-bwa.sourceforge.net/">bwa</a>.
+These tools differ on the algorithm used, the sensitivity, the memory requirements, the speed, and the sequence length requirements.</p>
+<p>Seqanswers keep a comprehensive list of <a class="reference external" href="http://seqanswers.com/wiki/How-to/short_read_aligners">mappers</a>.
+In <a class="reference external" href="http://www.nature.com/srep/2011/110805/srep00055/full/srep00055.html">Next generation sequencing has lower sequence coverage and poorer SNP-detection capability in the regulatory regions</a> the authors review some of these programs.</p>
+</section>
+<section id="sam-format">
+<h2>SAM format<a class="headerlink" href="#sam-format" title="Permalink to this headline">¶</a></h2>
+<p>In general all mappers render the result in a common file format, the <a class="reference external" href="http://samtools.sourceforge.net/SAM1.pdf">SAM</a> format.
+This format is not meant for human consumption, although we can open the text version of the file.
+There is a growing collection of software created for dealing with these files. We can merge, sort, filter, realign and browse them. Some useful programs are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://samtools.sourceforge.net/">samtools</a> and <a class="reference external" href="http://samtools.sourceforge.net/">picard</a> to merge, sort and filter.</p></li>
+<li><p><a class="reference external" href="http://www.broadinstitute.org/igv/">IGV</a> for browsing.</p></li>
+<li><p><a class="reference external" href="http://www.broadinstitute.org/gsa/wiki/index.php/The_Genome_Analysis_Toolkit">GATK</a> to recalibrate the quality scores, to realign the sequences and many other algorithms.</p></li>
+</ul>
+</div></blockquote>
+<p>Also the most common SNP callers would require a SAM file to work.</p>
+<p>We can encounter SAM files in two flavors: SAM and BAM. The BAM is the binary version and the SAM is just the equivalent text file. They hold exactly the same information and we can convert between them with samtools.
+These files are composed of two parts, a header in which the sequences used as references are named and the alignment section in which the alignments for all reads are shown.
+The read groups are defined also in the header.
+A read group is a collection of reads that share some characteristics like:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Sample. Name of the individual sequenced.</p></li>
+<li><p>Library.</p></li>
+<li><p>Platform. Technology used (454, Sanger, Illumina, Solid)</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="sam-realignment">
+<h2>SAM realignment<a class="headerlink" href="#sam-realignment" title="Permalink to this headline">¶</a></h2>
+<p>The mapping is done read by read (pairwise instead of multiple alignment), so the alignment obtained could present some artifacts.
+There are a couple of ways to avoid these artifacts.
+One is to inspect the alignment in order to realign the regions with problems to fix them.
+Another is to mark those problematic regions in order to avoid calling SNPs in there.</p>
+<p>The GATK software has an option to <a class="reference external" href="http://www.broadinstitute.org/gsa/wiki/index.php/Local_realignment_around_indels">realign</a> a BAM file generating a new one with these problems solved.
+It would be specially advisable running this analysis, specially if we are going to take into account the small indels.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reference</span> <span class="n">CAATC</span>   <span class="n">realignment</span> <span class="n">CAATC</span>
+<span class="n">read1</span>     <span class="n">CA</span><span class="o">-</span><span class="n">TC</span>      <span class="o">----&gt;</span>    <span class="n">CA</span><span class="o">-</span><span class="n">TC</span>
+<span class="n">read2</span>     <span class="n">C</span><span class="o">-</span><span class="n">ATC</span>               <span class="n">CA</span><span class="o">-</span><span class="n">TC</span>
+</pre></div>
+</div>
+<p>samtools has the option (calmd) to calculate a probability for each position in the BAM file of having alignment artifacts.
+samtools calculates a probability for each position of being incorrectly aligned.
+The results is a Phred-scaled probability called Base Alignment Quality (BAQ).
+This BAQ can be combined with the sequencing quality to obtain the probability for each position of being a sequening error or a misalignment.</p>
+</section>
+<section id="duplicated-reads">
+<h2>Duplicated reads<a class="headerlink" href="#duplicated-reads" title="Permalink to this headline">¶</a></h2>
+<p>The reads that originate from the same original template are considered duplicated, as we already discussed in the read cleaning section.
+These duplicated reads align exactly at the same position on the reference genome because their sequence starts exactly at the same point.</p>
+<p>If we ignored the sequencing errors the duplicated reads should had exactly the same sequence, but there will be errors.
+One way to detect them is to look for sequences that are almost identical (the differences being to the sequencing errors) and that align exactly in the 5’ end.
+If we had pair ends both the forward and the reverse sequencing would had to match and they would be detected more easily.
+This detection of duplicates is eased once we have all reads mapped to the reference, so in practice unless we’re assembling it tends to be carried out on the BAM files.
+The algorithms try to look for reads that map exactly in the same reference location.</p>
+<p>Both samtools and picard have utilities to remove or mark those reads from the BAM files.
+It is a usual practice to locate all the duplicates and then to keep only one read from them, the one with the best quality.
+From the picard wiki:</p>
+<blockquote>
+<div><p>Q: How does MarkDuplicates work?
+A: Essentially what it does (for pairs; single-end data is also handled) is to find the 5’ coordinates and mapping orientations of each read pair. When doing this it takes into account all clipping that has taking place as well as any gaps or jumps in the alignment. You can thus think of it as determining “if all the bases from the read were aligned, where would the 5’ most base have been aligned”. It then matches all read pairs that have identical 5’ coordinates and orientations and marks as duplicates all but the “best” pair. “Best” is defined as the read pair having the highest sum of base qualities as bases with Q &gt;= 15.</p>
+</div></blockquote>
+<p>Another software capable of looking for duplicates is <a class="reference external" href="https://github.com/GregoryFaust/samblaster">samblaster</a>.</p>
+</section>
+<section id="practical-tasks">
+<h2>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this headline">¶</a></h2>
+<section id="mapping-pipeline">
+<h3>Mapping Pipeline<a class="headerlink" href="#mapping-pipeline" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Index the reference secuence. Each reference/genome only needs to be indexed once for each mapper. Each mapper has it own command to index the reference.</p></li>
+<li><p>Map the reads. Usually the mappers return a file in sam format.</p></li>
+<li><p>If the output of the mapper is a sam, convert it to bam.</p></li>
+<li><p>Sort the bam</p></li>
+<li><p>Index the bam</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="read-mapping-with-bowtie2">
+<h3>Read mapping with bowtie2<a class="headerlink" href="#read-mapping-with-bowtie2" title="Permalink to this headline">¶</a></h3>
+<p>1. Align the <a class="reference download internal" download="" href="_downloads/aac05c3b9bf5b4911c5db742beb7c98a/brca_reads.fastq"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a> to the <a class="reference download internal" download="" href="_downloads/c107eb5975f56730b01f66c669729a08/brca.fasta"><code class="xref download docutils literal notranslate"><span class="pre">brca</span></code></a> sequence with <a class="reference external" href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">Bowtie2</a> creating a directory named brca.
+(Take a look at the <a class="reference external" href="http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml">Bowtie2 manual</a> first).</p>
+<p>The first thing to do is to create the index. In a new terminal execute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~$ cd brca/
+ngs_user@machine:~/brca$ pwd
+/home/ngs_user/brca
+ngs_user@machine:~/brca$ ls
+brca.fasta  brca_reads.fastq
+ngs_user@machine:~/brca$ bowtie2-build brca.fasta brca_index
+(...)
+Total time for backward call to driver() for mirror index: 00:00:02
+ngs_user@ngsmachine:~/brca$ ls
+brca.fasta brca_index.1.bt2  brca_index.3.bt2  brca_index.rev.1.bt2
+brca_index.2.bt2  brca_index.4.bt2  brca_index.rev.2.bt2  brca_reads.fasta
+</pre></div>
+</div>
+<p>Now we can align the reads to the brca sequence (our reference) with Bowtie2:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/brca$ bowtie2 --sensitive -x brca_index -U brca_reads.fastq -S bowtie2_alignment.sam
+6 reads; of these:
+  6 (100.00%) were unpaired; of these:
+    0 (0.00%) aligned 0 times
+    5 (83.33%) aligned exactly 1 time
+    1 (16.67%) aligned &gt;1 times
+100.00% overall alignment rate
+</pre></div>
+</div>
+<p>How many reads got aligned?</p>
+<p>Do we get anything different if we add the -a parameter?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/brca$ bowtie2 --sensitive -a -x brca_index -U brca_reads.fastq -S bowtie2_alignment2.sam
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create BAM files from the SAM files generated by Bowtie2.</p></li>
+</ol>
+<p>To convert between the text (SAM) and binary (BAM) files we can use samtools:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/brca$ samtools view -hb -o bowtie2_alignment.bam -S bowtie2_alignment.sam
+[samopen] SAM header is present: 1 sequences.
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Sort the alignments in the BAM file according to its chromosomal location and also index it.</p></li>
+</ol>
+<p>The sorting and indexing of the BAM files are required by a lot of tools that use the BAM files.
+Both tasks can be accomplished with samtools:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/brca$ samtools sort bowtie2_alignment.bam -o bowtie2_alignment.sorted.bam
+ngs_user@machine:~/brca$ samtools index bowtie2_alignment.sorted.bam
+</pre></div>
+</div>
+<p>Now we could view the BAM file IGV</p>
+</section>
+<section id="id3">
+<h3>Read mapping with bowtie2<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Map these <a class="reference download internal" download="" href="_downloads/e9ceb33db8093a5c19c421fdd8b1eb34/reads.fasta"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a> against this <a class="reference download internal" download="" href="_downloads/4b6536ebabe905eacc74f00266f267cd/genomic.fasta"><code class="xref download docutils literal notranslate"><span class="pre">reference</span></code></a> and view the result with igv.</p>
+<p>Index the reference:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bowtie2-build genomic.fasta index
+Total time for backward call to driver() for mirror index: 00:00:02
+</pre></div>
+</div>
+<p>Map the reads and create a SAM file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bowtie2 --sensitive -a -x index -f reads.fasta -S alignment.sam
+9 reads; of these:
+  9 (100.00%) were unpaired; of these:
+    2 (22.22%) aligned 0 times
+    7 (77.78%) aligned exactly 1 time
+    0 (0.00%) aligned &gt;1 times
+77.78% overall alignment rate
+</pre></div>
+</div>
+<p>How many sequences have been mapped?</p>
+<p>Create a sorted BAM to be able to use igv.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ samtools view -hb -o alignment.bam -S alignment.sam
+[samopen] SAM header is present: 1 sequences.
+$ samtools sort alignment.bam -o alignment.sorted.bam
+$ samtools index alignment.sorted.bam
+</pre></div>
+</div>
+</section>
+<section id="map-454-reads">
+<h3>Map 454 reads<a class="headerlink" href="#map-454-reads" title="Permalink to this headline">¶</a></h3>
+<p>Download some <a class="reference download internal" download="" href="_downloads/225cf5a7139138e7e667d0c33f00c272/maize_454.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">454</span> <span class="pre">reads</span></code></a> with its corresponding reference and map them using bwa mem.</p>
+<p>First we create a directory to do the practice and uncompress the reads in it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~$ cd
+ngs_user@machine:~$ mkdir 454
+ngs_user@machine:~$ cd 454/
+ngs_user@machine:~/454$ ls
+maize_454.tar.gz
+ngs_user@machine:~/454$ tar -xvzf maize_454.tar.gz
+maize_454/maize_unigene_ref.fasta
+maize_454/root.454.fastq
+maize_454/
+</pre></div>
+</div>
+<p>We have to index the reference:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/454$ bwa index -p reference -a bwtsw maize_454/maize_unigene_ref.fasta
+[bwa_index] Pack FASTA... 0.03 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=614110, availableWord=780628
+(...)
+ngs_user@machine:~/454$ ls
+maize_454         reference.amb  reference.bwt  reference.sa
+maize_454.tar.gz  reference.ann  reference.pac
+</pre></div>
+</div>
+<p>Now we can map the reads against the reference using the mem algorithm:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/454$ bwa mem reference maize_454/root.454.fastq &gt; mapped_res.sam
+[bsw2_aln] read 4888 sequences/pairs (1034913 bp) ...
+[main] Version: 0.7.2-r351
+[main] CMD: bwa mem reference maize_454/root.454.fastq
+[main] Real time: 8.019 sec; CPU: 6.148 sec
+</pre></div>
+</div>
+</section>
+<section id="map-illumina-reads-against-the-human-mithocondrial-reference">
+<h3>Map Illumina reads against the human mithocondrial reference<a class="headerlink" href="#map-illumina-reads-against-the-human-mithocondrial-reference" title="Permalink to this headline">¶</a></h3>
+<p>Map the <a class="reference download internal" download="" href="_downloads/5f32e22df4786c22a53d086e78141026/mito_reads.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">Yoruba</span> <span class="pre">reads</span></code></a> to the human <a class="reference download internal" download="" href="_downloads/4ded52761aa122e7c608904aa85eb130/mito_human_ref_nc_012920.gb"><code class="xref download docutils literal notranslate"><span class="pre">mithocondrial</span> <span class="pre">reference</span></code></a> using bowtie2.</p>
+<p>First we prepare the directory and we download the reference and the reads.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~$ cd
+ngs_user@machine:~$ pwd
+/home/ngs_user
+ngs_user@machine:~$ mkdir mito
+ngs_user@machine:~$ cd mito/
+ngs_user@machine:~/mito$ ls
+mito_human_ref_nc_012920.gb  mito_reads.tar.gz
+</pre></div>
+</div>
+<p>The reference is in genbank format.
+To index it we have to transform it to fasta format.
+We can do it with convert_format included in the seq_crumbs package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ convert_format -f fasta mito_human_ref_nc_012920.gb -o mito_human_ref.fasta
+</pre></div>
+</div>
+<p>Now we can index the mithocondrial genome:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ bowtie2-build mito_human_ref.fasta mito_human_index
+Input files DNA, FASTA:
+  mito_human_ref.fasta
+Reading reference sizes
+  Time reading reference sizes: 00:00:00
+Calculating joined length
+Writing header
+Reserving space for joined string
+</pre></div>
+</div>
+<p>The reads to be mapped are contained in a compressed file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ tar -xvzf mito_reads.tar.gz
+mito_reads_pe1.fastq.gz
+mito_reads_pe2.fastq.gz
+</pre></div>
+</div>
+<p>Now we can align the reads to the reference creating a SAM file in the process.
+To do it we have to take some details into consideration.
+The read files are compressed with gzip, but that is fine because bowtie2 can deal with compressed files and it saves a lot of disk space.
+We have paired reads and we have to inform bowtie2 that both read files are not independent, but that they are paired.
+We do it using the options <em>-1</em> and <em>-2</em>.
+We also can set one of the presets like <em>–very-fast</em>, <em>–sensitive</em> or <em>–very-sensitive-local</em>.
+We could do the alignment with the very-fast setting.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ bowtie2 --very-fast -x mito_human_index -1 mito_reads_pe1.fastq.gz -2 mito_reads_pe2.fastq.gz -S aligned_reads.sam
+10000 reads; of these:
+10000 (100.00%) were paired; of these:
+  5101 (51.01%) aligned concordantly 0 times
+  4899 (48.99%) aligned concordantly exactly 1 time
+  0 (0.00%) aligned concordantly &gt;1 times
+  ----
+  5101 pairs aligned concordantly 0 times; of these:
+    4581 (89.81%) aligned discordantly 1 time
+  ----
+  520 pairs aligned 0 times concordantly or discordantly; of these:
+    1040 mates make up the pairs; of these:
+      737 (70.87%) aligned 0 times
+      303 (29.13%) aligned exactly 1 time
+      0 (0.00%) aligned &gt;1 times
+96.31% overall alignment rate
+</pre></div>
+</div>
+<p>Were most of the reads mapped to the reference?
+Would it be any difference if we were to use the most sensible preset setting: <em>–very-sensitive-local</em>?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ bowtie2 --very-sensitive-local -x mito_human_index -1 mito_reads_pe1.fastq.gz -2 mito_reads_pe2.fastq.gz -S aligned_reads.sam
+10000 reads; of these:
+10000 (100.00%) were paired; of these:
+  4966 (49.66%) aligned concordantly 0 times
+  5034 (50.34%) aligned concordantly exactly 1 time
+  0 (0.00%) aligned concordantly &gt;1 times
+  ----
+  4966 pairs aligned concordantly 0 times; of these:
+    4905 (98.77%) aligned discordantly 1 time
+  ----
+  61 pairs aligned 0 times concordantly or discordantly; of these:
+    122 mates make up the pairs; of these:
+      62 (50.82%) aligned 0 times
+      60 (49.18%) aligned exactly 1 time
+      0 (0.00%) aligned &gt;1 times
+99.69% overall alignment rate
+</pre></div>
+</div>
+<p>Why do you think this is happening?</p>
+</section>
+<section id="create-a-sorted-and-indexed-bam">
+<h3>Create a sorted and indexed BAM<a class="headerlink" href="#create-a-sorted-and-indexed-bam" title="Permalink to this headline">¶</a></h3>
+<p>Transform the SAM file obtained in the previous task into a sorted and indexed BAM file.</p>
+<p>Most of the software that deals with SAM files require a sorted and indexed BAM file.
+We can transform from the text based SAM to the binary BAM using the samtools view command.
+When the SAM file is created by the mapper the reads are sorted just like in the fastq read input file, but for most applications the reads have to be sorted by their location in the reference genome.
+The index facilitates the access to the reads located at any random location of the reference genome.
+samtools also has commands to sort and index the BAM file.
+Another alternative would be to use Picard, a java-based samtools alternative, to do the indexing an sorting.</p>
+<p>From SAM to BAM:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ pwd
+/home/ngs_user/mito
+ngs_user@machine:~/mito$ ls aligned_reads.sam
+aligned_reads.sam
+ngs_user@machine:~/mito$ samtools view -b -S -o aligned_reads.bam aligned_reads.sam
+[samopen] SAM header is present: 1 sequences.
+</pre></div>
+</div>
+<p>Sort and index:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ samtools sort aligned_reads.bam -o sorted_alignments.bam
+ngs_user@machine:~/mito$ ls
+aligned_reads.bam  sorted_alignments.bam
+ngs_user@machine:~/mito$ samtools index sorted_alignments.bam
+ngs_user@machine:~/mito$ ls *bam*
+aligned_reads.bam  sorted_alignments.bam  sorted_alignments.bam.bai
+</pre></div>
+</div>
+<p>We could use this sorted BAM to do any downstream analysis or to visualize it with IGV.</p>
+</section>
+<section id="taking-a-look-at-a-bam-file">
+<h3>Taking a look at a BAM file<a class="headerlink" href="#taking-a-look-at-a-bam-file" title="Permalink to this headline">¶</a></h3>
+<p>We can visualize a sorted and indexed BAM file using the <a class="reference external" href="http://www.broadinstitute.org/igv/">Integrative Genome Viewer</a> (IGV).
+IGV has an extensive <a class="reference external" href="http://www.broadinstitute.org/igv/UserGuide">User Guide</a>, so if you have any doubts refer to it.
+IGV is capable of opening and showing along the genome not just the BAM files, but also GFF, VCF, BED and other files.</p>
+<p>Before loading our BAM file we have to import our reference genome into IGV: Genomes -&gt; Create Genome File.</p>
+<a class="reference internal image-reference" href="_images/igv_import_genome.png"><img alt="_images/igv_import_genome.png" class="align-center" src="_images/igv_import_genome.png" style="width: 400px;" /></a>
+<p>Now we can load the mapping into IGV: File -&gt; Load from file and load the sorted and indexed BAM file.</p>
+<a class="reference internal image-reference" href="_images/igv_load_bam.png"><img alt="_images/igv_load_bam.png" class="align-center" src="_images/igv_load_bam.png" style="width: 400px;" /></a>
+<p>We would see something like:</p>
+<a class="reference internal image-reference" href="_images/igv_mapping.png"><img alt="_images/igv_mapping.png" class="align-center" src="_images/igv_mapping.png" style="width: 600px;" /></a>
+<p>Play around with IGV, select different regions, zoom into a region and look for some SNP.</p>
+</section>
+<section id="filtering-with-samtools">
+<h3>Filtering with samtools<a class="headerlink" href="#filtering-with-samtools" title="Permalink to this headline">¶</a></h3>
+<p>The reads present in a SAM file can be filtered using the samtools view command.
+We can filter by read group, flag, mapping quality, and genome location.
+Let’s create a BAM file filtering the SAM file from the previous practice with only the reads located in the first 10 kilobases of the mithocondrial genome that have a mapping quality over 30.</p>
+<p>To be able to filter by region first we have to sort and index the bam file.</p>
+<p>Now we can filter with samtools view:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ samtools view -b -q 30 sorted_alignments.bam NC_012920.1:0-10000 &gt; filtered_alignments.bam
+</pre></div>
+</div>
+</section>
+<section id="bam-statistics">
+<h3>BAM statistics<a class="headerlink" href="#bam-statistics" title="Permalink to this headline">¶</a></h3>
+<p>How many reads do we have in the filtered BAM file that we have just created?
+We can obtain statistics about the reads present and about the number of reads marked with each flag by running the flagstat command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ samtools flagstat sorted_alignments.bam
+12076 + 0 in total (QC-passed reads + QC-failed reads)
+0 + 0 duplicates
+12076 + 0 mapped (100.00%:-nan%)
+12076 + 0 paired in sequencing
+6043 + 0 read1
+6033 + 0 read2
+6065 + 0 properly paired (50.22%:-nan%)
+12043 + 0 with itself and mate mapped
+33 + 0 singletons (0.27%:-nan%)
+0 + 0 with mate mapped to a different chr
+0 + 0 with mate mapped to a different chr (mapQ&gt;=5)
+</pre></div>
+</div>
+<p>Samtools has a command that calculates a bunch of statistics for a bam file. samtools stats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ samtools stats sorted_alignments.bam &gt;sorted_alignments.stats
+</pre></div>
+</div>
+<p>If the BAM is indexed we can also get statistics related to how many reads have been mapped against every chromsome/molecule present in the reference.
+In this case there’s only one chromosome in the mithocondrial reference:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ samtools idxstats sorted_alignments.bam
+NC_012920   16569   19938   60
+*     0       0       2
+</pre></div>
+</div>
+<p>For each chromosome in the reference we obtain a line with the following fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>chromosome/molecule name</p></li>
+<li><p>chromosome/molecule length</p></li>
+<li><p>mapped reads</p></li>
+<li><p>unmapped reads</p></li>
+</ul>
+</div></blockquote>
+<p>The last line starts with a start and count the unmapped reads that are not located in any chromosome of the reference.</p>
+</section>
+<section id="bam-merging">
+<h3>BAM merging<a class="headerlink" href="#bam-merging" title="Permalink to this headline">¶</a></h3>
+<p>Merge the BAM files corresponding to an <a class="reference download internal" download="" href="_downloads/9cea7d9b5b586bb362955f6fd3004934/illumina.bam"><code class="xref download docutils literal notranslate"><span class="pre">Illumina</span></code></a> and a <a class="reference download internal" download="" href="_downloads/8b49166355f4f57a7c3221770cccd47c/454.bam"><code class="xref download docutils literal notranslate"><span class="pre">454</span></code></a> alignments against the same reference.
+We could do it with the samtools merge utility, but it has a very limited functionality, so the recommended tool to do it would be <a class="reference external" href="http://broadinstitute.github.io/picard/command-line-overview.html#Overview">Picard tools</a>.</p>
+<p>One important detail to consider is that usually we want to attach a tag to every read to mark the original  BAM file to which it belonged before the merging.
+These tags are called read groups in the SAM file specification.
+A read group has some information attached:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ID, a read group identifier that should be unique for each read group.</p></li>
+<li><p>LB, library name.</p></li>
+<li><p>SM, sample name, name of the indiviual or the pool of individuals that have been sequenced.</p></li>
+<li><p>PL, platform/technology used to sequence the reads.</p></li>
+<li><p>PU, platform unit, usually the barcode for the reads.</p></li>
+</ul>
+</div></blockquote>
+<p>There are other optional information that can be added to the read group. The complete list is included in the header section of the SAM file specification.</p>
+<p>We add the read groups to the 454 and Illumina BAM files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~$ picard-tools AddOrReplaceReadGroups ID=illumina LB=illumina PL=illumina PU=none SM=individual1 SORT_ORDER=coordinate INPUT=illumina.bam OUTPUT=illumina.rg.bam
+ngs_user@machine:~$ picard-tools AddOrReplaceReadGroups ID=454 LB=454 PL=454 PU=none SM=individual2 SORT_ORDER=coordinate INPUT=454.bam OUTPUT=454.rg.bam
+</pre></div>
+</div>
+<p>Now that we have the read groups set we can merge both BAM files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~$ picard-tools MergeSamFiles SORT_ORDER=coordinate ASSUME_SORTED=true INPUT=454.rg.bam INPUT=illumina.rg.bam OUTPUT=merged.bam
+</pre></div>
+</div>
+</section>
+<section id="maize-mapping">
+<h3>Maize mapping<a class="headerlink" href="#maize-mapping" title="Permalink to this headline">¶</a></h3>
+<p>We are going to continue with the maize SNP calling practice.
+In the read cleaning section we prepared some 454 and Illumina cleaned reads, now we should map them against the maize transcriptome reference.</p>
+<p>If you have any problem with this practice you can read the complete <a class="reference internal" href="maize_snp_calling.html"><span class="doc">walkthrough</span></a> for this maize practice.</p>
+</section>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="assembly.html">Sequence assembly</a>-->
+                    <a class="prev" href="assembly.html" title="Sequence assembly">previous</a>
+                    |
+                    <!--<a class="next" href="snp_calling.html">SNP calling</a>-->
+                    <a class="next" href="snp_calling.html" title="SNP calling">next</a>
+                    |
+
+                <a class="index" href="/courses/sequence_analysis/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

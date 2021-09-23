@@ -1,0 +1,770 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Funciones &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Leyendo y escribiendo ficheros" href="ficheros.html" />
+    <link rel="prev" title="Ejercicios de repaso" href="ejercicios_repaso.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Iniciación a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html#el-sistema-de-ficheros">El sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_de_flujo.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html#sets">Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Funciones</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#return">return</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentando-las-funciones">Documentando las funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main">main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soluciones">Soluciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#para-saber-mas">Para saber más</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ficheros.html">Ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generadores.html">Generadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulos.html">Modulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biopython.html">Biopython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html">Ejercicios finales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html#soluciones">Soluciones</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <!-- dependencies for pytutor.js -->
+<script type="text/javascript" src="../_downloads/js/d3.v2.min.js"></script>
+<script type="text/javascript" src="../_downloads/js/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="../_downloads/js/jquery.ba-bbq.min.js"></script>
+<script type="text/javascript" src="../_downloads/js/jquery.jsPlumb-1.3.10-all-min.js "></script>
+<script type="text/javascript" src="../_downloads/js/jquery-ui-1.8.21.custom.min.js"></script>
+<link type="text/css" href="../_downloads/css/ui-lightness/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="../_downloads/js/pytutor.js"></script>
+<link rel="stylesheet" href="../_downloads/css/pytutor.css"/>
+<!-- End dependencies for pytutor.js --><section id="funciones">
+<h1>Funciones<a class="headerlink" href="#funciones" title="Permalink to this headline">¶</a></h1>
+<p>Hasta el momento en los programas que hemos hecho el flujo de ejecución ha sido más o menos lineal.
+Los programas comenzaban a ejecutarse por la primera línea y continuaban línea por línea hasta llegar a la última, en la que el programa terminaba.
+Es cierto que hemos alterado el flujo de ejecución mediante sentencias condicionales (<em>if</em>) y bucles (<em>for</em> y <em>while</em>), que nos han permitido ejecutar un bloque del código dependiendo de si una cierta condición se cumplía o no, pero este modo de programación lineal y no estructurada es un tanto limitado.
+Existen numerosos problemas que no se prestan bien a este flujo de programación lineal.
+Imaginemos, por ejemplo, que queremos escribir un programa que calcule medias aritméticas para una serie de diez conjuntos de valores, ¿escribiremos diez veces el código que calcula la media?
+Resultaría mucho más eficiente crear una función que tomase un conjunto de valores, hiciese el cálculo y devolviese la media resultante. La estructura del programa podría ser parecida a:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">definir</span> <span class="n">función</span> <span class="n">calcular_media</span><span class="p">(</span><span class="n">valores</span><span class="p">):</span>
+   <span class="n">calcular</span> <span class="n">la</span> <span class="n">media</span>
+   <span class="n">devolver</span> <span class="n">el</span> <span class="n">resultado</span>
+
+<span class="n">repetir</span> <span class="mi">10</span> <span class="n">veces</span><span class="p">:</span> <span class="p">(</span><span class="n">bucle</span> <span class="k">for</span><span class="p">)</span>
+   <span class="n">valores</span> <span class="o">=</span> <span class="n">Leer</span> <span class="n">valores</span>
+   <span class="n">resultado</span> <span class="o">=</span> <span class="n">calcular_media</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+   <span class="n">imprimir</span> <span class="n">resultado</span>
+</pre></div>
+</div>
+<p>La función <em>calcular_media</em> definida tiene un comportamiento similar a una función matemática, toma unos valores, los transforma de algún modo y devuelve el resultado.</p>
+<p>Este concepto de función no nos debe resultar ajeno ya que habíamos trabajado antes con funciones del sistema como <em>len</em>.
+<em>len</em> toma una cadena de texto, calcula cuantos caracteres tiene y devuelve el resultado.
+Python nos permite definir nuevas funciones de un modo muy sencillo.
+Por ejemplo definamos una función que dada una lista de números calcule y devuelva la media:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_media</span><span class="p">(</span><span class="n">numeros</span><span class="p">):</span>
+  <span class="n">media</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numeros</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">numeros</span><span class="p">))</span>
+  <span class="k">return</span> <span class="n">media</span>
+
+<span class="c1">#ejemplos de utilizacion</span>
+<span class="n">media</span> <span class="o">=</span> <span class="n">calcular_media</span><span class="p">([</span><span class="mf">4.7</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
+<span class="nb">print</span> <span class="n">media</span>
+
+<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span> <span class="n">calcular_media</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Para poder crear la función hemos hecho uso de dos nuevas palabras de Python: <em>def</em> y <em>return</em>.
+<em>def</em> indica al lenguaje que en esa línea vamos a comenzar a definir una nueva función.
+A continuación del <em>def</em> debemos escribir el nombre de la función, <em>calcular_media</em> en este caso, y tras el nombre la lista de argumentos que pasamos a la función entre paréntesis.
+Tras la línea de la definición del nombre viene el bloque de código que se ejecutará cada vez que llamemos a la función.
+Como siempre en Python los bloques de código quedan definidos por la indentación.
+Por último, una vez realizado el cálculo utilizamos la palabra <em>return</em> para devolver el resultado.
+Una vez definida la función podríamos utilizarla tantas veces como queramos.
+Ya no será necesario que escribamos el código del calculo de la media nunca más, puesto que siempre podremos llamar a la función.</p>
+<script type="text/javascript" src="../_downloads/medias_code_run.js"></script>
+<div id="MediasDiv"></div><p>Hemos presentado las funciones utilizando su equivalente matemático, pero en realidad una función es simplemente un bloque de código que podemos ejecutar.
+A una función podemos pasarle argumentos y nos puede devolver valores, pero ambas cosas son opcionales.
+Por ejemplo podríamos crear una función que imprimiese un saludo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">imprimir_saludo</span><span class="p">():</span>
+  <span class="nb">print</span> <span class="s1">&#39;Hola&#39;</span>
+</pre></div>
+</div>
+<p>A esta función no le hemos pasado ningún parámetro y no nos ha devuelto ningún valor.
+Simplemente cada vez que la llamemos imprimirá <em>Hola</em>.
+El uso de funciones que no requieren parámetros o no devuelven valores es más habitual de lo que podríamos pensar, de hecho son la base de una forma de construir programas denominada programación estructurada.</p>
+<p>El modo de resolver un problema complejo es dividirlo en partes.
+Escribir un bloque de código que resuelva una tarea compleja puede ser muy difícil, pero si partimos ese problema en pequeños trozos sencillos nos será fácil crear un conjunto de funciones que resuelvan esas pequeñas tareas.
+Este es el uso más habitual de las funciones, dividir problemas grandes en problemas pequeños.
+Podemos pensar en las funciones como acciones a realizar dentro del programa que estamos escribiendo.
+Algunas de estas acciones requerirán parámetros o devolverán resultados mientras que otras no.</p>
+<p>Otra ventaja de las funciones es que nos permiten reutilizar partes del código.
+Por ejemplo si tenemos que leer una tabla de datos en un programa y creamos una función para resolver el problema cuando en otro programa necesitemos leer otra tabla podremos utilizar la función que previamente habíamos definido.</p>
+<section id="return">
+<h2>return<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h2>
+<p>Las funciones pueden tener cero, uno o varias sentencias <em>return</em>.
+Podríamos, por ejemplo, crear una función que determinase si un número es impar con dos <em>return</em> .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">es_impar</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span>
+        <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>También hemos visto anteriormente que las funciones pueden no tener ningún <em>return</em>.
+En realidad, en este caso, cuando el bloque de código termine de ejecutarse se devuelve <em>None</em>.</p>
+<p><em>return</em> también se puede utilizar para devolver varios valores:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dividir_definicion_fasta</span><span class="p">(</span><span class="n">linea</span><span class="p">):</span>
+    <span class="n">nombre</span><span class="p">,</span> <span class="n">definicion</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>  <span class="c1">#elimina el &gt;</span>
+    <span class="k">return</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">definicion</span>
+
+<span class="n">nombre</span><span class="p">,</span> <span class="n">definicion</span> <span class="o">=</span> <span class="n">dividir_definicion_fasta</span><span class="p">(</span><span class="n">una_linea_cualquiera</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Internamente estos valores múltiples funcionan como <em>tuples</em> (<em>lists</em> inmutables).</p>
+<p>Las funciones en Python presentan un amplio abanico de posibilidades que no vamos a estudiar en este tutorial como: argumentos con valores por defecto, argumentos con nombre y argumentos agrupados.</p>
+</section>
+<section id="documentando-las-funciones">
+<h2>Documentando las funciones<a class="headerlink" href="#documentando-las-funciones" title="Permalink to this headline">¶</a></h2>
+<p>Para mantener el código legible conviene documentar qué hace la función, cuál es su objetivo, qué parámetros requiere y qué resultado va a devolver.
+Esto lo podríamos escribir en comentarios cercanos a la línea de la definición de la función, pero Python dispone de un sencillo mecanismo de documentación de funciones.
+Basta con crear una cadena de texto en la línea siguiente a la función para que la función quede comentada.
+Este texto será el que nos aparezca cuando pidamos la ayuda sobre el uso de la función.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_media</span><span class="p">(</span><span class="n">valores</span><span class="p">):</span>
+   <span class="sd">&#39;&#39;&#39;Dada una lista de valores numericos devuelve la media aritmetica.</span>
+
+<span class="sd">   Requiere una lista de valores.</span>
+<span class="sd">   Devuelve un float con la media aritmetica de los valores.</span>
+<span class="sd">   &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>Por convención en la primera línea de la documentación se suele escribir una sucinta descripción de la función y en las siguientes se dan los detalles relevantes.</p>
+</section>
+<section id="main">
+<h2>main<a class="headerlink" href="#main" title="Permalink to this headline">¶</a></h2>
+<p>Hasta el momento hemos creado nuestros pequeños programas sin estructura alguna.
+Simplemente hemos escrito los comandos a ejecutar uno tras otros, pero este no es el formato habitual en el que los usuarios de Python utilizan el lenguaje.
+Lo normal es incluir todo el código en alguna función.
+Por ejemplo, el programa ‘Hola mundo’ quedaría como:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decir_hola</span><span class="p">():</span>
+    <span class="nb">print</span> <span class="s1">&#39;Hola mundo&#39;</span>
+
+<span class="n">decir_hola</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>En otros lenguajes de programación esta estructura es obligatoria.
+En Python podemos elegir utilizarla o no, pero lo habitual es que el código se estructure de este modo.
+De hecho por razones que ahora no vienen al caso y que tienen que ver con los módulos lo que un programador con experiencia en Python escribiría sería:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decir_hola</span><span class="p">():</span>
+    <span class="nb">print</span> <span class="s1">&#39;Hola mundo&#39;</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">decir_hola</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Corrige el siguiente programa para calcular el área de un triángulo.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="k">def</span> <span class="nf">calcular_area_triangulo</span><span class="p">(</span><span class="n">lado1</span><span class="p">,</span> <span class="n">lado2</span><span class="p">,</span> <span class="n">lado3</span><span class="p">):</span>
+    <span class="n">semiperimetro</span> <span class="o">=</span> <span class="p">(</span><span class="n">lado1</span> <span class="o">+</span> <span class="n">lado2</span> <span class="o">+</span> <span class="n">lado3</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="n">area2</span> <span class="o">=</span> <span class="n">semiperimetro</span> <span class="o">*</span> <span class="p">(</span><span class="n">semiperimetro</span> <span class="o">-</span> <span class="n">lado1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">semiperimetro</span> <span class="o">-</span> <span class="n">lado2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">semiperimetro</span> <span class="o">-</span> <span class="n">lado3</span><span class="p">)</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">area2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">calcular_area_triangulo</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">calcular_area_triangulo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Escribe un programa que calcule el área de un triángulo utilizando la fórmula: base * altura / 2.</p></li>
+<li><p>Corrige el siguiente programa para calcular el factorial.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
+    <span class="n">acumulado</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">numero</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">acumulado</span> <span class="o">=</span> <span class="n">indice</span>
+    <span class="k">return</span> <span class="n">acumulado</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Escribe un programa que sume los números de una lista.</p></li>
+<li><p>Corrige el siguiente programa que busca palabras comunes entre dos frases.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">palabras_comuns</span><span class="p">(</span><span class="n">frase1</span><span class="p">,</span> <span class="n">frase2</span><span class="p">):</span>
+    <span class="n">set1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">frase1</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">set2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">frase2</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="n">comunes</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">palabras_comunes</span><span class="p">(</span><span class="s1">&#39;Hola caracola&#39;</span><span class="p">,</span> <span class="s1">&#39;La caracola enterrada&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Escribe una función que cuente las palabras dada una lista de frases.</p></li>
+</ol>
+<p>7. Como solución al problema de comparación de dos listas de proteínas planteado en la sección de estructuras de datos creamos un programa que repetía el bloque en el que se leían los ficheros con las listas de proteínas.
+Reescribir el programa utilizando funciones.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">albumina</span>
+<span class="n">inmunoglobulina</span>
+<span class="n">antitripsina</span>
+<span class="n">lipoproteina</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">transferrina</span>
+<span class="n">inmunoglobulina</span>
+<span class="n">antitripsina</span>
+<span class="n">protombina</span>
+</pre></div>
+</div>
+<p>Generar, a partir de esta información, las listas de proteinas exclusivas de la muestra 1 y 2 así como las proteínas que aparecen en ambos experimentos.</p>
+<ol class="arabic simple" start="8">
+<li><p>Crear un programa que contenga una función a la que podamos darle el nombre de un fichero, una lista de palabras y que imprima las líneas que contengan una de esas palabras.</p></li>
+<li><p>Reescribir el programa que calcula la media entre triplicados de un experimento de microarrays utilizando funciones.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_gen</span> <span class="n">muestra_1_1</span> <span class="n">muestra_1_2</span> <span class="n">muestra_1_3</span> <span class="n">muestra_2_1</span> <span class="n">muestra_2_2</span> <span class="n">muestra_2_3</span>
+<span class="n">gen1</span> <span class="mf">1.2</span> <span class="mf">1.3</span> <span class="mf">1.4</span> <span class="mf">7.6</span> <span class="mf">6.5</span> <span class="mf">8.7</span>
+<span class="n">gen2</span> <span class="mf">4.5</span> <span class="mf">3.4</span> <span class="mf">3.9</span> <span class="mf">2.5</span> <span class="mf">3.2</span> <span class="mf">3.3</span>
+<span class="n">gen3</span> <span class="mf">9.6</span> <span class="mf">8.7</span> <span class="mf">8.3</span> <span class="mf">5.5</span> <span class="mf">5.4</span> <span class="mf">4.5</span>
+<span class="n">gen4</span> <span class="mf">2.3</span> <span class="mf">3.2</span> <span class="mf">2.1</span> <span class="mf">3.1</span> <span class="mf">2.9</span> <span class="mf">3.2</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Dado el siguiente fichero de genotipado masivo:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">marcador</span> <span class="n">padre</span> <span class="n">madre</span> <span class="n">f1</span> <span class="n">hib1</span> <span class="n">hib2</span> <span class="n">hib3</span>
+<span class="n">snp1</span> <span class="n">GG</span> <span class="n">CC</span> <span class="n">GC</span> <span class="n">GG</span> <span class="n">GC</span> <span class="n">CC</span>
+<span class="n">snp2</span> <span class="n">AA</span> <span class="n">TT</span> <span class="n">AT</span>    <span class="n">AT</span> <span class="n">TT</span>
+<span class="n">snp3</span> <span class="n">AA</span> <span class="n">CC</span> <span class="n">AC</span> <span class="n">CC</span> <span class="n">AC</span> <span class="n">AC</span>
+</pre></div>
+</div>
+<p>Esbribir un fichero en el que el genotipo del padre sea A, la madre B y los híbridos sean H (heterocigoto), A, B o X (desconocido):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">marcador</span> <span class="n">hib1</span> <span class="n">hib2</span> <span class="n">hib3</span>
+<span class="n">snp1</span> <span class="n">A</span> <span class="n">H</span> <span class="n">B</span>
+<span class="n">snp2</span> <span class="n">X</span> <span class="n">H</span> <span class="n">B</span>
+<span class="n">snp3</span> <span class="n">B</span> <span class="n">H</span> <span class="n">H</span>
+</pre></div>
+</div>
+<p>La estructura del programa debe ser parecida a:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transformar_formato</span><span class="p">(</span><span class="n">genotipo</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">formato</span> <span class="n">arreglado</span>
+
+<span class="k">def</span> <span class="nf">cambiar_formato_genotipo</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">fichero</span><span class="p">:</span>
+    <span class="n">Si</span> <span class="n">primera</span> <span class="n">linea</span><span class="p">:</span>
+      <span class="n">imprimir</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">marcador</span><span class="p">,</span> <span class="n">genotipo</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span>
+      <span class="n">genotipo</span> <span class="o">=</span> <span class="n">transformar_formato</span><span class="p">(</span><span class="n">genotipo</span><span class="p">)</span>
+      <span class="n">imprimir</span> <span class="n">marcador</span> <span class="n">y</span> <span class="n">genotipo</span>
+
+<span class="n">cambiar_formato_genotipo</span><span class="p">(</span><span class="n">fichero</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="soluciones">
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Corrige el siguiente programa para calcular el área de un triángulo.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="k">def</span> <span class="nf">calcular_area_triangulo</span><span class="p">(</span><span class="n">lado1</span><span class="p">,</span> <span class="n">lado2</span><span class="p">,</span> <span class="n">lado3</span><span class="p">):</span>
+    <span class="n">semiperimetro</span> <span class="o">=</span> <span class="p">(</span><span class="n">lado1</span> <span class="o">+</span> <span class="n">lado2</span> <span class="o">+</span> <span class="n">lado3</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="n">area2</span> <span class="o">=</span> <span class="n">semiperimetro</span> <span class="o">*</span> <span class="p">(</span><span class="n">semiperimetro</span> <span class="o">-</span> <span class="n">lado1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">semiperimetro</span> <span class="o">-</span> <span class="n">lado2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">semiperimetro</span> <span class="o">-</span> <span class="n">lado3</span><span class="p">)</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">area2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">area</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">calcular_area_triangulo</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calcular_area_triangulo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Escribe un programa que calcule el área de un triángulo utilizando la fórmula: base * altura / 2.</p></li>
+</ol>
+<dl>
+<dt>::</dt><dd><dl class="simple">
+<dt>def calcular_area_triangulo(base, altura):</dt><dd><p>area = base * altura / 2.0
+return area</p>
+</dd>
+</dl>
+<p>print(calcular_area_triangulo(3, 5))
+print(calcular_area_triangulo(7, 3))</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>Corrige el siguiente programa para calcular el factorial.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
+    <span class="n">acumulado</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">numero</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">acumulado</span> <span class="o">*=</span> <span class="n">indice</span>
+    <span class="k">return</span> <span class="n">acumulado</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Escribe un programa que sume los números de una lista.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">suma_lista</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
+     <span class="n">acumulado</span> <span class="o">=</span> <span class="mi">0</span>
+     <span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+         <span class="n">acumulado</span> <span class="o">+=</span> <span class="n">numero</span>
+     <span class="k">return</span> <span class="n">acumulado</span>
+
+ <span class="nb">print</span><span class="p">(</span><span class="n">suma_lista</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Corrige el siguiente programa que busca palabras comunes entre dos frases.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">palabras_comunes</span><span class="p">(</span><span class="n">frase1</span><span class="p">,</span> <span class="n">frase2</span><span class="p">):</span>
+    <span class="n">set1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">frase1</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">set2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">frase2</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">comunes</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">comunes</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">palabras_comunes</span><span class="p">(</span><span class="s1">&#39;Hola caracola&#39;</span><span class="p">,</span> <span class="s1">&#39;La caracola enterrada&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Escribe una función que cuente las palabras dada una lista de frases.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">contar_palabras</span><span class="p">(</span><span class="n">lista_frases</span><span class="p">):</span>
+    <span class="n">contador</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">frase</span> <span class="ow">in</span> <span class="n">lista_frases</span><span class="p">:</span>
+        <span class="n">palabras</span> <span class="o">=</span> <span class="n">frase</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">palabras</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">palabra</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">contador</span><span class="p">:</span>
+                <span class="n">contador</span><span class="p">[</span><span class="n">palabra</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">contador</span><span class="p">[</span><span class="n">palabra</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">contador</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">contar_palabras</span><span class="p">([</span><span class="s1">&#39;Hola caracola&#39;</span><span class="p">,</span> <span class="s1">&#39;La caracola enterrada&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>7. Como solución al problema de comparación de dos listas de proteínas planteado en la sección de estructuras de datos creamos un programa que repetía el bloque en el que se leían los ficheros con las listas de proteínas.
+Reescribir el programa utilizando funciones.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">albumina</span>
+<span class="n">inmunoglobulina</span>
+<span class="n">antitripsina</span>
+<span class="n">lipoproteina</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">transferrina</span>
+<span class="n">inmunoglobulina</span>
+<span class="n">antitripsina</span>
+<span class="n">protombina</span>
+</pre></div>
+</div>
+<p>Generar, a partir de esta información, las listas de proteinas exclusivas de la muestra 1 y 2 así como las proteínas que aparecen en ambos experimentos.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">leer_proteinas</span><span class="p">(</span><span class="n">nombre_fichero</span><span class="p">):</span>
+    <span class="s1">&#39;Leer las palabras de un fichero y las devuelve en un set&#39;</span>
+
+    <span class="n">proteinas</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">nombre_fichero</span><span class="s1">&#39;):</span>
+        <span class="n">proteina</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">proteinas</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">proteina</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">proteinas</span>
+
+
+<span class="k">def</span> <span class="nf">comparar_proteinas</span><span class="p">(</span><span class="n">fichero1</span><span class="p">,</span> <span class="n">fichero2</span><span class="p">):</span>
+    <span class="s1">&#39;Compara las proteinas presentes en dos ficheros&#39;</span>
+
+    <span class="c1">#leemos la primera lista de proteinas y</span>
+    <span class="c1">#la guardamos en un set</span>
+    <span class="n">proteinas1</span> <span class="o">=</span> <span class="n">leer_proteinas</span><span class="p">(</span><span class="n">fichero1</span><span class="p">)</span>
+    <span class="n">proteinas2</span> <span class="o">=</span> <span class="n">leer_proteinas</span><span class="p">(</span><span class="n">fichero2</span><span class="p">)</span>
+
+
+    <span class="c1">#Ahora podemos hacer las comparaciones entre los</span>
+    <span class="c1">#conjuntos de proteinas</span>
+    <span class="nb">print</span> <span class="s1">&#39;Proteinas comunes&#39;</span>
+    <span class="nb">print</span> <span class="n">proteinas1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">proteinas2</span><span class="p">)</span>
+
+    <span class="nb">print</span> <span class="s1">&#39;Proteinas exclusivas de la lista 1&#39;</span>
+    <span class="nb">print</span> <span class="n">proteinas1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">proteinas2</span><span class="p">)</span>
+
+    <span class="nb">print</span> <span class="s1">&#39;Proteinas exclusivas de la lista 2&#39;</span>
+    <span class="nb">print</span> <span class="n">proteinas2</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">proteinas1</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">comparar_proteinas</span><span class="p">(</span><span class="s1">&#39;proteinas1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;proteinas2.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Crear un programa que contenga una función a la que podamos darle el nombre de un fichero, una lista de palabras y que imprima las líneas que contengan una de esas palabras.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># Dado un fichero de texto como entrada busca una lista de</span>
+<span class="c1"># patrones de texto e imprime las lineas coincidentes</span>
+
+<span class="k">def</span> <span class="nf">imprimir_lineas_coincidentes</span><span class="p">(</span><span class="n">nombre_fichero</span><span class="p">,</span> <span class="n">patrones</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Dado un fichero y unos patrones imprime las lineas coincidentes</span>
+<span class="sd">    Para cada linea del fichero se evaluara si incluye uno de los patrones</span>
+<span class="sd">    o no. Si uno de los patrones esta presente la linea se imprimira.</span>
+
+<span class="sd">    Los patrones deben ser una lista de cadenas de texto.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="c1">#este bucle se ejecutara una vez por cada linea</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;nombre_fichero&#39;</span><span class="p">):</span>
+
+        <span class="c1">#hemos de comprobar si algun patron esta en la lista</span>
+        <span class="c1">#hacemos un bucle que recorra todos los patrones</span>
+        <span class="n">algun_patron_en_linea</span> <span class="o">=</span> <span class="kc">False</span>   <span class="c1">#por defecto asumimos que</span>
+                                        <span class="c1">#ningun patron se encuentra</span>
+                                        <span class="c1">#en la linea</span>
+       <span class="k">for</span> <span class="n">patron</span> <span class="ow">in</span> <span class="n">patrones</span><span class="p">:</span>
+           <span class="k">if</span> <span class="n">patron</span> <span class="ow">in</span> <span class="n">linea</span><span class="p">:</span>
+               <span class="n">algun_patron_en_linena</span> <span class="o">=</span> <span class="kc">True</span>
+               <span class="c1">#como hemos encontrado al menos un patron</span>
+               <span class="c1">#no es necesario continuar con el bucle</span>
+               <span class="k">break</span>
+
+       <span class="c1">#una vez sabemos si para la presente linea hay algun</span>
+       <span class="c1">#patron coincidente o no podemos imprimirla</span>
+       <span class="k">if</span> <span class="n">algun_patron_en_linea</span><span class="p">:</span>
+           <span class="nb">print</span> <span class="n">linea</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+    <span class="n">nombre_fichero</span> <span class="o">=</span> <span class="s1">&#39;prueba.txt&#39;</span>
+    <span class="n">patrones</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;texto1&#39;</span><span class="p">,</span> <span class="s1">&#39;texto2&#39;</span><span class="p">]</span>
+    <span class="n">imprimir_lineas_coincidentes</span><span class="p">(</span><span class="n">nombre_fichero</span><span class="p">,</span> <span class="n">patrones</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Reescribir el programa que calcula la media entre triplicados de un experimento de microarrays utilizando funciones.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_gen</span> <span class="n">muestra_1_1</span> <span class="n">muestra_1_2</span> <span class="n">muestra_1_3</span> <span class="n">muestra_2_1</span> <span class="n">muestra_2_2</span> <span class="n">muestra_2_3</span>
+<span class="n">gen1</span> <span class="mf">1.2</span> <span class="mf">1.3</span> <span class="mf">1.4</span> <span class="mf">7.6</span> <span class="mf">6.5</span> <span class="mf">8.7</span>
+<span class="n">gen2</span> <span class="mf">4.5</span> <span class="mf">3.4</span> <span class="mf">3.9</span> <span class="mf">2.5</span> <span class="mf">3.2</span> <span class="mf">3.3</span>
+<span class="n">gen3</span> <span class="mf">9.6</span> <span class="mf">8.7</span> <span class="mf">8.3</span> <span class="mf">5.5</span> <span class="mf">5.4</span> <span class="mf">4.5</span>
+<span class="n">gen4</span> <span class="mf">2.3</span> <span class="mf">3.2</span> <span class="mf">2.1</span> <span class="mf">3.1</span> <span class="mf">2.9</span> <span class="mf">3.2</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#Dado un fichero de texto con el formato:</span>
+<span class="c1"># nombre_gen muestra_1_1 muestra_1_2 muestra_1_3 muestra_2_1 muestra_2_2 muestra_2_3</span>
+<span class="c1"># gen1 1.2 1.3 1.4 7.6 6.5 8.7</span>
+<span class="c1"># gen2 4.5 3.4 3.9 2.5 3.2 3.3</span>
+<span class="c1"># gen3 9.6 8.7 8.3 5.5 5.4 4.5</span>
+<span class="c1">#Calcula la media entre de los tres primeros valores y los tres segundos.</span>
+
+<span class="k">def</span> <span class="nf">calcular_media</span><span class="p">(</span><span class="n">valores</span><span class="p">):</span>
+   <span class="sd">&#39;&#39;&#39;Dada una lista de valores devuelve la media.</span>
+
+<span class="sd">    Los valores pueden ser cadenas de texto, int o float.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">#pasamos todos los valores a float</span>
+    <span class="n">valores</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">valores</span><span class="p">)</span>
+
+    <span class="n">media</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">media</span>
+
+
+<span class="k">def</span> <span class="nf">calcular_medias</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
+    <span class="s1">&#39;Calcula las medias para los triplicados de un microarray&#39;</span>
+
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
+        <span class="n">linea</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>   <span class="c1">#eliminamos el retorno de carro</span>
+
+        <span class="c1">#La primera linea solo hay que imprimirla</span>
+        <span class="k">if</span> <span class="s1">&#39;nombre_gen&#39;</span> <span class="ow">in</span> <span class="n">linea</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="n">linea</span>
+            <span class="c1">#para esta linea no hay que ejecutar nada</span>
+            <span class="c1">#mas en el bucle for</span>
+            <span class="k">continue</span>
+
+        <span class="n">items</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">nombre_gen</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">valores1</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+        <span class="n">valores2</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>
+        <span class="nb">print</span> <span class="n">valores1</span>
+        <span class="nb">print</span> <span class="n">valores2</span>
+
+        <span class="n">media1</span> <span class="o">=</span> <span class="n">calcular_media</span><span class="p">(</span><span class="n">valores1</span><span class="p">)</span>
+        <span class="n">media2</span> <span class="o">=</span> <span class="n">calcular_media</span><span class="p">(</span><span class="n">valores2</span><span class="p">)</span>
+
+        <span class="nb">print</span> <span class="n">nombre_gen</span><span class="p">,</span> <span class="n">media1</span><span class="p">,</span> <span class="n">media2</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+    <span class="n">calcular_medias</span><span class="p">(</span><span class="s1">&#39;microarray.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Dado el siguiente fichero de genotipado masivo:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">marcador</span> <span class="n">padre</span> <span class="n">madre</span> <span class="n">f1</span> <span class="n">hib1</span> <span class="n">hib2</span> <span class="n">hib3</span>
+<span class="n">snp1</span> <span class="n">GG</span> <span class="n">CC</span> <span class="n">GC</span> <span class="n">GG</span> <span class="n">GC</span> <span class="n">CC</span>
+<span class="n">snp2</span> <span class="n">AA</span> <span class="n">TT</span> <span class="n">AT</span>    <span class="n">AT</span> <span class="n">TT</span>
+<span class="n">snp3</span> <span class="n">AA</span> <span class="n">CC</span> <span class="n">AC</span> <span class="n">CC</span> <span class="n">AC</span> <span class="n">AC</span>
+</pre></div>
+</div>
+<p>Esbribir un fichero en el que el genotipo del padre sea A, la madre B y los híbridos sean H (heterocigoto), A, B o X (desconocido):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">marcador</span> <span class="n">hib1</span> <span class="n">hib2</span> <span class="n">hib3</span>
+<span class="n">snp1</span> <span class="n">A</span> <span class="n">H</span> <span class="n">B</span>
+<span class="n">snp2</span> <span class="n">X</span> <span class="n">H</span> <span class="n">B</span>
+<span class="n">snp3</span> <span class="n">B</span> <span class="n">H</span> <span class="n">H</span>
+</pre></div>
+</div>
+<p>La estructura del programa debe ser parecida a:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transformar_formato</span><span class="p">(</span><span class="n">genotipo</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">formato</span> <span class="n">arreglado</span>
+
+<span class="k">def</span> <span class="nf">cambiar_formato_genotipo</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">fichero</span><span class="p">:</span>
+    <span class="n">Si</span> <span class="n">primera</span> <span class="n">linea</span><span class="p">:</span>
+      <span class="n">imprimir</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">marcador</span><span class="p">,</span> <span class="n">genotipo</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span>
+      <span class="n">genotipo</span> <span class="o">=</span> <span class="n">transformar_formato</span><span class="p">(</span><span class="n">genotipo</span><span class="p">)</span>
+      <span class="n">imprimir</span> <span class="n">marcador</span> <span class="n">y</span> <span class="n">genotipo</span>
+
+<span class="n">cambiar_formato_genotipo</span><span class="p">(</span><span class="n">fichero</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transformar_genotipo</span><span class="p">(</span><span class="n">linea_genotipo</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Transforma una linea de genotipo</span>
+
+<span class="sd">    desde:</span>
+<span class="sd">       snp1 GG CC GC GG GC CC</span>
+<span class="sd">    a:</span>
+<span class="sd">       snp1 A H B</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="c1">#no podemos hacer:</span>
+    <span class="c1">#items = linea_genotipo.split()</span>
+    <span class="c1">#</span>
+    <span class="c1">#porque los datos faltantes estan codificados</span>
+    <span class="c1">#por espacios</span>
+
+    <span class="n">marcador</span><span class="p">,</span> <span class="n">genotipos</span> <span class="o">=</span> <span class="n">linea_genotipo</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1">#dividimos el resto de genotipos</span>
+    <span class="c1">#los genotipos ahora son -&gt; GG CC GC GG GC CC</span>
+    <span class="n">genotipos_separados</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">posicion</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">genotipos</span><span class="p">),</span> <span class="mi">3</span><span class="p">):</span>
+        <span class="n">genotipo</span> <span class="o">=</span> <span class="n">genotipos</span><span class="p">[</span><span class="n">posicion</span><span class="p">:</span> <span class="n">posicion</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="n">genotipos_separados</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">genotipo</span><span class="p">)</span>
+    <span class="c1">#los genotipos ahora son una lista:</span>
+    <span class="c1"># [&#39;GG &#39;, &#39;CC &#39;, &#39;GC &#39;, &#39;GG &#39;, &#39;GC &#39;, &#39;CC &#39;]</span>
+
+
+    <span class="n">genotipo_padre</span> <span class="o">=</span> <span class="n">genotipos_separados</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1"># [&#39;CC &#39;, &#39;GC &#39;, &#39;GG &#39;, &#39;GC &#39;, &#39;CC &#39;]</span>
+    <span class="n">genotipo_madre</span> <span class="o">=</span> <span class="n">genotipos_separados</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1"># [&#39;GC &#39;, &#39;GG &#39;, &#39;GC &#39;, &#39;CC &#39;]</span>
+    <span class="n">genotipo_hib</span>   <span class="o">=</span> <span class="n">genotipos_separados</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1"># [&#39;GG &#39;, &#39;GC &#39;, &#39;CC &#39;]</span>
+
+    <span class="c1">#ahora debemos transformar cada uno de los genotipos</span>
+    <span class="c1">#de los hibridos</span>
+    <span class="n">genotipos_transformados</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">genotipo</span> <span class="ow">in</span> <span class="n">genotipos_separados</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">genotipo</span> <span class="o">==</span> <span class="s1">&#39;  &#39;</span><span class="p">:</span>
+            <span class="n">genotipo</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+        <span class="k">elif</span> <span class="n">genotipo</span> <span class="o">==</span> <span class="n">genotipo_padre</span><span class="p">:</span>
+            <span class="n">genotipo</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+        <span class="k">elif</span> <span class="n">genotipo</span> <span class="o">==</span> <span class="n">genotipo_madre</span><span class="p">:</span>
+            <span class="n">genotipo</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+        <span class="k">elif</span> <span class="n">genotipo</span> <span class="o">==</span> <span class="n">genotipo_hib</span><span class="p">:</span>
+            <span class="n">genotipo</span> <span class="o">=</span> <span class="s1">&#39;H&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="s1">&#39;Ha habido un fallo, genotipo desconocido&#39;</span><span class="p">,</span> <span class="n">genotipo</span>
+        <span class="n">genotipos_transformados</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">genotipo</span><span class="p">)</span>
+
+    <span class="c1">#los items de la linea transformada</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">marcador</span><span class="p">]</span> <span class="o">+</span> <span class="n">genotipos_transformados</span>
+    <span class="c1">#la linea tiene los items separados por comas</span>
+    <span class="n">linea</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">linea</span>
+
+
+<span class="k">def</span> <span class="nf">cambiar_formato_genotipos</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Transforma un fichero de genotipado a otro formato.</span>
+
+<span class="sd">    El formato de entrada debe ser:</span>
+
+<span class="sd">       marcador padre madre f1 hib1 hib2 hib3</span>
+<span class="sd">       snp1 GG CC GC GG GC CC</span>
+<span class="sd">       snp2 AA TT AT    AT TT</span>
+<span class="sd">       snp3 AA CC AC CC AC AC</span>
+
+<span class="sd">    Y el de salida:</span>
+
+<span class="sd">       marcador hib1 hib2 hib3</span>
+<span class="sd">       snp1 A H B</span>
+<span class="sd">       snp2 X H B</span>
+<span class="sd">       snp3 B H H</span>
+
+<span class="sd">    A -&gt; Homocigoto como el padre</span>
+<span class="sd">    H -&gt; heterocigoto</span>
+<span class="sd">    B -&gt; Homocigoto como la madre</span>
+<span class="sd">    X -&gt; Dato faltante</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;genotipos.txt&#39;</span><span class="p">):</span>
+        <span class="n">linea</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="s1">&#39;padre&#39;</span> <span class="ow">in</span> <span class="n">linea</span><span class="p">:</span>    <span class="c1">#es la primera linea</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="nb">print</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">items</span><span class="p">[</span><span class="mi">4</span><span class="p">:])</span>
+                                 <span class="c1">#items[0] sera marcador</span>
+                                 <span class="c1">#items[4:] imprime el nombre</span>
+                                 <span class="c1">#de los hibridos</span>
+            <span class="k">continue</span>    <span class="c1">#En esta iteracion abandonamos el bucle aqui</span>
+
+        <span class="c1">#esto se ejecutara para cada linea excepto</span>
+        <span class="c1">#la de la cabecera</span>
+        <span class="nb">print</span> <span class="n">transformar_genotipo</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">cambiar_formato_genotipos</span><span class="p">(</span><span class="s1">&#39;genotipos.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="para-saber-mas">
+<h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Permalink to this headline">¶</a></h2>
+<p>Una vez nos acostumbremos a utilizar la funcionalidad básica que hemos visto en esta sección sería recomendable estudiar estas características avanzadas en el <a class="reference external" href="http://docs.python.org/tutorial/controlflow.html#defining-functions">tutorial oficial</a> o en un texto como el <a class="reference external" href="http://cpp.wesc.webfactional.com/">Core Python programming</a> de Chun.</p>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="ejercicios_repaso.html">Ejercicios de repaso</a>-->
+                    <a class="prev" href="ejercicios_repaso.html" title="Ejercicios de repaso">previous</a>
+                    |
+                    <!--<a class="next" href="ficheros.html">Leyendo y escribiendo ficheros</a>-->
+                    <a class="next" href="ficheros.html" title="Leyendo y escribiendo ficheros">next</a>
+                    |
+
+                <a class="index" href="/courses/linux/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

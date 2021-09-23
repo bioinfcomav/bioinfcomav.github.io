@@ -1,0 +1,207 @@
+
+Generadores
+===========
+
+Supongamos que tenemos un fichero con una lista de genes::
+
+  rubisco
+  ADH
+  apelatala
+
+Ya sabemos como escribir una función que lea este fichero y devuelva una lista con las palabras::
+
+  def leer_palabras(fichero):
+      palabras = []
+      for linea in open(fichero):
+          palabras.append(linea.strip())
+      return palabras
+
+  for palabra in palabras:
+      print palabra #o lo que tengamos que hacer con ella
+
+Esta función crea primero una lista de palabras vacías.
+A continuación recorre el fichero y añade todas las palabras a la lista y cuando acaba devuelve la lista de palabras.
+
+Este forma de programación es completamente correcta y ampliamente usada, pero Python dispone de una variante de las funciones que puede en muchas ocasiones simplificar este tipo de problemas, el generador.
+El problema anterior resuelto con generadores sería::
+
+  def leer_palabras(fichero):
+      for linea in open(fichero):
+          yield linea.strip()
+      
+  for palabra in palabras:
+      print palabra #o lo que tengamos que hacer con ella
+
+La primera diferencia que salta a la vista entre la solución con funciones y la solución con generadores es que la segunda tiene la mitad de líneas que la primera, por lo que resulta mucho más sencilla de entender.
+La diferencia sintáctica entre una función y un generador estriba en que mientras en la función se utiliza *return* en el generador se utiliza *yield*.
+En la función creábamos una lista y guardábamos todas las palabras en ella antes de devolverla.
+En el generador las palabras se van devolviendo de una en una a medida que se leen.
+En realidad cada vez que el bucle *for* requiere una nueva palabra se hace una llamada al generador que devuelve esa palabra.
+En el caso del generador sólo hay una palabra en la memoria, nunca se encuentra la lista completa.
+Esta es otra de las ventajas de los generadores, son muy eficientes por lo que respecta a la memoria.
+
+Un generador es en realidad un tipo particular de una clase de objetos más amplia, los iteradores.
+Existen otras formas de definir iteradores en Python que no vamos a estudiar en esta introducción y Python tiene muchas funciones predefinidas que en realidad son iteradores.
+Por ejemplo, la función *open* que hemos utilizado en numerosas ocasiones para abrir ficheros de texto es en realidad un iterador que nos va devolviendo las líneas de una en una.
+En Python 3.x se hace un uso todavía más común de los iteradores, muchas de las funciones que en Python 2.x devuelven listas, como *range*, en Python 3.x se han convertido en iteradores.
+
+El comportamiento de los iteradores es en cierto modo similar al de una lista.
+Cuando utilizamos un bucle *for* para recorrer todas las líneas de un fichero nos parece que estemos recorriendo la lista de líneas, cuando en realidad las líneas son generadas de una en una.
+Siempre que no necesitemos tener todos los elementos de la lista en la memoria a la vez podemos hacer uno de los generadores y los iteradores simplificando, en muchas ocasiones, el código del programa y haciendo un uso más eficiente de la memoria.
+
+En cualquier momento podemos transformar un iterador en una lista leyendo todos sus elementos en memoria.
+Por ejemplo, si tenemos un iterador con secuencias podemos transformarlo en una lista fácilmente::
+
+  >>> secuencias = list(secuencias)
+
+Además si combinamos los iteradores con las herramientas de la programación funcional como *map*, *filter* y *reduce* podemos crear programas muy potentes de un modo muy sencillo.
+Esta forma de `programación funcional <http://docs.python.org/dev/howto/functional.html>`_ es un paradigma alternativo a la programación estructurada que hemos visto en este curso y que se ajusta muy bien a una gran cantidad de problemas biológicos.
+
+Convertir iterador en lista
+---------------------------
+
+Ejercicios
+----------
+
+1. Escribir un programa que lea un fichero fasta de secuencias:
+
+::
+  
+  >seq1 una secuencia
+  ACGTAGTCTGAGTCGTAGTCTAGTCTGAGCTA
+  ATGCTAGTCATGTCTATCGAGTCAGTCTGATGCGT
+  >seq2 otra secuencia
+  ATGCTAGTCTGAGTCGTATCGTAGTCTATCAT
+  ATCGTAGTCGATGCTGATGCTATCTGAT
+  >seq3 la ultima secuencia
+  ATCGTAGTCGTAGCGTAGTCGTAGTCTATCTGA
+  AGTACGTATGGCTATCGTATGCTATGCAGT
+
+Pistas:
+
+ * Para separar el nombre y la descripción se puede usar el método de *str* *split(' ', 1)*.
+ * Una secuencia se puede guardar en un diccionario con las claves: nombre, descripción y secuencia.
+
+2. Crear una función que elimine las tres primeras bases de una secuencia y aplicarla a las secuencias leídas en el ejercicio anterior.
+
+
+Soluciones
+----------
+
+1. Escribir un programa que lea un fichero fasta de secuencias:
+
+::
+  
+  >seq1 una secuencia
+  ACGTAGTCTGAGTCGTAGTCTAGTCTGAGCTA
+  ATGCTAGTCATGTCTATCGAGTCAGTCTGATGCGT
+  >seq2 otra secuencia
+  ATGCTAGTCTGAGTCGTATCGTAGTCTATCAT
+  ATCGTAGTCGATGCTGATGCTATCTGAT
+  >seq3 la ultima secuencia
+  ATCGTAGTCGTAGCGTAGTCGTAGTCTATCTGA
+  AGTACGTATGGCTATCGTATGCTATGCAGT
+
+Pistas:
+
+ * Para separar el nombre y la descripción se puede usar el método de *str* *split(' ', 1)*.
+ * Una secuencia se puede guardar en un diccionario con las claves: nombre, descripción y secuencia.
+
+::
+
+  #!/usr/bin/env python
+
+  def secuencias_en_fasta(fichero):
+      'Genera las secuencias de un fichero fasta'
+  
+      #inicializamos las variables que contendra
+      #la secuencia sumada de varias lineas
+      secuencia = ''
+      #y el nombre y la descripcion
+      nombre = ''
+      descripcion = ''
+  
+      #recorremos el fichero linea por linea
+      for linea in open(fichero):
+          linea = linea.strip()   #quita el retorno de carro
+  
+          #una linea con nombre de secuencia
+          if linea.startswith('>'):
+              #si tenemos una secuencia en memoria
+              #este es el momento de devolverla,
+              #antes de pasar a procesar una nueva
+              #secuencia
+              if secuencia:
+                  seq = {'secuencia': secuencia,
+                         'nombre': nombre,
+                         'descripcion': descripcion}
+                  yield seq
+              #ahora procesamos la linea creando
+              #el nuevo nombre y descripcion
+              nombre, descripcion = linea.split(' ', 1)
+              nombre = nombre[1:] #elimina el '>'
+              #la secuencia es '' porque todavia no
+              #hemos leido ninguan linea con secuencia
+              secuencia = ''
+  
+          #si la linea tiene secuencia hemos de anyadirla
+          #a la secuencia que estamos leyendo
+          else:
+              secuencia += linea
+  
+      #cuando el bucle for acabe tendremos una secuencia
+      #en memoria que no habremos devuelto.
+      if secuencia:
+          seq = {'secuencia': secuencia,
+                 'nombre': nombre,
+                 'descripcion': descripcion}
+          yield seq
+  
+  
+  def read_fastas(fichero):
+      'Lee las secuencias fasta de un fichero'
+  
+      #podemos leer todas las secuencias con un bucle for
+      for seq in secuencias_en_fasta(fichero):
+          print 'nombre ->', seq['nombre']
+          print 'descripcion ->', seq['descripcion']
+          print 'secuencia ->', seq['secuencia']
+  
+      #si queremos guardarlas en una lista
+      secuencias = list(secuencias_en_fasta(fichero))
+      print secuencias
+  
+  if __name__ == '__main__':
+      read_fastas('secuencias.fasta')
+
+2. Crear una función que elimine las tres primeras bases de una secuencia y aplicarla a las secuencias leídas en el ejercicio anterior.
+
+::
+
+  def quitar_5_prima(secuencia):
+      'Elimina tres bases del 5 prima'
+      #esto se haria mejor con copy
+      seq = {'nombre': secuencia['nombre'],
+             'descripcion': secuencia['descripcion']}
+  
+      seq['secuencia'] = secuencia['secuencia'][3:]
+      return seq
+  
+  def read_fastas(fichero):
+      'Lee las secuencias fasta de un fichero'
+  
+      #podemos leer todas las secuencias con un bucle for
+      for seq in secuencias_en_fasta(fichero):
+          print 'secuencia antes ->', seq['secuencia']
+          seq = quitar_5_prima(seq)
+          print 'secuencia despu ->', seq['secuencia']
+  
+      #tambien se puede hacer con el iterador directamente
+      seqs = secuencias_en_fasta(fichero)
+      #utilizando map
+      secuencias = map(quitar_5_prima, seqs)
+      print secuencias
+  
+  if __name__ == '__main__':
+      read_fastas('secuencias.fasta')
+ 

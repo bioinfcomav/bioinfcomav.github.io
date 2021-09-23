@@ -1,0 +1,917 @@
+
+Ejercicios finales
+==================
+
+Ejercicios linux
+----------------
+
+1. Seleccionar la linea 123 del fichero :download:`microarray_adenoma_hk69.csv <demo_data/microarray_adenoma_hk69.csv>`.
+
+2. Usa el fichero con el formato `vcf <http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41>`_  :download:`test.vcf <demo_data/test.vcf>` selecciona aquellos snps que han pasado todos los filtros. Selecciona tambien aquellos snps que no han pasado el filtro de calidad.
+
+3. Tenemos un nuevo :download:`test2.vcf <demo_data/test2.vcf>` que ha perdido la informacion de la cabecera.
+Sabemos que la cabecera del fichero :download:`test.vcf <demo_data/test.vcf>` nos vale, añadir la cabecera de test.vcf al fichero test2.vcf creando un nuevo fichero.
+Pista: No se puede hacer con un solo comando.
+
+4. A partir del fichero :download:`test.vcf <demo_data/test.vcf>` crear un identificador para cada snv que una el chromosoma y la posición (chrom_pos). Hacer un listado de las ids.
+
+5. Tengo un fichero de :download:`configuracion <demo_data/conf.txt>` para un programa que necesitamos.
+El fichero se configura con clave=valor.
+En él, hay claves que no tienen valor.
+El ejercicio consiste en mostrar el nombre de las claves que no tienen valor.
+
+Contar genes y sondas
+---------------------
+
+Hemos hecho un programa que cuenta genes y sondas, pero no lo hace bien, ¿podrías arreglarlo?
+
+El fichero de entrada es::
+
+  gen,sonda,expresion
+  gen1,sonda1,1.4
+  gen1,sonda2,1.5
+  gen2,sonda3,1.1
+  gen3,sonda4,0.7
+
+El programa es::
+
+    #!/usr/bin/env python
+
+    from csv import DictReader
+
+
+    def contar_sondas(fichero_in):
+        genes = []
+        sondas = set()
+        for linea in DictReader(open(fichero_in))
+            genes.append(linea['gen'])
+            sondas.add(linea['sonda']
+        return len(genes), len(sondas)
+
+    if __name__ == '__main__':
+        ruta_fichero_in = 'sondas.txt'
+        n_genes, n_sondas = contar_sondas(ruta_fichero_in)
+        print 'Num. genes: ' + str(n_genes)
+        print 'Num. sondas: ' + str(n_sondas)
+
+Comparar listas de genes
+------------------------
+
+Queremos comparar dos listas de genes y obtener cuales son exclusivos en ambas listas y cuales compartidos.
+Las listas provienen de la primera columna de los siguientes ficheros:
+
+::
+
+    gen1 1.4 1.5
+    gen2 2.5
+    gen3 1.7
+
+::
+
+   nombre,implicado
+   Gen2,si
+   Gen3,no
+   Gen4,si
+
+Hemos escrito el siguiente programa, pero no funciona, ¿podrías arreglarlo?
+
+::
+
+    #!/usr/bin/env python
+
+    from csv import DictReader, reader
+
+    def leer_genes1(ruta):
+        genes = set()
+        for linea in reader(open(ruta), delimiter=' ')
+            if not linea:
+                continue
+            genes.add(linea[1].lower())
+        return genes
+
+
+    def leer_genes2(ruta):
+        genes = set()
+        for linea in DictReader(open(ruta), delimiter=' '):
+            if not linea
+                continue
+            genes.add(linea['nombre'])
+        return genes
+
+
+    def comparar_genes(ruta_genes1, ruta_genes2):
+        genes1 = leer_genes1(ruta_genes1)
+        genes2 = leer_genes2(ruta_genes2)
+        exclu1 = genes1.difference(genes2)
+        exclu2 = genes2.difference(genes1)
+        compartidos = genes1.intersection(genes2)
+        return exclu1, exclu2, compartidos
+
+    if __name__ == '__main__':
+        ruta_genes_1 = 'genes1.txt'
+        ruta_genes_2 = 'genes2.txt'
+        exclu1, exclu2, compartidos = comparar_genes(ruta_genes_1, ruta_genes_2)
+        print 'Exclusivos 1'
+        print '\n'.join(exclu1)
+        print 'Exclusivos 2'
+        print '\n'.join(exclu2)
+        print 'Compartidos'
+        print '\n'.join(compartidos)
+
+Cambiar nombres
+---------------
+
+Tenemos un fichero que incluye una columna con nombres de muestras y queremos modificar esos nombres para que estén normalizados.
+
+Fichero entrada::
+
+    ECU-1 grande 1.7
+    ECU2 pequeña 1.2
+    ecu03 grande 0.3
+    Mex_4 mediana 2.1
+
+Fichero deseado de salida::
+
+    ECU-01 grande 1.7
+    ECU-02 pequeña 1.2
+    ECU-03 grande 0.3
+    MEX-04 mediana 2.1
+
+Hemos escrito el siguente programa, pero no nos funciona, ¿podrías arreglarlo?
+
+::
+
+    #!/usr/bin/env python
+
+    from csv import reader
+    import re
+
+
+    def arreglar_nombres(ruta_fichero_in, ruta_fichero_out):
+
+        regex = re.compile('([a-zA-Z]+)[._-]?([0-9]+)')
+
+        fichero_out = open(ruta_fichero_out)
+        for linea in reader(open(ruta_fichero_in), delimiter=' '):
+            if not linea:
+                continue
+            match = regex.match(linea[0])
+            if match:
+                cod_letras = match.group(1)
+                cod_num = int(match.group(2))
+                cod = cod_letras + '%03d' % cod_num
+            else:
+                cod = linea[0]
+            linea[0] = cod
+            linea_str = '\t'.join(linea)
+            fichero_out.write(linea_str)
+        
+
+    if __name__ == '__main__':
+        ruta_fichero_in = 'lista_muestras.txt'
+        ruta_fichero_out = 'lista_muestras_arregladas.txt'
+        arreglar_nombres(ruta_fichero_in, ruta_fichero_out)
+
+
+
+Recortar ficheros fasta
+-----------------------
+
+Dado un fichero fasta queremos obtener un nuevo fichero en el que a cada secuencia le hayamos cortado un número de bases dado por el principio (left_clip) y por el final (right_clip). Si la secuencia resultante fuese más corta que un tamaño mínimo (min_len) debería descartarse y no incluirse en el fichero final.
+
+Extrayendo una lista de secuencias de un fichero
+------------------------------------------------
+
+Dado un fichero con miles de secuencias, ¿cómo podríamos extraer unas cuantas de las que conocemos el nombre?
+
+Calcular la calidad media de las secuencias en un fichero fastq
+---------------------------------------------------------------
+
+Los ficheros `fastq <http://en.wikipedia.org/wiki/FASTQ_format>`_ utilizados principalmente en análisis NGS son similares a los ficheros fasta y tienen el formato::
+
+	@seq1
+	ATTGNGCATTTCAAATAACTTGAAACATAAACGAGTTCCCACAC
+	+
+	@@<D#2ADHFFHHIGGGIIIGIIIIIIHHIIIHBHHIIIIIICH
+	@seq2
+	CGCACACGCCAAGCCCCATCCTATGCTATGTGCGATACATGTCC
+	+
+	@@@FFFFDFDFFFGIDII3CGGEG99?CF?BF@GFDHG@?F*?F
+	@seq3
+	ATTAGGATACTTTCTCGTTATGTTATGTTAGTACGAATGTGTAC
+	+
+	CBCFFDFFHHFHHJIIJIIJGHCDHHEFH><<BGGGJI>DF<DD
+	@seq4
+	AGAAATGTCGACTGTATTAAAACAATATAACTTTCCGAAAATTG
+	+
+	AFEGIIICHHEEBEFEEE;BCCCBDCD;>CC:@3@CBB?B<CCC
+	@seq5
+	TAGAGGGTGCAAAGAATCCAGCAGACATGTTGACAAAATGTGTT
+	+
+	HD7=CEH;;?CCCCCB;;;>CCCA(595>CD@C,:><(:C:@##
+	@seq6
+	AGATATCGGTCTGCAATATGCATAAAACCTATTGTAACGACTCG
+	+
+	8?BAFGI<GIB<@DEE=?A>E@H>CCDFFCEACC>>CCDDDB8?
+
+
+En los ficheros fastq habitualmente hay cuatro líneas por cada secuencia:
+
+  * La primera comienza por @ e incluye el nombre de la secuencia y, opcionalmente, un espacio y a continuación una descripción
+  * La segunda línea incluye la secuencia de nucleótidos.
+  * La tercera es un +, opcionalmente seguido del nombre de la secuencia y la descripción
+  * La cuarta línea codifica la calidad.
+
+
+Crea un programa que calcule la calidad media de las secuencias de un fichero fastq y que genere un fichero de salida con las secuencias con una calidad media superior a un cierto umbral.
+
+Ayuda:
+
+  * BioPython es capaz de leer y escribir ficheros fastq
+  * En los objetos SeqRecord de BioPython la calidad está disponible en: seq.letter_annotations['phred_quality']
+  * La calidad está codificada utilizando caracteres ASCII. Para obtener el valor de la calidad hay que tomar el valor del carácter ASCII (en Python se puede hacer con la función *ord*) y restándole un valor fijo, que depende del tipo de fichero fastq, pero que suele ser 33 en la mayoría de los casos. El valor de la calidad para un carácter de la línea de calidades se obtendría como: ord(caracter) - 33. En el caso de utilizar BioPython sus funciones de lectura y escritura se encargan de esta codificación.
+
+Para prácticar puedes intentar hacer el programa de nuevo, pero esta vez sin utilizar BioPython.
+
+Contar contigs por genoteca
+---------------------------
+
+Hemos realizado un alineamiento de secuencias 454 y Sanger con el ensamblador `MIRA <http://www.chevreux.org/projects_mira.html>`_.
+Uno de los ficheros de resultados contiene la lista de lecturas que contribuyen a cada contig.
+
+::
+
+  #
+  # contig_name read_name
+  #
+  melon_c1      CI_46-C02-M13R
+  melon_c1      A_32-H07-M13R
+  melon_c1      HS_31-E03-M13R
+  melon_c1      MEES627390
+  melon_c2      MEES365006
+  melon_c2      MEES315192
+  melon_c2      MEES525849
+
+A partir de este fichero necesitamos calcular a cúantos contigs contribuye cada genoteca.
+El nombre de la genoteca a la que pertenece cada lectura coincide con las tres primeras letras del nombre de la lectura correspondiente.
+El resultado que pretendemos obtener debe ser similar a::
+
+  genoteca numero de contigs
+  AI_ 14
+  TEa 34
+  IA6 1
+  BA9 1
+  KA4 1
+  LA4 1
+
+Copiar anotación GO
+-------------------
+
+Hemos realizado un blast de unos genes de S. stercoralis contra la base de datos de proteínas de C. elegans.
+El blast lo hemos transformado en un :download:`informe <demo_data/unigenes_blast_report.txt>`, con el siguiente formato::
+
+  Sstercoralis_12317 WBGene00000064 WBGene00000066 WBGene00000066
+  Sstercoralis_12265 WBGene00003370 WBGene00003369
+  Sstercoralis_12253 WBGene00006727
+
+Además disponemos de la :download:`anotación GO <demo_data/C_elegans_gene_association.wb>` de los genes de C. elegans::
+
+  !Organism: Caenorhabditis elegans
+  !Database_Project_Name: WormBase WS214/WS215
+  WB      WBGene00000001  aap-1           GO:0005515      PMID:12520011
+  WB      WBGene00000001  aap-1           GO:0005942      PMID:12520011
+
+La conversión entre :download:`términos GO <demo_data/GO.terms_and_ids>` y descripciones se encuentra en el fichero proporcionado por el consorcio GO::
+
+  ! GO IDs (primary only) and name text strings
+  ! GO:0000000 [tab] text string [tab] F|P|C
+  ! where F = molecular function, P = biological process, C = cellular component
+  !
+  GO:0000001      mitochondrion inheritance       P
+  GO:0000002      mitochondrial genome maintenance        P
+  GO:0000003      reproduction    P
+  GO:0000005      ribosomal chaperone activity    F
+
+Queremos obtener un fichero en el que a cada unigen de S. stercoralis se le asocien los términos GO que le correspondan a partir de las proteinas de C. elegans.
+
+Enumerar K-mers
+---------------
+
+Tenemos un fichero de secuencias en formato fasta :download:`seqs_5.fasta <demo_data/seqs_5.fasta>`, y queremos contar las apariciones de todos las trozos de secuencia de un tamaño determinado, en este caso el tamaño de los trozos que vamos a contar será de 20 bases.:  Muetra por pantalla el resultado del conteo.
+
+Ayuda:Si tenemos una secuencia ATCGT, y pedimos un tamaño de secuencia de 3, los trozos de secuencia que tenemos son: ATC, TCG, CGT
+
+
+Soluciones
+==========
+
+Ejercicios linux
+----------------
+1. Seleccionar la linea 123 del fichero microarray_adenoma_hk69.csv
+
+::
+
+    $ head -n 123 microarray_adenoma_hk69.csv |tail -n 1
+
+2. Usa el fichero con el formato `vcf <http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41>`_  :download:`test.vcf <demo_data/test.vcf>` selecciona aquellos snps que han pasado todos los filtros. Selecciona tambien aquellos snps que no han pasado el filtro de calidad.
+
+::
+
+    $ grep  -v "^#" test.vcf |grep PASS
+    $ grep  -v "^#" test.vcf |grep q10
+
+3. Tenemos un nuevo :download:`test2.vcf <demo_data/test2.vcf>` que ha perdido la informacion de la cabecera.
+Sabemos que la cabecera del fichero :download:`test.vcf <demo_data/test.vcf>` nos vale, añadir la cabecera de test.vcf al fichero test2.vcf creando un nuevo fichero.
+Pista: No se puede hacer con un solo comando.
+
+::
+
+    $ grep   "^#" test.vcf  > new_file.vcf
+    $ cat test2.vcf >> new_file.vcf
+
+4. A partir del fichero :download:`test.vcf <demo_data/test.vcf>` crear un identificador para cada snv que una el chromosoma y la posición (chrom_pos). Hacer un listado de las ids.
+
+::
+
+    $grep -v "^#" test.vcf|cut -f 1,2|sed "s/\t/_/"
+
+5. Tengo un fichero de :download:`configuracion <demo_data/conf.txt>` para un programa que necesitamos.
+El fichero se configura con clave=valor.
+En él, hay claves que no tienen valor.
+El ejercicio consiste en mostrar el nombre de las claves que no tienen valor.
+
+::
+    $ grep  -v "^#" conf.txt|grep -E  "^[a-z]+ ?=[[:blank:]]?$"
+
+Contar genes y sondas
+---------------------
+
+::
+
+    #!/usr/bin/env python
+
+    from csv import DictReader
+
+
+    def contar_sondas(fichero_in):
+        genes = set()
+        sondas = set()
+        for linea in DictReader(open(fichero_in)):
+            genes.add(linea['gen'])
+            sondas.add(linea['sonda'])
+        return len(genes), len(sondas)
+
+    if __name__ == '__main__':
+        ruta_fichero_in = 'sondas.txt'
+        n_genes, n_sondas = contar_sondas(ruta_fichero_in)
+        print 'Num. genes: ' + str(n_genes)
+        print 'Num. sondas: ' + str(n_sondas)
+
+Comparar listas de genes
+------------------------
+
+::
+
+    #!/usr/bin/env python
+
+    from csv import DictReader, reader
+
+    def leer_genes1(ruta):
+        genes = set()
+        for linea in reader(open(ruta), delimiter=' '):
+            if not linea:
+                continue
+            genes.add(linea[0].lower())
+        return genes
+
+
+    def leer_genes2(ruta):
+        genes = set()
+        for linea in DictReader(open(ruta), delimiter=','):
+            if not linea:
+                continue
+            genes.add(linea['nombre'].lower())
+        return genes
+
+
+    def comparar_genes(ruta_genes1, ruta_genes2):
+        genes1 = leer_genes1(ruta_genes1)
+        genes2 = leer_genes2(ruta_genes2)
+        exclu1 = genes1.difference(genes2)
+        exclu2 = genes2.difference(genes1)
+        compartidos = genes1.intersection(genes2)
+        return exclu1, exclu2, compartidos
+
+    if __name__ == '__main__':
+        ruta_genes_1 = 'genes1.txt'
+        ruta_genes_2 = 'genes2.txt'
+        exclu1, exclu2, compartidos = comparar_genes(ruta_genes_1, ruta_genes_2)
+        print 'Exclusivos 1'
+        print '\n'.join(exclu1)
+        print 'Exclusivos 2'
+        print '\n'.join(exclu2)
+        print 'Compartidos'
+        print '\n'.join(compartidos)
+
+Cambiar nombres
+---------------
+
+::
+
+    #!/usr/bin/env python
+
+    from csv import reader
+    import re
+
+
+    def arreglar_nombres(ruta_fichero_in, ruta_fichero_out):
+
+        regex = re.compile('([a-zA-Z]+)[._-]?([0-9]+)')
+
+        fichero_out = open(ruta_fichero_out, 'w')
+        for linea in reader(open(ruta_fichero_in), delimiter=' '):
+            if not linea:
+                continue
+            match = regex.match(linea[0])
+            if match:
+                cod_letras = match.group(1).upper()
+                cod_num = int(match.group(2))
+                cod = cod_letras + '-' + '%03d' % cod_num
+            else:
+                cod = linea[0]
+            linea[0] = cod
+            linea_str = '\t'.join(linea) + '\n'
+            fichero_out.write(linea_str)
+        
+
+    if __name__ == '__main__':
+        ruta_fichero_in = 'lista_muestras.txt'
+        ruta_fichero_out = 'lista_muestras_arregladas.txt'
+        arreglar_nombres(ruta_fichero_in, ruta_fichero_out)
+
+
+Recortar ficheros fasta
+-----------------------
+
+::
+
+    from Bio import SeqIO
+    
+    def recortar_secuencias(in_fname, out_fname, left_clip, right_clip, min_len):
+    
+            seqs_cortadas = []
+            for seq in SeqIO.parse(in_fname, 'fasta'):
+                left = left_clip
+                right = len(seq) - right_clip
+                if right <= left:
+                    #no queda secuencia
+                    continue
+                elif (right - left) < min_len:
+                    #la secuencia es demasiado corta
+                    continue
+                else:
+                    seq = seq[left:right]
+                    seqs_cortadas.append(seq)
+            SeqIO.write(seqs_cortadas, out_fname, 'fasta')
+    
+    if __name__ == '__main__':
+        in_fname = 'seqs.fasta'
+        out_fname = 'seqs.trimmed.fasta'
+        left_clip = 50
+        right_clip = 10
+        min_len = 40
+        recortar_secuencias(in_fname, out_fname, left_clip, right_clip, min_len)
+
+Extrayendo una lista de secuencias de un fichero
+------------------------------------------------
+
+::
+
+    from Bio import SeqIO
+    
+    def extraer_secuencias(seq_names, in_fname, out_fname):
+        seqs_en_input = SeqIO.index(in_fname, 'fasta')
+        seqs_extraidas = []
+        for seq_name in seq_names:
+            una_seq = seqs_en_input[seq_name]
+            seqs_extraidas.append(una_seq)
+        SeqIO.write(seqs_extraidas, out_fname, 'fasta')
+    
+    if __name__ == '__main__':
+        seq_names = ['seq1', 'seq3', 'seq7']
+        in_fname = 'seqs.fasta'
+        out_fname = 'seqs.out.fasta'
+        extraer_secuencias(seq_names, in_fname, out_fname)
+
+
+Calcular la calidad media de las secuencias en un fichero fastq
+---------------------------------------------------------------
+
+Solución 1 utilizando BioPython::
+
+    #!/usr/bin/env python
+    from __future__ import division
+
+    from Bio import SeqIO
+
+    def filtra_seqs_por_calidad(nombre_fichero_in,
+                                nombre_fichero_out,
+                                umbral_qual):
+        seqs = SeqIO.parse(open(nombre_fichero_in), 'fastq')
+        seqs_buenas = []
+        for seq in seqs:
+            quals = seq.letter_annotations['phred_quality']
+            media_quals = sum(quals) / len(quals)
+            if media_quals >= umbral_qual:
+                # guardamos las secuencias buenas en una
+                # lista en memoria para poder escribirlas
+                # despues
+                seqs_buenas.append(seq)
+
+        fichero_out = open(nombre_fichero_out, 'w')
+        SeqIO.write(seqs_buenas, fichero_out, 'fastq')
+
+    if __name__ == '__main__':
+        umbral_qual = 25
+        nombre_fichero_in = '250_seqs.fastq'
+        nombre_fichero_out = 'seqs_buenas.fastq'
+        filtra_seqs_por_calidad(nombre_fichero_in,
+                                nombre_fichero_out,
+                                umbral_qual)
+
+¿Cuántas secuencias han quedado?
+
+::
+
+  grep '^+$' seqs_buenas.fastq | wc -l
+  244
+
+
+El problema de esta solución es que almacena todas las secuencias en memoria en la lista seqs_buenas.
+Alternativamente se puede hacer que las secuencias sean procesadas de una en una utilizando un generador que nos sirva para filtrar las secuencias que no nos interesan.
+
+Solución 2
+
+::
+
+    #!/usr/bin/env python
+    from __future__ import division
+
+    from Bio import SeqIO
+
+
+    def elimina_seqs_mala_calidad(seqs, umbral_qual):
+        for seq in seqs:
+            quals = seq.letter_annotations['phred_quality']
+            media_quals = sum(quals) / len(quals)
+            if media_quals >= umbral_qual:
+                # devolvemos las secuencias buenas de una en
+                # una utilizando un generador
+                yield seq
+
+
+    def filtra_seqs_por_calidad(nombre_fichero_in,
+                                nombre_fichero_out,
+                                umbral_qual):
+        seqs = SeqIO.parse(open(nombre_fichero_in), 'fastq')
+        # En este caso seqs_buenas no es una lista sino un
+        # iterador
+        seqs_buenas = elimina_seqs_mala_calidad(seqs, umbral_qual)
+
+        fichero_out = open(nombre_fichero_out, 'w')
+        SeqIO.write(seqs_buenas, fichero_out, 'fastq')
+
+    if __name__ == '__main__':
+        umbral_qual = 25
+        nombre_fichero_in = '250_seqs.fastq'
+        nombre_fichero_out = 'seqs_buenas.fastq'
+        filtra_seqs_por_calidad(nombre_fichero_in,
+                                nombre_fichero_out,
+                                umbral_qual)
+
+Solución 3
+
+Sin utilizar BioPython.
+
+::
+
+    #!/usr/bin/env python
+    from __future__ import division
+
+
+    def quals_a_numeros(qual_str):
+        quals = []
+        for qual in qual_str:
+            quals.append(ord(qual) - 33)
+        return quals
+
+
+    def num_quals_a_str(phred_quals):
+        str_qual = ''
+        for qual in phred_quals:
+            str_qual += str(chr(qual + 33))
+        return str_qual
+
+
+    def lee_fastq(nombre_fichero_in):
+        num_linea = 0
+        for linea in open(nombre_fichero_in):
+            if num_linea == 0:
+                nombre = linea.partition(' ')[0][1:]
+            elif num_linea == 1:
+                seq = linea.strip()
+            elif num_linea == 2:
+                pass  # ignoramos la linea con el +
+            elif num_linea == 3:
+                quals = quals_a_numeros(linea.strip())
+                # Seria mejor devolver una named tuple, pero
+                # no lo hemos visto en el curso.
+                yield nombre, seq, quals
+                num_linea = 0
+                continue
+            else:
+                raise RuntimeError('El numero de linea no puede ser mayor de 3')
+            num_linea += 1
+
+
+
+    def escribe_fastq(seqs, nombre_fichero_out):
+        fichero_out = open(nombre_fichero_out, 'w')
+        for seq in seqs:
+            fichero_out.write('@' + seq[0] + '\n')
+            fichero_out.write(seq[1] + '\n')
+            fichero_out.write('+\n')
+            fichero_out.write(num_quals_a_str(seq[2]) + '\n')
+            
+
+    def elimina_seqs_mala_calidad(seqs, umbral_qual):
+        for seq in seqs:
+            quals = seq[2]
+            media_quals = sum(quals) / len(quals)
+            if media_quals >= umbral_qual:
+                # devolvemos las secuencias buenas de una en
+                # una utilizando un generador
+                yield seq
+
+
+    def filtra_seqs_por_calidad(nombre_fichero_in,
+                                nombre_fichero_out,
+                                umbral_qual):
+        seqs = lee_fastq(nombre_fichero_in)
+        # En este caso seqs_buenas no es una lista sino un
+        # iterador
+        seqs_buenas = elimina_seqs_mala_calidad(seqs, umbral_qual)
+
+        escribe_fastq(seqs_buenas, nombre_fichero_out)
+
+    if __name__ == '__main__':
+        umbral_qual = 25
+        nombre_fichero_in = '250_seqs.fastq'
+        nombre_fichero_out = 'seqs_buenas.fastq'
+        filtra_seqs_por_calidad(nombre_fichero_in,
+                                nombre_fichero_out,
+                                umbral_qual)
+
+Contigs por genoteca
+--------------------
+
+::
+
+  #!/bin/env python
+
+  #en cuantos contigs participa cada una de las genotecas?
+  
+  
+  def contig_stats(fichero):
+      '''Calcula la distribucion del numero de reads por genoteca
+      para un contig.
+  
+      El nombre de la genoteca son las tres primeras letras del
+      nombre del read.
+      Genera un diccionario con las cuentas de cada contig.
+      '''
+  
+      stats = {}
+      contig_anterior = ''
+      for linea in open(fichero):
+          #ignoramos la cabecera
+          if linea.startswith('#'):
+              continue
+          contig, read = linea.split()
+          #el nombre de la genoteca son las tres primeras letras
+          genoteca = read[:3]
+  
+          #si el contig de esta linea es distinto al anterior
+          #es que habiamos acabado con el contig anterior
+          if contig_anterior != contig and contig:
+              yield stats    #devolvemos las stats de este contig
+              stats = {}     #volvemos a inicializar las stas para
+                             #el siguiente contig
+  
+          #ha aparecido la genoteca en este contig antes?
+          if genoteca not in stats:
+              stats[genoteca] = 0
+          #sumamos la genoteca de esta linea
+          stats[genoteca] += 1
+          #el contig de esta linea ha sido procesado, pasa
+          #a ser el contig anterior
+          contig_anterior = contig
+      #las stats del ultimo contig debemos devolverlo
+      if stats:
+          yield stats
+  
+  def hacer_stats_contigs(fichero):
+      '''Calcula la distribucion del numero de reads por genoteca.
+  
+      El nombre de la genoteca son las tres primeras letras del
+      nombre del read.
+      '''
+      cuentas_genotecas = {}
+      for contig_stat in contig_stats(fichero):
+          #que genotecas hay en este contig?
+          for genoteca in contig_stat:
+              #cuento la genoteca como que participa en un contig
+              if genoteca not in cuentas_genotecas:
+                  cuentas_genotecas[genoteca] = 0
+              cuentas_genotecas[genoteca] += 1
+  
+      #ahora imprimimos el resultado
+      print 'genoteca', 'numero de contigs'
+      for genoteca, cuenta in cuentas_genotecas.items():
+          print genoteca, cuenta
+  
+  if __name__ == '__main__':
+      hacer_stats_contigs('contiglist.txt')
+
+Copiar anotación GO
+-------------------
+
+::
+
+  #!/usr/bin/env python
+  
+  def leer_go_desc(fichero):
+      '''Lee el fichero de GO id y devuelve un diccionario.
+  
+      El fichero tiene el formato:
+      !comentarios
+      GO:0000001      mitochondrion inheritance       P
+      GO:0000002      mitochondrial genome maintenance        P
+  
+      El dict que devuelve es:
+      {'GO:0000001': {'desc': 'mitochondrion inheritance',
+                      'ontologia': 'biological proces'},
+       'GO:0000002': {'desc': 'mitochondrial genome maintenance'
+                      'ontologia': 'biological proces'}}
+      '''
+  
+      ontologias = {'F': 'molecular function',
+                    'P': 'biological process',
+                    'C': 'cellular component'}
+  
+      #diccionario para los resultados
+      gos ={}
+  
+      for linea in open(fichero):
+          if linea.startswith('!'):
+              continue
+          linea = linea.strip()
+          go, desc, ontologia = linea.split('\t')
+          ontologia = ontologias[ontologia]
+          gos[go] = {'desc': desc,
+                     'ontologia': ontologia}
+  
+      return gos
+  
+  def leer_c_elegans_go_annot(celegans_annot):
+      '''Lee la anotacion y devuelve un dict
+  
+      La anotacion debe tener el formato:
+      !comentarios
+      WB      WBGene00000001  aap-1           GO:0005515      PMID:12520011
+      WB      WBGene00000001  aap-1           GO:0005942      PMID:12520011
+  
+      Devuelve un diccionario con los genes como keys
+      y los GOs como valores.
+      '''
+      #creamos un dict para guardar los resultados
+      genes_gos = {}
+      #Necesitamos saber cual es el gen de la linea
+      #anterior para saber cuando cambiamos de gen
+      gen_anterior = ''
+      for line in open(celegans_annot):
+          if line.startswith('!'):
+              continue
+          items = line.split()
+          gen = items[1]
+          go  = items[3]
+          #a veces el go no esta claro y lo ignoramos
+          if not go.startswith('GO'):
+              continue
+          if gen != gen_anterior:
+              #si habia un gen anterior lo anayadimos al
+              #resultado
+              if gen_anterior:
+                  genes_gos[gen_anterior] = gos
+              #al iniciar un nuevo gen creamos un conjunto de
+              #gos con el go actual
+              gos = set([go])
+              #a partir de este momento el gen anterior sera este
+              #nuevo
+              gen_anterior = gen
+          else:
+              gos.add(go)
+      #debemos anyadir el ultimo gen
+      if gen_anterior:
+          genes_gos[gen_anterior] = gos
+  
+      return genes_gos
+  
+  def transformar_blast_report(fichero, annot, go_desc):
+      '''Lee un blast report y le anyade los Gos.
+  
+      El blast report debe tener el formato:
+      query1 hit1 hit1 hit2 hit3
+      query2 hit1 hit4
+  
+      El resultado sera:
+      query1 hit1,hit2,hit3 GO1,GO2
+      query2 hit1,hit4 GO1,GO4
+      '''
+  
+      for linea in open(fichero):
+          linea = linea.strip()
+          query, hits = linea.split(' ', 1)
+  
+          #pasamos los hits a una lista
+          hits = hits.split()
+          #elimiminamos los repetidos
+          hits = set(hits)
+  
+          #debemos anayir los gos que correspondan
+          #a cada hit
+          gos = set()
+          for hit in hits:
+              #tiene este hit gos asociados?
+              if hit in annot:
+                  gos.update(annot[hit])
+  
+          #transformamos los GO id en GO desc
+          go_descs = []
+          for go in gos:
+              go_descs.append(go_desc[go]['desc'])
+  
+          #imprimimos el resultado
+          print query, ','.join(hits), ','.join(go_descs)
+  
+  if __name__ == '__main__':
+      blast_report = 'unigenes_blast_report.txt'
+      celegans_annot = 'C_elegans_gene_association.wb'
+      go_desc = 'GO.terms_and_ids'
+      go_desc = leer_go_desc(go_desc)
+      annot = leer_c_elegans_go_annot(celegans_annot)
+      transformar_blast_report(blast_report, annot, go_desc)
+
+
+Enumerar K-mers
+---------------
+
+::
+
+	#!/usr/bin/env python
+	from Bio import SeqIO
+
+
+	def kmers_in_seq(seqrecord, kmer_size):
+		'devuelve todos los kmers de un seqrecord'
+		kmers = []
+		start = 0
+		secuencia = str(seqrecord.seq)
+		len_secuencia = len(secuencia)
+		while True:
+		    end = start + 20
+		    if end > len_secuencia:
+		        break
+		    kmer = secuencia[start:start + 20]
+		    kmers.append(kmer)
+		    start += 1
+		return kmers
+
+
+	def funcion_principal(fichero_entrada, formato_entrada, kmer_size):
+		'La funcion principal'
+		conteo_kmers = {}
+
+		for seqrecord in SeqIO.parse(fichero_entrada, formato_entrada):
+		    for kmer in kmers_in_seq(seqrecord, kmer_size):
+		        if kmer not in conteo_kmers:
+		            conteo_kmers[kmer] = 0
+		        conteo_kmers[kmer] += 1
+
+	if __name__ == '__main__':
+		fichero_entrada = 'seqs_5.fasta'
+		formato_entrada = 'fasta'
+		kmer_size = 20
+		funcion_principal(fichero_entrada, formato_entrada, kmer_size)
+
+

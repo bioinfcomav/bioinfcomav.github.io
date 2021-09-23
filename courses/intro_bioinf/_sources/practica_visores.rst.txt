@@ -1,0 +1,105 @@
+==================================
+Prácticas bases de datos genómicas
+==================================
+
+Se han desarrollado numerosas bases de datos para los diferentes genomas secuenciados, pero la mayoría de ellas utilizan los mismos programas, visores y estructuras para manejar la información. En esta práctica vamos a profundizar en el manejo de bases de datos utilizando visores de genoma. Como modelo vamos a utilizar el visor del Ensembl_ y de la NCBI_.
+
+El objetivo es familiarizarse con este tipo de bases de datos y visores gráficos que nos permiten responden en cuestión de minutos a problemas de este tipo:
+
+::
+
+   Acabas de ser contratado por una empresa de diagnostico clínico. Te solicitan
+   desarrollar un kit para el diagnóstico del síndrome Cinca. Tienes que 
+   identificar el gen responsable de la enfermedad y:
+
+    1-. Un SNP intragénico y dos flanqueantes para poder hacer diagnóstico
+        prenatal en familias con antecedentes.
+
+    2- Listar las mutaciones más frecuentes causantes de esta enfermedad.
+
+    3- Identificar los genes parálogos y ortólogos en mamíferos
+
+    4- Identificar los genes flanqueantes (3 a cada lado).
+
+    5- Describir la estructura exón/intrón del gen e identificar todos
+       los transcritos.
+
+    6- Identificar los BACs que cubran ese gen
+
+    Nota: Te interesa que cuando hagas el screening en las familias la mayoría
+           de los SNPs tengan distintos alelos en los padres.
+    
+
+
+Manejo del Ensembl
+==================
+
+Vamos a practicar con el visor de genomas del Ensembl_ y los datos del genoma humano. Hay una seeria de tutoriales_ disponibles.
+
+Buscar la región correspondiente al gen humano SLC9A3R2. Identificar:
+
+* Región cromosómica y número de exones/intrones.
+
+* Número de transcritos codificantes y sus proteinas.
+
+* Identificar los cambios presentes en el primer exón del gen y su frecuencia en la población europea.
+
+Catenin beta 1
+--------------
+
+Ahora identificar esos datos para el gen catenin beta 1.
+
+
+Búsqueda de parálogos y ortólogos
+---------------------------------
+
+Puedes seguir el tutorial_ del Ensembl para manejar la información sobre genómica comparativa.
+
+Localiza el gen CASP5 humano y contesta a las siguientes cuestiones:
+
+* Región cromosómica y número de exones/intrones.
+
+* Número de transcritos codificantes y sus proteinas.
+
+* Parálogos de este gen. ¿Están situados en el mismo cromosoma?
+
+* Recupera el alineamiento de las proteinas de esos parálogos.
+
+* ¿Se ha descrito el gen ortólogo en gorila?. Recupera la secuencia de la proteina en formato fasta.
+
+* Observa el árbol y descubre que parálogos de CAPS5 se originaron en la más reciente duplicación. Recupera el alinamiento utilizando Jalview.
+
+* Visualiza la sintenia entre humano y conejo, ¿En qué cromosoma esta localizado el ortólogo de conejo? ¿La sintenia se mantiene en esa región? ¿Y la microsintenia (considera 4 genes arriba y abajo de CASP5).
+
+Manejo del Map Viewer
+=====================
+
+MapViewer_ es un visor de mapas de la NCBI. En el encontramos mapas genéticos, citogenéticos, físicos, etc lincados entre si y a la secuencia del genoma humano. Es una herramienta muy útil para pasar de unas coordenadas a otras y recopilar disintos tipos de datos.
+
+Por ejemplo podemos identificar todos los clones, genes y enfermedades descritas cercanas al marcador SNP rs11934801.
+
+Búsqueda de SNPs
+----------------
+
+Hemos obtenido esta  :download:`secuencia <datos/practica_visores/secuencia.fasta>` de un paciente. Utilizando el Blast y la información de la dbSNPs y el MapVier.
+
+* Identifica si hay algun SNP conocido en al región que cubre esa secuencia.
+* Comprueba si hay mutaciones relacionadas con al anemia falciforme.
+* La localización cromosómica del gen al que pertenece la secuencia. 
+* Identifica marcadores flanqueantes situados fuera de este gen.
+* Identifica los genes flanqueantes.
+* Identifica el marcador genético del mapa deCODE más cercano.
+
+Ejercicio final
+---------------
+
+Realiza el ejercicio planteado al inicio de la práctica.
+
+
+
+
+.. _Ensembl: http://www.ensembl.org/index.html
+.. _NCBI: http://www.ncbi.nlm.nih.gov/
+.. _tutoriales: http://www.ensembl.org/info/website/tutorials/index.html
+.. _tutorial:  http://www.ensembl.org/Multi/Help/Movie?db=core;id=423
+.. _MapViewer: http://www.ncbi.nlm.nih.gov/mapview

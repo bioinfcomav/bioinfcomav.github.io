@@ -1,0 +1,14 @@
+===============================================
+EJERCICIO 2: ESTUDIO DE LOS GENES IDENTIFICADOS
+===============================================
+
+En el ejercicio anterior entre los genes identificados se encontraba el gel SOX-3 de C. elegans. Has elegido este gen para profundizar en el estudio y quieres obtener los siguientes datos:
+
+* Diseñar cebadores que te permitan amplificar todos los exones del gen.
+
+* Identificar el homólogo/s en Drosophila  y diseñar cebadores para cuantificar la expresión de estos genes mediante RT-PCR
+
+* Identificar los genes paralogos de SOX-3 en C.elegans, alinearlos  y realizar una filogénia con la región conservada.
+
+
+

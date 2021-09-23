@@ -1,0 +1,74 @@
+
+===================================
+PRÁCTICA DE ALINEAMIENTOS MÚLTIPLES
+===================================
+
+Vamos a utilizar la versión gráfica del Clustal en windows (Clustalx), en esta guía también se incluyen los comandos utilizados si se trabaja con la versión texto (ClustalW) en Linux. 
+
+Guardar el fichero :download:`frataxin_mamiferos.fasta <datos/practica_multiple/frataxin_mamiferos.fasta>` 
+
+Vamos a analizar varias proteínas homólogas a la frataxina humana, proteína implicada en la enfermedad ataxia de Friedreich.
+Podemos encontrar servidores online y la documentación del programa en la pagina web del Clustal_.
+
+Alineamiento con ClustalX
+=========================
+
+Ejecutar el progama: clustalx
+
+Ver las opciones que nos permite modificar.
+
+Cargar el fichero frataxin_mamiferos.fasta.
+
+Realizar el alineamiento con las opciones por defecto. Ver los resultados.
+
+¿Qué problema hay?.
+
+Modificar la penalización por inicio de gap y por extension.
+¿Qué sucede?
+Ojo, Guardar el resultado con otro nombre para no sobreescribir el fichero anterior. 
+
+¿Qué sucedería si eliminamos las tres secuencias mas diferentes?
+----------------------------------------------------------------
+
+Descargar el fichero :download:`frataxin_mamiferos_cercanos.fasta <datos/practica_multiple/frataxin_mamiferos_cercanos.fasta>`.
+
+Realizar el alineamiento y compararlo con el anterior.
+
+Alineamiento con secuencias mas divergentes
+-------------------------------------------
+
+Descargar el fichero :download:`frataxin_prot.fasta <datos/practica_multiple/frataxin_prot.fasta>`.
+
+Realizar el alineamiento con el programa clustalx.
+
+Comparar con el alineamiento de mamifero.
+
+
+Comparación con el dominio de la frataxin
+-----------------------------------------
+
+Conectarse a la base de datos de dominios de la NCBI en al entrada de la frataxina_. 
+
+Entrar en la información del dominio. Visualizar el alineamiento.
+
+¿Se parece a nuestro último alineamiento?.
+
+Alineamiento de secuencias de ADN
+=================================
+
+El Clustal también nos permite alinear secuencias de ADN, lo cual es útil tanto para detección de SNPs o mutaciones y estudios filogenéticos.
+En este ejercicio vamos a buscar SNPs en del gen CT099 de *Lycopersicon pimpinellifolium*, para ello vamos a utilizar las secuencias de varios individuos de esta especie.
+Alinear las secuencias del fichero :download:`seq_dna.fasta <datos/practica_multiple/seq_dna.fasta>` e identificar los cambios presentes en las secuencias.
+
+Edición de alineamientos múltiples.
+===================================
+
+Abrir alguno de los alineamientos realizados con Bioedit_ y practicar con las diferentes formas de edición y modificación del alineamiento.
+
+:doc:`Ir a la teoría del tema<multiple>`
+
+.. _Clustal: http://www.clustal.org/
+
+.. _Bioedit: http://www.mbio.ncsu.edu/bioedit/bioedit.html
+
+.. _frataxina: http://www.ncbi.nlm.nih.gov/Structure/cdd/cddsrv.cgi?uid=29607

@@ -1,0 +1,702 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Sequence assembly &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Mapping" href="mapping.html" />
+    <link rel="prev" title="Read QA and Cleaning" href="read_cleaning.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sequencing_technologies.html">Sequencing technologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ngs_applications_examples.html">NGS application examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_analysis_software.html">NGS analysis software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmd_primer.html">Command line primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_file_formats.html">NGS sequence file formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read_cleaning.html">NGS read cleaning</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sequence assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Sequence mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snp_calling.html">SNP calling and filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html">NGS expression analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html#practical-tasks">Practical tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_files.html">Dealing with big result files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bedtools.html">BEDTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maize_snp_calling.html">Maize SNP calling practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice.html">Final practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice_walkthrough.html">Final practice walkthrough</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="sequence-assembly">
+<h1>Sequence assembly<a class="headerlink" href="#sequence-assembly" title="Permalink to this headline">¶</a></h1>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="_images/assemblies_presentation.png"><img alt="_images/assemblies_presentation.png" src="_images/assemblies_presentation.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="_downloads/6895ae3a8a9a8b6344600d9747f9f384/assembly.odp"><code class="xref download docutils literal notranslate"><span class="pre">Sequence</span> <span class="pre">assembly</span></code></a> (<a class="reference download internal" download="" href="_downloads/29334a2b7e29c566b6dabcd748134fdf/assembly.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Some nice reviews about the sequence assembly are: <a class="reference external" href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003345">Next-Generation Sequence Assembly: Four Stages of Data Processing and Computational Challenges</a>, <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S0888754310000492">Assembly algorithms for next-generation sequencing data</a>, <a class="reference external" href="http://www.nature.com/nmeth/journal/v6/n11s/abs/nmeth.1376.html">Sense from sequence reads: methods for alignment and assembly</a>, <a class="reference external" href="http://www.plosone.org/article/info:doi%2F10.1371%2Fjournal.pone.0017915">A Practical Comparison of De Novo Genome Assembly Software Tools for Next-Generation Sequencing Technologies</a>, and <a class="reference external" href="http://bfg.oxfordjournals.org/content/11/1/25.full">Comparison of the two major classes of assembly algorithms: overlap–layout–consensus and de-bruijn-graph</a>.
+A review about the new low memory genome assemblers: <a class="reference external" href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0075505">Comparing Memory-Efficient Genome Assemblers on Stand-Alone and Cloud Infrastructures</a>.
+A review about the long reads and about the technologies used to assemble the scaffolds into chromosomes: <a class="reference external" href="http://www.biorxiv.org/content/early/2016/04/13/048603.full.pdf+html">Third generation sequencing and the future of genomics</a>, and <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1369526616301315">The impact of third generation genomic technologies on plant genome assembly</a>.</p>
+<section id="assembly-software">
+<h2>Assembly software<a class="headerlink" href="#assembly-software" title="Permalink to this headline">¶</a></h2>
+<p>Some useful assembly software:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://staden.sourceforge.net/">Staden</a> (Sanger).</p></li>
+<li><p><a class="reference external" href="http://sourceforge.net/apps/mediawiki/wgs-assembler/index.php?title=Main_Page">Celera assembler</a> (genomic).</p></li>
+<li><p><a class="reference external" href="http://soap.genomics.org.cn/soapdenovo.html">SOAPdenovo</a> (Illumina, genomic).</p></li>
+<li><p><a class="reference external" href="http://trinityrnaseq.sourceforge.net/">trinity</a> (Illumina and 454, transcriptome).</p></li>
+<li><p><a class="reference external" href="http://www.chevreux.org/projects_mira.html">Mira</a> (454 and not many Illumina reads).</p></li>
+<li><p><a class="reference external" href="http://bioinfo.bti.cornell.edu/tool/iAssembler/">iAssembler</a> (454, transcriptome).</p></li>
+<li><p><a class="reference external" href="http://454.com/products/analysis-software/index.asp">newbler</a> (454).</p></li>
+</ul>
+</div></blockquote>
+<p>In the seqanswer wiki there is a more comprehensive list with <a class="reference external" href="http://seqanswers.com/wiki/Special:BrowseData/Bioinformatics%20application?Bioinformatics_method=Assembly">assembly software</a>.</p>
+</section>
+<section id="read-cleaning">
+<h2>Read cleaning<a class="headerlink" href="#read-cleaning" title="Permalink to this headline">¶</a></h2>
+<p>Having reads of good quality without vector, adaptors, contaminants or chimeras in them is a very important requirement a good assembly.
+In the CABOG assembler wiki there is a set of recommendations regarding the read <a class="reference external" href="http://sourceforge.net/apps/mediawiki/wgs-assembler/index.php?title=Preprocessing">pre-processing</a> recommended for different technologies before doing an assembly.</p>
+</section>
+<section id="digital-normalization">
+<h2>Digital normalization<a class="headerlink" href="#digital-normalization" title="Permalink to this headline">¶</a></h2>
+<p>Recently a paper has been <a class="reference external" href="http://arxiv.org/abs/1203.4802">submitted</a> describing and implementing a technique to normalize the coverage, and thus reducing the dataset, before doing a de novo assembly.
+This algorithm tries to remove reads from over abundant transcripts and it fixes sequencing errors taking into account the low abundant k-mers.
+Since the assembly is a process very difficult to scale efficiently this could be an interesting approach to ease this problem.
+This normalization could be of special interest for the transcriptomic assembly.
+In this case the abundance of the ESTs that correspond to different transcripts differ widely and there is a lot of redundant data for the more expressed transcripts.
+Given that the requirements of the assembly grow rapidly with the number of reads removing a lot of the redundant reads can simplify the problem a lot.</p>
+<p>Some caveats should be considered though.
+It shouldn’t be used with genomic reads because in this case the highly abundant reads are usually interpreted by the assemblers as repetitive DNA and the normalization would remove this information.
+This might not be a concern in samples with no repetitive DNA like genomic samples from prokaryotes.
+Due to the error correction the use of this technique in reads coming from complex samples should also be considered.</p>
+<p>The abstract of the paper states the following.
+Deep shotgun sequencing and analysis of genomes, transcriptomes, amplified single-cell genomes, and metagenomes enable the sensitive investigation of a wide range of biological phenomena.
+However, it is increasingly difficult to deal with the volume of data emerging from deep short-read sequencers, in part because of random and systematic sampling variation as well as a high sequencing error rate.
+These challenges have led to the development of entire new classes of short-read mapping tools, as well as new de novo assemblers.
+Even newer assembly strategies for dealing with transcriptomes, single-cell genomes, and metagenomes have also emerged.
+Despite these advances, algorithms and compute capacity continue to be challenged by the continued improvements in sequencing technology throughput.
+We here describe an approach we term digital normalization, a single-pass computational algorithm that discards redundant data and both sampling variation and the number of errors present in deep sequencing data sets.
+Digital normalization substantially reduces the size of data sets and accordingly decreases the memory and time requirements for de novo sequence assembly, all without significantly impacting content of the generated contigs.
+In doing so, it converts high random coverage to low systematic coverage.
+Digital normalization is an effective and efficient approach to normalizing coverage, removing errors, and reducing data set size for shotgun sequencing data sets.
+It is particularly useful for reducing the compute requirements for de novo sequence assembly.</p>
+<p>The authors <a class="reference external" href="http://ivory.idyll.org/blog/apr-12/what-is-diginorm.html">report</a> that the process requires low memory, works with a single pass and without reference.
+They also <a class="reference external" href="http://ivory.idyll.org/blog//why-you-shouldnt-use-diginorm.html">warn</a> that digital normalization should not be used by default if an assembly with all reads can be accomplished.</p>
+</section>
+<section id="illumina-matepair-chimeras">
+<h2>Illumina matepair chimeras<a class="headerlink" href="#illumina-matepair-chimeras" title="Permalink to this headline">¶</a></h2>
+<p>Unlike the 454 matepair libraries the Illumina libraries do not include a linker to differentiate where the sequence tracks that come from the different genomic segments are joined in the library templates.
+We can split the forward and reverse segments in the 454 matepairs just looking for the linker, but that is not possible in the Illumina matepairs.
+In most cases the forward and reverse reads that come from a template will be located in the forward and reverse pairends respectively, but not always.
+In some cases some reads could be chimeric and could include segments that are non-contigous in the original genome.
+This chimeras could confuse the assemblers.
+Due to this reason the SOAPdenovo developers recommend not to use the matepair Illumina libraries to build the contigs and to use them only for the scaffolding step.
+The CABOG developers look for these <a class="reference external" href="http://sourceforge.net/apps/mediawiki/wgs-assembler/index.php?title=Preprocessing#Disambiguating_Innie_from_Outie_Pairs">chimeras</a> before starting the assembly.
+For more information about this issue you can read a poster about <a class="reference external" href="http://sourceforge.net/apps/mediawiki/wgs-assembler/index.php?title=Pair_classification_within_Illumina_mate_pair_data">Illumina mate-pair classification</a> at the CABOG wiki.</p>
+<p>We have develop some seq_crumbs modules to fix and filter out these chimeras.</p>
+</section>
+<section id="practical-tasks">
+<h2>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this headline">¶</a></h2>
+<section id="do-a-manual-alignment">
+<h3>Do a manual alignment<a class="headerlink" href="#do-a-manual-alignment" title="Permalink to this headline">¶</a></h3>
+<p>Using the inkscape drawing program do a manual alignment of these <a class="reference download internal" download="" href="_downloads/3049f0e74529b6f48b281d0ce1763b2d/manual_alignment_reads.svg"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a>.
+In any pair of reads a stretch of the same color an letter implies that the reads have a similar sequence in that region.
+Try to assemble the reads into contigs, but remember that several problems might appear like: repetitive, vector contamination, alternative splicing, etc.
+Once you have complete the practice you can take a look at the intended <a class="reference download internal" download="" href="_downloads/53a397a774a4d62933468deecc55402c/manual_result.svg"><code class="xref download docutils literal notranslate"><span class="pre">result</span></code></a></p>
+</section>
+<section id="problems-with-read-cleaning">
+<h3>Problems with read cleaning<a class="headerlink" href="#problems-with-read-cleaning" title="Permalink to this headline">¶</a></h3>
+<p>This is an exercise using Sanger sequences from some ESTs. We have done three assemblies using Staden with different preprocessing filters. To test the results, we have compared  all produced contigs between them to identify repeats and very similar regions presents in the contigs of each project. Using this <a class="reference download internal" download="" href="_downloads/8faabb6717e80afd542e1d550cbb069d/plots.png"><code class="xref download docutils literal notranslate"><span class="pre">results</span> <span class="pre">file</span></code></a>, could you identify from which project is each image? Could you explain the results?.</p>
+<p>1- Mask regions with Phred quality &lt;15</p>
+<p>2- Mask regions with Phred quality &lt;15 and eliminate adaptor and vector sequences</p>
+<p>3- Mask regions with Phred quality &lt;25 and eliminate adaptor and vector sequences</p>
+</section>
+<section id="assembly-quality-assessment">
+<h3>Assembly quality assessment<a class="headerlink" href="#assembly-quality-assessment" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://solgenomics.net/">SGN</a> have assembled a draft of the <em>Nicotiana benthamiana</em> genome.
+The following method was used to do the sequencing.
+From the DNA, three distinct libraries were synthesized for use in a Illumina HiSeq-2000 sequencer:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a paired end library with an insert size of approximately 500 bp insert size (4 lanes)</p></li>
+<li><p>a mate-pair type library with an insert size of 2kb (1 lane)</p></li>
+<li><p>a mate pair with an insert size of 5kb (1 lane)</p></li>
+</ul>
+</div></blockquote>
+<p>They show in their web site the summary statistics that correspond to two different assemblies carried out with SOAPdenovo.
+Which of the two sets of statistics correspond to the v0.3 and v0.42 versions of the assembly?
+Which one would you prefer?</p>
+<p>Statistics that refer to one of the assemblies:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 53%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Sequence Count</p></td>
+<td><p>461,463 sequences</p></td>
+</tr>
+<tr class="row-even"><td><p>Total Length</p></td>
+<td><p>2462490758 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>Longest sequence</p></td>
+<td><p>208210 bp</p></td>
+</tr>
+<tr class="row-even"><td><p>Shortest sequence</p></td>
+<td><p>201 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>Average length</p></td>
+<td><p>5336.26 bp</p></td>
+</tr>
+<tr class="row-even"><td><p>N95 length</p></td>
+<td><p>1564 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>N95 index</p></td>
+<td><p>215459 sequences</p></td>
+</tr>
+<tr class="row-even"><td><p>N90 length</p></td>
+<td><p>3403 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>N90 index</p></td>
+<td><p>163811 sequences</p></td>
+</tr>
+<tr class="row-even"><td><p>N75 length</p></td>
+<td><p>8068 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>N75 index</p></td>
+<td><p>96046 sequences</p></td>
+</tr>
+<tr class="row-even"><td><p>N50 length</p></td>
+<td><p>16480 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>N50 index</p></td>
+<td><p>42984 sequences</p></td>
+</tr>
+<tr class="row-even"><td><p>N25 length</p></td>
+<td><p>29264 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>N25 index</p></td>
+<td><p>14540 sequences</p></td>
+</tr>
+</tbody>
+</table>
+<p>Statistics for the other assembly.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 53%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Sequence Count</p></td>
+<td><p>3,010,735 sequences</p></td>
+</tr>
+<tr class="row-even"><td><p>Total Length</p></td>
+<td><p>2899410662 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>Longest sequence</p></td>
+<td><p>103554 bp</p></td>
+</tr>
+<tr class="row-even"><td><p>Shortest sequence</p></td>
+<td><p>201 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>Average length</p></td>
+<td><p>963.02 bp</p></td>
+</tr>
+<tr class="row-even"><td><p>N95 length</p></td>
+<td><p>233 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>N95 index</p></td>
+<td><p>2338365 sequences</p></td>
+</tr>
+<tr class="row-even"><td><p>N90 length</p></td>
+<td><p>274 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>N90 index</p></td>
+<td><p>1763126 sequences</p></td>
+</tr>
+<tr class="row-even"><td><p>N75 length</p></td>
+<td><p>619 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>N75 index</p></td>
+<td><p>606395 sequences</p></td>
+</tr>
+<tr class="row-even"><td><p>N50 length</p></td>
+<td><p>4140 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>N50 index</p></td>
+<td><p>156329 sequences</p></td>
+</tr>
+<tr class="row-even"><td><p>N25 length</p></td>
+<td><p>10316 bp</p></td>
+</tr>
+<tr class="row-odd"><td><p>N25 index</p></td>
+<td><p>43823 sequences</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="assembler-comparison">
+<h3>Assembler comparison<a class="headerlink" href="#assembler-comparison" title="Permalink to this headline">¶</a></h3>
+<p>Several assemblers has been used to assembler the N. benthamiana choroplast (aprox. 100 Kb).
+The assembly was based on 883811 Illumina pair-ends with a 101 base pairs and and insert size of 400 bp (coverage 1700X).
+SOAPdenovo was used with all the reads and with a subset.
+The results of the experiment carried out by Aureliano Bombarely were:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 13%" />
+<col style="width: 9%" />
+<col style="width: 11%" />
+<col style="width: 6%" />
+<col style="width: 12%" />
+<col style="width: 7%" />
+<col style="width: 12%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Assembler</p></td>
+<td><p>Total Scaffold Size (Kb)</p></td>
+<td><p>Number Scaffolds</p></td>
+<td><p>Scaffold Max. Len (b)</p></td>
+<td><p>Scaffold N50</p></td>
+<td><p>Total Contig Size (Kb)</p></td>
+<td><p>Number Contigs</p></td>
+<td><p>Contig Max. Length (b)</p></td>
+<td><p>Contigs N50</p></td>
+<td><p>Running Time (min)</p></td>
+</tr>
+<tr class="row-even"><td><p>SOAP K63 cov &gt;255</p></td>
+<td><p>1019</p></td>
+<td><p>7712</p></td>
+<td><p>1,395</p></td>
+<td><p>127</p></td>
+<td><p>1024</p></td>
+<td><p>7790</p></td>
+<td><p>547</p></td>
+<td><p>127</p></td>
+<td><p>4.75</p></td>
+</tr>
+<tr class="row-odd"><td><p>SOAP K63 subset</p></td>
+<td><p>134</p></td>
+<td><p>20</p></td>
+<td><p>110,468</p></td>
+<td><p>110,468</p></td>
+<td><p>133</p></td>
+<td><p>40</p></td>
+<td><p>35,718</p></td>
+<td><p>13,627</p></td>
+<td><p>0.5</p></td>
+</tr>
+<tr class="row-even"><td><p>SOAP K63 subset + GapCloser</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>133</p></td>
+<td><p>20</p></td>
+<td><p>109,638</p></td>
+<td><p>18,725</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>ABySS</p></td>
+<td><p>170</p></td>
+<td><p>25</p></td>
+<td><p>61,293</p></td>
+<td><p>37,547</p></td>
+<td><p>170</p></td>
+<td><p>28</p></td>
+<td><p>57,534</p></td>
+<td><p>37,547</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>Velvet</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>255</p></td>
+<td><p>1138</p></td>
+<td><p>2,445</p></td>
+<td><p>215</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ray</p></td>
+<td><p>1327</p></td>
+<td><p>10418</p></td>
+<td><p>45,896</p></td>
+<td><p>116</p></td>
+<td><p>1325</p></td>
+<td><p>10423</p></td>
+<td><p>45,896</p></td>
+<td><p>116</p></td>
+<td><p>20</p></td>
+</tr>
+</tbody>
+</table>
+<p>Which assembler would you use? Would you do any analysis prior to the assembly to make sure that the bulk of the genome is not discarded?</p>
+</section>
+<section id="assembling-a-mithocondrial-genome-with-soapdenovo">
+<h3>Assembling a mithocondrial genome with SOAPdenovo<a class="headerlink" href="#assembling-a-mithocondrial-genome-with-soapdenovo" title="Permalink to this headline">¶</a></h3>
+<p>We are going to assemble the same 20000 human mithoncondrial pair-end <a class="reference download internal" download="" href="_downloads/5f32e22df4786c22a53d086e78141026/mito_reads.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a> with the assembler with a commonly used de brujin based assembler, <a class="reference external" href="http://soap.genomics.org.cn/soapdenovo.html">SOAPdenovo</a>.
+This assembler only runs on 64-bit operating systems, so if you are using a 32 system you will not be able to run the assembly commands.
+You can get the final result though and analyze the results.</p>
+<p>Create a directory named mito_soap and download and uncompress the reads in it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/mito_soap$ pwd
+/home/ngs_user/mito_soap
+~/mito_soap$ tar -xvzf mito_reads.tar.gz
+~/mito_soap$ ls
+mito_reads_pe1.fastq.gz  mito_reads_pe2.fastq.gz  mito_reads.tar.gz
+</pre></div>
+</div>
+<p>SOAPdenovo requires a configuration file to run the assembly.
+In this file it should be described which are the libraries that are going to be assembled.
+For each library it should be specified how long are the clone sizes used to create the mate-pairs or the pair ends.
+If mate-pairs are used it is recommended not to use them during the contig phase, due to the Illumina mate-pairs chimeras (that are usually around 5%), and to reserve them for the scaffolding phase.
+SOAPdenovo can use the length of the genome to be assembled if this information is known, in this case the human mithodondrial genome has 16.6 kb.</p>
+<p>The configuration file would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#maximal read length</span>
+<span class="n">max_rd_len</span><span class="o">=</span><span class="mi">101</span>
+<span class="p">[</span><span class="n">LIB</span><span class="p">]</span>
+<span class="c1">#average insert size</span>
+<span class="n">avg_ins</span><span class="o">=</span><span class="mi">450</span>
+<span class="c1">#if sequence needs to be reversed</span>
+<span class="n">reverse_seq</span><span class="o">=</span><span class="mi">0</span>
+<span class="c1">#in which part(s) the reads are used</span>
+<span class="n">asm_flags</span><span class="o">=</span><span class="mi">3</span>
+<span class="c1">#use only first 100 bps of each read</span>
+<span class="n">rd_len_cutoff</span><span class="o">=</span><span class="mi">100</span>
+<span class="c1">#in which order the reads are used while scaffolding</span>
+<span class="n">rank</span><span class="o">=</span><span class="mi">1</span>
+<span class="c1"># cutoff of pair number for a reliable connection (at least 3 for short insert size)</span>
+<span class="n">pair_num_cutoff</span><span class="o">=</span><span class="mi">3</span>
+<span class="c1">#minimum aligned length to contigs for a reliable read location (at least 32 for short insert size)</span>
+<span class="n">map_len</span><span class="o">=</span><span class="mi">32</span>
+<span class="c1">#a pair of fastq file, read 1 file should always be followed by read 2 file</span>
+<span class="n">q1</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">ngs_user</span><span class="o">/</span><span class="n">mito_soap</span><span class="o">/</span><span class="n">mito_reads_pe1</span><span class="o">.</span><span class="n">fastq</span>
+<span class="n">q2</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">ngs_user</span><span class="o">/</span><span class="n">mito_soap</span><span class="o">/</span><span class="n">mito_reads_pe2</span><span class="o">.</span><span class="n">fastq</span>
+</pre></div>
+</div>
+<p>The command to run SOAPdenovo could be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/mito_soap$ soapdenovo2-63mer all -s soap.conf -o assembly -K 35 -p 2 -N 16600 -V
+*******************************
+ Scaffold number                  6
+ In-scaffold contig number        22
+ Total scaffold length            13023
+ Average scaffold length          2170
+ Filled gap number                0
+ Longest scaffold                 3046
+ Scaffold and singleton number    14
+ Scaffold and singleton length    16463
+ Average length                   1175
+ N50                              2917
+ N90                              693
+ Weak points                      0
+*******************************
+Done with 6 scaffolds, 0 gaps finished, 8 gaps overall.
+</pre></div>
+</div>
+<p>You can download the <a class="reference download internal" download="" href="_downloads/badf4ab4cc9e6d42016bbd18ea7adc1e/mito_soap.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">results</span></code></a> and take a look at them.</p>
+<p>Usually after running the SOAPdenovo assembler you would also run GapCloser.</p>
+<p>Take a look at the assembly kmer frequency distribution.
+In the file assembly.kmerFreq you can find the number of kmers that were found 1, 2, 3, etc.
+Does this distribution look OK? What would you expect to find? Which is the expected average coverage given the read length, number of reads and mithocondrial genome length?</p>
+</section>
+<section id="assembling-a-mithocondrial-genome-with-velvet">
+<h3>Assembling a mithocondrial genome with Velvet<a class="headerlink" href="#assembling-a-mithocondrial-genome-with-velvet" title="Permalink to this headline">¶</a></h3>
+<p>We will use <a class="reference external" href="http://www.ebi.ac.uk/~zerbino/velvet/">velvet</a> to assemble 20000 human mithoncondrial pair-end <a class="reference download internal" download="" href="_downloads/5f32e22df4786c22a53d086e78141026/mito_reads.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a>.
+Before starting with velvet take a look at its <a class="reference external" href="http://www.ebi.ac.uk/~zerbino/velvet/Manual.pdf">manual</a>.</p>
+<p>We will create a directory named mito and we will download the reads in it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~$ mkdir mito
+ngs_user@machine:~$ cd mito/
+ngs_user@machine:~/mito$ ls
+mito_reads.tar.gz
+</pre></div>
+</div>
+<p>Now we have to uncompress the reads:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ tar -xvzf mito_reads.tar.gz
+mito_reads_pe1.fastq.gz
+mito_reads_pe2.fastq.gz
+</pre></div>
+</div>
+<p>Each one of the files correspond to one of the pair-end Illumina sequencing reactions.
+velvet requires the reads interleaved in one file.
+We can interleave the reads using interleave_pairs included in seq_crumbs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ interleave_pairs -z -o mito_reads.fastq.gz mito_reads_pe1.fastq.gz mito_reads_pe2.fastq.gz
+</pre></div>
+</div>
+<p>velvet is divided in two binaries, velveth and velvetg.
+velveth creates a hash index and velvetg does the assembly.
+A critical parameter for the kmer-based assembler is the kmer length.
+It is usually advisable to run these assemblers with different kmer lengths.
+In this case we will run velver for 21, 25, 29 and 31.
+Once we run both commands we obtain the assembly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ velveth  assem 21,31,4 -fastq.gz -shortPaired  mito_reads.fastq.gz
+[0.000001] Reading FastQ file mito_reads.fastq.gz
+[0.300111] 20000 reads found.
+[0.300696] Done
+(...)
+ngs_user@machine:~/mito$ velvetg assem_21/ -ins_length 500 -exp_cov 30.0 -read_trkg yes -amos_file yes
+[0.000001] Reading roadmap file assem//Roadmaps
+[0.068547] 20000 roadmaps read
+[0.069942] Creating insertion markers
+[0.075533] Ordering insertion markers
+[0.103541] Counting preNodes
+ngs_user@machine:~/mito$ velvetg assem_21/ -ins_length 500 -exp_cov 30.0 -read_trkg yes -amos_file yes
+ngs_user@machine:~/mito$ velvetg assem_25/ -ins_length 500 -exp_cov 30.0 -read_trkg yes -amos_file yes
+ngs_user@machine:~/mito$ velvetg assem_29/ -ins_length 500 -exp_cov 30.0 -read_trkg yes -amos_file yes
+</pre></div>
+</div>
+<p>In the assem directories you can find fasta sequences for the contigs in the contigs.fa and the reads assembled into the contigs in the velvet_asm.afg file.
+You can calculate several statistics for the fasta files with the calculate_stats executable for each directory and compare the results:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ calculate_stats assem_21/contigs.fa
+ngs_user@machine:~/mito$ calculate_stats assem_25/contigs.fa
+ngs_user@machine:~/mito$ calculate_stats assem_29/contigs.fa
+Length stats and distribution.
+------------------------------
+N50: 16390
+N95: 57
+minimum: 57
+maximum: 16,390
+average: 320.87
+variance: 3914768.62
+tot. residues: 21,498
+num. seqs.: 67
+</pre></div>
+</div>
+<p>Which k-mer give better results?</p>
+<p>How this results compare with the SOAPdenovo ones?</p>
+<p>To take a look at the assembly you can use <a class="reference external" href="http://bioinf.scri.ac.uk/tablet/">tablet</a> and open the afg file.</p>
+</section>
+<section id="designing-a-sequencing-project">
+<h3>Designing a sequencing project<a class="headerlink" href="#designing-a-sequencing-project" title="Permalink to this headline">¶</a></h3>
+<p>How would you design the sequencing of the Lettuce genome? Genome size: 2.7Gb</p>
+</section>
+<section id="tomato-genome-assembly">
+<h3>Tomato Genome Assembly<a class="headerlink" href="#tomato-genome-assembly" title="Permalink to this headline">¶</a></h3>
+<p>The tomato genome was assembled using Roche’s Newbler assembler.
+Different versions of the assembly were prepared as soon as new data was available.</p>
+<section id="version-1-00-2009-11-27">
+<h4>Version 1.00 (2009-11-27)<a class="headerlink" href="#version-1-00-2009-11-27" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Contigs</span><span class="p">:</span> <span class="mi">118</span><span class="p">,</span><span class="mi">692</span> <span class="n">sequences</span><span class="p">,</span> <span class="mf">762.5</span> <span class="n">Mb</span><span class="p">,</span> <span class="mi">50</span><span class="o">%</span> <span class="n">of</span> <span class="n">assembly</span> <span class="ow">in</span> <span class="mi">4</span><span class="p">,</span><span class="mi">238</span> <span class="n">contigs</span> <span class="n">of</span> <span class="mi">47</span><span class="p">,</span><span class="mi">298</span> <span class="n">bp</span> <span class="ow">or</span> <span class="n">longer</span>
+<span class="n">Scaffolds</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span><span class="mi">409</span> <span class="n">sequences</span><span class="p">,</span> <span class="mf">794.6</span> <span class="n">Mb</span><span class="p">,</span> <span class="mi">50</span><span class="o">%</span> <span class="n">of</span> <span class="n">assembly</span> <span class="ow">in</span> <span class="mi">50</span> <span class="n">scaffolds</span> <span class="n">of</span> <span class="mf">4.5</span> <span class="n">Mb</span> <span class="ow">or</span> <span class="n">longer</span>
+</pre></div>
+</div>
+</section>
+<section id="version-1-03-2010-01-22">
+<h4>Version 1.03 (2010-01-22)<a class="headerlink" href="#version-1-03-2010-01-22" title="Permalink to this headline">¶</a></h4>
+<p>Changes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>During the assembly we screened for E. coli sequences</p></li>
+<li><p>Two new 454 runs (3kb and 20kb) were added to the assembly</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Contigs</span><span class="p">:</span> <span class="mi">110</span><span class="p">,</span><span class="mi">872</span> <span class="n">sequences</span><span class="p">,</span> <span class="mf">762.0</span> <span class="n">Mb</span><span class="p">,</span> <span class="mi">50</span><span class="o">%</span> <span class="n">of</span> <span class="n">assembly</span> <span class="ow">in</span> <span class="mi">3</span><span class="p">,</span><span class="mi">641</span> <span class="n">contigs</span> <span class="n">of</span> <span class="mi">55</span><span class="p">,</span><span class="mi">730</span> <span class="n">bp</span> <span class="ow">or</span> <span class="n">longer</span>
+<span class="n">Scaffolds</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span><span class="mi">761</span> <span class="n">sequences</span><span class="p">,</span> <span class="mf">781.7</span> <span class="n">Mb</span><span class="p">,</span> <span class="mi">50</span><span class="o">%</span> <span class="n">of</span> <span class="n">assembly</span> <span class="ow">in</span> <span class="mi">52</span> <span class="n">scaffolds</span> <span class="n">of</span> <span class="mf">4.4</span> <span class="n">Mb</span> <span class="ow">or</span> <span class="n">longer</span>
+</pre></div>
+</div>
+</section>
+<section id="version-1-50-2010-05-14">
+<h4>Version 1.50 (2010-05-14)<a class="headerlink" href="#version-1-50-2010-05-14" title="Permalink to this headline">¶</a></h4>
+<p>Changes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The contigs from assembly 1.03 were polished using the SOLiD data and SOLEXA data. Polishing included single-base error correction and indel correction (mostly homopolymer).</p></li>
+<li><p>Contamination from E.coli and vector sequences was removed.</p></li>
+<li><p>Several structural inconsistencies were solved.</p></li>
+<li><p>Contigs from fully sequences BACs were integrated.</p></li>
+<li><p>Superscaffolds were built using clone-end information (BAC and fosmid ends).</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Contigs</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span><span class="mi">736</span> <span class="n">sequences</span><span class="p">,</span> <span class="mf">733.0</span> <span class="n">Mb</span><span class="p">,</span> <span class="mi">50</span><span class="o">%</span> <span class="n">of</span> <span class="n">assembly</span> <span class="ow">in</span> <span class="mi">2</span><span class="p">,</span><span class="mi">754</span> <span class="n">contigs</span> <span class="n">of</span> <span class="mi">69</span><span class="p">,</span><span class="mi">257</span> <span class="n">bp</span> <span class="ow">or</span> <span class="n">longer</span>
+<span class="n">Scaffolds</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span><span class="mi">584</span> <span class="n">sequences</span><span class="p">,</span> <span class="mf">781.2</span> <span class="n">Mb</span><span class="p">,</span> <span class="mi">50</span><span class="o">%</span> <span class="n">of</span> <span class="n">assembly</span> <span class="ow">in</span> <span class="mi">27</span> <span class="n">scaffolds</span> <span class="n">of</span> <span class="mf">7.8</span> <span class="n">Mb</span> <span class="ow">or</span> <span class="n">longer</span>
+</pre></div>
+</div>
+</section>
+<section id="version-2-10-2010-06-25">
+<h4>Version 2.10 (2010-06-25)<a class="headerlink" href="#version-2-10-2010-06-25" title="Permalink to this headline">¶</a></h4>
+<p>Changes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The scaffolds from assembly 1.50 were further linked together by the clone ends (BAC and fosmid)</p></li>
+<li><p>The new scaffolds were placed and oriented on the 12 chromosomes by integration of the two physical maps (KeyGene WGP and Arizona SNaPshot), the Kazusa genetic map, and multiple FISH maps.</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Contigs</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span><span class="mi">736</span> <span class="n">sequences</span><span class="p">,</span> <span class="mf">733.0</span> <span class="n">Mb</span><span class="p">,</span> <span class="mi">50</span><span class="o">%</span> <span class="n">of</span> <span class="n">assembly</span> <span class="ow">in</span> <span class="mi">2</span><span class="p">,</span><span class="mi">754</span> <span class="n">contigs</span> <span class="n">of</span> <span class="mi">69</span><span class="p">,</span><span class="mi">257</span> <span class="n">bp</span> <span class="ow">or</span> <span class="n">longer</span>
+<span class="n">Scaffolds</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span><span class="mi">433</span> <span class="n">sequences</span><span class="p">,</span> <span class="mf">781.3</span> <span class="n">Mb</span><span class="p">,</span> <span class="mi">50</span><span class="o">%</span> <span class="n">of</span> <span class="n">assembly</span> <span class="ow">in</span> <span class="mi">17</span> <span class="n">scaffolds</span> <span class="n">of</span> <span class="mf">16.5</span> <span class="n">Mb</span> <span class="ow">or</span> <span class="n">longer</span>
+<span class="n">Pseudomolecules</span><span class="p">:</span> <span class="mi">12</span> <span class="n">chromosomes</span> <span class="ow">and</span> <span class="s2">&quot;chromosome 0&quot;</span><span class="p">,</span> <span class="mf">781.6</span> <span class="n">Mb</span>
+</pre></div>
+</div>
+</section>
+<section id="version-2-30-2010-08-09">
+<h4>Version 2.30 (2010-08-09)<a class="headerlink" href="#version-2-30-2010-08-09" title="Permalink to this headline">¶</a></h4>
+<p>Changes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Sequenced BACs were integrated in the scaffolds of assembly version 2.10.</p></li>
+<li><p>After the BAC integration the scaffolds were ordered and oriented on the 12 chromosomes using the two physical maps (Keygene WGP and Arizona SNaPshot), the Kazusa genetic map, and multiple FISH maps.</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Contigs</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span><span class="mi">874</span> <span class="n">sequences</span><span class="p">,</span> <span class="mf">737.7</span> <span class="n">Mb</span><span class="p">,</span> <span class="mi">50</span><span class="o">%</span> <span class="n">of</span> <span class="n">assembly</span> <span class="ow">in</span> <span class="mi">1</span><span class="p">,</span><span class="mi">996</span> <span class="n">contigs</span> <span class="n">of</span> <span class="mi">87</span><span class="p">,</span><span class="mi">129</span> <span class="n">bp</span> <span class="ow">or</span> <span class="n">longer</span>
+<span class="n">Scaffolds</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span><span class="mi">232</span> <span class="n">sequences</span><span class="p">,</span> <span class="mf">781.4</span> <span class="n">Mb</span><span class="p">,</span> <span class="mi">50</span><span class="o">%</span> <span class="n">of</span> <span class="n">assembly</span> <span class="ow">in</span> <span class="mi">17</span> <span class="n">scaffolds</span> <span class="n">of</span> <span class="mf">16.5</span> <span class="n">Mb</span> <span class="ow">or</span> <span class="n">longer</span>
+<span class="n">Pseudomolecules</span><span class="p">:</span> <span class="mi">12</span> <span class="n">chromosomes</span> <span class="ow">and</span> <span class="s2">&quot;chromosome 0&quot;</span><span class="p">,</span> <span class="mf">781.7</span> <span class="n">Mb</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Which of the steps improved the assembly the most?</p>
+</section>
+</section>
+<section id="illumina-read-correction">
+<h3>Illumina Read correction<a class="headerlink" href="#illumina-read-correction" title="Permalink to this headline">¶</a></h3>
+<p>We have used <a class="reference external" href="http://sourceforge.net/p/bless-ec/wiki/Home/">bless</a>, an illumina error correction program, to correct our illumina reads. We have calculated the kmer distribution and here you can see the histograms of theses distributions.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/kmer_hs2.png"><img alt="_images/kmer_hs2.png" src="_images/kmer_hs2.png" style="width: 800px;" /></a>
+</figure>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/kmer_hs1.png"><img alt="_images/kmer_hs1.png" src="_images/kmer_hs1.png" style="width: 800px;" /></a>
+</figure>
+<p>Which one belongs to the corrected reads? Why?</p>
+<p>How do you think that this analysis can influence the assembly?</p>
+</section>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="read_cleaning.html">Read QA and Cleaning</a>-->
+                    <a class="prev" href="read_cleaning.html" title="Read QA and Cleaning">previous</a>
+                    |
+                    <!--<a class="next" href="mapping.html">Mapping</a>-->
+                    <a class="next" href="mapping.html" title="Mapping">next</a>
+                    |
+
+                <a class="index" href="/courses/sequence_analysis/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

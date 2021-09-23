@@ -1,0 +1,70 @@
+=======================================
+PRÁCTICA DE PROYECTOS DE SECUENCIACIÓN.
+=======================================
+
+Documentación sobre el Staden
+=============================
+
+Los desarrolladores del proyecto Staden mantienen en su página web una excelente y extensa `documentacion <http://staden.sourceforge.net/>`_.
+
+Adicionalmente Simon Andrews creó un :download:`curso <datos/practica_staden/staden_course.pdf>` con :download:`ejercicios <datos/practica_staden/staden_exercises.pdf>`.
+
+
+Análisis de cromatogramas automático
+====================================
+
+El pregap4 puede analizar automáticamente la calidad y otros aspectos de los cromatogramas. 
+
+Reanalizar con el PreGap los siguientes :download:`cromatogramas<datos/practica_staden/cromatogramas.zip>`.
+
+Con el Trev abrir los ficheros analizados (.exp) y comparar los analisis manuales con el realizado por el pregap4.
+
+
+Costrucción de un proyecto de secuenciacion
+===========================================
+
+Ahora vamos a realizar un proyecto de secuenciación a partir de varias secuenciación a partir de varias secuencias. 
+
+Descargar los cromatogramas del fichero cromprimido :download:`secuencias1.zip<datos/practica_staden/secuencias1.zip>`.
+
+Preanalizar las secuencias con el PreGap y utilizar los ficheros producidos para crear el proyecto con el Gap4.
+
+¿Cuantas secuencias se han introducido en la base de datos?
+
+¿Cuantos contigs se han producido?. ¿De cuantas secuencias?
+
+Ejecutar el editor de contigs y comprobar el contig producido, comprobar las incongruencias en las secuencias viendo los cromatogramas.
+
+Practicar con las diferentes opciones y análisis del programa Gap4
+
+Salvar los consensos en ficheros separados y en un único fichero
+
+Proyecto de secuenciación de ESTs
+=================================
+
+Ahora vamos a realizar un proyecto de secuenciación a partir de lecturas de ESTs. Descargar el fichero comprimido :download:`secuencias2.zip<datos/practica_staden/secuencias2.zip>`.
+
+Una vez hayais obtenido los contigs con el Gap4:
+
+    * Comprobar el número de contigs obtenido.
+
+    * El número de secuencias por contigs
+
+    * Buscar regiones similares en el interior del contig utilizando el análisis de Internal Join del Gap4.
+
+    * ¿Que sucede?.
+
+Editar alguna de los regiones encontradas. 
+
+¿Por qué el Gap4 no junta esos contigs?.
+
+Repetir todo el análisis pero ahora incluyendo las opciones de búsqueda de adaptadores y vector del PreGap4.
+El fichero con el sitio de clonación para la opción cloning site en el módulo Sequencing Vector clip del pregap4 se llama sition_clonacion.txt.
+La secuencia completa del vector se llama vector.fasta y debe ir en la opción Cloning Vector del módulo Coning Vector Clip.
+
+¿Cuantos contigs aparecen ahora?.
+
+Comprueba si existen regiones similares internas y justifica su existencia
+
+:doc:`Ir a la teoría del tema <ensamblaje>`
+

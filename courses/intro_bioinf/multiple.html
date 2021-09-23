@@ -1,0 +1,240 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>ALINANEAMIENTOS MULTIPLES &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="PRÁCTICA DE ALINEAMIENTOS MÚLTIPLES" href="practica_multiple.html" />
+    <link rel="prev" title="Métodos de predicción de ADN y ARN" href="practica_prediccion.html" /> 
+  </head>
+  <body>
+    <nav class="global_navigation">
+        <ul>
+            <li class="current_site_item" ><a href="http://bioinf.comav.upv.es">bioinf</a></li>
+            <li><a href="http://cucurbigene.net">cucurbigene</a></li>
+            <li><a href="http://melogene.net">melogene</a></li>
+        </ul>
+    </nav>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+    
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="http://www.melogene.net/">Melogene</a></li>
+                    <li><a href="http://www.cucurbigene.net/">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bases_datos.html">Bases de datos biológicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_bases.html">Práctica bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alineamientos.html">Alineamientos de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_jemboss.html">Práctica jemboss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_alineamientos.html">Práctica de alineamientos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blast.html">Búsqueda de secuencias en bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast.html">Práctica Blast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediccion.html">Métodos predictivos en ADN y ARN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_prediccion.html">Práctica predicción</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Alineamientos múltiples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_multiple.html">Práctica alineamiento múltiple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filogenias.html">Introducción al análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_filogenias.html">Práctica análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast2go.html">Práctica anotación con Blast2GO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_visores.html">Prácticas bases de datos genómicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion.html">Ejercicio anotación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion2.html">Ejercicio prediccion 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sanger.html">Secuenciación de Sanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ensamblaje.html">Ensamblaje de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_ensamblaje.html">Práctica ensamblaje de secuencias</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="alinaneamientos-multiples">
+<h1>ALINANEAMIENTOS MULTIPLES<a class="headerlink" href="#alinaneamientos-multiples" title="Permalink to this headline">¶</a></h1>
+<section id="definicion-y-diferencias-frente-a-los-alineamientos-de-2-secuencias">
+<h2>Definición y diferencias frente a los alineamientos de 2 secuencias<a class="headerlink" href="#definicion-y-diferencias-frente-a-los-alineamientos-de-2-secuencias" title="Permalink to this headline">¶</a></h2>
+<p>Hablamos de alineamientos multiples (<a class="reference external" href="http://en.wikipedia.org/wiki/Multiple_sequence_alignment">MSA</a>) cuando tratamos con mas de dos secuencias.
+Este tipo de alineamientos requiere un abordaje más complejo que el de pares de secuencias ya que el uso directo de los estadísticos de alineamiento global y local requiere una gran capacidad de cálculo y solo es aplicable a problemas con muy pocas secuencias.</p>
+<p>El principal problema que nos plantean los alineamientos múltiples es la posición de los gaps en el alineamiento.
+En el alineamiento, todas las secuencias tienen que tener la misma longitud y eso se consigue introduciendo gaps.</p>
+<figure class="align-center">
+<img alt="_images/fig4_0.bmp" src="_images/fig4_0.bmp" />
+</figure>
+</section>
+<section id="algoritmos-de-construccion-progresiva">
+<h2>Algoritmos de construcción progresiva<a class="headerlink" href="#algoritmos-de-construccion-progresiva" title="Permalink to this headline">¶</a></h2>
+<p>Los programas más utilizados se basan en este tipo de estrategias.
+No nos garantizan que el alineamiento obtenido sea el mejor posible, pero son capaces de encontrar una solución óptima de forma muy eficaz.
+Ejemplos de programas basados en estos métodos heurísticos: <a class="reference external" href="http://www.clustal.org/">ClustalW</a> y <a class="reference external" href="http://en.wikipedia.org/wiki/T-Coffee">T-coffe</a>.</p>
+<p>El método consiste en primero realizar alineamientos de dos en dos.
+A partir de estos alineamientos se construye una matriz de distancias entre las secuencias y un árbol guía basado en estas distancias.
+Mediante este árbol podemos encontrar las parejas de secuencias más similares.</p>
+<p>Al alineamiento del par de secuencias más similar se va añadiendo el resto de secuencias o alineamientos por el orden determinado por el árbol guía.</p>
+<figure class="align-center">
+<img alt="_images/arbol.png" src="_images/arbol.png" />
+</figure>
+<p>En nuestro ejemplo anterior :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DISTANCIAS</span><span class="p">:</span>
+
+<span class="n">IMPRESIONABLE</span> <span class="n">X</span> <span class="n">IMPRESO</span> <span class="mi">7</span><span class="o">/</span><span class="mi">13</span>
+
+<span class="n">IMPRESIONABLE</span> <span class="n">X</span> <span class="n">INCUESTIONABLE</span> <span class="mi">10</span><span class="o">/</span><span class="mi">14</span>
+
+<span class="n">INCUESTIONABLE</span> <span class="n">X</span> <span class="n">IMPRESO</span> <span class="mi">4</span><span class="o">/</span><span class="mi">14</span>
+
+<span class="n">El</span> <span class="n">primer</span> <span class="n">alineamiento</span> <span class="n">seria</span><span class="p">:</span> <span class="n">Incuestionableximpresionable</span><span class="o">.</span>
+
+<span class="n">IMPRES</span><span class="o">-</span><span class="n">IONABLE</span>
+<span class="n">INCUESTIANABLE</span>
+
+<span class="n">Posteriormente</span> <span class="n">uniría</span> <span class="n">Impreso</span>
+
+<span class="n">IMPRES</span><span class="o">-</span><span class="n">IONABLE</span>
+<span class="n">INCUESTIONABLE</span>
+<span class="n">IMPRES</span><span class="o">--</span><span class="n">O</span><span class="o">-----</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="_images/alin_progresivo.png" src="_images/alin_progresivo.png" />
+</figure>
+<p>Los programas derivados del clustal (<a class="reference external" href="http://www.clustal.org/">ClustalW</a> y ClustalX (versión gráfica)) incorporan un sistema de puntuación del alineamiento.
+La puntuación esta basada en la distancia genética entre cada secuencia y la raíz del árbol, teniendo en cuenta la puntuación por los cambios de aminoácidos o nucleótidos.
+Además de esta puntuación, los gaps y la extensión de los gaps están penalizados.
+La puntuación del alineamiento global será la suma de la puntuación de los alineamientos de parejas de secuencias.
+El ClustalW tiende a situar los gaps entre las zonas altamente conservadas en vez de separar estas regiones.</p>
+<figure class="align-center">
+<img alt="_images/fig4_2.bmp" src="_images/fig4_2.bmp" />
+</figure>
+<p>Fig. Alineamiento de tres secuencias altamente conservadas</p>
+<figure class="align-center">
+<img alt="_images/fig4_3.bmp" src="_images/fig4_3.bmp" />
+</figure>
+<p>Fig. Alineamiento con gaps</p>
+<section id="problemas-de-los-alineamientos-de-construccion-progresiva">
+<h3>Problemas de los alineamientos de construcción progresiva<a class="headerlink" href="#problemas-de-los-alineamientos-de-construccion-progresiva" title="Permalink to this headline">¶</a></h3>
+<p>Los mayores problemas de este tipo de alineamientos derivan del alineamiento de la primera pareja.
+Si las dos primeras secuencias son cercanas (muy similares) el alineamiento base probablemente contenga pocos errores.
+En cambio, si estas dos secuencias son muy divergentes el alineamiento obtenido no será muy adecuado y los gaps y errores se propagarán al resto de secuencias añadidas puesto que este primer alineamiento ya no es modificado al unirse el resto de alineamientos.
+Para paliar este problema es mejor alinear secuencias del mismo tamaño es decir incluir únicamente en el alineamiento aquellas regiones presentes en todas las secuencias ya que el programa intentara alinear toda la longitud de la secuencia introduciendo gaps en el resto.</p>
+<p>Este tipo de alineamientos funciona correctamente para secuencias con cierto grado de conservación y que varíen de forma más o menos continua.
+Pero a pesar de estos inconvenientes, este tipo de algoritmos suelen encontrar una buena solución con pocos recursos, permitiendo el análisis de muchas secuencias.</p>
+</section>
+</section>
+<section id="utilidades-de-los-alineamientos-multiples">
+<h2>Utilidades de los alineamientos múltiples<a class="headerlink" href="#utilidades-de-los-alineamientos-multiples" title="Permalink to this headline">¶</a></h2>
+<p>Los alineamientos múltiples son una herramienta fundamental.
+Estos alineamientos son imprescindibles para realizar estudios posteriores, como por ejemplo:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>estudios evolutivos,</p></li>
+<li><p>análisis de dominios conservados,</p></li>
+<li><p>estructuras secundarias,</p></li>
+<li><p>reconocimiento de regiones conservadas en promotores, etc.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="edicion-de-alineamientos-multiples">
+<h2>Edición de alineamientos multiples.<a class="headerlink" href="#edicion-de-alineamientos-multiples" title="Permalink to this headline">¶</a></h2>
+<p>Los alineamientos múltiples generados por estos programas son ficheros de texto que en principio podríamos editar con cualquier editor.
+Pero algunos formatos no resultan cómodos para ser manejados por un editor de texto o el número de secuencias o su longitud complican la edición.</p>
+<p>Existen programas especializados para editar alineamientos, uno de los mas completos es el <a class="reference external" href="http://www.mbio.ncsu.edu/bioedit/bioedit.html">Bioedit</a> , el cual nos permite además enlazar con diferentes aplicaciones como Blast, primer3, etc.
+Es un editor gráfico que funciona en windows y, además, es bastante intuitivo en su uso.</p>
+<p><a class="reference internal" href="practica_multiple.html"><span class="doc">Ir a la práctica del tema</span></a></p>
+</section>
+</section>
+
+
+            
+        
+        
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="practica_prediccion.html">Métodos de predicción de ADN y ARN</a>-->
+                    <a class="prev" href="practica_prediccion.html" title="Métodos de predicción de ADN y ARN">previous</a>
+                    |
+                    <!--<a class="next" href="practica_multiple.html">PRÁCTICA DE ALINEAMIENTOS MÚLTIPLES</a>-->
+                    <a class="next" href="practica_multiple.html" title="PRÁCTICA DE ALINEAMIENTOS MÚLTIPLES">next</a>
+                    |
+                
+                <a class="index" href="/courses/intro_bioinf/index.html" title="Index">index</a>
+                
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

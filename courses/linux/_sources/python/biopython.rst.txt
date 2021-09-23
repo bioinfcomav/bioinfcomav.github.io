@@ -1,0 +1,198 @@
+
+Paquetes útiles en biología
+===========================
+
+Biopython
+---------
+
+Biopython es una librería que recoge utilidades para trabajar con datos biológicos.
+Algunas de sus utilidades incluyen funciones y clases para trabajar con secuencias, resultados Blast, estructuras de proteínas y árboles filogenéticos.
+Para familirizarnos con Biopython estudiaremos su `tutorial <http://biopython.org/DIST/docs/tutorial/Tutorial.html>`_, centrándonos en los capítulos:
+
+  * 3. Sequence objects
+  * 4. Sequence Record objects
+  * 5. Reading and writing sequence files
+  * 7. Running and parsing BLAST
+  * 19. Mailing lists
+
+Ejercicios
+----------
+
+1. Crea un objeto Seq con la secuencia 'ATCG'. ¿Cuántos residuos tiene?
+¿Cuáles son las tres primeras letras? ¿Y la última? ¿Cuántas adeninas tiene?
+Convierte la secuencia en una cadena de texto normal sin alfabeto.
+
+2. Crea la secuencia reversa y complementaria de 'ATCG'.
+
+3. Traduce la secuencia 'ATGGCCATTGT' a proteína.
+
+4. Crea dos secuencias 'ATGGCCATTGT' y comprueba si son iguales.
+
+5. Crea un SeqRecord con la secuencia 'ATCG', la id 'secuencia' y la descripción 'prueba'.
+
+6. Leer un fichero de secuencias :download:`fasta <../demo_data/seqs_2.fasta>` y hacerlas todas minúsculas.
+
+7. Pasar un fichero de :download:`genbank <../demo_data/sequence.gb>` a fasta.
+
+8. Filtrar las secuencias de un fichero :download:`sanger fastq <../demo_data/seqs_illumina.fastq>` por calidad media.
+
+Soluciones
+----------
+
+1. Crea un objeto Seq con la secuencia 'ATCG'. ¿Cuántos residuos tiene?
+¿Cuáles son las tres primeras letras? ¿Y la última? ¿Cuántas adeninas tiene?
+Convierte la secuencia en una cadena de texto normal sin alfabeto.
+
+::
+
+  >>> from Bio.Seq import Seq
+  >>> secuencia = Seq('ATCG')
+  >>> secuencia
+  Seq('ATCG', Alphabet())
+  >>> print secuencia
+  ATCG
+  >>> len(secuencia)
+  4
+  >>> secuencia[:3]
+  Seq('ATC', Alphabet())
+  >>> secuencia[-1]
+  'G'
+  >>> secuencia.count('A')
+  1
+  >>> str(secuencia)
+  'ATCG'
+
+2. Crea la secuencia reversa y complementaria de 'ATCG'.
+
+::
+
+  >>> secuencia = Seq('ATCG')
+  >>> secuencia.reverse_complement()
+  Seq('CGAT', Alphabet())
+
+3. Traduce la secuencia 'ATGGCCATTGT' a proteína.
+
+::
+
+  >>> secuencia = Seq('ATGGCCATTGT')
+  >>> secuencia.translate()
+  Seq('MAI', ExtendedIUPACProtein())
+
+4. Crea dos secuencias 'ATGGCCATTGT' y comprueba si son iguales.
+
+::
+
+  >>> secuencia = Seq('ATGGCCATTGT')
+  >>> secuencia2 = Seq('ATGGCCATTGT')
+  >>> secuencia == secuencia2
+  /usr/local/lib/python2.6/dist-packages/biopython-1.55-py2.6-linux-x86_64.egg/Bio/Seq.py:197:
+  FutureWarning: In future comparing Seq objects will use string comparison
+  (not object comparison). Incompatible alphabets will trigger a warning
+  (not an exception). In the interim please use id(seq1)==id(seq2) or
+  str(seq1)==str(seq2) to make your code explicit and to avoid this warning.
+  "and to avoid this warning.", FutureWarning)
+  False
+  >>> str(secuencia) == str(secuencia2)
+  True
+  >>> id(secuencia) == id(secuencia2)
+  False
+  >>> id(secuencia)
+  140353539658896
+  >>> id(secuencia2)
+  140353539660880
+
+5. Crea un SeqRecord con la secuencia 'ATCG', la id 'secuencia' y la descripción 'prueba'.
+
+::
+
+  >>> from Bio.Seq import SeqRecord
+  >>> SeqRecord(Seq('ATCG'), id='secuencia', description='prueba')
+  SeqRecord(seq=Seq('ATCG', Alphabet()), id='secuencia',
+            name='<unknown name>', description='prueba', dbxrefs=[])
+
+
+6. Leer un fichero de secuencias :download:`fasta <../demo_data/seqs_2.fasta>` y hacerlas todas minúsculas.
+
+::
+
+  #!/usr/bin/env python
+
+  from Bio import SeqIO
+
+  def hacer_fasta_minusculas(fichero):
+      'Lee las secuencias de un fichero y las hace minusculas'
+
+      for seq_record in SeqIO.parse(fichero, 'fasta'):
+          print '>' + seq_record.id
+          print str(seq_record.seq).lower()
+
+  if __name__ == '__main__':
+      hacer_fasta_minusculas('secuencias.fasta')
+
+7. Pasar un fichero de :download:`genbank <../demo_data/sequence.gb>` a fasta.
+
+::
+
+  #!/usr/bin/env python
+  
+  from Bio import SeqIO
+  
+  def convertir_secuencia(fichero_entrada, formato_entrada,
+                          fichero_salida,  formato_salida):
+      'Convierte un fichero de secuencia de un formato a otro'
+  
+      secuencias = SeqIO.parse(fichero_entrada, formato_entrada)
+      SeqIO.write(secuencias, fichero_salida, formato_salida)
+  
+      #Alternativamente se podria utilizar la funcion convert
+      #esto es mas eficiente
+      #SeqIO.convert(fichero_entrada, formato_entrada,
+      #              fichero_salida, formato_salida)
+  
+  
+  if __name__ == '__main__':
+      formato_entrada = 'genbank'
+      fichero_entrada = 'sequence.gb'
+      formato_salida  = 'fasta'
+      fichero_salida  = 'sequence.fasta'
+      convertir_secuencia(fichero_entrada, formato_entrada,
+                          fichero_salida,  formato_salida)
+
+8. Filtrar las secuencias de un fichero :download:`sanger fastq <../demo_data/seqs_illumina.fastq>` por calidad media.
+
+::
+
+  #!/usr/bin/env python
+  
+  from Bio import SeqIO
+  
+  def filtrar_secuencias(fichero_entrada, fichero_salida,
+                         umbral_calidad):
+      'Dado un fichero fastq filtra las secuencias por calidad'
+  
+      formato = 'fastq'
+  
+      #Esto no funcionara para millones de secuencias
+      #porque lo carga todo en memoria, habria que usar
+      #generadores
+      secuencias_filtradas = []
+      for seq_record in SeqIO.parse(fichero_entrada,
+                                    formato):
+          calidades = seq_record.letter_annotations['phred_quality']
+  
+          calidad_media = float(sum(calidades)) / len(calidades)
+  
+          print calidad_media
+  
+          if calidad_media < umbral_calidad:
+              continue
+  
+          secuencias_filtradas.append(seq_record)
+  
+      SeqIO.write(secuencias_filtradas, fichero_salida, formato)
+  
+  if __name__ == '__main__':
+      filtrar_secuencias('seqs_illumina.fastq',
+                         'seqs_filtradas.fastq',
+                         35)
+

@@ -1,0 +1,55 @@
+==============================
+Anotación automática, Blast2GO
+==============================
+
+Hemos visto en temas anteriores que la secuencia sin analizar no nos aporta ninguna información; por lo que es necesario extraer ésta a partir de la secuencia. En el curso hemos visto diferentes programas que podemos utilizar, pero que no son muy útiles cuando tenemos miles de secuencias para anotar. Existen programas especificos para identificar y extraer información, por ejemplo para alinear cDNAs con ADN genómico podemos utilizar el Blast_ , est2genome_ o otros pensados para grandes proyectos como Tophat_ o GMAP_. Pero todos estos programas necesitan de un procesado de datos posterior que nos permita integrar los resultado en un fichero de anotación y ponerlo en el formato adecuado para posteriores análisis. Esto es un proceso complejo que necesita cierto dominio en informática y bioinformática. En esta práctica vamos a usar un programa gráfico que está diseñado para la anotación funcional, podemos utilizarlo para anotar funcionalmente cDNA, ESTs o CDS o proteínas predichas a partir de datos genómicos. El programa que utilizaremos es el Blast2GO_, que está diseñado especialmente para anotar usando los términos GO_. Pero además este programa nos puede ser muy ítil al facilitar el manejo y la búsqueda de información de nuestras secuencias.
+
+Iniciar el programa_ usando la versión de 512Mb de memoria, suficiente para el número de secuencias que vamos a utilizar.
+
+Vamos a realizar de forma guiada este ejercicio.
+
+Los pasos que vamos a realizar son:
+
+  * Cargar la :download:`secuencia <datos/practica_blast2go/secuencias_guia.fasta>`.
+  * Realizar el Blast contra la nr, poner el corte del e-value a 10e-6.
+  * Buscar los términos GO asociados a los hits del Blast (mapping).
+  * Seleccionar únicamente aquellos GO que tengan suficiente apoyo estadístico y ya tendremos la anotación (annotation).
+  * Ampliar usando InterProScan, para comparar contra bases de dominos.
+  * Ampliar buscando en la base de metabólica KEGG ó utilizando ANNEX.
+
+Anotación de unigenes obtenidos a partir de un proyecto de secuenciación
+========================================================================
+
+Vamos a simular con un número pequeño de secuencias (para acortar los tiempos del Blast, etc) la anotación de un proyecto de secuenciación del transcriptoma. Descargar el :download:`fichero <datos/practica_blast2go/secuencias_test.fasta>` con las secuencias y guardarlo en un directorio. 
+
+Anotar el conjunto de secuencias con el Blast2GO.
+
+Estadísticas y análisis de la anotación
+=======================================
+
+El Blast2GO también realiza estadísticas que nos permiten por un lado valorar la anotación realizada y por otro, extraer información funcional. Puede realizar desde los típicos circulos de porcentajes de términos GO presentes en un grupo de secuencias, a comparaciones de dos grupos de secuencias para identificar términos sobrepresentados. Para practicar usaremos un proyecto ya anotado con más secuencias.
+
+Descargar el :download:`fichero comprimido <datos/practica_blast2go/proyecto_data.zip>` y descomprimirlo. 
+
+Cargar el proyecto en el Blast2GO y obtener las estadísticas disponibles como:
+
+  * una representación circular del porcentaje de aparición de cada término GO a nivel 6 de la categoria funcional 
+  * una red con los términos que aparecen en 2 o más secuencias. 
+  * utilizando la utilidad 'Select', identificar los genes que contienen el termino GO "metal ion binding" o aquellos que no tienen anotación usando la selección.
+
+Información adicional
+=====================
+
+Existen anotaciones disponibles ya realizadas de diferentes especies y plataformas de microarray, disponibles en la pagina web del Blast2go_Far_. Descargar una anotación y practicar las diferentes estadísticas con datos reales, es recomendable ejecutar el Blast2G0 con 1 o 2 Gb de memoria.
+
+:doc:`Ir a la teoría del tema<prediccion>`
+
+.. _Blast: http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs
+.. _est2genome: http://emboss.open-bio.org/wiki/Appdoc:Est2genome
+.. _Tophat: http://tophat.cbcb.umd.edu/
+.. _GMAP: http://research-pub.gene.com/gmap/
+.. _Blast2GO: https://www.blast2go.com/
+.. _GO: http://www.geneontology.org/GO.doc.shtml
+.. _programa: https://www.blast2go.com/start-blast2go-2-8
+.. _KEGG: http://www.genome.jp/kegg/
+.. _Blast2go_far: http://www.b2gfar.org/

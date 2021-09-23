@@ -1,0 +1,277 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Ensamblaje y mapeo de secuencias tipo Sanger &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="PRÁCTICA DE PROYECTOS DE SECUENCIACIÓN." href="practica_ensamblaje.html" />
+    <link rel="prev" title="SECUENCIACIÓN DE SANGER" href="sanger.html" /> 
+  </head>
+  <body>
+    <nav class="global_navigation">
+        <ul>
+            <li class="current_site_item" ><a href="http://bioinf.comav.upv.es">bioinf</a></li>
+            <li><a href="http://cucurbigene.net">cucurbigene</a></li>
+            <li><a href="http://melogene.net">melogene</a></li>
+        </ul>
+    </nav>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+    
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="http://www.melogene.net/">Melogene</a></li>
+                    <li><a href="http://www.cucurbigene.net/">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bases_datos.html">Bases de datos biológicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_bases.html">Práctica bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alineamientos.html">Alineamientos de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_jemboss.html">Práctica jemboss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_alineamientos.html">Práctica de alineamientos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blast.html">Búsqueda de secuencias en bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast.html">Práctica Blast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediccion.html">Métodos predictivos en ADN y ARN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_prediccion.html">Práctica predicción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">Alineamientos múltiples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_multiple.html">Práctica alineamiento múltiple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filogenias.html">Introducción al análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_filogenias.html">Práctica análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast2go.html">Práctica anotación con Blast2GO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_visores.html">Prácticas bases de datos genómicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion.html">Ejercicio anotación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion2.html">Ejercicio prediccion 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sanger.html">Secuenciación de Sanger</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ensamblaje de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_ensamblaje.html">Práctica ensamblaje de secuencias</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="ensamblaje-y-mapeo-de-secuencias-tipo-sanger">
+<h1>Ensamblaje y mapeo de secuencias tipo Sanger<a class="headerlink" href="#ensamblaje-y-mapeo-de-secuencias-tipo-sanger" title="Permalink to this headline">¶</a></h1>
+<p>Hasta ahora en el curso hemos hablado de como analizar secuencias de genes, genomas, de mensajeros.
+Pero no hemos tenido en cuenta como se obtienen esas secuencias.
+Todas las tecnologías de secuenciación producen fragmentos más o menos cortos y a partir de estos se debe recomponer la secuencia del fragmento analizado, ya sea un genoma, un BAC o un producto de PCR.
+Este proceso se denomina proyecto de secuenciación.
+En muchos de los casos el resultado no será la secuencia completa del fragmento y será necesario completar los huecos entre los diferentes conjuntos de secuencias obtenidos.</p>
+<figure class="align-center">
+<img alt="_images/ensamblaje.jpg" src="_images/ensamblaje.jpg" />
+</figure>
+<section id="ensamblaje-de-secuencias">
+<h2>Ensamblaje de secuencias<a class="headerlink" href="#ensamblaje-de-secuencias" title="Permalink to this headline">¶</a></h2>
+<p>El proceso de <a class="reference external" href="http://en.wikipedia.org/wiki/Sequence_assembly#De-novo_vs._mapping_assembly">ensamblaje</a> consta de tres fases: limpieza de secuencias, alineamiento de secuencias y ensamblaje.</p>
+<figure class="align-center">
+<img alt="_images/proceso_ensamblaje.jpg" src="_images/proceso_ensamblaje.jpg" />
+</figure>
+<section id="limpieza">
+<h3>Limpieza<a class="headerlink" href="#limpieza" title="Permalink to this headline">¶</a></h3>
+<p>Es el primer paso a realizar ante cualquier proyecto de secuenciación.
+Los secuenciadores devuelven las secuencias crudas y suele ser necesario eliminar o bloquear diferentes regiones que contengan:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>bases con mala calidad de lectura</p></li>
+<li><p>bases que pertenezcan a vectores o adaptadores</p></li>
+<li><p>bases que estén altamente repetidas (secuencias simples o elementos transponibles)</p></li>
+<li><p>contaminantes</p></li>
+</ul>
+</div></blockquote>
+<p>Estas regiones interfieren con el ensamblaje y en la mayoría de los programas de ensamblaje es necesario eliminarlas o enmascarlas antes de comenzar.</p>
+</section>
+<section id="alineamiento-de-secuencias">
+<h3>Alineamiento de secuencias<a class="headerlink" href="#alineamiento-de-secuencias" title="Permalink to this headline">¶</a></h3>
+<p>El siguiente paso es alinear todas las secuencias con todas las secuencias dos a dos para identificar que secuencias solapan entre si.
+Vamos a identificar pares o grupos de secuencias con fragmentos de secuencias comunes.
+El resultado es una red de interacciones entre las secuencias que alinean entre si, en el que en cada borde está localizado una secuencia.</p>
+<figure class="align-center">
+<img alt="_images/grapho.jpg" src="_images/grapho.jpg" />
+</figure>
+</section>
+<section id="id1">
+<h3>Ensamblaje de secuencias<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>A partir de estos grafos realizados con las secuencias identificadas que comparten regiones comunes, se crea el ensamblaje.
+A diferencia de un alineamiento múltiple los ensambladores no fuerzan que todas las secuencias cubran la totalidad del alineamiento, este se va alargando con la adición de nuevas secuencias.
+Existen diferentes algoritmos que a partir de la información almacenada en el grafo ordenan y ensamblar las secuencias utilizando alineación múltiple para obtener la mejor distribución de las secuencias solapantes.
+En muchos programas estos dos últimos pasos (alineamientos de secuencias y ensamblaje) son cíclicos.
+A partir de estos alineamientos se obtienen la secuencia consenso que representa a cada conjunto de secuencias o contig.
+Existen diferentes reglas para construir el consenso, pero es indispensable que tengan en cuenta el valor de la calidad de las secuencias.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/contig_seq.jpg"><img alt="_images/contig_seq.jpg" src="_images/contig_seq.jpg" style="width: 600px;" /></a>
+</figure>
+</section>
+</section>
+<section id="problemas-del-ensamblaje-de-secuencias">
+<h2>Problemas del ensamblaje de secuencias<a class="headerlink" href="#problemas-del-ensamblaje-de-secuencias" title="Permalink to this headline">¶</a></h2>
+<p>Hay varios factores que afectan a la calidad del ensamblaje, la calidad de las secuencias, el número de veces que se lee cada posición (cobertura), la longitud de las secuencias y la existencia de secuencias repetidas.</p>
+<figure class="align-center">
+<img alt="_images/problemas_ensamblaje.jpg" src="_images/problemas_ensamblaje.jpg" />
+</figure>
+<p>Para obtener buenos ensamblajes hay que obtener buenos solapamientos (overlaps) entre  nuestras lecturas.
+Si dos lecturas solapan suponemos que provienen de la misma región secuenciada, cuanto mayor y con mayor similitud sea el solapamiento mejor.
+Pero se pueden producir solapamientos debido al azar, regiones repetidas o genes duplicados.
+Para evitar estos falsos positivos podemos tener en cuenta una serie de factores:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Similitud de la región solapada.</p></li>
+<li><p>Longitud de la región solapada</p></li>
+<li><p>Porcentaje de secuencia que solapa</p></li>
+<li><p>Ignorar secuencias que solapan con muchas secuencias (repetitivas)</p></li>
+</ul>
+</div></blockquote>
+<p>Pero hay que ajustar estos parámetros ya que valores alto de los threshold podrían hacer perder solapamientos, sobretodo en regiones con baja cobertura o si la muestra contiene mucha variabilidad (secuenciación de pools de individuos, metagenómica, etc)</p>
+<p>Los errores causados por la mala calidad, escasa cobertura, longitud de secuencias son evitables mediante la limpieza de secuencias o la adición de nuevas secuencias al ensamblaje.
+Pero el problema de las secuencias repetidas no puede obviarse ya que en los genomas, sobretodo en los eucariotas, existe un alto porcentaje de secuencias repetidas.</p>
+<section id="secuencias-repetidas">
+<h3>Secuencias repetidas<a class="headerlink" href="#secuencias-repetidas" title="Permalink to this headline">¶</a></h3>
+<p>Las lecturas que únicamente contienen el mismo ADN repetitivo ensamblaran entre si aunque provengan de regiones distintas del genoma, solo podremos diferenciarlas si contienen alguna parte de secuencia única.
+Esto hace que si la longitud del ADN repetitivo es mayor que el tamaño de las lecturas los ensambladores no puedan ensamblar estas regiones ya que solapan con multitud de copias, esto crea gaps y diferentes contigs.
+Las regiones repetidas más pequeñas que la longitud de las secuencias se podrán ensamblar perfectamente siempre que tengamos una lectura que la cruce en su totalidad, es decir que tenga en sus extremos secuencias de copia única.
+Para obtenerlas es necesario una correcta cobertura.</p>
+<figure class="align-center">
+<img alt="_images/repetitivo.jpg" src="_images/repetitivo.jpg" />
+</figure>
+<p>Para solventar el problema de la repeticiones de mayor tamaño que las lecturas, es necesario recurrir a distintas estrategias experimentales.
+Todas se basan en secuenciar clones desde ambos extremos.
+Estas estrategias incluyen: pair-ends, matepairs, BAC-ends, etc.
+Al secuenciar los fragmentos por ambos extremos se puede utilizar esta información en el ensamblaje, de modo que sabemos que esas dos lecturas van juntas y separadas por una distancia igual al tamaño del fragmento.</p>
+<figure class="align-center">
+<img alt="_images/pair_ends.jpg" src="_images/pair_ends.jpg" />
+</figure>
+<figure class="align-center">
+<img alt="_images/paired_ends_ensamblaje.jpg" src="_images/paired_ends_ensamblaje.jpg" />
+</figure>
+</section>
+</section>
+<section id="terminologia">
+<h2>Terminología<a class="headerlink" href="#terminologia" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Read: una secuencia obtenida del secuenciador.</p></li>
+<li><p>Overlap: región alineada de dos o más secuencias.</p></li>
+<li><p>Unitigs: ensamblajes (reads + overlaps) de copia única, suelen estar flanqueados por regiones repetidas.</p></li>
+<li><p>Contigs: Unitigs indivuales o que solapan gracias a la información de paired ends o mate  pairs.</p></li>
+<li><p>Scalfolds: Contigs que no solapan entre si (tienen gaps) pero que se sabe que van juntos gracias a la información de los mate pairs.</p></li>
+<li><p>Consense: Secuencia deducida a partir del ensamblaje de los reads.</p></li>
+<li><p>Coverage: (Cobertura) Número de reads que cubren una base, es decir número de veces que se ha secuenciado una base. Suele referirse a la cobertura media.</p></li>
+<li><p>N50: Es una medida de calidad del proyecto, se suele utilizar en proyectos de secuenciación de genomas. Para calcularlo se ordenan los contigs de mayor a menor, se suman por ese orden hasta alcanzar el 50% del tamaño del genoma, la longitud del último contig añadido es el valor N50. Es decir el tamaño de contig más pequeño que es necesario añadir para conseguir el 50% del genoma.</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-center">
+<img alt="_images/terminologia.jpg" src="_images/terminologia.jpg" />
+</figure>
+<p>from Jason Miller</p>
+</section>
+<section id="programas">
+<h2>Programas<a class="headerlink" href="#programas" title="Permalink to this headline">¶</a></h2>
+<p>Se han desarrollado numerosos programas para el ensamblaje de secuencias tipo Sanger.
+Podemos destacar por ejemplo <a class="reference external" href="http://www.phrap.org/">Phrap</a> , <a class="reference external" href="http://seq.cs.iastate.edu/">Cap3</a>  y el TIGR Assembler o su versión actualizada <a class="reference external" href="http://www.jcvi.org/cms/research/software/">CABOG</a>.
+Estos programas han sido diseñados y ampliamente utilizados para el ensamblaje de genomas.
+Existen otros paquetes de programas para proyectos de menor escala, nosotros vamos a utilizar en prácticas el <a class="reference external" href="http://staden.sourceforge.net/">Staden</a>, que es un paquete de programas con GUI y de código libre.
+Está formado por una serie de programas como:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>trev (editor de cromatogramas),</p></li>
+<li><p>pregap (limpieza de secuencias) y</p></li>
+<li><p>gap4 (ensamblador).</p></li>
+</ul>
+</div></blockquote>
+<p><a class="reference internal" href="practica_ensamblaje.html"><span class="doc">Ir a la práctica tema</span></a></p>
+</section>
+</section>
+
+
+            
+        
+        
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="sanger.html">SECUENCIACIÓN DE SANGER</a>-->
+                    <a class="prev" href="sanger.html" title="SECUENCIACIÓN DE SANGER">previous</a>
+                    |
+                    <!--<a class="next" href="practica_ensamblaje.html">PRÁCTICA DE PROYECTOS DE SECUENCIACIÓN.</a>-->
+                    <a class="next" href="practica_ensamblaje.html" title="PRÁCTICA DE PROYECTOS DE SECUENCIACIÓN.">next</a>
+                    |
+                
+                <a class="index" href="/courses/intro_bioinf/index.html" title="Index">index</a>
+                
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

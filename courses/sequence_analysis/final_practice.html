@@ -1,0 +1,237 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Practical tasks &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Walktroughs for the final tasks" href="final_practice_walkthrough.html" />
+    <link rel="prev" title="Maize SNP calling walkthrough" href="maize_snp_calling.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sequencing_technologies.html">Sequencing technologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ngs_applications_examples.html">NGS application examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_analysis_software.html">NGS analysis software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmd_primer.html">Command line primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_file_formats.html">NGS sequence file formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read_cleaning.html">NGS read cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assembly.html">Sequence assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Sequence mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snp_calling.html">SNP calling and filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html">NGS expression analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html#practical-tasks">Practical tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_files.html">Dealing with big result files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bedtools.html">BEDTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maize_snp_calling.html">Maize SNP calling practice</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Final practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice_walkthrough.html">Final practice walkthrough</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="practical-tasks">
+<h1>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this headline">¶</a></h1>
+<section id="determine-the-platformn-and-coding">
+<h2>Determine the platformn and coding<a class="headerlink" href="#determine-the-platformn-and-coding" title="Permalink to this headline">¶</a></h2>
+<p>Analyze the format and quality for each of the <a class="reference download internal" download="" href="_downloads/f31694b73246caf74a35a4b4e769c831/ngs_reads.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">read</span> <span class="pre">files</span></code></a> and determine the sequencing platform and version.</p>
+<section id="hints">
+<h3>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h3>
+<p>You might use guess_seq_format and calculate_stats from seq_crumbs or fastqc.
+Take into account that the solid reads might be double encoded.</p>
+</section>
+</section>
+<section id="clean-adapters-and-contaminants">
+<h2>Clean adapters and contaminants<a class="headerlink" href="#clean-adapters-and-contaminants" title="Permalink to this headline">¶</a></h2>
+<p>We have some <a class="reference download internal" download="" href="_downloads/d70096f74556f4dca8ecc3cdb4c7ec7a/to_clean_454.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">454</span></code></a> and <a class="reference download internal" download="" href="_downloads/ae9690b2973b9cae11d10a7dd922a803/to_clean_illumina.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">Illumina</span></code></a> reads that might have adapters in them due to the cloning process.
+Do they really have <a class="reference download internal" download="" href="_downloads/a48e7f9a9954de9d437195f5a1a1ad19/oligos.fasta"><code class="xref download docutils literal notranslate"><span class="pre">adapters</span></code></a>?
+These reads also come from a RNA-Seq experiment and might have <a class="reference download internal" download="" href="_downloads/2b9edaffd86087331f85b9990fc1a54d/arabidpsis_rrna.fasta"><code class="xref download docutils literal notranslate"><span class="pre">ribosomic</span> <span class="pre">RNA</span></code></a> that we should filter out before doing any further analysis.
+Try to assess and solve these problems with fastqc and seq_crumbs.</p>
+<section id="id1">
+<h3>Hints<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Evaluate the quality, look for overrepresented k-mers and take a look at the base composition of the first bases of the reads with fastqc or seq_crumbs.</p>
+<p>To remove the adaptor you could use trim_blast_short (from seq_crumbs), <a class="reference external" href="http://code.google.com/p/cutadapt/">cutadapt</a>, <a class="reference external" href="https://github.com/vsbuffalo/scythe">scythe</a> or <a class="reference external" href="http://hannonlab.cshl.edu/fastx_toolkit/">fastx</a>.</p>
+<p>To trim the quality you could use trim_quality (from seq_crumbs), fastx, <a class="reference external" href="http://seqclean.sourceforge.net/">sequence cleaner</a>, or <a class="reference external" href="https://github.com/najoshi/sickle">sickle</a>.</p>
+<p>To filter the small reads you could use filter_by_length (from seq_crumbs) and to remove the ribosomic reads filter_by_blast (seq_crumbs).</p>
+</section>
+</section>
+<section id="split-454-matepairs">
+<h2>Split 454 matepairs<a class="headerlink" href="#split-454-matepairs" title="Permalink to this headline">¶</a></h2>
+<p>We have received some 454 titanium mate pair <a class="reference download internal" download="" href="_downloads/cabcd17a61d29171c5cf70dd36c078da/454_mates.fastq"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a>.
+First we need to split both ends of the mate pair for each reads and then we have to trim using a quality criteria, filter out the small read segments (smaller than 40 base pairs).
+Finally we need to obtain two files with the interleaved forward and reverse fragments of the reads that still have both and another file with the orphaned segments.</p>
+<section id="hint">
+<h3>Hint<a class="headerlink" href="#hint" title="Permalink to this headline">¶</a></h3>
+<p>In seq_crumbs there are scripts for all steps.</p>
+</section>
+</section>
+<section id="mithocondrial-assembly">
+<h2>Mithocondrial assembly<a class="headerlink" href="#mithocondrial-assembly" title="Permalink to this headline">¶</a></h2>
+<p>We have recived 20000 human mithocondrial <a class="reference download internal" download="" href="_downloads/b7fc88cd84d20ef52cb7148223cf0440/mito_yoruba_reads_pe.20k.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a> from a yoruba individual.
+The reads are Illumina paired end and we want to assemble them:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Reads Quality Assessment.</p></li>
+<li><p>Clean the reads.</p></li>
+<li><p>Assemble the reads with velvet.</p></li>
+<li><p>Calculate statistics for the result.</p></li>
+<li><p>Take a look at the contigs.</p></li>
+</ol>
+</div></blockquote>
+<section id="id2">
+<h3>Hint<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>We have already seen how to assemble a mithocondrial genome using velvet.</p>
+</section>
+</section>
+<section id="map-to-the-mithocondrial-assembly">
+<h2>Map to the mithocondrial assembly<a class="headerlink" href="#map-to-the-mithocondrial-assembly" title="Permalink to this headline">¶</a></h2>
+<p>As the result of the mithocondrial assembly that we have just done with we obtained a fasta file with the scaffolds.
+Map the reads used to create the assembly using bwa to the scaffolds.
+Once you have the mapping note how many reads had been mapped and open the mapping IGV.</p>
+</section>
+<section id="human-mithocondrial-snp-calling">
+<h2>Human Mithocondrial SNP calling<a class="headerlink" href="#human-mithocondrial-snp-calling" title="Permalink to this headline">¶</a></h2>
+<p>We want to compare the mithocondrial DNA of a yoruba individual with the <a class="reference download internal" download="" href="_downloads/eaef58983741eb3091f95f9b176023a0/human_cambridge_reference_mito.fasta"><code class="xref download docutils literal notranslate"><span class="pre">reference</span></code></a> cambrigde mithocondrial sequence.
+We have 40000 Illumnia <a class="reference download internal" download="" href="_downloads/ef4616aea6da2e1253a1831e01206640/mito_yoruba_reads_40k.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a>.
+Do two SNP callings one with bowtie2 and samtools and another with ngs_backbone and compare them.</p>
+<section id="id3">
+<h3>Hints<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Why ngs_backbone does not find any SNP at the first attempt?
+Modify the backbone.conf parameters related with the quality and look for the SNPs again (e.j. min_quality=21, min_reads_for_allele=10).</p>
+<p>You can compare the SNP callings with bedtools or grep.</p>
+<p>Take a look at the SNPs with IGV.</p>
+</section>
+</section>
+<section id="obtain-the-snp-flanking-sequence">
+<h2>Obtain the SNP flanking sequence<a class="headerlink" href="#obtain-the-snp-flanking-sequence" title="Permalink to this headline">¶</a></h2>
+<p>Search for the common SNPs of the two previous SNP calls and create a fasta file with 100 pair bases around each SNP.</p>
+<section id="id4">
+<h3>Hints<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>You can use the intersectBed, flankBed and fastaFromBed tools.</p>
+</section>
+</section>
+<section id="cucurbita-est-snp-calling">
+<h2>Cucurbita EST SNP calling<a class="headerlink" href="#cucurbita-est-snp-calling" title="Permalink to this headline">¶</a></h2>
+<p>We have ordered two 454 and two Illumina reads from a Cucurbita transcriptome.
+The 454 sequences came from two individuals (indi1 and indi2) and the Illumina came from a mix of different individuals.
+The sequencing service has send the <a class="reference download internal" download="" href="_downloads/ccb88514fcd9a07b9e57a540c611d847/cucurbita_reads.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a> in sanger fastq format.</p>
+<ol class="arabic simple">
+<li><p>Do a quality check of the reads provided by the sequencing service.</p></li>
+<li><p>Clean the reads and check the cleaning process.</p></li>
+<li><p>Map the reads.</p></li>
+<li><p>Call the SNPs.</p></li>
+</ol>
+<p>There a <a class="reference internal" href="final_practice_walkthrough.html"><span class="doc">walkthroughs</span></a> for some of these tasks.</p>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="maize_snp_calling.html">Maize SNP calling walkthrough</a>-->
+                    <a class="prev" href="maize_snp_calling.html" title="Maize SNP calling walkthrough">previous</a>
+                    |
+                    <!--<a class="next" href="final_practice_walkthrough.html">Walktroughs for the final tasks</a>-->
+                    <a class="next" href="final_practice_walkthrough.html" title="Walktroughs for the final tasks">next</a>
+                    |
+
+                <a class="index" href="/courses/sequence_analysis/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

@@ -1,0 +1,378 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Bases datos de secuencia &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Alineamiento de secuencias" href="alineamientos.html" />
+    <link rel="prev" title="Bases de datos biológicas" href="bases_datos.html" /> 
+  </head>
+  <body>
+    <nav class="global_navigation">
+        <ul>
+            <li class="current_site_item" ><a href="http://bioinf.comav.upv.es">bioinf</a></li>
+            <li><a href="http://cucurbigene.net">cucurbigene</a></li>
+            <li><a href="http://melogene.net">melogene</a></li>
+        </ul>
+    </nav>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+    
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="http://www.melogene.net/">Melogene</a></li>
+                    <li><a href="http://www.cucurbigene.net/">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bases_datos.html">Bases de datos biológicas</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Práctica bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alineamientos.html">Alineamientos de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_jemboss.html">Práctica jemboss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_alineamientos.html">Práctica de alineamientos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blast.html">Búsqueda de secuencias en bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast.html">Práctica Blast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediccion.html">Métodos predictivos en ADN y ARN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_prediccion.html">Práctica predicción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">Alineamientos múltiples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_multiple.html">Práctica alineamiento múltiple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filogenias.html">Introducción al análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_filogenias.html">Práctica análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast2go.html">Práctica anotación con Blast2GO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_visores.html">Prácticas bases de datos genómicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion.html">Ejercicio anotación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion2.html">Ejercicio prediccion 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sanger.html">Secuenciación de Sanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ensamblaje.html">Ensamblaje de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_ensamblaje.html">Práctica ensamblaje de secuencias</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="bases-datos-de-secuencia">
+<h1>Bases datos de secuencia<a class="headerlink" href="#bases-datos-de-secuencia" title="Permalink to this headline">¶</a></h1>
+<section id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">¶</a></h2>
+<p>Esta práctica se basa en el <a class="reference external" href="http://www.ncbi.nlm.nih.gov/entrez/query/static/help/entrez_tutorial_BIB.pdf">tutorial</a> preparado por el NCBI para introducir a los usuarios en el Entrez.</p>
+<p>Entrez es un sistema de búsqueda desarrollado por el NCBI que permite acceder a bases de datos de:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Bibliografia.</p></li>
+<li><p>Secuencias de nucleótidos.</p></li>
+<li><p>Secuencias de proteínas.</p></li>
+<li><p>Genomas completos.</p></li>
+<li><p>Estructuras.</p></li>
+<li><p>Etc.</p></li>
+</ul>
+</div></blockquote>
+<p>Para ver como funciona el Entrez vamos a buscar la información disponible sobre MLH1, un gen humano implicado en el cáncer de colon.</p>
+<p>Los objetivos son buscar:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>el mRNA más representativo del gen,</p></li>
+<li><p>las referencias bibliográficas relevantes,</p></li>
+<li><p>las secuencias de proteínas,</p></li>
+<li><p>los dominios conservados de las proteínas,</p></li>
+<li><p>las proteínas similares,</p></li>
+<li><p>las mutaciones descritas,</p></li>
+<li><p>la estructura de la proteína,</p></li>
+<li><p>la región del genoma humano en la que se encuentra el gen.</p></li>
+</ul>
+</div></blockquote>
+<p>Un par de trucos:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Se pueden buscar distintos términos a la vez, por ejemplo MLH1 y Human utilizando AND (debe estar en mayúsculas). La búsqueda sería MLH1 AND Human.</p></li>
+<li><p>Se puede restringir la búsqueda a un campo concreto. Por ejemplo podemos exigir que la especie sea humana. Para hacerlo hay que poner, a continuación del término buscado, el código del campo. En este caso sería MLH1 AND Human[ORGN].</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="principales-campos-en-el-formato-genbank">
+<h2>Principales campos en el formato Genbank<a class="headerlink" href="#principales-campos-en-el-formato-genbank" title="Permalink to this headline">¶</a></h2>
+<p>Más información sobre el formato en el <a class="reference external" href="http://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html#LocusB">NCBI</a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 67%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Búsqueda en Entrez</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Locus name</p></td>
+<td><p>Un nombre único para la secuencia</p></td>
+<td><p>[ACCN]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence length</p></td>
+<td><p>Longitud de la secuencia</p></td>
+<td><p>[SLEN]</p></td>
+</tr>
+<tr class="row-even"><td><p>Molecule Type</p></td>
+<td><p>ADN, genómico, mRNA, etc.</p></td>
+<td><p>[PROP]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Genbank Division</p></td>
+<td><p>División a la que pertenece la secuencia</p></td>
+<td><p>[PROP]</p></td>
+</tr>
+<tr class="row-even"><td><p>Modification Date</p></td>
+<td><p>Fecha de la última modificación</p></td>
+<td><p>[MDAT]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Definition</p></td>
+<td><p>Breve descrición de la seucuencia</p></td>
+<td><p>[TITL]</p></td>
+</tr>
+<tr class="row-even"><td><p>Accession</p></td>
+<td><p>Identificador único de entrada, no varía aunuque se modifique la secuencia</p></td>
+<td><p>[ACCN]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Version</p></td>
+<td><p>Número de versión de la secuencia</p></td>
+<td><p>All fields</p></td>
+</tr>
+<tr class="row-even"><td><p>GI</p></td>
+<td><p>Identificador único de la secuencia, cambia con las modificaciones</p></td>
+<td><p>All fiedls</p></td>
+</tr>
+<tr class="row-odd"><td><p>Keywords</p></td>
+<td><p>Palabras clave que describen la secuencia</p></td>
+<td><p>[KYWD]</p></td>
+</tr>
+<tr class="row-even"><td><p>Source</p></td>
+<td><p>Nombre del organismo</p></td>
+<td><p>[ORGN]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Organism</p></td>
+<td><p>Nombre científico del organismo</p></td>
+<td><p>[ORGN]</p></td>
+</tr>
+<tr class="row-even"><td><p>Reference</p></td>
+<td><p>Publicaciones relacionadas</p></td>
+<td><p>[TITL] [AUTH] [JOUR]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Features</p></td>
+<td><p>Información sobre las regiones de interés</p></td>
+<td><p>[FKEY]</p></td>
+</tr>
+<tr class="row-even"><td><p>source</p></td>
+<td><p>Longitud de la secuencia, nombre del organismo, taxón ID</p></td>
+<td><p>[ALL]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Taxon</p></td>
+<td><p>Taxón ID</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CDS</p></td>
+<td><p>Secuencia codificante</p></td>
+<td><p>[FKEY]</p></td>
+</tr>
+<tr class="row-odd"><td><p>protein_id</p></td>
+<td><p>Identificador de la secuencia protéica</p></td>
+<td><p>All fields</p></td>
+</tr>
+<tr class="row-even"><td><p>GI</p></td>
+<td><p>Identificador único de la secuencia protéica</p></td>
+<td><p>All fields</p></td>
+</tr>
+<tr class="row-odd"><td><p>Translation</p></td>
+<td><p>Traducción</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>gene</p></td>
+<td><p>Región cubierta por un gen</p></td>
+<td><p>[FKEY]</p></td>
+</tr>
+</tbody>
+</table>
+<p>En cualquier resultado de búsqueda junto a cada entrada aparece la palabra “link”.
+Si hacemos click en ella aparecen enlaces a información referente a esa entrada en otras bases de datos.</p>
+</section>
+<section id="mrna">
+<h2>mRNA<a class="headerlink" href="#mrna" title="Permalink to this headline">¶</a></h2>
+<p>En el <a class="reference external" href="http://www.ncbi.nlm.nih.gov/sites/gquery">Entrez</a> hay varias bases de datos de nucleótidos.</p>
+<p>¿Cuantas referencias se encuentran si buscamos colon cáncer directamente en la sección de nucleótidos?</p>
+<p>¿Y si buscamos MLH1?</p>
+<p>¿Por qué hay tantas secuencias?</p>
+<p>Para buscar secuencias con anotaciones de alta calidad, lo mejor es utilizar la base de datos RefSeq.
+Para buscar en RefSeq hay que elegir la base de datos CoreNucleotide y en “Only From” elegir RefSeq.
+Podemos además elegir en que campos buscar o excluir algunos resultados de la búsqueda como los ESTs.</p>
+<p>¿Cuantos resultados se obtienen en RefSeq para “colon cancer” buscando sólo en el campo “TITL”?</p>
+<p>En estos resultados hay secuencias que no son humanas.
+Para limitar la búsqueda a humano se hace una nueva búsqueda limitando ‘organism’ a ‘human’ y utilizando la historia.</p>
+<p>La búsqueda será similar a: human and #1</p>
+<p>¿Cuántos resultados se obtienen?</p>
+<p>Se podría haber buscado por el nombre completo del gen, pero esto a veces puede ser problemático porque pueden haber sinónimos.</p>
+<p>Buscar en los resultados el gen MLH1.</p>
+</section>
+<section id="referencias-bibliograficas">
+<h2>Referencias bibliográficas<a class="headerlink" href="#referencias-bibliograficas" title="Permalink to this headline">¶</a></h2>
+<p>Los enlaces presentes a la derecha en la página de búsqueda permiten encontrar información relativa al gen en otras bases de datos. Podemos buscar las citas bibliográficas en PubMed directamente.</p>
+<p>¿Cuantos artículos aparecen?</p>
+<p>En la página de resultados del PubMed se pueden distinguir las referencias que incluyen el texto completo del artículo, el resumen o sólo el título por el gráfico que aparece junto a cada entrada.</p>
+<p>Muchos artículos con texto completo restringido son accesibles desde dentro de la Universidad porque la biblioteca está suscrita al servicio.</p>
+<p>En cualquiera de los artículos se puede pinchar en ‘Similar articles’ para ver una lista de artículos relacionados.</p>
+</section>
+<section id="proteina">
+<h2>Proteína<a class="headerlink" href="#proteina" title="Permalink to this headline">¶</a></h2>
+<p>En los enlaces que aparecen en la entrada del gen también se puede elegir la proteína.</p>
+<p>Para obtener otras proteínas similares se pude usar el enlace ‘Related Sequences’ en la página de la proteína.</p>
+</section>
+<section id="busqueda-blast">
+<h2>Búsqueda Blast<a class="headerlink" href="#busqueda-blast" title="Permalink to this headline">¶</a></h2>
+<p>En la proteína nos aparecen nuevos enlaces que nos proporcionan información adicional.</p>
+<p>El Blink nos permite ver los resultados de una búsqueda BLAST.
+En esta página podemos elegir las secuencias correspondientes a una de las secciones taxonómicas de la Genbank o restringir la búsqueda a las secuencias con estructura.</p>
+</section>
+<section id="dominios-conservados">
+<h2>Dominios conservados<a class="headerlink" href="#dominios-conservados" title="Permalink to this headline">¶</a></h2>
+<p>Los dominios conservados informan sobre la función de las proteínas.
+Todas las proteínas en Entrez se comparan con la CDD (Conserved Domain Database).
+En ‘Show Domain Relatives’ podemos ver que otras proteínas comparten estos dominios conservados.</p>
+<p>¿Qué dominios hay?</p>
+<p>¿Qué funciones tienen?</p>
+<p>¿Qué otras proteínas tienen estos dominios?</p>
+</section>
+<section id="mutaciones">
+<h2>Mutaciones<a class="headerlink" href="#mutaciones" title="Permalink to this headline">¶</a></h2>
+<p>En el NCBI también tienen una base de datos con mutaciones asociadas a los genes.
+Se pueden ver estas mutaciones en el link SNP del gen.</p>
+<p>En la página de los SNP se puede acceder a GeneView, un página en la que están todas las mutaciones.</p>
+<p>¿Hay alguna mutación con la estructura 3D resuelta?</p>
+<p>¿Alguna mutación con enlaces a la OMIM?</p>
+</section>
+<section id="estructuras">
+<h2>Estructuras<a class="headerlink" href="#estructuras" title="Permalink to this headline">¶</a></h2>
+<p>Hay pocas proteínas con la estructura resuelta.
+De los 2.7 millones de proteínas en Entrez sólo 20000 tienen estructura.
+Si en los enlaces de la proteína no está ‘structure’ es que la estructura no ha sido resuelta.</p>
+<p>Se pueden buscar las proteínas similares que sí tienen estructura utilizando el Blink y después seleccionando solamente las entradas con estructura 3D.</p>
+<p>¿Qué proteínas similares tienen una estructura resuelta?</p>
+</section>
+<section id="region-genomica">
+<h2>Región genómica<a class="headerlink" href="#region-genomica" title="Permalink to this headline">¶</a></h2>
+<p>Puede ser útil obtener la región del cromosoma en la que se localiza el gen.</p>
+<p>El enlace ‘Genome’ nos devolverá el cromosoma completo.</p>
+<p>Para obtener una representación gráfica de la región hay que ir a ‘Map Viewer’.</p>
+<p>En este mapa podemos obtener la secuencia de la región, ver los genes de alrededor, estudiar la estructura de intrones y exones del gen, descargar los mRNAs secuenciados del gen, etc.</p>
+</section>
+<section id="ejercicio-1">
+<h2>Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Permalink to this headline">¶</a></h2>
+<p>Buscar y hacer un resumen de la información más relevante para alguno de los genes humanos FXN, OCA2 o FOXP2</p>
+<p>Buscar:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Función molecular del gen.</p></li>
+<li><p>Consecuencias de las mutaciones.</p></li>
+<li><p>Estructura genómica.</p></li>
+<li><p>Secuencia de la proteína.</p></li>
+<li><p>Homólogos en otras especies.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="ejercicio-2">
+<h2>Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Permalink to this headline">¶</a></h2>
+<p>¿Hay genes descritos para la hipercolesterolemia (HYPERCHOLESTEROLEMIA)?</p>
+<p><a class="reference internal" href="bases_datos.html"><span class="doc">Ir a la teoría del tema</span></a></p>
+</section>
+</section>
+
+
+            
+        
+        
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="bases_datos.html">Bases de datos biológicas</a>-->
+                    <a class="prev" href="bases_datos.html" title="Bases de datos biológicas">previous</a>
+                    |
+                    <!--<a class="next" href="alineamientos.html">Alineamiento de secuencias</a>-->
+                    <a class="next" href="alineamientos.html" title="Alineamiento de secuencias">next</a>
+                    |
+                
+                <a class="index" href="/courses/intro_bioinf/index.html" title="Index">index</a>
+                
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

@@ -1,0 +1,82 @@
+
+=======
+Jemboss
+=======
+
+Jemboss en un interfaz grafico del excelente paquete de programas emboss_.
+
+La versión para windows se puede descargar aquí_.
+
+Vamos a realizar los ejercicios en el jemboss que hemos instalado, pero tambien el emboss esta disponible on line:
+
+http://emboss.bioinformatics.nl
+
+http://cys.genomics.purdue.edu/emboss/
+
+Existe un `tutorial del emboss <http://emboss.sourceforge.net/docs/emboss_tutorial/emboss_tutorial.html>`_.
+
+OBTENER AYUDA SOBRE UN COMANDO
+==============================
+
+Programa tfm.
+
+::
+
+  $ tfm -help
+  $ tfm -help -verbose
+
+
+
+
+CAMBIAR EL FORMATO DE UNA SECUENCIA
+===================================
+
+Programa: seqret
+
+Descargarse el siguiente fichero :download:`AB012236.gb <datos/practica_jemboss/AB012236.gb>` En Browse files seleccionamos el fichero que está en formato GENBANK y ahora la cambiaremos de formato.
+
+En ouptut sequence options podemos elegir el formato final.
+
+En input sequence options podemos elegir un fragmento de la secuencia o hacer reverso y complementario.
+
+OBTENER UNA REPRESENTACION DE LAS CARACTERISTICAS DE UNA SECUENCIA
+==================================================================
+
+Programa: showfeat
+
+Cargar la secuencia en formato GENBANK que hemos descargado.
+
+BUSQUEDA ORF
+============
+
+Programa: plotorf, getorf y transeq
+
+Secuencias ejemplo: :download:`AT3G4905.cdna.fasta <datos/practica_jemboss/AT3G4905.cdna.fasta>`
+
+MAPA DE RESTRICCION
+===================
+
+Programa: remap
+
+Secuencias ejemplo: :download:`AT3G4905.genomico.fasta <datos/practica_jemboss/AT3G4905.genomico.fasta>`
+
+ESTADISTICA PROPIEDADES AA
+==========================
+
+Programa: pepinfo
+
+Secuencia de ejemplo: :download:`AT3G4905.pep.fasta <datos/practica_jemboss/AT3G4905.pep.fasta>`
+
+PREDICCION DE ELEMENTOS TRANSMEMBRANA
+=====================================
+
+Programa: tmap
+
+Secuencia de ejemplo: :download:`AT3G4905.pep.fasta <datos/practica_jemboss/AT3G4905.pep.fasta>`
+
+
+.. _emboss: http://emboss.sourceforge.net/
+.. _aquí: ftp://emboss.open-bio.org/pub/EMBOSS/windows/
+.. _AT3G4905.cdna.fasta: _data/AT3G4905.1.cdna.fasta
+.. _AT3G4905.pep.fasta: _data/AT3G4905.1.cdna.fasta
+.. _AT3G4905.genomico.fasta: _data/AT3G4905.1.cdna.fasta

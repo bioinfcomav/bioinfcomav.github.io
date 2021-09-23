@@ -1,0 +1,421 @@
+
+Control de flujo
+================
+
+En el apartado anterior, en el que hicimos nuestro primer programa, vimos que los programas normalmente no se ejecutan línea por línea desde la primera hasta la última.
+Esto podría ser adecuado para resolver problemas muy sencillos, pero en la práctica resultaría muy limitado.
+En la mayoría de las ocasiones reales el programa deberá responder de un modo u otro dependiendo de las circunstancias.
+Ya vimos el ejemplo de los bucles que se repetían para cada línea leída desde el fichero.
+Pero hay otros casos, por ejemplo, supongamos que el ejemplo anterior el fichero incluyese una primera línea con el nombre de las columnas::
+
+  nombre_gen muestra_1_1 muestra_1_2 muestra_1_3 muestra_2_1 muestra_2_2 muestra_2_3
+  gen1 1.2 1.3 1.4 7.6 6.5 8.7
+  gen2 4.5 3.4 3.9 2.5 3.2 3.3
+  gen3 9.6 8.7 8.3 5.5 5.4 4.5
+
+Si intentásemos ejecutar el programa que habíamos escrito con este fichero de entrada, se generará un error puesto que nuestro programa intentará convertir la cadena de texto *muestra_1_1* en un número *float*.
+Para evitarlo deberíamos introducir una salvaguarda, deberíamos hacer algo similar a::
+
+
+ fichero = open('expresion.txt')
+ for linea in fichero:
+      if line.startswith('nombre_gen'):
+          print line
+      else:
+          elementos = linea.split()
+          gen = elementos[0]
+          media1 = (float(elementos[1]) + float(elementos[2]) + float(elementos[3])) / 3.0
+          media2 = (float(elementos[4]) + float(elementos[5]) + float(elementos[6])) / 3.0
+          print gen, media1, media2
+ 
+La sentencia condicional *if* permite alterar el flujo del programa.
+Si se da el caso de que la línea comienza por la cadena de texto *nombre_gen* simplemente hay que imprimirla, en cualquier otro caso debemos proceder a realizar el cálculo de la media antes de imprimir el resultado.
+Veamos algunos otros detalles de la sentencia *if*.
+
+Sentencia *if*
+--------------
+
+La sentencia *if* permite elegir ejecutar un bloque del programa u otro en función de que la condición que evalúa sea cierta o falsa.
+En su versión más simple *if* simplemente determina si el código se ejecutará o no, por ejemplo::
+
+  if numero < 0:
+      print 'El numero es negativo'
+
+Ya hemos visto antes que se puede también hacer uso de *else* para ejecutar un bloque alternativo::
+
+  if numero < 0:
+      print 'El numero es negativo'
+  else:
+      print 'El numero es positivo o cero'
+
+Por último, existe otra palabra relacionada, *elif*, que nos servirá para poder utilizar varias condiciones alternativas.
+*elif* es una contracción de *else if*::
+
+  if numero < 0:
+      print 'El numero es negativo'
+  elif numero == 0:
+      print 'El numero es cero'
+  else:
+      print 'El numero es positivo'
+
+
+Booleanos
+---------
+
+Cuando una sentencia *if* se evalúa lo que en realidad se hace es comprobar la validez de la condición que le sigue, en el caso anterior: *número < 0*.
+Si la condición es verdadera se ejecutará un bloque de código y si es falsa otro.
+En Python la verdad y la falsedad se representan mediante un tipo especial denominado booleano (*bool*).
+Las variables booleanas sólo pueden adquirir dos valores: *True* y *False*.
+
+Cuando se escribe una condición en una sentencia *if* la condición es evaluada y el resultado debe ser *True* o *False*.
+Ejemplos de condiciones válidas son::
+
+  a > b (a mayor que b)
+  a < b (a menor que b)
+  a == b (a igual a b)
+  a <= b (a menor o igual a b)
+  a >= b (a mayor o igual a b)
+
+Todas estas condiciones son bastante fáciles de entender, pero hay que hacer notar la sintaxis de la igualdad: *a == b*.
+Se utiliza un signo doble de igualdad para distinguir la condición de la asignación.
+*a = b* significa que la variable *a* se asigna al valor que contenga la variable *b*.
+Esto no es ni verdadero ni falso y por lo tanto escribir lo que sigue es un error sintáctico::
+
+  if a = b:
+      #generará un error.
+
+Además de estas comparaciones en Python hay valores de las variables que son verdaderos y valores que son falsos por ejemplo::
+
+  >>> bool(0)
+  False
+  >>> bool(1)
+  True
+  >>> bool('')
+  False
+  >>> bool('spam')
+  True
+
+El número cero y la cadena de texto vacía son falsos y cualquier otro número y cualquier cadena de texto no vacía son verdaderos.
+Además las listas vacías también son falsas::
+
+  >>> bool([])
+  False
+  >>> bool([1, 2, 3])
+  True
+
+Esto permite escribir condiciones del tipo::
+
+  if numeros:
+      #calcular la media
+  else:
+      print 'No hay números para calcular la media'
+
+Además de disponer de los operadores anteriores disponemos de un operador denominado *in* que permite evaluar si en una cadena de texto aparece una subcadena o si en una lista está presente un elemento::
+
+  >>> 'ATG' in 'AACGTATGAGC'
+  True
+  >>> 'ATG' in 'AACGTATgAGC'
+  False
+  >>> 1 in [1, 2, 3]
+  True
+  >>> 4 in [1, 2, 3]
+  False
+
+Ya veremos que este operador *in* también funciona con los *sets* y diccionarios.
+
+En las condiciones *if* se puede además utilizar cualquier función o método que devuelva un valor booleano.
+Por ejemplo las cadenas de texto disponen de métodos que evalúan si la cadena está compuesta sólo por números o está constituida sólo por espacios en blanco::
+
+  >>> '42'.isdigit()
+  True
+  >>> '4.2'.isdigit()
+  False
+  >>> 'spam'.isalpha()
+  True
+  >>> 'spam 1000'.isalpha()
+  False
+  >>> 'spam 1000'.isalnum()
+  False
+  >>> 'spam1000'.isalnum()
+  True
+  >>> '           '.isspace()
+  True
+  >>> 'spam'.islower()
+  True
+  >>> 'SPAM'.isupper()
+  True
+
+Además de disponer de todas estas expresiones evaluables a *True* o *False* los valores booleanos disponen de los operadores *and*, *or* y *not*, lo cual les permite construir una aritmética combinando condiciones::
+
+  >>> True and True
+  True
+  >>> True and False
+  False
+  >>> False and True
+  False
+  >>> False and False
+  False
+  >>> True or True
+  True
+  >>> True or False
+  True
+  >>> False or True
+  True
+  >>> False or False
+  False
+  >>> not True
+  False
+  >>> not False
+  True
+
+Con todos estos elementos podemos construir expresiones complejas del tipo::
+
+  if adn and not proteina:
+      print 'La secuencia es no codificante'
+  elif adn and proteina:
+      print 'La secuencia es codificante'
+  else:
+      print 'No hay secuencia'
+
+Además de poder utilizar las comparaciones que hemos visto existe otra comparación llamada *is*.
+Este operador compara la identidad de los objetos.
+En este caso el resultado sólo será verdadero si las dos variables hacen referencia al mismo objeto.
+Comúnmente este operador se utiliza para verificar si un objeto es None::
+  
+  if secuencia is None:
+     print 'No hay secuencia'
+
+Bucle *for*
+-----------
+
+La sentencia *for* ejecuta un bloque de código para una serie de elementos presentes en un iterador.
+Este iterador puede ser por ejemplo una lista.
+Por ejemplo sumemos los enteros entre 1 y 5::
+
+  suma = 0
+  for entero in [1, 2, 3, 4, 5]:
+      suma = suma + numero     #podría escribirse como suma += numero
+  print 'La suma es:', numero
+
+  # lo anterior en realidad se podría hacer en una sola línea
+  # print 'La suma es:', sum(range(5))
+
+Él bloque de código localizado dentro del bucle *for* se ejecutará secuencialmente para cada uno de los elementos de la lista.
+En realidad *for* no requiere una lista sino un iterador, es decir cualquier secuencia de elementos.
+Recordemos también que el bloque de código que forma parte del bucle será el que comparta la indentación un nivel por debajo del de la sentencia *for*.
+
+Un uso muy común del bucle *for* es la lectura de archivos de texto y la ejecución de un bloque de código para cada línea::
+
+  for linea in open('fichero.txt'):
+     #procesar la linea de algun modo
+     print linea
+
+Si lo que queremos es ejecutar el bucle un número determinado de veces podemos utilizar la función *range*::
+
+  for numero in range(100):
+     print 'El numero es', numero
+
+El bucle anterior se ejecutará 100 veces.
+*range* crea una lista de números de la que el bucle después se va alimentando.
+En Python 3.x *range* no crea una lista sino un iterador.
+
+En algunas ocasiones puede que nos interese controlar la ejecución los bucles con más detalle.
+Disponemos de dos sentencias que nos permiten modificar el flujo de ejecución del bucle *continue* y *break*.
+*continue* hace que la iteración actual se detenga y se devuelva el flujo del programa al comienzo del bucle con la siguiente iteración.
+Por ejemplo, si quisiésemos leer un fichero con una cabecera en la primera línea y quisiéramos ignorar tanto la primera línea como las posibles líneas en blanco que aparezcan, podríamos hacer::
+
+  primera_linea = True   #cuando entremos en el bucle
+                         #estaremos analizando la primera linea
+  for linea in open('fichero.txt'):
+        if primera_linea:
+                primera_linea = False  #en este momento ya hemos analizado
+                                       #la primera linea.
+                                       #en realidad solo pretendemos ignorarla
+                continue        #ya no se ejecutara nada mas en esta iteracion
+                                #desde aqui el flujo del programa vuelve al for
+         linea = linea.strip()  #eliminamos el retorno de carro y los espacios
+                                #en blanco de principio y el final de la linea
+         if not linea:          #Si la linea esta vacia:
+                continue        #       no ejecutar nada mas en esta iteracion
+         #a partir de aqui procesariamos las lineas del cuerpo del archivo.
+         print 'Esta linea no es de la cabezera ->', linea
+
+*break* permite abortar el bucle en cualquier momento aunque queden más elementos por analizar.
+A diferencia de *continue* el bucle no continuará con el siguiente elemento, el flujo del programa saltará a la siguiente línea después del *for*.
+Por ejemplo del bucle siguiente ninguna línea se ejecutará::
+
+  for numero in range(1000):
+        break
+        print 'Esta linea nunca se imprimira'
+  print 'Despues del break se continua por aqui'
+
+*break* puede resultar bastante útil en muchas ocasiones.
+Por ejemplo, cuando buscamos en una lista algo, tras encontrarlo podemos utilizar el *break* para no seguir analizando los siguientes elementos.
+
+*for* además dispone de un *else* en el que podemos incluir código que queremos que se ejecute cuando el el bucle haya acabado sin que ningún *break* se haya ejecutado.
+
+
+while
+-----
+
+*while* es otro tipo de bucle.
+En este caso el bloque de código se ejecutará mientras la condición sea verdadera.
+Por ejemplo podríamos hacer::
+
+  while True:
+        #hacer lo que sea
+        if condicion_de_finalizacion:
+                break
+
+El bucle *while* se suele utilizar cuando no estamos tratando con una lista o con un iterador sino que estamos recorriendo un blucle un número indeterminado de veces y queremos detenerlo sólo cuando una cierta condición sea satisfecha, no cuando una lista de elementos haya sido consumida.
+  
+Ejercicios
+----------
+
+1. Leer un fichero que contiene una lista de palabras y guardar las palabras en una
+lista.
+
+Pistas:
+  * Los retornos de carro y espacios del principio y final de una cadena de texto se eliminan con el método *strip*.
+  * Las cadenas de texto se dividen en listas de palabras con el método *split*.
+  * A las listas se les añade otra lista al final con el método *extend*.
+
+2. Escribir un programa equivalente a wc que cuente las líneas, las palabras y los caracteres.
+
+3. Crear un programa similar al *grep* que permita seleccionar las lineas que coincidan con un patron dado.
+
+Pista:
+  * Para buscar una cadena de texto dentro de otra podemos utilizar la expresión: subcadena in cadena.
+
+4. Revisar el programa anterior para que pueda funcionar con una lista de patrones.
+
+Pista:
+  * Los bucles *for* pueden ser anidados, podemos poner un *for* dentro de otro.
+
+
+Soluciones
+----------
+
+1. Leer un fichero que contiene una lista de palabras y guardar las palabras en una
+lista.
+
+::
+
+ #!/usr/bin/env python
+ 
+ #Lee todas las palabras de un fichero y las guarda en una lista
+ 
+ nombre_fichero = 'fichero.txt'
+ 
+ lista_palabras = [] #creamos una lista vacia en la que guardaremos
+                     #las palabras
+ 
+ #El bucle que se repetira para cada linea
+ for linea in open('fichero.txt'):
+ 
+     #eliminamos los espacios y los retornos de carro del principio
+     #y el final de la linea
+     linea = linea.strip()
+     palabras_linea = linea.split()
+     lista_palabras.extend(palabras_linea)   #anyadimos las palabras
+                                             #a la lista
+     #hasta aqui llega el bucle for porque hasta aqui la indentacion
+     #se mantiene
+ 
+ #Una vez fuera del bucle podemos imprimir el resultado
+ print lista_palabras
+
+
+2. Escribir un programa equivalente a wc que cuente las líneas, las palabras y los caracteres.
+
+::
+
+ #!/usr/bin/env
+ 
+ # Dado un fichero cuenta las lineas, las palabras y los caracteres.
+ 
+ nombre_fichero = 'fichero.txt'
+ 
+ #creamos los contadores que iran almacenando los resultados parciales.
+ lineas = 0 
+ palabras = 0 
+ caracteres = 0 
+ 
+ #este bucle se repetira para cada linea del fichero
+ for linea in open(nombre_fichero):
+     #sumamos una linea cada vez que pasamos por aqui
+     linea += 1  #sinonimo de -> linea = linea + 1
+ 
+     #Que palabras hay en la linea?
+     palabras_linea = linea.split()
+     #cuantas palabras son?
+     num_palabras_linea = len(palabras_linea)
+     palabras += num_palabras_linea
+     #lo anterior se podia escribir como
+     # palabras += len(linea.split())
+ 
+     num_caracteres_linea = len(linea)
+     caracteres += num_caracteres_linea
+ 
+     #hasta aqui llega el bucle for, porque estamos
+     #en la misma indentacion
+ 
+ #aqui cambia la indentacion, esto ya no pertenece al bucle
+ #Ahora que lo hemos contado todo podemos escribir el resultado
+ print 'Numero de lineas', lineas
+ print 'Numero de palabras', palabras
+ print 'Numero de caracteres', caracteres
+
+
+3. Crear un programa similar al *grep* que permita seleccionar las lineas que coincidan con un patron dado.
+
+::
+
+ #!/usr/bin/env python
+ 
+ # Dado un fichero de texto como entrada busca un patron
+ # de texto e imprime las lineas coincidentes
+ 
+ nombre_fichero = 'prueba.txt'
+ 
+ patron = 'texto1'   
+ 
+ #este bucle se ejecutara una vez por cada linea
+ for linea in open('nombre_fichero'):
+     if patron in linea: #si el patron se encuentra dentro de la linea
+                         #esto sera cierto
+         print linea
+  
+4. Revisar el programa anterior para que pueda funcionar con una lista de patrones.
+
+::
+
+ #!/usr/bin/env python
+ 
+ # Dado un fichero de texto como entrada busca una lista de
+ # patrones de texto e imprime las lineas coincidentes
+ 
+ nombre_fichero = 'prueba.txt'
+ 
+ patrones = ['texto1', 'texto2']
+ 
+ #este bucle se ejecutara una vez por cada linea
+ for linea in open('nombre_fichero'):
+     
+     #hemos de comprobar si algun patron esta en la lista
+     #hacemos un bucle que recorra todos los patrones
+     algun_patron_en_linea = False   #por defecto asumimos que
+                                     #ningun patron se encuentra
+                                     #en la linea
+     for patron in patrones:
+         if patron in linea:
+             algun_patron_en_linena = True
+             #como hemos encontrado al menos un patron no
+             #es necesario continuar con el bucle
+             break
+ 
+     #una vez sabemos si para la presente linea hay algun
+     #patron coincidente o no podemos imprimirla
+     if algun_patron_en_linea:
+         print linea
+

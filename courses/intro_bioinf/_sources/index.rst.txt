@@ -1,0 +1,51 @@
+ 
+Introducción a la bioinformática
+================================
+
+El curso presente ser una introducción a los aspectos claves de la bioinformática, especialmente a los relacionados con el análisis de secuencias.
+Los temas principales son:
+
+  * búsqueda en bases de datos (ej. Entrez),
+  * alineamientos de secuencias
+  * alineamientos múltiples,
+  * secuenciación de Sanger,
+  * formatos de ficheros de secuencia,
+  * proyectos de secuenciación con Staden,
+  * predicción de la estructura génica,
+  * anotación,
+  * filogenia,
+
+Las lecciones pretenden ser eminentemente prácticas, con una breve introducción teórica inicial.
+Sobre cada tema se propondrán varios ejercicios de complejidad creciente.
+Todo el software utilizado será libre y podrá descargarse gratuitamente en la web.
+ 
+Profesores: Joaquín Cañizares Sales, Jose Blanca, Peio Ziarsolo
+
+Temas
+_____
+
+.. toctree::
+   :maxdepth: 1
+
+   Bases de datos biológicas <bases_datos>
+   Práctica bases de datos <practica_bases>
+   Alineamientos de secuencias <alineamientos>
+   Práctica jemboss <practica_jemboss>
+   Práctica de alineamientos <practica_alineamientos>
+   Búsqueda de secuencias en bases de datos <blast>
+   Práctica Blast <practica_blast>
+   Métodos predictivos en ADN y ARN <prediccion>
+   Práctica predicción <practica_prediccion>
+   Alineamientos múltiples <multiple>
+   Práctica alineamiento múltiple <practica_multiple>
+   Introducción al análisis de filogenias <filogenias>
+   Práctica análisis de filogenias <practica_filogenias>
+   Práctica anotación con Blast2GO <practica_blast2go>
+   Prácticas bases de datos genómicas <practica_visores>
+   Ejercicio anotación <ejercicio_prediccion>
+   Ejercicio prediccion 2 <ejercicio_prediccion2>
+   Secuenciación de Sanger <sanger>
+   Ensamblaje de secuencias <ensamblaje>
+   Práctica ensamblaje de secuencias <practica_ensamblaje>
+   
+

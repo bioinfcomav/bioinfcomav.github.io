@@ -1,0 +1,309 @@
+
+Leyendo y escribiendo ficheros
+==============================
+
+En numerosas ocasiones hemos utilizado *open* para abrir un fichero y leer de él::
+
+  for linea in open('ruta/del/fichero'):
+      print linea
+
+Usándolo de este modo el fichero de texto se ha comportado como una lista, en realidad iterador, de líneas, pero *open* en realidad puede utilizarse no sólo para leer sino también para escribir y lo que devuelve es un objeto que además de comportarse como un iterador de líneas tiene otros métodos que exponen funcionalidades adicionales.
+Por lo tanto con *open* además de abrir ficheros de texto para leer, se pueden para abrir ficheros para escribir y para abrir ficheros binarios.
+El modo en el que deseamos abrir el fichero se especifica en el segundo argumento de *open*::
+
+  >>> f = open('/ruta/del/fichero', 'w')
+
+Este segundo argumento es opcional, si no se lo damos su valor por defecto será 'r'.
+'r' implica que el fichero se abrirá para leer en él y que se trata de un fichero de texto.
+Si lo que deseamos es abrir el fichero para escribir en él debemos utilizar el modo 'w'.
+Al abrir un fichero con modo 'w' si el fichero no existe se crea y si ya existiese se borraría.
+Para poder añadir contenidos al final de un fichero existente hemos de utilizar el modo 'a' (*append*).
+Si quisiésemos abrir un fichero binario deberíamos añadir al modo utilizado la letra 'b'.
+
+
+*open* crea un objeto *file*.
+Este objeto tiene una serie de funciones que exponen su funcionalidad asociada, como leer una línea, leer el contenido completo o escribir un texto en el fichero.
+Lo más habitual es que queramos leer los ficheros línea por línea, para esto se puede utilizar el método *next*::
+
+  >>> f = open('seq.fasta')
+  >>> f.next()
+  '>seq'
+  >>> f.next()
+  'CGATCTGATCGTTTGTGCAATCTATGCTGATCGTAGCTATG'
+
+*for* utiliza este método de forma implícita para leer el fichero línea por línea.
+Normalmente no necesitamos más que esta forma de acceder al contenido del fichero, pero si quisiésemos leer el fichero completo de golpe podríamos utilizar el método *read*.
+Con este método conseguiríamos todo el contenido del fichero de una sola vez.
+Asimismo, este método *read* se puede utilizar para leer unos cuantos bytes.
+*read* no tendrá en cuenta las líneas, si necesitamos leer todas las líneas de golpe podemos utilizar *readlines*.
+*readlines* nos devolverá una lista de *strs* con un elemento por línea.
+
+Si hemos abierto el fichero para escribir en él tendremos disponible el método *write*.
+*write* acepta cadenas de texto y las escribe en el fichero.
+A diferencia de *print*, *write* no añade retornos de carro después de las cadenas de texto por lo que seremos nosotros quienes se las proporcionemos::
+
+  >>> f = open('seq.fasta', 'w')
+  >>> f.write('>seq\n')
+  >>> f.write('CGATCATGCTAGTCGTATGCTATGCTATTGCATG')
+  >>> f.write('ACATCGATGTCTATGTTTGTGTTGAGGAGCTATG\n')
+
+*write* sólo acepta cadenas de texto, para escribir números primero debemos convertirlos en cadenas de texto::
+
+  >>> f.write('La respuesta es ')
+  >>> f.write(str(42))
+  >>> f.write('\n')
+
+Una vez que hemos terminado de escribir en el fichero es recomendable ejecutar el método *close*.
+Esto escribirá cualquier texto pendiente en el fichero y lo cerrará, sin que podamos volver a escribir en él utilizando el actual objeto *file*.
+
+El método *write* es el modo más utilizado no sólo de escribir en los archivos sino también de imprimir texto en el *standard output*.
+Hasta el momento hemos hecho uso de *print*, pero si vamos a utilizar Python seriamente es recomendable dejar de utilizarlo.
+Para poder escribir en el *standard ouput* utilizando *write* necesitamos un objeto *file* que lo represente.
+En el módulo *sys* existe un objeto de tipo *file* llamado *stdout* que podemos utilizar para estos menesteres::
+
+  >>> from sys import stdout
+  >>> stdout.write('Hola\n')
+  Hola
+
+Ejercicios
+----------
+
+1. Escribir en un fichero llamado *secuencias.fasta* la siguiente secuencia:
+
+::
+
+  >seq1
+  ACTG
+
+2. Añadir al fichero anterior la secuencia:
+
+::
+
+  >seq2
+  GATA
+
+3. Escribir los números del 1 al 100 en un fichero.
+
+4. Escribir en un fichero separado por tabuladores la información de un paciente que tenemos disponible en el siguiente diccionario:
+
+::
+
+  >> paciente = {'nombre': 'Daniel', 'edad': 42, 'Diabetico': True}
+
+5. Dado el siguiente fichero con información sobre pacientes:
+
+::
+
+  Nombre edad Diabetico
+  Daniel 42 Si
+  Jose 15 Si
+  Manolo 50 No
+  Alicia 12 No
+
+Imprimir en un nuevo fichero los pacientes que tienen más de 20 años y no son diabéticos.
+
+Pista: La estructura del programa puede ser:
+
+::
+
+  #leemos los pacientes a una lista de diccionarios
+  pacientes = leer_fichero_pacientes('pacientes.txt')
+  filtrar_pacientes(pacientes)
+  escribir_fichero_pacientes(pacientes, 'pacientes_filtrados.txt')
+
+::
+
+  >>> paciente = {'nombre': 'Daniel', 'edad': 42, 'Diabetico': True}
+
+Pista. Podemos añadir todo lo que queramos escribir a una lista de cadenas de texto y después utilizar el método *join* de la cadena '\\t'.
+
+Soluciones
+----------
+
+1. Escribir en un fichero llamado *secuencias.fasta* la siguiente secuencia:
+
+::
+
+  >seq1
+  ACTG
+
+::
+
+  >>> fhand.write('>seq1\n')
+  >>> fhand.write('ACTG\n')
+  >>> fhand.close()
+
+2. Añadir al fichero anterior la secuencia:
+
+::
+
+  >seq2
+  GATA
+
+::
+
+  >>> fhand = open('secuencias.fasta', 'a')
+  >>> fhand.write('>seq2\n')
+  >>> fhand.write('GATA\n')
+  >>> fhand.close()
+
+
+3. Escribir los números del 1 al 100 en un fichero.
+
+::
+
+  #!/usr/bin/env python
+
+  fhand = open('numeros.txt')
+
+  for numero in range(0, 101):
+      fhand.write(str(numero))
+      fhand.write('\n')
+
+  fhand.close()
+
+4. Escribir en un fichero separado por tabuladores la información de un paciente que tenemos disponible en el siguiente diccionario:
+
+::
+
+  >>> paciente = {'nombre': 'Daniel', 'edad': 42, 'Diabetico': True}
+
+Pista. Podemos añadir todo lo que queramos escribir a una lista de cadenas de texto y después utilizar el método *join* de la cadena '\\t'.
+
+::
+
+  >>> fhand = open('pacientes.txt', 'w')
+  >>> towrite = []
+  >>> towrite.append('nombre')
+  >>> towrite.append(paciente['nombre'])
+  >>> towrite.append('edad')
+  >>> towrite.append(str(paciente['edad']))
+  >>> towrite.append('Diabetico')
+  >>> towrite.append(str(paciente['Diabetico']))
+  >>> towrite
+  ['nombre', 'Daniel', 'edad', '42', 'Diabetico', 'True']
+  >>> fhand.write('\t'.join(towrite))
+  >>> fhand.write('\n')
+  >>> fhand.close()
+
+5. Dado el siguiente fichero con información sobre pacientes:
+
+::
+
+  Nombre edad Diabetico
+  Daniel 42 Si
+  Jose 15 Si
+  Manolo 50 No
+  Alicia 12 No
+
+Imprimir en un nuevo fichero los pacientes que tienen más de 20 años y no son diabéticos.
+
+Pista: La estructura del programa puede ser:
+
+::
+
+  #leemos los pacientes a una lista de diccionarios
+  pacientes = leer_fichero_pacientes('pacientes.txt')
+  filtrar_pacientes(pacientes)
+  escribir_fichero_pacientes(pacientes, 'pacientes_filtrados.txt')
+
+::
+
+  #!/usr/bin/env python
+  
+  
+  def leer_fichero_pacientes(entrada):
+      '''Lee el fichero de pacientes
+  
+      Debe ser un fichero separado por espacios o tabuladores,
+      sin datos faltantes y con los campos: nombre, edad y diabetico.
+      '''
+      pacientes = []  #una lista a la que anyadiremos los pacientes
+  
+      for linea in open(entrada):
+          #la primera linea se ignora porque es la cabecera
+          if 'nombre' in linea.lower():
+              continue
+  
+          linea = linea.strip()
+          nombre, edad, diabetico = linea.split()
+  
+          #La edad es un enterio
+          edad = int(edad)
+  
+          #la enfermedad la pasamos a bool
+          if diabetico.lower() == 'si':
+              diabetico = True
+          else:
+              diabetico = False
+          #esto se podria escribir como
+          #diabetico = True if diabetico.lower() == 'si' else False
+  
+          #creamos un diccionario para cada paciente
+          paciente = {'nombre': nombre,
+                      'edad': edad,
+                      'diabetico': diabetico}
+  
+          #anadimos el paciente a la lista de pacientes
+          pacientes.append(paciente)
+  
+      #esta funcion devuelve a lista de pacientes completa
+      return pacientes
+  
+  def filtrar_pacientes(pacientes, min_edad, diabetico):
+      '''Filtra los pacientes
+  
+      Esta funcion requiere una lista de pacientes y devuelve
+      una lista nueva con los pacientes filtrados.
+  
+      min_edad es la edad minima con la que se acepta un paciente
+      diabetico indica que clase de pacientes se acepta.
+      '''
+  
+      #creamos una lista para los pacientes que cumplen los
+      #requisitos
+      pacientes_filtrados = []
+      for paciente in pacientes:
+          if not (paciente['edad'] < min_edad or
+                  paciente['diabetico'] != diabetico):
+              pacientes_filtrados.append(paciente)
+      return pacientes_filtrados
+  
+  def formatear_paciente(paciente):
+      'Dado un paciente devuelve la linea a imprimir'
+  
+      linea = []  #una lista con los str a imprimir
+      linea.append(paciente['nombre'])
+      linea.append(str(paciente['edad']))
+      if paciente['diabetico']:
+          linea.append('Si')
+      else:
+          linea.append('No')
+  
+      linea = ' '.join(linea)
+      linea += '\n'
+      return linea
+  
+  def escribir_fichero_pacientes(fichero, pacientes):
+      'Escribe el fichero de pacientes separado por espacios'
+  
+      fhand = open(fichero, 'w')
+  
+      #escribimos la cabecera
+      fhand.write('Nombre Edad Diabetico\n')
+  
+      for paciente in pacientes:  #recorremos todos los pacientes
+          linea = formatear_paciente(paciente)
+          fhand.write(linea)
+  
+  def escribe_pacientes_filtrados(entrada, salida):
+      'Filtra el fichero de entrada y escribe el de salida'
+  
+      pacientes = leer_fichero_pacientes(entrada)
+      pacientes = filtrar_pacientes(pacientes, 20, False)
+      escribir_fichero_pacientes(salida, pacientes)
+  
+  if __name__ == '__main__':
+      escribe_pacientes_filtrados('pacientes.txt',
+                        'pacientes_filtrados.txt')
+

@@ -1,0 +1,628 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Bases de datos biológicas &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Bases datos de secuencia" href="practica_bases.html" />
+    <link rel="prev" title="Introducción a la bioinformática" href="index.html" /> 
+  </head>
+  <body>
+    <nav class="global_navigation">
+        <ul>
+            <li class="current_site_item" ><a href="http://bioinf.comav.upv.es">bioinf</a></li>
+            <li><a href="http://cucurbigene.net">cucurbigene</a></li>
+            <li><a href="http://melogene.net">melogene</a></li>
+        </ul>
+    </nav>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+    
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="http://www.melogene.net/">Melogene</a></li>
+                    <li><a href="http://www.cucurbigene.net/">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bases de datos biológicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_bases.html">Práctica bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alineamientos.html">Alineamientos de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_jemboss.html">Práctica jemboss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_alineamientos.html">Práctica de alineamientos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blast.html">Búsqueda de secuencias en bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast.html">Práctica Blast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediccion.html">Métodos predictivos en ADN y ARN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_prediccion.html">Práctica predicción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">Alineamientos múltiples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_multiple.html">Práctica alineamiento múltiple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filogenias.html">Introducción al análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_filogenias.html">Práctica análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast2go.html">Práctica anotación con Blast2GO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_visores.html">Prácticas bases de datos genómicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion.html">Ejercicio anotación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion2.html">Ejercicio prediccion 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sanger.html">Secuenciación de Sanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ensamblaje.html">Ensamblaje de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_ensamblaje.html">Práctica ensamblaje de secuencias</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="bases-de-datos-biologicas">
+<h1>Bases de datos biológicas<a class="headerlink" href="#bases-de-datos-biologicas" title="Permalink to this headline">¶</a></h1>
+<p>Las bases de datos más relevantes en biología incluyen datos de secuencias de nucleótidos, proteínas, estructura de proteínas, genomas, expresión genética, bibliografía, taxonomía, metabolismo, factores de transcripción, etc.
+Nos podemos hacer una idea de las bases de datos disponibles en esta base de datos de <a class="reference external" href="http://www.biodbs.info/">bases de datos biológicas</a>.</p>
+<p>Principales bases de datos se secuencias de nucleótidos:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://www.ncbi.nlm.nih.gov/">NCBI</a> (EEUU)</p></li>
+<li><p><a class="reference external" href="http://www.ebi.ac.uk/embl/">EMBL</a> (Europa)</p></li>
+<li><p><a class="reference external" href="http://www.ddbj.nig.ac.jp/">DDBJ</a> (Japón)</p></li>
+</ul>
+</div></blockquote>
+<p>Algunas bases de datos de genomas de organismos concretos:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://flybase.bio.indiana.edu/">Flybase</a> (Drosophila)</p></li>
+<li><p><a class="reference external" href="http://www.yeastgenome.org/">SGD</a> (Levadura)</p></li>
+<li><p><a class="reference external" href="http://www.arabidopsis.org/">TAIR</a> (Arabidopsis)</p></li>
+<li><p><a class="reference external" href="http://www.ensembl.org/index.html">ENSEML</a> (Hombre, ratón y otros)</p></li>
+</ul>
+</div></blockquote>
+<p>Principales bases de datos de proteínas:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://www.pir.uniprot.org/">Uniprot</a></p></li>
+<li><p><a class="reference external" href="http://expasy.org/sprot/">Swiss-prot</a></p></li>
+<li><p><a class="reference external" href="http://www.rcsb.org/pdb/home/home.do">PDB</a></p></li>
+<li><p><a class="reference external" href="http://130.14.29.110/Structure/MMDB/mmdb.shtml">MMDB</a></p></li>
+<li><p><a class="reference external" href="http://scop.mrc-lmb.cam.ac.uk/scop/">SCOP</a></p></li>
+</ul>
+</div></blockquote>
+<p>Bibliografía:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://www.ncbi.nlm.nih.gov/sites/entrez">Pubmed</a></p></li>
+</ul>
+</div></blockquote>
+<p>Rutas metabólicas:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://www.genome.jp/kegg/">KEGG</a></p></li>
+</ul>
+</div></blockquote>
+<p>Enfermedades genéticas humanas:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://www.ncbi.nlm.nih.gov/sites/entrez?db=omim">OMIM</a></p></li>
+</ul>
+</div></blockquote>
+<section id="bases-de-datos-de-secuencias">
+<h2>Bases de datos de secuencias<a class="headerlink" href="#bases-de-datos-de-secuencias" title="Permalink to this headline">¶</a></h2>
+<p>Una base de datos de nucleótidos es una colección de secuencias de ADN o proteínas.</p>
+<p>A estas secuencias normalmente se les añade alguna información relevante y una interfaz para poder acceder a la propia base de datos.</p>
+<p>Las tres bases de datos principales de nucleótidos son: <a class="reference external" href="http://www.ebi.ac.uk/embl/">EMBL</a> , <a class="reference external" href="http://www.ncbi.nlm.nih.gov/Genbank/index.html">Genbank</a> y <a class="reference external" href="http://www.ddbj.nig.ac.jp/">DDBJ</a>.</p>
+<p>Intercambian las nuevas secuencias todos los días, por lo tanto, en las tres se encuentra depositada la misma información.</p>
+<p>Con el tiempo estas bases de datos han ido añadiendo información adicional a las secuencias y ahora incluyen funciones, mutaciones, proteínas codificadas, referencias bibliográficas, etc.</p>
+<p>El crecimiento anual de estas bases de datos es enorme.
+En el recuento del 15 de Junio de 2007 había más de 73 millones de secuencias en la Genbank y en 2012 mas de 157 millones, y este crecimiento exponencial dista mucho de saturarse.</p>
+<figure class="align-center">
+<img alt="_images/716px-Growth_of_Genbank.svg.png" src="_images/716px-Growth_of_Genbank.svg.png" />
+</figure>
+<p>De <a class="reference external" href="http://commons.wikimedia.org/wiki/File:Growth_of_Genbank.svg">http://commons.wikimedia.org/wiki/File:Growth_of_Genbank.svg</a></p>
+<p>Dado el gran número de secuencias incluidas las bases de datos suelen estar divididas en secciones para facilitar la búsqueda.</p>
+<section id="genbank">
+<h3>Genbank<a class="headerlink" href="#genbank" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://www.ncbi.nlm.nih.gov/Genbank/index.html">Genbank</a> es una colección pública de secuencias de nucleótidos anotadas.</p>
+<p>Incluye secuencias de ARNm con regiones codificantes, ADN genómico correspondientes a uno o varios genes y ARN ribosómico.</p>
+<p>Es un almacén público de secuencias.</p>
+<p>No modifican las secuencias sin el consentimiento de los autores.</p>
+<p>Es redundante, pueden haber varias secuencias para un gen determinado.</p>
+<p>Hay secuencias de muy buena calidad, pero también hay algunas no tan buenas.</p>
+<p>Para facilitar la búsqueda han dividido las secuencias en distintas <a class="reference external" href="http://www.ncbi.nlm.nih.gov/HTGS/divisions.html">divisiones</a>.</p>
+<p>Hay divisiones taxonómicas para las secuencias de alta calidad: primate, rodent, other mamalian, invertebrate, etc.</p>
+<p>Otras divisiones se reservan para las secuencias de menos calidad: <a class="reference external" href="http://en.wikipedia.org/wiki/Expressed_sequence_tag">EST</a> (Expressed Sequence Tag), <a class="reference external" href="http://www.ncbi.nlm.nih.gov/sra">SRA</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Genome_survey_sequence">GSS</a> (genome survey sequence), <a class="reference external" href="http://en.wikipedia.org/wiki/DNA_sequencing#High-throughput_sequencing">HTGS</a> (high throughput genomic sequencing).</p>
+<p>En este <a class="reference external" href="http://www.ncbi.nlm.nih.gov/books/NBK21105/#GenBank_ASM">documento</a> nos resumen las principales características y funcionalidades de la Genbank.</p>
+</section>
+<section id="refseq">
+<h3>Refseq<a class="headerlink" href="#refseq" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://www.ncbi.nlm.nih.gov/projects/RefSeq/">Refseq</a> (Reference Sequence) es otra base de datos de nucleótidos mantenida por el NCBI.</p>
+<p>Es una base de datos secundaria.</p>
+<p>Es una colección de secuencias de ADN, ARN y proteínas mantenida y revisada.</p>
+<p>Sólo tiene una secuencia por gen y organismo.</p>
+<p>Tiene entradas independientes para el ADN genómico, el transcrito y las proteínas.</p>
+<p>Sólo incluye los principales organismos (10.854 frente a los más de 160.000 de la Genbank en las versiones de septiembre 2010).</p>
+</section>
+<section id="uniprot">
+<h3>Uniprot<a class="headerlink" href="#uniprot" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://www.pir.uniprot.org/">Uniprot</a> es una base de datos de proteínas.</p>
+<p>Nace por la unión de tres bases de datos previas: Swiss-prot, TrEMBL y PIR-PSD.</p>
+<p>Swiss-Prot y TrEML continuan siendo dos secciones en la Uniprot.</p>
+<p>Swiss-Prot está compuesta por registros anotados manualmente.</p>
+<p>Las proteínas de Swiss-prot tienen una información de alta calidad.</p>
+<p>TrEMBL es una traducción automática de las secuencias de la EMBL.</p>
+<p>El objetivo es ir anotando manualmente las secuencias de TrEMBL, pero dado el ritmo de secuenciación esta tarea no terminará nunca.</p>
+<p>Swiss-Prot es mucho más pequeña que TrEMBL.</p>
+</section>
+<section id="pdb-protein-data-bank">
+<h3>PDB, Protein Data Bank<a class="headerlink" href="#pdb-protein-data-bank" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://www.rcsb.org/pdb/home/home.do">PDB</a> alberga información sobre estructura de proteínas y ácidos nucléicos.</p>
+<p>Además de la estructura incluye información sobre la secuencia, las condiciones de cristalización, otras proteínas de estructura similar e imágenes 3D.</p>
+</section>
+<section id="pubmed">
+<h3>PubMed<a class="headerlink" href="#pubmed" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://www.ncbi.nlm.nih.gov/sites/entrez">PubMed</a> da accesso a la base de datos de referencias bibliográficas MEDLINE.</p>
+<p>Su ámbito principal es la medicina, por lo que las revistas de otros campos no siempre están incluidas.</p>
+<p>Tiene una buena colección de entradas relacionadas con la bioquímica, biología celular y la medicina.</p>
+<p>Incluye los títulos, autores y resúmenes de los artículos publicados.</p>
+<p>Muchas de las revistas incluidas permiten el acceso a texto completo del artículo y PubMed permite buscar sólo textos de acceso libre.</p>
+</section>
+</section>
+<section id="acceso-a-la-informacion">
+<h2>Acceso a la información<a class="headerlink" href="#acceso-a-la-informacion" title="Permalink to this headline">¶</a></h2>
+<p>El núcleo de una base de datos está constituido por los datos almacenados de forma estructurada.</p>
+<p>Es difícil para un usuario sin una preparación previa acceder a los datos estructurados.</p>
+<p>Para simplificar el acceso las bases de datos proporcionan un interfaz fácil de utilizar.</p>
+<p>Lo más común es que estos interfaces sean un página web, lo que posibilita que se acceda a los datos utilizando un simple navegador web.</p>
+<p>Los interfaces para las bases de datos proporcionan herramientas de búsqueda y ficheros de texto en los que mostrar la información.</p>
+<figure class="align-center">
+<img alt="_images/web_interface.png" src="_images/web_interface.png" />
+</figure>
+<p>El usuario obtiene una serie de ficheros de texto, bien sea en texto plano o en html.</p>
+<p>Cada uno de los ficheros incluye la información de uno o varios registros de la base de datos.</p>
+<p>Las distintas bases de datos muestras la información en archivos con distintos formatos.</p>
+<p>Entrada en formato Genbank</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LOCUS</span>       <span class="n">EC750390</span>                 <span class="mi">558</span> <span class="n">bp</span>    <span class="n">mRNA</span>    <span class="n">linear</span>   <span class="n">EST</span>     <span class="mi">03</span><span class="o">-</span><span class="n">JUL</span><span class="o">-</span><span class="mi">2006</span>
+<span class="n">DEFINITION</span>  <span class="n">POE00005652</span> <span class="n">PL</span><span class="p">(</span><span class="n">light</span><span class="p">)</span> <span class="n">Polytomella</span> <span class="n">parva</span> <span class="n">cDNA</span> <span class="n">similar</span> <span class="n">to</span> <span class="n">frataxin</span> <span class="n">protein</span>
+            <span class="o">-</span><span class="n">related</span><span class="p">,</span> <span class="n">mRNA</span> <span class="n">sequence</span><span class="o">.</span>
+<span class="n">ACCESSION</span>   <span class="n">EC750390</span>
+<span class="n">VERSION</span>     <span class="n">EC750390</span><span class="mf">.1</span>  <span class="n">GI</span><span class="p">:</span><span class="mi">110064507</span>
+<span class="n">KEYWORDS</span>    <span class="n">EST</span><span class="o">.</span>
+<span class="n">SOURCE</span>      <span class="n">Polytomella</span> <span class="n">parva</span>
+<span class="n">ORGANISM</span>    <span class="n">Polytomella</span> <span class="n">parva</span>
+            <span class="n">Eukaryota</span><span class="p">;</span> <span class="n">Viridiplantae</span><span class="p">;</span> <span class="n">Chlorophyta</span><span class="p">;</span> <span class="n">Chlorophyceae</span><span class="p">;</span><span class="n">Chlamydomonadales</span><span class="p">;</span>
+            <span class="n">Chlamydomonadaceae</span><span class="p">;</span> <span class="n">Polytomella</span><span class="o">.</span>
+<span class="n">REFERENCE</span>   <span class="mi">1</span>  <span class="p">(</span><span class="n">bases</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">558</span><span class="p">)</span>
+  <span class="n">AUTHORS</span>   <span class="n">Lee</span><span class="p">,</span><span class="n">R</span><span class="o">.</span><span class="n">W</span><span class="o">.</span> <span class="ow">and</span> <span class="n">Borza</span><span class="p">,</span><span class="n">T</span><span class="o">.</span>
+  <span class="n">TITLE</span>     <span class="n">The</span> <span class="n">colorless</span> <span class="n">plastid</span> <span class="n">of</span> <span class="n">the</span> <span class="n">green</span> <span class="n">alga</span> <span class="n">Polytomella</span> <span class="n">parva</span><span class="p">:</span> <span class="n">a</span> <span class="n">repertoire</span> <span class="n">of</span> <span class="n">its</span> <span class="n">functions</span>
+  <span class="n">JOURNAL</span>   <span class="n">Unpublished</span> <span class="p">(</span><span class="mi">2006</span><span class="p">)</span>
+<span class="n">COMMENT</span>     <span class="n">Contact</span><span class="p">:</span> <span class="n">TBestDB</span>
+            <span class="n">Departement</span> <span class="n">de</span> <span class="n">Biochimie</span><span class="p">,</span> <span class="n">Universite</span> <span class="n">de</span> <span class="n">Montreal</span>
+            <span class="n">Montreal</span><span class="p">,</span> <span class="n">Canada</span>
+            <span class="n">Email</span><span class="p">:</span> <span class="n">tbestdb</span><span class="o">-</span><span class="n">curator</span><span class="nd">@bch</span><span class="o">.</span><span class="n">umontreal</span><span class="o">.</span><span class="n">ca</span>
+            <span class="n">Plate</span><span class="p">:</span> <span class="mf">4065.</span>
+<span class="n">FEATURES</span>             <span class="n">Location</span><span class="o">/</span><span class="n">Qualifiers</span>
+     <span class="n">source</span>          <span class="mf">1..558</span>
+                     <span class="o">/</span><span class="n">organism</span><span class="o">=</span><span class="s2">&quot;Polytomella parva&quot;</span>
+                     <span class="o">/</span><span class="n">mol_type</span><span class="o">=</span><span class="s2">&quot;mRNA&quot;</span>
+                     <span class="o">/</span><span class="n">db_xref</span><span class="o">=</span><span class="s2">&quot;taxon:51329&quot;</span>
+                     <span class="o">/</span><span class="n">clone_lib</span><span class="o">=</span><span class="s2">&quot;PL(light)&quot;</span>
+<span class="n">ORIGIN</span>
+        <span class="mi">1</span> <span class="n">gcggccgctt</span> <span class="n">tttttttttt</span> <span class="n">tttttttttt</span> <span class="n">ttttcgtccg</span> <span class="n">ttatttcttt</span> <span class="n">tttaagaatg</span>
+       <span class="mi">61</span> <span class="n">cagtcatctg</span> <span class="n">tacatcgtca</span> <span class="n">agtattcgga</span> <span class="n">gtgttatctc</span> <span class="n">gttttgtggg</span> <span class="n">aaacaaagcg</span>
+      <span class="mi">121</span> <span class="n">ggtattttta</span> <span class="n">caaagcataa</span> <span class="n">tcatggtgtc</span> <span class="n">tcaaggttgt</span> <span class="n">cttcatgcac</span> <span class="n">ttcgtcatgc</span>
+      <span class="mi">181</span> <span class="n">gtaaagatgt</span> <span class="n">atactagcaa</span> <span class="n">caaggccccc</span> <span class="n">gaggatcttc</span> <span class="n">aaacgttcca</span> <span class="n">ccggcaagca</span>
+      <span class="mi">241</span> <span class="n">gacgaaactc</span> <span class="n">tagagcaagt</span> <span class="n">cactgaagcc</span> <span class="n">cttgaaaact</span> <span class="n">atgtagatga</span> <span class="n">gcatgaagtg</span>
+      <span class="mi">301</span> <span class="n">gaaggcagcg</span> <span class="n">acattgagca</span> <span class="n">tacgcaagga</span> <span class="n">gtgcttacta</span> <span class="n">ttaagcttgg</span> <span class="n">aactcttgga</span>
+      <span class="mi">361</span> <span class="n">agttatgtaa</span> <span class="n">ttaataaaca</span> <span class="n">gactcctaat</span> <span class="n">aagcagatat</span> <span class="n">ggttatcctc</span> <span class="n">tcccgtcagt</span>
+      <span class="mi">421</span> <span class="n">ggacccttcc</span> <span class="n">gatatgatct</span> <span class="n">taaagaaggt</span> <span class="n">gcctgggttt</span> <span class="n">atgaacgggc</span> <span class="n">tggcgaggct</span>
+      <span class="mi">481</span> <span class="n">cggcgcgagc</span> <span class="n">ttatttctca</span> <span class="n">attagaaaca</span> <span class="n">gaaatttcgg</span> <span class="n">atttagttgg</span> <span class="n">tgtcgaatta</span>
+      <span class="mi">541</span> <span class="n">aagataagta</span> <span class="n">actgaacg</span>
+<span class="o">//</span>
+</pre></div>
+</div>
+<p>Entrada en formato EMBL</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ID</span>   <span class="n">EC750390</span><span class="p">;</span> <span class="n">SV</span> <span class="mi">1</span><span class="p">;</span> <span class="n">linear</span><span class="p">;</span> <span class="n">mRNA</span><span class="p">;</span> <span class="n">EST</span><span class="p">;</span> <span class="n">PLN</span><span class="p">;</span> <span class="mi">558</span> <span class="n">BP</span><span class="o">.</span>
+<span class="n">XX</span>
+<span class="n">AC</span>   <span class="n">EC750390</span><span class="p">;</span>
+<span class="n">XX</span>
+<span class="n">DT</span>   <span class="mi">04</span><span class="o">-</span><span class="n">JUL</span><span class="o">-</span><span class="mi">2006</span> <span class="p">(</span><span class="n">Rel</span><span class="o">.</span> <span class="mi">88</span><span class="p">,</span> <span class="n">Created</span><span class="p">)</span>
+<span class="n">DT</span>   <span class="mi">04</span><span class="o">-</span><span class="n">JUL</span><span class="o">-</span><span class="mi">2006</span> <span class="p">(</span><span class="n">Rel</span><span class="o">.</span> <span class="mi">88</span><span class="p">,</span> <span class="n">Last</span> <span class="n">updated</span><span class="p">,</span> <span class="n">Version</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">XX</span>
+<span class="n">DE</span>   <span class="n">POE00005652</span> <span class="n">PL</span><span class="p">(</span><span class="n">light</span><span class="p">)</span> <span class="n">Polytomella</span> <span class="n">parva</span> <span class="n">cDNA</span> <span class="n">similar</span> <span class="n">to</span> <span class="n">frataxin</span>
+<span class="n">DE</span>   <span class="n">protein</span><span class="o">-</span><span class="n">related</span><span class="p">,</span> <span class="n">mRNA</span> <span class="n">sequence</span><span class="o">.</span>
+<span class="n">XX</span>
+<span class="n">KW</span>   <span class="n">EST</span><span class="o">.</span>
+<span class="n">XX</span>
+<span class="n">OS</span>   <span class="n">Polytomella</span> <span class="n">parva</span>
+<span class="n">OC</span>   <span class="n">Eukaryota</span><span class="p">;</span> <span class="n">Viridiplantae</span><span class="p">;</span> <span class="n">Chlorophyta</span><span class="p">;</span> <span class="n">Chlorophyceae</span><span class="p">;</span> <span class="n">Chlamydomonadales</span><span class="p">;</span>
+<span class="n">OC</span>   <span class="n">Chlamydomonadaceae</span><span class="p">;</span> <span class="n">Polytomella</span><span class="o">.</span>
+<span class="n">XX</span>
+<span class="n">RN</span>   <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">RP</span>   <span class="mi">1</span><span class="o">-</span><span class="mi">558</span>
+<span class="n">RA</span>   <span class="n">Lee</span> <span class="n">R</span><span class="o">.</span><span class="n">W</span><span class="o">.</span><span class="p">,</span> <span class="n">Borza</span> <span class="n">T</span><span class="o">.</span><span class="p">;</span>
+<span class="n">RT</span>   <span class="s2">&quot;The colorless plastid of the green alga Polytomella parva: a repertoire of</span>
+<span class="n">RT</span>   <span class="n">its</span> <span class="n">functions</span><span class="s2">&quot;;</span>
+<span class="n">RL</span>   <span class="n">Unpublished</span><span class="o">.</span>
+<span class="n">XX</span>
+<span class="n">DR</span>   <span class="n">UNILIB</span><span class="p">;</span> <span class="mi">42732</span><span class="p">;</span> <span class="mf">19932.</span>
+<span class="n">XX</span>
+<span class="n">CC</span>   <span class="n">Contact</span><span class="p">:</span> <span class="n">TBestDB</span>
+<span class="n">CC</span>   <span class="n">Departement</span> <span class="n">de</span> <span class="n">Biochimie</span><span class="p">,</span> <span class="n">Universite</span> <span class="n">de</span> <span class="n">Montreal</span>
+<span class="n">CC</span>   <span class="n">Montreal</span><span class="p">,</span> <span class="n">Canada</span>
+<span class="n">CC</span>   <span class="n">Email</span><span class="p">:</span> <span class="n">tbestdb</span><span class="o">-</span><span class="n">curator</span><span class="nd">@bch</span><span class="o">.</span><span class="n">umontreal</span><span class="o">.</span><span class="n">ca</span>
+<span class="n">CC</span>   <span class="n">Plate</span><span class="p">:</span> <span class="mf">4065.</span>
+<span class="n">XX</span>
+<span class="n">FH</span>   <span class="n">Key</span>             <span class="n">Location</span><span class="o">/</span><span class="n">Qualifiers</span>
+<span class="n">FH</span>
+<span class="n">FT</span>   <span class="n">source</span>          <span class="mf">1..558</span>
+<span class="n">FT</span>                   <span class="o">/</span><span class="n">organism</span><span class="o">=</span><span class="s2">&quot;Polytomella parva&quot;</span>
+<span class="n">FT</span>                   <span class="o">/</span><span class="n">mol_type</span><span class="o">=</span><span class="s2">&quot;mRNA&quot;</span>
+<span class="n">FT</span>                   <span class="o">/</span><span class="n">clone_lib</span><span class="o">=</span><span class="s2">&quot;PL(light)&quot;</span>
+<span class="n">FT</span>                   <span class="o">/</span><span class="n">db_xref</span><span class="o">=</span><span class="s2">&quot;taxon:51329&quot;</span>
+<span class="n">FT</span>                   <span class="o">/</span><span class="n">db_xref</span><span class="o">=</span><span class="s2">&quot;UNILIB:42732&quot;</span>
+<span class="n">XX</span>
+<span class="n">SQ</span>   <span class="n">Sequence</span> <span class="mi">558</span> <span class="n">BP</span><span class="p">;</span> <span class="mi">153</span> <span class="n">A</span><span class="p">;</span> <span class="mi">105</span> <span class="n">C</span><span class="p">;</span> <span class="mi">127</span> <span class="n">G</span><span class="p">;</span> <span class="mi">173</span> <span class="n">T</span><span class="p">;</span> <span class="mi">0</span> <span class="n">other</span><span class="p">;</span>
+     <span class="n">gcggccgctt</span> <span class="n">tttttttttt</span> <span class="n">tttttttttt</span> <span class="n">ttttcgtccg</span> <span class="n">ttatttcttt</span> <span class="n">tttaagaatg</span>        <span class="mi">60</span>
+     <span class="n">cagtcatctg</span> <span class="n">tacatcgtca</span> <span class="n">agtattcgga</span> <span class="n">gtgttatctc</span> <span class="n">gttttgtggg</span> <span class="n">aaacaaagcg</span>       <span class="mi">120</span>
+     <span class="n">ggtattttta</span> <span class="n">caaagcataa</span> <span class="n">tcatggtgtc</span> <span class="n">tcaaggttgt</span> <span class="n">cttcatgcac</span> <span class="n">ttcgtcatgc</span>       <span class="mi">180</span>
+     <span class="n">gtaaagatgt</span> <span class="n">atactagcaa</span> <span class="n">caaggccccc</span> <span class="n">gaggatcttc</span> <span class="n">aaacgttcca</span> <span class="n">ccggcaagca</span>       <span class="mi">240</span>
+     <span class="n">gacgaaactc</span> <span class="n">tagagcaagt</span> <span class="n">cactgaagcc</span> <span class="n">cttgaaaact</span> <span class="n">atgtagatga</span> <span class="n">gcatgaagtg</span>       <span class="mi">300</span>
+     <span class="n">gaaggcagcg</span> <span class="n">acattgagca</span> <span class="n">tacgcaagga</span> <span class="n">gtgcttacta</span> <span class="n">ttaagcttgg</span> <span class="n">aactcttgga</span>       <span class="mi">360</span>
+     <span class="n">agttatgtaa</span> <span class="n">ttaataaaca</span> <span class="n">gactcctaat</span> <span class="n">aagcagatat</span> <span class="n">ggttatcctc</span> <span class="n">tcccgtcagt</span>       <span class="mi">420</span>
+     <span class="n">ggacccttcc</span> <span class="n">gatatgatct</span> <span class="n">taaagaaggt</span> <span class="n">gcctgggttt</span> <span class="n">atgaacgggc</span> <span class="n">tggcgaggct</span>       <span class="mi">480</span>
+     <span class="n">cggcgcgagc</span> <span class="n">ttatttctca</span> <span class="n">attagaaaca</span> <span class="n">gaaatttcgg</span> <span class="n">atttagttgg</span> <span class="n">tgtcgaatta</span>       <span class="mi">540</span>
+     <span class="n">aagataagta</span> <span class="n">actgaacg</span>                                                     <span class="mi">558</span>
+<span class="o">//</span>
+</pre></div>
+</div>
+<p>Entrada en formato FASTA</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">gi</span><span class="o">|</span><span class="mi">110064507</span><span class="o">|</span><span class="n">gb</span><span class="o">|</span><span class="n">EC750390</span><span class="mf">.1</span><span class="o">|</span><span class="n">EC750390</span> <span class="n">POE00005652</span> <span class="n">PL</span><span class="p">(</span><span class="n">light</span><span class="p">)</span> <span class="n">Polytomella</span> <span class="n">parva</span> <span class="n">cDNA</span>
+ <span class="n">similar</span> <span class="n">to</span> <span class="n">frataxin</span> <span class="n">protein</span><span class="o">-</span><span class="n">related</span><span class="p">,</span> <span class="n">mRNA</span> <span class="n">sequence</span>
+<span class="n">GCGGCCGCTTTTTTTTTTTTTTTTTTTTTTTTTTCGTCCGTTATTTCTTTTTTAAGAATGCAGTCATCTG</span>
+<span class="n">TACATCGTCAAGTATTCGGAGTGTTATCTCGTTTTGTGGGAAACAAAGCGGGTATTTTTACAAAGCATAA</span>
+<span class="n">TCATGGTGTCTCAAGGTTGTCTTCATGCACTTCGTCATGCGTAAAGATGTATACTAGCAACAAGGCCCCC</span>
+<span class="n">GAGGATCTTCAAACGTTCCACCGGCAAGCAGACGAAACTCTAGAGCAAGTCACTGAAGCCCTTGAAAACT</span>
+<span class="n">ATGTAGATGAGCATGAAGTGGAAGGCAGCGACATTGAGCATACGCAAGGAGTGCTTACTATTAAGCTTGG</span>
+<span class="n">AACTCTTGGAAGTTATGTAATTAATAAACAGACTCCTAATAAGCAGATATGGTTATCCTCTCCCGTCAGT</span>
+<span class="n">GGACCCTTCCGATATGATCTTAAAGAAGGTGCCTGGGTTTATGAACGGGCTGGCGAGGCTCGGCGCGAGC</span>
+<span class="n">TTATTTCTCAATTAGAAACAGAAATTTCGGATTTAGTTGGTGTCGAATTAAAGATAAGTAACTGAACG</span>
+</pre></div>
+</div>
+<p>Principales campos en el formato Genbank</p>
+<p>Más información sobre el <a class="reference external" href="http://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html#LocusB">formato_en_el_NCBI</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 68%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Búsqueda en Entrez</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Locus name</p></td>
+<td><p>Un nombre único para la secuencia</p></td>
+<td><p>[ACCN]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence length</p></td>
+<td><p>Longitud de la secuencia</p></td>
+<td><p>[SLEN]</p></td>
+</tr>
+<tr class="row-even"><td><p>Molecule Type</p></td>
+<td><p>ADN, genómico, mRNA, etc.</p></td>
+<td><p>[PROP]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Genbank Division</p></td>
+<td><p>División a la que pertenece la secuencia</p></td>
+<td><p>[PROP]</p></td>
+</tr>
+<tr class="row-even"><td><p>Modification Date</p></td>
+<td><p>Fecha de la última modificación</p></td>
+<td><p>[MDAT]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Definition</p></td>
+<td><p>Breve descrición de la seucuencia</p></td>
+<td><p>[TITL]</p></td>
+</tr>
+<tr class="row-even"><td><p>Accession</p></td>
+<td><p>Identificador único de la entrada, no varía aunuque se modifique la secuencia</p></td>
+<td><p>[ACCN]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Version</p></td>
+<td><p>Número de versión de la secuencia</p></td>
+<td><p>All fields</p></td>
+</tr>
+<tr class="row-even"><td><p>GI</p></td>
+<td><p>Identificador único de la secuencia, cambia con las modificaciones</p></td>
+<td><p>All fiedls</p></td>
+</tr>
+<tr class="row-odd"><td><p>Keywords</p></td>
+<td><p>Palabras clave que describen la secuencia</p></td>
+<td><p>[KYWD]</p></td>
+</tr>
+<tr class="row-even"><td><p>Source</p></td>
+<td><p>Nombre del organismo</p></td>
+<td><p>[ORGN]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Organism</p></td>
+<td><p>Nombre científico del organismo</p></td>
+<td><p>[ORGN]</p></td>
+</tr>
+<tr class="row-even"><td><p>Reference</p></td>
+<td><p>Publicaciones relacionadas</p></td>
+<td><p>[TITL] [AUTH] [JOUR]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Features</p></td>
+<td><p>Información sobre las regiones de interés</p></td>
+<td><p>[FKEY]</p></td>
+</tr>
+<tr class="row-even"><td><p>source</p></td>
+<td><p>Longitud de la secuencia, nombre del organismo, taxón ID</p></td>
+<td><p>[ALL]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Taxon</p></td>
+<td><p>Taxón ID</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>CDS</p></td>
+<td><p>Secuencia codificante</p></td>
+<td><p>[FKEY]</p></td>
+</tr>
+<tr class="row-odd"><td><p>protein_id</p></td>
+<td><p>Identificador de la secuencia protéica</p></td>
+<td><p>All fields</p></td>
+</tr>
+<tr class="row-even"><td><p>GI</p></td>
+<td><p>Identificador único de la secuencia protéica</p></td>
+<td><p>All fields</p></td>
+</tr>
+<tr class="row-odd"><td><p>Translation</p></td>
+<td><p>Traducción</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>gene</p></td>
+<td><p>Región cubierta por un gen</p></td>
+<td><p>[FKEY]</p></td>
+</tr>
+</tbody>
+</table>
+<p>El campo <a class="reference external" href="http://www.ncbi.nlm.nih.gov/projects/collab/FT/index.html#7.3">features</a> es especialmente importante, describe qué conocimiento se tiene sobre la secuencia.</p>
+<section id="busqueda-de-ejemplo">
+<h3>Búsqueda de ejemplo<a class="headerlink" href="#busqueda-de-ejemplo" title="Permalink to this headline">¶</a></h3>
+<p>Podemos buscar en <a class="reference external" href="http://www.ncbi.nlm.nih.gov/sites/gquery">Entrez</a> qué se sabe sobre el síndrome de Usher 1C.</p>
+<p>Buscamos: Usher syndrome 1C.</p>
+<blockquote>
+<div><blockquote>
+<div><p>Encontramos:</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Pubmed: 22 artículos.</p></li>
+<li><p>Pubmed Central: 255 artículos.</p></li>
+<li><p>OMIM: 4 entradas.</p></li>
+<li><p>Nucleotide: 1138 secuencias.</p></li>
+<li><p>Protein: 76 secuencias.</p></li>
+</ul>
+</div></blockquote>
+<p>Si vamos al <a class="reference external" href="http://www.ncbi.nlm.nih.gov/sites/entrez?db=omim&amp;cmd=search&amp;term=Usher%20syndrome%201C">Link_OMIM</a> vemos que hay 2 entradas otras enfermedades, una para el <a class="reference external" href="http://www.ncbi.nlm.nih.gov/omim/276904">síndrome</a> y otra para el <a class="reference external" href="http://www.ncbi.nlm.nih.gov/omim/605242">gen</a> responsable.</p>
+<p>El carácter está localizado en la región cromosómica 11p15.1.</p>
+<dl class="simple">
+<dt>Desde la pagina del gen de la base de datos OMIME, podemos ebtener informacion sobre el gen en la DB Gene del ncbi:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>El gen (<a class="reference external" href="http://www.ncbi.nlm.nih.gov/sites/entrez?itool=omim_Detailed&amp;DbFrom=omim&amp;Cmd=Link&amp;LinkName=omim_gene&amp;IdsFromResult=605242">Link_Gene</a>).</dt><dd><ul>
+<li><p>Las secuencias de la Ref seq relacionadas.</p></li>
+<li><p>Podermos ver las publicaciones mas relevantes del gen</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>Tambien podemos seleccionar las que corresponden a RefSeq (4 sequencias).
+Entre estas se encuentran dos variantes del mRNA humano (<a class="reference external" href="http://www.ncbi.nlm.nih.gov/nuccore/NM_153676">human_b3</a> y <a class="reference external" href="http://www.ncbi.nlm.nih.gov/nuccore/NM_005709">human_1</a>).
+En los links de las secuencias volvemos a tener la opción de buscar en otras bases de datos de Genes (Gene), Genes homólogos (HomoloGene), bibliografía gratuita (PMC), bibliografía (PubMed), secuencias relacionadas (Related Sequences), etc.</p>
+</section>
+</section>
+<section id="formatos-de-secuencia">
+<h2>Formatos de secuencia<a class="headerlink" href="#formatos-de-secuencia" title="Permalink to this headline">¶</a></h2>
+<p>Las secuencias de nucleótidos y proteínas se pueden guardar en distintos <a class="reference external" href="http://www.genomatix.de/online_help/help/sequence_formats.html">formatos</a>.
+Los más comunes utilizan algún tipo de <a class="reference external" href="http://es.wikipedia.org/wiki/Archivo_de_texto">fichero_de_texto</a>.</p>
+<p>Si sólo queremos guardar la secuencia se puede crear un fichero se texto y simplemente escribir la secuencia.
+Esto se conoce como secuencia en texto plano.
+El fichero sólo puede contener caracteres IUPAC para secuencia y espacios, los números no están permitidos.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCCCCTGGAGGGTAC</span>
+<span class="n">GGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGT</span>
+<span class="n">AGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGGCGCACCCCC</span>
+<span class="n">ATCCGCGCGCCGGGACAGAATGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAATAAAA</span>
+
+<span class="n">Secuencia</span> <span class="n">en</span> <span class="n">texto</span> <span class="n">plano</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Este formato tiene algunas limitaciones, no puede haber más que una secuencia dentro del fichero y no puede incluirse el nombre de la secuencia dentro del fichero.</p>
+<p>En el formato FASTA la secuencia comienza con un nombre y una descripción.
+Esta línea se distingue porque siempre comienza con el signo ‘&gt;’.
+A continuación sigue la secuencia propiamente dicha con el formato en texto plano.</p>
+<p>Pueden incluirse varias secuencias en un mismo fichero.</p>
+<p>Es un formato muy utilizado.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">nombre_secuencia1</span> <span class="n">descripción</span>
+<span class="n">ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCC</span>
+<span class="n">CCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGC</span>
+<span class="n">CTCCTGACTTTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGG</span>
+<span class="n">AAGCTCGGGAGGTGGCCAGGCGGCAGGAAGGCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCC</span>
+<span class="n">CTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAATAAAACCTCACCCATGAATGCTCACGC</span>
+<span class="o">&gt;</span><span class="n">nombre_secuencia2</span> <span class="n">descripción</span>
+<span class="n">ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCC</span>
+<span class="n">CCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGA</span>
+
+<span class="n">Secuencia</span> <span class="n">en</span> <span class="n">formato</span> <span class="n">fasta</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>El formato <a class="reference external" href="http://en.wikipedia.org/wiki/FASTQ_format">fastq</a> se desarrolló para poder almacenar de un modo sencillo la secuencia junto a su calidad.
+Se utiliza sobre todo para guardar lecturas de secuenciadores de ADN.
+Se basa en ficheros de texto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>@seq_1
+GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
++
+!&#39;&#39;*((((***+))%%%++)(%%%%).1***-+*&#39;&#39;))**55CCF&gt;&gt;&gt;&gt;&gt;&gt;CCCCCCC65
+@seq_2
+ATCGTAGTCTAGTCTATGCTAGTGCGATGCTAGTGCTAGTCGTATGCATGGCTATGTGTG
++
+208DA8308AD8SF83FH0SD8F08APFIDJFN34JW830UDS8UFDSADPFIJ3N8DAA
+</pre></div>
+</div>
+<p>En realidad este formato se inspiró en el fasta.
+Cada secuencia tiene 4 líneas.
+En la primera encontramos el nombre tras el símbolo “&#64;” y, opcionalmente, la descripción.
+La segunda línea tiene la secuencia y la cuarta la calidad codificada como letras.</p>
+<p>De este formato existen varias versiones: solexa, Illumina y Sanger, pero la más utilizada es Sanger.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS......................
+..........................XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX......................
+...............................IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII......................
+!&quot;#$%&amp;&#39;()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+|                         |    |        |                              |                     |
+33                        59   64       73                            104                   126
+
+S - Sanger        Phred+33,  raw reads typically (0, 40)
+X - Solexa        Solexa+64, raw reads typically (-5, 40)
+I - Illumina      Phred+64,  raw reads typically (0, 40)
+</pre></div>
+</div>
+<p>Pero una secuencia puede tener más atributos además de la propia secuencia y su calidad asociada.
+Podemos querer incluir el nombre del investigador que la secuenció o un identificador para una base de datos.
+Los formatos más extendidos con estos atributos extras son el <a class="reference external" href="http://www.bioperl.org/wiki/EMBL_sequence_format">formato_embl</a> y el <a class="reference external" href="http://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html">formato_genbank</a>.
+También hay formatos que contienen información sobre la calidad de las secuencias como <a class="reference external" href="http://en.wikipedia.org/wiki/FASTQ_format">FASTAQ</a>.</p>
+<p><a class="reference external" href="http://www.ncbi.nlm.nih.gov/nuccore/NG_012490.1?from=5001&amp;to=10401&amp;report=genbank">Ejemplo</a> de formato Genbank.</p>
+<p>Existen otros muchos formatos de secuencia, pero estos son los más comunes.
+Hay varias utilidades para convertir secuencias de formato a otro, como por ejemplo <a class="reference external" href="http://www.ebi.ac.uk/cgi-bin/readseq.cgi">Readseq</a>.</p>
+</section>
+<section id="ontologias">
+<h2>Ontologías<a class="headerlink" href="#ontologias" title="Permalink to this headline">¶</a></h2>
+<p>Una ontología, en bioinformática, es un modo de estructurar el conocimiento.</p>
+<p>Information Science: the hierarchical structuring of knowledge about things by subcategorizing them according to their essential (or at least relevant and/or cognitive) qualities.</p>
+<p>En las bases de datos hay una gran cantidad de información, pero si no se organiza de forma estructurada es difícil tratarla de modo sistemático.</p>
+<p>Supongamos que queremos buscar todos los genes implicados en el metabolismo de lípidos, ¿qué buscamos? lipid, lipid metabolism, fat degradation, etc…</p>
+<p>Este problema se puede solucionar mediante un vocabulario controlado.</p>
+<p>Existen varias ontologías relacionadas con la biología, pero la principal es la Gene Ontology (<a class="reference external" href="http://www.geneontology.org/">GO</a>).</p>
+<p>El proyecto pretende describir de un modo consistente los genes de distintas bases de datos.</p>
+<p>GO se compone de tres ontologías dedicadas a los procesos biológicos, los componentes celulares y las funciones moleculares.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Molecular function: la función que cumple el producto de un gen. Ejemplos: transcription factor, DNA helicase.</p></li>
+<li><p>Biological process: procesos, como “mitosis” o “metabolismo de purinas”.</p></li>
+<li><p>Cellular component: estructuras subcelulares, localizaciones, complejos macromoleculares. Ejemplos: nucleo, telomero, origin recognition complex.</p></li>
+</ul>
+</div></blockquote>
+<p>Un gen puede tener varios términos GO asociados en cada ontología.</p>
+<p>Los términos GO facilitan las búsquedas en las bases de datos y las búsquedas sistemáticas.</p>
+<p>Las onotolgías GO están estructuradas.</p>
+<figure class="align-center">
+<img alt="_images/go_structure.png" src="_images/go_structure.png" />
+</figure>
+<p>De <a class="reference external" href="http://www.geneontology.org/">http://www.geneontology.org/</a></p>
+<p>Los genes se anotan a un nivel u otro dependiendo de lo que se sepa sobre ellos.</p>
+<p>Una ontología se parece a un diccionario, pero se diferencia en un par de aspectos:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Los términos están definidos de forma exacta y no hay sinónimos.</p></li>
+<li><p>Los términos están ordenados en una estructura jerárquica.</p></li>
+</ul>
+</div></blockquote>
+<p>Cada término GO está asociado a un identificador único y una definición concreta.</p>
+<figure class="align-center">
+<img alt="_images/go_term.png" src="_images/go_term.png" />
+</figure>
+<p>from <a class="reference external" href="http://www.geneontology.org/">http://www.geneontology.org/</a></p>
+<p><a class="reference internal" href="practica_bases.html"><span class="doc">Ir a la práctica del tema</span></a></p>
+</section>
+</section>
+
+
+            
+        
+        
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="index.html">Introducción a la bioinformática</a>-->
+                    <a class="prev" href="index.html" title="Introducción a la bioinformática">previous</a>
+                    |
+                    <!--<a class="next" href="practica_bases.html">Bases datos de secuencia</a>-->
+                    <a class="next" href="practica_bases.html" title="Bases datos de secuencia">next</a>
+                    |
+                
+                <a class="index" href="/courses/intro_bioinf/index.html" title="Index">index</a>
+                
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

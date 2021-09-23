@@ -1,0 +1,272 @@
+
+Walktroughs for the final tasks
+===============================
+
+
+Clean adapters and contaminants
+-------------------------------
+
+QA::
+
+  ngs_user@machine:~/clean$ calculate_stats -c to_clean_454.fastq.gz | less
+  ngs_user@machine:~/clean$ calculate_stats -c to_clean_illumina.fastq.gz | less
+
+Remove the adaptor::
+
+  ngs_user@machine:~/clean$ trim_blast_short -z -l AAGCAGTGGTATCAACGCAGAGTACGCGGG -l AAGCAGTGGTATCAACGCAGAGTACATGGG -l AAGCAGTGGTATCAACGCAGAGTAC -o 454_no_adapt.fastq.gz to_clean_454.fastq.gz 
+  ngs_user@machine:~/clean$ trim_blast_short -z -l AAGCAGTGGTATCAACGCAGAGTACGCGGG -l AAGCAGTGGTATCAACGCAGAGTACATGGG -l AAGCAGTGGTATCAACGCAGAGTAC -o illumina_no_adapt.fastq.gz to_clean_illumina.fastq.gz 
+  ngs_user@machine:~/clean$ calculate_stats -c 454_no_adapt.fastq.gz | less
+  ngs_user@machine:~/clean$ calculate_stats -c illumina_no_adapt.fastq.gz | less
+
+Remove bad quality regions and filter out the small reads::
+
+  ngs_user@machine:~/clean$ trim_quality -z -o 454_qual.fastq.gz 454_no_adapt.fastq.gz
+  ngs_user@machine:~/clean$ trim_quality -z -o illumina_qual.fastq.gz illumina_no_adapt.fastq.gz
+  ngs_user@machine:~/clean$ filter_by_length -z -n 30 -o 454_clean.fastq.gz 454_no_adapt.fastq.gz 
+  ngs_user@machine:~/clean$ filter_by_length -z -n 30 -o illumina_clean.fastq.gz illumina_no_adapt.fastq.gz
+
+Remove the ribosomic reads::
+
+  ngs_user@machine:~/clean$ filter_by_blast -z -o no_ribo_454.fastq.gz -b arabidpsis_rrna.fasta -g blastn -x 0.000001 -e 454_ribo.fastq 454_clean.fastq.gz
+
+Split 454 matepairs
+-------------------
+
+Split the mate pairs::
+
+  ~/mates$ split_matepairs -l 454 -o 454_mates.split.fastq 454_mates.fastq 
+
+Trim by quality and filter by length::
+
+  ~/mates$ trim_quality -o 454_mates.qual.fastq 454_mates.split.fastq
+  ~/mates$ filter_by_length -n 40 -o 454_mates.len.fastq 454_mates.qual.fastq 
+
+Recover mates still standing in two files and the rest in another file (orphan.fastq)::
+
+  ~/mates$ pair_matcher -o pairs.fastq -p orphan.fastq 454_mates.len.fastq 
+  ~/mates$ deinterleave_pairs -o mate1.fastq mate2.fastq pairs.fastq 
+
+Mithocondrial assembly
+----------------------
+
+The assembly phase could be::
+
+  ngs_user@machine:~/mito$ velveth  assem 31 -fastq.gz -shortPaired  mito_yoruba_reads_pe.20k.fastq.gz
+  ngs_user@machine:~/mito$ velvetg assem/ -ins_length 500 -exp_cov 30.0 -read_trkg yes -amos_file yes
+  ngs_user@machine:~/mito$ calculate_stats assem/contigs.fa
+
+
+Map to the mithocondrial assembly
+---------------------------------
+
+First we have to create an index with bwa::
+
+  ngs_user@machine:~/mito$ cd
+  ngs_user@machine:~$ cd mito/assem/
+  ngs_user@machine:~/mito/assem$ bwa index -p contigs contigs.fa
+  [bwa_index] Pack FASTA... 0.00 sec
+  [bwa_index] Construct BWT for the packed sequence...
+  [bwa_index] 0.00 seconds elapse.
+  [bwa_index] Update BWT... 0.00 sec
+  [bwa_index] Pack forward-only FASTA... 0.01 sec
+  [bwa_index] Construct SA from BWT and Occ... 0.00 sec
+  [main] Version: 0.6.1-r104
+  [main] CMD: bwa index -p contigs contigs.fa
+  [main] Real time: 0.020 sec; CPU: 0.020 sec
+
+The mapping::
+
+  ngs_user@machine:~/mito/assem$ deinterleave_pairs -o reads_1.fastq reads_2.fastq ../mito_yoruba_reads_pe.20k.fastq.gz
+  ngs_user@machine:~/mito/assem$ bwa aln contigs reads_1.fastq > reads_1.sai
+  [bwa_aln] 17bp reads: max_diff = 2
+  [bwa_aln] 38bp reads: max_diff = 3
+  [bwa_aln] 64bp reads: max_diff = 4
+  [bwa_aln] 93bp reads: max_diff = 5
+  [bwa_aln] 124bp reads: max_diff = 6
+  [bwa_aln] 157bp reads: max_diff = 7
+  [bwa_aln] 190bp reads: max_diff = 8
+  [bwa_aln] 225bp reads: max_diff = 9
+  [bwa_aln_core] calculate SA coordinate... 0.30 sec
+  [bwa_aln_core] write to the disk... 0.00 sec
+  [bwa_aln_core] 10000 sequences have been processed.
+  [main] Version: 0.6.1-r104
+  [main] CMD: bwa aln contigs reads_1.fastq
+  [main] Real time: 0.388 sec; CPU: 0.352 sec
+  ngs_user@machine:~/mito/assem$ bwa aln contigs reads_2.fastq > reads_2.sai
+  [bwa_aln] 17bp reads: max_diff = 2
+  [bwa_aln] 38bp reads: max_diff = 3
+  [bwa_aln] 64bp reads: max_diff = 4
+  [bwa_aln] 93bp reads: max_diff = 5
+  [bwa_aln] 124bp reads: max_diff = 6
+  [bwa_aln] 157bp reads: max_diff = 7
+  [bwa_aln] 190bp reads: max_diff = 8
+  [bwa_aln] 225bp reads: max_diff = 9
+  [bwa_aln_core] calculate SA coordinate... 0.31 sec
+  [bwa_aln_core] write to the disk... 0.00 sec
+  [bwa_aln_core] 10000 sequences have been processed.
+  [main] Version: 0.6.1-r104
+  [main] CMD: bwa aln contigs reads_2.fastq
+  [main] Real time: 0.376 sec; CPU: 0.352 sec
+  ngs_user@machine:~/mito/assem$ bwa sampe contigs reads_1.sai reads_2.sai reads_1.fastq reads_2.fastq > mapping.sam
+  [bwa_sai2sam_pe_core] convert to sequence coordinate... 
+  [infer_isize] (25, 50, 75) percentile: (467, 502, 535)
+  [infer_isize] low and high boundaries: 331 and 671 for estimating avg and std
+  [infer_isize] inferred external isize from 8691 pairs: 501.343 +/- 50.302
+  [infer_isize] skewness: -0.008; kurtosis: -0.096; ap_prior: 2.64e-05
+  [infer_isize] inferred maximum insert size: 751 (4.96 sigma)
+  [bwa_sai2sam_pe_core] time elapses: 0.11 sec
+  [bwa_sai2sam_pe_core] changing coordinates of 7 alignments.
+  [bwa_sai2sam_pe_core] align unmapped mate...
+  [bwa_paired_sw] 1030 out of 1245 Q17 singletons are mated.
+  [bwa_paired_sw] 5 out of 18 Q17 discordant pairs are fixed.
+  [bwa_sai2sam_pe_core] time elapses: 0.32 sec
+  [bwa_sai2sam_pe_core] refine gapped alignments... 0.01 sec
+  [bwa_sai2sam_pe_core] print alignments... 0.09 sec
+  [bwa_sai2sam_pe_core] 10000 sequences have been processed.
+  [main] Version: 0.6.1-r104
+  [main] CMD: bwa sampe contigs reads_1.sai reads_2.sai reads_1.fastq reads_2.fastq
+  [main] Real time: 0.712 sec; CPU: 0.604 sec
+
+SAM manipulation::
+
+  ngs_user@machine:~/mito/assem$ samtools view -hS -b -o mapping.bam mapping.sam 
+  [samopen] SAM header is present: 57 sequences.
+  ngs_user@machine:~/mito/assem$ samtools sort mapping.bam mapping.sorted
+  ngs_user@machine:~/mito/assem$ samtools index mapping.sorted.bam
+  ngs_user@machine:~/mito/assem$ ls *bam*
+  mapping.bam  mapping.sorted.bam  mapping.sorted.bam.bai
+
+Now we can open it with IGV.
+
+
+Human Mithocondrial SNP calling
+-------------------------------
+
+With bowtie2 and samtools::
+
+  ngs_user@machine:~/yoruba$ bowtie2-build human_cambridge_reference_mito.fasta mito_index
+  Reading reference sizes
+    Time reading reference sizes: 00:00:00
+    Calculating joined length
+    Writing header
+    Reserving space for joined string
+  (...)
+  ngs_user@machine:~/yoruba$ bowtie2 --sensitive -x mito_index -U mito_yoruba_reads_40k.fastq.gz -S yoru_cam.sam
+  40000 reads; of these:
+    40000 (100.00%) were unpaired; of these:
+      2030 (5.08%) aligned 0 times
+      37970 (94.92%) aligned exactly 1 time
+      0 (0.00%) aligned >1 times
+  94.92% overall alignment rate
+  ngs_user@machine:~/yoruba$ samtools view -hS -b -o yoru_cam.bam yoru_cam.sam 
+  [samopen] SAM header is present: 1 sequences.
+  ngs_user@machine:~/yoruba$ samtools sort yoru_cam.bam yoru_cam.sorted
+  ngs_user@machine:~/yoruba$ samtools mpileup -ugf human_cambridge_reference_mito.fasta yoru_cam.sorted.bam | bcftools view -bvcg - > var.raw.bcf
+  [mpileup] 1 samples in 1 input files
+  <mpileup> Set max per-file depth to 8000
+  [afs] 0:15458.987 1:10.826 2:54.187
+  ngs_user@machine:~/yoruba$ bcftools view var.raw.bcf | vcfutils.pl varFilter -D100 > var.flt.vcf
+  ngs_user@machine:~/yoruba$ less var.flt.vcf
+
+To open the vcf with IGV we have to compress it and index it::
+
+  ngs_user@machine:~/yoruba$ bgzip var.flt.vcf
+  ngs_user@machine:~/yoruba$ tabix -p vcf var.flt.vcf.gz
+
+With ngs_backbone::
+
+  ngs_user@machine:~$ backbone_create_project.py -p yoruba
+  ngs_user@machine:~$ cd yoruba/
+  ngs_user@machine:~/yoruba$ mkdir reads
+  ngs_user@machine:~/yoruba$ mkdir reads/cleaned
+  ngs_user@machine:~/yoruba$ ls reads/cleaned/
+  mito_yoruba_reads_40k.fastq.gz
+  ngs_user@machine:~/yoruba$ cd reads/cleaned/
+  ngs_user@machine:~/yoruba/reads/cleaned$ gunzip mito_yoruba_reads_40k.fastq.gz
+  ngs_user@machine:~/yoruba/reads/cleaned$ mv mito_yoruba_reads_40k.fastq sm_yoruba.pl_illumina.lb_yoruba.sfastq
+  ngs_user@machine:~/yoruba/reads/cleaned$ ls
+  sm_yoruba.pl_illumina.lb_yoruba.sfastq
+  ngs_user@machine:~/yoruba/reads/cleaned$ cd ..
+  ngs_user@machine:~/yoruba/reads$ cd ..
+  ngs_user@machine:~/yoruba$ mkdir mapping
+  ngs_user@machine:~/yoruba$ mkdir mapping/reference
+  ngs_user@machine:~/yoruba$ ls mapping/reference/
+  reference.fasta
+  ngs_user@machine:~/yoruba$ backbone_analysis.py -a mapping,merge_bams,calmd_bam
+  2012-12-10 16:38:51,494 INFO MappingAnalyzer
+  2012-12-10 16:38:51,494 INFO backbone version: 1.4.0
+  2012-12-10 16:38:51,495 INFO Analysis started
+  2012-12-10 16:38:55,762 INFO Analysis finished
+  2012-12-10 16:38:55,764 INFO Time elapsed 0:00:04.400516
+  2012-12-10 16:38:55,843 INFO MergeBamAnalyzer
+  2012-12-10 16:38:55,846 INFO Analysis started
+  2012-12-10 16:38:59,202 INFO Analysis finished
+  2012-12-10 16:38:59,227 INFO Time elapsed 0:00:03.462259
+  2012-12-10 16:38:59,276 INFO CalmdBamAnalyzer
+  2012-12-10 16:38:59,280 INFO Analysis started
+  2012-12-10 16:39:01,598 INFO Analysis finished
+  2012-12-10 16:39:01,602 INFO Time elapsed 0:00:02.374086
+  ngs_user@machine:~/yoruba$ backbone_analysis.py -a mapping_stats
+  2012-12-10 16:44:10,667 INFO BamStatsAnalyzer
+  2012-12-10 16:44:10,669 INFO backbone version: 1.4.0
+  2012-12-10 16:44:10,670 INFO Analysis started
+  2012-12-10 16:44:15,980 INFO Time elapsed 0:00:05.341456
+  ngs_user@machine:~/yoruba$ less mapping/bams/stats/statistics.txt
+  Statistics for merged.1.bam
+  ---------------------------
+  General mapping statistics
+  --------------------------
+  Read group    Sample  Library Platform        Num mapped reads        % mapped
+  yoruba_illumina_yoruba        yoruba  yoruba  illumina        40000   95.025
+
+  Total number of reads: 40000
+  Reads aligned: 38010 (95.0%)
+  Reads not aligned: 1990 (5.0%)
+  ngs_user@machine:~/yoruba$ mkdir annotations
+  ngs_user@machine:~/yoruba$ mkdir annotations/input
+  ngs_user@machine:~/yoruba$ cp mapping/reference/reference.fasta annotations/input/yoruba.fasta
+  ngs_user@machine:~/yoruba$ backbone_analysis.py -a annotate_snvs,write_annotations,annotation_stats
+  2012-12-10 16:42:55,010 INFO SnvCallerAnalyzer
+  2012-12-10 16:42:55,012 INFO backbone version: 1.4.0
+  2012-12-10 16:42:55,013 INFO Analysis started
+  2012-12-10 16:42:55,015 INFO Analysis finished
+  2012-12-10 16:42:55,016 INFO Time elapsed 0:00:00.043499
+
+Obtain the SNP flanking sequence
+--------------------------------
+
+Which SNPs are shared by the samtools and ngs_backbone SNP callings?
+
+::
+
+  ngs_user@machine:~/mito$ cp var.flt.vcf.gz sam.vcf.gz
+  ngs_user@machine:~/mito$ gunzip sam.vcf.gz
+  ngs_user@machine:~/mito$ cp yoruba/annotations/features/yoruba.vcf.gz back.vcf.gz
+  ngs_user@machine:~/mito$ gunzip back.vcf.gz
+  ngs_user@machine:~/mito$ ls *vcf
+  back.vcf  sam.vcf
+  ngs_user@machine:~/mito$ intersectBed -a back.vcf -b sam.vcf  > common_snps.vcf
+
+Which is the sequence around these SNPs?
+
+::
+
+  ngs_user@machine:~/mito$ calculate_stats human_cambridge_reference_mito.fasta
+  Length stats and distribution.
+  ------------------------------
+  N50: 16569
+  N95: 16569
+  minimum: 16,569
+  maximum: 16,569
+  average: 16569.00
+  variance: 0.00
+  tot. residues: 16,569
+  ngs_user@machine:~/mito$ gedit mito.genome
+  ngs_user@machine:~/mito$ cat mito.genome
+  gi|251831106|ref|NC_012920.1|  16569
+  ngs_user@machine:~/mito$ cut -f 1,2 common_snps.vcf > common_snps_col_1_2.bed
+  ngs_user@machine:~/mito$ cut -f 2 common_snps.vcf > common_snps_col_3.bed
+  ngs_user@machine:~/mito$ paste common_snps_col_1_2.bed common_snps_col_3.bed > common_snps.bed
+  ngs_user@machine:~/mito$ flankBed -i common_snps.bed -g mito.genome -b 100 > flanking.bed
+  ngs_user@machine:~/mito$ fastaFromBed -fi human_cambridge_reference_mito.fasta -bed flanking.bed -fo flanking.fasta
+

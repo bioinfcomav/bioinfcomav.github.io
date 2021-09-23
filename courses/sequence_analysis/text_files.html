@@ -1,0 +1,226 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Dealing with big result files &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="BEDTools" href="bedtools.html" />
+    <link rel="prev" title="NGS expression analysis" href="rnaseq.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sequencing_technologies.html">Sequencing technologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ngs_applications_examples.html">NGS application examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_analysis_software.html">NGS analysis software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmd_primer.html">Command line primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_file_formats.html">NGS sequence file formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read_cleaning.html">NGS read cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assembly.html">Sequence assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Sequence mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snp_calling.html">SNP calling and filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html">NGS expression analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html#practical-tasks">Practical tasks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dealing with big result files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bedtools.html">BEDTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maize_snp_calling.html">Maize SNP calling practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice.html">Final practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice_walkthrough.html">Final practice walkthrough</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="dealing-with-big-result-files">
+<h1>Dealing with big result files<a class="headerlink" href="#dealing-with-big-result-files" title="Permalink to this headline">¶</a></h1>
+<p>In a lot of genomic analyses our troubles are not over once we get the results.
+Usually these results consists of huge text files.
+For instance a file with all SNPs found between to plant varieties or with all SNPs found in a particular human individual would be a vcf file with thousands of lines.
+The Unix-like operating systems offer a set of tools prepared to deal with those files.
+We can open the file, search in it, merge it, etc.
+In these practice several of these tools are used to extract interesting genomic information from some results.</p>
+<p>Before trying to do the practice be sure to take a good look at the <a class="reference external" href="https://bioinf.comav.upv.es/courses/unix/procesamiento_texto.html">text files</a> section of the Unix course.</p>
+<section id="practical-task-dealing-with-text-files">
+<h2>Practical task: Dealing with text files<a class="headerlink" href="#practical-task-dealing-with-text-files" title="Permalink to this headline">¶</a></h2>
+<p>Somebody has analyzed the cucurbita transcriptome for us and has send us the <a class="reference download internal" download="" href="_downloads/9654df6af878d6892eac94bd9c82b93a/cucurbita.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">result</span></code></a>.
+These results include two files, a binary spreadsheet file with the functional annotation of the genes and a VCF file with the SNPs found in them.</p>
+<p>We are asked to extract the following information from those results:</p>
+<ol class="arabic simple">
+<li><p>The list of all SNPs (not INDELs) located in genes related to transcription processes</p></li>
+<li><p>The list of transcription related SNPs that can be detected by low cost restriction enzymes</p></li>
+<li><p>The number of transcription related SNPs that can be detected by EcoRI</p></li>
+</ol>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>Remember that the Unix tools to deal with text files that we have seen cannot be used with binary files</p></li>
+<li><p>The VCF file holds information about several analysis done on the SNPs. This information is explained in the header section of the file. For instance, in the cucurbita.vcf file there is information about which SNPs are really SNPs (filter VKS), and about which genes are detectable by restriction enzymes among other information.</p></li>
+</ul>
+<p>Steps:</p>
+<ul class="simple">
+<li><p>Find out which are the genes related to transcription</p></li>
+<li><p>Extract the list of SNPs (not INDELs) located on those genes</p></li>
+<li><p>Filter that list to find out which ones can be detected by low cost restriction enzymes</p></li>
+<li><p>Extract those SNPs that can be detected by EcoRI</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>Practical task: Dealing with text files<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>1 Convert the binary spreadsheet file to a csv text format by using OpenOffice.</p>
+<p>2 Find the list of “transcription” related genes. How many genes are?</p>
+<p>We could do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep transcription  blast_hits.csv  | wc
+     622   10945  112640
+</pre></div>
+</div>
+<p>But it would be better to ignore the case:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -i transcription blast_hits.csv  | wc
+    684   12281  125171
+</pre></div>
+</div>
+<p>It would be even better to look for a GO term, but we would have to consider the hierarchy and for that we would have to use a specialized tool.</p>
+<p>To save just the names of the genes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -i transcription blast_hits.csv  | cut -f 1 -d, &gt; transcription_genes.txt
+</pre></div>
+</div>
+<p>Another possibility would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -i transcription blast_hits.csv  | cut -c 1-10 &gt; transcription_genes.txt
+</pre></div>
+</div>
+<p>3 Look for SNPs (not INDELS) in the transcription related genes.</p>
+<p>We could do this search gene by gene. We would have to search for each gene of the list obtained in the previous step in the VCF. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep CUTC005474 cucurbita.vcf
+CUTC005474      211     .       T       G       49
+CUTC005474      642     .       R       A,G     115
+CUTC005474      755     .       Y       C,T     116
+CUTC005474      782     .       C       A       59
+</pre></div>
+</div>
+<p>However it would be easier if we look for those SNPs directly using the list from the previous exercise.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -f transcription_genes.txt cucurbita.vcf
+</pre></div>
+</div>
+<p>We need to filter the SNPs to get those that are really SNPs (they are not INDELs): in the VCF header we can read that the filter VKS marks those SNPs that are not SNPs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$  grep -f transcription_genes.txt cucurbita.vcf | grep -v VKS &gt; snps.txt
+</pre></div>
+</div>
+<p>4 Which transcription related SNPs are testable in the laboratory by using low cost restriction enzyme?</p>
+<p>We would have to look in the VCF header if there is any filter marking those SNPs that are detectable by restriction enzymes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -f transcription_genes.txt cucurbita.vcf | grep -v VKS | grep -v CEF &gt; CAP_snps.txt
+</pre></div>
+</div>
+<p>5 Which transcription related SNPs are testable in the laboratory by using EcoRI?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -f transcription_genes.txt cucurbita.vcf | grep -v VKS | grep EcoRI &gt; EcoRI_snps.txt
+</pre></div>
+</div>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="rnaseq.html">NGS expression analysis</a>-->
+                    <a class="prev" href="rnaseq.html" title="NGS expression analysis">previous</a>
+                    |
+                    <!--<a class="next" href="bedtools.html">BEDTools</a>-->
+                    <a class="next" href="bedtools.html" title="BEDTools">next</a>
+                    |
+
+                <a class="index" href="/courses/sequence_analysis/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

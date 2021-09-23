@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Administracion de software 1</title>
+  <meta name="description" content="Introduction to the Linux command line.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/administracion_software1.html">
+  <link rel="alternate" type="application/rss+xml" title="Curso Unix" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Curso Unix</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/index.html">Curso Unix</a>
+          
+        
+          
+          <a class="page-link" href="/unix_intro.html">Unix y Linux</a>
+          
+        
+          
+          <a class="page-link" href="/sistema_de_ficheros.html">El sistema de ficheros</a>
+          
+        
+          
+          <a class="page-link" href="/control_procesos.html">Procesos</a>
+          
+        
+          
+          <a class="page-link" href="/pipes.html">Flujos de información</a>
+          
+        
+          
+          <a class="page-link" href="/procesamiento_texto.html">Procesamiento de ficheros de texto</a>
+          
+        
+          
+          <a class="page-link" href="/expresiones_regulares.html">Expresiones regulares</a>
+          
+        
+          
+          <a class="page-link" href="/scripts_bash.html">Scripts de bash</a>
+          
+        
+          
+          <a class="page-link" href="/administrador.html">Administrador</a>
+          
+        
+          
+          <a class="page-link" href="/administracion_software1.html">Administracion de software 1</a>
+          
+        
+          
+          <a class="page-link" href="/variables_de_entorno.html">Variables de entorno</a>
+          
+        
+          
+          <a class="page-link" href="/administracion_software2.html">Administracion de software 2</a>
+          
+        
+          
+          <a class="page-link" href="/redes.html">Redes</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Administracion de software 1</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#repositorios" id="markdown-toc-repositorios">Repositorios</a></li>
+  <li><a href="#herramientas-de-manejo-de-paquetes" id="markdown-toc-herramientas-de-manejo-de-paquetes">Herramientas de manejo de paquetes</a>    <ul>
+      <li><a href="#apt" id="markdown-toc-apt">APT</a>        <ul>
+          <li><a href="#ejercicios" id="markdown-toc-ejercicios">Ejercicios:</a></li>
+        </ul>
+      </li>
+      <li><a href="#dpkg" id="markdown-toc-dpkg">dpkg</a>        <ul>
+          <li><a href="#ejercicios-1" id="markdown-toc-ejercicios-1">Ejercicios:</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>En los sistemas Linux las <a href="http://es.wikipedia.org/wiki/Distribución_Linux">distribuciones</a> se encargan de preparar una gran cantidad de software para ser instalado.
+Por ejemplo, cuando queremos instalar un programa de edición fotográfica como el <em>gimp</em> no es necesario ni recomendable ir a la página web de los creadores del software para descargar el software.
+La distribución que estemos utilizando ya se ha encargado de buscar el software y empaquetarlo para que el software pueda ser instalado de un modo estandarizado.
+Por lo tanto si queremos instalar el <em>gimp</em> o cualquier otro programa lo que debemos hacer es utilizar las herramientas que la distribución ha preparado para administrar el software que tenemos instalado en nuestro ordenador.
+Por ejemplo, en Ubuntu, abriríamos la aplicación llamada <em>Software de Ubuntu</em> y en ella buscaríamos el <em>gimp</em>.
+Con un solo <em>click</em> el programa quedaría instalado e integrado en nuestro sistema.</p>
+
+<p>Además todo el software instalado por este método se actualiza cuando los desarrolladores del software corrigen fallos o problemas de seguridad sin que nosotros debamos preocuparnos por ello.
+La propia distribución se encarga de recopilar esas mejoras y de aplicarlas a todo el software que tengamos instalado.</p>
+
+<p>El modo de operación es bastante distinto al usual en <em>Windows</em>.
+En <em>Windows</em> seríamos nosotros los que compraríamos el software y lo instalaríamos a partir de un CD o de un archivo descargado desde la web. Esta es, dicho sea de paso, una de las fuentes de virus y troyanos más habitual. Esto está cambiando y ya empezamos a tener un canal de distribucion controlado por la propia microsoft.</p>
+
+<p>Mientras que las distribuciones Linux facilitan la instalación de un software certificado y libre de virus en <em>Windows</em> debemos ser nosotros quienes nos encarguemos de verificar que el software está libre de virus.
+Seríamos nosotros también los encargados de estar al tanto de instalar las actualizaciones o los fallos de seguridad a no ser que cada software implemente esta funcionalidad.</p>
+
+<p>Las distribuciones distribuyen el software en forma de paquetes. Cada distribucion tiene su propio formato de paquetes. En debian y ubuntu se utiliza el formato .deb.  Las distribuciones organizan el software de forma que se optimiza lo mejor que se pueda los recursos de un ordenador. Por ejemplo si dos aplicaciones utilizan una libreria, en vez de poner la libreria por duplicado en cada una de las aplicaciones se crea un nuevo paquete solo con la libreria y se crea una dependencia desde las aplicaciones que la utilizan.  De las dependencias se encargan los sistemas de paquetes que veremos más adelante.</p>
+
+<p>Por desgracia, la cantidad de software incluido en las distribuciones no es infinito y, aunque el catálogo es amplio y más que suficiente para la gran mayoría de las aplicaciones que un usuario doméstico o de la administración pueda necesitar, hay programas, especialmente los hechos para campos específicos que no están incluidos en las distribuciones.
+Para biología Debian y Ubuntu incluyen programas como el EMBOSS, el Blast o Biopython, pero hay otros muchos que no se incluyen y que tendremos que gestionar nosotros mismos.</p>
+
+<h2 id="repositorios">Repositorios</h2>
+<p>Los repositorios son los bancos de datos que alojan los catalogos de aplicaciones de las distribuciones. Todas las distribuciones tienen sus propios repositorios, se encargan de mantenerlos actualizados, de hacer tests de seguridad y de buscar errores en las aplcaciones.</p>
+
+<p>Ademas de los repositorios de de las distribuciones, tambien tenemos repositorios de otras fuentes, los más conocidos son los PPA(Personal Package Archives). Son repositorios que los usuarios ponen a disposicion de otros usuarios para que puedan instalarse aplicaciones que las distribuciones no tienen, como por ejemplo el Java de oracle.</p>
+
+<p>En ubuntu y debian el fichero donde encontramos la configuracion de los repositorios es <code class="highlighter-rouge">/etc/apt/sources.list</code>.  Cada una de las lineas del fichero nos da acceso a los paquetes de un repositorio. En cada repositorio tenemos un listado con las aplicaciones que dispone, la version de cada paquete y una direcciones para poder descargar e instalarla.</p>
+
+<p>En el directorio <code class="highlighter-rouge">/etc/apt/sources.list.d</code> podemos tener tambien ficheros con más lineas de repositorios.</p>
+
+<h2 id="herramientas-de-manejo-de-paquetes">Herramientas de manejo de paquetes</h2>
+
+<p>Existen aplicaciones graficas para poder actualizar o instalar nuevos paquetes. En ubuntu tenemos el <em>Software de Ubuntu</em> que nos permite instalar aplicaciones de una forma fácil y comoda.</p>
+
+<p>Tenemos que tener en cuenta que si usamos <em>Software de Ubuntu</em> solo podremos acceder a unos cuantos paquetes disponibles en la distribucion. El porque es algo que podemos preguntar a Ubuntu.</p>
+
+<p>Por debajo esta aplicacion utiliza Apt(del inglés Advanced Package Tool) que es un set de herramientas del nucleo de debian y que Ubuntu a importado. APT es uno de los sistemas más avanzados en cuento a la gestion de software.</p>
+
+<h3 id="apt">APT</h3>
+
+<p>Apt es un set de herramientas que nos ayudan a que la instalacion, borrado o actualizacion de programas sea experiencia no traumatica. Apt esta compuesto de muchos programas, en el curso nos vamos a centrar en aquellos que consideramos más utiles:
+Para borrar, instalar, actualizar:</p>
+<ul>
+  <li>apt-get
+    <ul>
+      <li>update</li>
+      <li>upgrade</li>
+      <li>dist-upgrade</li>
+      <li>install</li>
+      <li>remove</li>
+      <li>clean</li>
+      <li>autoremove</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Para hacer busquedas de paquetes:</p>
+<ul>
+  <li>apt-cache
+    <ul>
+      <li>search</li>
+      <li>show</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Para hacer busquedas en los ficheros de los paquetes:</p>
+<ul>
+  <li>apt-file
+    <ul>
+      <li>update</li>
+      <li>search</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Añadir repositorios PPA</p>
+<ul>
+  <li>add-apt-repository</li>
+</ul>
+
+<h4 id="ejercicios">Ejercicios:</h4>
+
+<ol>
+  <li>
+    <p>Instalar un editor de texto grafico.</p>
+  </li>
+  <li>
+    <p>Borrarlo junto con su configuracion.</p>
+  </li>
+  <li>
+    <p>Se han quedado paquetes que no se usan huerfanos? Si es así desinstalalos.</p>
+  </li>
+  <li>
+    <p>Quiero alinear una secuencia contra un genoma usando el blast, para ello tengo que crear una base de datos a partir del genoma que el blast pueda usar. El comando para hacerlo se llama makeblastdb. Como lo puedo instalar?</p>
+  </li>
+  <li>
+    <p>Que versión del editor de texto has instalado?</p>
+  </li>
+  <li>
+    <p>Que version de <code class="highlighter-rouge">inkscape</code> tienes disponible  para instalar?</p>
+  </li>
+  <li>
+    <p>Instala <a href="https://atom.io/">atom</a> desde un <a href="https://launchpad.net/~webupd8team/+archive/ubuntu/atom">repositorio</a></p>
+  </li>
+</ol>
+
+<h3 id="dpkg">dpkg</h3>
+
+<p>Es otra herramienta para interactuar con paquetes .deb. Con las diferentes opciones de dpkg se pueden instalar y borrar programas pero al no tener en cuenta las dependencias , lo hace más tedioso de usar.
+Aunqie tiene varias opciones que las hacen muy util:</p>
+<ul>
+  <li><code class="highlighter-rouge">dpkg -l</code> : Lista todas las aplicaciones del sistema, las que se han instalado como las que se han borrado</li>
+  <li><code class="highlighter-rouge">dpkg -L</code>  paquete : Lista la ruta de todos los ficheros que se han intalado al instalar el paquete.</li>
+</ul>
+
+<h4 id="ejercicios-1">Ejercicios:</h4>
+
+<ol>
+  <li>
+    <p>Cuantos paquetes tienes instalados en tu sistema?<a href="https://linuxprograms.wordpress.com/2010/05/11/status-dpkg-list/">Pista</a></p>
+  </li>
+  <li>
+    <p>Cuantos ficheros se instalan cuando instalas el paquete que instala el makeblastdb. Cuantos de ellos son ejecutables?</p>
+  </li>
+  <li>
+    <p>Utilizando apt-get descargate el paquete inkscape, pero no lo instales. Despues intenta instalarlo con dpkg(mira en el manual cual es la opcion para instalar paquetes). Que ocurre?</p>
+  </li>
+</ol>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Curso Unix</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Curso Unix
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Introduction to the Linux command line.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

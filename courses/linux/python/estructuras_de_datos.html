@@ -1,0 +1,749 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Diccionarios &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Ejercicios de repaso" href="ejercicios_repaso.html" />
+    <link rel="prev" title="Control de flujo" href="control_de_flujo.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Iniciación a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html#el-sistema-de-ficheros">El sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_de_flujo.html">Control de flujo</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sets">Sets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#estructuras-de-datos-anidadas">Estructuras de datos anidadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soluciones">Soluciones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ficheros.html">Ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generadores.html">Generadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulos.html">Modulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biopython.html">Biopython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html">Ejercicios finales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html#soluciones">Soluciones</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="diccionarios">
+<h1>Diccionarios<a class="headerlink" href="#diccionarios" title="Permalink to this headline">¶</a></h1>
+<p>Un diccionario es una estructura de datos que nos permite guardar parejas de claves y valores.</p>
+<a class="reference internal image-reference" href="../_images/python_dict.png"><img alt="../_images/python_dict.png" class="align-center" src="../_images/python_dict.png" style="width: 250px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;rubisco&#39;</span><span class="p">,</span> <span class="s1">&#39;secuencia&#39;</span><span class="p">:</span> <span class="s1">&#39;CGACTTAGCTATCTGACTAGCT&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span>
+<span class="go">&#39;rubisco&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span><span class="p">[</span><span class="s1">&#39;secuencia&#39;</span><span class="p">]</span>
+<span class="go">&#39;CGACTTAGCTATCTGACTAGCT&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span>
+<span class="go">{&#39;nombre&#39;: &#39;rubisco&#39;, &#39;secuencia&#39;: &#39;CGACTTAGCTATCTGACTAGCT&#39;}</span>
+</pre></div>
+</div>
+<p>En este caso las claves (<em>keys</em>) son nombre y secuencia y los valores rubisco y ‘CGACTTAGCTATCTGACTAGCT’.
+La clave se utiliza para almacenar los valores de un modo indexado.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">[&#39;nombre&#39;, &#39;secuencia&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="go">[&#39;rubisco&#39;, &#39;CGACTTAGCTATCTGACTAGCT&#39;]</span>
+</pre></div>
+</div>
+<p>Los diccionarios the python son <a class="reference external" href="https://en.wikipedia.org/wiki/Associative_array">arrays asociativos</a> implementados internamente como <a class="reference external" href="https://en.wikipedia.org/wiki/Hash_table">tablas hash</a> que utilizan <a class="reference external" href="https://en.wikipedia.org/wiki/Open_addressing">open addressing</a> como método de resolución de colisiones y que redimensionan el array cuando tiene una ocupación de dos tercios.</p>
+<p>La lista y los diccionarios cubren necesidades distintas.
+Una lista es una secuencia <strong>ordenada</strong> de elementos y un diccionario es un conjunto <strong>no ordenado</strong> de elementos.
+Un diccionario es equivalente a un <em>hash</em> en Perl.</p>
+<p>Los diccionarios, como las listas, son objetos mutables, es decir una vez creados podemos modificarlos.
+Por ejemplo podemos añadirles nuevos elementos (<em>items</em>), modificar los antiguos y borrarlos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span><span class="p">[</span><span class="s1">&#39;proteina&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;HOLA&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span>
+<span class="go">{&#39;nombre&#39;: &#39;rubisco&#39;, &#39;secuencia&#39;: &#39;CGACTTAGCTATCTGACTAGCT&#39;, &#39;proteina&#39;: &#39;HOLA&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span><span class="p">[</span><span class="s1">&#39;secuencia&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;TATA&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span>
+<span class="go">{&#39;nombre&#39;: &#39;rubisco&#39;, &#39;secuencia&#39;: &#39;TATA&#39;, &#39;proteina&#39;: &#39;HOLA&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">gen</span><span class="p">[</span><span class="s1">&#39;proteina&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span>
+<span class="go">{&#39;nombre&#39;: &#39;rubisco&#39;, &#39;secuencia&#39;: &#39;TATA&#39;}</span>
+</pre></div>
+</div>
+<p>De hecho, los diccionarios pueden crearse vacíos y rellenarse posteriormente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="p">[</span><span class="s1">&#39;gen1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ADH&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="p">[</span><span class="s1">&#39;gen2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;topoisomerasa&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span>
+<span class="go">{&#39;gen2&#39;: &#39;topoisomerasa&#39;, &#39;gen1&#39;: &#39;ADH&#39;}</span>
+</pre></div>
+</div>
+<p>Dentro de los valores albergados en los diccionarios podemos guardar cualquier objeto que deseemos, pero las claves están restringidas.
+Pueden utilizarse varios tipos como claves, por ejemplo los <em>str</em>, <em>int</em> y las <em>tuples</em>, pero no puede utilizarse como clave una lista.
+En realidad podemos utilizar como clave cualquier objeto <em>hasheable</em> y la mayoría de los objetos inmutable tienen esta propiedad:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">diccionario</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">diccionario</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Monty&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">diccionario</span><span class="p">[</span><span class="mi">42</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;respuesta&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">diccionario</span>
+<span class="go">{&#39;nombre&#39;: &#39;Monty&#39;, 42: &#39;respuesta&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">diccionario</span><span class="p">[[</span><span class="s1">&#39;una_lista&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;es mutable&#39;</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">  TypeError</span>: <span class="n">unhashable type: &#39;list&#39;</span>
+</pre></div>
+</div>
+<p>Algunas de las propiedades de las que disfrutaban las listas también tienen su equivalencia en los diccionarios.
+Por ejemplo, podemos averiguar cuantos <em>items</em> hay almacenados en un diccionario utilizando la función <em>len</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">secuencias</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;seq1&#39;</span><span class="p">:</span> <span class="s1">&#39;TATA&#39;</span><span class="p">,</span> <span class="s1">&#39;seq2&#39;</span><span class="p">:</span><span class="s1">&#39;GATA&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">secuencias</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>También podemos comprobar si un elemento está presente en los valores almacenados en un diccionario o no.
+Esto nos permitirá utilizarlos con sencillez en las sentencias <em>if</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;seq1&#39;</span> <span class="ow">in</span> <span class="n">secuencias</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;seq3&#39;</span> <span class="ow">in</span> <span class="n">secuencias</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;seq1&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">secuencias</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;seq4&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">secuencias</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Si queremos obtener una lista, o un iterador en Python 3.x, de todos los valores, claves o elementos de un diccionario podemos utilizar los métodos <em>values</em>, <em>keys</em> o <em>items</em> o <em>viewvalues</em>, <em>viewkeys</em> y <em>viewitems</em>.
+Esto resulta especialmente útil para iterar en los diccionarios dentro de los bucles <em>for</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">secuencias</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">[&#39;seq2&#39;, &#39;seq1&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">secuencias</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="go">[&#39;GATA&#39;, &#39;TATA&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">secuencias</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="go">[(&#39;seq2&#39;, &#39;GATA&#39;), (&#39;seq1&#39;, &#39;TATA&#39;)]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">nombre_gen</span> <span class="ow">in</span> <span class="n">genes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+      <span class="nb">print</span> <span class="n">nombre_gen</span>
+
+<span class="k">for</span> <span class="n">secuencia</span> <span class="ow">in</span> <span class="n">genes</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+      <span class="nb">print</span> <span class="n">secuencia</span>
+
+<span class="k">for</span> <span class="n">nombre_gen</span><span class="p">,</span> <span class="n">secuencia</span> <span class="ow">in</span> <span class="n">genes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+      <span class="nb">print</span> <span class="n">nombre_gen</span>
+      <span class="nb">print</span> <span class="n">secuencia</span>
+</pre></div>
+</div>
+<p>También podemos utilizar directamente los diccionarios dentro de los bucles <em>for</em>, en este caso iteraremos sobre las claves, las siguientes dos expresiones son equivalentes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">nombre_gen</span> <span class="ow">in</span> <span class="n">genes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+      <span class="nb">print</span> <span class="s1">&#39;Nombre gen -&gt;&#39;</span><span class="p">,</span> <span class="n">nombre_gen</span>
+      <span class="nb">print</span> <span class="s1">&#39;Secuencia gen -&gt; &#39;</span><span class="p">,</span> <span class="n">genes</span><span class="p">[</span><span class="n">nombre_gen</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">nombre_gen</span> <span class="ow">in</span> <span class="n">genes</span><span class="p">:</span>
+      <span class="nb">print</span> <span class="s1">&#39;Nombre gen -&gt;&#39;</span><span class="p">,</span> <span class="n">nombre_gen</span>
+      <span class="nb">print</span> <span class="s1">&#39;Secuencia gen -&gt; &#39;</span><span class="p">,</span> <span class="n">genes</span><span class="p">[</span><span class="n">nombre_gen</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Por supuesto, los diccionarios tienen otras muchas funcionalidades, para estudiarlas se puede leer la sección correspondiente a los <a class="reference external" href="http://docs.python.org/library/stdtypes.html#mapping-types-dict">diccionarios</a> en la documentación de Python o se puede consultar algunos de los manuales de referencia que se han citado anteriormente.</p>
+</section>
+<section id="sets">
+<h1>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h1>
+<p>Un <em>set</em>, como su nombre indica, es un conjunto de objetos.
+Estos objetos deben ser, como en el caso de los valores de los diccionarios, inmutables, o siendo estrictos <em>hasheables</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">set([1, 2, 3])</span>
+</pre></div>
+</div>
+<p>Dada esta escueta descripción podríamos cometer el error de pensar que los <em>sets</em> son equivalentes a las listas, pero los sets son conjuntos <strong>desordenados</strong>, no son estructuras secuenciales ordenadas.</p>
+<a class="reference internal image-reference" href="../_images/python_set.png"><img alt="../_images/python_set.png" class="align-center" src="../_images/python_set.png" style="width: 250px;" /></a>
+<p>Los <em>sets</em> también pueden crearse vacíos y ser rellenados añadiéndoles elementos posteriormente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;gen1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;gen2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;gen3&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span>
+<span class="go">set([&#39;gen2&#39;, &#39;gen3&#39;, &#39;gen1&#39;])</span>
+</pre></div>
+</div>
+<p>Además de añadir los elementos de uno en uno podemos añadir también una lista (o un iterable):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="s1">&#39;gen4&#39;</span><span class="p">,</span> <span class="s1">&#39;gen5&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span>
+<span class="go">set([&#39;gen4&#39;, &#39;gen5&#39;, &#39;gen2&#39;, &#39;gen3&#39;, &#39;gen1&#39;])</span>
+</pre></div>
+</div>
+<p>Si intentamos añadir un elemento que ya existía no sucederá nada, un <em>set</em> no puede contener elementos repetidos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span>
+<span class="go">set([&#39;gen4&#39;, &#39;gen5&#39;, &#39;gen2&#39;, &#39;gen3&#39;, &#39;gen1&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;gen1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span>
+<span class="go">set([&#39;gen4&#39;, &#39;gen5&#39;, &#39;gen2&#39;, &#39;gen3&#39;, &#39;gen1&#39;])</span>
+</pre></div>
+</div>
+<p>Si deseamos eliminar un elemento de un <em>set</em> podemos utilizando el método <em>remove</em> o <em>discard</em>.
+La diferencia entre ambos métodos estriba en que mientras <em>remove</em> generará un error si el elemento no está presente, <em>discard</em> no hará nada en este caso:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span>
+<span class="go">set([&#39;gen4&#39;, &#39;gen5&#39;, &#39;gen2&#39;, &#39;gen3&#39;, &#39;gen1&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;gen5&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span>
+<span class="go">set([&#39;gen4&#39;, &#39;gen2&#39;, &#39;gen3&#39;, &#39;gen1&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;gen8&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="s1">&#39;gen8&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span>
+<span class="go">set([&#39;gen4&#39;, &#39;gen2&#39;, &#39;gen3&#39;, &#39;gen1&#39;])</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">  KeyError</span>: <span class="n">&#39;gen8&#39;</span>
+</pre></div>
+</div>
+<p>Por supuesto, los <em>sets</em> también son iterables y podemos utilizarlos dentro de bucles <em>for</em>.</p>
+<p>Como en el caso de los diccionarios, podemos consultar el número de miembros que los componen y podemos comprobar si un miembro se encuentra presente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;gen1&#39;</span> <span class="ow">in</span> <span class="n">genes</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;gen7&#39;</span> <span class="ow">in</span> <span class="n">genes</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;gen7&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">genes</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Una de las principales capacidades de los <em>sets</em> consiste en sus métodos de comparación.
+Para explorarlos vamos a crear una pequeña colección de <em>sets</em> de prueba:</p>
+<a class="reference internal image-reference" href="../_images/python_sets.png"><img alt="../_images/python_sets.png" class="align-center" src="../_images/python_sets.png" style="width: 400px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conj1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conj2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conj3</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conj4</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Por ejemplo podemos comprobar si un set está completamente contenido en otro:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conj2</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">conj1</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conj3</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">conj1</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conj1</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">conj2</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>El método opuesto también existe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conj1</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">conj3</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>¿Tienen dos <em>sets</em> elementos en común?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conj2</span><span class="o">.</span><span class="n">isdisjoint</span><span class="p">(</span><span class="n">conj1</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conj4</span><span class="o">.</span><span class="n">isdisjoint</span><span class="p">(</span><span class="n">conj1</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Además de poder comparar los <em>sets</em> podemos unirlos, intersectarlos y restarlos.
+Estas operaciones generarán, como es natural nuevos <em>sets</em>.
+El método unión genera un <em>set</em> que contiene todos los elementos de los dos <em>sets</em> implicados:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conj1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">conj2</span><span class="p">)</span>
+<span class="go">set([1, 2, 3, 4, 5])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conj1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">conj3</span><span class="p">)</span>
+<span class="go">set([1, 2, 3])</span>
+</pre></div>
+</div>
+<p>Podemos obtener también la intersección de un par de <em>sets</em>, es decir, el conjunto de elementos que pertenecen a ambos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conj1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">conj2</span><span class="p">)</span>
+<span class="go">set([3])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conj1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">conj3</span><span class="p">)</span>
+<span class="go">set([1, 2])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conj1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">conj4</span><span class="p">)</span>
+<span class="go">set([])</span>
+</pre></div>
+</div>
+<p>Si lo deseamos podemos restar un <em>set</em> a otro, es decir, eliminar los elementos un <em>set</em> que se encuentran presentes en el otro.
+Por supuesto, esta operación no es simétrica:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conj1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">conj4</span><span class="p">)</span>
+<span class="go">set([1, 2, 3])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conj1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">conj2</span><span class="p">)</span>
+<span class="go">set([1, 2])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conj2</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">conj1</span><span class="p">)</span>
+<span class="go">set([4, 5])</span>
+</pre></div>
+</div>
+<p>También disponemos de una versión simétrica de la diferencia en la que los elementos de la intersección son restados a los de la unión:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conj1</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">conj2</span><span class="p">)</span>
+<span class="go">set([1, 2, 4, 5])</span>
+</pre></div>
+</div>
+<section id="estructuras-de-datos-anidadas">
+<h2>Estructuras de datos anidadas<a class="headerlink" href="#estructuras-de-datos-anidadas" title="Permalink to this headline">¶</a></h2>
+<p>Una de las principales fortalezas de las listas y los diccionarios, así como de otras estructuras de datos más complejas es que podemos combinarlas unas dentro de otras como si de una colección de muñecas rusas se tratase.
+Por ejemplo, podemos describir un conjunto de genes mediante una lista de diccionarios:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span> <span class="o">=</span> <span class="p">[</span> <span class="p">{</span><span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;ADH&#39;</span><span class="p">,</span> <span class="s1">&#39;seq&#39;</span><span class="p">:</span> <span class="s1">&#39;GATA&#39;</span><span class="p">},</span>
+<span class="go">              {&#39;nombre&#39;: &#39;rubisco&#39;, &#39;seq&#39;: &#39;CATA&#39;} ]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span>
+<span class="go">&#39;ADH&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span>
+<span class="go">&#39;rubisco&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">{&#39;nombre&#39;: &#39;rubisco&#39;, &#39;seq&#39;: &#39;CATA&#39;}</span>
+</pre></div>
+</div>
+<p>También podríamos haber almacenado esta información dentro de un diccionario si el orden de los genes no fuese relevante para el problema a resolver:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ADH&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;seq&#39;</span><span class="p">:</span> <span class="s1">&#39;GATA&#39;</span><span class="p">,</span> <span class="s1">&#39;clonado&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">},</span>
+<span class="go">             &#39;rubisco&#39;: {&#39;seq&#39;: &#39;CATA&#39;, &#39;clonado&#39;:False}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="p">[</span><span class="s1">&#39;ADH&#39;</span><span class="p">]</span>
+<span class="go">{&#39;seq&#39;: &#39;GATA&#39;, &#39;clonado&#39;: True}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="p">[</span><span class="s1">&#39;ADH&#39;</span><span class="p">][</span><span class="s1">&#39;clonado&#39;</span><span class="p">]</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">[&#39;rubisco&#39;, &#39;ADH&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="go">[{&#39;seq&#39;: &#39;CATA&#39;, &#39;clonado&#39;: False}, {&#39;seq&#39;: &#39;GATA&#39;, &#39;clonado&#39;: True}]</span>
+</pre></div>
+</div>
+<p>Podemos anidar estas estructuras tanto como lo deseemos, aunque en la práctica si necesitamos más de dos niveles tal vez debamos utilizar otro modo de almacenar la información puesto que este puede que sea demasiado complicado como para tenerlo en la cabeza mientras estamos programando.</p>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Almacenamos el número de individuos por país en un diccionario:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">individuos</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;francia&#39;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;alemania&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;italia&#39;</span><span class="p">:</span><span class="mi">130</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>¿Cómo accedemos al número de individuos de Francia? ¿Cómo añadimos 40 individuos de Bélgica? ¿Cómo borramos los de Italia? Los individuos de Alemania se han incrementado en dos, ¿cómo hacemos el cambio?</p>
+<p>2. Crea un diccionario vacío para guardar los datos de un paciente y, posteriormente, guarda en él su edad (40), sexo (‘M’) y si es diabético (<em>True</em>).
+Una vez añadidos los datos, ¿cuáles serán las claves y los valores del diccionario? ¿Cuántos datos tenemos sobre este paciente?</p>
+<ol class="arabic simple" start="3">
+<li><p>Dado el siguiente diccionario:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gen</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;adn&#39;</span><span class="p">:</span><span class="s1">&#39;GATATGCAGT&#39;</span><span class="p">,</span> <span class="s1">&#39;codificante&#39;</span><span class="p">:</span><span class="s1">&#39;ATG&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>¿Tenemos información sobre la secuencia codificante? ¿Y sobre la proteína?</p>
+<p>4. Crea un <em>set</em> con los números del uno al diez y después añade el 11 y el 12.
+Finalmente actualiza el <em>set</em> anterior añadiendo los números del 30 al 35.
+¿Cuál son el primer número y el último del conjunto resultante?
+¿Pertenecen el 7 y el 20 al conjunto?
+¿Cuántos elementos componen el conjunto?</p>
+<dl class="simple">
+<dt>Pista:</dt><dd><ul class="simple">
+<li><p>Para no escribir todos los números podemos utilizar la función <em>range</em>.</p></li>
+</ul>
+</dd>
+</dl>
+<ol class="arabic simple" start="5">
+<li><p>Dados los siguientes conjuntos de hormonas alteradas en varios pacientes:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hor1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;melanina&#39;</span><span class="p">,</span> <span class="s1">&#39;oxitocina&#39;</span><span class="p">,</span> <span class="s1">&#39;dopamina&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hor2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;testosterona&#39;</span><span class="p">,</span> <span class="s1">&#39;melanina&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hor3</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;calcinotna&#39;</span><span class="p">,</span> <span class="s1">&#39;estradiol&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>¿Comparten alguna hormona el conjunto 1 y el 2? ¿Y el 1 y el 3?
+¿Es el conjunto 2 un subconjunto del 1? ¿Son el 2 y el 1 y el 2 y el 3 disjuntos?
+¿Cuál es el conjunto de todas las hormonas?</p>
+<ol class="arabic simple" start="6">
+<li><p>Dada una caracterización morfológica de unos tomates en un fichero tabular, contar cuantos son de cada color.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="n">color</span> <span class="n">grado_de_madurez</span>
+<span class="n">big_red</span> <span class="n">rojo</span> <span class="mi">5</span>
+<span class="n">italiano</span> <span class="n">amarillo</span> <span class="mi">3</span>
+<span class="n">valenciano</span> <span class="n">verde</span> <span class="mi">1</span>
+<span class="n">penjar</span> <span class="n">rojo</span> <span class="mi">4</span>
+<span class="n">canario</span> <span class="n">rojo</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Leer el fichero de texto que represente la tabla del ejercicio anterior y guardar el resultado en un diccionario.</p></li>
+</ol>
+<p>8. Hemos hecho dos experimientos de proteómica y hemos obtenido dos listas de proteinas, las que aparecen en el primer experimiento y las del segundo.
+Ambas listas se encuentran disponibles en sendos ficheros:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">albumina</span>
+<span class="n">inmunoglobulina</span>
+<span class="n">antitripsina</span>
+<span class="n">lipoproteina</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">transferrina</span>
+<span class="n">inmunoglobulina</span>
+<span class="n">antitripsina</span>
+<span class="n">protombina</span>
+</pre></div>
+</div>
+<p>Generar, a partir de esta información, las listas de proteinas exclusivas de la muestra 1 y 2 así como las proteínas que aparecen en ambos experimentos.</p>
+</section>
+<section id="soluciones">
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Almacenamos el número de individuos por país en un diccionario:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">individuos</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;francia&#39;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;alemania&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;italia&#39;</span><span class="p">:</span><span class="mi">130</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>¿Cómo accedemos al número de individuos de Francia? ¿Cómo añadimos 40 individuos de Bélgica? ¿Cómo borramos los de Italia? Los individuos de Alemania se han incrementado en dos, ¿cómo hacemos el cambio?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">individuos</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;francia&#39;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;alemania&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;italia&#39;</span><span class="p">:</span><span class="mi">130</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">individuos</span><span class="p">[</span><span class="s1">&#39;francia&#39;</span><span class="p">]</span>
+<span class="go">23</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">individuos</span><span class="p">[</span><span class="s1">&#39;belgica&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">individuos</span><span class="p">[</span><span class="s1">&#39;italia&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">individuos</span>
+<span class="go">{&#39;francia&#39;: 23, &#39;belgica&#39;: 40, &#39;alemania&#39;: 10}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">individuos</span><span class="p">[</span><span class="s1">&#39;alemania&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">individuos</span>
+<span class="go">{&#39;francia&#39;: 23, &#39;belgica&#39;: 40, &#39;alemania&#39;: 12}</span>
+</pre></div>
+</div>
+<p>2. Crea un diccionario vacío para guardar los datos de un paciente y, posteriormente, guarda en él su edad (40), sexo (‘M’) y si es diabético (<em>True</em>).
+Una vez añadidos los datos, ¿cuáles serán las claves y los valores del diccionario? ¿Cuántos datos tenemos sobre este paciente?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">paciente</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paciente</span><span class="p">[</span><span class="s1">&#39;edad&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paciente</span><span class="p">[</span><span class="s1">&#39;sexo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paciente</span><span class="p">[</span><span class="s1">&#39;diabetico&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paciente</span>
+<span class="go">{&#39;edad&#39;: 40, &#39;diabetico&#39;: True, &#39;sexo&#39;: &#39;M&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paciente</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">[&#39;edad&#39;, &#39;diabetico&#39;, &#39;sexo&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paciente</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="go">[40, True, &#39;M&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">paciente</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Dado el siguiente diccionario:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gen</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;adn&#39;</span><span class="p">:</span><span class="s1">&#39;GATATGCAGT&#39;</span><span class="p">,</span> <span class="s1">&#39;codificante&#39;</span><span class="p">:</span><span class="s1">&#39;ATG&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>¿Tenemos información sobre la secuencia codificante? ¿Y sobre la proteína?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;codificante&#39;</span> <span class="ow">in</span> <span class="n">gen</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;proteina&#39;</span> <span class="ow">in</span> <span class="n">gen</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>4. Crea un <em>set</em> con los números del uno al diez y después añade el 11 y el 12.
+Finalmente actualiza el <em>set</em> anterior añadiendo los números del 30 al 35.
+¿Cuál son el primer número y el último del conjunto resultante?
+¿Pertenecen el 7 y el 20 al conjunto?
+¿Cuántos elementos componen el conjunto?</p>
+<dl class="simple">
+<dt>Pista:</dt><dd><ul class="simple">
+<li><p>Para no escribir todos los números podemos utilizar la función <em>range</em>.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="go">set([1, 2, 3, 4, 5, 6, 7, 8, 9])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">36</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">set([32, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 34, 35, 33, 30, 31])</span>
+</pre></div>
+</div>
+<p>Un <em>set</em> con está ordenado y por lo tanto el concepto de primero y último carece de sentido.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">7</span> <span class="ow">in</span> <span class="n">s</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">20</span> <span class="ow">in</span> <span class="n">s</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">18</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Dados los siguientes conjuntos de hormonas alteradas en varios pacientes:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hor1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;melanina&#39;</span><span class="p">,</span> <span class="s1">&#39;oxitocina&#39;</span><span class="p">,</span> <span class="s1">&#39;dopamina&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hor2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;testosterona&#39;</span><span class="p">,</span> <span class="s1">&#39;melanina&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hor3</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;calcinotna&#39;</span><span class="p">,</span> <span class="s1">&#39;estradiol&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>¿Comparten alguna hormona el conjunto 1 y el 2? ¿Y el 1 y el 3?
+¿Es el conjunto 2 un subconjunto del 1? ¿Son el 2 y el 1 y el 2 y el 3 disjuntos?
+¿Cuál es el conjunto de todas las hormonas?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hor1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">hor2</span><span class="p">)</span>
+<span class="go">set([&#39;melanina&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hor1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">hor3</span><span class="p">)</span>
+<span class="go">set([])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hor2</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">hor1</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hor2</span><span class="o">.</span><span class="n">isdisjoint</span><span class="p">(</span><span class="n">hor1</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hor2</span><span class="o">.</span><span class="n">isdisjoint</span><span class="p">(</span><span class="n">hor3</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hor1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">hor2</span><span class="p">,</span> <span class="n">hor3</span><span class="p">)</span>
+<span class="go">set([&#39;testosterona&#39;, &#39;calcinotna&#39;, &#39;dopamina&#39;, &#39;estradiol&#39;,</span>
+<span class="go">     &#39;oxitocina&#39;, &#39;melanina&#39;])</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Dada una caracterización morfológica de unos tomates en un fichero tabular, contar cuantos son de cada color.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="n">color</span> <span class="n">grado_de_madurez</span>
+<span class="n">big_red</span> <span class="n">rojo</span> <span class="mi">5</span>
+<span class="n">italiano</span> <span class="n">amarillo</span> <span class="mi">3</span>
+<span class="n">valenciano</span> <span class="n">verde</span> <span class="mi">1</span>
+<span class="n">penjar</span> <span class="n">rojo</span> <span class="mi">4</span>
+<span class="n">canario</span> <span class="n">rojo</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Solución 1.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#creamos un diccionario para guardar las cuentas</span>
+<span class="c1">#sabemos que las clases son: rojo, amarillo y verde</span>
+<span class="n">cuentas_colores</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;rojo&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;amarillo&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;verde&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+
+<span class="c1">#recorremos todas las lineas del fichero</span>
+<span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tomates.txt&#39;</span><span class="p">):</span>
+    <span class="c1">#ignoramos la primera linea</span>
+    <span class="k">if</span> <span class="s1">&#39;nombre&#39;</span> <span class="ow">in</span> <span class="n">linea</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="c1">#dividimos la linea en una lista de palabras</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+    <span class="c1">#extraemos el color de la linea</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1">#sumamos uno al color correspondiente</span>
+    <span class="n">cuentas_colores</span><span class="p">[</span><span class="n">color</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span> <span class="n">cuentas_colores</span>
+</pre></div>
+</div>
+<p>Solución 2.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#creamos un diccionario para guardar las cuentas</span>
+<span class="c1">#No vamos a predefinir los colores que se van a utilizar</span>
+<span class="n">cuentas_colores</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1">#recorremos todas las lineas del fichero</span>
+<span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tomates.txt&#39;</span><span class="p">):</span>
+    <span class="c1">#ignoramos la primera linea</span>
+    <span class="k">if</span> <span class="s1">&#39;nombre&#39;</span> <span class="ow">in</span> <span class="n">linea</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="c1">#dividimos la linea en una lista de palabras</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+    <span class="c1">#extraemos el color de la linea</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1">#puede que este color sea la primera vez que aparece</span>
+    <span class="c1">#si es asi debemos inicializar la cuenta de color a cero.</span>
+    <span class="c1">#si no lo hiciesemos cuando intentemos sumar uno</span>
+    <span class="c1">#el diccionario generaria un IndexError</span>
+    <span class="k">if</span> <span class="n">color</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cuentas_colores</span><span class="p">:</span>
+        <span class="n">cuentas_colores</span><span class="p">[</span><span class="n">color</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1">#sumamos uno al color correspondiente</span>
+    <span class="n">cuentas_colores</span><span class="p">[</span><span class="n">color</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span> <span class="n">cuentas_colores</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Leer el fichero de texto que represente la tabla del ejercicio anterior y guardar el resultado en un diccionario.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#creamos el diccionario que albergara los datos leidos</span>
+<span class="n">tomates</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1">#recorremos todas las lineas del archivo</span>
+<span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tomates.txt&#39;</span><span class="p">):</span>
+    <span class="c1">#debemos ignorar la primera linea</span>
+    <span class="k">if</span> <span class="s1">&#39;nombre&#39;</span> <span class="ow">in</span> <span class="n">linea</span><span class="p">:</span>   <span class="c1">#si en la primera linea</span>
+        <span class="k">continue</span>            <span class="c1">#no hacer nada mas en esta iteracion</span>
+
+    <span class="c1">#dividimos la linea en palabras</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="c1">#extraemos la informacion de la linea</span>
+    <span class="n">nombre</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">madurez</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="c1">#esto se podria haber escrito como</span>
+    <span class="c1">#nombre, color, madurez = items</span>
+
+    <span class="c1">#convertimos la madurez en un entero</span>
+    <span class="n">madurez</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">madurez</span><span class="p">)</span>
+
+    <span class="c1">#ahora debemos crear una estructura de datos que nos permita</span>
+    <span class="c1">#guardar la madurez y el color de cada tomate, para ello</span>
+    <span class="c1">#podemos utilizar un diccionario</span>
+    <span class="n">info_tomate</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="n">color</span><span class="p">,</span> <span class="s1">&#39;madurez&#39;</span><span class="p">:</span><span class="n">madurez</span><span class="p">}</span>
+
+    <span class="c1">#Podemos anyadir la informacion sobre el tomate definido en</span>
+    <span class="c1">#esta linea a la informacion global de todos los tomates.</span>
+    <span class="c1">#Esta informacion la vamos a indexar por el nombre del tomate.</span>
+    <span class="n">tomates</span><span class="p">[</span><span class="n">nombre</span><span class="p">]</span> <span class="o">=</span> <span class="n">info_tomate</span>
+
+<span class="nb">print</span> <span class="n">tomates</span>
+</pre></div>
+</div>
+<p>8. Hemos hecho dos experimientos de proteómica y hemos obtenido dos listas de proteinas, las que aparecen en el primer experimiento y las del segundo.
+Ambas listas se encuentran disponibles en sendos ficheros:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">albumina</span>
+<span class="n">inmunoglobulina</span>
+<span class="n">antitripsina</span>
+<span class="n">lipoproteina</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">transferrina</span>
+<span class="n">inmunoglobulina</span>
+<span class="n">antitripsina</span>
+<span class="n">protombina</span>
+</pre></div>
+</div>
+<p>Generar, a partir de esta información, las listas de proteinas exclusivas de la muestra 1 y 2 así como las proteínas que aparecen en ambos experimentos.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#leemos la primera lista de proteinas y</span>
+<span class="c1">#la guardamos en un set</span>
+
+<span class="n">proteinas1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;proteinas1.txt&#39;</span><span class="p">):</span>
+    <span class="n">proteina</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">proteinas1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">proteina</span><span class="p">)</span>
+
+<span class="c1">#leemos el segundo fichero de proteinas</span>
+<span class="n">proteinas2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;proteinas2.txt&#39;</span><span class="p">):</span>
+    <span class="n">proteina</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">proteinas2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">proteina</span><span class="p">)</span>
+
+<span class="c1">#Ahora podemos hacer las comparaciones entre los</span>
+<span class="c1">#conjuntos de proteinas</span>
+<span class="nb">print</span> <span class="s1">&#39;Proteinas comunes&#39;</span>
+<span class="nb">print</span> <span class="n">proteinas1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">proteinas2</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="s1">&#39;Proteinas exclusivas de la lista 1&#39;</span>
+<span class="nb">print</span> <span class="n">proteinas1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">proteinas2</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="s1">&#39;Proteinas exclusivas de la lista 2&#39;</span>
+<span class="nb">print</span> <span class="n">proteinas2</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">proteinas1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="control_de_flujo.html">Control de flujo</a>-->
+                    <a class="prev" href="control_de_flujo.html" title="Control de flujo">previous</a>
+                    |
+                    <!--<a class="next" href="ejercicios_repaso.html">Ejercicios de repaso</a>-->
+                    <a class="next" href="ejercicios_repaso.html" title="Ejercicios de repaso">next</a>
+                    |
+
+                <a class="index" href="/courses/linux/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

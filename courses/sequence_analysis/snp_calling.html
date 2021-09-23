@@ -1,0 +1,678 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>SNP calling &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="NGS expression analysis" href="rnaseq.html" />
+    <link rel="prev" title="Mapping" href="mapping.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sequencing_technologies.html">Sequencing technologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ngs_applications_examples.html">NGS application examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_analysis_software.html">NGS analysis software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmd_primer.html">Command line primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_file_formats.html">NGS sequence file formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read_cleaning.html">NGS read cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assembly.html">Sequence assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Sequence mapping</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SNP calling and filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html">NGS expression analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnaseq.html#practical-tasks">Practical tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_files.html">Dealing with big result files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bedtools.html">BEDTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maize_snp_calling.html">Maize SNP calling practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice.html">Final practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice_walkthrough.html">Final practice walkthrough</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="snp-calling">
+<h1>SNP calling<a class="headerlink" href="#snp-calling" title="Permalink to this headline">¶</a></h1>
+<figure class="align-default" id="id10">
+<a class="reference internal image-reference" href="_images/snp_calling.png"><img alt="_images/snp_calling.png" src="_images/snp_calling.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="_downloads/5f438b259b66a796939ba3f2786d5c18/snp_calling.odp"><code class="xref download docutils literal notranslate"><span class="pre">SNP</span> <span class="pre">calling</span></code></a> (<a class="reference download internal" download="" href="_downloads/7e775ee29d24af9246003ca244bc9f10/snp_calling.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>One of the main applications of the NGS technologies is the SNP mining in the resequencing projects.
+Reads from different individuals are generated and Single Nucleotide Polymorphisms (SNPs) and indels are looked for by comparing them with the reference genome.</p>
+<p>Once an alignment is generated as a BAM file looking for SNPs is not a conceptually a difficult task.
+We go through every column of the alignment and in every one we see how many alleles are found and how they compare with the one found in the reference genome.
+Unfortunately this naive view is complicated by several confounding factors:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The cloning process artifacts (e.g. PCR induced mutations).</p></li>
+<li><p>The error rate associated with the sequence reads.</p></li>
+<li><p>The error rate associated with the mapping.</p></li>
+<li><p>The reliability of the reference genome.</p></li>
+</ul>
+</div></blockquote>
+<p>In fact Heng Li, the author of BWA, has recently evaluated the error rate of the SNP calling proccess and has concluded that the two <a class="reference external" href="http://arxiv.org/pdf/1404.0929v1.pdf">major sources of errors</a> are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>erroneous realignment in low-complexity regions</p></li>
+<li><p>incomplete reference genome with respect to the sample</p></li>
+</ul>
+</div></blockquote>
+<p>He concludes that with the methods available at April of 2014 “the raw genotype calls is as high as 1 in 10-15 kb, but the error rate of post-filtered calls is reduced in 1 in 100-200kb without significant compromise on the sensitivity”.</p>
+<section id="alignment-considerations">
+<h2>Alignment considerations<a class="headerlink" href="#alignment-considerations" title="Permalink to this headline">¶</a></h2>
+<p>The mapping tools calculate a probability for the correctness of the alignment for the whole read.
+This probability depends on the length of alignment, on the number of mismatches and gaps and on the uniqueness of the aligned region on the genome and it should reflect the probability of the read being originate from the aligned region on the reference.
+It is important to distinguish the real SNPs from the mismatches between repeated homologous genomic regions.</p>
+<p>Even in the case in which the read maps only to one location in the reference genome and we have a good alignment score for the overall read some bases of the read can be misaligned.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coor</span>     <span class="mi">12345678901234</span>    <span class="mi">5678901234567890123456</span>
+<span class="n">ref</span>      <span class="n">aggttttataaaac</span><span class="o">----</span><span class="n">aattaagtctacagagcaacta</span>
+<span class="n">sample</span>   <span class="n">aggttttataaaacAAATaattaagtctacagagcaacta</span>
+<span class="n">read1</span>    <span class="n">aggttttataaaac</span><span class="o">****</span><span class="n">aaAtaa</span>
+<span class="n">read2</span>     <span class="n">ggttttataaaac</span><span class="o">****</span><span class="n">aaAtaaTt</span>
+<span class="n">read3</span>         <span class="n">ttataaaacAAATaattaagtctaca</span>
+<span class="n">read4</span>             <span class="n">CaaaT</span><span class="o">****</span><span class="n">aattaagtctacagagcaac</span>
+<span class="n">read5</span>               <span class="n">aaT</span><span class="o">****</span><span class="n">aattaagtctacagagcaact</span>
+<span class="n">read6</span>                 <span class="n">T</span><span class="o">****</span><span class="n">aattaagtctacagagcaacta</span>
+</pre></div>
+</div>
+<p>One approach to this problem is to realign the problematic regions to solve the problem, this is the approach taken by <a class="reference external" href="http://www.broadinstitute.org/gsa/wiki/index.php/Local_realignment_around_indels">GATK realignment</a>.
+The actual implementations of this realignment are computationally quite intensive and the results are not perfect.
+The samtools developers have proposed an alternative solution, instead of solving the problem, to detect it and mark it with alignment qualities per base and not only per read.
+The resulting qualities calculated by the samtools are known as BAQ (Base Alignment Quality) and the method to calculate them is described in the <a class="reference external" href="http://samtools.sourceforge.net/mpileup.shtml">mpileup</a> manual.</p>
+</section>
+<section id="quality-recalibration">
+<h2>Quality recalibration<a class="headerlink" href="#quality-recalibration" title="Permalink to this headline">¶</a></h2>
+<p>Every base of the reads is generated with a <a class="reference external" href="http://en.wikipedia.org/wiki/Phred_quality_score">Phred</a> score associated.
+This score should be related with the probability of a sequencing error on the nucleotide read.
+In this way we could distinguish sequencing errors from real variation, but there is a catch, the Phred values have an intrinsic error in themselves.
+When the Phread values are compared with the real sequencing error rates, calculated by resequencing well established standards, they are usually found to be in disagreement.
+It is often the case that the sequencing error rates predicted by the sequencing machines are not completely accurate.
+To solve this issue a recalibration of the quality scores can be carried out.</p>
+<p>To do a recalibration the variable positions found in the alignments are classified according to the information of which SNPs have been previously detected in the species.
+The variable positions that do not match a previously known SNP are expected to be mainly sequencing errors and with that information the read quality can be recalibrated.
+This process is implemented by GATK and SOAPsnp.</p>
+<p>In the case of a species with much previous SNP information the recalibration could be carried out by doing a first round of SNP calling and then recalibrating using the called SNPs as the true SNP of the species.
+In this case after the recalibration is done the second, and definitive, SNP calling would be performed.</p>
+</section>
+<section id="id1">
+<h2>SNP calling<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Once we have taken into account the sequencing and alignment problems we can use a SNP calling software to look for the SNPs.
+The most commonly used SNP callers are: samtools’ <a class="reference external" href="http://samtools.sourceforge.net/mpileup.shtml">mpileup</a>, <a class="reference external" href="http://www.broadinstitute.org/gsa/wiki/index.php/The_Genome_Analysis_Toolkit">GATK</a> and  <a class="reference external" href="https://github.com/ekg/freebayes">FreeBayes</a>.
+Each one of these SNP callers make different assumptions about the reference genome and the reads, so each one of them is best suited for different situations.</p>
+<p>Some SNP callers are based on counting the number of reads for each alleles once appropriate thresholds for the sequencing and mapping qualities have been applied.
+This simple method is the one used by the <a class="reference external" href="http://varscan.sourceforge.net/">VarScan</a> SNP caller as well as by most of the commercial SNP callers.
+But other methods based on more advanced statistics have also been developed.
+This methods often perform better, specially with low coverages, and do certain assumptions to create bayesian models.
+Most of them assume diploid individuals and some even take into account the Hardy-Weinberg equilibrium and Linkage Disequilibrium information as well as previous information about the SNPs present in the species and their allele frequencies.</p>
+<p>The GATK project has published a good resource to lear more about SNP calling <a class="reference external" href="http://gatkforums.broadinstitute.org/discussion/1186/best-practice-variant-detection-with-the-gatk-v4-for-release-2-0">best practices</a>.</p>
+<p>Brad Chapman has a very interesting <a class="reference external" href="http://bcbio.wordpress.com/2013/10/21/updated-comparison-of-variant-detection-methods-ensemble-freebayes-and-minimal-bam-preparation-pipelines/">piece</a> comparing the use of several aligners and SNP callers.
+For the read alignment he used bwa-mem.
+Then he compared two alternative post-processing methods:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>de-duplication with Picard MarkDuplicates,  GATK base quality score recalibration and GATK realignment around indels.</p></li>
+<li><p>Minimal post-processing, with de-duplication using samtools rmdup and no realignment or recalibration.</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>For the SNP and indel calling with compared three methods:</dt><dd><ul class="simple">
+<li><p>FreeBayes (v0.9.9.2-18): A haplotype-based Bayesian caller from the Marth Lab.</p></li>
+<li><p>GATK UnifiedGenotyper (2.7-2): GATK’s widely used Bayesian caller.</p></li>
+<li><p>GATK HaplotypeCaller (2.7-2): GATK’s more recently developed haplotype caller which provides local assembly around variant regions</p></li>
+</ul>
+</dd>
+</dl>
+<p>Some of his main conclusions were:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>skipping base recalibration and indel realignment had almost no impact on the quality of resulting variant calls</p></li>
+<li><p>FreeBayes outperforms the GATK callers on both SNP and indel calling. The most recent versions of FreeBayes have improved sensitivity and specificity which puts them on par with GATK HaplotypeCaller.</p></li>
+<li><p>GATK HaplotypeCaller is all around better than the UnifiedGenotyper.</p></li>
+</ul>
+</div></blockquote>
+<p>He has also compared the performance of the <a class="reference external" href="http://bcb.io/2014/08/12/validated-whole-genome-structural-variation-detection-using-multiple-callers/">Structural variant callers</a> and the <a class="reference external" href="http://bcb.io/2015/03/05/cancerval/">cancer SNP callers</a>.</p>
+</section>
+<section id="vcf-format">
+<h2>VCF format<a class="headerlink" href="#vcf-format" title="Permalink to this headline">¶</a></h2>
+<p>The end result of a SNP calling analysis is a collection of SNPs.
+An standard file has been created to hold these SNPs, the <a class="reference external" href="http://vcftools.sourceforge.net/specs.html">Variant Call Format</a> file (VCF).
+In this file every line represents an SNP and the following information is found:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The position in the reference genome.</p></li>
+<li><p>The allele in the reference genome.</p></li>
+<li><p>The other alleles found.</p></li>
+<li><p>The filters not passed by the SNP.</p></li>
+<li><p>The genotypes found with its abundances.</p></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="_images/vcf_format.png"><img alt="_images/vcf_format.png" src="_images/vcf_format.png" style="width: 650px;" /></a>
+<p>A tool for working with these files has been created, <a class="reference external" href="http://vcftools.sourceforge.net/index.html">VCFtools</a>.
+In its web site a definition of the file format can be found.
+VCFtools allow:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Format validation.</p></li>
+<li><p>SNV annotation.</p></li>
+<li><p>VCF comparison.</p></li>
+<li><p>Statistics calculation.</p></li>
+<li><p>Merging, intersections and complements.</p></li>
+</ul>
+</div></blockquote>
+<p>We can take a look at a VCF file quite easily with a text editor, although we might also find some of them convected to a binary format (BCF).
+Also, the fields in this file are delimited by tabs, so it can be imported into a spreadsheet program by using the csv option.</p>
+<p>The types of variants that can be stored in a VCF file are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SNPs</span>
+<span class="n">Alignment</span>  <span class="n">VCF</span> <span class="n">representation</span>
+<span class="n">ACGT</span>       <span class="n">POS</span> <span class="n">REF</span> <span class="n">ALT</span>
+<span class="n">AtGT</span>       <span class="mi">2</span>   <span class="n">C</span>   <span class="n">T</span>
+
+<span class="n">Insertions</span>
+<span class="n">Alignment</span>  <span class="n">VCF</span> <span class="n">representation</span>
+<span class="n">AC</span><span class="o">-</span><span class="n">GT</span>       <span class="n">POS</span> <span class="n">REF</span> <span class="n">ALT</span>
+<span class="n">ACtGT</span>       <span class="mi">2</span>   <span class="n">C</span>   <span class="n">CT</span>
+
+<span class="n">Deletions</span>
+<span class="n">Alignment</span>  <span class="n">VCF</span> <span class="n">representation</span>
+<span class="n">ACGT</span>       <span class="n">POS</span> <span class="n">REF</span> <span class="n">ALT</span>
+<span class="n">A</span><span class="o">--</span><span class="n">T</span>       <span class="mi">1</span>   <span class="n">ACG</span> <span class="n">A</span>
+
+<span class="n">Complex</span> <span class="n">events</span>
+<span class="n">Alignment</span>  <span class="n">VCF</span> <span class="n">representation</span>
+<span class="n">ACGT</span>       <span class="n">POS</span> <span class="n">REF</span> <span class="n">ALT</span>
+<span class="n">A</span><span class="o">-</span><span class="n">tT</span>       <span class="mi">1</span>   <span class="n">ACG</span> <span class="n">AT</span>
+
+<span class="n">Large</span> <span class="n">structural</span> <span class="n">variants</span>
+<span class="n">VCF</span> <span class="n">representation</span>
+<span class="n">POS</span> <span class="n">REF</span> <span class="n">ALT</span>   <span class="n">INFO</span>
+<span class="mi">100</span> <span class="n">T</span>   <span class="o">&lt;</span><span class="n">DEL</span><span class="o">&gt;</span> <span class="n">SVTYPE</span><span class="o">=</span><span class="n">DEL</span><span class="p">;</span><span class="n">END</span><span class="o">=</span><span class="mi">300</span>
+</pre></div>
+</div>
+</section>
+<section id="snp-quality-assesment">
+<h2>SNP quality assesment<a class="headerlink" href="#snp-quality-assesment" title="Permalink to this headline">¶</a></h2>
+<p>Several distributions can be created to analyze the SNP calling result:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>% of missing calls per SNP</p></li>
+<li><p>SNP depth or Genotype depth</p></li>
+<li><p>SNP observed heterozygosity</p></li>
+<li><p>SNP quality</p></li>
+<li><p>SNP density</p></li>
+<li><p>Sample depth</p></li>
+<li><p>% of missing calls per sample</p></li>
+<li><p>Sample observed heterozygosity</p></li>
+</ul>
+</div></blockquote>
+<p>Number of SNPs called at different missing rates:</p>
+<a class="reference internal image-reference" href="_images/min_called_filter.png"><img alt="_images/min_called_filter.png" src="_images/min_called_filter.png" style="width: 650px;" /></a>
+<p>Number of SNPs with different observed heterozygosities:</p>
+<a class="reference internal image-reference" href="_images/obs_het_filter.png"><img alt="_images/obs_het_filter.png" src="_images/obs_het_filter.png" style="width: 650px;" /></a>
+<p>Observed heterozygosity and called GT rate per sample.</p>
+<a class="reference internal image-reference" href="_images/per_sample_called_het.png"><img alt="_images/per_sample_called_het.png" src="_images/per_sample_called_het.png" style="width: 650px;" /></a>
+<p>Depth distributions per sample for all genotype calls and for the non-missing genotype calls:</p>
+<a class="reference internal image-reference" href="_images/per_sample_dp_hists.png"><img alt="_images/per_sample_dp_hists.png" src="_images/per_sample_dp_hists.png" style="width: 650px;" /></a>
+</section>
+<section id="snp-filtering">
+<h2>SNP filtering<a class="headerlink" href="#snp-filtering" title="Permalink to this headline">¶</a></h2>
+<p>Filtering the SNPs after the SNP calling is a critical task.
+We can filter the SNPs for different reasons like usefulness or risk of being a false positive.
+In the called SNPs there will be some false positives so we could want to remove those false positives.
+It is common to divide the SNPs in several tiers according to our confidence in them.</p>
+<p>Several application exist to filter SNPs <a class="reference external" href="https://vcftools.github.io/">VCFtools</a>, <a class="reference external" href="http://snpeff.sourceforge.net/SnpSift.html">SnpSift</a>, <a class="reference external" href="http://bcb.io/2016/04/04/vardict-filtering/">Vardict</a> and <a class="reference external" href="https://www.broadinstitute.org/gatk/guide/article?id=2806">GATK</a> are just some examples.</p>
+<p>Some of the parameters than can be taken into account are: quality, heterozygosity, depth, mapping quality, errors of the reads, or allele frequency.</p>
+<p>We could also select some SNPs for a genotyping platform or to do a particular analysis.</p>
+<p>A VCF file is a matrix with the SNPs in rows, the samples (e.g. individuals) in the columns and the genotypes in the cells.
+We can filter SNPs (lines/rows), samples (columns) or genotypes (setting the corresponding genotype to not determined).
+In the case of the SNP filtering the nomenclature can be confusing, because two different kind of analyses are commonly refered as filtering.
+We can remove the lines corresponding to the filtered SNPs from the file altogether or we can annotate the SNP/row adding a tag to the filter column in the VCF file, but without removing the SNP from the file.</p>
+<p>The freebayes SNP caller includes some programs to filter the SNPs, among them vcffilter that makes possible to remove SNPs/rows or genotypes from the VCF file by using different criteria.</p>
+<section id="filter-for-snps">
+<h3>Filter for SNPs<a class="headerlink" href="#filter-for-snps" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="low-quality">
+<h3>Low quality<a class="headerlink" href="#low-quality" title="Permalink to this headline">¶</a></h3>
+<p>SNP callers usually assign a quality (probability) to the SNPs.
+We can filter out the SNPs with lower qualities.</p>
+</section>
+<section id="missing-data">
+<h3>Missing data<a class="headerlink" href="#missing-data" title="Permalink to this headline">¶</a></h3>
+<p>We could filter the SNPs with large amount of missing genotypes.
+This could happen, for example, in RNASeq experiments (in genes with low expression in some samples), in GBS experiments or in low coverge genome sequencings.</p>
+</section>
+<section id="number-of-alleles">
+<h3>Number of alleles<a class="headerlink" href="#number-of-alleles" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to remove the monomorphic SNPs or to filter out the SNPs that are not biallelic.</p>
+</section>
+<section id="kind">
+<h3>Kind<a class="headerlink" href="#kind" title="Permalink to this headline">¶</a></h3>
+<p>We can filter the SNVs according to its type: SNV, indel, complex or structural variation</p>
+</section>
+<section id="position">
+<h3>Position<a class="headerlink" href="#position" title="Permalink to this headline">¶</a></h3>
+<p>We can filters the SNPs according to its location in the genome.
+For instance, we could keep only the SNPs found in an exon or in a coding region.</p>
+<p>It is also common to thin out the SNPs, to select one SNP every some kilobases in the genome.</p>
+</section>
+<section id="low-complexity-region">
+<h3>Low Complexity Region<a class="headerlink" href="#low-complexity-region" title="Permalink to this headline">¶</a></h3>
+<p>It has been shown that due to problems with the PCR and the alignment the low complexity regions are particularly prone to false positive SNPs.
+We could remove them with a low complexity filter.
+These are also the regions that tend to be more variable in the populations, so by removing those SNPs we will create lots of false negatives.
+This filter will tend to decrease the amount of information, but hopefully will also remove quite a lot of noise.</p>
+</section>
+<section id="flag-and-info">
+<h3>Flag and info<a class="headerlink" href="#flag-and-info" title="Permalink to this headline">¶</a></h3>
+<p>We could filter the SNPs according to the flag and info fields found in the VCF files.
+It is usual that a tools that runs a filter in a VCF file just puts a tag in the VCF flag field.</p>
+</section>
+<section id="minor-allele-frequency-maf">
+<h3>Minor Allele Frequency (MAF)<a class="headerlink" href="#minor-allele-frequency-maf" title="Permalink to this headline">¶</a></h3>
+<p>MAF can sometimes refer to the Minor Allele Frequency and sometimes to the Major Allele Frequency.
+Both statistics convey the same information for the biallelic SNPs, but the Major Allele Frequency is more straightforward if we have more than 2 alleles.</p>
+<p>SNPs due to sequencing errors will usually have major allele frequencies close to 1, because few genotypes will have an allele due to the error.
+So we could remove most SNPs due to sequencing errors by using this filter.
+If we do it, we will also filter out lots of real SNPs that are almost fixed in the population.</p>
+<p>If we are dealing with a segregant population we usually expect a range of MAF values and we can use this information to decide which SNPs should be filtered out.</p>
+<p>If we have pooled samples we might consider applying this filter to individual samples.</p>
+<p>Another very related measure is MAC: major/minor allele count.</p>
+</section>
+<section id="observed-heterozygosity">
+<h3>Observed Heterozygosity<a class="headerlink" href="#observed-heterozygosity" title="Permalink to this headline">¶</a></h3>
+<p>One common source of false positive SNPs with high heterozygosity rates is due to duplicated regions found in the problem sample that are not found in the reference genome.
+It is common to have SNPs in these regions with heterozygosities close to 0.5.
+In such cases the SNPs will be due to reads from the two copies that are piled in the only copy found in the reference genome.
+This cases can not be avoided by filtering the reads with MAPQ because since only one copy of the duplication is found in the reference genome the mapper software can not guess that there is a problem due to a repetitive element.
+Another way to spot these false positives is to look for SNPs with a high coverage.</p>
+</section>
+<section id="high-coverage">
+<h3>High Coverage<a class="headerlink" href="#high-coverage" title="Permalink to this headline">¶</a></h3>
+<p>An excessive coverage can point to false positives due to duplicated regions in the sequenced sample not found in the reference genome.
+See also the observed heterozygosity filter.</p>
+</section>
+<section id="highly-variable-region">
+<h3>Highly Variable Region<a class="headerlink" href="#highly-variable-region" title="Permalink to this headline">¶</a></h3>
+<p>Having regions with too many SNPs could also be a sign that we are piling up reads from repeated regions.
+We could filter out the SNPs located in such highly variable regions.
+This analysis is usually done counting the number of SNPs in a window around each SNP.</p>
+<p>It can also be useful to remove the SNPs with an SNP too close if we want to design primers to do a PCR or genotyping experiment.
+In this case we might also want to remove the SNPs that are close to the start or the end of the reference sequence.
+This could be particularly relevant if we are using a transcriptome as a reference.</p>
+</section>
+<section id="linkage-disequilibrium">
+<h3>Linkage Disequilibrium<a class="headerlink" href="#linkage-disequilibrium" title="Permalink to this headline">¶</a></h3>
+<p>If we have genotype a segregant population it could be useful to filter out the SNPs that are not in linkage disequilibrium with their closest SNPs.
+Many of these unlinked SNPs will be false positives.</p>
+</section>
+<section id="variability">
+<h3>Variability<a class="headerlink" href="#variability" title="Permalink to this headline">¶</a></h3>
+<p>We might be interested in filtering out or selecting SNPs that are variable in a set of samples or that differenciate two sets of samples.</p>
+</section>
+<section id="aminoacid-change">
+<h3>Aminoacid change<a class="headerlink" href="#aminoacid-change" title="Permalink to this headline">¶</a></h3>
+<p>We can select the SNPs with large impacts in the coded proteins.
+The <a class="reference external" href="http://snpeff.sourceforge.net/">SnpEff</a> tool can be used for that.</p>
+</section>
+<section id="cap-enzyme">
+<h3>Cap enzyme<a class="headerlink" href="#cap-enzyme" title="Permalink to this headline">¶</a></h3>
+<p>We can select the SNPs that create restriction sites if we want to detect them by PCR and restriction enzyme digestion.</p>
+</section>
+<section id="hwe">
+<h3>HWE<a class="headerlink" href="#hwe" title="Permalink to this headline">¶</a></h3>
+<p>We can also filter out the SNPs that are not in HWE or that show a non-medelian segregation in a segregant population.</p>
+</section>
+<section id="filters-for-genotypes">
+<h3>Filters for Genotypes<a class="headerlink" href="#filters-for-genotypes" title="Permalink to this headline">¶</a></h3>
+<p>It is also possible to filter out not SNPs, but genotypes.
+In this case the genotype is usually set to not determined.</p>
+<p>To genotype a sample with good quality we need more information than to just get the SNP with good quality.
+If we have several samples, all their reads will contribute information to determine the SNP, but to get the genotype of any of them we need enough coverage in the given sample.</p>
+<p>Two common filters used for genotypes are the depth of coverage for the genotypes and the genotype quality that is created by most SNP callers.</p>
+</section>
+<section id="filters-for-samples">
+<h3>Filters for Samples<a class="headerlink" href="#filters-for-samples" title="Permalink to this headline">¶</a></h3>
+<p>We might also be interested in filtering out some individuals.
+Some common criteria are: amount of missing genotype calls and observed heterozygosity.</p>
+</section>
+</section>
+<section id="gff-format">
+<h2>GFF format<a class="headerlink" href="#gff-format" title="Permalink to this headline">¶</a></h2>
+<p>The GFF files are used to store annotations.
+An annotation can be thought as a label applied to a region of a molecule.
+For instance we could tag a region covered by a gene in a chromosome.
+The GFF files are text files and every line represents a region on the annotated sequence and these regions are called features.
+In the previous case the gene would be a feature of the chromosome.
+Features can be functional elements (e.g., genes), genetic polymorphisms (e.g. SNPs, INDELs, or structural variants), or any other annotations.
+Each feature should have a type associated.
+Examples of some possible types are: SNPs, introns, ORFs, UTRs, etc.
+The terms used to define these types should belong to the Sequence Ontology terms.
+If you are interested you can take a look at the <a class="reference external" href="http://www.sequenceontology.org/">Sequence Ontology</a> or at the <a class="reference external" href="http://www.sequenceontology.org/resources/gff3.html">GFF format</a> specification.</p>
+<p>In the GFF format both the start and the end of the features are 1-based.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">##gff-version 3</span>
+<span class="c1">##sequence-region ctg123 1 1497228</span>
+<span class="n">ctg123</span> <span class="o">.</span> <span class="n">gene</span> <span class="mi">1000</span> <span class="mi">9000</span> <span class="o">.</span> <span class="o">+</span> <span class="o">.</span> <span class="n">ID</span><span class="o">=</span><span class="n">gene00001</span><span class="p">;</span><span class="n">Name</span><span class="o">=</span><span class="n">EDEN</span>
+<span class="n">ctg123</span> <span class="o">.</span> <span class="n">TF_binding_site</span> <span class="mi">1000</span> <span class="mi">1012</span> <span class="o">.</span> <span class="o">+</span> <span class="o">.</span> <span class="n">ID</span><span class="o">=</span><span class="n">tfbs00001</span><span class="p">;</span><span class="n">Parent</span><span class="o">=</span><span class="n">gene00001</span>
+<span class="n">ctg123</span> <span class="o">.</span> <span class="n">mRNA</span> <span class="mi">1050</span> <span class="mi">9000</span> <span class="o">.</span> <span class="o">+</span> <span class="o">.</span> <span class="n">ID</span><span class="o">=</span><span class="n">mRNA00001</span><span class="p">;</span><span class="n">Parent</span><span class="o">=</span><span class="n">gene00001</span><span class="p">;</span><span class="n">Name</span><span class="o">=</span><span class="n">EDEN</span><span class="mf">.1</span>
+</pre></div>
+</div>
+</section>
+<section id="bed-format">
+<h2>BED format<a class="headerlink" href="#bed-format" title="Permalink to this headline">¶</a></h2>
+<p>The BED format provides a simpler way of representing the features in a molecule.
+Each line represents a feature in a molecule and it has only three required fields: name, start and end.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chr22</span> <span class="mi">1000</span> <span class="mi">5000</span> <span class="n">cloneA</span> <span class="mi">960</span> <span class="o">+</span> <span class="mi">1000</span> <span class="mi">5000</span> <span class="mi">0</span> <span class="mi">2</span> <span class="mi">567</span><span class="p">,</span><span class="mi">488</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">3512</span>
+<span class="n">chr22</span> <span class="mi">2000</span> <span class="mi">6000</span>
+</pre></div>
+</div>
+<p>The BED format uses 0-based coordinates for the starts and 1-based for the ends. So the 1st base on
+chromosome 1 would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chr1</span>    <span class="mi">0</span>    <span class="mi">1</span>    <span class="n">first_base</span>
+</pre></div>
+</div>
+<p>Headers are allowed.
+Those lines should be preceded by # and they will be ignored.</p>
+</section>
+<section id="practical-tasks">
+<h2>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this headline">¶</a></h2>
+<section id="snp-calling-with-mpileup">
+<h3>SNP calling with mpileup<a class="headerlink" href="#snp-calling-with-mpileup" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>SNP calling with samtools’ mpileup.</p></li>
+</ol>
+<p>Create a directory named snp_call and download  the files.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~$ cd
+ngs_user@ngsmachine:~$ pwd
+/home/ngs_user
+ngs_user@ngsmachine:~$ mkdir snp_call
+ngs_user@ngsmachine:~$ cd snp_call/
+</pre></div>
+</div>
+<p>Download the <a class="reference download internal" download="" href="_downloads/eaef58983741eb3091f95f9b176023a0/human_cambridge_reference_mito.fasta"><code class="xref download docutils literal notranslate"><span class="pre">reference</span></code></a> and the  <a class="reference download internal" download="" href="_downloads/d101fa348c0ea727f218ab3d17e7c6c2/mito_yoruba_reads_pe1.sorted.bam"><code class="xref download docutils literal notranslate"><span class="pre">BAM</span> <span class="pre">file</span></code></a> in to this directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ ls
+
+human_cambridge_reference_mito.fasta  mito_yoruba_reads_pe1.sorted.bam
+</pre></div>
+</div>
+<p>Use Samtools to index the bam file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$samtools index mito_yoruba_reads_pe1.sorted.bam
+</pre></div>
+</div>
+<p>Use <a class="reference external" href="http://samtools.sourceforge.net/mpileup.shtml">mpileup</a> and bcftools to call the SNPs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ bcftools view
+Usage:   bcftools view [options] &lt;in.bcf&gt; [reg]
+Options: -c        SNP calling
+         -v        output potential variant sites only (force -c)
+         -g        call genotypes at variant sites (force -c)
+         -b        output BCF instead of VCF
+         (...)
+ngs_user@machine:~/snp_call$ samtools mpileup -ugf human_cambridge_reference_mito.fasta mito_yoruba_reads_pe1.sorted.bam | bcftools call -cv - &gt; var.raw.vcf
+
+[mpileup] 1 samples in 1 input files
+&lt;mpileup&gt; Set max per-file depth to 8000
+[afs] 0:15459.489 1:10.430 2:54.081
+
+ngs_user@machine:~/snp_call$ bcftools view var.raw.vcf | vcfutils.pl varFilter -D100 &gt; var_mito_yoruba_mpileup.flt.vcf
+</pre></div>
+</div>
+<p>The resulting vcf file contains our SNPs.
+There are plenty of options to tweak the SNP calling process.
+To get an idea of the possibilities go to the <a class="reference external" href="http://samtools.sourceforge.net/mpileup.shtml">mpileup</a> page.</p>
+</section>
+<section id="looking-at-the-snps-using-igv">
+<h3>Looking at the SNPs using IGV<a class="headerlink" href="#looking-at-the-snps-using-igv" title="Permalink to this headline">¶</a></h3>
+<p>In the IGV we can load the BAM, GFF and the VCF files.
+In that way we can compare the mapping with the annotation.
+To do it, open IGV and load the BAM file from the mapping subdirectory.
+This time you won’t need to import the reference genome, it will be automatically selected, because it was the last reference used.
+Load the BAM file as you did the last time.
+Also load the compressed and indexed VCF file in annotation/features/ (you could sort and index the vcf file with an IGV tool).
+Now you should have two tracks in IGV, one with the mapping and another one with the SNP annotation.
+We could also load the GFF file with all the annotations, such us SSRs, ORFs, etc.
+In this case the GFF and VCF tracks would show similar annotation.</p>
+<p>Sometimes IGV shows the GFF track collapsed by default, you can expand it by clicking on the right mouse button above the track and selecting expand.</p>
+<a class="reference internal image-reference" href="_images/igv_bam_and_vcf.png"><img alt="_images/igv_bam_and_vcf.png" src="_images/igv_bam_and_vcf.png" style="width: 650px;" /></a>
+</section>
+<section id="snp-calling-with-freebayes">
+<h3>SNP calling with FreeBayes<a class="headerlink" href="#snp-calling-with-freebayes" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://bioinformatics.bc.edu/marthlab/FreeBayes">Freebayes</a> is a SNP calling program based on bayesian statistics. It is able to deal with individual and populations  or pooled and polyploid samples. FreeBayes is versatil and ajustable, then is necesary to deal with their parameters and options.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ freebayes -h
+</pre></div>
+</div>
+<p>Use FreeBayes to identify SNPs in the previous files.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ freebayes -f human_cambridge_reference_mito.fasta -b mito_yoruba_reads_pe1.sorted.bam  -v ./var_mito_yoruba_freebayes.vcf
+</pre></div>
+</div>
+<p>We have used the FreeBayes with the default configuration and our sample is haploid, run again with this parameter modified.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ freebayes -f human_cambridge_reference_mito.fasta -b mito_yoruba_reads_pe1.sorted.bam -p 1   -v ./var_mito_yoruba_freebayes_haplo.vcf
+</pre></div>
+</div>
+<p>It is posible improve the result with quality paramenters such as:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>-m –min-mapping-quality Q</dt><dd><p>Exclude alignments from analysis if they have a mapping
+quality less than Q.  default: 30</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>-q –min-base-quality Q</dt><dd><p>Exclude alleles from analysis if their supporting base
+quality is less than Q.  default: 20</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>-C –min-alternate-count N</dt><dd><p>Require at least this count of observations supporting
+an alternate allele within a single individual in order
+to evaluate the position.  default: 1</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Run now limiting to alternate alleles detected in three or more reads.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ freebayes -f human_cambridge_reference_mito.fasta -b mito_yoruba_reads_pe1.sorted.bam -p 1 -C 3  -v ./var_mito_yoruba_freebayes_haplo_reads3.vcf
+</pre></div>
+</div>
+</section>
+<section id="snp-calling-with-varscan">
+<h3>SNP calling with VarScan<a class="headerlink" href="#snp-calling-with-varscan" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="http://varscan.sourceforge.net/">VarsScan</a> is a SNP calling than works with more simple statistics that may be more robust in extreme read depth, pooled samples, and contaminated or impure samples. VarScan employs statistics based on thresholds for read depth, base quality, variant allele frequency, etc.</p>
+<p>First is necessary to change the alignement file from BAM to mpileuo format using samtools.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ samtools mpileup -f human_cambridge_reference_mito.fasta mito_yoruba_reads_pe1.sorted.bam &gt;mito_yoruba_reads_pe1.mpileup
+</pre></div>
+</div>
+<p>There are several programs in Varscan.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ varscan
+</pre></div>
+</div>
+<p>mpileup snp is the comand to identify SNPs, but it do not call indels.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ varscan mpileup2snp -h
+
+ngs_user@ngsmachine:~/snp_call$ varscan mpileup2snp mito_yoruba_reads_pe1.mpileup -output-vcf 1 &gt;var_mito_yoruba_varscan.vcf
+</pre></div>
+</div>
+<p>Using IGV, compare the mito_yoruba_haplo_reads3.vcf and mito_yoruba_snps.vcf files, why have  not VarScan detected SNPs called by Freebayes?. We have used this option by default.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">strand</span><span class="o">-</span><span class="nb">filter</span>       <span class="n">Ignore</span> <span class="n">variants</span> <span class="k">with</span> <span class="o">&gt;</span><span class="mi">90</span><span class="o">%</span> <span class="n">support</span> <span class="n">on</span> <span class="n">one</span> <span class="n">strand</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Look for SNPs without this strand filter.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">varscan</span> <span class="n">mpileup2snp</span> <span class="n">mito_yoruba_reads_pe1</span><span class="o">.</span><span class="n">mpileup</span> <span class="o">--</span><span class="n">strand</span><span class="o">-</span><span class="nb">filter</span> <span class="mi">0</span>  <span class="o">-</span><span class="n">output</span><span class="o">-</span><span class="n">vcf</span> <span class="mi">1</span> <span class="o">&gt;</span><span class="n">var_mito_yoruba_snps_varscan_not_filter_strand</span><span class="o">.</span><span class="n">vcf</span>
+</pre></div>
+</div>
+<p>What did happen with the mileup snps?. Detect the mistake on the command.</p>
+</section>
+<section id="snp-calling-using-calmd">
+<h3>SNP calling using calmd<a class="headerlink" href="#snp-calling-using-calmd" title="Permalink to this headline">¶</a></h3>
+<p>Use freebayes to identify snps in these <a class="reference download internal" download="" href="_downloads/e39b52a94ecf5ebc10db706fb17ad458/alignments.bam"><code class="xref download docutils literal notranslate"><span class="pre">Celegans</span> <span class="pre">alignments</span></code></a> against <a class="reference download internal" download="" href="_downloads/79185616fdfc37e971281a69d48adfc1/ref.fasta"><code class="xref download docutils literal notranslate"><span class="pre">this</span> <span class="pre">reference</span> <span class="pre">sequence</span></code></a>. Take into account that this bam file has not been processed by samtools calmd. Search for snps with pre calmd processed alignment file and with the post processed file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ samtools index alignments.bam
+
+ngs_user@ngsmachine:~/snp_call$ freebayes -f ref.fasta --min-base-quality 20  alignments.bam |bgzip &gt; alignments.vcf.gz
+
+ngs_user@ngsmachine:~/snp_call$ tabix -p vcf alignments.vcf.gz
+</pre></div>
+</div>
+<p>Now look for the snvs after procesing the alignment file with calmd</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ samtools calmd -Arb alignments.bam ref.fasta &gt; alignments.calmd.bam
+
+ngs_user@ngsmachine:~/snp_call$ samtools index alignments.calmd.bam
+
+ngs_user@ngsmachine:~/snp_call$ freebayes -f ref.fasta --min-base-quality 20  alignments.calmd.bam |bgzip &gt; alignments.calmd.vcf.gz
+
+ngs_user@ngsmachine:~/snp_call$ tabix -p vcf alignments.calmd.vcf.gz
+</pre></div>
+</div>
+<p>Look for the differences using IGV. Take a look at the position 7950020.</p>
+<p>If you load the bam files into IGV, can you see differences between them?</p>
+<p>One more thing: Have you looked at the mapq of the secuences? You can draw an histogram and have a look into it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ draw_mapq_hist alignments.calmd.bam -o  alignments.calmd.mapq.png
+</pre></div>
+</div>
+<p>Acording to the histogram, what minimum mapq would you use. Test some of them and look the results with igv.</p>
+</section>
+<section id="id9">
+<h3>SNP filtering<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>We have a <a class="reference download internal" download="" href="_downloads/ce3dfe1c084c24d74923fdf5ddb12f51/ril.vcf.gz"><code class="xref download docutils literal notranslate"><span class="pre">VCF</span> <span class="pre">file</span></code></a> from a RIL segregant population.</p>
+<p>SNP quality can be filtered with vcffilter, a program included in the freebayes distribution.</p>
+<p>Before using vcffilter the VCF file has to be indexed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tabix -p vcf ril.vcf.gz
+</pre></div>
+</div>
+<p>Now we can apply the quality filter using vcffilter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ vcffilter -f &quot;QUAL &gt; 10&quot; ril.vcf.gz | bgzip &gt; filtered.vcf.gz
+</pre></div>
+</div>
+<p>We can use also vcftools to filter and to do some statistics.</p>
+<p>Filter SNPs with quality minor than 10:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ vcftools --gzvcf ril.vcf.gz --recode --recode-INFO-all --minQ 10 --stdout | gzip -c &gt; ril_vcf_Q10only.vcf.gz
+</pre></div>
+</div>
+<p>Filter SNPs with more than 20% of missing data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ vcftools --gzvcf ril.vcf.gz --recode --recode-INFO-all --max-missing 0.8 --stdout |  gzip -c &gt; ril_vcf_0.8_missing.vcf.gz
+</pre></div>
+</div>
+<p>Select all SNPs in a determiante region:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ vcftools --gzvcf ril.vcf.gz --recode --recode-INFO-all --chr CP4_pseudomolecule00 --from-bp 161000 --to-bp 245000 --stdout |  gzip -c &gt; ril_vcf_candidate-region.vcf.gz
+</pre></div>
+</div>
+<p>Calculate the observed heterozygosity of all SNPs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ vcftools --gzvcf ril.vcf.gz   --het --out ril
+</pre></div>
+</div>
+<p>Calculate the SNP density:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ vcftools --gzvcf ril.vcf.gz   --SNPdensity 10000 --out ril
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="mapping.html">Mapping</a>-->
+                    <a class="prev" href="mapping.html" title="Mapping">previous</a>
+                    |
+                    <!--<a class="next" href="rnaseq.html">NGS expression analysis</a>-->
+                    <a class="next" href="rnaseq.html" title="NGS expression analysis">next</a>
+                    |
+
+                <a class="index" href="/courses/sequence_analysis/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

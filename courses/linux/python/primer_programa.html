@@ -1,0 +1,244 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Nuestro primer programa &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Control de flujo" href="control_de_flujo.html" />
+    <link rel="prev" title="Listas" href="listas.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Iniciación a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html#el-sistema-de-ficheros">El sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Listas</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_de_flujo.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html#sets">Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ficheros.html">Ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generadores.html">Generadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulos.html">Modulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biopython.html">Biopython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html">Ejercicios finales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html#soluciones">Soluciones</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="nuestro-primer-programa">
+<h1>Nuestro primer programa<a class="headerlink" href="#nuestro-primer-programa" title="Permalink to this headline">¶</a></h1>
+<p>Tal vez la mejor forma de aprender a programar sea haciéndolo, de modo que antes de explicar nada más sobre Python vamos a crear un programa que realice un análisis sencillo.
+En nuestro trabajo como biólogos una de las tareas más habituales consiste en leer unos datos, analizarlos y escribir el resultado.
+El proceso puede resumirse como:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Leer un fichero.</p></li>
+<li><p>Realizar un análisis con los datos leídos.</p></li>
+<li><p>Imprimir o escribir los resultados en un nuevo fichero o en la pantalla.</p></li>
+</ul>
+</div></blockquote>
+<p>Python dispone de métodos que permiten leer ficheros de una forma muy sencilla.
+Esto no es casual ya que una de las razones que convierten a Python en una buena elección para el procesamiento de datos biológicos es precisamente esta.</p>
+<p>El problema que queremos resolver deriva de un experimento de expresión génica.
+Con un <em>microarray</em> hemos determinado la intensidad de la expresión de una serie de genes.
+El experimento se ha repetido tres veces y en el fichero de resultado tenemos el resultado de las tres réplicas para todas las muestras.
+Nuestro objetivo es crear un nuevo fichero en el que cada muestra esté representada por una sola columna promedio.
+El fichero de resultados del experimento de expresión tiene el formato:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gen1</span> <span class="mf">1.2</span> <span class="mf">1.3</span> <span class="mf">1.4</span> <span class="mf">7.6</span> <span class="mf">6.5</span> <span class="mf">8.7</span>
+<span class="n">gen2</span> <span class="mf">4.5</span> <span class="mf">3.4</span> <span class="mf">3.9</span> <span class="mf">2.5</span> <span class="mf">3.2</span> <span class="mf">3.3</span>
+<span class="n">gen3</span> <span class="mf">9.6</span> <span class="mf">8.7</span> <span class="mf">8.3</span> <span class="mf">5.5</span> <span class="mf">5.4</span> <span class="mf">4.5</span>
+</pre></div>
+</div>
+<p>En cada línea hay tres tripletes de números que hemos de promediar.
+Para resolver el problema deberíamos escribir un programa que haga lo siguiente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Para</span> <span class="n">cada</span> <span class="n">línea</span> <span class="n">en</span> <span class="n">el</span> <span class="n">fichero</span><span class="p">:</span>
+  <span class="o">*</span> <span class="n">Dividir</span> <span class="n">la</span> <span class="n">línea</span> <span class="n">en</span> <span class="n">una</span> <span class="n">lista</span> <span class="n">de</span> <span class="n">varios</span> <span class="n">elementos</span>
+  <span class="o">*</span> <span class="n">Promediar</span> <span class="n">los</span> <span class="n">elementos</span> <span class="n">de</span> <span class="n">tres</span> <span class="n">en</span> <span class="n">tres</span>
+  <span class="o">*</span> <span class="n">Imprimir</span> <span class="n">el</span> <span class="n">resultado</span>
+</pre></div>
+</div>
+<p>El programa anterior consiste en una serie de acciones que deben ser ejecutadas secuencialmente.
+En primer lugar se ejecuta la primera línea, se pasa depués a la segunda y se continua secuencialmente hasta que el programa termina.</p>
+<p>Este pseudocódigo podríamos traducirlo a sentencias y funciones de Python casi línea por línea:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fichero</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;expresion.txt&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">fichero</span><span class="p">:</span>
+     <span class="n">elementos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+     <span class="n">gen</span> <span class="o">=</span> <span class="n">elementos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+     <span class="n">media1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> <span class="o">/</span> <span class="mf">3.0</span>
+     <span class="n">media2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">6</span><span class="p">]))</span> <span class="o">/</span> <span class="mf">3.0</span>
+     <span class="nb">print</span> <span class="n">gen</span><span class="p">,</span> <span class="n">media1</span><span class="p">,</span> <span class="n">media2</span>
+</pre></div>
+</div>
+<p>Veamos cual es la función de cada una de las líneas de este pequeño programa.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fichero</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;expresion.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>En esta línea se abre el fichero de texto con la función <em>open</em> para más tarde poder leer las líneas que en él hay contenidas.
+Una vez abierto el objeto fichero queda listo para leer líneas en él de forma secuencial.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">fichero</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>La sentencia <em>for</em> podría traducirse como <em>para cada</em>, en este caso “para cada línea en el fichero” realizar las siguientes acciones.
+En casi todos los lenguajes de programación hay sentencias <em>for</em> similares a esta.
+Una vez el programa llega a este punto entra en un bucle que se repetirá tantas veces como elementos haya disponibles para el <em>for</em>.
+En ese caso el bucle se repetirá para cada una de las líneas.</p>
+<p>La serie de acciones a realizar para cada una de las líneas se especifican en las líneas siguentes.
+¿Cómo sabe Python cuáles de las líneas siguientes son las que deben ser aplicadas a cada una de las líneas que la sentencia <em>for</em> obtenga? Por la indentación.
+En Python la indentación tiene un significado sintáctico, las líneas con una misma indentación pertenecen a un mismo bloque del programa.
+En el ejemplo que nos ocupa las cinco siguientes líneas al <em>for</em> están indentadas con cuatro espacios extra.
+Python interpreta esta indentación como que estas cuatro líneas deben ser ejecutadas en cada una de las iteraciones del bucle.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">elementos</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>La línea que es una cadena de texto terminada en un retorno de carro se divide en una lista de cadena de texto.
+Para cada línea se obtendrá una lista de los elementos que se encuentren separados por espacios.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gen</span> <span class="o">=</span> <span class="n">elementos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>El nombre del gen, presente en la el primer elmento de la lista, se guarda en la variable gen.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">media1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> <span class="o">/</span> <span class="mf">3.0</span>
+<span class="n">media2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="mi">6</span><span class="p">]))</span> <span class="o">/</span> <span class="mf">3.0</span>
+</pre></div>
+</div>
+<p>Calculamos la media de los elementos correspondientes a la primera y la segunda muestras.
+Dado que las líneas del texto se han leido como cadenas de texto para poder sumarlas debemos primero convertirlas en números con coma flotante (<em>float</em>).</p>
+<p>Debemos tener la precaución, cuando hagamos divisiones en Python 2.x, de recordar que si tanto el dividendo como el divisor son enteros la división arrojará un resultado entero.
+En este caso tanto el dividendo como el divisor son <em>float</em> por lo que esto no sucederá.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="n">gen</span><span class="p">,</span> <span class="n">media1</span><span class="p">,</span> <span class="n">media2</span>
+</pre></div>
+</div>
+<p>Por último, para cada línea imprimimos el resultado utilizando la sentencia <em>print</em>.
+<em>print</em> escribe en la salida estándar (<em>standard output</em>).
+Si damos a <em>print</em> varios elementos para imprimir introducirá una espacio para separar cada pareja.
+Además <em>print</em> añadirá un retorno de carro tras imprimir todos los elmentos con lo que todo quedará listo para imprimir una nueva línea.</p>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="listas.html">Listas</a>-->
+                    <a class="prev" href="listas.html" title="Listas">previous</a>
+                    |
+                    <!--<a class="next" href="control_de_flujo.html">Control de flujo</a>-->
+                    <a class="next" href="control_de_flujo.html" title="Control de flujo">next</a>
+                    |
+
+                <a class="index" href="/courses/linux/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

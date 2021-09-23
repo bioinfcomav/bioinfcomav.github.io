@@ -1,0 +1,760 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>La Shell the UNIX &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Procesamiento de ficheros de texto" href="procesamiento_texto.html" />
+    <link rel="prev" title="Iniciación a Ubuntu" href="ubuntu.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Iniciación a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#el-sistema-de-ficheros">El sistema de ficheros</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#nombres-de-directorios-y-archivos">Nombres de directorios y archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#el-directorio-de-trabajo">El directorio de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#permisos">Permisos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rutas-relativas-y-absolutas">Rutas relativas y absolutas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#moviendo-renombrando-y-copiando-ficheros">Moviendo, renombrando y copiando ficheros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wildcards">WildCards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#obteniendo-informacion-sobre-el-sistema-de-archivos">Obteniendo información sobre el sistema de archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#completado-automatico-e-historia">Completado automático e historia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#donde-estan-los-ejecutables-path">¿Donde están los ejecutables? $PATH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipes">Pipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soluciones">Soluciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#otras-herramientas">Otras herramientas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bibliografia">Bibliografía</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/introduccion.html">Introducción a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/control_de_flujo.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/estructuras_de_datos.html#sets">Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/ficheros.html">Ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/generadores.html">Generadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/modulos.html">Modulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/biopython.html">Biopython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html">Ejercicios finales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html#soluciones">Soluciones</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="la-shell-the-unix">
+<h1>La Shell the UNIX<a class="headerlink" href="#la-shell-the-unix" title="Permalink to this headline">¶</a></h1>
+<p>La Shell es un interprete de comandos.
+Es simplemente un modo alternativo de controlar un ordenador basado en una interfaz de texto.
+Podemos pedirle al ordenador que ejecute un programa o que nos proporcione una información mediante el ratón ciclando en distintos lugares del escritorio o podemos escribir una orden para conseguir el mismo objetivo.
+Por ejemplo, para pedirle al ordenador que nos de una lista de los archivos presentes en un directorio podemos abrir un navegador de archivos o podemos escribir en la shell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls folder_name
+file_1.txt
+file_2.txt
+</pre></div>
+</div>
+<p>Ninguna de las dos formas de comunicarse con el ordenador es mejor que la otra aunque en ciertas ocasiones puede resultar más conveniente utilizar una u otra, aunque algunos individuos de luenga barba comentan que los hombres de verdad usan la línea de comandos.
+Las ventajas de la línea de comandos son:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Flexibilidad. Los programas gráficos suelen ser muy adecuados para realizar la tarea para la que han sido creados, pero son difíciles de adaptar para otras tareas. La línea de comandos de Unix es por el contrario muy flexible puesto que está formada por pequeñas herramientas que podemos combinar según nuestras necesidades.</p></li>
+<li><p>Reproducibilidad. Documentar y repetir el proceso seguido para realizar un análisis con un programa gráfico es muy costoso puesto que es difícil describir la secuencia de clicks y doble clicks que hemos realizado. Por el contrario, los procesos realizados mediante la línea de comandos son muy fáciles de documentar puesto que tan sólo debemos guardar el texto que hemos introducido en la pantalla.</p></li>
+<li><p>Fiabilidad. Los programas básicos de Unix fueron creados en los años 70 y han sido probados por innumerables usuarios por lo que se han convertido en piezas de código extraordinariamente confiables.</p></li>
+<li><p>Necesidad. Hay aplicaciones que sólo pueden utilizarse mediante la línea de comandos.</p></li>
+<li><p>Velocidad. Las interfaces gráficas suelen consumir muchos recursos mientras que los programas que funcionan en línea de comandos suelen ser extraordinariamente livianos y rápidos.</p></li>
+</ul>
+</div></blockquote>
+<p>Para usar la línea de comandos hay que abrir una terminal.
+Se abrirá una terminal con un mensaje similar a:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>usuario $
+</pre></div>
+</div>
+<p>Este pequeño mensaje se denomina <em>prompt</em> y el cursor parpadeante que aparece junto al él indica que el ordenador está esperando una orden.
+El mensaje exacto que aparece en el <em>prompt</em> puede variar ligeramente, pero en Ubuntu suele ser similar a:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>usuario@ordenador:~/documentos$
+</pre></div>
+</div>
+<p>En el <em>prompt</em> de Ubuntu se nos muestra el nombre del usuario, el nombre del ordenador y el directorio en el que nos encontramos actualmente, es decir, el directorio de trabajo actual.</p>
+<p>Cuando el <em>prompt</em> se muestra podemos ejecutar cualquier cosa, por ejemplo le podemos pedir que liste los ficheros mediante el comando <em>ls</em> (LiSt):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>usuario $ ls
+lista_libros.txt
+rectas_cocina/
+</pre></div>
+</div>
+<p><em>ls</em>, como cualquier otro comando, es en realidad un programa que el ordenador ejecuta.
+Cuando escribimos la orden (y pulsamos enter) el programa se ejecuta.
+Mientras el programa está ejecutándose el <em>prompt</em> desaparece y no podemos ejecutar ningún otro comando.
+Pasado el tiempo el programa termina su ejecución y el <em>prompt</em> vuelve a aparecer.
+En el caso del comando <em>ls</em> el tiempo de ejecución es tan pequeño que suele ser imperceptible.</p>
+<p>Los programas suelen tener unas entradas y unas salidas.
+Dependiendo del caso estas pueden ser ficheros o caracteres introducidos o impresos en la pantalla.
+Por ejemplo, el resultado de <em>ls</em> es simplemente una lista impresa de ficheros y directorios en la interfaz de comandos.</p>
+<p>Normalmente el comportamiento de los programas puede ser modificado pasándoles parámetros.
+Por ejemplo, podríamos pedirle al programa <em>ls</em> que nos imprima una lista de ficheros más detallada escribiendo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -l
+</pre></div>
+</div>
+<p>Cada comando tiene unos parámetros y opciones distintos.
+La forma estándar de pedirles que nos enseñen cuales son estos parámetros suele ser utilizar las opciones ‘–help’ o ‘-h’, aunque esto puede variar en comandos no estándar.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls --help
+Modo de empleo: ls [OPCIÓN]... [FICHERO]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort.
+</pre></div>
+</div>
+<p>Otro modo de acceder a una documentación más detallada es acceder al manual del programa utilizando el comando <em>man</em> (MANual):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ man ls
+(para terminar pulsar &quot;q&quot;)
+</pre></div>
+</div>
+<p><em>man</em> no es como <em>ls</em>, man es un programa interactivo, cuando ejecutamos el comando el programa se abre y el <em>prompt</em> desaparece.
+<em>man</em> es en realidad un visor de ficheros de texto por lo que cuando lo ejecutamos la pantalla se rellena con la ayuda del programa que hemos solicitado.
+Podemos ir hacia abajo o hacia arriba y podemos buscar en el contenido de la ayuda.
+El <em>prompt</em> y la posibilidad de ejecutar otro programa no volverán a aparecer hasta que no cerremos el programa interactivo.
+En el caso de man para cerrar el programa hay que pulsar la tecla “q”.</p>
+</section>
+<section id="el-sistema-de-ficheros">
+<h1>El sistema de ficheros<a class="headerlink" href="#el-sistema-de-ficheros" title="Permalink to this headline">¶</a></h1>
+<p>En un ordenador los archivos almacenados se organizan en directorios formando el sistema de ficheros.
+Estos directorios guardan una relación jerárquica, por ejemplo los directorios documentos y datos puede que se encuentre dentro del directorio juan.
+Esta relación se representa como:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">juan</span><span class="o">/</span><span class="n">documentos</span>
+<span class="n">juan</span><span class="o">/</span><span class="n">datos</span>
+</pre></div>
+</div>
+<p>En algunos sistemas operativos no UNIX la barra se escribe al revés “\”, a pesar de que la convención siempre fue la contraria.</p>
+<p>En Unix todos los directorios cuelgan de un único directorio raíz (root), incluso aunque haya distintos discos duros en el ordenador.
+El símbolo del directorio raíz es la barra “/”.</p>
+<p>En el directorio raíz hay diversos directorios que, en la mayoría de los casos, sólo deberían interesarnos si estamos administrando el ordenador.
+Los usuarios normalmente sólo escriben dentro de un directorio de su propiedad localizado dentro de /home y denominado como su nombre de usuario.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls /home
+alicia juan
+</pre></div>
+</div>
+<section id="nombres-de-directorios-y-archivos">
+<h2>Nombres de directorios y archivos<a class="headerlink" href="#nombres-de-directorios-y-archivos" title="Permalink to this headline">¶</a></h2>
+<p>En Unix los archivos pueden tener prácticamente cualquier nombre.
+Existe la convención de acabar los nombres con un punto y una pequeña extensión que indica el tipo de archivo.
+Pero esto es sólo una convención, en realidad podríamos no utilizar este tipo de nomenclatura.</p>
+<p>Si deseamos utilizar nombres de archivos que no vayan a causar extraños comportamientos en el futuro lo mejor sería seguir unas cuantas reglas al nombrar un archivo:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Añadir una extensión para recordarnos el tipo de archivo, por ejemplo .txt para los archivos de texto.</p></li>
+<li><dl class="simple">
+<dt>No utilizar en los nombres:</dt><dd><ul>
+<li><p>espacios,</p></li>
+<li><p>caracteres no alfanuméricos,</p></li>
+<li><p>ni caracteres no ingleses como letras acentuadas o eñes.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>Por supuesto, podríamos crear un archivo denominado “$ñ 1.txt” para referirnos a un archivo de sonido, pero esto conllevaría una sería de problemas que aunque son solventables nos dificultarán el trabajo.</p>
+<p>Además es importante recordar que en Unix las mayúsculas y las minúsculas no son lo mismo.
+Los ficheros “documento.txt”, “Documento.txt” y “DOCUMENTO.TXT” son tres ficheros distintos.</p>
+<p>Otra convención utilizada en los sistema Unix es la de ocultar los archivos cuyos nombres comienzan por punto “.”.
+Por ejemplo el archivo “.oculto” no aparecerá normalmente cuando pedimos el listado de un directorio.
+Esto se utiliza normalmente para guardar archivos de configuración que no suelen ser utilizados directamente por los usuarios.
+Para listar todos los archivos (All), ya sean éstos ocultos o no se puede ejecutar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -a
+.               .fontconfig          .HyperTree           .pki
+..               fsm.jpg              .ICEauthority        .recently-used
+</pre></div>
+</div>
+<p>Esta convención de ocultar los ficheros cuyo nombre comienza por un punto se mantiene también en el navegador gráfico de ficheros.
+En este caso podemos pedir que se muestren estos archivos en el menú Ver -&gt; Mostrar los archivos ocultos.</p>
+<p>Para acelerar el acceso a ciertos directorios existen algunos nombres especiales que son bastante útiles:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="s2">&quot;..&quot;</span> <span class="n">indica</span> <span class="n">el</span> <span class="n">directorio</span> <span class="n">padre</span> <span class="k">del</span> <span class="n">directorio</span> <span class="n">actual</span>
+<span class="o">*</span> <span class="s2">&quot;.&quot;</span> <span class="n">indica</span> <span class="n">el</span> <span class="n">directorio</span> <span class="n">actual</span>
+<span class="o">*</span> <span class="s2">&quot;~&quot;</span> <span class="n">representa</span> <span class="n">el</span> <span class="n">directorio</span> <span class="k">del</span> <span class="n">usuario</span>
+</pre></div>
+</div>
+</section>
+<section id="el-directorio-de-trabajo">
+<h2>El directorio de trabajo<a class="headerlink" href="#el-directorio-de-trabajo" title="Permalink to this headline">¶</a></h2>
+<p>Muchos de los comandos que vamos a utilizar procesan archivos.
+Para referirnos a estos archivos deberíamos indicar en qué directorio se encuentran, pero existe la convención de asumir que los archivos se encuentran en el directorio de trabajo mientras no se indique lo contrario.
+El directorio de trabajo es el directorio en el que nos encontramos en el momento actual.
+Siempre que estemos en la línea de comandos estaremos situados dentro de un directorio de trabajo.</p>
+<p>Por ejemplo, cuando abrimos un nuevo terminal el directorio de trabajo se sitúa en /home/nombre_de_usuario.
+Si ejecutamos el comando <em>ls</em>, el programa asumirá que queremos listar los archivos presentes en ese directorio y no en otro cualquiera.
+Existe un comando que nos informa sobre el directorio de trabajo actual, pwd (Print Working Directory):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
+/home/jose
+</pre></div>
+</div>
+<p>Si deseamos podemos modificar el directorio de trabajo “moviéndonos” a otro directorio.
+Para lograrlo hay que utilizar el comando <em>cd</em> (Change Directory):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd documentos
+$ pwd
+/home/jose/documentos
+</pre></div>
+</div>
+<p>A partir de ese momento los comandos asumirán que si no se les indica lo contrario el directorio en el que deben trabajar es /home/jose/documentos.</p>
+<p>El comando <em>cd</em> acepta además de nombres de directorios algunos otros parámetros:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">..</span>   <span class="n">Ir</span> <span class="n">al</span> <span class="n">directorio</span> <span class="n">padre</span> <span class="k">del</span> <span class="n">actual</span><span class="o">.</span>
+<span class="n">cd</span>      <span class="n">Ir</span> <span class="n">al</span> <span class="n">directorio</span> <span class="n">HOME</span> <span class="k">del</span> <span class="n">usuario</span><span class="o">.</span>
+<span class="n">cd</span> <span class="o">-</span>    <span class="n">Ir</span> <span class="n">al</span> <span class="n">anterior</span> <span class="n">directorio</span> <span class="n">de</span> <span class="n">trabajo</span>
+</pre></div>
+</div>
+</section>
+<section id="permisos">
+<h2>Permisos<a class="headerlink" href="#permisos" title="Permalink to this headline">¶</a></h2>
+<p>Unix desde su origen ha sido un sistema multiusuario.
+Para conseguir que cada usuario pueda trabajar en sus archivos, pero que no pueda interferir accidental o deliberadamente con los archivos de otros usuarios se estableció desde el principio un sistema de permisos y privilegios.
+Por defecto un usuario tiene permiso para leer y modificar sus propios archivos y directorios, pero no los de los demás.
+En los sistemas Unix los ficheros pertenecen a un usuario concreto y existen unos permisos diferenciados para este usuario y para el resto.
+Además el usuario pertenece a un grupo de trabajo.
+Por ejemplo, el usuario Pepe puede pertenecer al grupo de trabajo “diagnostico”.
+Si Pepe crea un fichero este tendrá unos permisos diferentes para Pepe, para el resto de miembros de su grupo y para el resto de usuarios del ordenador.
+Podemos ver los permisos asociados a los ficheros utilizando el comando <em>ls</em> con la opción -l (Long):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls -l
+total 7324
+-rw-r--r-- 1 usuario diagnostico    1059 Oct 20 12:42 busqueda_leukemia_100.txt
+-rw-r--r-- 1 usuario diagnostico       0 Oct 13 10:53 datos_1.txt
+drwxr-xr-x 2 usuario diagnostico    4096 Oct 13 10:29 experimento
+</pre></div>
+</div>
+<p>En este caso los dos ficheros listados pertenecen al usuario llamado usuario y al grupo diagnostico.
+Los permisos asignados al usuario, a los miembros del grupo y al resto de usuarios están resumidos en la primeras letras de cada línea:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">drwxr</span><span class="o">-</span><span class="n">x</span><span class="o">---</span>
+</pre></div>
+</div>
+<p>La primera letra indica el tipo de fichero listado: (d) directorio, (-) fichero u otro tipo especial.
+Las siguientes nueve letras muestran, en grupos de tres, los permisos para el usuario, para el grupo y para el resto de usuarios del ordenador.
+Cada grupo de tres letras indica los permisos de lectura (Read), escritura (Write) y ejecución (eXecute).
+En el caso anterior el usuario tiene permiso de lectura, escritura y ejecución (rwx), el grupo tiene permiso de lectura y ejecución (r-x), es decir no puede modificar el fichero o el directorio, y el resto de usuarios no tienen ningún permiso (—).</p>
+<p>En los ficheros normales el permiso de lectura indica si el fichero puede ser leído, el de escritura si puede ser modificado y el de ejecución si puede ser ejecutado.
+En el caso de los directorios el de escritura indica si podemos añadir o borrar ficheros del directorio y el de ejecución si podemos listar los contenidos del directorio.</p>
+<p>Estos permisos pueden ser modificados con la orden <em>chmod</em>.</p>
+</section>
+<section id="rutas-relativas-y-absolutas">
+<h2>Rutas relativas y absolutas<a class="headerlink" href="#rutas-relativas-y-absolutas" title="Permalink to this headline">¶</a></h2>
+<p>Las rutas de los directorios pueden comenzar por barra o no.
+Una ruta que comienza por barra, como /home/jose/, es absoluta porque se refiere al directorio raíz.
+Significa: ves al directorio raíz, desciende primero a home y después a jose.</p>
+<p>Si por el contrario utilizamos una ruta que no comienza por barra estamos definiendo una ruta relativa al directorio de trabajo actual.
+Por ejemplo “documentos/2009” implica que debemos ir al subdirectorio documentos del directorio actual y después movernos al subdirectorio 2009.
+Si nos encontrásemos al ejecutar la orden en el directorio /home/jose/trabajo acabaríamos en /home/jose/trabajo/documentos/2009.</p>
+</section>
+<section id="moviendo-renombrando-y-copiando-ficheros">
+<h2>Moviendo, renombrando y copiando ficheros<a class="headerlink" href="#moviendo-renombrando-y-copiando-ficheros" title="Permalink to this headline">¶</a></h2>
+<p>En primer lugar vamos a crear un fichero de prueba:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ touch data.txt
+~$ ls
+data.txt
+</pre></div>
+</div>
+<p>El comando <em>touch</em> en este caso ha creado un fichero vacío.</p>
+<p>Los ficheros se copian con el comando <em>cp</em> (CoPy):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cp data.txt data.bak.txt
+~$ ls
+data.bak.txt  data.txt
+</pre></div>
+</div>
+<p>Se mueven y renombran con el <em>mv</em> (MoVe):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ mv data.txt experimento_1.txt
+~$ ls
+data.bak.txt  experimento_1.txt
+</pre></div>
+</div>
+<p>Para crear un nuevo directorio podemos utilizar la orden <em>mkdir</em> (MaKeDIRectory):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ mkdir exp_1
+~$ ls
+data.bak.txt  exp_1  experimento_1.txt
+</pre></div>
+</div>
+<p><em>mv</em> también sirve para mover ficheros entre directorios:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ mv experimento_1.txt exp_1/
+~$ ls
+data.bak.txt  exp_1
+~$ ls exp_1/
+experimento_1.txt
+</pre></div>
+</div>
+<p>Los ficheros se eliminan con la orden <em>rm</em> (ReMove):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ rm data.bak.txt
+~$ ls
+exp_1
+</pre></div>
+</div>
+<p>En la línea de comandos de los sistemas Unix cuando se borra un fichero se borra definitivamente, no hay papelera.
+Una vez ejecutado el <em>rm</em> no podremos recuperar el archivo.</p>
+<p>Los comandos <em>cp</em> y <em>rm</em> no funcionarán bien con los directorios a no ser que modifiquemos el comportamiento que muestran por defecto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ rm exp_1/
+rm: cannot remove `exp_1/&#39;: Is a directory
+~$ cp exp_1/ exp_1_bak/
+cp: omitting directory `exp_1/&#39;
+</pre></div>
+</div>
+<p>Esto sucede porque para copiar o borrar un directorio hay que copiar o borrar todos sus contenidos recursivamente y esto podría alterar muchos datos con un sólo comando.
+Por esta razón se exige que estos dos comandos incluyan un modificador que les indique que sí deben funcionar recursivamente cuando tratan con directorios:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cp -r exp_1/ exp_1_bak/
+~$ ls
+exp_1  exp_1_bak
+~$ rm -r exp_1_bak/
+~$ ls
+exp_1
+</pre></div>
+</div>
+</section>
+<section id="wildcards">
+<h2>WildCards<a class="headerlink" href="#wildcards" title="Permalink to this headline">¶</a></h2>
+<p>En muchas ocasiones resulta útil tratar los ficheros de un modo conjunto.
+Por ejemplo, imaginemos que queremos mover todos los ficheros de texto a un directorio y la imágenes a otro.
+Creemos una pequeña demostración:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ touch exp_1a.txt
+~$ touch exp_1b.txt
+~$ touch exp_1b.jpg
+~$ touch exp_1a.jpg
+~$ ls
+exp_1  exp_1a.jpg  exp_1a.txt  exp_1b.jpg  exp_1b.txt
+</pre></div>
+</div>
+<p>Podemos referirnos a todos los archivos que acaban en txt utilizando un asterisco:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ mv *txt exp_1
+~$ ls
+exp_1  exp_1a.jpg  exp_1b.jpg
+</pre></div>
+</div>
+<p>El asterisco sustituye a cualquier texto, por lo que al escribir *txt incluimos a cualquier fichero que tenga un nombre cualquiera, pero que termine con las letras txt.
+Podríamos por ejemplo referirnos a los ficheros del experimento 1a:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls *1a*
+exp_1a.jpg
+</pre></div>
+</div>
+<p>Esta herramienta es muy potente y útil, pero tenemos que tener cuidado con ella, sobre todo cuando la combinamos con <em>rm</em>.
+Por ejemplo la orden:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm -r *
+</pre></div>
+</div>
+<p>Borraría todos los ficheros y directorios, si lo hacemos perderemos todos los ficheros y directorios que cuelgan del actual directorio de trabajo, puede que esto sea lo que queramos, pero hemos de andar con cuidado.</p>
+</section>
+<section id="obteniendo-informacion-sobre-el-sistema-de-archivos">
+<h2>Obteniendo información sobre el sistema de archivos<a class="headerlink" href="#obteniendo-informacion-sobre-el-sistema-de-archivos" title="Permalink to this headline">¶</a></h2>
+<p><em>ls</em> es un comando capaz de mostrarnos información extra sobre los archivos y directorios que lista.
+Por ejemplo podemos pedirle, usando la opción <em>-l</em> (Long),  que nos muestre quién es el dueño del archivo y cuanto ocupa y qué permisos tiene además de otras cosas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls
+exp_1
+~$ ls -l
+total 4
+drwxr-xr-x 2 usuario usuario 4096 Oct 13 09:48 exp_1
+</pre></div>
+</div>
+<p>La información sobre la cantidad de disco ocupada la da por defecto en bytes, si la queremos en un formato más inteligible podemos utilizar la opción <em>-h</em> (Human):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls -lh
+total 4.0K
+drwxr-xr-x 2 usuario usuario 4.0K Oct 13 09:48 exp_1
+</pre></div>
+</div>
+<p>Otros comandos útiles para conocer como está el sistema de archivos son <em>df</em> (Disk Free) y <em>du</em> (Disk Usage) que nos informan sobre como de llenos están los sistemas de archivos (como por ejemplo particiones del disco duro) y sobre cuando ocupan determinados ficheros o directorios.</p>
+</section>
+<section id="completado-automatico-e-historia">
+<h2>Completado automático e historia<a class="headerlink" href="#completado-automatico-e-historia" title="Permalink to this headline">¶</a></h2>
+<p>El intérprete de comandos dispone de algunas utilidades para facilitarnos su uso.
+Una de las más utilizadas es el completado automático.
+Podemos evitarnos escribir una gran parte de los comandos haciendo uso de la tecla tabulador.
+Si empezamos a escribir un comando y pulsamos la tecla tabulador el sistema completará el comando por nosotros.
+Para probarlo creemos los ficheros datos_1.txt, datos_2.txt y tesis.txt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ touch datos_1.txt
+~$ touch datos_2.txt
+~$ touch experimento.txt
+</pre></div>
+</div>
+<p>Si ahora empezamos a escribir <em>cp e</em> y pulsamos el tabulador dos veces, el intérprete de comandos completará el comando automáticamente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cp e
+~$ cp experimento.txt
+</pre></div>
+</div>
+<p>Si el intérprete encuentra varias alternativas completará el comando hasta el punto en el que no haya ambigüedad.
+Si deseamos que imprima una lista de todas las alternativas disponibles para continuar con el comando deberemos pulsar el tabulador dos veces.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cp d
+~$ cp datos_
+datos_1.txt  datos_2.txt
+~$ cp datos_
+</pre></div>
+</div>
+<p>Otra de las funcionalidades que más nos pueden ayudar es la historia.
+El intérprete recuerda todos los comandos que hemos introducido anteriormente.
+Si queremos podemos obtener una lista de todo lo que hemos ejecutado utilizando el comando history.
+Pero lo más socorrido es simplemente utilizar los cursores arriba y abajo para revisar los comandos anteriores.
+Otra forma de acceder a la historia es utilizar la combinación de teclas control y r.
+De este modo podemos buscar comandos antiguos sencillamente.</p>
+</section>
+<section id="donde-estan-los-ejecutables-path">
+<h2>¿Donde están los ejecutables? $PATH<a class="headerlink" href="#donde-estan-los-ejecutables-path" title="Permalink to this headline">¶</a></h2>
+<p>Cuando entramos en la <em>shell</em> y ejecutamos un programa la <em>shell</em> ha de saber dónde encontrar el ejecutable correspondiente a ese comando.
+Este ejecutable es un fichero con el mismo nombre que hemos escrito en la <em>shell</em> y que tiene el permiso de ejecución activado.
+Por ejemplo el ejecutable del comando <em>cp</em> es:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls -l /bin/cp
+-rwxr-xr-x 1 root root 109648 2010-09-21 20:32 /bin/cp
+</pre></div>
+</div>
+<p>En este caso el fichero /bin/cp es un ejecutable que pertenece al usuario root, pero que todo el mundo puede leer y ejecutar y que se encuentra en el directorio /bin.
+Dado que el comando <em>cp</em> es simplemente un fichero ejecutable en bin para utilizarlo deberíamos haber escrito su ruta completa:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ /bin/cp fichero1.txt fichero2.bak
+</pre></div>
+</div>
+<p>Aunque podríamos haber ejecutado el comando de ese modo nunca lo hemos hecho.
+De alguna forma la <em>shell</em> ha sabido encontrar el comando <em>cp</em> en el directorio /bin a pesar de que no se lo hemos dicho.</p>
+<p>Cuando intentamos ejecutar un comando lo que la <em>shell</em> hace es buscar el fichero ejecutable correspondiente en una lista de directorios que se encuentra almacenada en una variable de entorno denominada $PATH.
+Podemos imprimir esta lista utilizado el comando <em>echo</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+</pre></div>
+</div>
+<p>En el ejemplo mostrado al escribir un comando en la <em>shell</em>, ésta lo buscará primero en el directorio /usr/local/sbin, después en /usr/local/bin y así sucesivamente hasta que lo encuentre en alguno de los directorios del $PATH.
+Si el comando no se encuentra la <em>shell</em> devolverá un error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ hola
+No se ha encontrado la orden «hola», quizás quiso decir:
+ La orden «cola» del paquete «git-cola» (universe)
+hola: orden no encontrada
+</pre></div>
+</div>
+<p>Cuando intentemos ejecutar programas creados por nosotros mismos o descargados desde algún lugar deberemos tener este detalle en cuenta.
+Por ejemplo, si descargamos un ejecutable llamado hola_mundo y después intentamos ejecutarlo, la <em>shell</em> no lo encontrará:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls
+hola_mundo
+~$ hola_mundo
+No se ha encontrado la orden «hola», quizás quiso decir:
+ La orden «cola» del paquete «git-cola» (universe)
+hola_mundo: orden no encontrada
+</pre></div>
+</div>
+<p>La <em>shell</em> no lo encuentra porque el directorio de trabajo (“.”) no está incluido en el PATH.
+Podríamos ejecutar el comando si le indicamos a la <em>shell</em> la ruta en la que se encuentra el comando:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ /home/usuario/hola_mundo
+Hola mundo!
+</pre></div>
+</div>
+<p>También podríamos utilizar una ruta relativa:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ./hola_mundo
+Hola mundo!
+</pre></div>
+</div>
+</section>
+<section id="pipes">
+<h2>Pipes<a class="headerlink" href="#pipes" title="Permalink to this headline">¶</a></h2>
+<p>Un programa en línea de comandos, además de poder leer y escribir en algunos ficheros, toma unos argumentos como entrada, realiza una tarea e imprime una salida en la pantalla.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/cli_program.png"><img alt="../_images/cli_program.png" class="align-center" src="../_images/cli_program.png" style="width: 450px;" /></a>
+</div></blockquote>
+<p>Por ejemplo, si ejecutamos el comando <em>ls</em> se imprime un listado en la pantalla.
+Este programa está creando un flujo de información, el listado, que acaba siendo imprimido en la pantalla.
+Este flujo de información puede ser redirigido para que no se imprima y se pierda sino que se guarde en un fichero:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls &gt; listado.txt
+~$ ls
+listado.txt
+</pre></div>
+</div>
+<p>Para redirigir el flujo de información desde la pantalla a un fichero no necesitamos más que utilizar el símbolo <em>&gt;</em> seguido del nombre de un fichero.
+Si lo hacemos se creará un nuevo fichero y en él se escribirá lo que estaba destinado a la pantalla.
+En el caso de que el fichero de salida exista previamente será eliminado y vuelto a crear.
+Podríamos añadir contenidos al fichero antiguo sin borrarlo utilizando dos veces el símbolo mayor que <em>&gt;&gt;</em>.</p>
+<p>Podemos ver los contenidos del fichero que hemos creado con el comando <em>cat</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cat listado.txt
+datos_1.txt
+datos_2.txt
+</pre></div>
+</div>
+<p>Lo que hemos hecho se denomina técnicamente redirigir el <em>standard output</em>.
+En realidad no todo lo que acaba en la pantalla forma parte del <em>standard output</em> puesto que también hay otro flujo denominado <em>standard error</em> que los programas suelen utilizar cuando detectan un fallo.
+Normalmente no nos daremos cuenta de la diferencia entre ambos flujos porque ambos se imprimen en la pantalla, pero sus redirecciones son independientes.</p>
+<p>En Unix además de redirigir los flujos de información hacia un fichero podemos unir el flujo de salida de un programa con el de entrada de otro utilizando un <em>pipe</em> (tubería).
+El símbolo para el pipe es <em>|</em>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/pipe.png"><img alt="../_images/pipe.png" class="align-center" src="../_images/pipe.png" style="width: 450px;" /></a>
+</div></blockquote>
+<p>Hagamos un ejemplo con los comandos <em>wc</em> (Word Count) y <em>cat</em>.
+<em>wc</em> sirve para contar líneas, palabras y caracteres.
+Veamos cuantas líneas hay en el listado que habíamos creado:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ wc listado.txt
+ 7  7 80 listado.txt
+</pre></div>
+</div>
+<p>Podríamos hacer lo mismo en un solo paso utilizando una pipe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls | wc
+    7       7      80
+</pre></div>
+</div>
+<p>En este caso la salida del comando <em>ls</em> ha sido redirigida a la entrada del comando <em>wc</em>.
+Esta técnica es una de las grandes fortalezas de los sistemas Unix ya que permite enlazar comandos sencillos para realizar tareas complejas y vamos a utilizarla ampliamente durante el curso.
+Esta técnica posibilita, entre otras cosas, el procesamiento de los ficheros de texto de una forma potente y sencilla.</p>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>¿Cuáles son los ficheros y directorios presentes en el directorio raíz?</p></li>
+<li><p>¿Cuáles son los permisos de los directorios presentes en el directorio raíz y en nuestro directorio de usuario? ¿A quién pertenecen los ficheros y qué permisos tienen los distintos usuarios del ordenador?</p></li>
+<li><p>¿Cuáles son todos los archivos presentes en nuestro directorio de usuario?</p></li>
+<li><p>Crea un directorio llamado experimento.</p></li>
+<li><p>Crea con touch los archivos datos1.txt y datos2.txt dentro del directorio experimento.</p></li>
+<li><p>Vuelve al directorio principal de tu usuario y desde allí lista los archivos presentes en el directorio experimento.</p></li>
+<li><p>Borra todos los archivos que contengan un 2 en el directorio experimento.</p></li>
+<li><p>Copia el directorio experimento a un nuevo directorio llamado exp_seguridad.</p></li>
+<li><p>Borra el directorio experimento.</p></li>
+<li><p>Renombra el directorio exp_seguridad a experimento.</p></li>
+<li><p>Ultimo fichero modificado en el directorio /etc.</p></li>
+<li><p>Crear dos ficheros de texto con el editor de texto gedit y en la linea de comando crear un fichero nuevo con el contenido de los dos ficheros.</p></li>
+<li><p>Crea un directorio en tu home y muestra los permisos que tiene.</p></li>
+</ol>
+</section>
+<section id="soluciones">
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>¿Cuáles son los ficheros y directorios presentes en el directorio raíz?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls /
+bin    dev   initrd.img.old  lib64       mnt   root     srv  usr
+boot   etc   lib             lost+found  opt   sbin     sys  var
+cdrom  home  lib32           media       proc  selinux  tmp  vmlinuz.old
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>¿Cuáles son los permisos de los directorios presentes en el directorio raíz y en nuestro directorio de usuario? ¿A quién pertenecen los ficheros y qué permisos tienen los distintos usuarios del ordenador?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls -l /
+total 140
+drwxr-xr-x   2 root root  4096 Oct 11 14:37 bin
+drwxr-xr-x   4 root root  4096 Oct  6 12:26 boot
+(...)
+~$ ls -l ~
+total 7324
+-rw-r--r-- 1 usuario usuario    1059 Oct 20 12:42 busqueda_leukemia_100.txt
+-rw-r--r-- 1 usuario usuario       0 Oct 13 10:53 datos_1.txt
+-rw-r--r-- 1 usuario usuario       0 Oct 13 10:54 datos_2.txt
+(...)
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>¿Cuáles son todos los archivos presentes en nuestro directorio de usuario?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls -a
+.              busqueda_leukemia_100.txt  exp_1b.jpg                   .profile
+..             datos_1.txt                experimento.txt              .viminfo
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Crea un directorio llamado experimento.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ mkdir experimento
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Crea con touch los archivos datos1.txt y datos2.txt dentro del directorio experimento.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cd experimento/
+~/experimento$ pwd
+/home/usuario/experimento
+~/experimento$ touch datos1.txt
+~/experimento$ touch datos2.txt
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Vuelve al directorio principal de tu usuario y desde allí lista los archivos presentes en el directorio experimento.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/experimento$ cd ..
+~$ pwd
+/home/usuario
+~$ ls experimento
+datos1.txt  datos2.txt
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Borra todos los archivos que contengan un 2 en el directorio experimento.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ rm experimento/*2*
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Copia el directorio experimento a un nuevo directorio llamado exp_seguridad.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cp -r experimento exp_seguridad
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Borra el directorio experimento.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ rm -r experimento
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Renombra el directorio exp_seguridad a experimento.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ mv exp_seguridad/ experimento
+</pre></div>
+</div>
+<ol class="arabic simple" start="11">
+<li><p>Ultimo fichero modificado en el directorio /etc</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls -ltr /etc
+</pre></div>
+</div>
+<ol class="arabic simple" start="12">
+<li><p>Crear un fichero nuevo a a partir de dos ficheros</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cat fichero1 fichero2 &gt; nuevo_fichero
+</pre></div>
+</div>
+<ol class="arabic simple" start="13">
+<li><p>Crea un directorio en tu home y muestra los permisos que tiene</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ mkdir dir
+~$ ls -dl dir
+</pre></div>
+</div>
+</section>
+<section id="otras-herramientas">
+<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Permalink to this headline">¶</a></h2>
+<p>Algunos temas que no hemos tratado en esta introducción, pero que pueden resultar de una gran utilidad son:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Control de procesos mediante los comandos ps y kill.</p></li>
+<li><p>Sesiones persistentes mediante el comando screen (o byobu en Ubuntu).</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="bibliografia">
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this headline">¶</a></h2>
+<p>Hay varios cursos para iniciarse en el uso de la línea de comandos de Unix, como:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://en.flossmanuals.net/gnulinux">Put Yourself in Command</a> de la Free Software Fundation (copia en <a class="reference download internal" download="" href="../_downloads/4fd437dbf8dc9db8806cab83187af164/fsf_cmd_manual.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>).</p></li>
+<li><p><a class="reference external" href="http://linuxcommand.org/learning_the_shell.php">Learning the shell</a> de <a class="reference external" href="http://linuxcommand.org/learning_the_shell.php">linuxcommand.org</a>.</p></li>
+<li><p><a class="reference external" href="http://rute.2038bug.com/index.html.gz">Rute User’s Tutorial and Exposition</a> de Paul Sheer (copia en <a class="reference download internal" download="" href="../_downloads/8baf38ac75dfd78c602eddf5c27595c3/rute.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>).</p></li>
+<li><p><a class="reference external" href="http://oreilly.com/catalog/9780596002619">Learning the Unix Operating System</a>.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="ubuntu.html">Iniciación a Ubuntu</a>-->
+                    <a class="prev" href="ubuntu.html" title="Iniciación a Ubuntu">previous</a>
+                    |
+                    <!--<a class="next" href="procesamiento_texto.html">Procesamiento de ficheros de texto</a>-->
+                    <a class="next" href="procesamiento_texto.html" title="Procesamiento de ficheros de texto">next</a>
+                    |
+
+                <a class="index" href="/courses/linux/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

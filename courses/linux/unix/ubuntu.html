@@ -1,0 +1,230 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Iniciación a Ubuntu &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="La Shell the UNIX" href="shell.html" />
+    <link rel="prev" title="Unix y Linux" href="introduccion.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Iniciación a Ubuntu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#los-usuarios">Los usuarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#el-escritorio">El escritorio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#navegando-por-el-sistema-de-ficheros">Navegando por el sistema de ficheros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell.html#el-sistema-de-ficheros">El sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/introduccion.html">Introducción a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/control_de_flujo.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/estructuras_de_datos.html#sets">Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/ficheros.html">Ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/generadores.html">Generadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/modulos.html">Modulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/biopython.html">Biopython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html">Ejercicios finales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html#soluciones">Soluciones</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="iniciacion-a-ubuntu">
+<h1>Iniciación a Ubuntu<a class="headerlink" href="#iniciacion-a-ubuntu" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://www.ubuntu.com/">Ubuntu</a> es una distribución Linux orientada al usuario de escritorio, con el objetivo de ser muy fácil de utilizar y gratuita.
+Aunque el escritorio es algo distinto al de Windows o Mac OS X familiarizarse con él para un usuario acostumbrado a cualquiera de los otros sistemas operativos no debe presentar ningún problema.
+Su instalación, aunque no vamos explicarla aquí, también resulta extraordinariamente sencilla.</p>
+<p>Existen numerosos manuales de utilización de Ubuntu, pero uno de las guías más completas es la <a class="reference external" href="http://ubuntu-manual.org/">Getting started with ubuntu</a>
+Vamos a recorrer lo principales conceptos de este sistema operativo basandonos en este <a class="reference download internal" download="" href="../_downloads/2dc637ffef9d33089a8b936124ba8780/getting_started_with_ubuntu_12_04.2ed.pdf"><code class="xref download docutils literal notranslate"><span class="pre">manual</span></code></a></p>
+<section id="los-usuarios">
+<h2>Los usuarios<a class="headerlink" href="#los-usuarios" title="Permalink to this headline">¶</a></h2>
+<p>Los sistemas Unix son multiusuario, es decir soportan que varios usuarios los utilicen simultáneamente.
+Todos los usuarios, excepto uno, tienen unos privilegios bastante restringidos y no pueden modificar el sistema.
+De este modo unos usuarios se ven protegidos de las acciones de los otros.
+Existe un usuario especial llamado <em>root</em> con privilegios de administración absolutos sobre el sistema.
+Para realizar las tareas cotidianas nunca hay que acceder al sistema como <em>root</em>.
+En Ubuntu este usuario está deshabilitado por defecto y sólo se pueden adquirir los privilegios de administrador temporalmente.</p>
+</section>
+<section id="el-escritorio">
+<h2>El escritorio<a class="headerlink" href="#el-escritorio" title="Permalink to this headline">¶</a></h2>
+<p>Todos las distribciones basadas en entronos graficos (GUI) suelen tener varios entornos de escritorio para eleguir. Los entornos de escritorio suelen diferir por:</p>
+<ul class="simple">
+<li><p>El estilo y apariencia del entorno</p></li>
+<li><p>La forma en la que los diferentes elementos se disponen en la pantalla</p></li>
+<li><p>La forma en la que el ususario navega por el escritorio</p></li>
+</ul>
+<p>En el caso de Ubuntu el entorno de escritorio por defecto se denomina Unity.
+Se caracteriza por tener dos barras, la denominada Menu Bar y el Launcher.
+El Menu Bar incorpora por una lado los menus de las aplicaciones que estań activas y, por otro, un area de indicadores que nos ofrecen informacion actualizada del sistema en todo momento.
+El Launcher es la barra vertical que facilita el acceso a las aplicaciones mas usadas y a su estado, además de a los discos montados y a la papelera.
+Además tenemos el selector de escritorios virtuales.
+En el launcher encontramos varias aplicaciones especiales:</p>
+<ul class="simple">
+<li><p>El menu</p></li>
+<li><p>El selector de escritorios virtuales</p></li>
+<li><p>La papelera</p></li>
+</ul>
+<p>Los escritorios virtuales sirven para ampliar la zona de trabajo.
+Por defecto hay 4 escritorios virtuales que amplían nuestro monitor por cuatro.</p>
+</section>
+<section id="navegando-por-el-sistema-de-ficheros">
+<h2>Navegando por el sistema de ficheros<a class="headerlink" href="#navegando-por-el-sistema-de-ficheros" title="Permalink to this headline">¶</a></h2>
+<p>Al sistema de ficheros se accede a traves del menu.
+Tenemos la posibilidad de buscar en la barra de busqueda o navegar directamente por el menu.
+Una vez que seleccionemos la carpeta se abrirá una ventana del navegador de ficheros con la carpeta seleccionada.
+Por cierto, los términos carpeta y directorio son sinónimos, al igual que fichero y archivo.</p>
+<p>Desde el launcher también podemos acceder a nuestra carpeta personal.
+Este directorio personal y sus subdirectorios son los únicos lugares en los que podremos almacenar nuestros archivos personales.
+El resto del sistema de archivos estará restringido para funciones de administración del sistema.</p>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<p>Para comprobar que no tenemos problemas de manejo del sistema vamos a realizar una serie de tareas:</p>
+<ul class="simple">
+<li><p>Explorar el escritorio abriendo programas, moviéndote entre escritorios virtuales, minimizando y maximizando las aplicaciones, etc.</p></li>
+<li><p>Navegar al directorio “Documentos” y comprobar si tenemos algún archivo guardado.</p></li>
+<li><p>Crear un subdirectorio llamado “curso” dentro del directorio “Documentos”.</p></li>
+<li><p>Crear un fichero de texto mediante el editor de textos gedit y guardarlo en el directorio que acabamos de crear.</p></li>
+<li><p>Copiar el fichero anterior al directorio personal.</p></li>
+<li><p>Eliminar el fichero original.</p></li>
+</ul>
+</section>
+</section>
+<section id="bibliografia">
+<h1>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this headline">¶</a></h1>
+<p>El excelente <a class="reference external" href="http://ubuntu-manual.org/">Ubuntu manual</a> (<a class="reference download internal" download="" href="../_downloads/2dc637ffef9d33089a8b936124ba8780/getting_started_with_ubuntu_12_04.2ed.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>).</p>
+<p>La documentación <a class="reference external" href="https://help.ubuntu.com/">oficial</a> y de la <a class="reference external" href="https://help.ubuntu.com/community">comunidad</a> de Ubuntu.</p>
+<p>La <a class="reference external" href="http://www.ubuntupocketguide.com/index_main.html">referencia</a> de bolsillo de Ubuntu (<a class="reference download internal" download="" href="../_downloads/11799c23fe6a22500bf91fe635dfdd72/ubuntupocketguide-v1-1.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>).</p>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="introduccion.html">Unix y Linux</a>-->
+                    <a class="prev" href="introduccion.html" title="Unix y Linux">previous</a>
+                    |
+                    <!--<a class="next" href="shell.html">La Shell the UNIX</a>-->
+                    <a class="next" href="shell.html" title="La Shell the UNIX">next</a>
+                    |
+
+                <a class="index" href="/courses/linux/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

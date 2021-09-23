@@ -1,0 +1,261 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Alineamiento de secuencias &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Búsqueda de secuencias en bases de datos" href="blast.html" />
+    <link rel="prev" title="Jemboss" href="practica_jemboss.html" /> 
+  </head>
+  <body>
+    <nav class="global_navigation">
+        <ul>
+            <li class="current_site_item" ><a href="http://bioinf.comav.upv.es">bioinf</a></li>
+            <li><a href="http://cucurbigene.net">cucurbigene</a></li>
+            <li><a href="http://melogene.net">melogene</a></li>
+        </ul>
+    </nav>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+    
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="http://www.melogene.net/">Melogene</a></li>
+                    <li><a href="http://www.cucurbigene.net/">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bases_datos.html">Bases de datos biológicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_bases.html">Práctica bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alineamientos.html">Alineamientos de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_jemboss.html">Práctica jemboss</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Práctica de alineamientos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blast.html">Búsqueda de secuencias en bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast.html">Práctica Blast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediccion.html">Métodos predictivos en ADN y ARN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_prediccion.html">Práctica predicción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">Alineamientos múltiples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_multiple.html">Práctica alineamiento múltiple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filogenias.html">Introducción al análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_filogenias.html">Práctica análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast2go.html">Práctica anotación con Blast2GO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_visores.html">Prácticas bases de datos genómicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion.html">Ejercicio anotación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion2.html">Ejercicio prediccion 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sanger.html">Secuenciación de Sanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ensamblaje.html">Ensamblaje de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_ensamblaje.html">Práctica ensamblaje de secuencias</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <section id="alineamiento-de-secuencias">
+<h1>Alineamiento de secuencias<a class="headerlink" href="#alineamiento-de-secuencias" title="Permalink to this headline">¶</a></h1>
+<p>Vamos a utilizar la versión gráfica del EMBOSS (Jemboss) en windows, en esta guía también se incluyen los comandos utilizados si se trabaja con la versión terminal del EMBOSS de Linux.</p>
+<p>¿Qué programas del EMBOSS nos sirven para hacer alineamientos?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ wossname alignment
+</pre></div>
+</div>
+<p>¿Cuales se pueden utilizar para hacer dotplot?</p>
+<p>¿Y para los alineamientos locales y globales?</p>
+<p>¿Cuáles son específicos para alinear genómico con ARN mesajero?</p>
+<section id="dotplot">
+<h2>Dotplot<a class="headerlink" href="#dotplot" title="Permalink to this headline">¶</a></h2>
+<section id="estructura-de-un-gen">
+<h3>Estructura de un gen<a class="headerlink" href="#estructura-de-un-gen" title="Permalink to this headline">¶</a></h3>
+<p>Se puede estudiar la distribución de exones e intrones de un gen gráficamente utilizando el programa <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/dotmatcher.html">dotmatcher</a>.</p>
+<p><a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/dotmatcher.html">dotmatcher</a> permite hacer dotplots dentro del EMBOSS.
+También podemos utilizarlo en una página <a class="reference external" href="http://emboss.bioinformatics.nl/cgi-bin/emboss/dotmatcher">externa</a> (<a class="reference external" href="http://www.hpa-bioinfotools.org.uk/pise/dotmatcher.html">servidor</a> <a class="reference external" href="http://www.hpa-bioinfotools.org.uk/pise/dotmatcher.html">alternativo</a>).</p>
+<p>Vamos a comparar una región genómica de Arabidopsis <a class="reference download internal" download="" href="_downloads/9f97408e43249fce4314763df2903762/AT3G4905.1.genomico.fasta"><code class="xref download docutils literal notranslate"><span class="pre">AT3G52905.1</span></code></a> con el <a class="reference download internal" download="" href="_downloads/d3cc2640ce5d7e4e447fc9cc569d29f4/AT3G4905.1.cdna.fasta"><code class="xref download docutils literal notranslate"><span class="pre">mRNA</span></code></a> correspondiente.</p>
+<p>¿Por qué es tan confuso el resultado?</p>
+<p>¿Hay algún parámetro que lo pueda mejorar?</p>
+<p>¿Por qué está cortada en varios segmentos la diagonal principal?</p>
+</section>
+<section id="genes-en-especies-cercanas">
+<h3>Genes en especies cercanas<a class="headerlink" href="#genes-en-especies-cercanas" title="Permalink to this headline">¶</a></h3>
+<p>En general el dotplot sirve para ver gráficamente qué regiones de las secuencias se parecen entre sí.</p>
+<p>Se puede estudiar qué regiones son similares entre proteínas homólogas de organismos más o menos distantes.</p>
+<p>Utilizando el <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/dotmatcher.html">dotmatcher</a> vamos a comparar los ARN mesajeros de dos ciclinas homólogas, una <a class="reference download internal" download="" href="_downloads/4d9532c1d0207f6b5cb266d4a1c1d2da/CDKL4.human.fasta"><code class="xref download docutils literal notranslate"><span class="pre">humana</span></code></a> y otra <a class="reference download internal" download="" href="_downloads/f6506392d43870719cb933c706be7f29/cyclin.dog.fasta"><code class="xref download docutils literal notranslate"><span class="pre">canina</span></code></a>.</p>
+<p>¿Son iguales en toda la extensión de los mensajeros?</p>
+<p>¿A qué puede deberse que unas regiones estén más conservadas que otras?</p>
+</section>
+<section id="repeticiones-en-tandem">
+<h3>Repeticiones en tándem<a class="headerlink" href="#repeticiones-en-tandem" title="Permalink to this headline">¶</a></h3>
+<p>El método de alineamiento gráfico es el mejor para observar regiones repetidas o invertidas.</p>
+<p>Como ejemplo vamos a estudiar las repeticiones presentes en el dedo de zinc humano <a class="reference download internal" download="" href="_downloads/0517af785e4dd7741e45f8a2b3189a3f/Q9P255.fasta"><code class="xref download docutils literal notranslate"><span class="pre">Q9P255</span></code></a>.</p>
+<p>Hacer un dotplot utilizando el dotmatcher de esta proteína consigo misma.</p>
+<p>¿Qué significa este patrón?</p>
+<p>¿Cómo están distribuidas las repeticiones?</p>
+<p>¿Cuántas repeticiones hay?</p>
+<p>Jugar con el valor de threshold y observar como afecta al gráfico.</p>
+<p>Repetir el análisis para la proteína <a class="reference download internal" download="" href="_downloads/b8322315629f325bbcfb1db124464d0b/P03001.fasta"><code class="xref download docutils literal notranslate"><span class="pre">P03001</span></code></a>.</p>
+<p>¿Hay alguna diferencia con la anterior?</p>
+<p>¿Qué sucede ahora al variar el threshold? ¿Por qué?</p>
+<p>Ver la estructura de las proteínas <a class="reference external" href="http://www.uniprot.org/uniprot/Q9P255">Q9P255</a> y <a class="reference external" href="http://www.uniprot.org/uniprot/P03001">P03001</a> en la Uniprot.</p>
+</section>
+<section id="deteccion-de-reordenaciones-cromosomicas">
+<h3>Detección de reordenaciones cromosómicas<a class="headerlink" href="#deteccion-de-reordenaciones-cromosomicas" title="Permalink to this headline">¶</a></h3>
+<p>Hemos comentado que los dot plots son perfectos para identificar grandes cambios en la estructura de los cromosomas. En la NCBI hay un <a class="reference external" href="http://www.ncbi.nlm.nih.gov/sutils/geneplot.cgi">programa</a> que nos permite comaparar genomas bacterianos entre si. En realidad no es un dotplot si no la integración gráfica de las comparaciones realizados con el programa Blast para identificar ortólogos (Blast recíproco), pero nos va a servir para ver la utilidad de los dotplots.</p>
+<p>Seleccionar en el panel A  Xanthomonas campestris pv. campestris y en el panel B Xanthomonas anopodis pv. citri. Determina las regiones sinténicas y los cambios estructurales que ha habido.</p>
+<p>Compara Yersinia pestis subsp. Antiqua with: Y. pesudotuberculosis and Y. pestis KIM. ¿Qué ves en cada caso? ¿Podrías explicar las diferencias?</p>
+</section>
+</section>
+<section id="alineamientos-locales">
+<h2>Alineamientos locales<a class="headerlink" href="#alineamientos-locales" title="Permalink to this headline">¶</a></h2>
+<section id="proteinas-homologas">
+<h3>Proteínas homólogas<a class="headerlink" href="#proteinas-homologas" title="Permalink to this headline">¶</a></h3>
+<p>Se puede obtener el mejor alineamiento entre dos proteínas homólogas de especies diferentes.</p>
+<p>Este mismo método serviría para alinear familias proteicas dentro de la misma especie.</p>
+<p>Como ejemplo alinear las ciclinas <a class="reference download internal" download="" href="_downloads/4d9532c1d0207f6b5cb266d4a1c1d2da/CDKL4.human.fasta"><code class="xref download docutils literal notranslate"><span class="pre">humana</span></code></a> y <a class="reference download internal" download="" href="_downloads/f6506392d43870719cb933c706be7f29/cyclin.dog.fasta"><code class="xref download docutils literal notranslate"><span class="pre">canina</span></code></a> utilizando el <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/matcher.html">matcher</a> o el <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/water.html">water</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ matcher CDKL4.human.fasta cyclin.dog.fasta stdout
+</pre></div>
+</div>
+<p>¿Cuánto se parecen las secuencias?</p>
+<p>¿Hemos obtenido un alineamiento local o global? ¿Por qué?</p>
+</section>
+<section id="regiones-conservadas">
+<h3>Regiones conservadas<a class="headerlink" href="#regiones-conservadas" title="Permalink to this headline">¶</a></h3>
+<p>Normalmente no todas las regiones varían del mismo modo entre proteínas homólogas de especies alejadas.</p>
+<p>Podemos descubrir qué regiones se conservan utilizando un alineamiento local.</p>
+<p>Alinear las frataxinas <a class="reference download internal" download="" href="_downloads/dd2dd17508b3f2c8d9115568cfddb16d/frataxin.human.gb"><code class="xref download docutils literal notranslate"><span class="pre">humana</span></code></a> y del <a class="reference download internal" download="" href="_downloads/8397a0040c2dfcdb8212504f89ba6f21/frataxin.aedes.gb"><code class="xref download docutils literal notranslate"><span class="pre">mosquito</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">fiebre</span> <span class="pre">amarilla</span></code></a>  utilizando el <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/matcher.html">matcher</a> o el <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/water.html">water</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ matcher frataxin.human.gb frataxin.aedes.gb stdout
+</pre></div>
+</div>
+<p>¿Es local el alineamiento?</p>
+<p>¿Por qué hay zonas de las proteínas que no se han alineado?</p>
+<p>¿Por qué unas regiones se parecen más que otras?</p>
+<p>¿Qué les sucede a los aminoácidos 92, 100, 101, 104, 108, 111, 112, 122 y 124 de la humana?</p>
+<p>Visualizar con el word el fichero de la frataxina <a class="reference download internal" download="" href="_downloads/dd2dd17508b3f2c8d9115568cfddb16d/frataxin.human.gb"><code class="xref download docutils literal notranslate"><span class="pre">humana</span></code></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ less frataxin.human.gb
+</pre></div>
+</div>
+<p>¿Por qué cuando se utiliza el parámetro gapopen 4 se obtiene otro alineamiento?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$matcher frataxin.human.gb frataxin.aedes.gb stdout -gapopen 4
+</pre></div>
+</div>
+<p>¿Es peor este nuevo alineamiento?</p>
+</section>
+<section id="alineamientos-globales">
+<h3>Alineamientos globales<a class="headerlink" href="#alineamientos-globales" title="Permalink to this headline">¶</a></h3>
+<p>Se puede utilizar un algoritmo de alineamiento global que exija que la totalidad de ambas secuencias se alinee.</p>
+<p>Hacer un alineamiento global de los ejemplos anteriores utilizando el <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/needle.html">needle</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">needle</span> <span class="n">frataxin</span><span class="o">.</span><span class="n">human</span><span class="o">.</span><span class="n">gb</span> <span class="n">frataxin</span><span class="o">.</span><span class="n">aedes</span><span class="o">.</span><span class="n">gb</span> <span class="n">stdout</span> <span class="o">-</span><span class="n">auto</span>
+</pre></div>
+</div>
+<p>¿Es este alineamiento mejor que el anterior?</p>
+<p>Los alineamientos globales sólo hay que utilizarlos cuando estemos seguros que las secuencias se parecen a lo largo de toda su extensión.
+Estos algoritmos suelen dar malos resultados si hay regiones que no son similares entre las dos secuencias.</p>
+</section>
+<section id="estructura-genica">
+<h3>Estructura génica<a class="headerlink" href="#estructura-genica" title="Permalink to this headline">¶</a></h3>
+<p>El EMBOSS dispone de un programa creado específicamente para alinear ARN mesajero y ADN genómico, <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/est2genome.html">est2genome</a>.</p>
+<p>Podemos probarlo con el gen de Arabidopsis AT3G52905.1 <a class="reference download internal" download="" href="_downloads/9f97408e43249fce4314763df2903762/AT3G4905.1.genomico.fasta"><code class="xref download docutils literal notranslate"><span class="pre">(genómico,</span></code></a>  <a class="reference download internal" download="" href="_downloads/d3cc2640ce5d7e4e447fc9cc569d29f4/AT3G4905.1.cdna.fasta"><code class="xref download docutils literal notranslate"><span class="pre">mRNA)</span></code></a> (genómico, mRNA).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">est2genome</span> <span class="n">AT3G4905</span><span class="mf">.1</span><span class="o">.</span><span class="n">cdna</span><span class="o">.</span><span class="n">fasta</span> <span class="n">AT3G4905</span><span class="mf">.1</span><span class="o">.</span><span class="n">genomico</span><span class="o">.</span><span class="n">fasta</span> <span class="n">stdout</span> <span class="o">-</span><span class="n">auto</span>
+</pre></div>
+</div>
+<p>¿Cuantos exones e intrones hay?</p>
+<p>Para obtener el alineamiento completo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">est2genome</span> <span class="n">AT3G4905</span><span class="mf">.1</span><span class="o">.</span><span class="n">cdna</span><span class="o">.</span><span class="n">fasta</span> <span class="n">AT3G4905</span><span class="mf">.1</span><span class="o">.</span><span class="n">genomico</span><span class="o">.</span><span class="n">fasta</span> <span class="n">stdout</span> <span class="o">-</span><span class="n">align</span> <span class="o">-</span><span class="n">auto</span>
+</pre></div>
+</div>
+<p>Este programa además de utilizar algoritmos de alineamiento convencionales tiene en cuenta las secuencias necesarias para el splicing que rodean los intrones.</p>
+<p><a class="reference internal" href="alineamientos.html"><span class="doc">Ir a la teoría del tema</span></a></p>
+</section>
+</section>
+</section>
+
+
+            
+        
+        
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="practica_jemboss.html">Jemboss</a>-->
+                    <a class="prev" href="practica_jemboss.html" title="Jemboss">previous</a>
+                    |
+                    <!--<a class="next" href="blast.html">Búsqueda de secuencias en bases de datos</a>-->
+                    <a class="next" href="blast.html" title="Búsqueda de secuencias en bases de datos">next</a>
+                    |
+                
+                <a class="index" href="/courses/intro_bioinf/index.html" title="Index">index</a>
+                
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

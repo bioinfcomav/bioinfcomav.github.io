@@ -1,0 +1,197 @@
+==========================
+Alineamiento de secuencias
+==========================
+
+Vamos a utilizar la versión gráfica del EMBOSS (Jemboss) en windows, en esta guía también se incluyen los comandos utilizados si se trabaja con la versión terminal del EMBOSS de Linux.
+
+¿Qué programas del EMBOSS nos sirven para hacer alineamientos?
+
+::
+
+	$ wossname alignment
+
+¿Cuales se pueden utilizar para hacer dotplot?
+
+¿Y para los alineamientos locales y globales?
+
+¿Cuáles son específicos para alinear genómico con ARN mesajero?
+
+Dotplot
+=======
+
+Estructura de un gen
+--------------------
+
+Se puede estudiar la distribución de exones e intrones de un gen gráficamente utilizando el programa dotmatcher_.
+
+dotmatcher_ permite hacer dotplots dentro del EMBOSS.
+También podemos utilizarlo en una página externa_ (servidor_ `alternativo`__).
+
+Vamos a comparar una región genómica de Arabidopsis :download:`AT3G52905.1 <datos/practica_alineamientos/AT3G4905.1.genomico.fasta>` con el :download:`mRNA <datos/practica_alineamientos/AT3G4905.1.cdna.fasta>` correspondiente.
+
+¿Por qué es tan confuso el resultado?
+
+¿Hay algún parámetro que lo pueda mejorar?
+
+¿Por qué está cortada en varios segmentos la diagonal principal?
+
+Genes en especies cercanas
+--------------------------
+
+En general el dotplot sirve para ver gráficamente qué regiones de las secuencias se parecen entre sí.
+
+Se puede estudiar qué regiones son similares entre proteínas homólogas de organismos más o menos distantes.
+
+Utilizando el dotmatcher_ vamos a comparar los ARN mesajeros de dos ciclinas homólogas, una :download:`humana <datos/practica_alineamientos/CDKL4.human.fasta>` y otra :download:`canina <datos/practica_alineamientos/cyclin.dog.fasta>`.
+
+¿Son iguales en toda la extensión de los mensajeros?
+
+¿A qué puede deberse que unas regiones estén más conservadas que otras?
+
+Repeticiones en tándem
+----------------------
+
+El método de alineamiento gráfico es el mejor para observar regiones repetidas o invertidas.
+
+Como ejemplo vamos a estudiar las repeticiones presentes en el dedo de zinc humano :download:`Q9P255 <datos/practica_alineamientos/Q9P255.fasta>`.
+
+Hacer un dotplot utilizando el dotmatcher de esta proteína consigo misma.
+
+¿Qué significa este patrón?
+
+¿Cómo están distribuidas las repeticiones?
+
+¿Cuántas repeticiones hay?
+
+Jugar con el valor de threshold y observar como afecta al gráfico.
+
+Repetir el análisis para la proteína :download:`P03001 <datos/practica_alineamientos/P03001.fasta>`.
+
+¿Hay alguna diferencia con la anterior?
+
+¿Qué sucede ahora al variar el threshold? ¿Por qué?
+
+Ver la estructura de las proteínas Q9P255_ y P03001_ en la Uniprot.
+
+
+Detección de reordenaciones cromosómicas
+----------------------------------------
+
+Hemos comentado que los dot plots son perfectos para identificar grandes cambios en la estructura de los cromosomas. En la NCBI hay un programa_ que nos permite comaparar genomas bacterianos entre si. En realidad no es un dotplot si no la integración gráfica de las comparaciones realizados con el programa Blast para identificar ortólogos (Blast recíproco), pero nos va a servir para ver la utilidad de los dotplots.
+
+Seleccionar en el panel A  Xanthomonas campestris pv. campestris y en el panel B Xanthomonas anopodis pv. citri. Determina las regiones sinténicas y los cambios estructurales que ha habido.
+
+Compara Yersinia pestis subsp. Antiqua with: Y. pesudotuberculosis and Y. pestis KIM. ¿Qué ves en cada caso? ¿Podrías explicar las diferencias?
+
+Alineamientos locales
+=====================
+
+Proteínas homólogas
+-------------------
+
+Se puede obtener el mejor alineamiento entre dos proteínas homólogas de especies diferentes.
+
+Este mismo método serviría para alinear familias proteicas dentro de la misma especie.
+
+Como ejemplo alinear las ciclinas :download:`humana <datos/practica_alineamientos/CDKL4.human.fasta>` y :download:`canina <datos/practica_alineamientos/cyclin.dog.fasta>` utilizando el matcher_ o el water_.
+
+::
+
+	$ matcher CDKL4.human.fasta cyclin.dog.fasta stdout
+
+¿Cuánto se parecen las secuencias?
+
+¿Hemos obtenido un alineamiento local o global? ¿Por qué?
+
+Regiones conservadas
+--------------------
+
+Normalmente no todas las regiones varían del mismo modo entre proteínas homólogas de especies alejadas.
+
+Podemos descubrir qué regiones se conservan utilizando un alineamiento local.
+
+Alinear las frataxinas :download:`humana <datos/practica_alineamientos/frataxin.human.gb>` y del :download:`mosquito de la fiebre amarilla <datos/practica_alineamientos/frataxin.aedes.gb>`  utilizando el matcher_ o el water_.
+
+::
+
+	$ matcher frataxin.human.gb frataxin.aedes.gb stdout
+
+¿Es local el alineamiento?
+
+¿Por qué hay zonas de las proteínas que no se han alineado?
+
+¿Por qué unas regiones se parecen más que otras?
+
+¿Qué les sucede a los aminoácidos 92, 100, 101, 104, 108, 111, 112, 122 y 124 de la humana?
+
+Visualizar con el word el fichero de la frataxina :download:`humana <datos/practica_alineamientos/frataxin.human.gb>`.
+
+::
+
+	$ less frataxin.human.gb
+
+¿Por qué cuando se utiliza el parámetro gapopen 4 se obtiene otro alineamiento?
+
+::
+
+	$matcher frataxin.human.gb frataxin.aedes.gb stdout -gapopen 4
+
+¿Es peor este nuevo alineamiento?
+
+
+Alineamientos globales
+----------------------
+
+Se puede utilizar un algoritmo de alineamiento global que exija que la totalidad de ambas secuencias se alinee.
+
+Hacer un alineamiento global de los ejemplos anteriores utilizando el needle_.
+
+::
+
+	needle frataxin.human.gb frataxin.aedes.gb stdout -auto
+
+¿Es este alineamiento mejor que el anterior?
+
+Los alineamientos globales sólo hay que utilizarlos cuando estemos seguros que las secuencias se parecen a lo largo de toda su extensión.
+Estos algoritmos suelen dar malos resultados si hay regiones que no son similares entre las dos secuencias.
+
+Estructura génica
+-----------------
+
+El EMBOSS dispone de un programa creado específicamente para alinear ARN mesajero y ADN genómico, est2genome_.
+
+Podemos probarlo con el gen de Arabidopsis AT3G52905.1 :download:`(genómico, <datos/practica_alineamientos/AT3G4905.1.genomico.fasta>`  :download:`mRNA) <datos/practica_alineamientos/AT3G4905.1.cdna.fasta>` (genómico, mRNA).
+
+::
+
+	est2genome AT3G4905.1.cdna.fasta AT3G4905.1.genomico.fasta stdout -auto
+
+¿Cuantos exones e intrones hay?
+
+Para obtener el alineamiento completo:
+::
+
+	est2genome AT3G4905.1.cdna.fasta AT3G4905.1.genomico.fasta stdout -align -auto
+
+Este programa además de utilizar algoritmos de alineamiento convencionales tiene en cuenta las secuencias necesarias para el splicing que rodean los intrones.
+
+
+
+
+
+.. _dotmatcher: http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/dotmatcher.html
+.. _externa: http://emboss.bioinformatics.nl/cgi-bin/emboss/dotmatcher
+.. _servidor: http://www.hpa-bioinfotools.org.uk/pise/dotmatcher.html
+__ servidor_
+.. _Q9P255: http://www.uniprot.org/uniprot/Q9P255
+.. _P03001: http://www.uniprot.org/uniprot/P03001
+.. _matcher: http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/matcher.html
+.. _water: http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/water.html
+.. _needle: http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/needle.html
+.. _est2genome: http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/est2genome.html
+.. _bl2seq: http://www.ncbi.nlm.nih.gov/BLAST/bl2seq/wblast2.cgi
+.. _programa:  http://www.ncbi.nlm.nih.gov/sutils/geneplot.cgi
+
+:doc:`Ir a la teoría del tema<alineamientos>`
+
+

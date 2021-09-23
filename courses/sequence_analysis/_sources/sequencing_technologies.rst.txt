@@ -1,0 +1,13 @@
+Sequencing Platforms
+====================
+
+
+.. figure:: _images/sequencing_technologies_presentation.png
+   :width: 400px
+
+   :download:`Sequencing Technologies presentation <downloads/sequencing_technologies.odp>` (:download:`pdf <downloads/sequencing_technologies.pdf>`)
+
+Molecular Ecologist has an excellent review on all `NGS platforms <http://www.molecularecologist.com/next-gen-fieldguide-2014/>`_.
+
+
+

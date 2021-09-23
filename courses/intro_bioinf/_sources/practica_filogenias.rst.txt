@@ -1,0 +1,119 @@
+====================
+Prácticas filogenias
+====================
+
+En esta práctica vamos a realizar diferentes filogenias utilizando diferentes método de reconstrucción filogenética.
+El programa que utilizaremos es el Mega_. 
+
+Ejercicios de filogenia
+=======================
+
+Ejercicio 1
+-----------
+
+Seguir en el tutorial del Mega las secciones:
+
+  * Introduction
+  * Mega Basics
+  * Aligning sequences
+  * Estimating Evolutionary Distances
+  * Building Trees
+  * Testing Tree Reliability
+  * Constructing Likelihood Trees
+
+Ejercicio 2
+-----------
+
+A partir de los alineamientos :download:`aprot.fasta, <datos/practica_filogenias/aprot.fasta>` y :download:`hprot.fasta, <datos/practica_filogenias/hprot.fasta>` generar un árbol por el método de Neighbor joining sin bootstrap.
+
+Método:
+
+  * Seleccionar "Test of Phylogeny" como None
+  * Visualizar los arbo obtenidos. ¿Son equivalentes? ¿Es uno mejor que el otro?
+  * Cambiar la posición de la raíz
+
+Ejercicio 3
+-----------
+
+Utilizando los dos alineamientos del ejercicio anterior crear dos árboles validándolos por el método de bootstrap con 100 réplicas.
+
+¿Se obtienen los mismos árboles que en el ejercicio anterior?
+
+¿Qué sucede si colapsamos los nodos no significativos? ¿Por qué?
+
+
+Ejercicio 4
+-----------
+
+Vamos a trabajar con las secuencias de la :download:`frataxina <datos/practica_filogenias/frataxina.fasta>`.
+
+Alineamiento
+____________
+
+Realizar un alineamiento mediante clustalx.
+Alternativamente podríamos hacer el alineamiento directamente dentro del Mega utilizando el algoritmo del clustal o del muscle.
+
+Una vez generado el alineamiento revisarlo.
+
+Alineamiento mediante el método de máxima parsimonia
+____________________________________________________
+
+
+Aplicar el método sin bootstrap.
+¿Se obtienen varios árboles?
+¿Por qué?
+
+Volver a hacerlo con bootstrap.
+¿Podemos concluir que la vaca está más alejada del macaco que el chimpancé?
+
+Alineamiento mediante el método neighbor joining
+________________________________________________
+
+Hacer el árbol con bootstrap.
+
+Comparación de los árboles
+__________________________
+
+¿Son iguales los árboles? ¿Por qué?
+
+¿Son iguales al de tus compañeros? ¿Por qué? 
+
+Prueba a verlo con distancia real (filograma) o sin distancia real de las ramas.
+
+Reordena el árbol para que el outgroup quede basal.
+
+
+Ejercicio 5
+-----------
+
+Filogenias de monos del viejo mundo.
+Realizar los árboles mediante parsimonia, neighbor joining y Máxima verosimilitud de las siguientes :download:`secuencias. <datos/practica_filogenias/hepcidina.fasta>`
+
+Comparar los árboles obtenidos por los distintos métodos. 
+
+Ejercicio 6
+-----------
+
+En la NCBI hay una base de datos de estudios filogenéticos y poblacionales, Popset_.
+En ella se almacenan las secuencias utilizadas en los diferentes estudios en diferentes especies, de modo que podemos repetir esos análisis o realizar otros con esas secuencias. 
+
+Descargar de la base de datos las secuencias del marcador COS-At5g14320_ utilizadas en el articulo "Do potatoes and tomatoes have a single evolutionary history, and what proportion of the genome supports this history?".Rodriguez,F., Wu,F., Ane,C., Tanksley,S. and Spooner,D.M.(2009) BMC Evol. Biol. 9:191.
+
+Descargar las secuencias y reconstruir la filogenia de estas especies mediante Neighbor_joining.
+
+
+Ejercicio 7
+-----------
+
+Filogenia de las hemoglobinas humanas.
+
+A partir de la secuencias de la hemoglobina subunidad :download:`beta <datos/practica_filogenias/beta.fasta>` identifica mediante blast todas las subunidades de la hemoglobina humana y reconstruye su filogénia para identificar los procesos de duplicación que han dado lugar a cada una de ellas.
+Utiliza la mioglobina como outgroup.
+
+
+.. _Mega: http://www.megasoftware.net/
+
+.. _Popset: http://www.ncbi.nlm.nih.gov/popset
+
+.. _COS-At5g14320: http://www.ncbi.nlm.nih.gov/popset/224980415
+

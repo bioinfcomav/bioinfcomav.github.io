@@ -1,0 +1,114 @@
+
+Practical tasks
+===============
+
+Determine the platformn and coding
+----------------------------------
+
+Analyze the format and quality for each of the :download:`read files <downloads/ngs_reads.tar.gz>` and determine the sequencing platform and version.
+
+Hints
+_____
+
+You might use guess_seq_format and calculate_stats from seq_crumbs or fastqc.
+Take into account that the solid reads might be double encoded.
+
+Clean adapters and contaminants
+-------------------------------
+
+We have some :download:`454 <downloads/to_clean_454.fastq.gz>` and :download:`Illumina <downloads/to_clean_illumina.fastq.gz>` reads that might have adapters in them due to the cloning process.
+Do they really have :download:`adapters <downloads/oligos.fasta>`?
+These reads also come from a RNA-Seq experiment and might have :download:`ribosomic RNA <downloads/arabidpsis_rrna.fasta>` that we should filter out before doing any further analysis.
+Try to assess and solve these problems with fastqc and seq_crumbs.
+
+Hints
+_____
+
+Evaluate the quality, look for overrepresented k-mers and take a look at the base composition of the first bases of the reads with fastqc or seq_crumbs.
+
+To remove the adaptor you could use trim_blast_short (from seq_crumbs), `cutadapt <http://code.google.com/p/cutadapt/>`_, `scythe <https://github.com/vsbuffalo/scythe>`_ or `fastx <http://hannonlab.cshl.edu/fastx_toolkit/>`_.
+
+To trim the quality you could use trim_quality (from seq_crumbs), fastx, `sequence cleaner <http://seqclean.sourceforge.net/>`_, or `sickle <https://github.com/najoshi/sickle>`_.
+
+To filter the small reads you could use filter_by_length (from seq_crumbs) and to remove the ribosomic reads filter_by_blast (seq_crumbs).
+
+
+Split 454 matepairs
+-------------------
+
+We have received some 454 titanium mate pair :download:`reads <downloads/454_mates.fastq>`.
+First we need to split both ends of the mate pair for each reads and then we have to trim using a quality criteria, filter out the small read segments (smaller than 40 base pairs).
+Finally we need to obtain two files with the interleaved forward and reverse fragments of the reads that still have both and another file with the orphaned segments.
+
+Hint
+____
+
+In seq_crumbs there are scripts for all steps.
+
+Mithocondrial assembly
+----------------------
+
+We have recived 20000 human mithocondrial :download:`reads <downloads/mito_yoruba_reads_pe.20k.fastq.gz>` from a yoruba individual.
+The reads are Illumina paired end and we want to assemble them:
+
+  1. Reads Quality Assessment.
+  2. Clean the reads.
+  3. Assemble the reads with velvet.
+  4. Calculate statistics for the result.
+  5. Take a look at the contigs.
+
+Hint
+____
+
+We have already seen how to assemble a mithocondrial genome using velvet.
+
+
+Map to the mithocondrial assembly
+---------------------------------
+
+As the result of the mithocondrial assembly that we have just done with we obtained a fasta file with the scaffolds.
+Map the reads used to create the assembly using bwa to the scaffolds.
+Once you have the mapping note how many reads had been mapped and open the mapping IGV.
+
+
+Human Mithocondrial SNP calling
+-------------------------------
+
+We want to compare the mithocondrial DNA of a yoruba individual with the :download:`reference <downloads/human_cambridge_reference_mito.fasta>` cambrigde mithocondrial sequence.
+We have 40000 Illumnia :download:`reads <downloads/mito_yoruba_reads_40k.fastq.gz>`.
+Do two SNP callings one with bowtie2 and samtools and another with ngs_backbone and compare them.
+
+Hints
+_____
+
+Why ngs_backbone does not find any SNP at the first attempt?
+Modify the backbone.conf parameters related with the quality and look for the SNPs again (e.j. min_quality=21, min_reads_for_allele=10).
+
+You can compare the SNP callings with bedtools or grep.
+
+Take a look at the SNPs with IGV.
+
+Obtain the SNP flanking sequence
+--------------------------------
+
+Search for the common SNPs of the two previous SNP calls and create a fasta file with 100 pair bases around each SNP.
+
+Hints
+_____
+
+You can use the intersectBed, flankBed and fastaFromBed tools. 
+
+Cucurbita EST SNP calling
+-------------------------
+
+We have ordered two 454 and two Illumina reads from a Cucurbita transcriptome.
+The 454 sequences came from two individuals (indi1 and indi2) and the Illumina came from a mix of different individuals.
+The sequencing service has send the :download:`reads <downloads/cucurbita_reads.tar.gz>` in sanger fastq format.
+
+1. Do a quality check of the reads provided by the sequencing service.
+2. Clean the reads and check the cleaning process.
+3. Map the reads.
+4. Call the SNPs.
+
+There a :doc:`walkthroughs <final_practice_walkthrough>` for some of these tasks.
+

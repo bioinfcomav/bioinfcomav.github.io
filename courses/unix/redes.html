@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Redes</title>
+  <meta name="description" content="Introduction to the Linux command line.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/redes.html">
+  <link rel="alternate" type="application/rss+xml" title="Curso Unix" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Curso Unix</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/index.html">Curso Unix</a>
+          
+        
+          
+          <a class="page-link" href="/unix_intro.html">Unix y Linux</a>
+          
+        
+          
+          <a class="page-link" href="/sistema_de_ficheros.html">El sistema de ficheros</a>
+          
+        
+          
+          <a class="page-link" href="/control_procesos.html">Procesos</a>
+          
+        
+          
+          <a class="page-link" href="/pipes.html">Flujos de información</a>
+          
+        
+          
+          <a class="page-link" href="/procesamiento_texto.html">Procesamiento de ficheros de texto</a>
+          
+        
+          
+          <a class="page-link" href="/expresiones_regulares.html">Expresiones regulares</a>
+          
+        
+          
+          <a class="page-link" href="/scripts_bash.html">Scripts de bash</a>
+          
+        
+          
+          <a class="page-link" href="/administrador.html">Administrador</a>
+          
+        
+          
+          <a class="page-link" href="/administracion_software1.html">Administracion de software 1</a>
+          
+        
+          
+          <a class="page-link" href="/variables_de_entorno.html">Variables de entorno</a>
+          
+        
+          
+          <a class="page-link" href="/administracion_software2.html">Administracion de software 2</a>
+          
+        
+          
+          <a class="page-link" href="/redes.html">Redes</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Redes</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#ip" id="markdown-toc-ip">IP</a></li>
+  <li><a href="#puerto" id="markdown-toc-puerto">Puerto</a></li>
+  <li><a href="#direccion-estática-o-dinámicas" id="markdown-toc-direccion-estática-o-dinámicas">Direccion estática o dinámicas</a></li>
+  <li><a href="#dns" id="markdown-toc-dns">DNS</a></li>
+  <li><a href="#puerta-de-enlace" id="markdown-toc-puerta-de-enlace">Puerta de enlace</a></li>
+  <li><a href="#dispositivos-de-red" id="markdown-toc-dispositivos-de-red">Dispositivos de red</a>    <ul>
+      <li><a href="#ping" id="markdown-toc-ping">Ping</a></li>
+      <li><a href="#ifconfig" id="markdown-toc-ifconfig">ifconfig</a></li>
+      <li><a href="#route" id="markdown-toc-route">route</a></li>
+      <li><a href="#resolvconf" id="markdown-toc-resolvconf">resolv.conf</a></li>
+    </ul>
+  </li>
+  <li><a href="#servicios" id="markdown-toc-servicios">Servicios</a></li>
+</ul>
+
+<p>Vamos a repasar algunos commandos genericos de Linux para poder conocer la configuracion actual del sistema.</p>
+
+<h2 id="ip">IP</h2>
+
+<p>Una dirección IP es un número que identifica un dispositivo (computadora, tableta, portátil, smartphone) que utilice el protocolo IP (Internet Protocol).</p>
+
+<h2 id="puerto">Puerto</h2>
+<p>En el ámbito de Internet, un puerto es el valor que se usa, en el modelo de la capa de transporte, para distinguir entre las múltiples aplicaciones que se pueden conectar al mismo host, o puesto de trabajo.
+Aunque muchos de los puertos se asignan de manera arbitraria, ciertos puertos se asignan, por convenio, a ciertas aplicaciones particulares o servicios de carácter universal. Por ejemplo el puerto 80 para el protocolo http(web).</p>
+
+<h2 id="direccion-estática-o-dinámicas">Direccion estática o dinámicas</h2>
+
+<p>Las ips se pueden configurar para que sea la que nosotros le digamos( direccion estática) o para que nos la de un servidior externo (Direccion dinámica). Lo más comun es que la configuracion sea dinamica y que no tengamos que preocupernos sobre las diferentes configuraciones.(DHCP)</p>
+
+<h2 id="dns">DNS</h2>
+<p>Cuando queremos acceder a una página web, en el ordenador no solemos escribir la IP del ordenador donde está alojada la página. Solemos escribir el nombre del dominio. El servicio encargado de traducir los dominios en ips es el DNS.(Domain Name Server)</p>
+
+<p>Cuando tecleamos en el navegador google.es, lo primero que hace el navegador es preguntarle al servidor dns cual es la IP a la que está asociado ese dominio, cuando se la devuelve, el navegador llega al servidor usando la IP, no el dominio.</p>
+
+<p>Para nosotros sería muy dificil recordar las ips de las diferentes páginas webs, más aun, cuando estas están continuamente cambiando. Para guardar la relación dominio ip, es para lo que existen los DNS.</p>
+
+<h2 id="puerta-de-enlace">Puerta de enlace</h2>
+<p>La pasarela (en inglés gateway) o puerta de enlace, es el dispositivo que actúa de interfaz de conexión entre aparatos o dispositivos, y también posibilita compartir recursos entre dos o más computadoras.</p>
+
+<h2 id="dispositivos-de-red">Dispositivos de red</h2>
+<p>Son aquellos elementos fisicos que permiten al ordenador communicarse con otro ordenador. Existen dispositivos que permiten conectarse de forma inalambrica y mediante cable.</p>
+
+<p>En linux a cada uno de los dispositivos se les da un identificador, y es este identificador por el cual podremos configurarlos.</p>
+
+<p>Cada dispositivo de red tiene una MAC. Es un identificador unico entre todos los dispositivos de red que existen en el mundo. En las redes de computadoras, la dirección MAC (siglas en inglés de media access control; en español “control de acceso al medio”) es un identificador de 48 bits (6 bloques hexadecimales) que corresponde de forma única a una tarjeta o dispositivo de red. Se conoce también como dirección física.</p>
+
+<h3 id="ping">Ping</h3>
+
+<p>Ping es una utilidad diagnostica que nos permite conocer el estado de la comunicacion entre un ordenador y otro.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~$ ping google.es
+PING google.es (216.58.201.131) 56(84) bytes of data.
+64 bytes from mad06s25-in-f3.1e100.net (216.58.201.131): icmp_seq=1 ttl=63 time=7.80 ms
+64 bytes from mad06s25-in-f3.1e100.net (216.58.201.131): icmp_seq=2 ttl=63 time=7.61 ms
+64 bytes from mad06s25-in-f3.1e100.net (216.58.201.131): icmp_seq=3 ttl=63 time=7.55 ms
+</code></pre>
+</div>
+
+<p>Es muy util porque en caso de problemas de conectividad nos ayudara a diagnosticar la fuente del problema.</p>
+
+<h3 id="ifconfig">ifconfig</h3>
+
+<p>Es un programa disponible en varias versiones del sistema operativo UNIX, que permite configurar o desplegar numerosos parámetros de las interfaces de red, como la dirección IP o la máscara de red. Si se llama sin argumentos suele mostrar la configuración vigente de las interfaces de red activas, con detalles como la dirección MAC o el tráfico que ha circulado por las mismas hasta el momento. Las interfaces de red en Linux se suelen denominar eth (eth0, eth1, etc.).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~$ ifconfig
+enp0s3    Link encap:Ethernet  direcciónHW 08:00:27:33:99:e7  
+          Direc. inet:10.0.2.15  Difus.:10.0.2.255  Másc:255.255.255.0
+          Dirección inet6: fe80::9c0a:cb8b:c9d8:f705/64 Alcance:Enlace
+          ACTIVO DIFUSIÓN FUNCIONANDO MULTICAST  MTU:1500  Métrica:1
+          Paquetes RX:593738 errores:0 perdidos:0 overruns:0 frame:0
+          Paquetes TX:107227 errores:0 perdidos:0 overruns:0 carrier:0
+          colisiones:0 long.colaTX:1000
+         Bytes RX:795191090 (795.1 MB)  TX bytes:9027221 (9.0 MB)
+
+lo        Link encap:Bucle local  
+          Direc. inet:127.0.0.1  Másc:255.0.0.0
+          Dirección inet6: ::1/128 Alcance:Anfitrión
+          ACTIVO BUCLE FUNCIONANDO  MTU:65536  Métrica:1
+          Paquetes RX:3511 errores:0 perdidos:0 overruns:0 frame:0
+          Paquetes TX:3511 errores:0 perdidos:0 overruns:0 carrier:0
+          colisiones:0 long.colaTX:1
+          Bytes RX:592400 (592.4 KB)  TX bytes:592400 (592.4 KB)
+</code></pre>
+</div>
+
+<h3 id="route">route</h3>
+<p>Con el comando route, podremos saber cual es el gateway o puerta de acceso de las interfaces del ordenador.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~$ route -n
+Tabla de rutas IP del núcleo
+Destino         Pasarela        Genmask         Indic Métric Ref    Uso Interfaz
+0.0.0.0         10.0.2.2        0.0.0.0         UG    100    0        0 enp0s3
+10.0.2.0        0.0.0.0         255.255.255.0   U     100    0        0 enp0s3
+169.254.0.0     0.0.0.0         255.255.0.0     U     1000   0        0 enp0s3
+</code></pre>
+</div>
+
+<h3 id="resolvconf">resolv.conf</h3>
+
+<p>Si queremos saber cuales son las DNS que estamos utilizando, lo podemos mirar en el fichero resolf.conf</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~$ cat /etc/resolv.conf
+# Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8)
+#     DO NOT EDIT THIS FILE BY HAND -- YOUR CHANGES WILL BE OVERWRITTEN
+nameserver 127.0.1.1
+search upv.es
+</code></pre>
+</div>
+
+<p>Si queremos resolver un dominio a ip, podemos usar el comando <code class="highlighter-rouge">host</code>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~$ host bioinf.comav.upv.es
+bioinf.comav.upv.es is an alias for proxybioinf.comav.upv.es.
+proxybioinf.comav.upv.es has address 158.42.125.13
+proxybioinf.comav.upv.es mail is handled by 20 mxv.cc.upv.es.
+proxybioinf.comav.upv.es mail is handled by 30 mx2.cc.upv.es.
+proxybioinf.comav.upv.es mail is handled by 10 mx4.cc.upv.es.
+proxybioinf.comav.upv.es mail is handled by 50 vega.cc.upv.es.
+proxybioinf.comav.upv.es mail is handled by 10 albali.cc.upv.es.
+</code></pre>
+</div>
+
+<h1 id="servicios">Servicios</h1>
+
+<p>Los servicios son una serie de procesos que se ejecutan al arrancar el ordenador y que se quedan ejecutando en <em>background</em>.</p>
+
+<p>Tenemos servicios que se encargan desde la configuracion de red como servicios para mostrarnos las paginas web. En ubuntu y debian podemos ver todos los servicios que estan ejecutandose con el siguiente comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~$ systemctl list-units
+</code></pre>
+</div>
+
+<p>Podemos tambien ver el estado de un servicio concreto, iniciarlo, pararlo o que vuelva a leer la configuracion con el commando systemctl.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~$ systemctl status cron
+● cron.service - Regular background program processing daemon
+   Loaded: loaded (/lib/systemd/system/cron.service; enabled; vendor preset: ena
+   Active: active (running) since mar 2016-09-27 15:25:29 CEST; 23h ago
+     Docs: man:cron(8)
+ Main PID: 609 (cron)
+   CGroup: /system.slice/cron.service
+           └─609 /usr/sbin/cron -f
+
+sep 28 11:17:04 virtual CRON[2136]: pam_unix(cron:session): session opened for u
+sep 28 11:17:04 virtual CRON[2143]: (root) CMD (   cd / &amp;&amp; run-parts --report /e
+sep 28 12:17:01 virtual CRON[2535]: pam_unix(cron:session): session opened for u
+sep 28 12:17:01 virtual CRON[2536]: (root) CMD (   cd / &amp;&amp; run-parts --report /e
+sep 28 13:17:01 virtual CRON[2814]: pam_unix(cron:session): session opened for u
+sep 28 13:17:01 virtual CRON[2815]: (root) CMD (   cd / &amp;&amp; run-parts --report /e
+sep 28 13:17:01 virtual CRON[2814]: pam_unix(cron:session): session closed for u
+sep 28 14:17:01 virtual CRON[3333]: pam_unix(cron:session): session opened for u
+sep 28 14:17:01 virtual CRON[3334]: (root) CMD (   cd / &amp;&amp; run-parts --report /e
+sep 28 14:17:01 virtual CRON[3333]: pam_unix(cron:session): session closed for u
+</code></pre>
+</div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Curso Unix</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Curso Unix
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Introduction to the Linux command line.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

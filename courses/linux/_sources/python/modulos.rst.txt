@@ -1,0 +1,470 @@
+
+Módulos
+=======
+
+Cuando vamos a escribir un programa además de disponer de las sentencias y funciones que constituyen el lenguaje de programación para construir el programa podemos hacer uso del código anterior que nosotros mismos u otros usuarios hayan generado.
+Por ejemplo, si necesitamos leer un fichero de secuencias *fasta* y anteriormente escribimos una función capaz de realizar el trabajo sería absurdo volver a repetir la faena.
+Una alternativa sencilla sería copiar la función desde el programa anterior.
+Esto, que puede funcionar para problemas sencillos, sería muy complicado de mantener para proyectos un poco más grandes.
+¿Qué pasa si el código lo ha escrito otro?
+¿Y si la funcionalidad no está escrita en unas pocas líneas sino que es algo complejo?
+¿Si se soluciona un fallo en la función original debemos estar atentos y arreglar también nuestra copia?
+
+Los programadores procuran no repetir un mismo trabajo varias veces por lo que los lenguajes de programación incluyen formas de utilizar código anterior (`DRY <http://es.wikipedia.org/wiki/No_te_repitas>`_, `DRTW<https://en.wikipedia.org/wiki/Reinventing_the_wheel>`_).
+En Python utilizar una función de un programa anterior es muy sencillo, simplemente hemos de importarla al nuevo programa.
+Supongamos que tiempo atrás escribimos un programa llamado *analisis_secuencia* que incluía una función llamada *leer_secuencias_fasta*, para poder utilizar esta función en un nuevo programa lo que debemos hacer es importarla::
+
+  >>> from analisis_secuencia import leer_secuencias_fasta
+  >>> leer_secuencias_fasta('secuencias.fasta')
+
+A partir de este momento podremos utilizar la función como si la hubiésemos escrito en nuestro nuevo programa.
+
+La sintaxis anterior no es la única, otra posibilidad es importar *analisis_secuencia* y después utilizar la función *leer_secuencias_fasta* refiriéndose al programa en el que se encuentra::
+
+  >>> import analisis_secuencia
+  >>> analisis_secuencia.leer_secuencias_fasta('secuencias.fasta')
+
+Además de importar funciones de otros programas *import* nos puede servir para dividir un programa largo en secciones o módulos.
+Resultaría muy complicado organizar un programa de miles de líneas en un solo fichero.
+En este caso lo más recomendable sería dividir este programa en módulos y utilizar *import* para importar las funcionalidades de unos en otros.
+
+Python dispone de un gran número de funcionalidades listas para ser importadas.
+Se suele decir que Python viene con las pilas incluidas por la cantidad de funciones que incluyen sus librerías.
+Los ficheros que incluyen estas funciones y clases no suelen ser llamados programas sino módulos.
+Un módulo es una librería de funciones y clases listas para ser importadas.
+Disponemos de una lista de todos los módulos distribuidos con la instalación estándar de Python en su `documentación <http://docs.python.org/2/py-modindex.html>`_.
+
+Cuando en un proyecto se crean numerosos módulos estos se pueden organizar en directorios dando lugar a paquetes de módulos (*packages*).
+Un ejemplo típico de paquete lo constituye Biopython.
+
+Estas librerías son utilizadas como bloques de construcción con los que podemos crear nuestros propios programas.
+En la mayoría de las ocasiones los programas no se escriben creando todas las funcionalidades desde cero.
+Lo habitual es combinar los bloques ofrecidos por una o varias librerías para solucionar nuestro problema.
+
+Python dispone de un *PYTHONPATH* análogo al *PATH* de Unix.
+Cuando tratemos de importar un módulo Python lo buscará en todos los directorios de su *PYTHONPATH* además de en el directorio en el que se encuentra el programa actual.
+Si no se encuentra un módulo lanzará un error.
+
+Algunos de los módulos de la librería estándar que nos pueden ser de más utilidad a la hora de hacer nuestros propios programas son:
+
+ * `os <http://docs.python.org/library/os.html>`_, utilidades del sistema operativo como cambio o creación de directorios o listado de ficheros.
+ * `shutil <http://docs.python.org/library/shutil.html#module-shutil>`_, copia y borrado de ficheros y directorios.
+ * `os.path <http://docs.python.org/library/os.path.html>`_, manipulación de rutas y nombres de archivo.
+ * `subprocess <http://docs.python.org/library/subprocess.html>`_, ejecución de programas externos.
+ * `sys <http://docs.python.org/library/sys.html>`_, interacción con el shell.
+ * `csv <http://docs.python.org/library/csv.html>`_, lectura y escritura de ficheros CSV.
+ * `re <http://docs.python.org/library/re.html>`_, expresiones regulares.
+ * `tempfile <http://docs.python.org/library/tempfile.html>`_, creación de ficheros temporales.
+
+A continuación se citan las funcionalidades más útiles para un biólogo de estos módulos comunes.
+En todo los casos los módulos ofrecen muchas más funcionalidades que las descritas en este breve resumen, es recomendable leer la documentación oficial para conocer los módulos con detalle.
+
+os
+--
+
+os.getcwd(), devuelve el directorio de trabajo.
+
+::
+
+  >>> import os
+  >>> os.getcwd()
+  '/home/jose'
+
+os.listdir(path), devuelve una lista con los contenidos del directorio.
+
+::
+
+  >>> os.listdir('/home/usuario/')
+  ['busqueda_leukemia_100.txt', 'datos_2.txt', '.profile',
+  'listado.txt', '.bash_logout', '.viminfo',
+  'microarray_adenoma_hk69.csv', 'datos_1.txt', '.bashrc']
+
+os.makedirs(path), crea un directorio y todos los intermedios necesarios.
+
+
+os.remove(path), elimina un fichero.
+
+
+os.removedirs(path), elimina directorios recursivamente.
+
+os.rename(src, dst), cambia el nombre de los ficheros.
+
+os.rmdir(path), elimina un directorio, pero antes debe estar vacío.
+
+
+shutil
+------
+
+shutil.copyfile(src, dst), copia un fichero.
+
+shutil.copy(src, dst), copia un fichero o directorio.
+
+shutil.copytree(src, dst), copia recursivamente un directorio completo.
+
+shutil.rmtree(path), elimina recursivamente un directorio completo.
+
+shutil.move(src, dst), mueve un fichero de un lugar a otro.
+
+os.path
+-------
+
+os.path.abspath(path), devuelve una versión absoluta y normalizada de la ruta.
+
+os.path.basename(path), devuelve el nombre del fichero a partir de la ruta.
+
+::
+
+  >>> os.path.basename('/home/usuario/fichero.txt')
+  'fichero.txt'
+
+os.path.dirname(path), devuelve el nombre del directorio.
+
+::
+
+  >>> os.path.dirname('/home/usuario/fichero.txt')
+  '/home/usuario'
+
+os.path.exists(path), devuelve True si el fichero o el directorio existen, sino False.
+
+os.path.expanduser(path), expande el directorio de usuario.
+
+::
+
+  >>> os.path.expanduser('~/fichero.txt')
+  '/home/jose/fichero.txt'
+
+os.path.join(path1[, path2[, ...]]), une dos rutas.
+
+::
+
+  >>> os.path.join('/home', 'usuario', 'fichero.txt')
+  '/home/usuario/fichero.txt'
+
+os.path.split(path), divide el nombre del directorio y del fichero.
+
+::
+
+  >>> os.path.split('/home/usuario/fichero.txt')
+  ('/home/usuario', 'fichero.txt')
+
+os.path.splitext(path), divide el nombre del fichero y la extensión.
+
+::
+
+  >>> os.path.splitext('/home/usuario/fichero.txt')
+  ('/home/usuario/fichero', '.txt')
+
+subprocess
+----------
+
+*subprocess* nos permite ejecutar programas externos desde Python.
+El modo más potente de usar *subprocess* es mediante la clase `Popen <http://docs.python.org/library/subprocess.html#using-the-subprocess-module>`_, pero aquí sólo vamos a ver las funciones sencillas.
+
+subprocess.call(cmd), ejecuta el comando. El comando debe darse como una lista de parámetros.
+
+::
+
+  >>> retcode = subprocess.call(["ls", "-l"])
+
+subprocess.check_call(cmd), ejecuta el comando. Si el retcode no es cero se creará un error.
+
+::
+
+  >>> subprocess.check_call(["ls", "-l"])
+  0
+
+sys
+---
+
+Da acceso al *shell* en el que se está ejecutando nuestro programa Python.
+
+sys.argv, devuelve una lista con los argumentos con los que se ha ejecutado el programa.
+
+sys.exit(int), sale del programa con retcode dado por el número. Este número es opcional, si no se indica será 0.
+ 
+csv
+---
+
+*csv* es un módulo muy útil que nos permite leer ficheros tabulares::
+
+  nombre edad diabetico
+  "Juan Pablo" 30 Si
+  Alicia 35 No
+  Pedro 20 Si
+
+Estos ficheros *CSV* pueden ser importados y exportados con facilidad por los programas de hoja de cálculo como *Excel* y *Calc* por lo que son una magnífica forma de incorporar estos datos en nuestros programas Python.
+
+Para leer el fichero haríamos::
+
+  import csv
+
+  lector = csv.reader(open('datos.txt', 'rb'),
+                      delimiter=' ',
+                      quotechar='"')
+
+  for fila in lector:
+      print fila  
+
+La función *reader* nos devuelve un iterador sobre las filas del archivo.
+El archivo a leer podría estar separado por espacios, comas, tabuladores o cualquier otro carácter.
+Podemos cambiar este carácter con el parámetro *delimiter* de la función *reader*.
+El carácter utilizado para rodear los datos se puede definir con *quotechar*.
+Para que el módulo funcione correctamente el fichero *CSV* debe estar abierto en modo binario a pesar de que sea un fichero de texto.
+
+Las filas devueltas por *reader* son listas con los valores para cada uno de los campos::
+
+  ['nombre', 'edad', 'diabetico']
+  ['Juan Pablo', '30', 'Si']
+  ['Alicia', '35', 'No']
+  ['Pedro', '20', 'Si']
+
+Alternativamente podríamos hacer uso de *DictReader* para que las filas obtenidas sean diccionarios en vez de listas::
+
+  lector = csv.DictReader(open('datos.txt', 'rb'),
+                          delimiter=' ',
+                          quotechar='"')
+
+::
+
+  {'edad': '30', 'nombre': 'Juan Pablo', 'diabetico': 'Si'}
+  {'edad': '35', 'nombre': 'Alicia', 'diabetico': 'No'}
+  {'edad': '20', 'nombre': 'Pedro', 'diabetico': 'Si'}
+
+Si lo que deseamos es escribir un fichero *CSV* a partir de una lista de lista de listas o de una lista de diccionarios podemos usar *writer* y *DictWriter*.
+
+::
+
+  datos = [['nombre', 'edad', 'diabetico'],
+           ['Juan Pablo', '30', 'Si'],
+           ['Alicia', '35', 'No'],
+           ['Pedro', '20', 'Si']]
+
+  escritor = csv.writer(open('datos.csv', 'wb'),
+                        delimiter= ' ',
+                        quotechar= '"')
+  for fila in datos:
+      escritor.writerow(fila)
+
+::
+
+  datos = [{'edad': '30', 'nombre': 'Juan Pablo', 'diabetico': 'Si'},
+           {'edad': '35', 'nombre': 'Alicia', 'diabetico': 'No'},
+           {'edad': '20', 'nombre': 'Pedro', 'diabetico': 'Si'},
+           {'edad': '50', 'nombre': 'Alberto'}]
+
+  escritor = csv.DictWriter(open('datos.csv', 'wb'),
+                            fieldnames= ['nombre', 'edad', 'diabetico'],
+                            delimiter= ' ',
+                            quotechar= '"',
+                            restval='n.d')
+
+  for fila in datos:
+      escritor.writerow(fila)
+
+::
+
+  nombre edad diabetico
+  "Juan Pablo" 30 Si
+  Alicia 35 No
+  Pedro 20 Si
+
+En el caso del *DictWriter* hemos de proporcionar obligatoriamente el parámetro *fieldnames* ya que los diccionarios no están ordenados y necesitamos indicar el orden en el que deseamos imprimir las columnas.
+Adicionalmente disponemos del argumento *restval* en el que podemos indicar cual es la cadena de texto que queremos imprimir para los datos faltantes.
+
+Ejercicios
+----------
+
+1. Dado el programa *saluda.py* de Python:
+
+::
+
+   def saluda():
+        print 'Hola'
+
+Crea un programa que importe la función *saluda* e imprima un saludo.
+
+2. Crea un directorio llamado *prueba desde Python, después escribe en él un fichero *hola.txt* que contenga la línea  *Hola*', léelo y después bórralo todo.
+
+3. ¿Cuál es el directorio de trabajo actual?
+¿Hay algún fichero en él?
+¿Del primero de los ficheros que aparecen en el listado, cuál es la ruta completa?
+¿Se podría extraer de esta ruta el nombre del directorio y el fichero?
+¿Cuál es la *$HOME* de nuestro usuario?
+¿Del fichero 'programa.py' cuáles son el nombre y la extensión?
+
+4. Utilizando el módulo *subprocess* ejecuta el comando *ls*. ¿Qué se obtiene? ?Qué significa el cero que aparece al final?
+
+5. Crea un programa que lea la información del fichero *tomates.txt*:
+
+::
+
+  nombre color grado_de_madurez
+  big_red rojo 5
+  italiano amarillo 3
+  valenciano verde 1
+  penjar rojo 4
+  canario rojo 2
+
+El programa debe imprimir la información relativa a una entrada y después volver a escribir la información, pero esta vez separada por comas.
+
+
+Soluciones
+----------
+
+1. Dado el programa *saluda.py* de Python:
+
+::
+
+   def saluda():
+        print 'Hola'
+
+Crea un programa que importe la función *saluda* e imprima un saludo.
+
+::
+
+  from saluda import saluda
+
+  saluda()
+
+2. Crea un directorio llamado *prueba desde Python, después escribe en él un fichero *hola.txt* que contenga la línea  *Hola*', léelo y después bórralo todo.
+
+::
+
+  >>> import os
+  >>> os.listdir('.')
+  []
+  >>> os.makedirs('prueba')
+  >>> os.listdir('.')
+  ['prueba']
+  >>> fhand = open('prueba/hola.txt', 'w')
+  >>> fhand.write('Hola\n')
+  >>> fhand.close()
+  >>> fhand = open('prueba/hola.txt')
+  >>> fhand.read()
+  'Hola\n'
+  >>> fhand.close()
+  >>> os.remove('prueba/hola.txt')
+  >>> os.removedirs('prueba')
+
+3. ¿Cuál es el directorio de trabajo actual?
+¿Hay algún fichero en él?
+¿Del primero de los ficheros que aparecen en el listado, cuál es la ruta completa?
+¿Se podría extraer de esta ruta el nombre del directorio y el fichero?
+¿Cuál es la *$HOME* de nuestro usuario?
+¿Del fichero 'programa.py' cuáles son el nombre y la extensión?
+
+::
+
+  >>> import os
+  >>> os.getcwd()
+  '/home/jose/tmp/curso/curso'
+  >>> working_dir = os.getcwd()
+  >>> os.listdir(working_dir)
+  ['contar_colores.py', 'fasta_parser.py', 'import_saluda.py']
+  >>> os.path.join(working_dir, 'contar_colores.py')
+  '/home/jose/tmp/curso/contar_colores.py'
+  >>> ruta = os.path.join(working_dir, 'contar_colores.py')
+  >>> os.path.split(ruta)
+  ('/home/jose/tmp/curso', 'contar_colores.py')
+  >>> os.path.expanduser('~')
+  '/home/jose'
+  >>> os.path.splitext('programa.py')
+  ('programa', '.py')
+ 
+4. Utilizando el módulo *subprocess* ejecuta el comando *ls*. ¿Qué se obtiene? ?Qué significa el cero que aparece al final?
+
+::
+
+ >>> import subprocess
+ >>> subprocess.call(['ls'])
+ bowtie-0.12.7                  leer_csv.py
+ bowtie-0.12.7-linux-x86_64.zip leer_palabras.py
+ bowtie-0.12.7-src.zip          leer_tabla.py
+ calcular_medias_triplicados.py microarray_adenoma_hk69.csv
+ 0
+
+El cero es el código de salida del programa ejecutado, en este caso *ls*.
+Quiere decir que programa ha acabado sin errores, si hubiese ocurrido algún error durante la ejecución el número sería distinto a cero.
+
+5. Crea un programa que lea la información del fichero *tomates.txt*:
+
+::
+
+  nombre color grado_de_madurez
+  big_red rojo 5
+  italiano amarillo 3
+  valenciano verde 1
+  penjar rojo 4
+  canario rojo 2
+
+El programa debe imprimir la información relativa a una entrada y después volver a escribir la información, pero esta vez separada por comas.
+
+::
+
+  import csv
+  
+  def leer_tomates(nombre_fichero):
+      'Lee un fichero CSV'
+  
+      tomates = []
+      for tomate in csv.DictReader(open(nombre_fichero, 'rb'),
+                                   delimiter=' '):
+          tomates.append(tomate)
+  
+      return tomates
+  
+  def escribir_tomates(tomates, nombre_fichero):
+      'Escribe la informacion de la lista de tomates'
+  
+      #necesitamos saber el nombre de los campos para
+      #poder escribir la cabecera del fichero y para
+      #determinar el orden.
+      #en cualquier tomate tenemos el nombre de los campos
+      un_tomate = tomates[0]
+      #el nombre de los campos son las claves del diccionario
+      campos = tomates[0].keys()
+  
+      #vamos a ordenar los campos por orden alfabetico
+      campos.sort()
+  
+      #abrimos el fichero para escribir
+      fhand = open(nombre_fichero, 'wb')
+  
+      escritor = csv.DictWriter(fhand,
+                                fieldnames= campos,
+                                delimiter= ',',
+                                quotechar='"')
+      #antes de escribir las filas para cada tomate debemos
+      #escribir la cabecera
+      cabezera = ','.join(campos)
+      fhand.write(cabezera + '\n')
+  
+      #en python 2.7 podriamos haber escrito
+      #escritor.writeheader()
+  
+      #ahora podemos escribir una fila para cada tomate
+      escritor.writerows(tomates)
+  
+      #Alternativamente podriamos haber escrito
+      #for tomate in tomates:
+      #    escritor.writerow(tomate)
+  
+      fhand.close()
+  
+  def leer_y_escribir():
+      'Lee un fichero y lo vuelve a escribir'
+  
+      tomates = leer_tomates('tomates.txt')
+      print tomates[0]
+      escribir_tomates(tomates, 'tomates_comas.txt')
+  
+  if __name__ == '__main__':
+      leer_y_escribir()
+
+
+
+Para saber más
+--------------
+
+Se puede consultar la sección dedicada a los `módulos <http://docs.python.org/tutorial/modules.html>`_ del tutorial oficial de Python, así como la documentación de los distintos módulos y paquetes.
+

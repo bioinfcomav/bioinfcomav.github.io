@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Procesos</title>
+  <meta name="description" content="Introduction to the Linux command line.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/control_procesos.html">
+  <link rel="alternate" type="application/rss+xml" title="Curso Unix" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Curso Unix</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/index.html">Curso Unix</a>
+          
+        
+          
+          <a class="page-link" href="/unix_intro.html">Unix y Linux</a>
+          
+        
+          
+          <a class="page-link" href="/sistema_de_ficheros.html">El sistema de ficheros</a>
+          
+        
+          
+          <a class="page-link" href="/control_procesos.html">Procesos</a>
+          
+        
+          
+          <a class="page-link" href="/pipes.html">Flujos de información</a>
+          
+        
+          
+          <a class="page-link" href="/procesamiento_texto.html">Procesamiento de ficheros de texto</a>
+          
+        
+          
+          <a class="page-link" href="/expresiones_regulares.html">Expresiones regulares</a>
+          
+        
+          
+          <a class="page-link" href="/scripts_bash.html">Scripts de bash</a>
+          
+        
+          
+          <a class="page-link" href="/administrador.html">Administrador</a>
+          
+        
+          
+          <a class="page-link" href="/administracion_software1.html">Administracion de software 1</a>
+          
+        
+          
+          <a class="page-link" href="/variables_de_entorno.html">Variables de entorno</a>
+          
+        
+          
+          <a class="page-link" href="/administracion_software2.html">Administracion de software 2</a>
+          
+        
+          
+          <a class="page-link" href="/redes.html">Redes</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Procesos</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#ps" id="markdown-toc-ps"><em>ps</em></a></li>
+  <li><a href="#kill" id="markdown-toc-kill"><em>kill</em></a></li>
+  <li><a href="#free" id="markdown-toc-free"><em>free</em></a></li>
+  <li><a href="#top" id="markdown-toc-top"><em>top</em></a></li>
+  <li><a href="#screen-y-byobu" id="markdown-toc-screen-y-byobu">screen y byobu</a></li>
+  <li><a href="#ejercicios" id="markdown-toc-ejercicios">Ejercicios</a></li>
+</ul>
+
+<p>Un <a href="https://en.wikipedia.org/wiki/Process_(computing)">proceso</a> es una instancia de un programa en ejecución.
+Programas y procesos son entidades distintas.
+En un sistema operativo multitarea, múltiples instancias de un programa pueden ejecutarse simultáneamente.
+Cada instancia es un proceso separado.</p>
+
+<p>Prácticamente todo lo que se está ejecutando en el sistema en cualquier momento es un proceso, incluyendo la <em>shell</em>, el ambiente gráfico, que puede tener múltiples procesos, etc.</p>
+
+<p>Linux, como ya hemos visto, es un sistema operativo multitarea y multiusuario.
+Esto quiere decir que múltiples procesos pueden operar simultáneamente sin interferir unos con otros.
+Por ejemplo, si cinco usuarios desde equipos diferentes, ejecutan el mismo programa al mismo tiempo, habría cinco instancias del mismo programa, es decir, cinco procesos distintos.</p>
+
+<p>Cada proceso que se inicia es identificado con un número de identificación único conocido como <em>Process ID</em> (<em>PID</em>), que es siempre un número natural.</p>
+
+<p>Haciendo análisis muchas veces ejecutaremos programas, crearemos procesos, que duren un tiempo considerable.
+Es interesante que durante el tiempo que dure el proceso podamos consultar su estado.
+Los entornos UNIX tienen una serie de herramientas para poder conocer el estado de los procesos y del sistema en general.</p>
+
+<h2 id="ps"><em>ps</em></h2>
+
+<p>El comando <em>ps</em> (<em>process status</em>) nos informa sobre el estado de los procesos.
+Dependiendo de los parámetros que le demos nos mostrara un tipo de información u otra y unos procesos u otros.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ps
+</code></pre>
+</div>
+
+<p>Si queremos obtener la lista completa de procesos podemos usar las opciones <em>-ef</em>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ps -ef
+</code></pre>
+</div>
+
+<p>En este caso la segunda columna nos indicará el <em>PID</em> o identificador único del proceso.</p>
+
+<h2 id="kill"><em>kill</em></h2>
+
+<p>El comando <em>kill</em>, a pesar de su nombre, no sólo sirve para matar o terminar procesos sino también para enviar señales a los procesos.
+La señal por defecto (cuando no se indica ninguna es terminar o matar el proceso), y la sintaxis es kill PID, siendo PID el número de ID del proceso.
+Pero hay otras señales que podemos enviar.
+Así, por ejemplo, es posible enviar una señal de <em>STOP</em> al proceso y se detendrá su ejecución, después cuando se quiera reanudar su ejecución podemos enviar la señal <em>CONTinuar</em> y el proceso continuara desde donde se quedo detenido.
+Con kill -l podemos acceder a una lista de todas las señales que podemos mandar a un proceso:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ kill -l
+</code></pre>
+</div>
+
+<p>El modo más convencional de matar un proceso es intentar primero que muera ordenadamente con un -15 (Termination signal) y sino lo conseguimos matarlo con un -9 (Kill signal):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ kill -15 4719
+$ kill -9 4719
+</code></pre>
+</div>
+
+<h2 id="free"><em>free</em></h2>
+
+<p><em>free</em> nos muestra información sobre el uso y disponibilidad de la memoria.
+Es aconsejable usar la opción <em>-h</em> ya que así generará la información en una forma más fácil de leer para los seres <em>h</em>umanos.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ free -h
+</code></pre>
+</div>
+
+<h2 id="top"><em>top</em></h2>
+
+<p>Una herramienta muy usada y muy útil para el monitoreo en tiempo real del estado de los procesos y de otras variantes del sistema es el programa llamado top, se ejecuta desde la línea de comandos, es interactivo y por defecto se actualiza cada 3 segundos.</p>
+
+<p>Estando dentro de la aplicación, presionando ‘h’ se accede a una ayuda de los posibles comandos que permiten configurar top, por ejemplo, al presionar ‘s’ pregunta por el tiempo en segundos de actualización, etc.</p>
+
+<p>Una alternativa más moderna al comando <em>top</em>, que normalmente no es instalada por defecto, es <em>htop</em>.</p>
+
+<h2 id="screen-y-byobu">screen y byobu</h2>
+
+<p><em>screen</em> es permite tener varios shells a la vez en la misma terminal y permite cerrar la terminal sin que los shells sean destruidos.
+<em>screen</em> tiene dos usos principales:</p>
+
+<ul>
+  <li>Tener varios shells abiertos bajo una sola sesión SSH</li>
+  <li>Lanzar procesos que queremos que se mantengan entre distintas sesiones.</li>
+</ul>
+
+<p><em>byobu</em> es una modificación de <em>screen</em> que lo hace más fácil de utilizar.
+La distribución Ubuntu mantiene un manual de ayuda para <a href="https://help.ubuntu.com/community/Byobu"><em>byobu</em></a></p>
+
+<h2 id="ejercicios">Ejercicios</h2>
+
+<ol>
+  <li>
+    <p>Averigua todos los procesos que hay en ejecución.</p>
+  </li>
+  <li>
+    <p>Cuantos procesos tiene tu usuario en ejecución?</p>
+  </li>
+  <li>
+    <p>Ejecuta el comando “less” y averigua el <em>pid</em> del proceso</p>
+  </li>
+  <li>
+    <p>Termina (mata) el proceso “less”</p>
+  </li>
+  <li>
+    <p>Abre proceso less dentro de byobu, sal de la terminal dejando el proceso corriendo y vuelve a entrar en byobu. El proceso debería continuar abierto</p>
+  </li>
+  <li>
+    <p>Repite el ejercicio anterior en un ordenador remoto.</p>
+  </li>
+</ol>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Curso Unix</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Curso Unix
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Introduction to the Linux command line.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

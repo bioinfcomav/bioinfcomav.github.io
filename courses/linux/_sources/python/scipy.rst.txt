@@ -1,0 +1,147 @@
+
+Numpy
+-----
+
+Numpy_ es una librería en la que se define un tipo de dato que representa matrices multidimensionales, equivalentes a las matrices del R.
+Además incluye algunas funcionalidades básicas para trabajar con ellas.
+Numpy_ es una librería con una amplia tradición en Python, es estable y muy rápida.
+Se dispone de un buen `tutorial de Numpy <http://www.scipy.org/Tentative_NumPy_Tutorial>`_.
+
+Python en ciencia
+=================
+
+Scipy_ es una librería que provee herramientas matemáticas y algoritmos.
+Es software libre distribuido bajo la licencia BSD desarrollado por una comunidad de desarrolladores tutelada por `Enthought <http://www.enthought.com/>`_
+
+El objetivo de SciPy_ es crear un entorno de trabajo similar a Matlab.
+Scipy_ se compone de numerosos módulos.
+El más importante de todos ellos es Numpy_ ya que es el que proporciona el array multidimensional que todas los otros utilizan como base.
+Algunos de los módulos de Scipy_ son:
+
+cluster
+        hierarchical clustering, vector quantization, K-means
+fftpack
+        Discrete Fourier Transform algorithms
+integrate
+        numerical integration routines
+interpolate
+        interpolation tools
+linalg
+        linear algebra routines
+optimize
+        optimization algorithms including linear programming
+signal
+        signal processing tools
+sparse
+        sparse matrix and related algorithms
+spatial
+        KD-trees, nearest neighbors, distance functions
+stats
+        statistical functions
+
+pandas
+------
+
+pandas_ es un paquete de Python que proporciona estructuras de datos similares a los dataframes de R.
+Los principales tipos de datos que pueden representarse con pandas son:
+
+ - Datos tabulares con columnas de tipo heterogéneo con etiquetas en columnas y filas.
+ - Time series.
+
+pandas_ tiene dos tipos de datos principales, *Series* (1 dimensión) y *DataFrame* (2 dimensiones).
+pandas_ depende de Numpy.
+
+matplotlib
+----------
+
+matplotlib_ es una librería que permite hacer `gráficos <http://matplotlib.sourceforge.net/gallery.html>`_.
+Se puede utilizar junto a Numpy_ o independientemente.
+Los gráficos pueden ser guardados en ficheros (png, svg, pdf, etc.) o ser utilizados interactivamente.
+El módulo principal de uso de matplotlib es pyplot.
+pyplot presenta un interfaz state-machine. Ejemplo::
+
+  import matplotlib.pyplot as plt
+
+  plt.plot(range(10), range(10))
+  plt.title("Simple Plot")
+  plt.show()
+
+Otro interfaz similar es pylab que combina pyplot con numpy.
+
+Además de los tipos de gráficos incluidos directamente en matplotlib_ hay extensiones que añaden más funcionalidad como:
+
+ - Basemap. Mapas greográficos.
+ - Mplot3d: Gráficos 3D.
+
+Rpy
+---
+
+`Rpy <http://matplotlib.sourceforge.net/>`_ permite utilizar R desde dentro de Python.
+Hay dos versiones rpy y rpy2.
+rpy2 es una reescritura completa de la librería y es la recomendada para iniciar proyectos nuevos.
+
+Tutorial de matplotlib
+======================
+
+Algo de nomenclatura:
+
+`Figure <http://matplotlib.sourceforge.net/api/figure_api.html>`_
+  Incluye todos los elementos. Puede incluir varios subplots, es decir varios Axes.
+`Axes <http://matplotlib.sourceforge.net/api/axes_api.html#matplotlib.axes.Axes>`_
+  Incluye la mayor parte de los elementos de la figura: Axis, Tick, Line2d, Text, etc. y sitúa el sistema de coordenadas.
+`Axis <http://matplotlib.sourceforge.net/api/axis_api.html#matplotlib.axis.Axis>`_
+  Representa los ejes de la gráfica.
+`Tick <http://matplotlib.sourceforge.net/api/axis_api.html#matplotlib.axis.Tick>`_
+  Marca en uno de los ejes.
+
+pyplot nos permite dibujar gráficas.
+Cada comando que ejecutamos modifica la figura de forma secuencial::
+
+  >>> import matplotlib.pyplot as plt
+  >>> plt.ylabel('Numeros')
+  >>> plt.show()
+
+El comando plot dibuja líneas o puntos en Axes.
+Podemos modificar el formato de las series de datos, talno el color como la forma.
+Para una lista completa de qué se puede hacer con el comando plot hay que mirar su `documentación <http://matplotlib.sourceforge.net/api/pyplot_api.html#matplotlib.pyplot.plot>`_.
+
+::
+  >>> plt.plot([1,2,3,4], [1,4,9,16], 'ro')
+
+El formato de las líneas también puede ser modificado::
+
+  >>> plt.plot([1, 2, 3, 4], [1, 4, 9, 16], linewidth=2.0)
+
+Disponemos de una lista completa de propiedades de las líneas que pueden ser modificadas en la documentación de `Line2D <http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.lines.Line2D>`_.
+
+También podemos modificar los ejes. Por ejemplo indicando a axis cuales son os xmin, xmax, ymin e ymax::
+
+  >>> plt.axis([0, 6, 0, 20])
+
+Para situar texto en las gráficas se utiliza el comando `text <http://matplotlib.sourceforge.net/api/pyplot_api.html#matplotlib.pyplot.text>`_::
+
+  >>> plt.text(2, 3, 'Hola')
+
+matplotlib también nos permite hacer diagramas de barras (`bar <http://matplotlib.sourceforge.net/api/pyplot_api.html#matplotlib.pyplot.bar>`_)::
+
+  >>> plt.bar([1, 2, 3, 4], [5, -3, 1, 2], width=width)
+
+Resulta muy sencillo también crear histogramas (`hist <http://matplotlib.sourceforge.net/api/pyplot_api.html#matplotlib.pyplot.hist>`_)::
+
+  >>> samples = [1, 1, 2, 3, 4, 3, 2, 3, 6, 7, 8,]
+  >>> plt.hist(samples)
+
+Documentación adicional:
+
+ - `cookbook <http://www.scipy.org/Cookbook/Matplotlib/>`_.
+ - `Tutorial para físicos <http://physics.nmt.edu/~raymond/software/python_notes/paper004.html>`_.
+ - `Tutorial <http://matplotlib.sourceforge.net/leftwich_tut.txt>`_ de la interfac orientada a objetos.
+ - `Documentación completa <http://matplotlib.sourceforge.net/contents.html>`_.
+ - `Libro sobre matplotlib <http://www.amazon.com/dp/1847197906/>`_.
+
+.. _Scipy: http://www.scipy.org/
+.. _Numpy: http://numpy.scipy.org/
+.. _pandas: http://pandas.sourceforge.net/
+.. _matplotlib: http://matplotlib.sourceforge.net/
+
+

@@ -1,0 +1,462 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introducción a Python &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Cadenas de texto" href="cadenas_de_texto.html" />
+    <link rel="prev" title="Instalando software" href="../unix/administracion_software.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/software.html">Software</a>
+                <ul>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
+               </ul>
+            </li>
+            <li><a href="/databases.html">Databases</a>
+                <ul>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                <nav class="vertical_nav page_nav">
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../presentacion_del_curso.html">Presentación del curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/introduccion.html">Introducción a Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html">Iniciación a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ubuntu.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html">La Shell the UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/shell.html#el-sistema-de-ficheros">El sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/procesos.html">Procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/administracion_software.html">Administración de software</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introducción a Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#porque-python">¿Porqué Python?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creando-y-ejecutando-hola-mundo">Creando y ejecutando “Hola mundo”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aritmetica-basica">Aritmética básica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variables">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nombres-de-variables">Nombres de variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tipos-de-objetos">Tipos de objetos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#herramientas-avanzadas">Herramientas avanzadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bibliografia">Bibliografía</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cadenas_de_texto.html">Cadenas de texto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primer_programa.html">Un primer programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_de_flujo.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html">Diccionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructuras_de_datos.html#sets">Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicios_repaso.html">Ejercicios de repaso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ficheros.html">Ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generadores.html">Generadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulos.html">Modulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biopython.html">Biopython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#pandas">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#matplotlib">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scipy.html#rpy">Rpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html">Ejercicios finales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejercicios_finales.html#soluciones">Soluciones</a></li>
+</ul>
+
+                </nav>
+                
+    
+  <!-- dependencies for pytutor.js -->
+<script type="text/javascript" src="../_downloads/js/d3.v2.min.js"></script>
+<script type="text/javascript" src="../_downloads/js/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="../_downloads/js/jquery.ba-bbq.min.js"></script>
+<script type="text/javascript" src="../_downloads/js/jquery.jsPlumb-1.3.10-all-min.js "></script>
+<script type="text/javascript" src="../_downloads/js/jquery-ui-1.8.21.custom.min.js"></script>
+<link type="text/css" href="../_downloads/css/ui-lightness/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="../_downloads/js/pytutor.js"></script>
+<link rel="stylesheet" href="../_downloads/css/pytutor.css"/>
+<!-- End dependencies for pytutor.js --><section id="introduccion-a-python">
+<h1>Introducción a Python<a class="headerlink" href="#introduccion-a-python" title="Permalink to this headline">¶</a></h1>
+<section id="porque-python">
+<h2>¿Porqué Python?<a class="headerlink" href="#porque-python" title="Permalink to this headline">¶</a></h2>
+<p>Programar consiste en escribir una serie de instrucciones que el ordenador interpretará.
+Estas instrucciones constituirán una herramienta.
+Por ejemplo, podemos escribir un programa para hacer medias aritméticas.
+Las instrucciones, el programa, serían algo parecido a:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Lee los números</p></li>
+<li><p>suma los valores y guarda el resultado</p></li>
+<li><p>cuenta los valores y guarda el resultado</p></li>
+<li><p>divide la suma por el número de valores</p></li>
+<li><p>imprime el resultado final</p></li>
+</ul>
+</div></blockquote>
+<p>Por desgracia el programa anterior no podría ser entendido por ningún ordenador actual.
+Para que el ordenador pueda entender el programa primero debemos escribirlo en un lenguaje que él entienda.</p>
+<p>Existen infinidad de lenguajes de programación.
+Algunos de ellos se parecen bastante al código anterior, son lenguajes cercanos a los seres humanos, como <a class="reference external" href="http://es.wikipedia.org/wiki/Python">Python</a> o <a class="reference external" href="http://es.wikipedia.org/wiki/Basic">Basic</a>, otros son muy parecidos a lo que la máquina realmente entiende como <a class="reference external" href="http://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n_C">C</a> o <a class="reference external" href="http://es.wikipedia.org/wiki/Ensamblador">ensamblador</a>.
+Cuanto más cercano sea el lenguaje a la máquina más eficiente podrá llegar a ser su ejecución, pero más tiempo nos llevará desarrollarlo.
+Por ejemplo, si queremos escribir un programa que imprima un saludo de bienvenida en C deberíamos escribir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;stdio.h&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Hello, World!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+
+      <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Mientras que en Python escribiríamos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola mundo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Además el programa de C no puede ser ejecutado directamente, antes debemos compilarlo creando un archivo binario ejecutable que la máquina pueda entender.
+Python es un lenguaje interpretado, lo que quiere decir que los archivos de texto con el código escrito se ejecutan directamente sin que debamos antes hacer nada especial con ellos, Python se encarga de estas tareas sin que nosotros debamos intervenir en ellas.</p>
+<p>Dados los problemas que vamos a tener que resolver como biólogos y el tiempo que disponemos para resolverlos, elegir un lenguaje similar a Python es una buena idea.
+Tradicionalmente en bioinformática se ha hecho más uso de otro lenguaje similar, <a class="reference external" href="http://es.wikipedia.org/wiki/Perl">Perl</a>.
+Este curso podría darse completamente en Perl, pero hemos elegido Python porque tiene una sintaxis mucho más sencilla.
+De hecho Python fue creado por un profesor y uno de sus objetivos declarados fue que el lenguaje fuese fácil de aprender.
+Esta sencillez no limita en modo alguno al lenguaje, de hecho Python es más moderno y más potente que Perl y una gran parte de la bioinformática se está moviendo día a día hacia este lenguaje.</p>
+<dl class="simple">
+<dt>Python:</dt><dd><ul class="simple">
+<li><p>es interpretado.</p></li>
+<li><p>es sencillo.</p></li>
+<li><p>es libre.</p></li>
+<li><p>es multiplataforma (funciona en windows sin problemas).</p></li>
+<li><p>se utiliza ampliamente.</p></li>
+<li><p>está muy bien documentado.</p></li>
+<li><p>está bien soportado en bioinformática, aunque menos que Perl.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="creando-y-ejecutando-hola-mundo">
+<h2>Creando y ejecutando “Hola mundo”<a class="headerlink" href="#creando-y-ejecutando-hola-mundo" title="Permalink to this headline">¶</a></h2>
+<p>Para seguir la tradición informática lo primero que vamos a hacer es escribir un programa que imprima “Hola mundo”.
+Para ello vamos a abrir un interprete de comandos de Python escribiendo python en la línea de comandos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python
+Python 2.6.6 (r266:84292, Sep 15 2010, 16:22:56)
+[GCC 4.4.5] on linux2
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; print(&#39;hola mundo&#39;)
+hola mundo
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>Al ejecutar el comando python sin ningún argumento extra se abre un interprete en el que podemos ejecutar comandos en Python.
+En el caso del ejemplo nos indica que estamos utilizando la versión 2.6.6 del lenguaje.
+Python tiene distintas versiones, la más moderna es la 3.3, pero las más utilizadas son todavía las de la serie 2.x.
+Este curso está escrito para las versiones 2.x porque las 3.x todavía no son usadas ampliamente.
+De todos modos las diferencias entre ambas versiones son mínimas y lo que vamos a ver en el curso es aplicable a ambas.</p>
+<p>Tras la información sobre la versión y sobre algún otro asunto aparecen tres símbolos “mayor que”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Este es un prompt similar al del shell al que ya estamos acostumbrados.
+Python nos indica que está listo para recibir órdenes.
+Si escribimos una orden como <em>print(‘hola mundo’)</em>, Python la ejecutará y nos mostrará el resultado:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hola mundo!&#39;</span><span class="p">)</span>
+<span class="go">Hola mundo!</span>
+</pre></div>
+</div>
+<p>Una vez cumplida nuestra primera misión podemos salir del interprete de Python escribiendo quit() o pulsando las teclas control y d.</p>
+<p>python es el interprete que se distribuye con el lenguaje, pero como interprete interactivo <a class="reference external" href="http://es.wikipedia.org/wiki/IPython">IPython</a> nos puede resultar más útil.
+IPython colorea la sintaxis y completa los comandos por nosotros pulsando la tecla tabulador.</p>
+<p>Aunque el interprete de python es muy útil, normalmente los programas no los vamos a escribir utilizándolo.
+Python tiene otro modo de ejecutar los comandos.
+Lo que haremos será escribir los comandos uno tras otro en un fichero de texto y después le pediremos a python que los ejecute secuencialmente.
+Por ejemplo podemos crear el siguiente fichero utilizando un editor de textos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hola_mundo</span><span class="o">.</span><span class="n">py</span><span class="p">:</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola mundo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Una vez escrito y guardado el fichero podemos ejecutarlo escribiendo lo siguiente en la línea de comandos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python hola_mundo.py
+Hola mundo
+</pre></div>
+</div>
+<p>La ventaja de este sistema frente al del interprete es que el programa queda escrito en un fichero y lo podemos ejecutar tantas veces como queramos sin tener que reescribirlo.</p>
+<p>Normalmente haremos que los ficheros que contienen código Python tengan la extensión <em>.py</em>.
+Esto no es un requisito obligatorio, pero nuestro trabajo será más sencillo si lo hacemos así.</p>
+<p>En realidad la versión que recomendaríamos como esqueleto básico de programa ejecutable sería:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/env python</span>
+
+<span class="nb">print</span> <span class="s2">&quot;Hola mundo&quot;</span>
+</pre></div>
+</div>
+<p>Este fichero puede ser hecho ejecutable y ser ejecutado sin tener que escribir python dado que el propio fichero indica cómo buscar el comando python en el sistema.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ chmod u+x hola_mundo.py
+$ ./hola_mundo.py
+Hola mundo
+$ python hola_mundo.py
+Hola mundo
+</pre></div>
+</div>
+<p>Cuando hemos ejecutado el fichero directamente lo hemos hecho dando la ruta relativa completa al fichero (<em>./hola_mundo.py</em>).
+Hemos de hacerlo así porque normalmente el directorio de trabajo no se encuentra en el <em>$PATH</em> que el <em>shell</em> utiliza para buscar los ficheros ejecutables.
+Si hubiésemos intentado ejecutarlo directamente habríamos obtenido un error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ hola_mundo.py
+hola_mundo.py: orden no encontrada
+</pre></div>
+</div>
+</section>
+<section id="aritmetica-basica">
+<h2>Aritmética básica<a class="headerlink" href="#aritmetica-basica" title="Permalink to this headline">¶</a></h2>
+<p>Python puede ser utilizado como una calculadora:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python
+&gt;&gt;&gt; 1 + 1
+2
+&gt;&gt;&gt; 2 * 2
+4
+&gt;&gt;&gt; 3.5 / 2
+1.75
+</pre></div>
+</div>
+<p>Potencias:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span>
+<span class="go">8</span>
+</pre></div>
+</div>
+<p>En algunas ocasiones los operadores no hacen lo que esperamos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">/</span> <span class="mf">2.0</span>
+<span class="go">1.5</span>
+</pre></div>
+</div>
+<p>En Python 2.x cuando en la división hay números enteros la operación nos devolverá un número entero.
+Afortunadamente este comportamiento del operador división ha sido corregido en la versión 3.x.</p>
+<p>Además de estos operadores básicos hay otro denominado módulo capaz de calcular resto de la división:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">4</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>Este operador nos puede ser de mucha utilidad para cálculos con codones.</p>
+<p>En Python además de números enteros y con coma flotante también hay cadenas de texto y existe también una aritmética definida para ellas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Monty&quot;</span> <span class="o">+</span> <span class="s2">&quot;Python&quot;</span>
+<span class="go">&#39;MontyPython&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Spam&quot;</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="go">&#39;SpamSpamSpam&#39;</span>
+</pre></div>
+</div>
+<p>Las cadenas de texto se pueden introducir entre comillas dobles o sencillas, en Python ambas opciones son equivalentes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Hola&quot;</span> <span class="o">==</span> <span class="s1">&#39;Hola&#39;</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>Además de hacer aritmética podemos guardar los resultados para utilizarlos posteriormente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">b</span>
+<span class="go">16</span>
+</pre></div>
+</div>
+<p>En el caso anterior <em>a</em> y <em>b</em> son variables.
+Una variable puede ser representada como una caja en la que guardar un elemento.
+En este caso en la <em>a</em> hemos guardado un 4 y para más tarde hacer uso de él.
+La memoria del ordenador podría ser representada como un conjunto de cajas en las que almacenar los datos que más tarde queramos volver a utilizar.
+Si por ejemplo queremos guardar el número 4 en la memoria deberíamos escribir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>Una vez hecho esto el cuatro queda guardado en la memoria y listo para volver a ser utilizado cuando lo deseemos.
+Aunque a primera vista lo que hemos hecho parezca trivial merece la pena profundizar algo más.
+En realidad lo primero que hemos hecho ha sido crear un número 4, después lo hemos guardado en una de las cajas que componen la memoria del ordenador y por último hemos etiquetado esa caja con la letra a.
+En este momento tal vez nos parezca que el modelo del objeto, la caja y la etiqueta es demasiado complejo, pero nos será de utilidad entender que al hacer “a = 4” la a no se convierte en el cuatro sino que tan sólo apunta a él.
+Si no hemos entendido lo anterior lo que sigue nos parecerá muy extraño:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">=</span> <span class="mi">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;spam&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">b</span>
+<span class="go">42</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/variables.png"><img alt="../_images/variables.png" class="align-center" src="../_images/variables.png" style="width: 600px;" /></a>
+<p>¿Por qué al final <em>b</em> es igual a 42 y no a “spam”? Veámoslo paso a paso:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a = 42. Creamos el número 42, lo guardamos en una caja en la memoria y etiquetamos la caja con la etiqueta “a”.</p></li>
+<li><p>b = a. Añadimos otra etiqueta (“b”) a la caja que tenía la etiqueta “a”. En este momento la caja que contiene el 42 tiene dos etiquetas “a” y “b”</p></li>
+<li><p>a = ‘spam’. Primero creamos la cadena de texto “spam”, la metemos en otra caja de memoria, tomamos la etiqueta “a” de la caja vieja y hacemos que se refiera a la nueva caja.</p></li>
+</ul>
+</div></blockquote>
+<p>Después de terminar el proceso la caja original, la que contenía el 42 tiene todavía la etiqueta “b” y la nueva, la que contiene “spam” tiene la etiqueta “a”.</p>
+<script type="text/javascript" src="../_downloads/variables_code_run.js"></script>
+<div id="VariablesDiv"></div><p>Podríamos continuar programando en Python y en la mayoría de las ocasiones no nos enfrentaríamos a ningún problema grave si no entendiésemos qué representan realmente las variables, pero al final nos acabaríamos topando con este comportamiento.
+Técnicamente podríamos decir que en Python las variables representan referencias a los objetos, no a los objetos en sí.</p>
+</section>
+<section id="nombres-de-variables">
+<h2>Nombres de variables<a class="headerlink" href="#nombres-de-variables" title="Permalink to this headline">¶</a></h2>
+<p>Podemos nombrar las variables prácticamente como queramos, pero hay que tener en cuenta algunas restricciones:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>El primer carácter debe ser una letra del alfabeto o “_” (este último caso se suele reservar para casos especiales).</p></li>
+<li><p>El resto de caracteres pueden ser alfanuméricos, pero no pueden contener espacios.</p></li>
+<li><p>Las mayúsculas y las minúsculas importan, “a” es distinto de “A”.</p></li>
+<li><p>Hay algunos nombres reservados que no podemos y no debemos utilizar, como <em>print</em>, <em>while</em>, <em>for</em>, etc.</p></li>
+</ul>
+</div></blockquote>
+<p>Además, aunque esto no es una regla que deba obedecerse obligatoriamente, es conveniente que demos a las variables nombres que más tarde podamos recordar.
+Si abrimos un programa nuestro tres meses después de haberlo escrito y nos encontramos con la expresión “m = 3.5” nos será difícil entender que hace el programa.
+Habría sido mucho más claro nombrar la variable como “media = 3.5”.</p>
+</section>
+<section id="tipos-de-objetos">
+<h2>Tipos de objetos<a class="headerlink" href="#tipos-de-objetos" title="Permalink to this headline">¶</a></h2>
+<p>En Python los objetos con los que trabajamos pueden ser de distinto tipo, como: enteros (INTeger), números con parte decimal (FLOAT) o cadenas de texto (STRing).
+Podemos pedirle a Python que nos informe sobre el tipo de cualquier objeto con la orden <em>type</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="go">&lt;type &#39;int&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">)</span>
+<span class="go">&lt;type &#39;str&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;Spanish Inquisition&#39;</span><span class="p">)</span>
+<span class="go">&lt;type &#39;str&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+<span class="go">&lt;type &#39;float&#39;&gt;</span>
+</pre></div>
+</div>
+<p>A veces será necesario que tengamos en cuenta el tipo de objeto con el que estamos tratando puesto que el resultado de una operación puede ser diferente en un caso u otro.</p>
+<p>Por ejemplo, ya habíamos visto que la aritmética no es la misma para enteros y cadenas de texto, el comportamiento de los objetos depende de su tipo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">21</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="go">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;21&#39;</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="go">&#39;2121&#39;</span>
+</pre></div>
+</div>
+<p>Siempre que lo deseemos podremos convertir los objetos de un tipo a otro:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;21&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="go">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="go">&#39;42&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">float</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="go">42.0</span>
+</pre></div>
+</div>
+<p>Hay que tener en cuenta el tipo de los objetos a la hora de compararlos.
+Por ejemplo, el 3 representado como un entero o como una cadena de texto no es lo mismo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</section>
+<section id="herramientas-avanzadas">
+<h2>Herramientas avanzadas<a class="headerlink" href="#herramientas-avanzadas" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Los editores de texto potentes como vi o emacs pueden ser una gran ayuda cuando se programa, aunque su aprendizaje no es trivial.</p></li>
+<li><p>IDEs para Python. Si todavía no sabes lo que es un IDE o te preguntas si lo necesitas o no es que todavía no lo necesitas, pero para programadores avanzados los IDEs como Eclipse con Pydev pueden ser muy útiles.</p></li>
+</ul>
+</section>
+<section id="bibliografia">
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>En el sitio principal de Python mantienen una gran lista de tutoriales y libros para <a class="reference external" href="http://wiki.python.org/moin/BeginnersGuide/NonProgrammers">aprender Python</a>.</p></li>
+<li><p>El <a class="reference external" href="http://docs.python.org/tutorial/index.html">tutorial informal</a> de Python, disponible en <a class="reference external" href="http://docs.python.org.ar/tutorial/appetite.html">castellano</a> está también orientado a usuarios noveles y utiliza una aproximación similar a este.</p></li>
+<li><p>El instituto Pasteur tiene un curso de <a class="reference external" href="http://www.pasteur.fr/formation/infobio/python/">Python para biólogos</a> orientado al uso de Python en bioinformática para el análisis de secuencias.</p></li>
+<li><p>Una vez conocidos los conceptos básicos podemos estudiar algunos de los libros que describen el lenguaje con una mayor profundidad como <a class="reference external" href="http://shop.oreilly.com/product/9780596158071.do">Learning Python</a> o <a class="reference external" href="http://www.amazon.com/Core-Python-Programming-Wesley-Chun/dp/0132269937">Core Python Programming</a>.</p></li>
+<li><p>Para practicar hay una página excelente con problemas de bioinformática para resolver <a class="reference external" href="http://rosalind.info/">Rosalind</a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+            <div class="prevnext">
+                    <!--<a class="prev" href="../unix/administracion_software.html">Instalando software</a>-->
+                    <a class="prev" href="../unix/administracion_software.html" title="Instalando software">previous</a>
+                    |
+                    <!--<a class="next" href="cadenas_de_texto.html">Cadenas de texto</a>-->
+                    <a class="next" href="cadenas_de_texto.html" title="Cadenas de texto">next</a>
+                    |
+
+                <a class="index" href="/courses/linux/index.html" title="Index">index</a>
+
+            </div>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>
