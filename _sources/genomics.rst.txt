@@ -1,0 +1,25 @@
+Genomics
+========
+
+NGS sequencing
+______________
+
+Our group have experience and capacity to sequence and analyse NGS transcriptomes. We have developed normalized cDNA libraries from tomato, melon and pumpkin, that have been sequenced in external services by 454, Illumina and Solid. We are able to analyze the sequences and perform transcriptome assembly, annotation and SNP identification.
+
+Transcriptomic analysis
+_______________________
+
+
+There are different technologies to analyze gene expression, that have evolved from Northern blot to microarrays or massive sequencing. Our group has participated in several projects related with gene expression analysis and has wide experience in experimental techniques and data analysis. We are specialized in microarrays data analysis, using different platforms, such as Affymetrix or NimbleGene. We have developed several projects in collaboration with other groups in tomato and melon. 
+
+
+EcoTILLING
+__________
+
+We have developed an EcoTILLING platform in pepper sp., this platform contains more than two hundred accessions of Capsicum annum, C. baccatum, C. chinnense, C. frutescens and C. pubescens. We have our own source of CEL I activity. The platform have been successfully used to identified new allelic variants of EIF4E and EIF4Eiso factors related with virus resistance. This platform can be screened using DNA or RNA as starting material, so it is not necessary to analyze the genes exon by exon and the reaction number can be reduced.
+
+
+Molecular markers
+_________________
+
+Our group have extensive experience in molecular markers development and analysis. We have used markers for gene mapping, molecular breeding, phylogenetic and population studies, etc. The development of high-throughput sequencing and genotyping technologies has made easier the identification and use of SNPs in any species, even in those without previous genomic information. We have used these technologies to identify SNPs in tomato and other species, and  we have verified and employed the markers using several techniques such as Veracode, HRM or CELI.

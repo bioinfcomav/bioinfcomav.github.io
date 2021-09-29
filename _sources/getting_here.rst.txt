@@ -1,0 +1,18 @@
+
+Getting here
+============
+
+Our complete address is::
+
+  Bioinformatics & Genomics group
+  COMAV institute
+  Stair I, second floor
+  CPI Building (Ciutat Politecnica de la Innovacio)
+  Campus de Vera
+  Camino de Vera s/n
+  46022 Valencia
+  Spain
+ 
+You can find information about how to get here at the `UPV <http://www.upv.es/organizacion/como-llegar-upv/campus-vera/index-en.html>`_ web site and at `google maps <http://maps.google.com/?ie=UTF8&hq=&hnear=Valencia,+Comunidad+Valenciana,+Espa%C3%B1a&ll=39.477417,-0.333978&spn=0.003097,0.004318&t=h&z=18>`_.
+
+

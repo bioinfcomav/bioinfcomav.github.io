@@ -1,0 +1,46 @@
+.. Bioinformatics group documentation master file, created by
+   sphinx-quickstart on Fri Apr 23 11:24:01 2010.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Bioinformatics & genomics
+=========================
+
+The COMAV institute is devoted to the preservation of the horticultural plant variability and to the plant breeding on horticultural species.
+To accomplish these goals we have developed some software that it might be of some use to other researchers like ngs_backbone or sff_extract.
+We also provide analysis and technical support to other molecular genetic researchers. Our main research interests are:
+
+  * Genomic and transcriptomic analysis
+  * Development of genetic markers
+  * Analysis of NGS sequences
+  * Study of variation in cultivated and wild populations.
+
+Services
+--------
+
+We have a broad experience on the field of sequence analysis, both sanger and NGS based, that we make available to the biological and biomedical communities. Our portfolio of bioinformatic :doc:`services` includes:
+
+  * NGS sequence analysis.
+  * NGS library construction.
+  * Bioinformatic technology consultancy.
+  * Basic and advanced training in bioinformatics.
+  * Custom bioinformatic tool development.
+  * Genome database and web site development.
+
+
+.. _COMAV: http://www.comav.upv.es/index2_eng.html
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   self
+   genomics
+   services
+   people
+   sff_extract <sff_extract/index>
+   publications
+   courses
+   git <http://github.com/JoseBlanca/>
+   getting_here
+

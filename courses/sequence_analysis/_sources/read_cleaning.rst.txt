@@ -255,8 +255,8 @@ In the seqanswers `wiki <http://seqanswers.com/wiki/Special:BrowseData>`_ they k
 Practical tasks
 ---------------
 
-Cleaning adaptor and quality with ngs_crumbs
-____________________________________________
+Cleaning adaptor and quality
+____________________________
 
 We have detected in the quality check of some reads the presence of some adapter introduced during the cloning of the library.
 We are informed that the adapters used were: "AAGCAGTGGTATCAACGCAGAGTACATGGG" and "AAGCAGTGGTATCAACGCAGAGTACTTTTT".
@@ -323,30 +323,6 @@ Quality boxplot, after:
 
 .. image:: _images/cleaning_qual_boxplot_after.png
    :width: 450 px
-
-
-In this other case to clean the reads we will use the programs included in seq_crumbs: trim_blast_short and trim_quality.
-
-First download the reads :download:`reads_1 <downloads/reads_1.fastq.gz>` to the directory practice.
-Check that the file is the correct directory and make that directory your working directory::
-
- ngs_user@machine:~/practice$ cd
- ngs_user@machine:~$ cd practice/
- ngs_user@machine:~/practice$ pwd
- /home/ngs_user/practice
- ngs_user@machine:~/practice$ ls
- reads_1.fastq.gz
-
-As a first step we will use the blast-short algorithm to remove the adapters.
-After that we will trim the bad quality edges and finally we will discard the reads that have end up being too small (less than 40 nucleotides)::
-
- ngs_user@machine:~/practice$ trim_blast_short -l AAGCAGTGGTATCAACGCAGAGTACATGGG -l AAGCAGTGGTATCAACGCAGAGTACTTTTT -o reads_no_adapt.fastq reads_1.fastq.gz
- ngs_user@machine:~/practice$ trim_quality -o reads_qual_trim.fastq reads_no_adapt.fastq
- ngs_user@machine:~/practice$ filter_by_length -Z -n 40 -o reads_cleaned.fastq.gz reads_qual_trim.fastq
-
-We could have done exactly the same process using much less disk in just one step using Unix pipes::
-
- ngs_user@machine:~/practice$ trim_blast_short -l AAGCAGTGGTATCAACGCAGAGTACATGGG -l AAGCAGTGGTATCAACGCAGAGTACTTTTT reads_1.fastq.gz | trim_quality | filter_by_length -Z -n 40 -o reads_cleaned.fastq.gz
 
 
 Clean the 454 and Illumina maize reads

@@ -1,0 +1,166 @@
+
+Download
+========
+
+**Warning: We consider this version of sff_extract obsolete.**
+The new sff_extract is included now in our tool set seq_crumbs_.
+
+sff_extract 0.3.0
+------------------
+
+`sff_extract 0.3.0 <http://bioinf.comav.upv.es/downloads/sff_extract_0_3_0>`_. Relased on 9-7-2012.
+
+Changes by Bastien Chevreux :
+
+* fixed bug in clipping points (was an error report by Ion Torrent)
+* reads with partial linkers have "_part" instead of ".part" in the name
+* paired-read naming: .f,.r to /1, /2
+* paired-read: segment not reversed
+* -Q removed, added -A
+* added compat mode "-C"
+* cleaned up usage text
+* run test for ssaha2 before extracting reads
+
+sff_extract 0.2.13
+------------------
+
+`sff_extract 0.2.13 <http://bioinf.comav.upv.es/downloads/sff_extract_0_2_13>`_. Relased on 27-2-2012.
+
+Changes:
+
+* Bugfix by Thuy Nguyen.
+
+sff_extract 0.2.12
+------------------
+
+`sff_extract 0.2.12 <http://bioinf.comav.upv.es/downloads/sff_extract_0_2_12>`_. Relased on 15-2-2012.
+
+Changes:
+
+* Minimun frequency option added by Francisco Pina Martins.
+
+sff_extract 0.2.11
+------------------
+
+`sff_extract 0.2.11 <http://bioinf.comav.upv.es/downloads/sff_extract_0_2_11>`_. Relased on 13-1-2012.
+
+Changes:
+
+* Bugfix by Michael Schatz <mschatz@cshl.edu> .
+
+sff_extract 0.2.10
+------------------
+
+`sff_extract 0.2.10 <http://bioinf.comav.upv.es/downloads/sff_extract_0_2_10>`_. Relased on 12-9-2011.
+
+Changes:
+
+* Bugfix by Bastien.
+
+sff_extract 0.2.8
+-----------------
+
+`sff_extract 0.2.8 <http://bioinf.comav.upv.es/downloads/sff_extract_0_2_8>`_. Relased on 2-3-2010.
+
+Changes:
+
+* Bugfix by Bastien. Qualities were not properly reversed when doing paried ends.
+
+sff_extract 0.2.7
+-----------------
+
+`sff_extract 0.2.7 <http://bioinf.comav.upv.es/downloads/sff_extract_0_2_7>`_. Relased on 8-6-2009.
+
+Changes:
+
+* Bugfix by Bastien.
+
+
+sff_extract 0.2.6
+-----------------
+
+`sff_extract 0.2.6 <http://bioinf.comav.upv.es/downloads/sff_extract_0_2_6>`_. Relased on 8-6-2009.
+
+Changes:
+
+* Bugfix by Bastien. Fixes a problem with some malformed sff files.
+
+
+sff_extract 0.2.5
+------------------
+
+`sff_extract 0.2.5 <http://bioinf.comav.upv.es/downloads/sff_extract_0_2_5>`_. Relased on 6-5-2009.
+
+Changes:
+
+* Bugfix release. Paired ends work better now.
+
+sff_extract 0.2.3
+-----------------
+
+`sff_extract 0.2.3 <http://bioinf.comav.upv.es/downloads/sff_extract_0_2_3>`_. Relased on 29-12-2008.
+
+Changes:
+
+* Bugfix release. Clipping works again with paired ends and test for ssaha2 removed.
+
+sff_extract 0.2.2
+-----------------
+
+`sff_extract 0.2.2 <http://bioinf.comav.upv.es/downloads/sff_extract_0_2_2>`_. Relased on 30-10-2008.
+
+Changes:
+
+* It can work again with python 2.4.
+
+sff_extract 0.2.1
+-----------------
+
+`sff_extract 0.2.1 <http://bioinf.comav.upv.es/downloads/sff_extract_0_2_1>`_. Relased on 13-11-2008.
+
+sff_extract 0.2 represents an important improvement over the 0.1 series. Bastian Chevreux has added support for the paried end sequencing. If you feed sff_extract with a linker sequence you will obtain the paired end sequences split.
+All the following changes have been coded by Bastien:
+
+* Reads from paired-end files which are not splitted into 2 sequences now get ".n" postfix.
+* Reads that had mutliple paired-end linkers get "_mlc" in the name and no pairing information written to the XML.
+* sff_extract now return 0 if everything went ok or 1 if there was a problem of any kind.
+* Added left clip plausibility check: check_for_dubious_startseq(). If sequences look fishy, sff_extract prints a warning, continues to extract, but will return with 1 to the shell at the very end.
+* Raises error on empty linker file.
+* Error handling in reading FASTAs
+* Error raised when no SFF file given on command line
+* Fix: XML info now written also for clipped reads (just the clip infor is left out).
+* Added short description of program purpose.
+* Renamed -m to -u and inverted meaning: lowercasing clipped parts is now default.
+* Added --min_left_clip.
+* Added --version.
+
+sff_extract 0.1.2
+-----------------
+
+`sff_extract 0.1.2 <http://bioinf.comav.upv.es/downloads/sff_extract_0_1_2>`_. Relased on 30-10-2008.
+
+Changes:
+
+* It can work again with python 2.4.
+
+sff_extract 0.1.1
+-----------------
+
+`sff_extract 0.1.1 <http://bioinf.comav.upv.es/downloads/sff_extract_0_1_1>`_. Relased on 16-10-2008.
+
+Changes:
+
+* "o" option added to specify a common basename for all output files.
+* More simple error messages thrown.
+
+sff_extract 0.1
+-----------------
+
+`sff_extract 0.1 <http://bioinf.comav.upv.es/downloads/sff_extract_0_1>`_. Relased on 14-10-2008.
+
+Changes:
+
+ * Initial Release. Save the script, make it executable and run it.
+
+
+.. _seq_crumbs: http://bioinf.comav.upv.es/seq_crumbs/

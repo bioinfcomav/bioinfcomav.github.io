@@ -1,0 +1,24 @@
+
+
+sff_extract
+===========
+
+**Warning: We consider this version of sff_extract obsolete.**
+The new sff_extract is included now in our tool set seq_crumbs_.
+
+454 sequence reads are usually stored in sff files. In these files the information about the reads is stored: sequece, quality and quality and adapter clips. sff_extract extracts the reads from the sff files and stores them into fasta and xml or caf text files.
+
+sff_extract is a command line application written in python and it's free software distributed under the GPL licence. This software has been coded by Jose Blanca and Bastien Chevreux. Bastien is the author of the MIRA_ software.
+
+If you use sff_extract and find it useful consider sending the author an email, that would be greatly appreciated :). Bugs and whishes are also welcome although I can't guarantee when they will be implemented.
+
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   
+   usage
+   download 
+
+.. _MIRA: http://sourceforge.net/apps/mediawiki/mira-assembler/index.php?title=Main_Page
+.. _seq_crumbs: http://bioinf.comav.upv.es/seq_crumbs/

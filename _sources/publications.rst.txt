@@ -1,0 +1,282 @@
+Publications
+============
+
+
+2021
+____
+========================================= ======
+Journal                                   Title
+========================================= ======
+Industrial Crops and Products             `Flower induction and development in saffron: Timing and hormone signalling pathways <https://www.sciencedirect.com/science/article/pii/S0926669021001345>`_
+Plant Methods                             `K-seq, an affordable, reliable, and open Klenow NGS-based genotyping technology <https://plantmethods.biomedcentral.com/articles/10.1186/s13007-021-00733-6>`_
+Genes                                     `Discovery of a Major QTL Controlling Trichome IV Density in Tomato Using K-Seq Genotyping <https://www.mdpi.com/2073-4425/12/2/243>`_
+J Sci Food Agric                          `Transcriptomic analysis of a near‐isogenic line of melon with high fruit flesh firmness during ripening <https://onlinelibrary.wiley.com/doi/10.1002/jsfa.10688>`_
+========================================= ======
+
+2020
+____
+========================================= ======
+Journal                                   Title
+========================================= ======
+Scientific Reports                        `Long-term and transgenerational phenotypic, transcriptional and metabolic effects in rabbit males born following vitrified embryo transfer <https://www.nature.com/articles/s41598-020-68195-9>`_
+
+Horticulture Research                     `Exploiting the diversity of tomato: the development of a phenotypically and genetically detailed germplasm collection <https://www.nature.com/articles/s41438-020-0291-7>`_
+Frontiers in Plant Sciene                  `A Major QTL Located in Chromosome 8 of Cucurbita moschata Is Responsible for Resistance to Tomato Leaf Curl New Delhi Virus <https://www.frontiersin.org/articles/10.3389/fpls.2020.00207/full>`_
+========================================= ======
+
+
+2019
+____
+========================================= ======
+Journal                                   Title
+========================================= ======
+Nature Genetics                           `The tomato pan-genome uncovers new genes and a rare allele regulating fruit flavor <https://www.nature.com/articles/s41588-019-0410-2>`_
+PLOS One                                  `De novo European eel transcriptome provides insights into the evolutionary history of duplicated genes in teleost lineages <https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0218085>`_
+BMC Genomics                              `Cold seawater induces early sexual developmental stages in the BPG axis of European eel males <https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5969-6>`_
+Nucleic Acid Research                     `Cucurbit Genomics Database (CuGenDB): a central portal for comparative and functional genomics of cucurbit crops <https://academic.oup.com/nar/article/47/D1/D1128/5128937>`_
+Horticulture Research                      `Whole-genome resequencing of Cucurbita pepo morphotypes to discover genomic variants associated with morphology and horticulturally valuable traits <https://www.nature.com/articles/s41438-019-0176-9>`_
+========================================= ======
+
+
+2018
+____
+
+========================================= ======
+Journal                                   Title
+========================================= ======
+BMC Plant Biology                         `Resistance to Plum Pox Virus (PPV) in apricot (Prunus armeniaca L.) is associated with down-regulation of two MATHd genes <http://www.biomedcentral.com/>`_
+BMC Genomics                              `Transcriptomic changes in Cucurbita pepo fruit after cold storage: differential response between two cultivars contrasting in chilling sensitivity <https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-018-4500-9>`_
+Frontiers in Plant Science                `Plant Genebanks: Present Situation and Proposals for Their Improvement. the Case of the Spanish Network <https://www.frontiersin.org/articles/10.3389/fpls.2018.01794/full>`_
+========================================= ======
+
+
+
+2017
+____
+
+========================================= ======
+Journal                                   Title
+========================================= ======
+Nucleid Acid Research                     `GB3.0: a platform for plant bio-design that connects functional DNA elements with associated biological data <http://nar.oxfordjournals.org/content/early/2017/01/03/nar.gkw1326.abstract?sid=1ce171a9-11e0-451b-9060-aa72e90b5363>`_
+BMC Genomics                              `An SNP-based saturated genetic map and QTL analysis of fruit-related traits in Zucchini using Genotyping-by-sequencing <https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-3439-y>`_
+Plant Biotechnology journal               `De novo assembly of the zucchini genome reveals a whole genome duplication associated with the origin of the Cucurbita genus <http://onlinelibrary.wiley.com/doi/10.1111/pbi.12860/abstract;jsessionid=3F193F380D424DA12F90AFB866284006.f03t03>`_
+========================================= ======
+
+
+
+2016
+____
+
+========================================= ======
+Journal                                   Title
+========================================= ======
+Plant Methods                             `A modular toolbox for gRNA–Cas9 genome engineering in plants based on the GoldenBraid standard <https://plantmethods.biomedcentral.com/articles/10.1186/s13007-016-0101-2>`_
+BMC Genomics                              `Transcriptomic profiling of Melon necrotic spot virus-infected melon plants revealed virus strain and plant cultivar-specific alterations <https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-2772-5>`_
+BMC Genomics                              `The first de novo transcriptome of pepino (Solanum muricatum): assembly, comprehensive analysis and comparison with the closely related species S. caripense, potato and tomato <http://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-2656-8>`_
+BMC Genomics                              `Transcriptome analysis and molecular marker discovery in Solanum incanum and S. aethiopicum, two close relatives of the common eggplant (Solanum melongena) with interest for breeding <http://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-2631-4>`_
+Archives of Virology                      `Analysis of the coding-complete genomic sequence of groundnut ringspot virus suggests a common ancestor with tomato chlorotic spot virus <http://link.springer.com/article/10.1007%2Fs00705-016-2912-x>`_
+========================================= ======
+
+2015
+____
+
+=========================================  ======
+Journal                                    Title
+=========================================  ======
+BMC Genomics                               `Genomic variation in tomato, from wild ancestors to contemporary breeding accessions <http://www.biomedcentral.com/1471-2164/16/257/abstract>`_
+BMC Genomics                               `Comparative transcriptional profiling analysis of developing melon (Cucumis melo L.) fruit from climacteric and non-climacteric varieties <http://www.biomedcentral.com/1471-2164/16/440/abstract>`_
+=========================================  ======
+
+2014
+____
+
+=========================================  ======
+Journal                                    Title
+=========================================  ======
+BMC Biology                                `ABCC transporters mediate insect resistance to multiple Bt toxins revealed by bulk segregant analysis <http://www.biomedcentral.com/1741-7007/12/46>`_
+=========================================  ======
+
+2013
+____
+
+=========================================  ======
+Journal                                    Title
+=========================================  ======
+Euphytica                                  `Spanish onion landraces (Allium cepa L.) as sources of germplasm for breeding calçots: a morphological and molecular survey <http://link.springer.com/article/10.1007%2Fs10681-013-0995-y>`_
+Proc Natl Acad Sci U S A                   `A cytochrome P450 regulates a domestication trait in cultivated tomato <http://www.pnas.org/content/early/2013/09/26/1307313110.long>`_
+Plant Physiology                           `GoldenBraid2.0: A comprehensive DNA assembly framework for Plant Synthetic Biology <http://www.plantphysiol.org/content/early/2013/05/13/pp.113.217661.short>`_
+Molecular Plant Pathology                  `Genomic analysis reveals MATH gene(s) as candidate(s) for Plum pox virus (PPV) resistance in apricot (Prunus armeniaca L.) <http://onlinelibrary.wiley.com/doi/10.1111/mpp.12037/abstract>`_
+TAG                                        `SNP genotyping in melons: Genetic variation, population structure and linkage disequilibrium <http://link.springer.com/article/10.1007%2Fs00122-013-2053-5>`_
+=========================================  ======
+
+2012
+____
+
+
+=========================================  ======
+Journal                                    Title
+=========================================  ======
+Plant Molecular Biology Reporter           `A Cost-effective Double-Stranded cDNA Synthesis for Plant Microarrays <http://link.springer.com/article/10.1007%2Fs11105-012-0427-5>`_
+PLOS One                                   `Variation Revealed by SNP Genotyping and Morphology Provides Insight into the Origin of the Tomato <http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0048198>`_
+Proc Natl Acad Sci U S A                   `The genome of melon (Cucumis melo L.) <http://www.pnas.org/content/early/2012/06/28/1205415109.abstract>`_
+BMC Genomics                               `Transcriptome sequencing for SNP discovery across Cucumis melo <http://www.biomedcentral.com/1471-2164/13/280/abstract>`_
+Insect Biochemistry and Molecular Biology  `The transcriptome of Spodoptera exigua larvae exposed to different types of microbes <http://www.sciencedirect.com/science/article/pii/S0965174812000525>`_
+BMC Genomics                               `High-throughput SNP genotyping in Cucurbita pepo for map construction and quantitative trait loci mapping <http://www.biomedcentral.com/1471-2164/13/80>`_
+=========================================  ======
+
+2011
+____
+
+
+========================== ======
+Journal                    Title
+========================== ======
+Sciencia Horticulturae     `The risks of success in quality vegetable markets: Possible genetic erosion in Marmande tomatoes (Solanum lycopersicum L.) and consumer dissatisfaction. <http://www.sciencedirect.com/science/article/pii/S0304423811003025>`_
+Mol Plant Microbe Interact `Microarray analysis shows that recessive resistance to Watermelon mosaic virus in melon is associated with the induction of defense response genes. <http://apsjournals.apsnet.org/doi/abs/10.1094/MPMI-07-11-0193?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%3dpubmed>`_
+BMC Plant Biology          `A consensus linkage map for molecular markers and Quantitative Trait Loci associated with economically important traits in melon (Cucumis melo L.) <http://www.biomedcentral.com/1471-2229/11/111>`_
+BMC Genomics               `Analysis of the melon (Cucumis melo) small RNAome by high-throughput pyrosequencing <http://www.biomedcentral.com/1471-2164/12/393>`_
+Genet Resour Crop Evol     `Genetic basis of long shelf life and variability into Penjar tomato. <http://www.springerlink.com/content/a3671140275glj56/>`_
+BMC Genomics               `ngs_backbone: a pipeline for read cleaning, mapping and SNP calling using Next Generation Sequence. <http://www.biomedcentral.com/1471-2164/12/285>`_
+The Plant Genome           `Melon Transcriptome Characterization: Simple Sequence Repeats and Single Nucleotide Polymorphisms Discovery for High Throughput Genotyping across the Species. <https://www.crops.org/publications/tpg/articles/4/2/118>`_
+BMC Genomics               `Transcriptome characterization and high throughput SSRs and SNPs discovery in Cucurbita pepo (Cucurbitaceae) <http://www.biomedcentral.com/1471-2164/12/104>`_
+Genet Resour Crop Evol     `Taxonomy and genetic diversity of domesticated Capsicum species in the Andean region. <http://www.springerlink.com/content/pq430rgt6401462w/>`_
+========================== ======
+
+2010
+____
+
+======================== ======
+Journal                  Title
+======================== ======
+BMC Genomics             `EcoTILLING in Capsicum species: searching for new virus resistances <http://www.biomedcentral.com/1471-2164/11/631>`_
+Genet Res Crop Evol      `Pattern of genetic variability of Solanum habrochaites in its natural area of distribution  <http://www.springerlink.com/content/q620l15n5r8qjhxv/>`_
+======================== ======
+
+
+2009
+____
+
+
+======================== ======
+Journal                  Title
+======================== ======
+Genet Res Crop Evol      `Classiﬁcation and phylogenetic relationships in Solanum section Lycopersicon based on AFLP and two nuclear gene sequences <http://www.springerlink.com/content/v8xw7n7pqn3613j2/?p=42ac99f46ff14f0d88ded415bf45dce1&pi=0>`_
+Genet Res Crop Evol      `Genetic and bioclimatic variation in Solanum pimpinellifolium <http://www.springerlink.com/content/q99703057682j144/?p=42ac99f46ff14f0d88ded415bf45dce1&pi=1>`_
+BMC Plant Biology        `Transcriptomic analysis of tomato carpel development reveals alterations in ethylene and gibberellin synthesis during pat3/pat4 parthenocarpic fruit set <http://www.biomedcentral.com/1471-2229/9/67>`_
+BMC Plant Biology        `A set of EST-SNPs for map saturation and cultivar identification in melon <http://www.biomedcentral.com/1471-2229/9/90>`_
+BMC Genomics             `An oligo-based microarray offers novel transcriptomic approaches for the analysis of pathogen resistance and fruit quality traits in melon (Cucumis melo L.) <http://www.biomedcentral.com/1471-2164/10/467>`_
+======================== ======
+
+2008
+____
+
+======================== ======
+Journal                  Title
+======================== ======
+BMC Bioinformatics       `MELOGEN: an EST database for melon functional genomics <http://www.biomedcentral.com/1471-2105/9/5/abstract/>`_
+TAG                      `Bin mapping of genomic and EST-derived SSRs in melon ( Cucumis melo L.) <http://www.springerlink.com/content/b0nx7h7ku5k88446/>`_
+Plant Disease            `Tomato torrado virus is Transmitted by Bemisia tabaci and Infects Pepper and Eggplant in Addition to Tomato <http://apsjournals.apsnet.org/doi/abs/10.1094/PDIS-92-7-1139A>`_
+======================== ======
+
+2007
+____
+
+======================== ======
+Journal                  Title
+======================== ======
+Am J Bot                 `AFLP and DNA sequence variation in an Andean domesticate, pepino (Solanum muricatum, Solanaceae): implications for evolution and domestication <http://www.amjbot.org/cgi/content/full/94/7/1219>`_
+Plant Science            `Analysis of gene expression during the fruit set of tomato: A comparative approach <http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6TBH-4P940H9-1&_user=5674735&_coverDate=12%2F31%2F2007&_alid=1310874959&_rdoc=1&_fmt=high&_orig=search&_cdi=5143&_sort=r&_docanchor=&view=c&_ct=1&_acct=C000053929&_version=1&_urlVersion=0&_userid=5674735&md5=c219f9c81724788630ab65aeaddfa6e4>`_
+Genet Res Crop Evol      `Genetic structure of Lycopersicon pimpinellifolium (Solanaceae) populations collected after the ENSO event 1997-1998 <http://www.springerlink.com/content/q8v129545w455530/?p=aedb4fdeaf8e4ebca7be58291ee2e6fd&pi=16>`_
+Eur J Plant Pathol       `Identification of a CAPS marker tightly linked to the Tomato yellow leaf curl disease resistance gene Ty-1 in tomato <http://www.springerlink.com/content/372181vq5368g8uj/>`_
+======================== ======
+
+2006
+____
+
+======================== ======
+Journal                  Title
+======================== ======
+Systematic Botany        `The Implications of AFLP Data for the Systematics of the Wild Species of Solanum section Basarthrum <http://www.bioone.org/doi/abs/10.1600/036364406775971822?journalCode=sbot>`_
+======================== ======
+
+2004
+____
+
+======================== ======
+Journal                  Title
+======================== ======
+Am J Bot                 `Relationships, origin, and diversity of Galápagos tomatoes: implications for the conservation of natural populations <http://www.amjbot.org/cgi/content/abstract/91/1/86>`_
+======================== ======
+
+2002
+____
+
+======================== ======
+Journal                  Title
+======================== ======
+Hum Mutat                `Mutations in myosin VIIA (MYO7A) and usherin (USH2A) in Spanish patients with Usher syndrome types I and II, respectively <http://www.ncbi.nlm.nih.gov/pubmed/12112664>`_
+Proc Natl Acad Sci U S A `A nuclear export signal within the high mobility group domain regulates the nucleocytoplasmic translocation of SOX9 during sexual determination <http://www.pnas.org/cgi/pmidlookup?view=long&pmid=12169669>`_
+======================== ======
+
+2001
+____
+
+======================== ======
+Journal                  Title
+======================== ======
+Nucleic Acids Res        `SOX7 transcription factor: sequence, chromosomal localisation, expression,transactivation and interference with Wnt signalling <http://nar.oxfordjournals.org/cgi/pmidlookup?view=long&pmid=11691915>`_
+======================== ======
+
+
+
+
+
+2000
+____
+
+======================== ======
+Journal                  Title
+======================== ======
+Gene                     `dfh is a Drosophila homolog of the Friedreich’s ataxia disease gene <http://www.ncbi.nlm.nih.gov/pubmed/11054533>`_
+Genome                   `Tirant is a new member of the gypsy family of retrotransposons in Drosophila melanogaster <http://article.pubs.nrc-cnrc.gc.ca/ppv/RPViewDoc?issn=0831-2796&volume=43&issue=1&startPage=9>`_
+======================== ======
+
+1999
+____
+
+======================== ======
+Journal                  Title
+======================== ======
+Mol Biol Evol            `Incipient GAA repeats in the primate Friedreich ataxia homologous genes <http://mbe.oxfordjournals.org/cgi/reprint/16/6/880>`_
+======================== ======
+
+1997
+____
+
+======================== ======
+Journal                  Title
+======================== ======
+Am J Hum Genet           `Phenotype correlation and intergenerational dynamics of the Friedreich ataxia GAA trinucleotide repeat <http://www.cell.com/AJHG/abstract/S0002-9297(07)64282-7>`_
+Nature Genetics          `Frataxin fracas <http://www.nature.com/ng/journal/v15/n4/abs/ng0497-337.html>`_
+======================== ======
+
+
+
+1996
+____
+
+======================== ======
+Journal                  Title
+======================== ======
+Science                  `Friedreich's Ataxia: autosomal recessive disease caused by an intronic GAA triplet repeat <http://www.sciencemag.org/cgi/content/abstract/271/5254/1423>`_
+Eur J Hum Genet          `Evidence for a common origin of most Friedreich's ataxia chromosomes in the Spanish population <http://www.ncbi.nlm.nih.gov/pubmed/8875184>`_
+======================== ======
+
+1994
+____
+
+======================== ======
+Journal                  Title
+======================== ======
+Eur J Hum Genet          `Mapping of Friedreich's Ataxia locus by identification of recombination events in patients homozygous by descent <http://www.ncbi.nlm.nih.gov/pubmed/7704559>`_
+======================== ======

@@ -1,0 +1,59 @@
+Services
+===========================
+
+NGS sequence analysis
+---------------------
+
+The DNA sequencing technology is experiencing an ongoing revolution which will convert all genetic laboratories into genomic facilities. We have already experienced this transformation and we have developed a set of tools and skills to be able to cope with the millions of sequence reads produced on one of the new sequencing reaction.
+
+We have technology capable of:
+
+  * cleaning NGS and sanger reads,
+  * assemble and annotate transcriptomes,
+  * call and select SNPs.
+
+Routinely we go from the millions of raw 454 and illumina reads to a transcriptome with a set of annotations that include: descriptions, functional GO terms, ORFs, intron position, SSRs and orthologs.
+
+We also have developed tools capable of looking for the differences between two or more individuals. We can look for SNPs and we can selected them. Having SNPs is not a problem, with the NGS technologies it is easy to find thousands of them, selecting the best of them is now the issue. They can be selected by type, proximity to an intron, amount of close SNPs, polymorphism, etc.
+
+
+NGS library construction
+------------------------
+
+We also offer the construction of libraries for NGS sequencing: DNA/RNA extraction and purification, library construction, normalization, qPCR library validation and other molecular services. We also made available to our users our experience in NGS project management and transcriptomics and molecular genetics.
+
+Gene expression analysis
+------------------------------
+
+We have experience in the microarray transcriptome analysis using different platforms such as Affymetrix or NimbleGen. We also offer our Real-time quantitative PCR and library construction service. 
+
+
+Bioinformatic technology consultancy
+------------------------------------
+
+If you have your own bioinformatic staff you can take advantage of our experience in the sequence analysis field by requesting our technological advice. 
+
+
+Basic and advanced training in bioinformatics
+---------------------------------------------
+
+We can offer bioinformatic courses on:
+
+  * Basic sequence analysis.
+  * Linux use.
+  * NGS sequence analysis.
+  * Bioinformatic programming.
+  * Genomic database development.
+
+
+Custom bioinformatic tool development
+-------------------------------------
+
+We develop software to cover the bioinformatic needs of our users. We create custom tools, we create analysis pipelines and we create easy to use interfaces to this and other tools.
+
+Genome database and web site development
+----------------------------------------
+
+We also develop websites to hold genome databases. These web sites include the information about the genome, the physical and genetic maps, as well as analysis tools like blast searching or primer design.
+
+

@@ -1,0 +1,104 @@
+
+Usage
+=====
+
+Documentation
+_____________
+
+The most basic use of sff_extract is fairly trivial. To extract the sequence, quality and ancilliary information just run it.
+
+::
+
+  $ sff_extract my_454_file.sff
+   
+This should create three files: my_454_file.fasta (the sequences), my_454_file.fasta.qual (the qualities), and my_454_file.xml (the clippings).
+
+Output file names
+^^^^^^^^^^^^^^^^^
+
+There are three options to change the names of the output files:
+
+* s for the sequence file,
+* q for the quality file and
+* x for the ancilliary xml file.
+  
+Let's supose that we want to change every output file name, we would do::
+
+  $ sff_extract -s seq.fasta -q qual.fasta -x anci.xml my_454_file.sff
+       
+It is also posible to define a common base name for all output files. If the we define the basename as reads the output names would be: reads.fasta, reads.fasta.qual, and reads.xml::
+
+  $ sff_extract -o reads my_454_file.sff
+        
+Extracting several sff files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+sff_extract supports the extraction of several sff files. The resulting output files will hold all the reads concatenated. If we have two sff files named 1.sff and 2.sff with 200000 reads in each one we can obtain the output files with 400000 reads just using the name of both files as two arguments.
+
+::
+
+  $ sff_extract 1.sff 2.sff
+         
+Mixing cases
+^^^^^^^^^^^^
+
+By default the bases to be clippled will be written in lower case, but you can tell sff_extract to write all bases in upper clase using the option m. This behavior was introduced in the 0.2.1 version, in the older versions the m option did just the oposite.
+
+::
+
+  $ sff_extract -m my_454_file.sff
+          
+Clipping sequences
+^^^^^^^^^^^^^^^^^^
+
+If you want to clip the fragments recommended by the 454 software, just use the c option. When this option is in use the sequences and qualities will be clipped and the ancilliary xml file won't be produced.
+
+::
+
+  $ sff_extract -c my_454_file.sff
+           
+Extra left clippings
+^^^^^^^^^^^^^^^^^^^^
+
+Some 454 datasets with wrong clipping information have been detected. In these sff files left sequences that should be clipped were not marked to be clipped. You can tell sff_extract to clip at least a number of bases. For instance if you would like to clip at least 13 bases you could do:
+
+::
+
+  $ sff_extract --min_left_clip=13 my_454_file.sff
+            
+Also an internal check has been added to detect such miscliplings. If sff_extract detects that a lot of clipped reads begin with the same sequence will continue to produce the output files, but it will print a warning and it will exit with a 1 status.
+
+Paired-en data
+^^^^^^^^^^^^^^
+
+The 454 paired-end protocol will generate reads which contain the forward and reverse direction in one read, separated by a linker. sff_extract can look for the linker in a read and split the fragments at both sides of the linker into two new reads. To do it you have to put that linker sequence into a FASTA file. To look for the linker in the reads sff_extract uses the SSAHA2 software, so you would need to install it in order to use this option. To extract the sequences you would do:
+
+::
+  
+  $ sff_extract -l linker.fasta my_454_file.sff
+             
+
+Adding extra information to the xml file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sometimes the generated xml file will be used by some software that would use some information not present in the sff file. We can provide this extra information in the command line. Let's suppose that we want to add to the xml file the species and basecaller. We would use the i option and the extra information would be added as pairs of keys and values.
+
+::
+
+  $ sff_extract -i "species:9606,basecaller:454_basecaller" my_454_file.sff
+           
+That would add the following two lines to every read in the xml file.
+
+::
+
+  <species>9606</species>
+  <basecaller>454_basecaller</basecaller>
+                
+If we're dealing with several file we can assing different information for the reads that come from each file using the following syntax.
+
+::
+
+  $ sff_extract -i "1.sff{species:9606};2.sff{species:63221}" 1.sff 2.sff
+                 
+.. _MIRA: http://sourceforge.net/apps/mediawiki/mira-assembler/index.php?title=Main_Page
+

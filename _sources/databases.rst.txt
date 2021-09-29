@@ -1,0 +1,20 @@
+Databases
+=========
+
+Some of the databases that the group have designed and created.
+
+Melonomics
+__________
+Development of genomic tools in Cucurbits, including the sequencing of the melon genome, and its application for breeding these crop species.
+`Melonomics site <http://melonomics.net>`_
+
+Melogene
+________
+New genomic tools for Melon (Cucumis melo) breeding: transcriptome, SSR, SNP collections and high throughput genotyping platforms.
+`Melogene site <https://melogene.upv.es>`_
+
+
+Cucurbigene
+___________
+New genomic tools for Squash (Cucurbita spp.) breeding: transcriptome, genetic map, SNP collections and high throughput genotyping platforms applied to the competitive development of new cultivars, with improve fruit quality and disease resistance.
+`Cucurbigene site <https://cucurbigene.upv.es>`_
