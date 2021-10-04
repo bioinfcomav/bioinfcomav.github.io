@@ -254,7 +254,7 @@ Does this distribution look OK? What would you expect to find? Which is the expe
 Assembling a mithocondrial genome with Velvet
 _____________________________________________
 
-We will use `velvet <http://www.ebi.ac.uk/~zerbino/velvet/>`_ to assemble 20000 human mithoncondrial pair-end :download:`reads <downloads/mito_reads.tar.gz>`.
+We will use `velvet <http://www.ebi.ac.uk/~zerbino/velvet/>`_ to assemble 20000 human mithoncondrial pair-end :download:`reads <downloads/mito_reads.fastq.gz>`.
 Before starting with velvet take a look at its `manual <http://www.ebi.ac.uk/~zerbino/velvet/Manual.pdf>`_.
 
 We will create a directory named mito and we will download the reads in it.
@@ -264,19 +264,11 @@ We will create a directory named mito and we will download the reads in it.
   ngs_user@machine:~$ mkdir mito
   ngs_user@machine:~$ cd mito/
   ngs_user@machine:~/mito$ ls
-  mito_reads.tar.gz
+  downloads/mito_reads.fastq.gz
 
 Now we have to uncompress the reads::
 
-  ngs_user@machine:~/mito$ tar -xvzf mito_reads.tar.gz
-  mito_reads_pe1.fastq.gz
-  mito_reads_pe2.fastq.gz
-
-Each one of the files correspond to one of the pair-end Illumina sequencing reactions.
-velvet requires the reads interleaved in one file.
-We can interleave the reads using interleave_pairs included in seq_crumbs::
-
-  ngs_user@machine:~/mito$ interleave_pairs -z -o mito_reads.fastq.gz mito_reads_pe1.fastq.gz mito_reads_pe2.fastq.gz
+  ngs_user@machine:~/mito$ tar -xvzf downloads/mito_reads.fastq.gz
 
 velvet is divided in two binaries, velveth and velvetg.
 velveth creates a hash index and velvetg does the assembly.
@@ -302,21 +294,48 @@ Once we run both commands we obtain the assembly::
 
 
 In the assem directories you can find fasta sequences for the contigs in the contigs.fa and the reads assembled into the contigs in the velvet_asm.afg file.
-You can calculate several statistics for the fasta files with the calculate_stats executable for each directory and compare the results::
+You can calculate several statistics for the fasta files with the assembly_stats executable for each directory and compare the results::
 
-  ngs_user@machine:~/mito$ calculate_stats assem_21/contigs.fa
-  ngs_user@machine:~/mito$ calculate_stats assem_25/contigs.fa
-  ngs_user@machine:~/mito$ calculate_stats assem_29/contigs.fa
-  Length stats and distribution.
-  ------------------------------
-  N50: 16390
-  N95: 57
-  minimum: 57
-  maximum: 16,390
-  average: 320.87
-  variance: 3914768.62
-  tot. residues: 21,498
-  num. seqs.: 67
+  ngs_user@machine:~/mito$ assembly_stats assem_21/contigs.fa
+  ngs_user@machine:~/mito$ assembly_stats assem_25/contigs.fa
+  ngs_user@machine:~/mito$ assembly_stats assem_29/contigs.fa
+   "Contig Stats": 
+    "L10": 18,
+    "L20": 44,
+    "L30": 78,
+    "L40": 117,
+    "L50": 159,
+    "N10": 119,
+    "N20": 90,
+    "N30": 76,
+    "N40": 67,
+    "N50": 62,
+    "gc_content": 44.42754725179231,
+    "longest": 305,
+    "mean": 59.77922077922078,
+    "median": 50.0,
+    "sequence_count": 462,
+    "shortest": 41,
+    "total_bps": 27618
+  
+  "Scaffold Stats":
+    "L10": 13,
+    "L20": 38,
+    "L30": 72,
+    "L40": 110,
+    "L50": 153,
+    "N10": 134,
+    "N20": 96,
+    "N30": 78,
+    "N40": 68,
+    "N50": 62,
+    "gc_content": 44.42754725179231,
+    "longest": 542,
+    "mean": 61.130434782608695,
+    "median": 50.0,
+    "sequence_count": 460,
+    "shortest": 41,
+    "total_bps": 28120
 
 
 Which k-mer give better results?

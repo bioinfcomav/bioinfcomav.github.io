@@ -1,0 +1,538 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Procesamiento de ficheros de texto &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a>Software</a>
+                <ul>
+                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
+                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+               </ul>
+            </li>
+            <li><a href="courses.html">Courses</a>
+                <ul>
+                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="courses/unix/index.html">Linux</a></li>
+                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                
+    
+  <section id="procesamiento-de-ficheros-de-texto">
+<h1>Procesamiento de ficheros de texto<a class="headerlink" href="#procesamiento-de-ficheros-de-texto" title="Permalink to this headline">¶</a></h1>
+<p>Uno de los puntos fuertes de los sistemas Unix estriba en la facilidad con la que pueden analizar los ficheros de texto en ellos.
+Estos sistemas incluyen una serie de herramientas que permiten realizar una gran cantidad de manipulaciones en estos ficheros sin necesidad de instalar ninguna herramienta especializada.
+Estas son las herramientas que vamos a presentar en esta sección.</p>
+<section id="ficheros-de-texto-y-binarios">
+<h2>Ficheros de texto y binarios<a class="headerlink" href="#ficheros-de-texto-y-binarios" title="Permalink to this headline">¶</a></h2>
+<p>Antes de comenzar a analizar los este tipo de ficheros debemos aclarar qué es y qué no es un fichero de texto.
+Un fichero de texto es un fichero dividido en líneas y cuyo contenido es texto.
+A pesar de lo que pudiese parecer a priori, un documento del Microsoft Office o del LibreOffice no es un fichero de texto.
+La información contenida en estos documentos es binaria y sólo los programas especialmente creados para abrir estos ficheros pueden acceder a ella de un modo inteligible.
+En un documento como en un fichero <em>doc</em> además de texto se guarda la información sobre el formato, imágenes, tablas, etc..
+Por el contrario en un fichero de texto sólo hay caracteres alfanuméricos (letras y números), retornos de carro y tabuladores.</p>
+<p>Los ficheros de texto pueden ser abiertos e inspeccionados sin necesidad de hacer uso de un software especial diseñado para trabajar con ellos.
+Si nos llegase un documento del LibreOffice y no tenemos el programa instalado no podríamos poder verlo, pero si nos envían un fichero de texto lo podremos ver y editar con las herramientas que vienen instaladas por defecto en el sistema operativo.</p>
+<p>Uno de los puntos fundamentales de la filosofía Unix, es la utilización de ficheros de texto.
+Mientras otros sistemas operativos favorecen la utilización de ficheros binarios, que deben ser acompañados de herramientas especiales para poder manipularlos, en Unix se optó por crear un conjunto de herramientas para manipulación de ficheros de texto y por utilizar para los ficheros del sistema sólo ficheros de texto siempre que esto fuese posible.
+Estas herramientas de manejo de ficheros de texto nos permiten realizar complejas manipulaciones de un modo muy sencillo y son uno de los principales atractivos de los sistemas Unix para el manejo de grandes cantidades de información.</p>
+</section>
+<section id="imprimiendo-ficheros-cat-head-y-tail">
+<h2>Imprimiendo ficheros <em>cat</em>, <em>head</em> y <em>tail</em><a class="headerlink" href="#imprimiendo-ficheros-cat-head-y-tail" title="Permalink to this headline">¶</a></h2>
+<p>En esta sección vamos a trabajar con el archivo de prueba <code class="xref download docutils literal notranslate"><span class="pre">microarray_adenoma_hk69.csv</span></code>.
+En este fichero están almacenados los resultados de un experimento de expresión diferencial en el que se han analizado distintos adenomas.
+Este es un fichero tabular en el que la información que se representa dividiendo los campos mediante comas o tabuladores.
+Estos ficheros que representan tablas en formato texto se se denominan <em>csv</em> (<em>Comma separated values</em>).
+En este caso cada fila del fichero corresponde a una sonda del microarray y cada columna a una propiedad sobre la sonda o sobre el resultado de la hibridación sobre ella.</p>
+<p>Lo primero que podemos hacer con un fichero de texto es abrirlo para ver sus contenidos.
+Existen editores de texto que funcionan en ventanas, como el <em>gedit</em>, y editores que funcionan en la terminal, como el <em>nano</em>.
+Por desgracia a veces los ficheros con los que vamos a trabajar son tan grandes que incluso los buenos editores de texto pueden tener problemas para abrirlos.</p>
+<p>Otra forma de acceder a los contenidos del fichero sería imprimir el fichero en la terminal utilizando el comando <em>cat</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cat microarray_adenoma_hk69.csv
+</pre></div>
+</div>
+<p>Pero si intentamos hacerlo la terminal quedará bloqueada durante bastante tiempo puesto que el fichero es muy grande.
+Por cierto, si hemos ejecutado el comando anterior y ahora queremos terminar (o matar) el programa que está corriendo en la consola (en este caso el <em>cat</em>) podemos utilizar la combinación de teclas <em>control + c</em>.
+Esto suele hacer que los programas terminen lo que estén haciendo inmediatamente, se apaguen y vuelva a mostrarse el <em>prompt</em>.</p>
+<p>Para hacernos una idea del contenido del fichero sin bloquear la terminal podemos imprimir tan solo las primeras líneas utilizando el comando <em>head</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ head microarray_adenoma_hk69.csv
+&quot;!Exptid=10029&quot;
+&quot;!Experiment Name=Adenoma (HK69)&quot;
+&quot;!Organism=Homo sapiens&quot;
+&quot;!Category=Adenoma&quot;
+&quot;!Subcategory=Liver&quot;
+&quot;!Experimenter=Xin Chen&quot;
+&quot;!Contact email=chenx@pharmacy.ucsf.edu&quot;
+&quot;!Contact Address1=Dept. of Biopharmaceutical Sciences&quot;
+&quot;!Contact Address2=513 Parnassus Ave. S-816&quot;
+&quot;!Contact Address3=Box 0446&quot;
+</pre></div>
+</div>
+<p>Existe otro comando equivalente pero que nos permite imprimir el final de los archivos (<em>tail</em>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ tail microarray_adenoma_hk69.csv
+24183       &quot;EMPTY&quot; &quot;EMPTY&quot; 19      27      32      0
+</pre></div>
+</div>
+<p>Tanto a <em>head</em> como a <em>tail</em> podemos pedirles que impriman el número de líneas que nosotros deseemos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ head -n 2 microarray_adenoma_hk69.csv
+&quot;!Exptid=10029&quot;
+&quot;!Experiment Name=Adenoma (HK69)&quot;
+</pre></div>
+</div>
+</section>
+<section id="navegando-por-un-fichero-de-texto">
+<h2>Navegando por un fichero de texto<a class="headerlink" href="#navegando-por-un-fichero-de-texto" title="Permalink to this headline">¶</a></h2>
+<p>En muchas ocasiones para familiarizarnos con el fichero lo mejor es abrirlo y navegar por él.
+Podríamos abrir el fichero con un editor de texto, pero ya hemos visto que si es muy grande podríamos tener problemas.
+Existe una herramienta capaz de abrir ficheros de texto inmensos sin problemas, <em>less</em>.
+<em>less</em> es un visor de ficheros de texto, con este programa no podremos editar el fichero, pero sí navegar por su contenido.
+<em>less</em> es un programa interactivo por lo que cuando lo ejecutemos se abrirá ocupando el terminal y haciendo desaparecer el <em>prompt</em>.
+En cualquier momento podemos salir de <em>less</em> pulsando la tecla “q”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ less microarray_adenoma_hk69.csv
+</pre></div>
+</div>
+<p>Dentro de <em>less</em> disponemos de varios comandos para movernos por el fichero:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">barra</span> <span class="n">de</span> <span class="n">espacio</span><span class="p">:</span> <span class="n">página</span> <span class="n">siguiente</span><span class="o">.</span>
+<span class="o">*</span> <span class="n">b</span><span class="p">:</span> <span class="n">página</span> <span class="n">anterior</span><span class="o">.</span>
+<span class="o">*</span> <span class="mi">100</span><span class="n">g</span><span class="p">:</span> <span class="n">va</span> <span class="n">a</span> <span class="n">la</span> <span class="n">línea</span> <span class="mi">100</span> <span class="p">(</span><span class="n">o</span> <span class="n">la</span> <span class="n">que</span> <span class="n">le</span> <span class="n">indiquemos</span><span class="p">)</span>
+<span class="o">*</span> <span class="o">-</span><span class="n">S</span><span class="p">:</span> <span class="n">corta</span> <span class="n">o</span> <span class="n">no</span> <span class="n">corta</span> <span class="n">las</span> <span class="n">líneas</span> <span class="n">largas</span>
+<span class="o">*</span> <span class="o">/</span><span class="n">palabra</span><span class="p">:</span> <span class="n">Busca</span> <span class="n">la</span> <span class="n">cadena</span> <span class="n">de</span> <span class="n">texto</span> <span class="n">que</span> <span class="n">le</span> <span class="n">indiquemos</span> <span class="p">(</span><span class="n">acepta</span> <span class="n">expresiones</span> <span class="n">regulares</span><span class="p">)</span>
+<span class="o">*</span> <span class="n">n</span><span class="p">:</span> <span class="n">va</span> <span class="n">a</span> <span class="n">la</span> <span class="n">siguiente</span> <span class="n">palabra</span> <span class="n">que</span> <span class="n">coincide</span> <span class="n">con</span> <span class="n">la</span> <span class="n">búsqueda</span>
+<span class="o">*</span> <span class="n">N</span><span class="p">:</span> <span class="n">va</span> <span class="n">la</span> <span class="n">palabra</span> <span class="n">anterior</span> <span class="n">que</span> <span class="n">coincide</span> <span class="n">con</span> <span class="n">la</span> <span class="n">búsqueda</span>
+<span class="o">*</span> <span class="n">q</span><span class="p">:</span> <span class="n">sale</span> <span class="k">del</span> <span class="n">programa</span>
+</pre></div>
+</div>
+</section>
+<section id="grep">
+<h2><em>grep</em><a class="headerlink" href="#grep" title="Permalink to this headline">¶</a></h2>
+<p>Una tarea que vamos a tener que realizar habitualmente es la de seleccionar diversas líneas en un fichero de texto.
+Por ejemplo, imaginemos que queremos saber cual es la expresión de los genes relacionados con la leucemia en el fichero del <em>microarray</em>.
+Esto, que en otros sistemas operativos podría resultar bastante complejo de hacer en Unix es trivial:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep leukemia microarray_adenoma_hk69.csv
+3       &quot;IMAGE:302190&quot;  &quot;MLL&quot;   &quot;Myeloid/lymphoid or mixed-lineage leukemia (trithorax homolog, Drosophila)&quot;
+</pre></div>
+</div>
+<p><em>grep</em> (<em>Generalized Regular Expression Parser</em>) toma un fichero de entrada (o el <em>standard  input</em>) y filtra las líneas que contienen el patrón de búsqueda que le hemos dado.
+Por defecto incluye en el resultado las líneas que contienen el patrón, pero podríamos pedirle que haga lo contrario utilizando la opción <em>v</em> (<em>inVert</em>).</p>
+<p><em>grep</em> diferencia entre mayúsculas y minúsculas, pero podemos cambiar este comportamiento con la opción <em>i</em> (ignore case):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep -i leukemia microarray_adenoma_hk69.csv
+3       &quot;IMAGE:302190&quot;  &quot;MLL&quot;   &quot;Myeloid/lymphoid or mixed-lineage leukemia (trithorax homolog, Drosophila)&quot;
+</pre></div>
+</div>
+<p><em>grep</em> puede utilizarse para buscar recursivamente en todos los ficheros contenidos en un directorio.
+Por ejemplo podríamos buscar la palabra <em>leukemia</em> en todos los ficheros presentes en alguno de nuestros directorios:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep -r  leukemia ~
+</pre></div>
+</div>
+<p>Si queremos saber en que posiciones del fichero original estaban las líneas que hemos encontrado podemos pedirle que imprima dichos números de línea:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep -n leukemia microarray_adenoma_hk69.csv
+</pre></div>
+</div>
+<p><em>grep</em> tiene otras muchas opciones útiles, en su manual están todas descritas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ man grep
+</pre></div>
+</div>
+<p><em>grep</em> hace uso de las expresiones regulares que veremos posteriormente por lo que su potencia es mucho mayor que la que ahora podemos imaginar.</p>
+<p>Otra de las ventajas de <em>grep</em> viene dada por su adherencia a los principios Unix lo que implica que podemos utilizar <em>grep</em> enlazándolo con otros programas.
+Imaginemos que queremos hacer una búsqueda limitada a las primeras cien líneas del fichero, podríamos hacer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ head -n 100 microarray_adenoma_hk69.csv | grep leukemia
+</pre></div>
+</div>
+<p>Lo que hemos hecho es utilizar el comando <em>head</em> para leer las primeras cien líneas del archivo, pero en vez de imprimir el resultado en pantalla hemos redirigido su salida mediante una tubería (<em>pipe</em>) al comando <em>grep</em>.
+Éste ha tomado estas cien líneas y las ha filtrado con la palabra <em>leukemia</em>.
+Podríamos además redirigir el resultado final a un fichero para guardar el resultado:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ head -n 100 microarray_adenoma_hk69.csv | grep leukemia &gt; busqueda_leukemia_100.txt
+</pre></div>
+</div>
+<p>Todos los comandos de manejo de texto que vamos a ver en esta sección tienen esta capacidad.
+Todos siguen el principio de realizar una tarea concreta pero teniendo la capacidad de enlazarse con otros.</p>
+</section>
+<section id="wc">
+<h2><em>wc</em><a class="headerlink" href="#wc" title="Permalink to this headline">¶</a></h2>
+<p><em>wc</em> (<em>Word Count</em>) sirve para contar líneas, palabras y caracteres.
+Por ejemplo podemos enlazarlo con el <em>grep</em> y contar cuantos genes relacionados con la leucemia hay en el fichero.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep leukemia microarray_adenoma_hk69.csv | wc
+     89    5256   31600
+</pre></div>
+</div>
+</section>
+<section id="cut">
+<h2><em>cut</em><a class="headerlink" href="#cut" title="Permalink to this headline">¶</a></h2>
+<p>Cuando el fichero está dividido en campos, como en el caso de la tabla que estamos utilizando, podemos seleccionar alguno de estos campos utilizando el comando <em>cut</em>.
+Por ejemplo mejoremos la búsqueda que habíamos hecho quedándonos tan solo con el nombre y la descripción del gen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep leukemia microarray_adenoma_hk69.csv | cut -f 3,4
+&quot;BAALC&quot; &quot;Brain and acute leukemia, cytoplasmic&quot;
+&quot;DEK&quot;   &quot;DEK oncogene (DNA binding)&quot;
+</pre></div>
+</div>
+<p>Con el parámetro <em>-f</em> le indicamos la lista de campos (<em>fields</em>) que queremos seleccionar.</p>
+<p><em>cut</em> asume que los campos en el fichero están divididos por tabuladores.
+Pero podríamos indicarle que los campos están divididos de otro modo, por ejemplo por comas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cut -d &#39;,&#39; fichero_separado_por_comas.txt
+</pre></div>
+</div>
+<p>Para tener una idea completa de las capacidades ofrecidas por el comando conviene consultar su manual:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ man cut
+</pre></div>
+</div>
+</section>
+<section id="sed">
+<h2><em>sed</em><a class="headerlink" href="#sed" title="Permalink to this headline">¶</a></h2>
+<p>La lista de genes que hemos obtenido en el apartado anterior puede servirnos para muchos propósitos, pero todavía no está limpia del todo, quedaría mejor si eliminásemos las comillas que rodean los campos.
+Esta tarea podemos realizarla con el comando <em>sed</em> (<em>stream editor</em>).
+<em>sed</em> toma las líneas de una en una, les aplica la transformación que le indiquemos y devuelve las líneas modificadas.
+Por ejemplo, eliminemos las comillas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep leukemia microarray_adenoma_hk69.csv | cut -f 3,4 | sed  &quot;s/\&quot;//g&quot;
+BAALC   Brain and acute leukemia, cytoplasmic
+DEK     DEK oncogene (DNA binding)
+</pre></div>
+</div>
+<p>La sintaxis utilizada por <em>sed</em> puede resultar algo oscura al principio, pero un mínimo conocimiento de este comando nos permitirá hacer modificaciones en el texto que de otro modo serían muy complejas.
+En este caso, el comando sed que hemos utilizado es “s/&quot;//g”.
+En primer lugar hemos indicado a <em>sed</em> qué queríamos hacer.
+Podemos, como es el caso, substituir un patrón por otro (comando s, sustituir), pero también podríamos pedirle que eliminase líneas (comando d, delete).
+Para substituir hay que indicarle qué queremos substituir y por qué:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">/</span><span class="n">patrón_a_substituir</span><span class="o">/</span><span class="n">nuevo_patrón</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>En el ejemplo hemos substituido las comillas por nada. En principio deberíamos haber escrito “s/”//”.
+Pero dado que las comillas tienen un significado especial en este contexto debemos <em>escaparlas</em>, por eso escribimos “s/\”//”.
+Además, a la expresión le hemos añadido una “g”, con este modificador le indicamos a <em>sed</em> que no queremos que substituya sólo la primera aparición del patrón en la línea sino todos los que haya.</p>
+<p><em>sed</em> acepta expresiones regulares como patrones y con ellas puede realizar prácticamente cualquier substitución que podamos imaginar.</p>
+</section>
+<section id="sort">
+<h2><em>sort</em><a class="headerlink" href="#sort" title="Permalink to this headline">¶</a></h2>
+<p>Si deseamos ordenar alfabéticamente un fichero de texto tan sólo tenemos que utilizar el comando <em>sort</em>.
+Por ejemplo, podemos ordenar los genes relacionados con la leucemia:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep leukemia microarray_adenoma_hk69.csv | cut -f 3 ,4| sort
+</pre></div>
+</div>
+<p><em>sort</em> también puede hacer ordenaciones numéricas y puede ordenar por cualquiera de los campos presentes en el fichero.
+Para ver qué se puede hacer con <em>sort</em> lo más recomendable es leer su manual.</p>
+</section>
+<section id="uniq">
+<h2><em>uniq</em><a class="headerlink" href="#uniq" title="Permalink to this headline">¶</a></h2>
+<p>En el ejemplo anterior, al ordenar con <em>sort</em>, hemos visto que en la lista que hemos obtenido hay genes repetidos.
+Con el comando <em>uniq</em> podemos eliminar las líneas duplicadas consecutivas.
+Para que la eliminación sea completa hay que recordad ordenar con <em>sort</em> antes de utilizar <em>uniq</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep leukemia microarray_adenoma_hk69.csv | cut -f 3 ,4| sort | uniq
+</pre></div>
+</div>
+</section>
+<section id="paste">
+<h2><em>paste</em><a class="headerlink" href="#paste" title="Permalink to this headline">¶</a></h2>
+<p><em>paste</em> une ficheros tabulares línea por línea.
+Supongamos que tenemos dos ficheros, uno con datos sobre la progresión de la enfermedad de una serie de enfermos y otro con el genotipado de los mismos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacientes</span><span class="p">:</span>
+<span class="n">id_paciente</span><span class="p">,</span><span class="n">nivel_colesterol</span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">190</span>
+<span class="mi">2</span><span class="p">,</span><span class="mi">250</span>
+<span class="mi">3</span><span class="p">,</span><span class="mi">220</span>
+<span class="mi">4</span><span class="p">,</span><span class="mi">260</span>
+<span class="mi">5</span><span class="p">,</span><span class="mi">160</span>
+
+<span class="n">genotipado</span><span class="p">:</span>
+<span class="n">id_paciente</span><span class="p">,</span><span class="n">SNP_a</span><span class="p">,</span><span class="n">SNP_b</span>
+<span class="mi">1</span><span class="p">,</span><span class="n">AA</span><span class="p">,</span><span class="n">CC</span>
+<span class="mi">2</span><span class="p">,</span><span class="n">AC</span><span class="p">,</span><span class="n">GG</span>
+<span class="mi">3</span><span class="p">,</span><span class="n">AA</span><span class="p">,</span><span class="n">CG</span>
+<span class="mi">4</span><span class="p">,</span><span class="n">AT</span><span class="p">,</span><span class="n">GG</span>
+<span class="mi">5</span><span class="p">,</span><span class="n">AA</span><span class="p">,</span><span class="n">CC</span>
+</pre></div>
+</div>
+<p>Podemos fusionar los dos archivos usando el comando paste:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ paste -d&#39;,&#39; pacientes.txt genotipado.txt
+id_paciente,nivel_colesterol,id_paciente,SNP_a,SNP_b
+1,190,1,AA,CC
+2,250,2,AC,GG
+3,220,3,AA,CG
+4,260,4,AT,GG
+5,160,5,AA,CC
+</pre></div>
+</div>
+</section>
+<section id="join">
+<h2><em>join</em><a class="headerlink" href="#join" title="Permalink to this headline">¶</a></h2>
+<p><em>join</em> es una herramienta muy potente, pero sencilla.
+Permite unir dos ficheros de texto tabulares en uno usando una columna como clave común.
+<em>join</em> es una especie de <em>paste</em> en la que las filas no tienen porqué estar ordenadas y la columna común que sirve como enlace entre ambas tablas no queda duplicada.
+Imaginemos que tenemos dos ficheros, en uno se describen los datos de <code class="xref download docutils literal notranslate"><span class="pre">colecta</span></code> de una serie de variedades de tomate y en otro la <code class="xref download docutils literal notranslate"><span class="pre">caracterización</span></code> de los mismos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pasaporte</span><span class="p">:</span>
+<span class="n">nombre</span>        <span class="n">origen</span>
+<span class="n">valenciano</span>    <span class="n">Valencia</span>
+<span class="n">penjar</span>        <span class="n">Barcelona</span>
+<span class="n">amarillo</span>      <span class="n">Roma</span>
+<span class="n">industria</span>     <span class="n">Murcia</span>
+
+<span class="n">caracterización</span><span class="p">:</span>
+<span class="n">nombre</span>      <span class="n">color</span>    <span class="n">forma</span>            <span class="n">duración</span>
+<span class="n">valenciano</span>  <span class="n">rojo</span>     <span class="n">apuntado</span>         <span class="n">corta</span>
+<span class="n">penjar</span>      <span class="n">rojo</span>     <span class="n">ovalado</span>          <span class="n">larga</span>
+<span class="n">amarillo</span>    <span class="n">amarillo</span> <span class="n">ovalado</span> <span class="n">grande</span>   <span class="n">normal</span>
+<span class="n">industria</span>   <span class="n">rojo</span>     <span class="n">ovalado</span>          <span class="n">normal</span>
+</pre></div>
+</div>
+<p><em>join</em> nos permite unir estas dos tablas en una sola utilizando el nombre de la variedad de tomate como la clave de unión:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ join tomate_pasaporte.txt tomate_caracterizacion.txt
+nombre     origen    color     forma           duración
+valenciano Valencia  rojo      apuntado        corta
+penjar     Barcelona rojo      ovalado         larga
+amarillo   Roma      amarillo  ovalado grande  normal
+industria  Murcia    rojo      ovalado         normal
+</pre></div>
+</div>
+</section>
+<section id="codificacion-de-caracteres">
+<h2>Codificación de caracteres<a class="headerlink" href="#codificacion-de-caracteres" title="Permalink to this headline">¶</a></h2>
+<p>Los ordenadores codifican los caracteres del lenguaje natural utilizando números.
+Los ficheros de texto no son pues más que ficheros de números que el ordenador transforma en caracteres utilizando una tabla de codificación de caracteres antes de imprimirlos.
+Una de las tablas de codificación más populares es la ASCII, en ella se incluyen los caracteres utilizados en la lengua inglesa, pero no los acentos o los caracteres de otros alfabetos.
+Para solucionar el problema el ASCII original fue ampliado creándose distintas tablas, una por cada lengua natural.
+De este modo con el ASCII correspondiente al castellano podemos crear ficheros de texto con acentos.
+Pero al crear distintas tablas de codificación surgió un problema, si nos equivocamos de tabla al decodificar el fichero obtendremos caracteres extraños que no se corresponden con lo que originalmente se había escrito.
+Para solucionar el problema se creó la norma <em>Unicode</em>, que es una gran tabla con unos 100713 símbolos que codifican prácticamente todos los caracteres utilizados en casi cualquier alfabeto humano.</p>
+<p>El problema práctico al que nos enfrentamos es que para poder abrir un fichero de texto que incluya caracteres no ingleses debemos conocer la tabla de caracteres en la que fue codificado.
+En Linux los ficheros de texto se codifican mediante <em>UTF-8</em> que es una de las tablas del estándar <em>Unicode</em>, pero en <em>Windows</em> no se sigue este estándar.
+Las instalaciones de Windows en castellano utilizan la tabla Windows-1252.</p>
+<p>Normalmente los editores de texto permiten elegir la tabla de caracteres en la que el fichero ha sido codificado.
+Si abrimos un fichero y vemos que tiene símbolos raros lo más normal es que estemos utilizando una tabla de caracteres equivocada.
+Este problema también suele ocurrir en las páginas web. Una página web no es más que un fichero de texto con un formato determinado.
+Si el navegador no es capaz de inferir la codificación del fichero los acentos pueden aparecer como caracteres extraños.</p>
+<p>En Linux hay varios programas que nos permiten cambiar los ficheros de una tabla de codificación a otra, uno de ellos es <em>iconv</em>.
+Por ejemplo si tenemos un archivo con una codificación <a class="reference download internal" download="" href="../_downloads/02d66d54371abc7fb7dfbd9a47277bb0/sagan.utf-8.txt"><code class="xref download docutils literal notranslate"><span class="pre">UTF-8</span></code></a> o <a class="reference download internal" download="" href="../_downloads/21e808bb088d96622351967f2b5a019a/sagan.iso-8859-1.txt"><code class="xref download docutils literal notranslate"><span class="pre">ISO-8859-1</span></code></a> podemos pasar de una a otra con <em>iconv</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ iconv -t ISO-8859-1 -f UTF-8 sagan.iso-8859-1 &gt; sagan.utf-8_mod.txt
+~$ iconv -f ISO-8859-1 -t UTF-8 sagan.utf-8.txt &gt; sagan.iso-8859-1_mod.txt
+</pre></div>
+</div>
+</section>
+<section id="fin-de-linea">
+<h2>Fin de línea<a class="headerlink" href="#fin-de-linea" title="Permalink to this headline">¶</a></h2>
+<p>Para marcar el final de una línea en un fichero de texto se utiliza un carácter especial.
+Por desgracia no ha habido un acuerdo a la hora de decidirse cual es el carácter que debe usarse.
+Unix, Windows y Mac OS utilizan caracteres diferentes.
+Afortunadamente los editores de texto suelen ser capaces de detectar las tres versiones y muestran el fichero con las líneas que esperamos.
+Desgraciadamente el notepad del Windows no es capaz de hacerlo por lo que si abrimos un fichero de texto creado en Linux en el notepad nos aparecerá como una larga línea con símbolos extraños intercalados.
+Casi todos los editores de texto permiten hacer el cambio entre los distintos finales de línea.</p>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<p>Se ha realizado un estudio de un nuevo tratamiento para un linfoma y nos han enviado dos ficheros.
+En el llamando <a class="reference download internal" download="" href="../_downloads/03aa299018634672d6f6893481e9124c/cancer_progresion.txt"><code class="xref download docutils literal notranslate"><span class="pre">cancer_progresion.txt</span></code></a> se encuentran tanto los datos de los pacientes como el resultado del tratamiento.
+En el segundo <a class="reference download internal" download="" href="../_downloads/3702b466754849ee66ff16dbaadf6171/cancer_ciego.txt"><code class="xref download docutils literal notranslate"><span class="pre">fichero</span></code></a> se encuentra la tabla que nos permitirá desentrañar el ensayo del doble ciego, con el identificador de cada paciente y la dosis de droga que se le administró.</p>
+<ol class="arabic simple">
+<li><p>¿Cuántos pacientes había en el estudio?</p></li>
+<li><p>¿De cuántos pacientes no tenemos datos de progresión?</p></li>
+<li><p>Convertir la separación de comas de la tabla de doble ciego  a tabuladores.
+(El tabulador se escribe como \t)</p></li>
+<li><p>Unir la tabla de los resultados de la terapia con la del doble ciego.</p></li>
+<li><p>Transformar el fichero resultante las comas a tabuladores.</p></li>
+<li><p>¿Cómo les ha ido a los pacientes según el tipo de tratamiento?
+(Placebo está escrito con mayúsculas y minúsculas)</p></li>
+<li><p>Crea un fichero con los primeros 100 resultados del microarray de adenoma que incluya sólo las primeras 10 columnas.</p></li>
+<li><p>Ordena el fichero micro.txt generado en la cuestión 7 por el nombre del gen (campo 3) y por el id de la fila, pero en orden numérico reverso.</p></li>
+<li><p>Disponemos de dos ficheros con secuencias de ADN (<a class="reference download internal" download="" href="../_downloads/187d78e927006cb7877b0a8f8fd533ff/seqs_1.fasta"><code class="xref download docutils literal notranslate"><span class="pre">seqs_1.fasta</span></code></a> y <a class="reference download internal" download="" href="../_downloads/a434e93019e9b8a9dede3c8744094ef1/seqs_2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">seqs_2.fasta</span></code></a>). ¿Cuántas secuencias hay en cada fichero? ¿Hay alguna secuencia presente en ambos ficheros? (En los archivos de secuencia tipo fasta el nombre de las secuencias se encuentra en las líneas que comienzan por el símbolo <em>&gt;</em>)</p></li>
+<li><p>Disponemos de un fichero con secuencia de ADN (<a class="reference download internal" download="" href="../_downloads/301195bd0fec1ec94db69511da25bff8/seqs_3.fasta"><code class="xref download docutils literal notranslate"><span class="pre">seqs_3.fasta</span></code></a>), puedes extraer los nombres de las sequencias?</p></li>
+<li><p>disponemos de un fichero con el resultado de un mapeo en formato SAM(<a class="reference download internal" download="" href="../_downloads/c57bc34c1b2917464d76c0b7c2f8f0b9/tomate.sam"><code class="xref download docutils literal notranslate"><span class="pre">tomate.sam</span></code></a>). ¿cuantas secuencias se han mapeado? ¿ cuantas se han mapeado en dirección reversa(mirad la segunda columna: 0 forward; 16 reverse)? ¿ cuantos y cuales son los unigenes a los que se ha podido mapear alguna secuencia? Ordena las nombres de secuencias mapeadas con el orden del unigene y la posición en el unigene</p></li>
+</ol>
+</section>
+<section id="soluciones">
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>¿Cuántos pacientes había en el estudio?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -v nombre cancer_progresion.txt | wc -l
+11
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>¿De cuántos pacientes no tenemos datos de progresión?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep  desconocido cancer_progresion.txt  | wc -l
+1
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Convertir la separación de comas de la tabla de doble ciego  a tabuladores.
+(El tabulador se escribe como \t)</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sed -e &#39;s/,/\t/&#39; cancer_ciego.txt &gt; cancer_ciego_tab.txt
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Unir la tabla de los resultados de la terapia con la del doble ciego.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ join cancer_progresion.txt cancer_ciego_tab.txt &gt; cancer.txt
+</pre></div>
+</div>
+<p><em>join</em>, por defecto, crea la nueva tabla usando como separador los espacios.
+Para poder hacerlo correctamente con tabuladores habría que usar “join -t $’\t’”.
+Otro modo correcto y más sencillo de hacerlo sería pasar antes todos los tabuladores a comas y hacerlo con comas.
+Estas herramientas tienen este tipo de limitaciones, más adelante con Python podremos superarlas fácilmente.</p>
+<ol class="arabic simple" start="5">
+<li><p>Transformar el fichero resultante los espacios a tabuladores.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sed -e &#39;s/ /\t/g&#39; cancer.txt
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>¿Cómo les ha ido a los pacientes según el tipo de tratamiento? (Placebo está escrito con mayúsculas y minúsculas)</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -i placebo cancer.txt
+1 Pepe Granada buena placebo
+4 Mónica Madrid mala placebo
+7 Óscar Barcelona mala Placebo
+10 Jordi Barcelona mala Placebo
+
+$ grep -i 1mg cancer.txt
+2 Juan Lugo muy buena 1mg
+3 Alicia Valencia muy buena 1mg
+8 Trini Valencia muy buena 1mg
+
+$ grep -i 2mg cancer.txt
+5 Alberto Madrid regular 2mg
+6 Toni Toledo mala 2mg
+9 Pepe Valencia buena 2mg
+11 Manolo Sevilla desconocido 2mg
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Crea un fichero con los primeros 100 resultados del microarray de adenoma que incluya sólo las primeras 10 columnas.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -v &#39;^&quot;&#39; microarray_adenoma_hk69.csv | head -n 100 | cut -f 1-10 &gt; micro.txt
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Ordena el fichero micro.txt generado en la cuestión 7 por el nombre del gen (campo 3) y por el id de la fila, pero en orden numérico reverso.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sort -k 3 micro.txt
+$ sort -nr micro.txt
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Disponemos de dos ficheros con secuencias de ADN (seqs_1.fasta y seqs_2.fasta). ¿Cuántas secuencias hay en cada fichero? ¿Hay alguna secuencia presente en ambos ficheros? (En los archivos de secuencia tipo fasta el nombre de las secuencias se encuentra en las líneas que comienzan por el símbolo <em>&gt;</em>)</p></li>
+</ol>
+<p>Veamos cuantas secuencias hay en cada archivo y después contemos las secuencias no repetidas que hay en un archivo que las incluya a todas.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat seqs_1.fasta | grep &#39;&gt;&#39; | wc -l
+11
+$ cat seqs_2.fasta | grep &#39;&gt;&#39; | wc -l
+11
+$ cat seqs_1.fasta seqs_2.fasta | grep &#39;&gt;&#39; | sort | uniq | wc -l
+20
+</pre></div>
+</div>
+<p>Sí hay secuencias repetidas puesto que cuando las contamos todas juntas hay dos menos que cuando las contamos por separado.
+Podemos ver qué secuencias hay repetidas utilizando el parámetro <em>-d</em> del uniq:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat seqs_1.fasta seqs_2.fasta | grep &#39;&gt;&#39; | sort | uniq -d
+&gt;gi|311207420|gb|GT728904.1|GT728904
+&gt;gi|311210057|gb|GT715712.1|GT715712
+</pre></div>
+</div>
+<p>Efectivamente ambas secuencias se encuentran repetidas en los dos ficheros:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep &#39;&gt;gi|311207420|gb|GT728904.1|GT728904&#39; seqs_1.fasta
+&gt;gi|311207420|gb|GT728904.1|GT728904
+$ grep &#39;&gt;gi|311207420|gb|GT728904.1|GT728904&#39; seqs_2.fasta
+&gt;gi|311207420|gb|GT728904.1|GT728904
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>para poder extraer los nombres conviene primero echar un vistazo al fichero para ver que contiene.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep &quot;&gt;&quot; seqs_3.fasta|cut -c 2- | cut -f 1 -d &quot; &quot;
+</pre></div>
+</div>
+<ol class="arabic simple" start="11">
+<li></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -v &quot;^@&quot; tomate.sam|wc
+$ grep -v &quot;^@&quot; tomate.sam| cut -f 2|grep 16|wc
+$ grep -v &quot;^@&quot; tomate.sam| cut -f 3| sort -u
+$ grep -v &quot;^@&quot; tomate.sam| sort -k 3,4|cut -f 1
+</pre></div>
+</div>
+</section>
+<section id="otras-herramientas">
+<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Permalink to this headline">¶</a></h2>
+<p>Existen editores de textos avanzados muy potentes: <a class="reference external" href="http://es.wikipedia.org/wiki/Vim">vi</a> y <a class="reference external" href="http://es.wikipedia.org/wiki/Emacs">emacs</a>.
+El único inconveniente de estos magníficos editores es que aprender a manejarlos puede requerir algo de tiempo.</p>
+</section>
+<section id="bibliografia">
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Chris Herborth, <a class="reference external" href="http://www.ibm.com/developerworks/aix/library/au-textprocess.html">Text processing with UNIX</a></p></li>
+<li><p>TDLP, <a class="reference external" href="http://tldp.org/LDP/abs/html/textproc.html">Text Processing Commands</a></p></li>
+</ul>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

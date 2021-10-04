@@ -1,0 +1,58 @@
+
+Bioinformatics
+==============
+
+This introduction to bioinformatics will deal mainly with sequence analysis and it is aimed to the 3rd course of the degree in Biotechnology.
+
+The lessons will be mainly practical. They will have a brief theoretical introduction and several practical exercises.
+
+:download:`Introductory presentation <presentations/intro_bioinf.odp>`
+
+Norms
+-----
+
+.. toctree::
+   :titlesonly:
+
+   Norms <norms.rst>
+   Covid19 <covid.rst>
+
+Previous knowledge
+------------------
+
+.. toctree::
+   :titlesonly:
+
+   Previous knowledge <prev_knowledge.rst>
+
+`Slides <https://drive.google.com/drive/folders/1mkI1j48pEnzzJv4zGSq_-n_WYlJbZO9k?usp=sharing>`_
+
+Theory
+------
+
+.. toctree::
+   :titlesonly:
+
+   Databases <theory/databases.rst>
+   Sequence alignment <theory/sequence_alignment.rst>
+   Blast <theory/blast.rst>
+   Multiple <theory/multiple.rst>
+   Structural annotation <theory/structural_annotation.rst>
+   Phylogeny <theory/phylogeny.rst>
+   Sequence analysis <theory/sequence_analysis.rst>
+
+Practice
+--------
+
+.. toctree::
+   :titlesonly:
+
+   NCBI search <practice/entrez.rst>
+   Linux <practice/linux.rst>
+   Emboss <practice/emboss.rst>
+   Sequence Alignment <practice/alignment.rst>
+   Blast <practice/blast.rst>
+   Multiple Sequence Alignment <practice/multiple.rst>
+   Structural annotation <practice/structural_annotation.rst>
+   Phylogeny <practice/phylogeny.rst>
+   Assembly <practice/assembly.rst>

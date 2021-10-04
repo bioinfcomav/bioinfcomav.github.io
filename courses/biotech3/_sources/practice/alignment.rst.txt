@@ -1,0 +1,587 @@
+Sequence Alignment
+~~~~~~~~~~~~~~~~~~
+
+Sequence Alignment Practice
+===========================
+
+Which EMBOSS programs can we use to do sequence alignments?
+
+.. code-block::
+
+   $ wossname alignment
+
+
+Which can we use to do dotplots?
+And local and global alignments?
+
+Which program is specific to align mRNA?
+
+Dotplot
+=======
+
+Gene structure
+--------------
+
+We can study the exon and intron gene structure graphically by using the graphical alignment program `dotmatcher <http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/dotmatcher.html>`_.
+dotmatcher can create dotplots in EMBOSS.
+
+Let's compare the Arabidopsis :download:`genomic region AT3G52905.1 <../static/alignments/AT3G4905.1.genomico.fasta>` with one :download:`cDNA <../static/alignments/AT3G4905.1.cdna.fasta>`.
+
+.. code-block::
+
+   $ dotmatcher AT3G4905.1.genomico.fasta AT3G4905.1.cdna.fasta
+
+
+Why is there so much noise in the result?
+
+Is there any parameter that we can use to improve the result?
+
+.. code-block::
+
+   $ dotmatcher -windowsize 15 -threshold 23 AT3G4905.1.genomico.fasta AT3G4905.1.cdna.fasta
+
+
+Or even more restrictive
+
+.. code-block::
+
+   $ dotmatcher -windowsize 15 -threshold 35 AT3G4905.1.genomico.fasta AT3G4905.1.cdna.fasta
+
+
+Why is the main diagonal split in several segments?
+
+Genes in close species
+----------------------
+
+We can study homologous regions between two proteins, one from human and another from dog.
+Using dotmatcher we will compare the CDS the :download:`human <../static/alignments/CDKL4.human.fasta>` and :download:`dog <../static/alignments/cyclin.dog.fasta>` genes.
+
+
+* 
+  Are the genes similar along all the CDS?
+
+* 
+  Why some regions could be more similar than others?
+
+Tandem repeats
+--------------
+
+Graphical alignments are particularly well suited to study repeated or inverted regions.
+As an example we will study the repeats found in the human zinc finger :download:`Q9P255 <../static/alignments/Q9P255.fasta>`
+
+Align the protein against itself using dotmatcher.
+
+
+* 
+  How do you interpret the resulting pattern?
+
+* 
+  How are the repeats distributed? How many repeats are there?
+
+* 
+  Change the threshold value and study how it affects the graphical alignment.
+
+* 
+  Look for the domain structure of the `Q9P255 <http://www.uniprot.org/uniprot/Q9P255>`_ in Uniprot.
+
+Genomic level dotplots
+----------------------
+
+Dotplots can be used to detect long genomic `structural variants <https://en.wikipedia.org/wiki/Structural_variation>`_.
+There are several software tools to do it, for instance the web service `SynMap <https://genomevolution.org/coge/SynMap.pl>`_.
+
+Running these analyses is slow, so we have already run them and you have here the results.
+
+Alignment the complete genome of two *E. coli* K12 substrains DH10B and VSW3110
+
+
+.. image:: ../static/alignments/synmap_ecoli_k12.dh10b_vsw3110.png
+   :target: ../static/alignments/synmap_ecoli_k12.dh10b_vsw3110.png
+   :alt: Ecoli K12 DH10B vs VSW3110
+
+
+
+* 
+  Which is the most striking difference?
+
+* 
+  Are there any other differences?
+
+* 
+  How can you interpret the dots outside the main diagonals?
+
+Ploplar genome aligned against itself by comparing just the CDSs.
+The black vertial and horizontal lines divide the chromosomes.
+
+
+.. image:: ../static/alignments/synmap_poplar_vs_itself.png
+   :target: ../static/alignments/synmap_poplar_vs_itself.png
+   :alt: Ploplar genome vs itself
+
+
+
+* How do you interpret the result?
+
+A graphical alignment of the maize vs sorgum genomes.
+Vertical and horizontal lines divide the chromosomes.
+
+
+.. image:: ../static/alignments/synmap_maize_vs_sorgum.png
+   :target: ../static/alignments/synmap_maize_vs_sorgum.png
+   :alt: Maize vs Sorgum
+
+
+
+* How do you interpret the result?
+
+[comment]: # colors in dotplots are related to the synonymous vs non-synonymous changes. They show how much time has passed since the split
+
+Virus repeats dotplot
+---------------------
+
+An endogenous retrovirus 12 kb long and has an inverted repeat of 250 pb located at both ends.
+Draw a dotplot comparing its sequence against itself.
+
+Interpret the result of the dotplot between the sequences A and B
+-----------------------------------------------------------------
+
+
+.. image:: ../static/alignments/dotplot_reversed.png
+   :target: ../static/alignments/dotplot_reversed.png
+   :alt: dotplot
+
+
+PCR primer dotplot
+------------------
+
+You have amplified a 200 pb PCR fragment using two primers (18 and 20 pb). Draw the dotplot between the sequences of the fragment and the primers
+
+Gene structure dotplot
+----------------------
+
+
+.. image:: ../static/alignments/gene_structure.png
+   :target: ../static/alignments/gene_structure.png
+   :alt: dotplot
+
+
+* 
+  Draw a dotplot between the genomic sequence and a full length cDNA of this gene.
+
+* 
+  Draw a dotplot between the  genomic sequence and the CDS of this gene
+
+Local alignments
+================
+
+DNA sequence alignment
+----------------------
+
+We are going to do a local alignment between two DNA sequences: :download:`sequence1 <../static/alignments/sequence1.fasta>` and :download:`sequence2 <../static/alignments/sequence2.fasta>`.
+
+In the command line we would write:
+
+.. code-block::
+
+   $ matcher sequence1.fasta sequence2.fasta stdout
+
+
+* 
+  How similar are the sequences?
+
+* 
+  Are they similar in all its length?
+
+Let's align the reverse and complementary sequence:
+
+.. code-block::
+
+   $ matcher -sreverse1 sequence1.fasta sequence2.fasta stdout
+
+
+How similar are the sequences?
+Why is different from the previous attempt?
+
+[comment]: # Para comentar:
+
+[comment]: # - siempre que se haga un alineamiento se obtendrá un resultado. Aunque no tenga sentido.
+
+[comment]: #    - Hay que evaluar el resultado obtenido para ver si es correcto o si ha habido algún problema
+
+[comment]: #    - Los programas están hechos para resolver una cuestión concreta. En este caso el matcher hace el alineamiento entre dos secuencias. Lo cual no quiere decir que eso sea exactamente lo que queremos hacer nosotros. El matcher alinea las dos secuencias en la misma dirección, pero puede que nosotros hubiésemos asumido que puede hacerlo en ambas direcciones.
+
+What would happen if we were to run the following command (Try to answer it before executing the command)?
+
+.. code-block::
+
+   $ matcher -sreverse1 -sreverse2 sequence1.fasta sequence2.fasta stdout
+
+
+Homologous proteins
+-------------------
+
+We can create the best alignment between two homologous proteins from two different species, once we have decided a score system.
+We also could use these methods to align homologous proteins within a species.
+
+As an example we will align a :download:`human <../static/alignments/CDKL4.human.fasta>` and :download:`canine <../static/alignments/cyclin.dog.fasta>` cyclin using `matcher <http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/matcher.html>`_ or `water <http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/water.html>`.
+
+.. code-block::
+
+   $ matcher CDKL4.human.fasta cyclin.dog.fasta stdout
+
+
+How similar are the sequences?
+
+Is this alignment local or global? Why?
+
+[comment]: #  El algoritmo de alineamiento es local y, en este caso, el alineamiento es local porque hay fragmentos al final de las secuencias que no están alineados. Para poder saberlo debemos saber cuál es la longitud de las secuencias. Podemos aprovechar para recordar como se usaba el grep y el wc para ver la longitud de secuencia de un fichero fasta. Se puede comparar con el dotplot de las mismas dos secuencias que se hizo en la práctica anterior.
+
+Conserved regions
+-----------------
+
+Usually not all regions of two homologous proteins vary in the same degree.
+There are regions that are more conversed and regions that are less conserved.
+
+We can look for the more conserved regions by doing a local alignment.
+
+Align the :download:`human <../static/alignments/frataxin.human.gb>` and :download:`Aedes mosquito <../static/alignments/frataxin.aedes.gb>` frataxins using  `matcher <http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/matcher.html>`_ or `water <http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/water.html>`.
+
+.. code-block::
+
+   $ matcher frataxin.human.gb frataxin.aedes.gb stdout
+
+* 
+  Is the alignment local?
+
+* 
+  Why are there regions that has not been aligned?
+
+[comment]: # por que son muy diferentes porque no están conservadas
+[comment]: # por que el alineamiento tendría una puntuación menor
+
+Why some regions are more similar than others?
+
+
+* Is there anything special with aminoacids 92, 100, 101, 104, 108, 111, 112, 122 and 124 in the human frataxin?
+
+Open in a text editor the genbank files for the human and mosquito proteins and check the annotation of those aminoacids.
+
+Let's try to modify the parameters given to the aligner.
+Let's do the alignment with the parameter gapopen set to 4.
+
+.. code-block::
+
+   $ matcher frataxin.human.gb frataxin.aedes.gb stdout -gapopen 4
+
+* Is this alignment better or worse?
+
+Every score set will produce more than one alignment, but matcher will only show, by default, only one alignment.
+Ask matcher to show 3 alternative alignments
+
+.. code-block::
+
+   $ matcher frataxin.human.gb frataxin.aedes.gb stdout -alternatives 3
+
+
+Why the first alignment is the best one?
+
+[comment]: # - No todo lo que tiene función tiene una secuencia muy conservada. Hay distintos grados de conservación
+
+[comment]: #    - No sólo el centro activo está conservado.
+
+[comment]: #    - Leyenda Igual :, similar .
+
+[comment]: #    - aprovechar para recordar como se decide qué es igual y qué es similar. Con las matrices de similitud.
+
+[comment]: #    - Las proteínas tienden a parecerse más que el ADN.
+
+[comment]: #    - Un alineamiento múltiple podría ayudar a evaluar si la alineación del péptido señal alinea residuos homólogos o no.
+
+[comment]: #    - Se puede deducir la historia evolutiva a partir de la secuencia.
+
+Gobal alignments
+================
+
+We could use an algorithm that aligns both sequences in its whole length.
+
+Redo the alignments from the last two exercises using `needle <http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/needle.html>`_.
+
+.. code-block::
+
+   $ needle frataxin.human.gb frataxin.aedes.gb stdout -auto
+
+
+* Is this alignment better or worse than the previous one?
+
+The global alignments should only be used when we are sure that the two sequences are similar in all its length.
+These algorithms will give a very bad result if there are regions that are not similar between the sequences.
+
+Genic structure 1
+=================
+
+We have aligned a cDNA and the  genomic sequence of a gene with matcher. Do you think that it is a good approach? Could you think on any problems regarding the approach?
+
+.. code-block::
+
+                560       570       580       590       600 
+   cDNA TTCAGGAGTATTTAGATTACGCGAACAGGTATGTAAACACTGAGCCAGCA
+        : ::::::::::::::::::::::::::::::::::::::::::::::::
+   GENO TGCAGGAGTATTTAGATTACGCGAACAGGTATGTAAACACTGAGCCAGCA
+        1550      1560      1570      1580      1590        
+
+                610       620       630       640       650 
+   cDNA GAGTAAAAGGAAACGGGTAATGACAAAATAGGGAAGCCGCTAGTTTCGGA
+        ::::::::::::::::::::::::::::::::::::::::::::::::::
+   GENO GAGTAAAAGGAAACGGGTAATGACAAAATAGGGAAGCCGCTAGTTTCGGA
+        1600      1610      1620      1630      1640        
+
+                660       670       680       690       700 
+   cDNA TATATGAATATAATGATGCTTGATTTGTTTTGACATTATCTATGTGTACA
+        ::::::::::::::::::::::::::::::::::::::::::::::::::
+   GENO TATATGAATATAATGATGCTTGATTTGTTTTGACATTATCTATGTGTACA
+        1650      1660      1670      1680      1690        
+
+                710       720       730       740 
+   cDNA AAGACATCTTGCATCTTTTAAGAAATTCGTTTTTCGCTGC
+        ::::::::::::::::::::::::::::::::::::::::
+   GENO AAGACATCTTGCATCTTTTAAGAAATTCGTTTTTCGCTGC
+        1700      1710      1720      1730
+
+Genic structure 2
+=================
+
+Determine the genic structure of the AT3G4905 *Arabidopsis* gene.
+You need to dermine where a the exons and introns located and which are the conding sequences.
+You have part of the :download:`genomic <../static/alignments/AT3G4905.1.genomico.fasta>` sequence, a :download:`cDNA <../static/alignments/AT3G4905.1.cdna.fasta>` and the :download:`CDS <../static/alignments/AT3G4905.1.cds.fasta>` for that cDNA.
+
+EMBOSS has a program created just with the aim of alignming messenger RNA with a genomic sequences.
+These kind of alingments are special:
+
+
+* They are very similar in the regions share by the genome and the mRNA
+* They have long gaps (the introns)
+* The exons should be surronded by some specific sequence `intronic sequences <https://en.wikipedia.org/wiki/RNA_splicing#Spliceosomal>`_.
+
+Let's align the genomic sequence of an *Arabidopsis* gene :download:`AT3G4905 <../static/alignments/AT3G4905.1.genomico.fasta>` with a :download:`cDNA <../static/alignments/AT3G4905.1.cdna.fasta>`.
+
+.. code-block::
+
+   $ est2genome AT3G4905.1.cdna.fasta AT3G4905.1.genomico.fasta stdout -auto
+
+
+
+* How many introns are there?
+
+To get the alignment report with the complete sequence:
+
+.. code-block::
+
+   $ est2genome AT3G4905.1.cdna.fasta AT3G4905.1.genomico.fasta stdout -align -auto
+
+
+
+* 
+  Would needle or matcher create the same alignment?
+
+* 
+  Compare the sequence of the :download:`CDS <../static/alignments/AT3G4905.1.cds.fasta>` of this cDNA with the sequence of the genome.
+
+* 
+  Is the alignment similar or different to previous one?. Why?
+
+* 
+  Do the alignment between CDS and mRNA. Which conclusions could you reach?
+
+Protein alignment
+=================
+
+The alignment between the SOX9 and NHE-RF2 proteins gave this result. could you infer that this proteins are homologues? Is this region a conserved domain? Check your answers in the databases.
+
+.. code-block::
+
+
+   #=======================================
+   #
+   # Aligned_sequences: 2
+   # 1: AHA92033.1
+   # 2: XP_016879383.1
+   # Matrix: EBLOSUM62
+   # Gap_penalty: 14
+   # Extend_penalty: 4
+   #
+   # Length: 33
+   # Identity:      12/33 (36.4%)
+   # Similarity:    13/33 (39.4%)
+   # Gaps:           0/33 ( 0.0%)
+   # Score: 49
+   # 
+   #
+   #=======================================
+
+              330       340       350      
+   AHA920 TAATPAGAGHVWMSKQQAPPPPPPPQQPPPAPP
+          : ::      :      : ::   :  :: .::
+   XP_016 TPATCCHCAAVMARSGSATPPARAPGAPPRSPP
+         150       160       170       180
+
+bl2seq
+======
+
+An often used program to align two sequences is bl2seq.
+We are going to use a web service to align with `bl2seq <http://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&PROG_DEF=blastn&BLAST_PROG_DEF=megaBlast&BLAST_SPEC=blast2seq>`_.
+
+Blast uses a different algorithm to the software used before in this practice.
+This algorithm is faster, but it is not guaranteed that we will get the best alignment.
+
+Bl2seq is a good alignment method when the sequences are large and the other methods won't produce a solution in a reasonable time.
+Blast is used more often to compare one sequence with a whole database of sequences.
+
+Compare the blast result with the previous :download:`genomic <../static/alignments/AT3G4905.1.genomico.fasta>` vs :download:`cDNA <../static/alignments/AT3G4905.1.cdna.fasta>` alignment.
+
+
+* How many alignments have we obtained?
+
+matcher vs bl2seq
+=================
+
+We have aligned using both matcher and bl2seq a sequence against itself. Could you suggest an interpretacion of the results?
+
+.. code-block::
+
+
+   ########################################
+   # Program: matcher
+   # Rundate: Mon 16 Oct 2017 14:57:26
+   # Commandline: matcher
+   #    -auto
+   #    -asequence /var/lib/emboss-explorer/output/783917/.asequence
+   #    -bsequence /var/lib/emboss-explorer/output/783917/.bsequence
+   #    -alternatives 1
+   #    -outfile outfile
+   #    -aformat3 markx0
+   # Align_format: markx0
+   # Report_file: outfile
+   ########################################
+
+   #=======================================
+   #
+   # Aligned_sequences: 2
+   # 1: seq_bi
+   # 2: seq_bi
+   # Matrix: EDNAFULL
+   # Gap_penalty: 16
+   # Extend_penalty: 4
+   #
+   # Length: 250
+   # Identity:     250/250 (100.0%)
+   # Similarity:   250/250 (100.0%)
+   # Gaps:           0/250 ( 0.0%)
+   # Score: 1250
+   # 
+   #
+   #=======================================
+
+                  10        20        30        40        50
+   seq_bi TCGCGAAGACATTTAGCAGAACCATTTGTCGTTTCCTCTCGCGATCAGGC
+          ::::::::::::::::::::::::::::::::::::::::::::::::::
+   seq_bi TCGCGAAGACATTTAGCAGAACCATTTGTCGTTTCCTCTCGCGATCAGGC
+                  10        20        30        40        50
+
+                  60        70        80        90       100
+   seq_bi CAGATTCCGTGCTCCGGAGCCAGAAAGTTTCCGCCTTTAAAGAAATGAAG
+          ::::::::::::::::::::::::::::::::::::::::::::::::::
+   seq_bi CAGATTCCGTGCTCCGGAGCCAGAAAGTTTCCGCCTTTAAAGAAATGAAG
+                  60        70        80        90       100
+
+                 110       120       130       140       150
+   seq_bi TAGCTATCTCAGATCCTTCAAATATGGTTGCTTCTCCATTGAGTGTTTTG
+          ::::::::::::::::::::::::::::::::::::::::::::::::::
+   seq_bi TAGCTATCTCAGATCCTTCAAATATGGTTGCTTCTCCATTGAGTGTTTTG
+                 110       120       130       140       150
+
+                 160       170       180       190       200
+   seq_bi CAGATTCCGTGCTCCGGAGCCAGAAAGTTTCCGCCTTTAAAGAAATGAAG
+          ::::::::::::::::::::::::::::::::::::::::::::::::::
+   seq_bi CAGATTCCGTGCTCCGGAGCCAGAAAGTTTCCGCCTTTAAAGAAATGAAG
+                 160       170       180       190       200
+
+                 210       220       230       240       250
+   seq_bi CTCAGAAAGAAATCAAACATTGACCTGATGGCTACAGATTTCCAGAACCT
+          ::::::::::::::::::::::::::::::::::::::::::::::::::
+   seq_bi CTCAGAAAGAAATCAAACATTGACCTGATGGCTACAGATTTCCAGAACCT
+                 210       220       230       240       250
+
+.. code-block::
+
+
+   BLASTN 2.7.0+
+   Reference: Zheng Zhang, Scott Schwartz, Lukas Wagner, and
+   Webb Miller (2000), "A greedy algorithm for aligning DNA
+   sequences", J Comput Biol 2000; 7(1-2):203-14.
+
+
+   RID: Y9B74S2U114
+
+
+   Query= seq_bi
+
+   Length=250
+
+
+                                                                      Score     E
+   Sequences producing significant alignments:                       (Bits)  Value
+
+   Query_163477  seq_bi                                               462     3e-135
+
+   ALIGNMENTS
+   >Query_163477 seq_bi
+   Length=250
+
+    Score = 462 bits (250),  Expect = 3e-135
+    Identities = 250/250 (100%), Gaps = 0/250 (0%)
+    Strand=Plus/Plus
+
+   Query  1    TCGCGAAGACATTTAGCAGAACCATTTGTCGTTTCCTCTCGCGATCAGGCCAGATTCCGT  60
+               ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+   Sbjct  1    TCGCGAAGACATTTAGCAGAACCATTTGTCGTTTCCTCTCGCGATCAGGCCAGATTCCGT  60
+
+   Query  61   GCTCCGGAGCCAGAAAGTTTCCGCCTTTAAAGAAATGAAGTAGCTATCTCAGATCCTTCA  120
+               ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+   Sbjct  61   GCTCCGGAGCCAGAAAGTTTCCGCCTTTAAAGAAATGAAGTAGCTATCTCAGATCCTTCA  120
+
+   Query  121  AATATGGTTGCTTCTCCATTGAGTGTTTTGCAGATTCCGTGCTCCGGAGCCAGAAAGTTT  180
+               ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+   Sbjct  121  AATATGGTTGCTTCTCCATTGAGTGTTTTGCAGATTCCGTGCTCCGGAGCCAGAAAGTTT  180
+
+   Query  181  CCGCCTTTAAAGAAATGAAGCTCAGAAAGAAATCAAACATTGACCTGATGGCTACAGATT  240
+               ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+   Sbjct  181  CCGCCTTTAAAGAAATGAAGCTCAGAAAGAAATCAAACATTGACCTGATGGCTACAGATT  240
+
+   Query  241  TCCAGAACCT  250
+               ||||||||||
+   Sbjct  241  TCCAGAACCT  250
+
+
+    Score = 93.5 bits (50),  Expect = 4e-24
+    Identities = 50/50 (100%), Gaps = 0/50 (0%)
+    Strand=Plus/Plus
+
+   Query  151  CAGATTCCGTGCTCCGGAGCCAGAAAGTTTCCGCCTTTAAAGAAATGAAG  200
+               ||||||||||||||||||||||||||||||||||||||||||||||||||
+   Sbjct  51   CAGATTCCGTGCTCCGGAGCCAGAAAGTTTCCGCCTTTAAAGAAATGAAG  100
+
+
+    Score = 93.5 bits (50),  Expect = 4e-24
+    Identities = 50/50 (100%), Gaps = 0/50 (0%)
+    Strand=Plus/Plus
+
+   Query  51   CAGATTCCGTGCTCCGGAGCCAGAAAGTTTCCGCCTTTAAAGAAATGAAG  100
+               ||||||||||||||||||||||||||||||||||||||||||||||||||
+   Sbjct  151  CAGATTCCGTGCTCCGGAGCCAGAAAGTTTCCGCCTTTAAAGAAATGAAG  200
+
+Primer search
+=============
+
+We have developed two PCR primers: :download:`primerf <../static/alignments/primerf.fasta>` and :download:`primerr <../static/alignments/primerr.fasta>` to amplify the :download:`cyclin <../static/alignments/CDKL4.human.fasta>` CDS.
+
+Can you locate the primers in the cyclin sequence?

@@ -1,296 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <title>Variables de entorno</title>
-  <meta name="description" content="Introduction to the Linux command line.">
-
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/variables_de_entorno.html">
-  <link rel="alternate" type="application/rss+xml" title="Curso Unix" href="/feed.xml">
-  
-  
-</head>
-
-
+    <title>Variables de entorno &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Administracion de software 2" href="administracion_software2.html" />
+    <link rel="prev" title="Administracion de software 1" href="administracion_software1.html" /> 
+  </head>
   <body>
 
-    <header class="site-header" role="banner">
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
 
-  <div class="wrapper">
 
-    <a class="site-title" href="/">Curso Unix</a>
-
-    <nav class="site-nav">
-      <span class="menu-icon">
-        <svg viewBox="0 0 18 15" width="18px" height="15px">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </span>
-
-      <div class="trigger">
-        
-          
-          <a class="page-link" href="/index.html">Curso Unix</a>
-          
-        
-          
-          <a class="page-link" href="/unix_intro.html">Unix y Linux</a>
-          
-        
-          
-          <a class="page-link" href="/sistema_de_ficheros.html">El sistema de ficheros</a>
-          
-        
-          
-          <a class="page-link" href="/control_procesos.html">Procesos</a>
-          
-        
-          
-          <a class="page-link" href="/pipes.html">Flujos de información</a>
-          
-        
-          
-          <a class="page-link" href="/procesamiento_texto.html">Procesamiento de ficheros de texto</a>
-          
-        
-          
-          <a class="page-link" href="/expresiones_regulares.html">Expresiones regulares</a>
-          
-        
-          
-          <a class="page-link" href="/scripts_bash.html">Scripts de bash</a>
-          
-        
-          
-          <a class="page-link" href="/administrador.html">Administrador</a>
-          
-        
-          
-          <a class="page-link" href="/administracion_software1.html">Administracion de software 1</a>
-          
-        
-          
-          <a class="page-link" href="/variables_de_entorno.html">Variables de entorno</a>
-          
-        
-          
-          <a class="page-link" href="/administracion_software2.html">Administracion de software 2</a>
-          
-        
-          
-          <a class="page-link" href="/redes.html">Redes</a>
-          
-        
-          
-        
-      </div>
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a>Software</a>
+                <ul>
+                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
+                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+               </ul>
+            </li>
+            <li><a href="courses.html">Courses</a>
+                <ul>
+                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="courses/unix/index.html">Linux</a></li>
+                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+               </ul>
+        </ul>
     </nav>
 
-  </div>
-
-</header>
-
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">Variables de entorno</h1>
-  </header>
-
-  <div class="post-content">
-    <ul id="markdown-toc">
-  <li><a href="#donde-están-los-ejecutables-path" id="markdown-toc-donde-están-los-ejecutables-path">¿Donde están los ejecutables? $PATH</a></li>
-  <li><a href="#home" id="markdown-toc-home">HOME</a></li>
-  <li><a href="#ejercicios" id="markdown-toc-ejercicios">Ejercicios</a></li>
-</ul>
-
+    <main>
+                
+    
+  <section id="variables-de-entorno">
+<h1>Variables de entorno<a class="headerlink" href="#variables-de-entorno" title="Permalink to this headline">¶</a></h1>
 <p>Las variables de entorno son una lista de ajustes que guardan varios estados de una sesión. Cuando se inicia una sesión ya sea en el entrono gráfico o en una terminal, se leen las variables de entorno.
-Para poder acceder al contenido de una variable podemos utilizar el commando <code class="highlighter-rouge">echo</code> y el nombre de la variable precedido de un $:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>~$ echo $LANG
+Para poder acceder al contenido de una variable podemos utilizar el commando <code class="docutils literal notranslate"><span class="pre">echo</span></code> y el nombre de la variable precedido de un $:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ echo $LANG
   es_ES.UTF-8
-</code></pre>
+</pre></div>
 </div>
-
 <p>Este comando nos muestra el idioma en el que se mostraran los mensajes en la <em>shell</em>.</p>
-
-<p>Si queremos ver las variables de entorno que estamos usando, tenemos el comando <code class="highlighter-rouge">env</code>. Nos mostrará todas las variables de entorno que hay cargadas en nuestra sesión.</p>
-
-<p>Podemos configurar las variables de entorno modificando los archivos de configuración de la shell. En nuestro caso la shell por defecto que usamos es bash, por lo tanto el fichero de configuración que debemos usar es: <code class="highlighter-rouge">$HOME/.bashrc</code>.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>~$ nano $HOME/.bashrc
-</code></pre>
+<p>Si queremos ver las variables de entorno que estamos usando, tenemos el comando <code class="docutils literal notranslate"><span class="pre">env</span></code>. Nos mostrará todas las variables de entorno que hay cargadas en nuestra sesión.</p>
+<p>Podemos configurar las variables de entorno modificando los archivos de configuración de la shell. En nuestro caso la shell por defecto que usamos es bash, por lo tanto el fichero de configuración que debemos usar es: <code class="docutils literal notranslate"><span class="pre">$HOME/.bashrc</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ nano $HOME/.bashrc
+</pre></div>
 </div>
-
 <p>Una de las variables de entorno que se puede configurar es la variable PATH.</p>
-
-<h3 id="donde-están-los-ejecutables-path">¿Donde están los ejecutables? $PATH</h3>
-
+<section id="donde-estan-los-ejecutables-path">
+<h2>¿Donde están los ejecutables? $PATH<a class="headerlink" href="#donde-estan-los-ejecutables-path" title="Permalink to this headline">¶</a></h2>
 <p>Cuando entramos en la <em>shell</em> y ejecutamos un programa la <em>shell</em> ha de saber dónde encontrar el ejecutable correspondiente a ese comando.
 Este ejecutable es un fichero con el mismo nombre que hemos escrito en la <em>shell</em> y que tiene el permiso de ejecución activado.
 Por ejemplo el ejecutable del comando <em>cp</em> es:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>~$ ls -l /bin/cp
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls -l /bin/cp
 -rwxr-xr-x 1 root root 109648 2010-09-21 20:32 /bin/cp
-</code></pre>
+</pre></div>
 </div>
-
 <p>En este caso el fichero /bin/cp es un ejecutable que pertenece al usuario root, pero que todo el mundo puede leer y ejecutar y que se encuentra en el directorio /bin.
 Dado que el comando <em>cp</em> es simplemente un fichero ejecutable en bin para utilizarlo deberíamos escribir su ruta completa:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>~$ /bin/cp fichero1.txt fichero2.bak
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ /bin/cp fichero1.txt fichero2.bak
+</pre></div>
 </div>
-
 <p>Aunque podríamos ejecutar el comando de ese modo nunca lo hemos hecho.
 De alguna forma la <em>shell</em> ha sabido encontrar el comando <em>cp</em> en el directorio /bin a pesar de que no se lo hemos dicho.</p>
-
-<p>Cuando intentamos ejecutar un comando lo que la <em>shell</em> hace es buscar el fichero ejecutable correspondiente en una lista de directorios que se encuentra almacenada en una variable de entorno denominada <code class="highlighter-rouge">PATH</code>.
+<p>Cuando intentamos ejecutar un comando lo que la <em>shell</em> hace es buscar el fichero ejecutable correspondiente en una lista de directorios que se encuentra almacenada en una variable de entorno denominada <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.
 Podemos imprimir esta lista utilizado el comando <em>echo</em>:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>~$ echo $PATH
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-</code></pre>
+</pre></div>
 </div>
-
 <p>En el ejemplo mostrado al escribir un comando en la <em>shell</em>, ésta lo buscará primero en el directorio /usr/local/sbin, después en /usr/local/bin y así sucesivamente hasta que lo encuentre en alguno de los directorios del $PATH.
-Si el comando no se encuentra la <em>shell</em> devolverá un error::</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>~$ hola
+Si el comando no se encuentra la <em>shell</em> devolverá un error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ hola
   No se ha encontrado la orden «hola», quizás quiso decir:
   La orden «cola» del paquete «git-cola» (universe)
   hola: orden no encontrada
-</code></pre>
+</pre></div>
 </div>
-
 <p>Cuando intentemos ejecutar programas creados por nosotros mismos o descargados desde algún lugar deberemos tener este detalle en cuenta.
 Por ejemplo, si descargamos un ejecutable llamado hola_mundo y después intentamos ejecutarlo, la <em>shell</em> no lo encontrará:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>~$ ls
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls
  hola_mundo
 ~$ hola_mundo
  No se ha encontrado la orden «hola», quizás quiso decir:
  La orden «cola» del paquete «git-cola» (universe)
  hola_mundo: orden no encontrada
-</code></pre>
+</pre></div>
 </div>
-
 <p>La <em>shell</em> no lo encuentra porque el directorio de trabajo (“.”) no está incluido en el PATH.
 Podríamos ejecutar el comando si le indicamos a la <em>shell</em> la ruta en la que se encuentra el comando:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>~$ /home/usuario/hola_mundo
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ /home/usuario/hola_mundo
  Hola mundo!
-</code></pre>
+</pre></div>
 </div>
-
 <p>También podríamos utilizar una ruta relativa:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>~$ ./hola_mundo
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ./hola_mundo
  Hola mundo!
-</code></pre>
+</pre></div>
 </div>
-
 <p>O podemos añadir el directorio donde se encuentra el ejecutable en el PATH.
 Si por ejemplo instalamos un programa en nuestra home en el directorio programa, podemos añadir este directorio al path y ejecutar el programa simplemente ejecutandolo con su nombre.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>programa: /home/user/dibujacirculos/bin/draw_circle
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>programa: /home/user/dibujacirculos/bin/draw_circle
 añadimos al path:/home/user/dibujacirculos/bin
 nuevo PATH: PATH=/home/user/dibujacirculos/bin:$PATH
-</code></pre>
+</pre></div>
 </div>
-
-<p>Para que la shell <em>cargue</em> la variable de entorno, podemos utilizar el comando <code class="highlighter-rouge">source</code> que actualizará las variables de entorno con los valores que hayamos puesto en el fichero que carguemos, en este caso <code class="highlighter-rouge">.bashrc</code>.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>~$ source $HOME/.bashrc
-</code></pre>
+<p>Para que la shell <em>cargue</em> la variable de entorno, podemos utilizar el comando <code class="docutils literal notranslate"><span class="pre">source</span></code> que actualizará las variables de entorno con los valores que hayamos puesto en el fichero que carguemos, en este caso <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ source $HOME/.bashrc
+</pre></div>
 </div>
-
-<p>Se puede dar el caso que tengamos el mismo programa instalado por dos metodos distintos.  Ambos programs tienen un ejecutable que se llama igual. Como podemos saber cual de los ejecutables se está ejecutando? En linux tenemos el comando <code class="highlighter-rouge">which</code> que nos revolvera la ruta completa. La shell va recorriendo los directorios del path en orden hasta que en alguno encuentra el ejecutable. <code class="highlighter-rouge">which</code> devuelve el path completo del ejecutable que la <em>shell</em> usa.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>~$ which cp
+<p>Se puede dar el caso que tengamos el mismo programa instalado por dos metodos distintos.  Ambos programs tienen un ejecutable que se llama igual. Como podemos saber cual de los ejecutables se está ejecutando? En linux tenemos el comando <code class="docutils literal notranslate"><span class="pre">which</span></code> que nos revolvera la ruta completa. La shell va recorriendo los directorios del path en orden hasta que en alguno encuentra el ejecutable. <code class="docutils literal notranslate"><span class="pre">which</span></code> devuelve el path completo del ejecutable que la <em>shell</em> usa.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ which cp
  /bin/cp
-</code></pre>
+</pre></div>
 </div>
-
-<h3 id="home">HOME</h3>
-<p>Otra variable de entorno que se usa mucho es la variable HOME. Hace referencia a la carpeta personal de usuario. Para el usuario <code class="highlighter-rouge">user</code> la carpeta es: /home/user</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>~$ echo $HOME
+</section>
+<section id="home">
+<h2>HOME<a class="headerlink" href="#home" title="Permalink to this headline">¶</a></h2>
+<p>Otra variable de entorno que se usa mucho es la variable HOME. Hace referencia a la carpeta personal de usuario. Para el usuario <code class="docutils literal notranslate"><span class="pre">user</span></code> la carpeta es: /home/user</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ echo $HOME
 /home/user
-</code></pre>
+</pre></div>
 </div>
-
-<p>Podemos cambiar el valor de una variable de entorno. Los cambios que hagamos solo se veran en la terminal en la que estemos. Si queremos que la variable la “hereden” las aplicaciones que lanzamos desde esa shell tenemos que hacer la variable disponible, para ello podemo user el comando <code class="highlighter-rouge">export</code> :</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>export PATH=/binarios:$PATH
-</code></pre>
+<p>Podemos cambiar el valor de una variable de entorno. Los cambios que hagamos solo se veran en la terminal en la que estemos. Si queremos que la variable la “hereden” las aplicaciones que lanzamos desde esa shell tenemos que hacer la variable disponible, para ello podemo user el comando <code class="docutils literal notranslate"><span class="pre">export</span></code> :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=/binarios:$PATH
+</pre></div>
 </div>
-
-<p>Por ello en el fichero <code class="highlighter-rouge">.bashrc</code> las variables las tenemos que definir con export delante.</p>
-
-<h3 id="ejercicios">Ejercicios</h3>
-
-<ol>
-  <li>
-    <p>Crea un directorio bin en tu directorio de trabajo. Usa Una variable de entorno en el comando. Despues añade el directorio al path, para todas las sessiones.</p>
-  </li>
-  <li>
-    <p>Crea una variable de entorno nueva que muestre tu nombre. Por ejemplo NOMBRE. Haz que se pueda utilizar solo en la terminal en la que lo has creado.</p>
-  </li>
+<p>Por ello en el fichero <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> las variables las tenemos que definir con export delante.</p>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Crea un directorio bin en tu directorio de trabajo. Usa Una variable de entorno en el comando. Despues añade el directorio al path, para todas las sessiones.</p></li>
+<li><p>Crea una variable de entorno nueva que muestre tu nombre. Por ejemplo NOMBRE. Haz que se pueda utilizar solo en la terminal en la que lo has creado.</p></li>
 </ol>
+</section>
+</section>
 
-  </div>
 
-</article>
 
-      </div>
+        
+
     </main>
 
-    <footer class="site-footer">
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
 
-  <div class="wrapper">
-
-    <h2 class="footer-heading">Curso Unix</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>
-            
-              Curso Unix
-            
-            </li>
-            
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          
-
-          
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>Introduction to the Linux command line.</p>
-      </div>
-    </div>
-
-  </div>
-
-</footer>
-
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 
   </body>
-
 </html>

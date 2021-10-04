@@ -1,0 +1,11 @@
+
+Sequence analysis
+~~~~~~~~~~~~~~~~~
+
+:download:`Sequencing technologies <../presentations/sequencing_technologies.odp>`
+
+:download:`Assembly <../presentations/assembly.odp>`
+
+:download:`Mapping <../presentations/mapping.odp>`
+
+:download:`SNP calling <../presentations/snps.odp>`

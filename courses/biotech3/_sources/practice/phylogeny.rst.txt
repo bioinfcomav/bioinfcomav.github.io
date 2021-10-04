@@ -1,0 +1,101 @@
+
+Phylogeny
+~~~~~~~~~
+
+We are going to do different phylogenetic reconstructions using different methods.
+We are going to use the software `Mega <http://www.megasoftware.net/>`_.
+
+Mega tutorial
+=============
+
+Follow the Mega tutorial, especially the sections:
+
+
+* Introduction
+* Mega Basics
+* Aligning sequences
+* Estimating Evolutionary Distances
+* Building Trees
+* Testing Tree Reliability
+* Constructing Likelihood Trees
+
+Distance methods
+================
+
+You have a :download:`multiple sequence alignment <../static/phylogeny/aprot.fasta>` alignment.
+Generate two trees without bootstrap (set "Test of Phylogeny" as None)one using neighbor-joining and another using UPGMA.
+
+
+* Visualize the trees obtained.
+* Are they the same?
+* Which clades do they share? You can change the order in which the branches are drawn without changing their topologies to be able to compare the trees.
+* Which tree is better
+
+Use this other `multiple sequence alignment :download:<../static/phylogeny/hprot.fasta>` to generate a new neighbor-joining tree without bootstrap.
+
+
+* Is this tree informative? Why?
+
+Bootstrap
+=========
+
+Redo the trees from the previous exercise doing a boostratp with 100 replicates.
+
+Do you get the same topologies as in the previous exercise?
+
+Which are the significative clades?
+
+What remains if we collapse all clades that are not significative?
+
+Frataxin phylogenies
+====================
+
+We are going to use a multiple sequence alignment of the :download:`frataxin <../static/phylogeny/frataxin_mod.meg>` protein.
+This is an alignment in MEGA format that can be loaded directly into MEGA.
+It includes only the conserved regions without the signal peptide.
+
+Distance trees
+--------------
+
+Do the neighbor-joining and UPGMA trees with boostrap
+
+Maximum likelihood
+------------------
+
+Do the tree with boostrap
+
+Compare the trees
+-----------------
+
+Are the trees identical?
+
+Are there any clades not found in both trees?
+
+Does any clade with enough support differ between both trees?
+
+Are your trees the same as the ones that the other students have created?
+
+Phylogenies of the old world monkeys
+====================================
+
+Create a phylogeny using parsimony, neighbor-joining and maximum likelihood suing the :download:`hepcidine <../static/phylogeny/hepcidina.fasta>` sequences.
+
+Compare the trees obtained by the different methods.
+
+Solanum and Lycopersicum
+========================
+
+NCBI holds `Popset <http://www.ncbi.nlm.nih.gov/popset>`_\ , a database of phylogenetic and population studies.
+In Popset you can find sequences used in studies carried on in different species so you can repeat those studies with the same sequences and others.
+
+Get from the database the sequences for the marker `COS-At5g14320 <http://www.ncbi.nlm.nih.gov/popset/224980415>`_ used in the study: "Do potatoes and tomatoes have a single evolutionary history, and what proportion of the genome supports this history?".Rodriguez,F., Wu,F., Ane,C., Tanksley,S. and Spooner,D.M.(2009) BMC Evol. Biol. 9:191.
+
+Does the tomato belong to the *Solanum* genus as the potato does?
+
+Human hemoglobins
+=================
+
+Reconstruct a phylogeny for the human hemoglobins.
+
+Starting with the sequence of the :download:`beta <../static/phylogeny/beta.fasta>` subunit of the human hemoglobin identify using blast all the human subunits of the human hemoglobin and create its phylogeny to identify the duplication events that led to all of them.
+Use the mioglobin as an outgroup.

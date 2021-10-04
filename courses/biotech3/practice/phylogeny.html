@@ -1,237 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <title>Phylogeny practice</title>
-  <meta name="description" content="Introduction to Bioinformatics for the Biotechnology degree.">
-
-  <link rel="stylesheet" href="/courses/biotech3/css/main.css">
-  <link rel="canonical" href="/courses/biotech3/practice/phylogeny.html">
-  <link rel="alternate" type="application/rss+xml" title="Bioinformatics" href="/courses/biotech3/feed.xml">
-</head>
-
-
+    <title>Phylogeny &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Assembly" href="assembly.html" />
+    <link rel="prev" title="Structural Annotation" href="structural_annotation.html" /> 
+  </head>
   <body>
 
-    <header class="site-header" role="banner">
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
 
-  <div class="wrapper">
 
-    <a class="site-title" href="/courses/biotech3/">Bioinformatics</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/alignment.html">Sequence Alignment Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/assembly.html">Assembly</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/blast.html">Blast</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/blast.html">Blast Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/covid.html">COVID19</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/databases.html">Biological Databases</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/emboss.html">Introduction to EMBOSS</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/entrez.html">NCBI database search Practice</a>
-          
-        
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/">Home</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/linux.html">Unix CLI</a>
-          
-        
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/multiple.html">Multiple Sequence Alignment Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/multiple.html">Multiple Sequence Alignment</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/norms.html">Norms</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/phylogeny.html">Phylogeny practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/phylogeny.html">Phylogeny and evolution</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/prev_knowledge.html">Previous Knowledge</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/sequence_alignment.html">Sequence Alignment</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/structural_annotation.html">Structural Annotation</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/structural_annotation.html">Structural Annotation</a>
-          
-        
-      </div>
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a>Software</a>
+                <ul>
+                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
+                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+               </ul>
+            </li>
+            <li><a href="courses.html">Courses</a>
+                <ul>
+                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="courses/unix/index.html">Linux</a></li>
+                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+               </ul>
+        </ul>
     </nav>
 
-  </div>
-
-</header>
-
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">Phylogeny practice</h1>
-  </header>
-
-  <div class="post-content">
-    <p>We are going to do different phylogenetic reconstructions using different methods.
-We are going to use the software <a href="http://www.megasoftware.net/">Mega</a>.</p>
-
-<h1 id="mega-tutorial">Mega tutorial</h1>
-
+    <main>
+                
+    
+  <section id="phylogeny">
+<h1>Phylogeny<a class="headerlink" href="#phylogeny" title="Permalink to this headline">¶</a></h1>
+<p>We are going to do different phylogenetic reconstructions using different methods.
+We are going to use the software <a class="reference external" href="http://www.megasoftware.net/">Mega</a>.</p>
+<section id="mega-tutorial">
+<h2>Mega tutorial<a class="headerlink" href="#mega-tutorial" title="Permalink to this headline">¶</a></h2>
 <p>Follow the Mega tutorial, especially the sections:</p>
-
-<ul>
-  <li>Introduction</li>
-  <li>Mega Basics</li>
-  <li>Aligning sequences</li>
-  <li>Estimating Evolutionary Distances</li>
-  <li>Building Trees</li>
-  <li>Testing Tree Reliability</li>
-  <li>Constructing Likelihood Trees</li>
+<ul class="simple">
+<li><p>Introduction</p></li>
+<li><p>Mega Basics</p></li>
+<li><p>Aligning sequences</p></li>
+<li><p>Estimating Evolutionary Distances</p></li>
+<li><p>Building Trees</p></li>
+<li><p>Testing Tree Reliability</p></li>
+<li><p>Constructing Likelihood Trees</p></li>
 </ul>
-
-<h1 id="distance-methods">Distance methods</h1>
-
-<p>You have a <a href="../static/phylogeny/aprot.fasta">multiple sequence alignment</a> alignment.
+</section>
+<section id="distance-methods">
+<h2>Distance methods<a class="headerlink" href="#distance-methods" title="Permalink to this headline">¶</a></h2>
+<p>You have a <a class="reference download internal" download="" href="../_downloads/1c9236eff9ae08514e5f60d4446e7157/aprot.fasta"><code class="xref download docutils literal notranslate"><span class="pre">multiple</span> <span class="pre">sequence</span> <span class="pre">alignment</span></code></a> alignment.
 Generate two trees without bootstrap (set “Test of Phylogeny” as None)one using neighbor-joining and another using UPGMA.</p>
-
-<ul>
-  <li>Visualize the trees obtained.</li>
-  <li>Are they the same?</li>
-  <li>Which clades do they share? You can change the order in which the branches are drawn without changing their topologies to be able to compare the trees.</li>
-  <li>Which tree is better</li>
+<ul class="simple">
+<li><p>Visualize the trees obtained.</p></li>
+<li><p>Are they the same?</p></li>
+<li><p>Which clades do they share? You can change the order in which the branches are drawn without changing their topologies to be able to compare the trees.</p></li>
+<li><p>Which tree is better</p></li>
 </ul>
-
-<p>Use this other <a href="../static/phylogeny/hprot.fasta">multiple sequence alignment</a> to generate a new neighbor-joining tree without bootstrap.</p>
-
-<ul>
-  <li>Is this tree informative? Why?</li>
+<p>Use this other <cite>multiple sequence alignment :download:&lt;../static/phylogeny/hprot.fasta&gt;</cite> to generate a new neighbor-joining tree without bootstrap.</p>
+<ul class="simple">
+<li><p>Is this tree informative? Why?</p></li>
 </ul>
-
-<h1 id="bootstrap">Bootstrap</h1>
-
+</section>
+<section id="bootstrap">
+<h2>Bootstrap<a class="headerlink" href="#bootstrap" title="Permalink to this headline">¶</a></h2>
 <p>Redo the trees from the previous exercise doing a boostratp with 100 replicates.</p>
-
 <p>Do you get the same topologies as in the previous exercise?</p>
-
 <p>Which are the significative clades?</p>
-
 <p>What remains if we collapse all clades that are not significative?</p>
-
-<h1 id="frataxin-phylogenies">Frataxin phylogenies</h1>
-
-<p>We are going to use a multiple sequence alignment of the <a href="../static/phylogeny/frataxin_mod.meg">frataxin</a> protein.
+</section>
+<section id="frataxin-phylogenies">
+<h2>Frataxin phylogenies<a class="headerlink" href="#frataxin-phylogenies" title="Permalink to this headline">¶</a></h2>
+<p>We are going to use a multiple sequence alignment of the <a class="reference download internal" download="" href="../_downloads/69f7a2642a81e7cea7fd48e82d9cf186/frataxin_mod.meg"><code class="xref download docutils literal notranslate"><span class="pre">frataxin</span></code></a> protein.
 This is an alignment in MEGA format that can be loaded directly into MEGA.
 It includes only the conserved regions without the signal peptide.</p>
-
-<h2 id="distance-trees">Distance trees</h2>
-
+<section id="distance-trees">
+<h3>Distance trees<a class="headerlink" href="#distance-trees" title="Permalink to this headline">¶</a></h3>
 <p>Do the neighbor-joining and UPGMA trees with boostrap</p>
-
-<h2 id="maximum-likelihood">Maximum likelihood</h2>
-
+</section>
+<section id="maximum-likelihood">
+<h3>Maximum likelihood<a class="headerlink" href="#maximum-likelihood" title="Permalink to this headline">¶</a></h3>
 <p>Do the tree with boostrap</p>
-
-<h2 id="compare-the-trees">Compare the trees</h2>
-
+</section>
+<section id="compare-the-trees">
+<h3>Compare the trees<a class="headerlink" href="#compare-the-trees" title="Permalink to this headline">¶</a></h3>
 <p>Are the trees identical?</p>
-
 <p>Are there any clades not found in both trees?</p>
-
 <p>Does any clade with enough support differ between both trees?</p>
-
 <p>Are your trees the same as the ones that the other students have created?</p>
-
-<h1 id="phylogenies-of-the-old-world-monkeys">Phylogenies of the old world monkeys</h1>
-
-<p>Create a phylogeny using parsimony, neighbor-joining and maximum likelihood suing the <a href="../static/phylogeny/hepcidina.fasta">hepcidine</a> sequences.</p>
-
+</section>
+</section>
+<section id="phylogenies-of-the-old-world-monkeys">
+<h2>Phylogenies of the old world monkeys<a class="headerlink" href="#phylogenies-of-the-old-world-monkeys" title="Permalink to this headline">¶</a></h2>
+<p>Create a phylogeny using parsimony, neighbor-joining and maximum likelihood suing the <a class="reference download internal" download="" href="../_downloads/1be8a393a9d41f79928d1bd13e0035cb/hepcidina.fasta"><code class="xref download docutils literal notranslate"><span class="pre">hepcidine</span></code></a> sequences.</p>
 <p>Compare the trees obtained by the different methods.</p>
-
-<h1 id="solanum-and-lycopersicum">Solanum and Lycopersicum</h1>
-
-<p>NCBI holds <a href="http://www.ncbi.nlm.nih.gov/popset">Popset</a>, a database of phylogenetic and population studies.
+</section>
+<section id="solanum-and-lycopersicum">
+<h2>Solanum and Lycopersicum<a class="headerlink" href="#solanum-and-lycopersicum" title="Permalink to this headline">¶</a></h2>
+<p>NCBI holds <a class="reference external" href="http://www.ncbi.nlm.nih.gov/popset">Popset</a>, a database of phylogenetic and population studies.
 In Popset you can find sequences used in studies carried on in different species so you can repeat those studies with the same sequences and others.</p>
-
-<p>Get from the database the sequences for the marker <a href="http://www.ncbi.nlm.nih.gov/popset/224980415">COS-At5g14320</a> used in the study: “Do potatoes and tomatoes have a single evolutionary history, and what proportion of the genome supports this history?”.Rodriguez,F., Wu,F., Ane,C., Tanksley,S. and Spooner,D.M.(2009) BMC Evol. Biol. 9:191.</p>
-
+<p>Get from the database the sequences for the marker <a class="reference external" href="http://www.ncbi.nlm.nih.gov/popset/224980415">COS-At5g14320</a> used in the study: “Do potatoes and tomatoes have a single evolutionary history, and what proportion of the genome supports this history?”.Rodriguez,F., Wu,F., Ane,C., Tanksley,S. and Spooner,D.M.(2009) BMC Evol. Biol. 9:191.</p>
 <p>Does the tomato belong to the <em>Solanum</em> genus as the potato does?</p>
-
-<h1 id="human-hemoglobins">Human hemoglobins</h1>
-
+</section>
+<section id="human-hemoglobins">
+<h2>Human hemoglobins<a class="headerlink" href="#human-hemoglobins" title="Permalink to this headline">¶</a></h2>
 <p>Reconstruct a phylogeny for the human hemoglobins.</p>
-
-<p>Starting with the sequence of the <a href="../static/phylogeny/beta.fasta">beta</a> subunit of the human hemoglobin identify using blast all the human subunits of the human hemoglobin and create its phylogeny to identify the duplication events that led to all of them.
+<p>Starting with the sequence of the <a class="reference download internal" download="" href="../_downloads/a8f1a5a255ecccbe51b7ec2714e0df86/beta.fasta"><code class="xref download docutils literal notranslate"><span class="pre">beta</span></code></a> subunit of the human hemoglobin identify using blast all the human subunits of the human hemoglobin and create its phylogeny to identify the duplication events that led to all of them.
 Use the mioglobin as an outgroup.</p>
+</section>
+</section>
 
 
-  </div>
 
-</article>
+        
 
-      </div>
     </main>
 
-    
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 
   </body>
-
 </html>

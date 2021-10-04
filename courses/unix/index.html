@@ -1,170 +1,223 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <title>Curso Unix</title>
-  <meta name="description" content="Introduction to the Linux command line.">
-
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/">
-  <link rel="alternate" type="application/rss+xml" title="Curso Unix" href="/feed.xml">
-  
-  
-</head>
-
-
+    <title>Introducción a Unix &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="#" />
+    <link rel="next" title="Unix y Linux" href="unix_intro.html" /> 
+  </head>
   <body>
 
-    <header class="site-header" role="banner">
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
 
-  <div class="wrapper">
 
-    <a class="site-title" href="/">Curso Unix</a>
-
-    <nav class="site-nav">
-      <span class="menu-icon">
-        <svg viewBox="0 0 18 15" width="18px" height="15px">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </span>
-
-      <div class="trigger">
-        
-          
-          <a class="page-link" href="/index.html">Curso Unix</a>
-          
-        
-          
-          <a class="page-link" href="/unix_intro.html">Unix y Linux</a>
-          
-        
-          
-          <a class="page-link" href="/sistema_de_ficheros.html">El sistema de ficheros</a>
-          
-        
-          
-          <a class="page-link" href="/control_procesos.html">Procesos</a>
-          
-        
-          
-          <a class="page-link" href="/pipes.html">Flujos de información</a>
-          
-        
-          
-          <a class="page-link" href="/procesamiento_texto.html">Procesamiento de ficheros de texto</a>
-          
-        
-          
-          <a class="page-link" href="/expresiones_regulares.html">Expresiones regulares</a>
-          
-        
-          
-          <a class="page-link" href="/scripts_bash.html">Scripts de bash</a>
-          
-        
-          
-          <a class="page-link" href="/administrador.html">Administrador</a>
-          
-        
-          
-          <a class="page-link" href="/administracion_software1.html">Administracion de software 1</a>
-          
-        
-          
-          <a class="page-link" href="/variables_de_entorno.html">Variables de entorno</a>
-          
-        
-          
-          <a class="page-link" href="/administracion_software2.html">Administracion de software 2</a>
-          
-        
-          
-          <a class="page-link" href="/redes.html">Redes</a>
-          
-        
-          
-        
-      </div>
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a>Software</a>
+                <ul>
+                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
+                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+               </ul>
+            </li>
+            <li><a href="courses.html">Courses</a>
+                <ul>
+                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="courses/unix/index.html">Linux</a></li>
+                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+               </ul>
+        </ul>
     </nav>
 
-  </div>
+    <main>
+                
+    
+  <section id="introduccion-a-unix">
+<h1>Introducción a Unix<a class="headerlink" href="#introduccion-a-unix" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="unix_intro.html">Unix y Linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unix_intro.html#unix">Unix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_intro.html#id3">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_intro.html#distribuciones">Distribuciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_intro.html#software-libre">Software libre</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_intro.html#introduccion-a-ubuntu">Introducción a Ubuntu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unix_intro.html#los-usuarios">Los usuarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_intro.html#el-escritorio">El escritorio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_intro.html#navegando-por-el-sistema-de-ficheros">Navegando por el sistema de ficheros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_intro.html#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_intro.html#la-terminal-de-unix">La terminal de UNIX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unix_intro.html#ayuda">Ayuda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_intro.html#completado-automatico-e-historia">Completado automático e historia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unix_intro.html#ejercicio">Ejercicio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unix_intro.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sistema_de_ficheros.html">Sistema de ficheros</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#sistemas-jerarquicos">Sistemas jerárquicos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#rutas-absolutas-relativas-y-directorio-de-trabajo">Rutas absolutas, relativas y directorio de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#directorio-home">Directorio $HOME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#moviendo-renombrando-y-copiando-ficheros">Moviendo, renombrando y copiando ficheros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#nombres-de-directorios-y-archivos">Nombres de directorios y archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#wildcards">WildCards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#obteniendo-informacion-sobre-archivos-y-directorios">Obteniendo información sobre archivos y directorios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#permisos">Permisos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#obteniendo-informacion-sobre-el-sistema-de-archivos">Obteniendo información sobre el sistema de archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#compresion-y-descompresion-de-ficheros">Compresion y descompresión de ficheros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#enlaces-duros-y-blandos">Enlaces duros y blandos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#id3">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistema_de_ficheros.html#acceso-remoto">Acceso remoto</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="control_procesos.html">Control de procesos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="control_procesos.html#ps"><em>ps</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="control_procesos.html#kill"><em>kill</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="control_procesos.html#free"><em>free</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="control_procesos.html#top"><em>top</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="control_procesos.html#screen-y-byobu">screen y byobu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control_procesos.html#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pipes.html">Flujos de información</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pipes.html#flujos-de-informacion-estandar">Flujos de información estándar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipes.html#redireccion-del-flujo-estandar">Redirección del flujo estándar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipes.html#pipes">Pipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipes.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipes.html#soluciones">Soluciones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="procesamiento_texto.html">Procesamiento de ficheros de texto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="procesamiento_texto.html#ficheros-de-texto-y-binarios">Ficheros de texto y binarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="procesamiento_texto.html#editores-de-texto">Editores de texto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="procesamiento_texto.html#imprimiendo-ficheros-cat-head-y-tail">Imprimiendo ficheros <em>cat</em>, <em>head</em> y <em>tail</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="procesamiento_texto.html#navegando-por-un-fichero-de-texto">Navegando por un fichero de texto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="procesamiento_texto.html#edicion-por-linea-de-comandos">Edición por línea de comandos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="procesamiento_texto.html#herramientas-para-unir-archivos">Herramientas para unir archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="procesamiento_texto.html#codificacion-de-caracteres">Codificación de caracteres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="procesamiento_texto.html#fin-de-linea">Fin de línea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="procesamiento_texto.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="procesamiento_texto.html#soluciones">Soluciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="procesamiento_texto.html#bibliografia">Bibliografía</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="expresiones_regulares.html">Expresiones regulares</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="expresiones_regulares.html#expresiones-alternativas">Expresiones alternativas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expresiones_regulares.html#contenedores">Contenedores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expresiones_regulares.html#cuantificadores">Cuantificadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expresiones_regulares.html#puntos-de-anclaje">Puntos de anclaje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expresiones_regulares.html#sustituciones">Sustituciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expresiones_regulares.html#escapes">Escapes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expresiones_regulares.html#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expresiones_regulares.html#soluciones">Soluciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expresiones_regulares.html#bibliografia">Bibliografía</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scripts_bash.html">Scripts de Bash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scripts_bash.html#variables">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts_bash.html#control-de-flujo">Control de flujo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts_bash.html#manipulacion-de-cadenas-de-texto">Manipulación de cadenas de texto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts_bash.html#operaciones-aritmeticas">Operaciones aritméticas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts_bash.html#parallel">Parallel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts_bash.html#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="administrador.html">Administrador</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="administrador.html#sudo">sudo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administrador.html#su">su</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="administracion_software1.html">Administración de software 1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="administracion_software1.html#repositorios">Repositorios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administracion_software1.html#herramientas-de-manejo-de-paquetes">Herramientas de manejo de paquetes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="variables_de_entorno.html">Variables de entorno</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables_de_entorno.html#donde-estan-los-ejecutables-path">¿Donde están los ejecutables? $PATH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_de_entorno.html#home">HOME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables_de_entorno.html#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="administracion_software2.html">Administracion de software 2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="administracion_software2.html#estandar-de-jerarquia-del-sistema-de-archivos">Estándar de jerarquía del sistema de archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="administracion_software2.html#instalando-programas">Instalando programas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="administracion_software2.html#programas-que-se-pueden-instalar">Programas que se pueden instalar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="redes.html">Redes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="redes.html#ip">IP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redes.html#puerto">Puerto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redes.html#direccion-estatica-o-dinamicas">Direccion estática o dinámicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redes.html#dns">DNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redes.html#puerta-de-enlace">Puerta de enlace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redes.html#dispositivos-de-red">Dispositivos de red</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="redes.html#servicios">Servicios</a></li>
+</ul>
+</div>
+</section>
 
-</header>
 
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post">
+        
 
-  <header class="post-header">
-    <h1 class="post-title">Curso Unix</h1>
-  </header>
-
-  <div class="post-content">
-    <ol>
-  <li><a href="unix_intro.html">Introducción a Unix</a></li>
-  <li><a href="sistema_de_ficheros.html">Sistema de ficheros</a></li>
-  <li><a href="control_procesos.html">Control de procesos</a></li>
-  <li><a href="pipes.html">Flujos de información</a></li>
-  <li><a href="procesamiento_texto.html">Procesamiento de ficheros de texto</a></li>
-  <li><a href="expresiones_regulares.html">Expresiones regulares</a></li>
-  <li><a href="scripts_bash.html">Scripts de Bash</a></li>
-  <li><a href="administrador.html">Administrador</a></li>
-  <li><a href="administracion_software1.html">Administración de software 1</a></li>
-  <li><a href="variables_de_entorno.html">Variables de entorno</a></li>
-  <li><a href="administracion_software2.html">Administración de software 2</a></li>
-  <li><a href="redes.html">Redes</a></li>
-</ol>
-
-  </div>
-
-</article>
-
-      </div>
     </main>
 
-    <footer class="site-footer">
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
 
-  <div class="wrapper">
-
-    <h2 class="footer-heading">Curso Unix</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>
-            
-              Curso Unix
-            
-            </li>
-            
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          
-
-          
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>Introduction to the Linux command line.</p>
-      </div>
-    </div>
-
-  </div>
-
-</footer>
-
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 
   </body>
-
 </html>

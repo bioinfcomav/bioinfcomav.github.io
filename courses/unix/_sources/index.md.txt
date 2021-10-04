@@ -1,0 +1,18 @@
+---
+layout: page
+title: Curso Unix
+permalink: index.html
+---
+
+1. [Introducción a Unix](unix_intro.html)
+2. [Sistema de ficheros](sistema_de_ficheros.html)
+3. [Control de procesos](control_procesos.html)
+4. [Flujos de información](pipes.html)
+5. [Procesamiento de ficheros de texto](procesamiento_texto.html)
+6. [Expresiones regulares](expresiones_regulares.html)
+7. [Scripts de Bash](scripts_bash.html)
+8. [Administrador](administrador.html)
+9. [Administración de software 1](administracion_software1.html)
+10. [Variables de entorno](variables_de_entorno.html)
+11. [Administración de software 2](administracion_software2.html)
+12. [Redes](redes.html)

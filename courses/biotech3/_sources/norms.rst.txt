@@ -1,0 +1,98 @@
+
+
+Norms
+-----
+
+Bioinformatics 2021-2022, norms and regulations
+
+Contact
+=======
+
+.. code-block::
+
+   Joaquín Cañizares Sales.
+   jcanizares@upv.es
+   COMAV. CPI. Edificio 8E, escalera J o I, segunda planta.
+   ext: 88470
+
+   José Miguel Blanca Postigo.
+   jblanca@upv.es
+   COMAV. CPI. Edificio 8E, escalera J o I, segunda planta.
+   ext: 88473
+
+
+  `Group web page <http://bioinf.comav.upv.es/index.html>`_
+
+Methodology
+===========
+
+This bioinformatics introduction will deal mainly with DNA and protein sequence analysis.
+Our aim is to provide a practical overview of the subject that will enable the student to carry out its own basic sequence analyses once the course is over.
+
+Each unit will be divided in:
+
+
+* A short theoretical introduction
+* Some guided practice
+* Some exercises to be carried out by the student
+
+The introduction will start with the biological basis for the analysis and a shallow overview to the main algorithms used.
+The planning and interpretation of the results of the analysis will be the main focus.
+During the practical classes the analysis explained in the theoretical classes will be carried out.
+
+The course web site will be updated throughout the course.
+
+Tutoring
+--------
+
+You should make an appointment by email for tutoring.
+
+Course evaluation
+=================
+
+
+* 
+  1 open answer exam (40%)
+
+
+  * This written exam will deal with theoretical and practical aspects of the subject matter.
+  * The exam date will be: January 10th.
+
+* 
+  5 Short test questions (15%)
+
+
+  * These short questions will deal with theoretical and practical aspect of the subject matter.
+  * Will be proposed along the course.
+
+* 
+  5 Problems (15%)
+
+
+  * Exercises and problems similar to the exam ones.
+  * Will be proposed along the course.
+
+* 
+  A practical exercise (30%).
+
+
+  * A presentation and a brief report will be prepared. These files should be uploaded to PoliformaT by December 1th.
+  * We will propose several topics for the practical exercises and each group will choose one
+  * A presentation will be done in December from 13th to 17th.
+  * One person from one group for every topic proposed will do the presentation. Both the person and the group will be chosen randomly. The rest will discuss the presentation.
+  * Both the reports and the presentations will be evaluated.
+
+Norms
+-----
+
+Each exam or exercise not taken will be evaluated as 0.
+
+It is required to pass the written exam with at least 50% of the score to pass the course.
+
+The students will be able to overcome the exam grade by writing a final extra exam.
+
+In the case of failing the practical exercise or problems, this failed score could be overcame by writing a final extra practical exam. There will be a final exam in January.
+
+Any student will be able to do the final extra exams, but the grades from the previous exams will not be kept in that case. Only the final extra exam grade will be taken into account.
+
+The tests and evaluations will also include the evaluation of the transversal competences for with this subject is a control point: Application of the practical thinking and management and time planning.

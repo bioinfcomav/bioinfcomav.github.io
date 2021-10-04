@@ -1,320 +1,256 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <title>Structural Annotation</title>
-  <meta name="description" content="Introduction to Bioinformatics for the Biotechnology degree.">
-
-  <link rel="stylesheet" href="/courses/biotech3/css/main.css">
-  <link rel="canonical" href="/courses/biotech3/practice/structural_annotation.html">
-  <link rel="alternate" type="application/rss+xml" title="Bioinformatics" href="/courses/biotech3/feed.xml">
-</head>
-
-
+    <title>Structural Annotation &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Phylogeny" href="phylogeny.html" />
+    <link rel="prev" title="Multiple Sequence Alignment" href="multiple.html" /> 
+  </head>
   <body>
 
-    <header class="site-header" role="banner">
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
 
-  <div class="wrapper">
 
-    <a class="site-title" href="/courses/biotech3/">Bioinformatics</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/alignment.html">Sequence Alignment Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/assembly.html">Assembly</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/blast.html">Blast</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/blast.html">Blast Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/covid.html">COVID19</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/databases.html">Biological Databases</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/emboss.html">Introduction to EMBOSS</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/entrez.html">NCBI database search Practice</a>
-          
-        
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/">Home</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/linux.html">Unix CLI</a>
-          
-        
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/multiple.html">Multiple Sequence Alignment Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/multiple.html">Multiple Sequence Alignment</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/norms.html">Norms</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/phylogeny.html">Phylogeny practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/phylogeny.html">Phylogeny and evolution</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/prev_knowledge.html">Previous Knowledge</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/sequence_alignment.html">Sequence Alignment</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/structural_annotation.html">Structural Annotation</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/structural_annotation.html">Structural Annotation</a>
-          
-        
-      </div>
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a>Software</a>
+                <ul>
+                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
+                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+               </ul>
+            </li>
+            <li><a href="courses.html">Courses</a>
+                <ul>
+                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="courses/unix/index.html">Linux</a></li>
+                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+               </ul>
+        </ul>
     </nav>
 
-  </div>
-
-</header>
-
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">Structural Annotation</h1>
-  </header>
-
-  <div class="post-content">
-    <h1 id="graphic-detection-of-orfs">Graphic detection of ORFs</h1>
-
+    <main>
+                
+    
+  <section id="structural-annotation">
+<h1>Structural Annotation<a class="headerlink" href="#structural-annotation" title="Permalink to this headline">¶</a></h1>
+<section id="graphic-detection-of-orfs">
+<h2>Graphic detection of ORFs<a class="headerlink" href="#graphic-detection-of-orfs" title="Permalink to this headline">¶</a></h2>
 <p>Long ORFs are a hint of a CDS.
-ORFs can be plot using the EMBOSS program <a href="http://emboss.sourceforge.net/apps/release/6.6/emboss/apps/plotorf.html">plotorf</a>.</p>
-
-<p>Detect the ORFs in the <a href="../static/annotation/genomic_frataxin.fasta">genomic</a> and <a href="../static/annotation/mRNA_frataxin.fasta">mRNA</a> of the frataxin gene.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ plotorf 'sequence'
-</code></pre>
+ORFs can be plot using the EMBOSS program <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.6/emboss/apps/plotorf.html">plotorf</a>.</p>
+<p>Detect the ORFs in the <a class="reference download internal" download="" href="../_downloads/a047ea6286b752ba2de19cdc82b63cf4/genomic_frataxin.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genomic</span></code></a> and <a class="reference download internal" download="" href="../_downloads/c1e807dd058c592b30f1a31003e87eb6/mRNA_frataxin.fasta"><code class="xref download docutils literal notranslate"><span class="pre">mRNA</span></code></a> of the frataxin gene.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ plotorf &#39;sequence&#39;
+</pre></div>
 </div>
-
-<h1 id="orf-translation">ORF translation</h1>
-
-<p>Translate the largest ORF of the frataxin <a href="../static/annotation/mRNA_frataxin.fasta">mRNA</a>.
-<a href="http://emboss.sourceforge.net/apps/release/6.6/emboss/apps/transeq.html">transeq</a> from EMBOSS can be used to translate the ORFs.
+</section>
+<section id="orf-translation">
+<h2>ORF translation<a class="headerlink" href="#orf-translation" title="Permalink to this headline">¶</a></h2>
+<p>Translate the largest ORF of the frataxin <a class="reference download internal" download="" href="../_downloads/c1e807dd058c592b30f1a31003e87eb6/mRNA_frataxin.fasta"><code class="xref download docutils literal notranslate"><span class="pre">mRNA</span></code></a>.
+<a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.6/emboss/apps/transeq.html">transeq</a> from EMBOSS can be used to translate the ORFs.
 You have to provide to transeq the frame to translate.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ transeq -frame 'x' 'sequence'
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ transeq -frame &#39;x&#39; &#39;sequence&#39;
+</pre></div>
 </div>
-
 <p>transeq would have translate the whole sequence without taking into account where does the start and stop codons are.
 Edit the translated peptide to keep only the aminoacid sequence between the start and stop codons.</p>
-
 <p>How can you be sure which one is the start methionine?
 One way to have an idea is to compare the translated proteion with known proteins and compare the structure of the proteins.
 Do a blastp in NCBI aginst the nr database.
 Determine which should be the sequence of the translated protein taking into account the blast result.</p>
-
-<h1 id="detection-of-the-intron-exon-and-cds-in-a-genomic-sequence">Detection of the intron, exon and CDS in a genomic sequence</h1>
-
+</section>
+<section id="detection-of-the-intron-exon-and-cds-in-a-genomic-sequence">
+<h2>Detection of the intron, exon and CDS in a genomic sequence<a class="headerlink" href="#detection-of-the-intron-exon-and-cds-in-a-genomic-sequence" title="Permalink to this headline">¶</a></h2>
 <p>Determine the exons and introns in a genomic sequence by using two kinds of evidences: comparisons with known proteins and comparisons with ESTs.</p>
-
-<h2 id="comparison-with-known-proteins">Comparison with known proteins</h2>
-
-<p>Do a blastx aginst refseq with the <a href="../static/annotation/genomic_frataxin.fasta">genomic</a> sequence in NCBI.</p>
-
+<section id="comparison-with-known-proteins">
+<h3>Comparison with known proteins<a class="headerlink" href="#comparison-with-known-proteins" title="Permalink to this headline">¶</a></h3>
+<p>Do a blastx aginst refseq with the <a class="reference download internal" download="" href="../_downloads/a047ea6286b752ba2de19cdc82b63cf4/genomic_frataxin.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genomic</span></code></a> sequence in NCBI.</p>
 <p>Could you propose a structure for the gene based on the blast matches obtained?</p>
-
-<h2 id="comparison-with-ests">Comparison with ESTs</h2>
-
-<p><a href="https://en.wikipedia.org/wiki/Expressed_sequence_tag">ESTs</a> are sequences that originate from cDNAs.
-We have two ESTs: <a href="../static/annotation/est1.fasta">EST1</a> and <a href="../static/annotation/est2.fasta">EST2</a>.
+</section>
+<section id="comparison-with-ests">
+<h3>Comparison with ESTs<a class="headerlink" href="#comparison-with-ests" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Expressed_sequence_tag">ESTs</a> are sequences that originate from cDNAs.
+We have two ESTs: <a class="reference download internal" download="" href="../_downloads/1ff8e430e96fe25c963285f2643b9d42/est1.fasta"><code class="xref download docutils literal notranslate"><span class="pre">EST1</span></code></a> and <a class="reference download internal" download="" href="../_downloads/f3ea11912ad6ceadaef10f7d95375830/est2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">EST2</span></code></a>.
 Align them to the genomic sequence and propose a structure for the frataxin gene.</p>
-
 <p>Do the evidences from the blast and mRNA analyses match?</p>
-
-<h2 id="ab-initio-prediction-of-the-gene-structure">Ab initio prediction of the gene structure</h2>
-
+</section>
+<section id="ab-initio-prediction-of-the-gene-structure">
+<h3>Ab initio prediction of the gene structure<a class="headerlink" href="#ab-initio-prediction-of-the-gene-structure" title="Permalink to this headline">¶</a></h3>
 <p>Codon usage, ORFs and splice sites can be used to infer a structure for the gene.
-Use <a href="http://bioinf.uni-greifswald.de/augustus/submission.php">Augustus</a> for the practice and run it with the <a href="../static/annotation/genomic_frataxin.fasta">genomic</a>.</p>
-
+Use <a class="reference external" href="http://bioinf.uni-greifswald.de/augustus/submission.php">Augustus</a> for the practice and run it with the <a class="reference download internal" download="" href="../_downloads/a047ea6286b752ba2de19cdc82b63cf4/genomic_frataxin.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genomic</span></code></a>.</p>
 <p>The Augustus predictions can be enhanced by providing Augustus ESTs and cDNAs sequences.</p>
-
 <p>Analyze the Augustus results and compare them with our predictions.</p>
-
 <p>Do a blastp with the protein predicted by Augustus and check if the prediction looks right.</p>
-
-<h2 id="a-possible-sequencing-error">A possible sequencing error</h2>
-
-<p>Redo the practice with a new sequence for the <a href="../static/annotation/genomic_frataxin2.fasta">genomic</a> region.</p>
-
+</section>
+<section id="a-possible-sequencing-error">
+<h3>A possible sequencing error<a class="headerlink" href="#a-possible-sequencing-error" title="Permalink to this headline">¶</a></h3>
+<p>Redo the practice with a new sequence for the <a class="reference download internal" download="" href="../_downloads/2fbc1437faf0aa968d8fff93aa450054/genomic_frataxin2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genomic</span></code></a> region.</p>
 <p>Which are the differences between this sequence and the previous one?</p>
-
 <p>Which looks better according to the CDS prediction?</p>
-
-<h1 id="gene-structure-predition">Gene Structure predition</h1>
-
-<h2 id="1">1</h2>
-
+</section>
+</section>
+<section id="gene-structure-predition">
+<h2>Gene Structure predition<a class="headerlink" href="#gene-structure-predition" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h3>1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Propose a structure for the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was not directional, the sequenced strand might be the sense or the antisense one. A blastx was carried out against the swissprot database with the genomic sequence.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Genomic</span> <span class="n">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Genomic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+<span class="n">EST1</span>    <span class="n">TT</span><span class="o">--------------</span>              <span class="o">-----&gt;</span>
+<span class="n">EST2</span>                                  <span class="o">&lt;---------</span>      <span class="o">----------</span>
+<span class="n">EST3</span>          <span class="o">&lt;---------</span>                              <span class="o">-----</span>
+<span class="n">EST4</span>                 <span class="o">---</span>                              <span class="o">--------&gt;</span>
 
-EST1    TT--------------              -----&gt;
-EST2                                  &lt;---------      ----------
-EST3          &lt;---------                              -----
-EST4                 ---                              --------&gt;
-
-blastx hit 1         &lt;--              -----           ----
-blastx hit 2     &lt;------                              ----
-</code></pre>
+<span class="n">blastx</span> <span class="n">hit</span> <span class="mi">1</span>         <span class="o">&lt;--</span>              <span class="o">-----</span>           <span class="o">----</span>
+<span class="n">blastx</span> <span class="n">hit</span> <span class="mi">2</span>     <span class="o">&lt;------</span>                              <span class="o">----</span>
+</pre></div>
 </div>
-
-<h2 id="2">2</h2>
-
+</section>
+<section id="id2">
+<h3>2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Propose a structure for structure of the gene or genes and the mRNA or mRNAs. The cDNA library was not directional, the sequenced strand might be the sense or the antisense one.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Genomic</span> <span class="n">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Genomic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-EST1    ----------   ---&gt;
-EST2                                    ---------    ----------&gt;
-EST3                &lt;----
-EST4                                         ----    ----&gt;
-EST5         -----  -----    -&gt;
-EST6                                       &lt;-----         -----
-</code></pre>
+<span class="n">EST1</span>    <span class="o">----------</span>   <span class="o">---&gt;</span>
+<span class="n">EST2</span>                                    <span class="o">---------</span>    <span class="o">----------&gt;</span>
+<span class="n">EST3</span>                <span class="o">&lt;----</span>
+<span class="n">EST4</span>                                         <span class="o">----</span>    <span class="o">----&gt;</span>
+<span class="n">EST5</span>         <span class="o">-----</span>  <span class="o">-----</span>    <span class="o">-&gt;</span>
+<span class="n">EST6</span>                                       <span class="o">&lt;-----</span>         <span class="o">-----</span>
+</pre></div>
 </div>
-
-<h2 id="3">3</h2>
-
+</section>
+<section id="id3">
+<h3>3<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Propose a structure for structure of the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was directional, the sequenced strand is the sense one. A blastx was carried out against the swissprot database with the genomic sequence.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Genomic</span> <span class="n">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Genomic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+<span class="n">EST1</span>    <span class="o">-----------------</span>           <span class="o">---------------&gt;</span>
+<span class="n">EST2</span>                                    <span class="o">&lt;-----------------------</span>
+<span class="n">EST3</span>                <span class="o">-----</span>           <span class="o">---------&gt;</span>
 
-EST1    -----------------           ---------------&gt;
-EST2                                    &lt;----------------------- 
-EST3                -----           ---------&gt;
-
-blastx     --------------           ---------&gt;
-</code></pre>
+<span class="n">blastx</span>     <span class="o">--------------</span>           <span class="o">---------&gt;</span>
+</pre></div>
 </div>
-
-<h2 id="4">4</h2>
-
+</section>
+<section id="id4">
+<h3>4<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>Propose a structure for structure of the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was not directional, the sequenced strand might be the sense or the antisense one. A blastx was carried out against the swissprot database with the genomic sequence.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Genomic</span> <span class="n">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Genomic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+<span class="n">EST1</span>    <span class="o">-----------------&gt;</span>
+<span class="n">EST2</span>                <span class="o">-----</span>    <span class="o">----&gt;</span>
 
-EST1    -----------------&gt;
-EST2                -----    ----&gt;
+<span class="n">blast</span> <span class="n">hit1</span> <span class="o">-------------&gt;</span>
+<span class="n">blast</span> <span class="n">hit2</span>                                         <span class="o">&lt;-------------</span>
 
-blast hit1 -------------&gt;
-blast hit2                                         &lt;------------- 
-
-stop f1         *          *         *               *     *
-stop f2   *              *  *          *         *      *     *
-stop f3        *              *  *          *         *      *
-stop r1    *              *  *          *         *      *     *
-stop r2             *         *      *     * *              *    * 
-stop r3    *              *  *                         *     *  * 
-</code></pre>
+<span class="n">stop</span> <span class="n">f1</span>         <span class="o">*</span>          <span class="o">*</span>         <span class="o">*</span>               <span class="o">*</span>     <span class="o">*</span>
+<span class="n">stop</span> <span class="n">f2</span>   <span class="o">*</span>              <span class="o">*</span>  <span class="o">*</span>          <span class="o">*</span>         <span class="o">*</span>      <span class="o">*</span>     <span class="o">*</span>
+<span class="n">stop</span> <span class="n">f3</span>        <span class="o">*</span>              <span class="o">*</span>  <span class="o">*</span>          <span class="o">*</span>         <span class="o">*</span>      <span class="o">*</span>
+<span class="n">stop</span> <span class="n">r1</span>    <span class="o">*</span>              <span class="o">*</span>  <span class="o">*</span>          <span class="o">*</span>         <span class="o">*</span>      <span class="o">*</span>     <span class="o">*</span>
+<span class="n">stop</span> <span class="n">r2</span>             <span class="o">*</span>         <span class="o">*</span>      <span class="o">*</span>     <span class="o">*</span> <span class="o">*</span>              <span class="o">*</span>    <span class="o">*</span>
+<span class="n">stop</span> <span class="n">r3</span>    <span class="o">*</span>              <span class="o">*</span>  <span class="o">*</span>                         <span class="o">*</span>     <span class="o">*</span>  <span class="o">*</span>
+</pre></div>
 </div>
-
-<h2 id="5">5</h2>
-
+</section>
+<section id="id5">
+<h3>5<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>Propose a structure for structure of the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was not directional, the sequenced strand might be the sense or the antisense one.  Probabilities, based on the codon usage were determined for the forward and reverse strands. The reversed ones were low and are not represented.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Genomic</span> <span class="n">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Genomic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+<span class="n">EST1</span>         <span class="o">-----------------&gt;</span>
+<span class="n">EST3</span>                     <span class="o">-----</span>    <span class="o">------------&gt;</span>
+<span class="n">EST3</span>                                     <span class="o">----------------&gt;</span>
 
-EST1         -----------------&gt;
-EST3                     -----    ------------&gt;
-EST3                                     ----------------&gt;
+<span class="n">stop</span> <span class="n">f1</span>         <span class="o">*</span>               <span class="o">*</span>         <span class="o">*</span>         <span class="o">*</span>      <span class="o">*</span>     <span class="o">*</span>
+<span class="n">stop</span> <span class="n">f2</span>     <span class="o">*</span>              <span class="o">*</span>  <span class="o">*</span>          <span class="o">*</span>     <span class="o">*</span>       <span class="o">*</span>
+<span class="n">stop</span> <span class="n">f3</span>           <span class="o">*</span>            <span class="o">*</span>                       <span class="o">*</span>      <span class="o">*</span>
 
-stop f1         *               *         *         *      *     *
-stop f2     *              *  *          *     *       *
-stop f3           *            *                       *      *
-
-Prob codon f1   ---------------         --                 --
-Prob codon f2             ---             ---
-Prob codon f3       --            --------------------- 
-</code></pre>
+<span class="n">Prob</span> <span class="n">codon</span> <span class="n">f1</span>   <span class="o">---------------</span>         <span class="o">--</span>                 <span class="o">--</span>
+<span class="n">Prob</span> <span class="n">codon</span> <span class="n">f2</span>             <span class="o">---</span>             <span class="o">---</span>
+<span class="n">Prob</span> <span class="n">codon</span> <span class="n">f3</span>       <span class="o">--</span>            <span class="o">---------------------</span>
+</pre></div>
 </div>
-
-<h2 id="6">6</h2>
-
+</section>
+<section id="id6">
+<h3>6<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>Propose a structure for structure of the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was directional, the sequenced strand is the sense one. A blastx was carried out against the swissprot database with the genomic sequence.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Genomic</span>    <span class="n">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Genomic    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+<span class="n">EST1</span>       <span class="o">&lt;----</span>
+<span class="n">EST2</span>       <span class="o">&lt;------</span>
+<span class="n">EST3</span>                                   <span class="o">---------&gt;</span>
+<span class="n">EST4</span>       <span class="o">&lt;---</span>
+<span class="n">EST4</span>       <span class="o">&lt;----</span>
 
-EST1       &lt;----
-EST2       &lt;------
-EST3                                   ---------&gt;
-EST4       &lt;---
-EST4       &lt;----
+<span class="n">blastx</span>                              <span class="o">--------------------&gt;</span>
 
-blastx                              --------------------&gt;
-
-Prob codon f1   -- --   --            --                 --
-Prob codon f2             ---             ---
-Prob codon f3       --            --------------------- 
-</code></pre>
+<span class="n">Prob</span> <span class="n">codon</span> <span class="n">f1</span>   <span class="o">--</span> <span class="o">--</span>   <span class="o">--</span>            <span class="o">--</span>                 <span class="o">--</span>
+<span class="n">Prob</span> <span class="n">codon</span> <span class="n">f2</span>             <span class="o">---</span>             <span class="o">---</span>
+<span class="n">Prob</span> <span class="n">codon</span> <span class="n">f3</span>       <span class="o">--</span>            <span class="o">---------------------</span>
+</pre></div>
 </div>
+</section>
+</section>
+</section>
 
 
-  </div>
 
-</article>
+        
 
-      </div>
     </main>
 
-    
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 
   </body>
-
 </html>

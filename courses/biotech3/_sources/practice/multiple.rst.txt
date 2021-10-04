@@ -1,0 +1,47 @@
+
+Multiple Sequence Alignment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Clustal Omega protein alignment
+===============================
+
+We are going to use the clustal omega program to analyze some homologous proteins to the human frataxin in :download:`mammals <../static/multiple/frataxin_mamiferos.fasta>`.
+
+You can use clustal `omega <https://www.ebi.ac.uk/Tools/msa/clustalo/>`_ in the ebi server.
+There are also on-line servers that create clustalw alignments and you can read its 
+
+Create an alignment check the result.
+Is there any problem?
+
+What would happen if we remove the most dissimilar sequences
+------------------------------------------------------------
+
+Redo the analysis only with the `closest mammals :download:<../static/multiple/frataxin_mamiferos_cercanos.fasta>` and compare the result with the previous one.
+
+What would happen with more dissimilar sequences
+------------------------------------------------
+
+Try to do the alignment with more different `sequences :download:<../static/multiple/frataxin_prot.fasta>`.
+
+T-Coffee
+--------
+
+Compare the result with the one given by `T-Coffee <http://tcoffee.crg.cat/apps/tcoffee/do:regular>`_
+
+Once you have the result you can use the TCS tool in the same server to get an idea of which sites are reliable which are not.
+
+Conserved domains
+-----------------
+
+Compare the result with the `domain <https://www.ncbi.nlm.nih.gov/Structure/cdd/cddsrv.cgi?uid=29607>`_ stored in NCBI for the frataxin.
+
+Is this domain similar to any of our alignments?
+
+DNA sequence alignment
+======================
+
+We can also align DNA sequences.
+This is useful to do phylogenetic analysis and to look for mutations in the sequences.
+We are going to look for the SNPs in the :download:`CT099 <../static/multiple/seq_dna.fasta>` gene of *Lycopersicum pimpinellifolium*. Align them using `MAFFT <http://www.ebi.ac.uk/Tools/msa/mafft/>`_.
+
+Take a look at the guide tree. Is this a reliable phylogenetic tree?

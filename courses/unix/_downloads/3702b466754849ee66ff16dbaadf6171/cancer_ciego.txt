@@ -1,0 +1,12 @@
+id,dosis
+1,placebo
+2,1mg
+3,1mg
+4,placebo
+5,2mg
+6,2mg
+7,Placebo
+8,1mg
+9,2mg
+10,Placebo
+11,2mg

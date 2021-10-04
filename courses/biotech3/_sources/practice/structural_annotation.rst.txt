@@ -1,0 +1,198 @@
+
+Structural Annotation
+~~~~~~~~~~~~~~~~~~~~~
+
+Graphic detection of ORFs
+=========================
+
+Long ORFs are a hint of a CDS.
+ORFs can be plot using the EMBOSS program `plotorf <http://emboss.sourceforge.net/apps/release/6.6/emboss/apps/plotorf.html>`_.
+
+Detect the ORFs in the :download:`genomic <../static/annotation/genomic_frataxin.fasta>` and :download:`mRNA <../static/annotation/mRNA_frataxin.fasta>` of the frataxin gene.
+
+.. code-block::
+
+   $ plotorf 'sequence'
+
+
+ORF translation
+===============
+
+Translate the largest ORF of the frataxin :download:`mRNA <../static/annotation/mRNA_frataxin.fasta>`.
+`transeq <http://emboss.sourceforge.net/apps/release/6.6/emboss/apps/transeq.html>`_ from EMBOSS can be used to translate the ORFs.
+You have to provide to transeq the frame to translate.
+
+.. code-block::
+
+   $ transeq -frame 'x' 'sequence'
+
+
+transeq would have translate the whole sequence without taking into account where does the start and stop codons are.
+Edit the translated peptide to keep only the aminoacid sequence between the start and stop codons.
+
+How can you be sure which one is the start methionine?
+One way to have an idea is to compare the translated proteion with known proteins and compare the structure of the proteins.
+Do a blastp in NCBI aginst the nr database.
+Determine which should be the sequence of the translated protein taking into account the blast result.
+
+Detection of the intron, exon and CDS in a genomic sequence
+===========================================================
+
+Determine the exons and introns in a genomic sequence by using two kinds of evidences: comparisons with known proteins and comparisons with ESTs.
+
+Comparison with known proteins
+------------------------------
+
+Do a blastx aginst refseq with the :download:`genomic <../static/annotation/genomic_frataxin.fasta>` sequence in NCBI.
+
+Could you propose a structure for the gene based on the blast matches obtained?
+
+Comparison with ESTs
+--------------------
+
+`ESTs <https://en.wikipedia.org/wiki/Expressed_sequence_tag>`_ are sequences that originate from cDNAs.
+We have two ESTs: :download:`EST1 <../static/annotation/est1.fasta>` and :download:`EST2 <../static/annotation/est2.fasta>`.
+Align them to the genomic sequence and propose a structure for the frataxin gene.
+
+Do the evidences from the blast and mRNA analyses match?
+
+Ab initio prediction of the gene structure
+------------------------------------------
+
+Codon usage, ORFs and splice sites can be used to infer a structure for the gene.
+Use `Augustus <http://bioinf.uni-greifswald.de/augustus/submission.php>`_ for the practice and run it with the :download:`genomic <../static/annotation/genomic_frataxin.fasta>`.
+
+The Augustus predictions can be enhanced by providing Augustus ESTs and cDNAs sequences.
+
+Analyze the Augustus results and compare them with our predictions.
+
+Do a blastp with the protein predicted by Augustus and check if the prediction looks right.
+
+A possible sequencing error
+---------------------------
+
+Redo the practice with a new sequence for the :download:`genomic <../static/annotation/genomic_frataxin2.fasta>` region.
+
+Which are the differences between this sequence and the previous one?
+
+Which looks better according to the CDS prediction?
+
+Gene Structure predition
+========================
+
+1
+-
+
+Propose a structure for the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was not directional, the sequenced strand might be the sense or the antisense one. A blastx was carried out against the swissprot database with the genomic sequence.
+
+.. code-block::
+
+   Genomic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+   EST1    TT--------------              ----->
+   EST2                                  <---------      ----------
+   EST3          <---------                              -----
+   EST4                 ---                              -------->
+
+   blastx hit 1         <--              -----           ----
+   blastx hit 2     <------                              ----
+
+
+2
+-
+
+Propose a structure for structure of the gene or genes and the mRNA or mRNAs. The cDNA library was not directional, the sequenced strand might be the sense or the antisense one.
+
+.. code-block::
+
+   Genomic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+   EST1    ----------   --->
+   EST2                                    ---------    ---------->
+   EST3                <----
+   EST4                                         ----    ---->
+   EST5         -----  -----    ->
+   EST6                                       <-----         -----
+
+
+3
+-
+
+Propose a structure for structure of the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was directional, the sequenced strand is the sense one. A blastx was carried out against the swissprot database with the genomic sequence.
+
+.. code-block::
+
+   Genomic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+   EST1    -----------------           --------------->
+   EST2                                    <----------------------- 
+   EST3                -----           --------->
+
+   blastx     --------------           --------->
+
+
+4
+-
+
+Propose a structure for structure of the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was not directional, the sequenced strand might be the sense or the antisense one. A blastx was carried out against the swissprot database with the genomic sequence.
+
+.. code-block::
+
+   Genomic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+   EST1    ----------------->
+   EST2                -----    ---->
+
+   blast hit1 ------------->
+   blast hit2                                         <------------- 
+
+   stop f1         *          *         *               *     *
+   stop f2   *              *  *          *         *      *     *
+   stop f3        *              *  *          *         *      *
+   stop r1    *              *  *          *         *      *     *
+   stop r2             *         *      *     * *              *    * 
+   stop r3    *              *  *                         *     *  * 
+
+
+5
+-
+
+Propose a structure for structure of the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was not directional, the sequenced strand might be the sense or the antisense one.  Probabilities, based on the codon usage were determined for the forward and reverse strands. The reversed ones were low and are not represented.
+
+.. code-block::
+
+   Genomic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+   EST1         ----------------->
+   EST3                     -----    ------------>
+   EST3                                     ---------------->
+
+   stop f1         *               *         *         *      *     *
+   stop f2     *              *  *          *     *       *
+   stop f3           *            *                       *      *
+
+   Prob codon f1   ---------------         --                 --
+   Prob codon f2             ---             ---
+   Prob codon f3       --            --------------------- 
+
+
+6
+-
+
+Propose a structure for structure of the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was directional, the sequenced strand is the sense one. A blastx was carried out against the swissprot database with the genomic sequence.
+
+.. code-block::
+
+   Genomic    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+   EST1       <----
+   EST2       <------
+   EST3                                   --------->
+   EST4       <---
+   EST4       <----
+
+   blastx                              -------------------->
+
+   Prob codon f1   -- --   --            --                 --
+   Prob codon f2             ---             ---
+   Prob codon f3       --            --------------------- 

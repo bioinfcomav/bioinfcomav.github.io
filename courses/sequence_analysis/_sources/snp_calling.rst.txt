@@ -75,7 +75,7 @@ SNP calling
 -----------
 
 Once we have taken into account the sequencing and alignment problems we can use a SNP calling software to look for the SNPs.
-The most commonly used SNP callers are: samtools' `mpileup <http://samtools.sourceforge.net/mpileup.shtml>`_, `GATK <http://www.broadinstitute.org/gsa/wiki/index.php/The_Genome_Analysis_Toolkit>`_ and  `FreeBayes <https://github.com/ekg/freebayes>`_.
+The most commonly used SNP callers are: samtools' `mpileup <http://samtools.sourceforge.net/mpileup.shtml>`_, `GATK <http://www.broadinstitute.org/gsa/wiki/index.php/The_Genome_Analysis_Toolkit>`__ and  `FreeBayes <https://github.com/ekg/freebayes>`__.
 Each one of these SNP callers make different assumptions about the reference genome and the reads, so each one of them is best suited for different situations.
 
 Some SNP callers are based on counting the number of reads for each alleles once appropriate thresholds for the sequencing and mapping qualities have been applied.
@@ -122,7 +122,7 @@ In this file every line represents an SNP and the following information is found
 .. image:: _images/vcf_format.png
    :width: 650 px
 
-A tool for working with these files has been created, `VCFtools <http://vcftools.sourceforge.net/index.html>`_.
+A tool for working with these files has been created, `VCFtools <http://vcftools.sourceforge.net/index.html>`__.
 In its web site a definition of the file format can be found.
 VCFtools allow:
 
@@ -207,7 +207,7 @@ We can filter the SNPs for different reasons like usefulness or risk of being a 
 In the called SNPs there will be some false positives so we could want to remove those false positives.
 It is common to divide the SNPs in several tiers according to our confidence in them.
 
-Several application exist to filter SNPs `VCFtools <https://vcftools.github.io/>`_, `SnpSift <http://snpeff.sourceforge.net/SnpSift.html>`_, `Vardict <http://bcb.io/2016/04/04/vardict-filtering/>`_ and `GATK <https://www.broadinstitute.org/gatk/guide/article?id=2806>`_ are just some examples.
+Several application exist to filter SNPs `VCFtools <https://vcftools.github.io/>`__, `SnpSift <http://snpeff.sourceforge.net/SnpSift.html>`_, `Vardict <http://bcb.io/2016/04/04/vardict-filtering/>`_ and `GATK <https://www.broadinstitute.org/gatk/guide/article?id=2806>`__ are just some examples.
 
 Some of the parameters than can be taken into account are: quality, heterozygosity, depth, mapping quality, errors of the reads, or allele frequency.
 
@@ -480,7 +480,7 @@ Sometimes IGV shows the GFF track collapsed by default, you can expand it by cli
 SNP calling with FreeBayes
 __________________________
 
-`Freebayes <http://bioinformatics.bc.edu/marthlab/FreeBayes>`_ is a SNP calling program based on bayesian statistics. It is able to deal with individual and populations  or pooled and polyploid samples. FreeBayes is versatil and ajustable, then is necesary to deal with their parameters and options.
+`Freebayes <http://bioinformatics.bc.edu/marthlab/FreeBayes>`__ is a SNP calling program based on bayesian statistics. It is able to deal with individual and populations  or pooled and polyploid samples. FreeBayes is versatil and ajustable, then is necesary to deal with their parameters and options.
 
 ::
 

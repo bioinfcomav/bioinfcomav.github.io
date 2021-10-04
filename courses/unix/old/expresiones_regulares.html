@@ -1,0 +1,391 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Expresiones regulares &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a>Software</a>
+                <ul>
+                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
+                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+               </ul>
+            </li>
+            <li><a href="courses.html">Courses</a>
+                <ul>
+                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="courses/unix/index.html">Linux</a></li>
+                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                
+    
+  <section id="expresiones-regulares">
+<h1>Expresiones regulares<a class="headerlink" href="#expresiones-regulares" title="Permalink to this headline">¶</a></h1>
+<p>Las expresiones regulares son un medio para describir patrones de texto.
+Imaginemos que no sólo queremos buscar en un texto todas las líneas que contienen una palabra, como por ejemplo Barcelona, sino que sólo nos interesan las líneas que empiezan por la palabra Barcelona, pero no las que contengan la palabra en cualquier otra posición.
+Describir el patrón “Barcelona” es trivial, tan sólo hay que escribir “Barcelona”, pero ¿cómo podemos describir “La línea comienza por la palabra Barcelona”.
+Las expresiones regulares permiten describir este tipo de patrones de texto y muchos más por lo que nos serán de una gran utilidad.
+Además en Unix las expresiones regulares tienen un amplio soporte, tanto en las herramientas de procesamiento de ficheros de texto (<em>grep</em>), o en los editores de texto (<em>vi</em>, <em>emacs</em>) como en los lenguajes de programación (<em>Perl</em>, <em>Python</em>).
+El único inconveniente de las expresiones regulares es que su sintaxis no es trivial y que además varía ligeramente entre distintas herramientas.</p>
+<p>En la web hay varios sitios en los que se pueden probar las expresiones regulares, como por ejemplo: <a class="reference external" href="http://www.quanetic.com/Regex">Quanetic</a> o <a class="reference external" href="http://www.roblocher.com/technotes/regexp.aspx">Roblocher</a>.</p>
+<p>Las expresiones regulares se evalúan carácter a carácter.
+Las más básicas son simplemente una lista de letras que forman una texto que debe coincidir exactamente con lo que buscamos.
+Por ejemplo con la expresión “Human” sólo coincidirá “Human”.
+Pero por fortuna las expresiones regulares nos permiten hacer búsquedas y substituciones mucho más complejas.</p>
+<section id="expresiones-alternativas">
+<h2>Expresiones alternativas<a class="headerlink" href="#expresiones-alternativas" title="Permalink to this headline">¶</a></h2>
+<p>Una expresión u otra.
+Imaginemos que tenemos un fichero con los <a class="reference download internal" download="" href="../_downloads/3c63e62512b00db44263763c2d99dd25/origenes.txt"><code class="xref download docutils literal notranslate"><span class="pre">orígenes</span></code></a> de los pacientes de un estudio sobre síndrome de Usher.
+Queremos seleccionar todos los pacientes que vienen de Valencia o Castellón.
+Podemos hacerlo utilizando la sintaxis para expresiones alternativas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -E &#39;Valencia|Castellón&#39; origenes.txt
+Valencia        Kevin   Valencia
+Castellón       Didac   valencia
+Castellón       Joan    Barcelona
+</pre></div>
+</div>
+<p>La barra vertical separa las expresiones alternativas. En este caso significa que la palabra encontrada puede ser Valencia o Castellón.</p>
+</section>
+<section id="contenedores">
+<h2>Contenedores<a class="headerlink" href="#contenedores" title="Permalink to this headline">¶</a></h2>
+<p>En muchas ocasiones nos interesa seleccionar patrones que pueden tener en una posición varias letras distintas.
+Por ejemplo podríamos describir el patrón “comienza por Usher y después tiene un número” o “comienza por usher y después tiene un par de letras”.
+Busquemos todas las líneas que tienen la palabra Usher o usher:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -E --color &#39;[uU]sher&#39; origenes.txt
+Hospital        nombre paciente Biobanco        Tipo Usher
+Barcelona       Pepe    Barcelona       usher2A
+</pre></div>
+</div>
+<p>Al poner las letras entre corchetes indicamos que el carácter que aparezca en esa posición puede ser cualquiera de los caracteres indicados.
+En este caso la expresión coincidente podría ser Usher u usher.</p>
+<p>Utilizando esta técnica podemos también indicar rangos de caracteres, como por ejemplo “cualquier dígito entre 0 y 2”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -E --color &#39;[uU]sher[0-2]&#39; origenes.txt
+Barcelona       Pepe    Barcelona       Usher2A
+Mallorca        Juan    Barcelona       usher1b
+</pre></div>
+</div>
+<p>Existen rangos y tipos de caracteres predefinidos que podemos utilizar como:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 42%" />
+<col style="width: 45%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>POSIX</p></td>
+<td><p>ASCII</p></td>
+<td><p>Significado</p></td>
+</tr>
+<tr class="row-even"><td><p>[:alnum:]</p></td>
+<td><p>[A-Za-z0-9]</p></td>
+<td><p>Caracteres alfanuméricos (letras y números)</p></td>
+</tr>
+<tr class="row-odd"><td><p>[:word:]</p></td>
+<td><p>[A-Za-z0-9_]</p></td>
+<td><p>Caracteres alfanuméricos y “_”</p></td>
+</tr>
+<tr class="row-even"><td><p>[:alpha:]</p></td>
+<td><p>[A-Za-z]</p></td>
+<td><p>Caracteres alfabéticos</p></td>
+</tr>
+<tr class="row-odd"><td><p>[:blank:]</p></td>
+<td><p>[ \t]</p></td>
+<td><p>Espacio y tabulador</p></td>
+</tr>
+<tr class="row-even"><td><p>[:space:]</p></td>
+<td><p>[ \t\r\n\v\f]</p></td>
+<td><p>Espacios</p></td>
+</tr>
+<tr class="row-odd"><td><p>[:digit:]</p></td>
+<td><p>[0-9]</p></td>
+<td><p>Dígitos</p></td>
+</tr>
+<tr class="row-even"><td><p>[:lower:]</p></td>
+<td><p>[a-z]</p></td>
+<td><p>Letras minúsculas</p></td>
+</tr>
+<tr class="row-odd"><td><p>[:upper:]</p></td>
+<td><p>[A-Z]</p></td>
+<td><p>Letras mayúsculas</p></td>
+</tr>
+<tr class="row-even"><td><p>[:punct:]</p></td>
+<td><p>[][!”#$%&amp;’()*+,./:;&lt;=&gt;?&#64;\^_`{|}~-]</p></td>
+<td><p>Caracteres de puntuación</p></td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo, podríamos seleccionar cualquier dígito o letra:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep --color -E &#39;[uU]she[[:alpha:]]&#39; origenes.txt
+</pre></div>
+</div>
+<p>Si nos da igual que en una posición haya un carácter u otro podemos utilizar un punto “.”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep --color -E &#39;.sher&#39; origenes.txt
+Hospital        nombre paciente Biobanco        Tipo Usher
+Mallorca        Juan    Barcelona       usher1b
+</pre></div>
+</div>
+<p>Dentro de los contenedores resultan también bastante útiles las negaciones.
+Podemos, por ejemplo, seleccionar cualquier carácter que no sea un 2 o un 3 añadiendo “^” tras el primer corchete:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep --color -E &#39;sher[^23]&#39; origenes.txt
+Mallorca        Juan    Barcelona       usher1b
+madrid  Alcia   madrid  usher1a
+</pre></div>
+</div>
+</section>
+<section id="cuantificadores">
+<h2>Cuantificadores<a class="headerlink" href="#cuantificadores" title="Permalink to this headline">¶</a></h2>
+<p>Además de indicar qué caracteres queremos permitir podemos seleccionar cuantas veces deben aparecer.
+Si no añadimos nada que indique lo contrario se asume que el carácter debe aparecer una vez, pero podríamos pedir que el carácter aparezca un número distinto de veces:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>“?”, el carácter aparece ninguna o una vez. “usher1?” coincidiría con “usher” o “usher1”.</p></li>
+<li><p>“*”, cero,  una o varias veces.</p></li>
+<li><p>“+”, al menos una vez.</p></li>
+<li><p>“{4}”, cuatro veces.</p></li>
+<li><p>“{4,10}”, entre 4 y 10 veces</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep --color -E &#39;sher2.?&#39; origenes.txt
+Barcelona       Pepe    Barcelona       Usher2A
+Albacete        Alfonso Madrid  usher2
+</pre></div>
+</div>
+</section>
+<section id="puntos-de-anclaje">
+<h2>Puntos de anclaje<a class="headerlink" href="#puntos-de-anclaje" title="Permalink to this headline">¶</a></h2>
+<p>Además de poder indicar qué y cuántas veces queremos que algo aparezca podemos indicar dónde deseamos que lo haga.
+Los puntos de anclaje más utilizados son:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>“^”, inicio de línea</p></li>
+<li><p>“$”, fin de línea</p></li>
+<li><p>“&lt;”, principio de palabra</p></li>
+<li><p>“&gt;”, fin de palabra</p></li>
+<li><p>“b”, límite de palabra</p></li>
+</ul>
+</div></blockquote>
+<p>Líneas que comienzan por B:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep --color -E &#39;^B&#39; origenes.txt
+Barcelona       Pepe    Barcelona       Usher2A
+</pre></div>
+</div>
+<p>Líneas que terminan por B:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep --color -E &#39;B$&#39; origenes.txt
+Valencia        Kevin   Valencia        usher1B
+Castellón       Didac   valencia        usher2B
+</pre></div>
+</div>
+</section>
+<section id="substituciones">
+<h2>Substituciones<a class="headerlink" href="#substituciones" title="Permalink to this headline">¶</a></h2>
+<p>Las expresiones regulares además de ser útiles para buscar patrones sirven para substituirlos.
+Por ejemplo podemos substituir madrid por Madrid con el siguiente comando:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sed -e &#39;s/madrid/Madrid/&#39; origenes.txt
+Albacete        Alfonso Madrid  usher2
+Madrid  Alcia   madrid  usher1a
+</pre></div>
+</div>
+<p>Ya vimos que si queríamos que la expresión se utilizase más de una vez en cada línea debíamos utilizar el modificador “g”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sed -e &#39;s/madrid/Madrid/g&#39; origenes.txt
+Albacete        Alfonso Madrid  usher2
+Madrid  Alcia   Madrid  usher1a
+</pre></div>
+</div>
+<p>Estas substituciones además de soportar los patrones sencillos soportan todo lo que hemos visto anteriormente.
+Por ejemplo, podemos eliminar la primera columna del fichero con el comando:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sed -re &#39;s/^[[:alnum:]]*\t//&#39; origenes.txt
+nombre paciente Biobanco        Tipo Usher
+Pepe    Barcelona       Usher2A
+</pre></div>
+</div>
+<p>Si lo que queremos es guardar el patrón encontrado para utilizarlo en la substitución debemos utilizar paréntesis.
+Los paréntesis indican que lo que hay dentro de ellos debe ser recordado para poder utilizado en la substitución.
+Por ejemplo, podríamos permutar las columnas 1 y 2 del fichero con el comando:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sed -re &#39;s/^([[:alnum:]]*)\t([[:alnum:]]*)/\2\t\1/&#39; origenes.txt
+</pre></div>
+</div>
+</section>
+<section id="escapes">
+<h2>Escapes<a class="headerlink" href="#escapes" title="Permalink to this headline">¶</a></h2>
+<p>Algunos caracteres tienen significados especiales, como ., $, (, ), [, ], \ o ^ y si se quieren utilizar hay que escaparlos precediéndolos con \.</p>
+<p>El campo de las expresiones regulares es muy amplio y esta pequeña introducción sólo ha pretendido mostrar algunas de las posibilidades de esta gran herramienta.
+El mejor modo de aprender a utilizarlas es intentar hacer uso de ellas en problemas concretos y echar una ojeada a algunos de los libros y tutoriales que se han escrito sobre ellas.</p>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Buscar las líneas en las que aparece la palabra bash en el archivo /etc/passwd.</p></li>
+<li><p>Buscar en el archivo /etc/group todas las líneas que empiezan por <em>m</em>.</p></li>
+<li><p>En el fichero anterior imprimir todas las líneas que no empiezan por <em>m</em>.</p></li>
+<li><p>¿Cuántos ficheros README hay en los subdirectorios de /usr/share/doc?</p></li>
+<li><p>¿Qué ficheros o directorios en /etc continen un número en el nombre?</p></li>
+</ol>
+<p>Trabajando con el fichero de los <a class="reference download internal" download="" href="../_downloads/3c63e62512b00db44263763c2d99dd25/origenes.txt"><code class="xref download docutils literal notranslate"><span class="pre">orígenes</span></code></a> de los pacientes de Usher resolver las siguientes cuestiones.</p>
+<ol class="arabic simple" start="6">
+<li><p>Seleccionar los pacientes enviados por el hospital de Castellón.</p></li>
+<li><p>Seleccionar los que vienen del Biobanco de Barcelona.</p></li>
+<li><p>Buscar los pacientes que no tienen Usher3.</p></li>
+<li><p>En el fichero de pacientes de Usher hay algunas líneas separadas por espacios y otras por tabuladores, cambiar todos los separadores a comas.</p></li>
+<li><p>Disponemos de un fichero con una caracterización morfológica de unas plantas y queremos construir un nuevo fichero que incluya solo las filas sin datos faltantes. El contenido del fichero es:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plant1</span> <span class="mf">1.5</span> <span class="mf">2.3</span> <span class="mf">3.5</span>
+<span class="n">plant2</span> <span class="mf">3.4</span> <span class="mf">4.5</span> <span class="mf">5.6</span>
+<span class="n">plant3</span> <span class="mf">4.3</span> <span class="mf">6.5</span> <span class="mf">7.6</span>
+<span class="n">plant4</span> <span class="mf">1.2</span> <span class="mf">3.2</span> <span class="mf">2.3</span>
+<span class="n">plant4</span> <span class="mf">2.3</span> <span class="mf">6.7</span> <span class="n">n</span><span class="o">.</span><span class="n">d</span><span class="o">.</span>
+<span class="n">plant5</span> <span class="mf">4.5</span> <span class="mf">4.3</span> <span class="mf">2.3</span>
+<span class="n">plant6</span> <span class="mf">4.5</span> <span class="mf">4.3</span> <span class="mf">2.3</span>
+<span class="n">plant7</span> <span class="mf">3.4</span> <span class="o">-</span> <span class="mf">2.3</span>
+<span class="n">plant8</span> <span class="mf">3.4</span> <span class="mf">2.3</span>
+</pre></div>
+</div>
+</section>
+<section id="soluciones">
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Buscar las líneas en las que aparece la palabra bash en el archivo /etc/passwd.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep &#39;bash&#39; /etc/passwd
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Buscar en el archivo /etc/group todas las líneas que empiezan por <em>m</em>.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep &#39;^m&#39; /etc/group
+mail:x:8:
+man:x:12:
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>En el fichero anterior imprimir todas las líneas que no empiezan por <em>m</em>.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -v &#39;^m&#39; /etc/group
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>¿Cuántos ficheros README hay en los subdirectorios de /usr/share/doc?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -R /usr/share/doc | grep &#39;^README$&#39; | wc -l
+392
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>¿Qué ficheros o directorios en /etc continen un número en el nombre?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls /etc/ | grep &#39;[0-9]&#39;
+</pre></div>
+</div>
+<p>6.- Seleccionar los pacientes enviados por el hospital de Castellón.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep --color -E &#39;^[cC]astellón&#39; origenes.txt
+$ grep --color -iE &#39;^castellón&#39; origenes.txt
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Seleccionar los que vienen del Biobanco de Barcelona.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep --color -iE &#39;.Barcelona&#39; origenes.txt
+</pre></div>
+</div>
+<p>8.- Buscar los pacientes que no tienen Usher3.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep --color -iE &#39;usher[^3]&#39; origenes.txt
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>En el fichero de pacientes de Usher hay algunas líneas separadas por espacios y otras por tabuladores, cambiar todos los separadores a comas.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sed -re &#39;s/[[:blank:]]+/,/g&#39; origenes.txt
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Disponemos de un fichero con una caracterización morfológica de unas plantas y queremos construir un nuevo fichero que incluya solo las filas sin datos faltantes.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -iE &#39;plant[0-9]* [0-9]+\.?[0-9]* [0-9]+\.?[0-9]* [0-9]+\.?[0-9]*&#39; numbers.txt
+</pre></div>
+</div>
+<p>O con una versión más sencilla:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep --color -iE &#39;^plant[0-9]*( [0-9]\.[0-9]){3}&#39; numbers.txt
+</pre></div>
+</div>
+</section>
+<section id="bibliografia">
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://oreilly.com/catalog/9780596528126">Mastering regular expressions</a> por Jeffrey E.F. Friedl.</p></li>
+<li><p><a class="reference external" href="http://oreilly.com/catalog/9780596520694">Regular Expressions Cookbook</a> por Jan Goyvaerts y Steven Levithan.</p></li>
+<li><p><a class="reference external" href="http://www.zytrax.com/tech/web/regex.htm">Regular Expressions User Guide</a> .</p></li>
+<li><p><a class="reference external" href="http://www.regular-expressions.info/tutorial.html">Regular Expression Tutorial</a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

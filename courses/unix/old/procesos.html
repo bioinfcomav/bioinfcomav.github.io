@@ -1,0 +1,178 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Administración Básica &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a>Software</a>
+                <ul>
+                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
+                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+               </ul>
+            </li>
+            <li><a href="courses.html">Courses</a>
+                <ul>
+                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="courses/unix/index.html">Linux</a></li>
+                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                
+    
+  <section id="administracion-basica">
+<h1>Administración Básica<a class="headerlink" href="#administracion-basica" title="Permalink to this headline">¶</a></h1>
+<section id="procesos">
+<h2>Procesos<a class="headerlink" href="#procesos" title="Permalink to this headline">¶</a></h2>
+<p>Un procesos es una instancia de un programa en ejecución.
+Haciendo análisis bioinformáticos muchas veces ejecutaremos programas que duren un tiempo considerable.
+Es interesante que durante el tiempo que dure el proceso conozcamos cual es su estado.</p>
+<p>Linux, como ya hemos visto, es un sistema operativo multitarea y multiusuario.
+Esto quiere decir que múltiples procesos pueden operar simultáneamente sin interferir unos con otros.</p>
+<p>Programas y procesos son entidades distintas.
+En un sistema operativo multitarea, múltiples instancias de un programa pueden ejecutarse simultáneamente.
+Cada instancia es un proceso separado.
+Por ejemplo, si cinco usuarios desde equipos diferentes, ejecutan el mismo programa al mismo tiempo, habría cinco instancias del mismo programa, es decir, cinco procesos distintos.</p>
+<p>Cada proceso que se inicia es identificado con un número de identificación único conocido como <em>Process ID</em> (<em>PID</em>), que es siempre un número natural.
+Prácticamente todo lo que se está ejecutando en el sistema en cualquier momento es un proceso, incluyendo la <em>shell</em>, el ambiente gráfico, que puede tener múltiples procesos, etc.</p>
+<p>Los entornos UNIX tienen una serie de herramientas para poder conocer el estado de los procesos y del sistema en general.</p>
+<section id="ps">
+<h3><em>ps</em><a class="headerlink" href="#ps" title="Permalink to this headline">¶</a></h3>
+<p>El comando <em>ps</em> (<em>process status</em>) nos informa sobre el estado de los procesos.
+Dependiendo de los parámetros que le demos nos mostrara un tipo de información u otra.
+Por ejemplo con la opción <em>-ef</em> podremos ver todos los procesos que actualmente están en ejecución en el sistema:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="o">-</span><span class="n">ef</span>
+</pre></div>
+</div>
+<p>En este caso la segunda columna nos indicará el <em>PID</em> o identificador único del proceso.</p>
+</section>
+<section id="kill">
+<h3><em>kill</em><a class="headerlink" href="#kill" title="Permalink to this headline">¶</a></h3>
+<p>El comando <em>kill</em> a pesar de su nombre no sólo sirve para matar o terminar procesos sino también para enviar señales  a los procesos.
+La señal por defecto (cuando no se indica ninguna es terminar o matar el proceso), y la sintaxis es kill PID, siendo PID el número de ID del proceso.
+Pero hay otras señales que podemos enviar.
+Así, por ejemplo, es posible enviar una señal de <em>STOP</em> al proceso y se detendrá su ejecución, después cuando se quiera reanudar su ejecución podemos enviar la señal <em>CONTinuar</em> y el proceso continuara desde donde se quedo detenido.
+Con kill -l podemos acceder a una lista de todas las señales que podemos mandar a un proceso:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ kill -l
+</pre></div>
+</div>
+<p>El modo más convencional de matar un proceso es intentar primero que muera ordenadamente con un -15 y sino lo conseguimos matarlo con un -9:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ kill -15 4719
+$ kill -9 4719
+</pre></div>
+</div>
+</section>
+<section id="top">
+<h3><em>top</em><a class="headerlink" href="#top" title="Permalink to this headline">¶</a></h3>
+<p>Una herramienta muy usada y muy útil para el monitoreo en tiempo real del estado de los procesos y de otras variantes del sistema es el programa llamado top, se ejecuta desde la línea de comandos, es interactivo y por defecto se actualiza cada 3 segundos.</p>
+<p>Estando dentro de la aplicación, presionando ‘h’ se accede a una ayuda de los posibles comandos que permiten configurar top, por ejemplo, al presionar ‘s’ pregunta por el tiempo en segundos de actualización, etc.</p>
+<p>Una alternativa más moderna al comando <em>top</em>, que normalmente no es instalada por defecto, es <em>htop</em>.</p>
+</section>
+<section id="df-y-free">
+<h3><em>df</em> y <em>free</em><a class="headerlink" href="#df-y-free" title="Permalink to this headline">¶</a></h3>
+<p><em>df</em> y <em>free</em> son dos herramientas muy útiles a la hora de conocer el estado de nuestro sistema.
+<em>df</em> nos indica cuanto espacio disponemos en cada dispositivo de almacenamiento y <em>free</em> nos muestra información sobre el uso y disponibilidad de la memoria.
+En el caso de <em>df</em> para poder leer cómodamente el informe es aconsejable usar la opción <em>-h</em>, ya que así generará la información en una forma más fácil de leer para los seres humanos.
+En el caso de <em>free</em> disponemos de la opción <em>-m</em>, que nos mostrará la informacion en MB:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">free</span> <span class="o">-</span><span class="n">h</span>
+<span class="n">df</span> <span class="o">-</span><span class="n">h</span>
+</pre></div>
+</div>
+</section>
+<section id="ejercicios">
+<h3>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Averigua todos los procesos que hay en ejecución.</p></li>
+<li><p>Cuantos procesos tiene tu usuario en ejecución?</p></li>
+<li><p>Ejecuta el comando “less” y averigua el <em>pid</em> del proceso</p></li>
+<li><p>Termina (mata) el proceso “less”</p></li>
+</ol>
+</section>
+<section id="soluciones">
+<h3>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>ps -ef nombre_de_usuario| wc</p></li>
+<li><p>ps -u nombre_de_usuario| wc</p></li>
+<li><p>ps -ef | grep less</p></li>
+<li><p>kill PID_de_less</p></li>
+</ol>
+</section>
+<section id="utilidades-avanzadas">
+<h3>Utilidades avanzadas<a class="headerlink" href="#utilidades-avanzadas" title="Permalink to this headline">¶</a></h3>
+<p>Si vamos a trabajar con procesos largos es muy recomendable aprender a utilizar el comando <em>screen</em>.
+<em>screen</em> nos permite manejar distintos shells interactivos a la vez y mantenerlos abiertos entre diferentes conexiones o sesiones de trabajo.
+Resulta muy cómodo para mantener procesos largos en servidores remotos sin tener que tener una conexión establecida continuamente.</p>
+</section>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

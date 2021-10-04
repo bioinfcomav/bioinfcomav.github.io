@@ -1,0 +1,140 @@
+
+
+Previous Knowledge
+------------------
+
+`Previous Knowledge Presentation <presentations/prev_knowledge.odp>`_
+
+Previous knowledge test
+=======================
+
+Previous knowledge test:
+
+
+* `ARA <https://docs.google.com/forms/d/1UzK2GJ7zUU7eSRnoNfIVzPhMi_h4jyHQFeLSwTfkSq0/edit?usp=sharing>`_
+* `Castellano <https://docs.google.com/forms/d/1iE23H6hoAKSm8Zab7vRlxGwPKF4SPAvoXPJjZbWyhJc/edit?usp=sharing>`_
+
+`Test results <https://docs.google.com/presentation/d/1o25VCqQfy_y60QhZaU6Xs4X8IJFUP0rngWdDUR33Bz8/edit?usp=sharing>`_
+
+Computer Knowledge
+==================
+
+No previous computer knowledge is required to follow this course, beside basic computer usage.
+But we expect the student to have some general biological knowledge.
+
+Biology Fundamentals
+====================
+
+The student is expected to know the nomenclature used to classify the living world,
+especially the basic `binomial nomenclature <https://en.wikipedia.org/wiki/Binomial_nomenclature>`_ used in `taxonomy <https://en.wikipedia.org/wiki/Taxonomy_%28biology%29#Modern_system_of_classification>`_.
+
+Mendelian Genetics
+==================
+
+The classical and molecular concept of the gene.
+The mendelian laws and the common exceptions to the laws.
+
+Molecular Biology
+=================
+
+
+* What are the DNA, RNA and the proteins?
+* What is a genome?
+
+DNA strands
+===========
+
+The DNA is a polymer comprised by nucleotides, the DNA sequence is the sequence of nucleotides.
+The DNA molecule has a direction defined by the 5' and 3' deoxyribose sugar carbons.
+The 5' carbon is bonded to the phosphate group and the 3' carbon is bonded to the hydroxy group.
+The nucleotide sequences 5'-ACTG-3' and 3'-ACTG-5' are different.
+To solve this problem, by convention, the nucleotide sequences are always written in the 5'-3' direction.
+
+The DNA is usually double stranded and the nucleotides Adenine and Timine and Guanine and Citosine are complementary.
+So a complete double stranded DNA molecule could be written as:
+
+.. code-block::
+
+   5' - ACTCTACA - 3'
+   3' - TGAGATGT - 5'
+
+
+But, that sequence would be written by convention just as: ACTCTACA and the sequence TGAGATGT would be a different one.
+The reverse and complementary sequence of ACTCTACA (that would be the other strand of the same DNA sequence in its 5' to 3' direction) would be: TGTAGAGT.
+
+Transcription
+=============
+
+The transcription is the process by which the genomic DNA is copied to messenger RNA.
+Only one strand is transcribed and the transcription starts at the promoter and goes in the  5' to 3' DNA direction.
+
+The immature eukariotic messenger RNA is spliced removing the introns before becoming mature RNA.
+
+The eukariotic gene sequence can be divided in regions: promoter, 5' UTR, exons, introns, 3' UTR and polyadelination site.
+The poly-A sequence is not present in the genome, it is added during the maturation of the messenger RNA.
+
+Translation
+===========
+
+In the translation the ribosomes produce the proteins by using the `genetic code <https://en.wikipedia.org/wiki/Genetic_code>`_.
+The genetic code is almost universal, there are just minimal variations between very phylogenetically distant organisms.
+The genetic code is denegerated, several codons code for the same aminoacid.
+
+The translation starts at the the start codon, that has to be an ATG codon, and proceeds in the 5' to 3' RNA direction.
+The translation ends when reaches any stop codon.
+
+Every DNA sequence has 6 possible reading frames
+
+.. code-block::
+
+   forward
+
+   5' ACAAGATGCCATTGTCCCCCGGCC 3'
+
+   1  ACA AGA TGC CAT TGT CCC CCG GCC
+
+   2  A CAA GAT GCC ATT GTC CCC CGG CC
+
+   3  AC AAG ATG CCA TTG TCC CCC GGC C
+
+   reverse
+
+   5' GGCCGGGGGACAATGGCATCTTGT 3'
+
+   4  GGC CGG GGG ACA ATG GCA TCT TGT
+
+   5  G GCC GGG GGA CAA TGG CAT CTT GT
+
+   6  GG CCG GGG GAC AAT GGC ATC TTG T
+
+
+An Open Reading Frame (ORF) goes from the start codon to the stop codon.
+
+Proteins
+========
+
+A protein is a folded peptide.
+A peptide is an aminoacid chain.
+The aminoacid chain has a direction, it starts at N terminal and ends at C terminal.
+
+Molecular genetics technologies
+===============================
+
+Basic Genetic engineering technologies: restrictions enzymes, ligases, DNA cloning, cloning vectors and PCR.
+
+Sequencing technologies.
+
+Bibliography
+============
+
+Concepts of genetics.
+Klug, William S.; Cummings, Michael R.; Spencer, Charlotte A.
+Pearson, cop. 2014. 10th ed.
+
+Campbell biology.
+Reece, Jane B; Urry, Lisa A.; Cain, Michael L.; Wasserman, Steven A.; Minorsky, Peter V.; Jackson, Robert B .
+Pearson, cop. 2014. 10th ed.
+
+Molecular biology of the gene.
+Watson, James D.
+Pearson, 2004. 5th. ed.

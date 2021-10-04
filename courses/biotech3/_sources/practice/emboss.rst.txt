@@ -1,0 +1,114 @@
+
+Introduction to EMBOSS
+~~~~~~~~~~~~~~~~~~~~~~
+
+EMBOSS
+======
+
+`EMBOSS <http://emboss.sourceforge.net/>`_ is a suite of programs developed to do molecular biology by EMBnet.
+EMBOSS is `free software <https://en.wikipedia.org/wiki/Free_software>`_ and although it is primarily developed for Linux it also runs in MS Windows and Mac OS X.
+
+EMBOSS is comprised by hunders of programs and includes utilities to align sequences, translate RNA to proteins, identify protien motifs, analyze repetitions, calculate codon usage statistics and many more analyses.
+
+Running EMBOSS commands
+-----------------------
+
+The EMBOSS utilities have a `Command Line Interface <https://en.wikipedia.org/wiki/Command-line_interface>`_ and all can be run from a text terminal.
+The `documentation <http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/groups.html>`_ for the EMBOSS aplications is written taking into account mainly the Command Line Interface.
+
+But there are other ways to run the EMBOSS software.
+
+There are web `servers <http://emboss.sourceforge.net/servers/#explorer>`_ that provide the EMBOSS tools as a service.
+In those servers the EMBOSS utilities can be accessed as web pages and the server runs the terminal command and return the result.
+
+Another interface to EMBOSS is `Jemboss <http://emboss.sourceforge.net/Jemboss/>`_.
+Jemboss is a Graphical User Interface application, like any of the other common desktop applications.
+
+Identify the command
+====================
+
+When we do not know which of the EMBOSS commands to use we can use another EMBOSS command, `wossname <http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/wossname.html>`_\ , to search in the EMBOSS command list.
+
+Get a list with all commands:
+
+.. code-block::
+
+   $ wossname
+
+
+Look for command to do alignments:
+
+.. code-block::
+
+   $ wossname alignment
+
+
+Getting help for a command
+==========================
+
+The `command <http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/groups.html>`_ manuals can be found in the web.
+
+They are also available in any EMBOSS installation by using the `tfm <http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/tfm.html>`_ command.
+For instance, to read the manual for the `water <http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/water.html>`_ command we could run:
+
+.. code-block::
+
+   $ tfm water
+
+
+The manual reader is similar to the Unix less command.
+
+It is also possible to get a brief list of parameters available with the option "-help" and the complete list with "-help -verbose"
+
+.. code-block::
+
+   $ water -help -verbose
+
+
+Example: change a sequence format
+=================================
+
+To get familiar with the EMBOSS way of running the analyse we will change the format of a sequence file.
+EMBOSS has a program to modify sequence files: `seqret <http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/seqret.html>`_
+
+seqret can change the sequence format, trim the sequences and reverse-complement them.
+Let's change the format of fasta `sequence file <../static/emboss/sequence.fasta>`_ to the GenBank format.
+
+If we run seqset in the command line it will ask for the input file and for the output file:
+
+.. code-block::
+
+   $ seqret
+
+
+By default seqret won't change the sequence format unless we specify the output format that we want.
+To do it we have to write *genbank::secuencia.gb*.
+We can also tell seqret which is our input file:
+
+.. code-block::
+
+   $ seqret secuencia.fasta genbank::secuencia.gb
+
+
+We could sent the result to standard output instead of a file.
+This is a general feature of all EMBOSS programs.
+
+.. code-block::
+
+   $ seqret secuencia.fasta genbank::stdout
+
+
+To reverse and complement a sequence we can use the parameter -sreverse1:
+
+.. code-block::
+
+   $ seqret secuencia.fasta embl::stdout -sreverse1
+
+
+Would the result sequence be different in this case?
+
+seqret can also trim the input sequence.
+
+.. code-block::
+
+   $ seqret secuencia.fasta embl::stdout -sbegin1 10 -send1 30

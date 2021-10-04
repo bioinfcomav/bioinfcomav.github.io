@@ -1,159 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <title>Multiple Sequence Alignment</title>
-  <meta name="description" content="Introduction to Bioinformatics for the Biotechnology degree.">
-
-  <link rel="stylesheet" href="/courses/biotech3/css/main.css">
-  <link rel="canonical" href="/courses/biotech3/theory/multiple.html">
-  <link rel="alternate" type="application/rss+xml" title="Bioinformatics" href="/courses/biotech3/feed.xml">
-</head>
-
-
+    <title>Multiple Sequence Alignment &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Structural Annotation" href="structural_annotation.html" />
+    <link rel="prev" title="Blast" href="blast.html" /> 
+  </head>
   <body>
 
-    <header class="site-header" role="banner">
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
 
-  <div class="wrapper">
 
-    <a class="site-title" href="/courses/biotech3/">Bioinformatics</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/alignment.html">Sequence Alignment Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/assembly.html">Assembly</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/blast.html">Blast</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/blast.html">Blast Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/covid.html">COVID19</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/databases.html">Biological Databases</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/emboss.html">Introduction to EMBOSS</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/entrez.html">NCBI database search Practice</a>
-          
-        
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/">Home</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/linux.html">Unix CLI</a>
-          
-        
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/multiple.html">Multiple Sequence Alignment Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/multiple.html">Multiple Sequence Alignment</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/norms.html">Norms</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/phylogeny.html">Phylogeny practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/phylogeny.html">Phylogeny and evolution</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/prev_knowledge.html">Previous Knowledge</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/sequence_alignment.html">Sequence Alignment</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/structural_annotation.html">Structural Annotation</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/structural_annotation.html">Structural Annotation</a>
-          
-        
-      </div>
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a>Software</a>
+                <ul>
+                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
+                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+               </ul>
+            </li>
+            <li><a href="courses.html">Courses</a>
+                <ul>
+                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="courses/unix/index.html">Linux</a></li>
+                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+               </ul>
+        </ul>
     </nav>
 
-  </div>
-
-</header>
-
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">Multiple Sequence Alignment</h1>
-  </header>
-
-  <div class="post-content">
-    <h2 id="introduction">Introduction</h2>
-
-<p>A <a href="https://en.wikipedia.org/wiki/Multiple_sequence_alignment">Multiple Sequence Alignment</a> is an alignment of more than two sequences.
+    <main>
+                
+    
+  <section id="multiple-sequence-alignment">
+<h1>Multiple Sequence Alignment<a class="headerlink" href="#multiple-sequence-alignment" title="Permalink to this headline">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Multiple_sequence_alignment">Multiple Sequence Alignment</a> is an alignment of more than two sequences.
 We could align several DNA or protein sequences.</p>
-
-<p><img src="../static/multiple/alig_mul_prot.png" alt="Multiple Alignment" /></p>
-
+<a class="reference external image-reference" href="../static/multiple/alig_mul_prot.png"><img alt="Multiple Alignment" src="../_images/alig_mul_prot.png" /></a>
 <p>Some of the most usual uses of the multiple alignments are:</p>
-
-<ul>
-  <li>phylogenetic analysis</li>
-  <li>conserved domains</li>
-  <li>protein structure comparison and prediction</li>
-  <li>conserved regions in promoteres</li>
+<ul class="simple">
+<li><p>phylogenetic analysis</p></li>
+<li><p>conserved domains</p></li>
+<li><p>protein structure comparison and prediction</p></li>
+<li><p>conserved regions in promoteres</p></li>
 </ul>
-
 <p>The multiple sequence alignment asumes that the sequences are homologous, they descend from a common ancestor.
 The algorithms will try to align homologous positions or regions with the same structure or function.</p>
-
-<p><img src="../static/multiple/evol_seqs_homologas.png" alt="Evol seqs homologas" /></p>
-
-<h2 id="multiple-alignment-algorithm">Multiple alignment algorithm</h2>
-
+<a class="reference external image-reference" href="../static/multiple/evol_seqs_homologas.png"><img alt="Evol seqs homologas" src="../_images/evol_seqs_homologas.png" /></a>
+</section>
+<section id="multiple-alignment-algorithm">
+<h2>Multiple alignment algorithm<a class="headerlink" href="#multiple-alignment-algorithm" title="Permalink to this headline">¶</a></h2>
 <p>Multiple alignments are computationally much more difficult than pair-wise alignments.
 It would be ideal to use an analog of the Smith &amp; Waterman algorithm capable of looking for optimal alignments in the diagonals of a multidimensional matrix given a scoring schema.
 This algorithm would had to create a multidimensional matrix with one dimension for each sequence.
@@ -161,183 +97,172 @@ The memory and time required for solving the problem would increase geometricall
 Given the number of sequences usually involved no algorithm is capable of doing that.
 Every algorithm available reverts to a heuristic capable of solving the problem in a much faster time.
 The drawback is that the result might not be optimal.</p>
-
 <p>Usually the multiple sequence algorithms assume that the sequences are similar in all its length and they behave like global alignment algorithms.
 They also assume that thre are not many long insertions and delections.
 Thus the algorithms will work for some sequences, but not for others.</p>
-
 <p>These algorithms can deal with sequences that are quite different, but, as in the pair-wise case, when the sequences are very different they might have problems creating good algorithm.
 A good algorithm should align the homologous positions or the positions with the same structure or function.</p>
-
 <p>It we are trying to align two homologous proteins from two species that are phylogenetically very distant  we might align quite easily the more conserved regions, like the conserved domains, but we will have problems aligning the more different regions.
 This was also the case in the pair-wise case, but remember that the multiple alignment algorithms are not guaranteed to give back the best possible alignment.</p>
-
 <p>These algorithms are not design to align sequences that do not cover the whole region, like the reads from a sequencing project.
 There are other algorithms to assemble sequencing projects.</p>
-
-<h2 id="progressive-contruction-algorithms">Progressive contruction algorithms</h2>
-
+</section>
+<section id="progressive-contruction-algorithms">
+<h2>Progressive contruction algorithms<a class="headerlink" href="#progressive-contruction-algorithms" title="Permalink to this headline">¶</a></h2>
 <p>In Multiple Sequence Alignment it is quite common that the algorithms use a progressive alignment strategy.
 These methods are fast and allow to align thousands of sequences.</p>
-
 <p>Before starting the alignemnt, as in the pair-wise case, we have to decide which is the scoring schema that we are going to use for the matches, gaps and gap extensions.
 The aim of the alignment would be to get the multiple sequence alignment with the highest score possible.
 In the multiple alignment case we do not have any practical algorithm that guarantees that it going to get the optimal solution, but we hope that the solution will be close enough if the sequences comply with the restrictions assumed by the algorithm.</p>
-
 <p>The idea behind the progressive construction algorithm is to build the pair-wise alignments of the more closely related sequences, that should be easier to build, and to align progressively these alignments once we have them.
 To do it we need first to determine which are the closest sequence pairs.
 One rough and fast way of determining which are the closest sequence pairs is to align all the possible pairs and look at the scores of those alignments.
 The pair-wise alignments with the highest scores should be the ones between the more similar sequences.
 So the first step in the algorithm is to create all the pair-wise alignments and to create a matrix with the scores between the pairs.
 These matrix will include the similarity relations between all sequences.</p>
-
-<p>Once we have this matrix we can determine the hierarchical relation between the sequences, which are the closest pairs and how those pairs are related and so on, by creating a <a href="https://en.wikipedia.org/wiki/Hierarchical_clustering">hierarchical clustering</a>, a tree.
-We can create these threes by using different fast algorithms like <a href="https://en.wikipedia.org/wiki/UPGMA">UPGMA</a> or <a href="https://en.wikipedia.org/wiki/Neighbor_joining">Neighbor joining</a>.
+<p>Once we have this matrix we can determine the hierarchical relation between the sequences, which are the closest pairs and how those pairs are related and so on, by creating a <a class="reference external" href="https://en.wikipedia.org/wiki/Hierarchical_clustering">hierarchical clustering</a>, a tree.
+We can create these threes by using different fast algorithms like <a class="reference external" href="https://en.wikipedia.org/wiki/UPGMA">UPGMA</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Neighbor_joining">Neighbor joining</a>.
 These trees are usually known as guide trees.</p>
-
-<p><img src="../static/multiple/alin_progresivo.png" alt="Progressive alignment" /></p>
-
+<a class="reference external image-reference" href="../static/multiple/alin_progresivo.png"><img alt="Progressive alignment" src="../_images/alin_progresivo.png" /></a>
 <p>An example:</p>
-
-<p><img src="../static/multiple/arbol.png" alt="Progressive alignment example" /></p>
-
+<a class="reference external image-reference" href="../static/multiple/arbol.png"><img alt="Progressive alignment example" src="../_images/arbol.png" /></a>
 <p>Another example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Secuences</span><span class="p">:</span>
+<span class="n">IMPRESIONANTE</span>
+<span class="n">INCUESTIONABLE</span>
+<span class="n">IMPRESO</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    Secuences:
-    IMPRESIONANTE
-    INCUESTIONABLE
-    IMPRESO
+<span class="n">Scores</span><span class="p">:</span>
 
-    Scores:
+<span class="n">IMPRESIONANTE</span> <span class="n">X</span> <span class="n">IMPRESO</span> <span class="mi">7</span><span class="o">/</span><span class="mi">13</span>
 
-  	IMPRESIONANTE X IMPRESO 7/13
+<span class="n">IMPRESIONANTE</span> <span class="n">X</span> <span class="n">INCUESTIONABLE</span> <span class="mi">10</span><span class="o">/</span><span class="mi">14</span>
 
-  	IMPRESIONANTE X INCUESTIONABLE 10/14
+<span class="n">INCUESTIONABLE</span> <span class="n">X</span> <span class="n">IMPRESO</span> <span class="mi">4</span><span class="o">/</span><span class="mi">14</span>
 
-  	INCUESTIONABLE X IMPRESO 4/14
+<span class="n">Scoring</span> <span class="n">pair</span><span class="o">-</span><span class="n">wise</span> <span class="n">matrix</span><span class="p">:</span>
 
-    Scoring pair-wise matrix:
+                <span class="n">IMPRESIONANTE</span>   <span class="n">INCUESTIONABLE</span>   <span class="n">IMPRESO</span>
+<span class="n">IMPRESIONANTE</span>        <span class="mi">1</span>              <span class="mi">10</span><span class="o">/</span><span class="mi">14</span>          <span class="mi">7</span><span class="o">/</span><span class="mi">13</span>
+<span class="n">INCUESTIONABLE</span>     <span class="mi">10</span><span class="o">/</span><span class="mi">14</span>              <span class="mi">1</span>            <span class="mi">4</span><span class="o">/</span><span class="mi">14</span>
+<span class="n">IMPRESO</span>             <span class="mi">7</span><span class="o">/</span><span class="mi">13</span>             <span class="mi">4</span><span class="o">/</span><span class="mi">14</span>           <span class="mi">1</span>
 
-                    IMPRESIONANTE   INCUESTIONABLE   IMPRESO
-    IMPRESIONANTE        1              10/14          7/13
-    INCUESTIONABLE     10/14              1            4/14
-    IMPRESO             7/13             4/14           1
+<span class="n">Guide</span> <span class="n">Tree</span><span class="p">:</span>
 
-    Guide Tree:
+       <span class="o">|---</span> <span class="n">IMPRESIONANTE</span>
+   <span class="o">|---|---</span> <span class="n">INCUESTIONABLE</span>
+   <span class="o">|</span>
+   <span class="o">|-----</span> <span class="n">IMPRESO</span>
 
-           |--- IMPRESIONANTE
-       |---|--- INCUESTIONABLE
-       |
-       |----- IMPRESO    
+<span class="n">The</span> <span class="n">first</span> <span class="n">alignment</span> <span class="n">would</span> <span class="n">be</span><span class="p">:</span> <span class="n">IMPRESIONANTE</span> <span class="n">x</span> <span class="n">INCUESTIONABLE</span>
 
-    The first alignment would be: IMPRESIONANTE x INCUESTIONABLE
+<span class="n">IMPRES</span><span class="o">-</span><span class="n">IONABLE</span>
+<span class="n">INCUESTIANABLE</span>
 
-  	IMPRES-IONABLE
-  	INCUESTIANABLE
+<span class="n">Now</span> <span class="n">we</span> <span class="n">align</span> <span class="n">IMPRESO</span> <span class="n">to</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">alignment</span><span class="o">.</span>
 
-    Now we align IMPRESO to the previous alignment.
-
-  	IMPRES-IONANTE
-  	INCUESTIONABLE
-  	IMPRES--O-----
-</code></pre>
+<span class="n">IMPRES</span><span class="o">-</span><span class="n">IONANTE</span>
+<span class="n">INCUESTIONABLE</span>
+<span class="n">IMPRES</span><span class="o">--</span><span class="n">O</span><span class="o">-----</span>
+</pre></div>
 </div>
-
 <p>We have no guarantee that the final is the one with the highest score.</p>
-
 <p>The main problem of these progressive alignment algorithms is that the errors introduced at any point in the process are not revised in the following phases to speed up the process.
 For instance, if we introduce one gap in the first pair-wise alignment this gap will be propagated to all the following alingments.
 If the gap was correct that is fine, but if it was not optimal it won’t be fixed.
 These methods are specially prone to fail when the sequences are very different or phylogenetically distant.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sequences</span> <span class="n">to</span> <span class="n">align</span> <span class="n">already</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">given</span> <span class="n">by</span> <span class="n">a</span> <span class="n">guide</span> <span class="n">tree</span><span class="p">:</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Sequences to align already in the order given by a guide tree:
+<span class="n">Seq</span> <span class="n">A</span>  <span class="n">GARFIELD</span> <span class="n">THE</span> <span class="n">LAST</span> <span class="n">FAT</span> <span class="n">CAT</span>
+<span class="n">Seq</span> <span class="n">B</span>  <span class="n">GARFIELD</span> <span class="n">THE</span> <span class="n">FAST</span> <span class="n">CAT</span>
+<span class="n">Seq</span> <span class="n">C</span>  <span class="n">GARFIELD</span> <span class="n">THE</span> <span class="n">VERY</span> <span class="n">FAST</span> <span class="n">CAT</span>
+<span class="n">Seq</span> <span class="n">D</span>  <span class="n">THE</span> <span class="n">FAT</span> <span class="n">CAT</span>
 
-Seq A  GARFIELD THE LAST FAT CAT
-Seq B  GARFIELD THE FAST CAT
-Seq C  GARFIELD THE VERY FAST CAT
-Seq D  THE FAT CAT
+<span class="n">Step</span> <span class="mi">1</span>
+<span class="n">Seq</span> <span class="n">A</span>  <span class="n">GARFIELD</span> <span class="n">THE</span> <span class="n">LAST</span> <span class="n">FAT</span> <span class="n">CAT</span>
+<span class="n">Seq</span> <span class="n">B</span>  <span class="n">GARFIELD</span> <span class="n">THE</span> <span class="n">FAST</span> <span class="n">CAT</span>
 
-Step 1
-Seq A  GARFIELD THE LAST FAT CAT
-Seq B  GARFIELD THE FAST CAT
+<span class="n">Step</span> <span class="mi">2</span>
+<span class="n">Seq</span> <span class="n">A</span>  <span class="n">GARFIELD</span> <span class="n">THE</span> <span class="n">LAST</span> <span class="n">FA</span><span class="o">-</span><span class="n">T</span> <span class="n">CAT</span>
+<span class="n">Seq</span> <span class="n">B</span>  <span class="n">GARFIELD</span> <span class="n">THE</span> <span class="n">FAST</span> <span class="n">CA</span><span class="o">-</span><span class="n">T</span>
+<span class="n">Seq</span> <span class="n">C</span>  <span class="n">GARFIELD</span> <span class="n">THE</span> <span class="n">VERY</span> <span class="n">FAST</span> <span class="n">CAT</span>
 
-Step 2
-Seq A  GARFIELD THE LAST FA-T CAT
-Seq B  GARFIELD THE FAST CA-T
-Seq C  GARFIELD THE VERY FAST CAT
-
-Step 3
-Seq A  GARFIELD THE LAST FA-T CAT
-Seq B  GARFIELD THE FAST CA-T
-Seq C  GARFIELD THE VERY FAST CAT
-Seq D  -------- THE ---- FA-T CAT
-</code></pre>
+<span class="n">Step</span> <span class="mi">3</span>
+<span class="n">Seq</span> <span class="n">A</span>  <span class="n">GARFIELD</span> <span class="n">THE</span> <span class="n">LAST</span> <span class="n">FA</span><span class="o">-</span><span class="n">T</span> <span class="n">CAT</span>
+<span class="n">Seq</span> <span class="n">B</span>  <span class="n">GARFIELD</span> <span class="n">THE</span> <span class="n">FAST</span> <span class="n">CA</span><span class="o">-</span><span class="n">T</span>
+<span class="n">Seq</span> <span class="n">C</span>  <span class="n">GARFIELD</span> <span class="n">THE</span> <span class="n">VERY</span> <span class="n">FAST</span> <span class="n">CAT</span>
+<span class="n">Seq</span> <span class="n">D</span>  <span class="o">--------</span> <span class="n">THE</span> <span class="o">----</span> <span class="n">FA</span><span class="o">-</span><span class="n">T</span> <span class="n">CAT</span>
+</pre></div>
 </div>
-
-<p>Historically the most used of the progressive multiple alignment algorithms was <a href="https://en.wikipedia.org/wiki/Clustal">CLUSTALW</a>.
-Nowadays CLUSTALW is not one of the recommended algorithms anymore because there are other algorithms that create better alignments like <a href="http://www.clustal.org/omega/">Clustal Omega</a> or <a href="http://mafft.cbrc.jp/alignment/software/">MAFFT</a>.
+<p>Historically the most used of the progressive multiple alignment algorithms was <a class="reference external" href="https://en.wikipedia.org/wiki/Clustal">CLUSTALW</a>.
+Nowadays CLUSTALW is not one of the recommended algorithms anymore because there are other algorithms that create better alignments like <a class="reference external" href="http://www.clustal.org/omega/">Clustal Omega</a> or <a class="reference external" href="http://mafft.cbrc.jp/alignment/software/">MAFFT</a>.
 MAFFT was one of the best contenders in a multiple alignment software comparison.</p>
-
-<p><a href="http://www.tcoffee.org/">T-Coffee</a> is another progressive algorithm.
+<p><a class="reference external" href="http://www.tcoffee.org/">T-Coffee</a> is another progressive algorithm.
 T-Coffee tries to solve the errors introduced by the progressive methods by taking into account the pair-wise alignments.
 First it creates a library of all the possible pair-wise alignments plus a multiple alignment using an algorithm similar to the CLUSTALW one.
 To this library we can add more alignments based on extra information like the protein structure or the protein domain composition.
 Then it creates a progressive alignment, but it takes into accounts all the alignments in the library that relate to the sequences aligned at that step to avoid errors.
 The T-Coffe algorithm follows the steps:</p>
-
-<ol>
-  <li>Create the pair-wise alignments</li>
-  <li>Calculate the similirity matrix</li>
-  <li>Create the guide tree</li>
-  <li>Build the multiple progressive alignment following the tree, but taking into account the information from the pair-wise alignments.</li>
+<ol class="arabic simple">
+<li><p>Create the pair-wise alignments</p></li>
+<li><p>Calculate the similirity matrix</p></li>
+<li><p>Create the guide tree</p></li>
+<li><p>Build the multiple progressive alignment following the tree, but taking into account the information from the pair-wise alignments.</p></li>
 </ol>
-
 <p>T-Coffee is usually better than CLUSTALW and performs well even with very different sequences, specially if we feed it more information, like: domains, structures or secondary structure.
 T-Coffee is slower than CLUSTALW and that is one of its main limitations, it can not work with more than few hundred sequences.</p>
-
-<h2 id="iterative-algorithms">Iterative algorithms</h2>
-
+</section>
+<section id="iterative-algorithms">
+<h2>Iterative algorithms<a class="headerlink" href="#iterative-algorithms" title="Permalink to this headline">¶</a></h2>
 <p>These methods are similar to the progressive ones, but in each step the previous alignments are reevaluated.
-Some of the most popular iterative methods are: <a href="http://drive5.com/muscle/">Muscle</a> and <a href="http://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html">MAFFT</a> are two popular examples of these algorithms.</p>
-
-<h2 id="hidden-markov-models">Hidden Markov models</h2>
-
-<p>The most advanced algorithms to date are based on <a href="https://en.wikipedia.org/wiki/Hidden_Markov_model">Hidden</a> <a href="https://en.wikipedia.org/wiki/Markov_model">Markov Models</a> and they have improvements in the guide tree construction, like the <a href="http://almob.biomedcentral.com/articles/10.1186/1748-7188-5-21">sequence embedding</a>, that reduce the computation time.</p>
-
-<p><a href="http://www.clustal.org/omega/">Clustal Omega</a> is one of these algorithms and can create alignments as accurate of the T-Coffee, but with many thousands of sequences.</p>
-
-<h2 id="alignment-evaluation">Alignment evaluation</h2>
-
+Some of the most popular iterative methods are: <a class="reference external" href="http://drive5.com/muscle/">Muscle</a> and <a class="reference external" href="http://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html">MAFFT</a> are two popular examples of these algorithms.</p>
+</section>
+<section id="hidden-markov-models">
+<h2>Hidden Markov models<a class="headerlink" href="#hidden-markov-models" title="Permalink to this headline">¶</a></h2>
+<p>The most advanced algorithms to date are based on <a class="reference external" href="https://en.wikipedia.org/wiki/Hidden_Markov_model">Hidden</a> <a class="reference external" href="https://en.wikipedia.org/wiki/Markov_model">Markov Models</a> and they have improvements in the guide tree construction, like the <a class="reference external" href="http://almob.biomedcentral.com/articles/10.1186/1748-7188-5-21">sequence embedding</a>, that reduce the computation time.</p>
+<p><a class="reference external" href="http://www.clustal.org/omega/">Clustal Omega</a> is one of these algorithms and can create alignments as accurate of the T-Coffee, but with many thousands of sequences.</p>
+</section>
+<section id="alignment-evaluation">
+<h2>Alignment evaluation<a class="headerlink" href="#alignment-evaluation" title="Permalink to this headline">¶</a></h2>
 <p>Once we have created our Multiple Sequence Alignment we should check that the result is OK.
 We could open the multiple alignment in a viewer to assess the quality of the different regions of the aligment or we could automate this assesment.
 Usually not all the regions have an alignment of the same quality.
 The more conserved regions will be more easily aligned than the more variable ones.</p>
-
 <p>It is quite usual to remove the regions that are not well aligned before doing any further analysis, like a phylogenetic reconstruction.
-We can remove those regions manually or we can use an especialized algorithm like <a href="http://trimal.cgenomics.org/">trimAl</a>.</p>
-
-<h2 id="software-for-multiple-alignments">Software for multiple alignments</h2>
-
+We can remove those regions manually or we can use an especialized algorithm like <a class="reference external" href="http://trimal.cgenomics.org/">trimAl</a>.</p>
+</section>
+<section id="software-for-multiple-alignments">
+<h2>Software for multiple alignments<a class="headerlink" href="#software-for-multiple-alignments" title="Permalink to this headline">¶</a></h2>
 <p>There are different software packages that implement the described algorithms.
 These softwares include CLI and GUI programs as well as web services.</p>
-
-<p>One package usually employed is <a href="http://www.megasoftware.net/">MEGA</a>.
+<p>One package usually employed is <a class="reference external" href="http://www.megasoftware.net/">MEGA</a>.
 MEGA is a multiplatform software focused on phylogenetic analyses.</p>
+<p><a class="reference external" href="http://www.jalview.org/">Jalview</a> and <a class="reference external" href="http://www.bioinformatics.org/strap/">STRAP</a> a multiple alignment editor and viewer.
+Another old software, that has been abandoned by its developer is <a class="reference external" href="http://www.mbio.ncsu.edu/bioedit/bioedit.html">BioEdit</a>.</p>
+<p>In the EBI web server have some services to run several algorithms like: <a class="reference external" href="https://www.ebi.ac.uk/Tools/msa/clustalo/">Clustal Omega</a> , <a class="reference external" href="https://www.ebi.ac.uk/Tools/msa/kalign/">Kalign</a>, <a class="reference external" href="https://www.ebi.ac.uk/Tools/msa/mafft/">MAFFT</a>, and <a class="reference external" href="https://www.ebi.ac.uk/Tools/msa/muscle/">Muscle</a>.</p>
+</section>
+</section>
 
-<p><a href="http://www.jalview.org/">Jalview</a> and <a href="http://www.bioinformatics.org/strap/">STRAP</a> a multiple alignment editor and viewer.
-Another old software, that has been abandoned by its developer is <a href="http://www.mbio.ncsu.edu/bioedit/bioedit.html">BioEdit</a>.</p>
 
-<p>In the EBI web server have some services to run several algorithms like: <a href="https://www.ebi.ac.uk/Tools/msa/clustalo/">Clustal Omega</a>, <a href="https://www.ebi.ac.uk/Tools/msa/kalign/">Kalign</a>, <a href="https://www.ebi.ac.uk/Tools/msa/mafft/">MAFFT</a>, and <a href="https://www.ebi.ac.uk/Tools/msa/muscle/">Muscle</a>.</p>
 
-  </div>
+        
 
-</article>
-
-      </div>
     </main>
 
-    
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 
   </body>
-
 </html>

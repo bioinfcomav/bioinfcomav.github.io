@@ -1,323 +1,211 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <title>Flujos de información</title>
-  <meta name="description" content="Introduction to the Linux command line.">
-
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/pipes.html">
-  <link rel="alternate" type="application/rss+xml" title="Curso Unix" href="/feed.xml">
-  
-  
-</head>
-
-
+    <title>Flujos de información &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Procesamiento de ficheros de texto" href="procesamiento_texto.html" />
+    <link rel="prev" title="Control de procesos" href="control_procesos.html" /> 
+  </head>
   <body>
 
-    <header class="site-header" role="banner">
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
 
-  <div class="wrapper">
 
-    <a class="site-title" href="/">Curso Unix</a>
-
-    <nav class="site-nav">
-      <span class="menu-icon">
-        <svg viewBox="0 0 18 15" width="18px" height="15px">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </span>
-
-      <div class="trigger">
-        
-          
-          <a class="page-link" href="/index.html">Curso Unix</a>
-          
-        
-          
-          <a class="page-link" href="/unix_intro.html">Unix y Linux</a>
-          
-        
-          
-          <a class="page-link" href="/sistema_de_ficheros.html">El sistema de ficheros</a>
-          
-        
-          
-          <a class="page-link" href="/control_procesos.html">Procesos</a>
-          
-        
-          
-          <a class="page-link" href="/pipes.html">Flujos de información</a>
-          
-        
-          
-          <a class="page-link" href="/procesamiento_texto.html">Procesamiento de ficheros de texto</a>
-          
-        
-          
-          <a class="page-link" href="/expresiones_regulares.html">Expresiones regulares</a>
-          
-        
-          
-          <a class="page-link" href="/scripts_bash.html">Scripts de bash</a>
-          
-        
-          
-          <a class="page-link" href="/administrador.html">Administrador</a>
-          
-        
-          
-          <a class="page-link" href="/administracion_software1.html">Administracion de software 1</a>
-          
-        
-          
-          <a class="page-link" href="/variables_de_entorno.html">Variables de entorno</a>
-          
-        
-          
-          <a class="page-link" href="/administracion_software2.html">Administracion de software 2</a>
-          
-        
-          
-          <a class="page-link" href="/redes.html">Redes</a>
-          
-        
-          
-        
-      </div>
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a>Software</a>
+                <ul>
+                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
+                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+               </ul>
+            </li>
+            <li><a href="courses.html">Courses</a>
+                <ul>
+                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="courses/unix/index.html">Linux</a></li>
+                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+               </ul>
+        </ul>
     </nav>
 
-  </div>
-
-</header>
-
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">Flujos de información</h1>
-  </header>
-
-  <div class="post-content">
-    <ul id="markdown-toc">
-  <li><a href="#flujos-de-información-estándar" id="markdown-toc-flujos-de-información-estándar">Flujos de información estándar</a></li>
-  <li><a href="#redirección-del-flujo-estándar" id="markdown-toc-redirección-del-flujo-estándar">Redirección del flujo estándar</a></li>
-  <li><a href="#pipes" id="markdown-toc-pipes">Pipes</a></li>
-  <li><a href="#ejercicios" id="markdown-toc-ejercicios">Ejercicios</a></li>
-  <li><a href="#soluciones" id="markdown-toc-soluciones">Soluciones</a></li>
-</ul>
-
+    <main>
+                
+    
+  <section id="flujos-de-informacion">
+<h1>Flujos de información<a class="headerlink" href="#flujos-de-informacion" title="Permalink to this headline">¶</a></h1>
 <p>Los programas en línea de comandos, además de poder leer y escribir en ficheros, pueden tomar argumentos como entrada, realizar una tarea e imprimir una salida en la pantalla.</p>
-
-<p><img src="./static/cli_program.png" alt="alt text" /></p>
-
+<a class="reference external image-reference" href="./static/cli_program.png"><img alt="alt text" src="_images/cli_program.png" /></a>
 <p>Por ejemplo, al ejecutar el comando <em>ls</em> se imprime un listado en la pantalla. Esto que acaba siendo impreso en la pantalla constituye lo que se denomina un flujo de información.</p>
-
-<h2 id="flujos-de-información-estándar">Flujos de información estándar</h2>
-
+<section id="flujos-de-informacion-estandar">
+<h2>Flujos de información estándar<a class="headerlink" href="#flujos-de-informacion-estandar" title="Permalink to this headline">¶</a></h2>
 <p>En todos los sistemas Unix existen tres flujos de información:</p>
-
-<ul>
-  <li>standard input (stdin): datos que se envian al programa</li>
-  <li>standard output (stdout): datos que devuelve el programa</li>
-  <li>standard error (stderr): flujo usado por los programas para enviar un informe de errores</li>
+<ul class="simple">
+<li><p>standard input (stdin): datos que se envian al programa</p></li>
+<li><p>standard output (stdout): datos que devuelve el programa</p></li>
+<li><p>standard error (stderr): flujo usado por los programas para enviar un informe de errores</p></li>
 </ul>
-
-<p><img src="static/streams.png" width="350" /></p>
-
+<p><span class="raw-html-m2r"><img src="static/streams.png" width="350"></span></p>
 <p>Los flujos permiten, por ejemplo, conectar unos programas con otros de manera que el <em>stdout</em> de un programa se le pase a otro por <em>stdin</em>, o guardar el stdout y el stderr en ficheros diferentes.</p>
-
 <p>Los flujos estándar se representan por un número:</p>
-
-<ul>
-  <li>stdin: 0</li>
-  <li>stdout: 1</li>
-  <li>stderr: 2</li>
+<ul class="simple">
+<li><p>stdin: 0</p></li>
+<li><p>stdout: 1</p></li>
+<li><p>stderr: 2</p></li>
 </ul>
-
-<h2 id="redirección-del-flujo-estándar">Redirección del flujo estándar</h2>
-
+</section>
+<section id="redireccion-del-flujo-estandar">
+<h2>Redirección del flujo estándar<a class="headerlink" href="#redireccion-del-flujo-estandar" title="Permalink to this headline">¶</a></h2>
 <p>El flujo estándar puede ser redirigido para que no se imprima en pantalla, sino que quede almacenado en un fichero. Para redirigir el flujo de información desde la pantalla a un fichero no necesitamos más que utilizar el símbolo <em>&gt;</em> seguido del nombre de un fichero.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ ls &gt; listado.txt
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls &gt; listado.txt
+</pre></div>
 </div>
-
 <p>Si lo hacemos se creará un nuevo fichero y en él se escribirá lo que estaba destinado a la pantalla.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ ls
-  listado.txt
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls
+listado.txt
+</pre></div>
 </div>
-
 <p>En el caso de que el fichero de salida exista previamente será eliminado y vuelto a crear.</p>
-
-<p>Podríamos añadir contenidos al fichero antiguo sin borrarlo utilizando dos veces el símbolo mayor que <em>»</em>. Por ejemplo, añadir el listado de archivos y directorios del directorio anterior en el árbol de directorios.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ ls .. &gt;&gt; listado.txt    
-</code></pre>
+<p>Podríamos añadir contenidos al fichero antiguo sin borrarlo utilizando dos veces el símbolo mayor que <em>&gt;&gt;</em>. Por ejemplo, añadir el listado de archivos y directorios del directorio anterior en el árbol de directorios.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls .. &gt;&gt; listado.txt
+</pre></div>
 </div>
-
 <p>En los ejemplos anteriores, técnicamente lo que estamos haciendo redirigir el <em>standard output</em>. Sin emabargo, si ejecutamos el siguiente comando:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ ls -7 &gt; listado.txt
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls -7 &gt; listado.txt
+</pre></div>
 </div>
-
 <p>Observaremos que el archivo <em>listado.txt</em> esta vacio y el programa habrá mostrado en pantalla un mensaje de error ya que la opción <em>-7</em> no existe en <em>ls</em>. En este caso el programa envía el mensaje de error al flujo <em>stderr</em>, que no está siendo redirigido. Si quisiéramos redirigir también el <em>stderr</em> deberíamos indicarlo así:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ ls -7 2&gt; error.txt
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls -7 2&gt; error.txt
+</pre></div>
 </div>
-
 <p>Este división de los flujos estándard nos permite guardanos por separado el resultado normal de un programa y los avisos de error</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ ls &gt; listado.txt 2&gt; error.txt
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls &gt; listado.txt 2&gt; error.txt
+</pre></div>
 </div>
-
 <p>Existe tambien la posibilidad de redirigir el <em>stderr</em> al <em>stdout</em>:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ ls &gt; listado.txt 2&gt;&amp;1
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls &gt; listado.txt 2&gt;&amp;1
+</pre></div>
 </div>
-
-<h2 id="pipes">Pipes</h2>
-
+</section>
+<section id="pipes">
+<h2>Pipes<a class="headerlink" href="#pipes" title="Permalink to this headline">¶</a></h2>
 <p>En Unix además de redirigir los flujos de información hacia un fichero podemos unir el flujo de salida de un programa con el de entrada de otro utilizando un <em>pipe</em> (tubería).
 El símbolo para el pipe es |.</p>
-
-<p><img src="./static/pipe.png" alt="alt text" /></p>
-
+<a class="reference external image-reference" href="./static/pipe.png"><img alt="alt text" src="_images/pipe.png" /></a>
 <p>Hagamos un ejemplo con los comandos <em>wc</em> (Word Count) y <em>cat</em>. <em>wc</em> sirve para contar líneas, palabras y caracteres.
 Veamos cuántos archivos y directorios hay en el directorio actual:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ ls &gt; listado.txt
-  ~$ wc listado.txt
-   7  7 80 listado.txt
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls &gt; listado.txt
+~$ wc listado.txt
+ 7  7 80 listado.txt
+</pre></div>
 </div>
-
 <p>Podríamos hacer lo mismo en un solo paso utilizando un pipe:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ ls | wc
-      7       7      80
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls | wc
+    7       7      80
+</pre></div>
 </div>
-
 <p>En este caso la salida del comando <em>ls</em> (i.e., el <em>standard output</em>) ha sido redirigida a la entrada del comando <em>wc</em> (i.e., el <em>standard input</em>).</p>
-
 <p>Esta técnica es una de las grandes fortalezas de los sistemas Unix ya que permite enlazar comandos sencillos para realizar tareas complejas y vamos a utilizarla ampliamente durante el curso.</p>
-
 <p>Esta técnica posibilita, entre otras cosas, el procesamiento de los ficheros de texto de una forma potente y sencilla.</p>
-
-<h2 id="ejercicios">Ejercicios</h2>
-
-<ol>
-  <li>
-    <p>Salva la ruta del directorio actual (<em>pwd</em>) en un archivo, muévete a otro directorio y añade la dirección actual al archivo creado</p>
-  </li>
-  <li>
-    <p>Haz fallar el comando <em>mkdir</em> y salva el mensaje de error en un fichero</p>
-  </li>
-  <li>
-    <p>¿Cuántas líneas tiene el manual de <em>ps</em>?</p>
-  </li>
-  <li>
-    <p>Para el comando <em>pwd</em> salva el <em>standard error</em> en un archivo y redirige el <em>standard output</em> también a ese archivo</p>
-  </li>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Salva la ruta del directorio actual (<em>pwd</em>) en un archivo, muévete a otro directorio y añade la dirección actual al archivo creado</p></li>
+<li><p>Haz fallar el comando <em>mkdir</em> y salva el mensaje de error en un fichero</p></li>
+<li><p>¿Cuántas líneas tiene el manual de <em>ps</em>?</p></li>
+<li><p>Para el comando <em>pwd</em> salva el <em>standard error</em> en un archivo y redirige el <em>standard output</em> también a ese archivo</p></li>
 </ol>
-
-<h2 id="soluciones">Soluciones</h2>
-
+</section>
+<section id="soluciones">
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
 <p>1.- Salva la ruta del directorio actual (<em>pwd</em>) en un archivo, muévete a otro directorio y añade la dirección actual al archivo creado.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ pwd &gt; directions.txt
-  ~$ cd /bin/
-  /bin$ pwd &gt;&gt; ~/directions.txt
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ pwd &gt; directions.txt
+~$ cd /bin/
+/bin$ pwd &gt;&gt; ~/directions.txt
+</pre></div>
 </div>
-
 <p>2.- Haz fallar el comando <em>mkdir</em> y salva el mensaje de error en un fichero.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ mkdir 2&gt; error.log  
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ mkdir 2&gt; error.log
+</pre></div>
 </div>
-
 <p>3.- ¿Cuántas líneas tiene el manual de <em>ps</em>?</p>
-
 <p>Si lo hiciéramos sin <em>pipes</em>:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ man ps &gt; ps_manual.txt
-  ~$ wc ps_manual.txt
-      1188  6276 53338 ps_manual.txt
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ man ps &gt; ps_manual.txt
+~$ wc ps_manual.txt
+    1188  6276 53338 ps_manual.txt
+</pre></div>
 </div>
 <p>Redirigiendo los flujos estandar con <em>pipes</em></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ man ps |wc
-      1188    6276   53338
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ man ps |wc
+    1188    6276   53338
+</pre></div>
 </div>
 <p>4.- Para el comando <em>pwd</em> salva el <em>standard error</em> en un archivo y redirige el <em>standard output</em> también a ese archivo</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ pwd 2&gt; error.log 1&gt;&amp;2      
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ pwd 2&gt; error.log 1&gt;&amp;2
+</pre></div>
 </div>
-
 <p>Redigir el <em>stdout</em> al <em>stderr</em> en un principio no es algo común, suele hacerse al revés. Pero el ejercicio pretende demostrar que la redirección de flujos es posible en cualquier dirección</p>
+</section>
+</section>
 
-  </div>
 
-</article>
 
-      </div>
+        
+
     </main>
 
-    <footer class="site-footer">
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
 
-  <div class="wrapper">
-
-    <h2 class="footer-heading">Curso Unix</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>
-            
-              Curso Unix
-            
-            </li>
-            
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          
-
-          
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>Introduction to the Linux command line.</p>
-      </div>
-    </div>
-
-  </div>
-
-</footer>
-
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 
   </body>
-
 </html>

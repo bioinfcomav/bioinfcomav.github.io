@@ -1,276 +1,195 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <title>Blast Practice</title>
-  <meta name="description" content="Introduction to Bioinformatics for the Biotechnology degree.">
-
-  <link rel="stylesheet" href="/courses/biotech3/css/main.css">
-  <link rel="canonical" href="/courses/biotech3/practice/blast.html">
-  <link rel="alternate" type="application/rss+xml" title="Bioinformatics" href="/courses/biotech3/feed.xml">
-</head>
-
-
+    <title>Blast Practice &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Multiple Sequence Alignment" href="multiple.html" />
+    <link rel="prev" title="Sequence Alignment" href="alignment.html" /> 
+  </head>
   <body>
 
-    <header class="site-header" role="banner">
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
 
-  <div class="wrapper">
 
-    <a class="site-title" href="/courses/biotech3/">Bioinformatics</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/alignment.html">Sequence Alignment Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/assembly.html">Assembly</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/blast.html">Blast</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/blast.html">Blast Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/covid.html">COVID19</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/databases.html">Biological Databases</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/emboss.html">Introduction to EMBOSS</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/entrez.html">NCBI database search Practice</a>
-          
-        
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/">Home</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/linux.html">Unix CLI</a>
-          
-        
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/multiple.html">Multiple Sequence Alignment Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/multiple.html">Multiple Sequence Alignment</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/norms.html">Norms</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/phylogeny.html">Phylogeny practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/phylogeny.html">Phylogeny and evolution</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/prev_knowledge.html">Previous Knowledge</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/sequence_alignment.html">Sequence Alignment</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/structural_annotation.html">Structural Annotation</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/structural_annotation.html">Structural Annotation</a>
-          
-        
-      </div>
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a>Software</a>
+                <ul>
+                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
+                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+               </ul>
+            </li>
+            <li><a href="courses.html">Courses</a>
+                <ul>
+                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="courses/unix/index.html">Linux</a></li>
+                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+               </ul>
+        </ul>
     </nav>
 
-  </div>
-
-</header>
-
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">Blast Practice</h1>
-  </header>
-
-  <div class="post-content">
-    <h1 id="blast-database-search">BLAST database search</h1>
-
+    <main>
+                
+    
+  <section id="blast-practice">
+<h1>Blast Practice<a class="headerlink" href="#blast-practice" title="Permalink to this headline">¶</a></h1>
+<section id="blast-database-search">
+<h2>BLAST database search<a class="headerlink" href="#blast-database-search" title="Permalink to this headline">¶</a></h2>
 <p>BLAST is the most used program to look for similar sequences in a database.</p>
-
 <p>This practice is divided in two parts.
-In the first one we will get familiar with NCBI’s <a href="https://blast.ncbi.nlm.nih.gov/">BLAST server</a> and in the second we will use it to solve some practical problems.</p>
-
-<h1 id="ncbis-blast-server">NCBI’s BLAST server</h1>
-
-<p>In the main <a href="https://blast.ncbi.nlm.nih.gov/">BLAST</a> page at NCBI we can select different BLAST algorithms (blastn, blastp, blastx and tblastn) or different organism: Human, Mouse, Rat, etc.
+In the first one we will get familiar with NCBI’s <a class="reference external" href="https://blast.ncbi.nlm.nih.gov/">BLAST server</a> and in the second we will use it to solve some practical problems.</p>
+</section>
+<section id="ncbi-s-blast-server">
+<h2>NCBI’s BLAST server<a class="headerlink" href="#ncbi-s-blast-server" title="Permalink to this headline">¶</a></h2>
+<p>In the main <a class="reference external" href="https://blast.ncbi.nlm.nih.gov/">BLAST</a> page at NCBI we can select different BLAST algorithms (blastn, blastp, blastx and tblastn) or different organism: Human, Mouse, Rat, etc.
 We can also run more specialized BLAST searches like Primer-BLAST or VecScreen.</p>
-
-<p>We are going to run a BLASTN search using a <a href="../static/blast/tc573649.fasta">rat</a> sequence.</p>
-
-<h2 id="query-sequence">Query sequence</h2>
-
+<p>We are going to run a BLASTN search using a <a class="reference download internal" download="" href="../_downloads/59c61266e08a41a924a5da9c191e59f8/tc573649.fasta"><code class="xref download docutils literal notranslate"><span class="pre">rat</span></code></a> sequence.</p>
+<section id="query-sequence">
+<h3>Query sequence<a class="headerlink" href="#query-sequence" title="Permalink to this headline">¶</a></h3>
 <p>In the BLAST form we can paste our query sequence or, alternatively, we can introduce a NCBI sequence ID.
 We can restrict the search to a region in the sequence.</p>
-
-<h2 id="database">Database</h2>
-
+</section>
+<section id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
 <p>The database choice is one of the most important ones because it will completely change the result.
 We have several databases available like: Human genomic + transcript, nt (all nucleotide sequences), Reference RNA, Reference genomic, Genomic sequences, etc.
 Alternatively, we can write an Entrez query and the query result will become the sequence database in which we will look for.</p>
-
-<h2 id="program">Program</h2>
-
+</section>
+<section id="program">
+<h3>Program<a class="headerlink" href="#program" title="Permalink to this headline">¶</a></h3>
 <p>Finnaly we can select which algorithm do we want to use: megablast, discontinious megablast and blastn.
 We can select the algorithm depending on the speed and the sensitivity that we want.</p>
-
 <p>There are extra parameters in the section “algorithm parameters” like number of sequences to report or filters applied to the sequences.</p>
-
-<h2 id="example">Example</h2>
-
-<p>We are going to blast the <a href="../static/blast/tc573649.fasta">rat</a> sequence against the human database using megablast.</p>
-
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>We are going to blast the <a class="reference download internal" download="" href="../_downloads/59c61266e08a41a924a5da9c191e59f8/tc573649.fasta"><code class="xref download docutils literal notranslate"><span class="pre">rat</span></code></a> sequence against the human database using megablast.</p>
 <p>Once we submit the blast job we get a page in which we are inform about the estimated time to get the results.</p>
-
-<p><img src="../static/blast_running.png" alt="blast running" /></p>
-
 <p>The blast result page is divided in several.
 First we have some information about the query with: the name of the sequence queried, its length, the database and the program used.</p>
-
-<p><img src="../static/blast/blast_result1.png" alt="blast result1" /></p>
-
+<a class="reference external image-reference" href="../static/blast/blast_result1.png"><img alt="blast result1" src="../_images/blast_result1.png" /></a>
 <p>The next section is a graphic summary with the alignments and its e-values shown by a color code.</p>
-
-<p><img src="../static/blast/blast_result2.png" alt="blast result2" /></p>
-
+<a class="reference external image-reference" href="../static/blast/blast_result2.png"><img alt="blast result2" src="../_images/blast_result2.png" /></a>
 <p>After that we get a summary showing the sequences for which a significant alignment was found.
 For each sequence the e-value of its best HSP is shown.
 The table is sorted by default by the e-value.</p>
-
-<p><img src="../static/blast/blast_result3.png" alt="blast result3" /></p>
-
+<a class="reference external image-reference" href="../static/blast/blast_result3.png"><img alt="blast result3" src="../_images/blast_result3.png" /></a>
 <p>How many similar sequences have BLAST found in the database?</p>
-
 <p>And finnaly the alignments of the query sequence with the database seqeucnes (subjects).
 For each subject sequence the description and the alignments corresponding to the HSPs are shown.</p>
-
-<p><img src="../static/blast/blast_result3.png" alt="blast result4" /></p>
-
+<a class="reference external image-reference" href="../static/blast/blast_result3.png"><img alt="blast result4" src="../_images/blast_result3.png" /></a>
 <p>How many HSPs have the first sequence, the second and the third?</p>
-
 <p>Have all the HSP for a sequence the same value?</p>
-
 <p>How are the HSPs within a sequence match sorted?</p>
-
 <p>Which is the e-value that appears in the summary table for the subject?</p>
-
-<h1 id="sequence-function-annotation">Sequence function annotation</h1>
-
-<p>We have obtained from a sequencing project of <em>Amblyomma variegatum</em> several transcript sequences corresponding to different genes: <a href="../static/blast/tc154.fasta">tc154</a>, <a href="../static/blast/tc55.fasta">tc55</a>, <a href="../static/blast/tc320.fasta">tc320</a> and <a href="../static/blast/tc3.fasta">tc3</a>.
+</section>
+</section>
+<section id="sequence-function-annotation">
+<h2>Sequence function annotation<a class="headerlink" href="#sequence-function-annotation" title="Permalink to this headline">¶</a></h2>
+<p>We have obtained from a sequencing project of <em>Amblyomma variegatum</em> several transcript sequences corresponding to different genes: <a class="reference download internal" download="" href="../_downloads/b414827f30736a9789eae9e385f98efe/tc154.fasta"><code class="xref download docutils literal notranslate"><span class="pre">tc154</span></code></a> , <a class="reference download internal" download="" href="../_downloads/7c92ed24978063c1bfc91d93534e1401/tc55.fasta"><code class="xref download docutils literal notranslate"><span class="pre">tc55</span></code></a> , <a class="reference download internal" download="" href="../_downloads/f344766b31aba77048ac599418dd2488/tc320.fasta"><code class="xref download docutils literal notranslate"><span class="pre">tc320</span></code></a> and <a class="reference download internal" download="" href="../_downloads/3c23f054eaef239d3d396f5fb419b5e5/tc3.fasta"><code class="xref download docutils literal notranslate"><span class="pre">tc3</span></code></a>.
 We want to find out the function for the proteins coded by those transcripts.</p>
-
 <p>Which database type should we use DNA or protein?</p>
-
 <p>Which blast program should we use?</p>
-
 <p>Which database should we use?</p>
-
 <p>Many proteins are tagged as predicted or hypothetical, what could that mean? Would we find this kind of proteins in Swiss-Prot? Would it be better to use Swiss-Prot?</p>
-
-<h1 id="species-classification">Species classification</h1>
-
+</section>
+<section id="species-classification">
+<h2>Species classification<a class="headerlink" href="#species-classification" title="Permalink to this headline">¶</a></h2>
 <p>We are working in a hospital and we get a blood sample from a patient.
 The patient seems to have some kind of infection, but which one?</p>
-
 <p>To help with the diagnose we extract genomic DNA from the patient blood and we do a PCR using primers design to amplify the ITS1 region.
 This region is used to classify many organisms and there are plenty of ITS1 sequences in the database.
-Once we finish the PCR we send it to a sequencing service and we get the sequence for our <a href="../static/blast/its1.fasta">ITS1</a> back.</p>
-
+Once we finish the PCR we send it to a sequencing service and we get the sequence for our <a class="reference download internal" download="" href="../_downloads/7dec4c104519d65c79b58d12a72cb75d/its1.fasta"><code class="xref download docutils literal notranslate"><span class="pre">ITS1</span></code></a> back.</p>
 <p>Which blast program and which database should we use?</p>
-
 <p>Which is the species causing the infection?
 Is it serious?
 Can we determine the strain with this sequence?</p>
-
 <p>Having into account that the sequencing error rate is 2%, should we get additional sequences from the species or is it enough with the one that we have?</p>
-
-<h1 id="phylogeny">Phylogeny</h1>
-
-<p>We want to build a phylogeny within the animals and we decide to use a <a href="../static/blast/frataxina.fasta">mRNA from the frataxin gene</a>.</p>
-
+</section>
+<section id="phylogeny">
+<h2>Phylogeny<a class="headerlink" href="#phylogeny" title="Permalink to this headline">¶</a></h2>
+<p>We want to build a phylogeny within the animals and we decide to use a <a class="reference download internal" download="" href="../_downloads/725f1519f2e84ed375614832ee1f6993/frataxina.fasta"><code class="xref download docutils literal notranslate"><span class="pre">mRNA</span> <span class="pre">from</span> <span class="pre">the</span> <span class="pre">frataxin</span> <span class="pre">gene</span></code></a>.</p>
 <p>Which would be the advantages and disadvantages of using nr vs refseq?</p>
-
 <p>If we use refseq do we get the same result by using blastn vs tblastx?
 How many sequences do we get for both databases?
 Why are we getting theses results?</p>
-
 <p>In the tblastx result we get a <em>Xenopus</em> frataxin.
 This sequece have a better e-value than some primate sequences, why?</p>
-
 <p>What would happen if we were to use to megablast program?</p>
-
 <p>What would happen if you use the blastn program instead of megablast, but you do not filter the human repeats?</p>
-
 <p>Once you have the blast result that you like the most download all sequences by clicking in “Select All” and “Get selected sequences”.</p>
-
-<h1 id="primer-design">Primer design</h1>
-
+</section>
+<section id="primer-design">
+<h2>Primer design<a class="headerlink" href="#primer-design" title="Permalink to this headline">¶</a></h2>
 <p>We want to amplify a region of a human cyclin from an RNA sample to check the expression.
 We want to design some priemrs and we want to make sure that the primers won’t amplify messengers from other genes.
 You can use the Primer-BLAST program.
 Make sure that the primers are specific to the cyclin gene and that they do not amplify the genomic DNA.
 Do a blast against the RefSeq mRNA database.</p>
+<p>Check if these to primers would work: <a class="reference download internal" download="" href="../_downloads/00a2d298c9c9eb5621f4cb4e7ad9bdde/primerf.fasta"><code class="xref download docutils literal notranslate"><span class="pre">primerf</span></code></a> and <a class="reference download internal" download="" href="../_downloads/6d8e2f6860d250acf27aafdb59a14dbb/primerr.fasta"><code class="xref download docutils literal notranslate"><span class="pre">primerr</span></code></a>.</p>
+<p>Could you do a similar design for the <cite>mRNA from the frataxin gene :download:&lt;../static/blast/frataxina.fasta&gt;</cite> ?</p>
+</section>
+</section>
 
-<p>Check if these to primers would work: <a href="../static/blast/primerf.fasta">primerf</a> and <a href="../static/blast/primerr.fasta">primerr</a>.</p>
 
-<p>Could you do a similar design for the <a href="../static/blast/frataxina.fasta">mRNA from the frataxin gene</a>?</p>
 
-  </div>
+        
 
-</article>
-
-      </div>
     </main>
 
-    
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 
   </body>
-
 </html>

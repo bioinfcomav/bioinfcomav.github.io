@@ -162,11 +162,13 @@ Depending on the software that we want to use we should the interleaved or the t
 
 SRA toolkit
 ___________
+
 Download the `sra file <https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR2970642/SRR2970642>`_ `(file info) <https://www.ncbi.nlm.nih.gov/sra/SRX1460040>`_ and use fastq-dump to convert to fastq format.
 
 First, you can run the program with the default options and look at the output file::
 
   ngs_user@ngsmachine:~$ fastq-dump SRR2970642
+
 Depending on the software that we want to use we should the interleaved or the two file version; but most of actual ones use the one file version.
 
 Is this useful? Taking into account that the reads are paired reads, can we improve the convertion?::

@@ -1,670 +1,510 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <title>Scripts de bash</title>
-  <meta name="description" content="Introduction to the Linux command line.">
-
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/scripts_bash.html">
-  <link rel="alternate" type="application/rss+xml" title="Curso Unix" href="/feed.xml">
-  
-  
-</head>
-
-
+    <title>Scripts de bash &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
+    <link rel="next" title="Administrador" href="administrador.html" />
+    <link rel="prev" title="Expresiones regulares" href="expresiones_regulares.html" /> 
+  </head>
   <body>
 
-    <header class="site-header" role="banner">
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
 
-  <div class="wrapper">
 
-    <a class="site-title" href="/">Curso Unix</a>
-
-    <nav class="site-nav">
-      <span class="menu-icon">
-        <svg viewBox="0 0 18 15" width="18px" height="15px">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </span>
-
-      <div class="trigger">
-        
-          
-          <a class="page-link" href="/index.html">Curso Unix</a>
-          
-        
-          
-          <a class="page-link" href="/unix_intro.html">Unix y Linux</a>
-          
-        
-          
-          <a class="page-link" href="/sistema_de_ficheros.html">El sistema de ficheros</a>
-          
-        
-          
-          <a class="page-link" href="/control_procesos.html">Procesos</a>
-          
-        
-          
-          <a class="page-link" href="/pipes.html">Flujos de información</a>
-          
-        
-          
-          <a class="page-link" href="/procesamiento_texto.html">Procesamiento de ficheros de texto</a>
-          
-        
-          
-          <a class="page-link" href="/expresiones_regulares.html">Expresiones regulares</a>
-          
-        
-          
-          <a class="page-link" href="/scripts_bash.html">Scripts de bash</a>
-          
-        
-          
-          <a class="page-link" href="/administrador.html">Administrador</a>
-          
-        
-          
-          <a class="page-link" href="/administracion_software1.html">Administracion de software 1</a>
-          
-        
-          
-          <a class="page-link" href="/variables_de_entorno.html">Variables de entorno</a>
-          
-        
-          
-          <a class="page-link" href="/administracion_software2.html">Administracion de software 2</a>
-          
-        
-          
-          <a class="page-link" href="/redes.html">Redes</a>
-          
-        
-          
-        
-      </div>
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a>Software</a>
+                <ul>
+                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
+                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+               </ul>
+            </li>
+            <li><a href="courses.html">Courses</a>
+                <ul>
+                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="courses/unix/index.html">Linux</a></li>
+                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+               </ul>
+        </ul>
     </nav>
 
-  </div>
-
-</header>
-
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">Scripts de bash</h1>
-  </header>
-
-  <div class="post-content">
-    <ul id="markdown-toc">
-  <li><a href="#variables" id="markdown-toc-variables">Variables</a>    <ul>
-      <li><a href="#nombre-de-las-variables" id="markdown-toc-nombre-de-las-variables">Nombre de las variables</a></li>
-    </ul>
-  </li>
-  <li><a href="#control-de-flujo" id="markdown-toc-control-de-flujo">Control de flujo</a>    <ul>
-      <li><a href="#bucles-for" id="markdown-toc-bucles-for">Bucles (<em>for</em>)</a></li>
-      <li><a href="#condicionales-if" id="markdown-toc-condicionales-if">Condicionales (<em>if</em>)</a>        <ul>
-          <li><a href="#condicionales-con-números" id="markdown-toc-condicionales-con-números">Condicionales con números</a></li>
-          <li><a href="#condicionales-con-cadenas-de-texto" id="markdown-toc-condicionales-con-cadenas-de-texto">Condicionales con cadenas de texto</a></li>
-          <li><a href="#condicionales-con-archivos" id="markdown-toc-condicionales-con-archivos">Condicionales con archivos</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#manipulación-de-cadenas-de-texto" id="markdown-toc-manipulación-de-cadenas-de-texto">Manipulación de cadenas de texto</a>    <ul>
-      <li><a href="#extraer-subcadena" id="markdown-toc-extraer-subcadena">Extraer subcadena</a></li>
-      <li><a href="#borrar-subcadena" id="markdown-toc-borrar-subcadena">Borrar subcadena</a></li>
-      <li><a href="#reemplazar-subcadena" id="markdown-toc-reemplazar-subcadena">Reemplazar subcadena</a></li>
-    </ul>
-  </li>
-  <li><a href="#operaciones-aritméticas" id="markdown-toc-operaciones-aritméticas">Operaciones aritméticas</a></li>
-  <li><a href="#parallel" id="markdown-toc-parallel">Parallel</a></li>
-  <li><a href="#ejercicios" id="markdown-toc-ejercicios">Ejercicios</a></li>
-</ul>
-
+    <main>
+                
+    
+  <section id="scripts-de-bash">
+<h1>Scripts de bash<a class="headerlink" href="#scripts-de-bash" title="Permalink to this headline">¶</a></h1>
 <p>En esta sección del curso vamos a aprender a hacer algunos scripts básicos que nos permitan automatizar y acelerar el trabajo. Un script no es más que un archivo que contiene un conjunto de órdenes para realizar una acción.</p>
-
-<p>Vamos a crear nuestro primer script. Para ello en un editor de texto escribiremos lo siguente y lo guardaremos con el nombre *hola.sh *</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
-	<span class="c"># Este es nuestro primer progrma</span>
-	<span class="nb">echo </span>Hola Mundo
-</code></pre>
+<p>Vamos a crear nuestro primer script. Para ello en un editor de texto escribiremos lo siguente y lo guardaremos con el nombre <em>hola.sh</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># Este es nuestro primer progrma</span>
+<span class="n">echo</span> <span class="n">Hola</span> <span class="n">Mundo</span>
+</pre></div>
 </div>
-
 <p>A continuación iremos a la terminal y lo ejecutaremos:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code> ~$ ./hola.sh.
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ./hola.sh.
+</pre></div>
 </div>
-
-<p>La primera línea de nuestro script le indica al sistema que tiene que usar la shell BASH. La segunda línea es un comentario para consumo humano, todas las líneas que comiencen por <code class="highlighter-rouge">#</code> son ignoradas por la máquina y nos sirven para incluir comentarios destinados a programadores o usuarios. En la tercera línea tenemos el comando <code class="highlighter-rouge">echo</code>que sirve para imprimir texto en la pantalla.</p>
-
-<h2 id="variables">Variables</h2>
-
+<p>La primera línea de nuestro script le indica al sistema que tiene que usar la shell BASH. La segunda línea es un comentario para consumo humano, todas las líneas que comiencen por <code class="docutils literal notranslate"><span class="pre">#</span></code> son ignoradas por la máquina y nos sirven para incluir comentarios destinados a programadores o usuarios. En la tercera línea tenemos el comando <code class="docutils literal notranslate"><span class="pre">echo</span></code>que sirve para imprimir texto en la pantalla.</p>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
 <p>Como cualquier otro lenguaje de programación, necesitamos variables que nos servirán para guardar datos en la memoria del ordenador hasta el momento que los necesitemos. Podemos pensar en una variable como una caja en la que podemos guardar un elemento (e.g, un número, una cadena de texto, la dirección de un archivo…) y, siguiendo con el símil, la memoria del ordenador no sería más que el conjunto de esas cajas.</p>
-
-<p>Para asignar el valor a una variable simplemente simplemente debemos usar el signo <code class="highlighter-rouge">=</code>:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>nombre_variable=valor_variable
-</code></pre>
+<p>Para asignar el valor a una variable simplemente simplemente debemos usar el signo <code class="docutils literal notranslate"><span class="pre">=</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_variable</span><span class="o">=</span><span class="n">valor_variable</span>
+</pre></div>
 </div>
-
-<p>Es importante no dejar espacios ni antes ni después del <code class="highlighter-rouge">=</code>.</p>
-
-<p>Para recuperar el valor de dicha variable sólo hay que anteponer el símbolo de dolar <code class="highlighter-rouge">$</code> antes del nombre de la variable:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$nombre_variable
-</code></pre>
+<p>Es importante no dejar espacios ni antes ni después del <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
+<p>Para recuperar el valor de dicha variable sólo hay que anteponer el símbolo de dolar <code class="docutils literal notranslate"><span class="pre">$</span></code> antes del nombre de la variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$nombre_variable
+</pre></div>
 </div>
-
 <p>A lo largo de un script podemos asignarle diferentes valores a una misma variable:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
-	<span class="nv">to_print</span><span class="o">=</span><span class="s1">'Hola mundo'</span>
-	<span class="nb">echo</span> <span class="nv">$to_print</span>
-	<span class="nv">to_print</span><span class="o">=</span>5.5
-	<span class="nb">echo</span> <span class="nv">$to_print</span>
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+to_print=&#39;Hola mundo&#39;
+echo $to_print
+to_print=5.5
+echo $to_print
+</pre></div>
 </div>
-
-<h3 id="nombre-de-las-variables">Nombre de las variables</h3>
-
+<section id="nombre-de-las-variables">
+<h3>Nombre de las variables<a class="headerlink" href="#nombre-de-las-variables" title="Permalink to this headline">¶</a></h3>
 <p>Las variables pueden tomar prácticamente cualquier nombre, sin embargo, existen algunas restricciones:</p>
-
-<ul>
-  <li>Sólo puede contener caracteres alfanuméricos y guiones bajos</li>
-  <li>El primer carácter debe ser una letra del alfabeto o “_” (este último caso se suele reservar para casos especiales).</li>
-  <li>No pueden contener espacios.</li>
-  <li>Las mayúsculas y las minúsculas importan, “a” es distinto de “A”.</li>
-  <li>Algunos nombres som usado como variables de entorno y no los debemos utilizar para evitar sobrescribirlas (e.g.,PATH).</li>
+<ul class="simple">
+<li><p>Sólo puede contener caracteres alfanuméricos y guiones bajos</p></li>
+<li><p>El primer carácter debe ser una letra del alfabeto o “_” (este último caso se suele reservar para casos especiales).</p></li>
+<li><p>No pueden contener espacios.</p></li>
+<li><p>Las mayúsculas y las minúsculas importan, “a” es distinto de “A”.</p></li>
+<li><p>Algunos nombres som usado como variables de entorno y no los debemos utilizar para evitar sobrescribirlas (e.g.,PATH).</p></li>
 </ul>
-
 <p>De manera general, y para evitar problemas con las variables de entorno que siempre están escritas en mayúscula, deberemos escribir el nombre de las variables en minúscula.</p>
-
 <p>Además, aunque esto no es una regla que deba obedecerse obligatoriamente, es conveniente que demos a las variables nombres que más tarde podamos recordar.
 Si abrimos un script tres meses después de haberlo escrito y nos encontramos con la expresión “m=3.5” nos será difícil entender que hace el programa.
 Habría sido mucho más claro nombrar la variable como “media=3.5”.</p>
-
-<h2 id="control-de-flujo">Control de flujo</h2>
-
+</section>
+</section>
+<section id="control-de-flujo">
+<h2>Control de flujo<a class="headerlink" href="#control-de-flujo" title="Permalink to this headline">¶</a></h2>
 <p>Como hemos visto los scripts se ejecutan línea a línea hasta llegar al final, sin embargo, muchas veces nos interesará modificar ese comportamiento de manera que el programa pueda responder de un modo u otro dependiendo de las cirscunstancias o pueda repetir trozos de código.</p>
-
-<p><img src="./static/for_if.png" alt="flow control" /></p>
-
+<a class="reference external image-reference" href="./static/for_if.png"><img alt="flow control" src="_images/for_if.png" /></a>
 <p>En este curso nos vamos a centrar en los controles de flujo más importantes:</p>
-
-<ul>
-  <li>bucles (<em>for loops</em>)</li>
-  <li>condicionales (<em>if</em>)</li>
+<ul class="simple">
+<li><p>bucles (<em>for loops</em>)</p></li>
+<li><p>condicionales (<em>if</em>)</p></li>
 </ul>
-
-<h3 id="bucles-for">Bucles (<em>for</em>)</h3>
-
+<section id="bucles-for">
+<h3>Bucles (<em>for</em>)<a class="headerlink" href="#bucles-for" title="Permalink to this headline">¶</a></h3>
 <p>La sintaxis general de los bucles es la siguiente:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>for VARIABLE in LISTA_VALORES;
-do
-	COMANDO 1
-	COMANDO 2
-	...
-	COMANDO N
-done
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">VARIABLE</span> <span class="ow">in</span> <span class="n">LISTA_VALORES</span><span class="p">;</span>
+<span class="n">do</span>
+    <span class="n">COMANDO</span> <span class="mi">1</span>
+    <span class="n">COMANDO</span> <span class="mi">2</span>
+    <span class="o">...</span>
+    <span class="n">COMANDO</span> <span class="n">N</span>
+<span class="n">done</span>
+</pre></div>
 </div>
-
 <p>Donde la lista de valores puede ser un rango númerico:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	for VARIABLE in 1 2 3 4 5 6 7 8 9 10;
-	for VARIABLE in {1..10};
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">VARIABLE</span> <span class="ow">in</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">for</span> <span class="n">VARIABLE</span> <span class="ow">in</span> <span class="p">{</span><span class="mf">1..10</span><span class="p">};</span>
+</pre></div>
 </div>
-
 <p>una serie de valores:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	for VARIABLE in file1 file2 file3;
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">VARIABLE</span> <span class="ow">in</span> <span class="n">file1</span> <span class="n">file2</span> <span class="n">file3</span><span class="p">;</span>
+</pre></div>
 </div>
-
 <p>o el resutlado de la ejecución de un comando:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	for VARIABLE in $(ls /bin | grep -E 'c.[aeiou]');
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for VARIABLE in $(ls /bin | grep -E &#39;c.[aeiou]&#39;);
+</pre></div>
 </div>
-
 <p>Hay que tener en cuenta que si pasamos un listado de valores pero lo ponemos entrecomillado, el ordenador lo enterá como un única línea:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	for VARIABLE in "file1 file2 file3";
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">VARIABLE</span> <span class="ow">in</span> <span class="s2">&quot;file1 file2 file3&quot;</span><span class="p">;</span>
+</pre></div>
 </div>
-
 <p>Un ejemplo simple de <em>for</em> sería:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
-	<span class="k">for </span>numero <span class="k">in</span> <span class="o">{</span>1..20..2<span class="o">}</span>;
-	<span class="k">do
-	  </span><span class="nb">echo </span>Este es el número: <span class="nv">$numero</span>
-	<span class="k">done</span>
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+for numero in {1..20..2};
+do
+  echo Este es el número: $numero
+done
+</pre></div>
 </div>
-
-<h3 id="condicionales-if">Condicionales (<em>if</em>)</h3>
-
+</section>
+<section id="condicionales-if">
+<h3>Condicionales (<em>if</em>)<a class="headerlink" href="#condicionales-if" title="Permalink to this headline">¶</a></h3>
 <p>La sintaxis básica de un condicional es la siguiente</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	if [[ CONDICIÓN ]];
-	then
-	  COMANDO 1 si se cumple la condición
-	fi
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">[[</span> <span class="n">CONDICIÓN</span> <span class="p">]];</span>
+<span class="n">then</span>
+  <span class="n">COMANDO</span> <span class="mi">1</span> <span class="n">si</span> <span class="n">se</span> <span class="n">cumple</span> <span class="n">la</span> <span class="n">condición</span>
+<span class="n">fi</span>
+</pre></div>
 </div>
-
 <p>También se puede especificar qué hacer si la condición no se cumple:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	if [[ CONDICIÓN ]];
-	then
-	  COMANDO 1 si se cumple la condición
-	else
-	  COMANDO 2 si no se cumple la condición
-	fi
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">[[</span> <span class="n">CONDICIÓN</span> <span class="p">]];</span>
+<span class="n">then</span>
+  <span class="n">COMANDO</span> <span class="mi">1</span> <span class="n">si</span> <span class="n">se</span> <span class="n">cumple</span> <span class="n">la</span> <span class="n">condición</span>
+<span class="k">else</span>
+  <span class="n">COMANDO</span> <span class="mi">2</span> <span class="n">si</span> <span class="n">no</span> <span class="n">se</span> <span class="n">cumple</span> <span class="n">la</span> <span class="n">condición</span>
+<span class="n">fi</span>
+</pre></div>
 </div>
-
 <p>Incluso se pueden añadir más condiciones concatenando más <em>if</em>:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	if [[ CONDICIÓN 1 ]];
-	then
-	  COMANDO 1 si se cumple la condición 1
-	elif [[ CONDICIÓN 2 ]];
-	then
-	  COMANDO 2 si se cumple la condición 2
-	else
-	  COMANDO 3 si no se cumple la condición 2
-	fi
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">[[</span> <span class="n">CONDICIÓN</span> <span class="mi">1</span> <span class="p">]];</span>
+<span class="n">then</span>
+  <span class="n">COMANDO</span> <span class="mi">1</span> <span class="n">si</span> <span class="n">se</span> <span class="n">cumple</span> <span class="n">la</span> <span class="n">condición</span> <span class="mi">1</span>
+<span class="k">elif</span> <span class="p">[[</span> <span class="n">CONDICIÓN</span> <span class="mi">2</span> <span class="p">]];</span>
+<span class="n">then</span>
+  <span class="n">COMANDO</span> <span class="mi">2</span> <span class="n">si</span> <span class="n">se</span> <span class="n">cumple</span> <span class="n">la</span> <span class="n">condición</span> <span class="mi">2</span>
+<span class="k">else</span>
+  <span class="n">COMANDO</span> <span class="mi">3</span> <span class="n">si</span> <span class="n">no</span> <span class="n">se</span> <span class="n">cumple</span> <span class="n">la</span> <span class="n">condición</span> <span class="mi">2</span>
+<span class="n">fi</span>
+</pre></div>
 </div>
-
-<h4 id="condicionales-con-números">Condicionales con números</h4>
-
+<section id="condicionales-con-numeros">
+<h4>Condicionales con números<a class="headerlink" href="#condicionales-con-numeros" title="Permalink to this headline">¶</a></h4>
 <p>Al comparar números podemos realizar las siguientes operaciones:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">operador</th>
-      <th>significado</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">-lt</td>
-      <td>menor que (&lt;)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">-gt</td>
-      <td>mayor que (&gt;)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">-le</td>
-      <td>menor o igual que (&lt;=)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">-ge</td>
-      <td>mayor o igual que (&gt;=)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">-eq</td>
-      <td>igual (==)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">-ne</td>
-      <td>no igual (!=)</td>
-    </tr>
-  </tbody>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>operador</p></th>
+<th class="head"><p>significado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-lt</p></td>
+<td><p>menor que (&lt;)</p></td>
+</tr>
+<tr class="row-odd"><td><p>-gt</p></td>
+<td><p>mayor que (&gt;)</p></td>
+</tr>
+<tr class="row-even"><td><p>-le</p></td>
+<td><p>menor o igual que (&lt;=)</p></td>
+</tr>
+<tr class="row-odd"><td><p>-ge</p></td>
+<td><p>mayor o igual que (&gt;=)</p></td>
+</tr>
+<tr class="row-even"><td><p>-eq</p></td>
+<td><p>igual (==)</p></td>
+</tr>
+<tr class="row-odd"><td><p>-ne</p></td>
+<td><p>no igual (!=)</p></td>
+</tr>
+</tbody>
 </table>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
-	<span class="nv">num1</span><span class="o">=</span><span class="nv">$1</span>  <span class="c"># la variable toma el primer valor que le pasamos al script</span>
-	<span class="nv">num2</span><span class="o">=</span><span class="nv">$2</span>  <span class="c"># la variable toma el segundo valor que le pasamos al script</span>
-	<span class="k">if</span> <span class="o">[[</span> <span class="nv">$num1</span> -gt <span class="nv">$num2</span> <span class="o">]]</span>;
-	<span class="k">then
-	  </span><span class="nb">echo</span> <span class="nv">$num1</span> es mayor que <span class="nv">$num2</span>
-	<span class="k">else
-	  </span><span class="nb">echo</span> <span class="nv">$num2</span> es mayor que <span class="nv">$num1</span>
-	<span class="k">fi</span>
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+num1=$1  # la variable toma el primer valor que le pasamos al script
+num2=$2  # la variable toma el segundo valor que le pasamos al script
+if [[ $num1 -gt $num2 ]];
+then
+  echo $num1 es mayor que $num2
+else
+  echo $num2 es mayor que $num1
+fi
+</pre></div>
 </div>
-
-<h4 id="condicionales-con-cadenas-de-texto">Condicionales con cadenas de texto</h4>
-
+</section>
+<section id="condicionales-con-cadenas-de-texto">
+<h4>Condicionales con cadenas de texto<a class="headerlink" href="#condicionales-con-cadenas-de-texto" title="Permalink to this headline">¶</a></h4>
 <p>A la hora de comparar cadenas de texto:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">operador</th>
-      <th>significado</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">=</td>
-      <td>igual, las dos cadenas de texto son exactamente idénticas</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">!=</td>
-      <td>no igual, las cadenas de texto no son exactamente idénticas</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">&lt;</td>
-      <td>es menor que (en orden alfabético ASCII)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">&gt;</td>
-      <td>es mayor que (en orden alfabético ASCII)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">-n</td>
-      <td>la cadena no está vacía</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">-z</td>
-      <td>la cadena está vacía</td>
-    </tr>
-  </tbody>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>operador</p></th>
+<th class="head"><p>significado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>=</p></td>
+<td><p>igual, las dos cadenas de texto son exactamente idénticas</p></td>
+</tr>
+<tr class="row-odd"><td><p>!=</p></td>
+<td><p>no igual, las cadenas de texto no son exactamente idénticas</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;</p></td>
+<td><p>es menor que (en orden alfabético ASCII)</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;</p></td>
+<td><p>es mayor que (en orden alfabético ASCII)</p></td>
+</tr>
+<tr class="row-even"><td><p>-n</p></td>
+<td><p>la cadena no está vacía</p></td>
+</tr>
+<tr class="row-odd"><td><p>-z</p></td>
+<td><p>la cadena está vacía</p></td>
+</tr>
+</tbody>
 </table>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
-	<span class="nv">string1</span><span class="o">=</span><span class="s1">'reo'</span>
-	<span class="nv">string2</span><span class="o">=</span><span class="s1">'teo'</span>
-	<span class="k">if</span> <span class="o">[[</span> <span class="nv">$string1</span> &gt; <span class="nv">$string2</span> <span class="o">]]</span>;
-	<span class="k">then
-	  </span><span class="nb">echo </span>Eso es verdad
-	<span class="k">else
-	  </span><span class="nb">echo </span>Eso es mentira
-	<span class="k">fi</span>
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+string1=&#39;reo&#39;
+string2=&#39;teo&#39;
+if [[ $string1 &gt; $string2 ]];
+then
+  echo Eso es verdad
+else
+  echo Eso es mentira
+fi
+</pre></div>
 </div>
-
 <p>También podemos hacer comparaciones haciendo uso de <em>wildcards</em>:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
-	<span class="nv">string1</span><span class="o">=</span><span class="s1">'reo'</span>
-	<span class="k">if</span> <span class="o">[[</span> <span class="nv">$string1</span> <span class="o">=</span> <span class="k">*</span>e<span class="k">*</span> <span class="o">]]</span>;
-	<span class="k">then
-	  </span><span class="nb">echo </span>Eso es verdad
-	<span class="k">else
-	  </span><span class="nb">echo </span>Eso es mentira
-	<span class="k">fi</span>
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+string1=&#39;reo&#39;
+if [[ $string1 = *e* ]];
+then
+  echo Eso es verdad
+else
+  echo Eso es mentira
+fi
+</pre></div>
 </div>
-
-<h4 id="condicionales-con-archivos">Condicionales con archivos</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>operador</th>
-      <th>Devuelve <em>true</em> si</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>-e name</td>
-      <td><em>name</em> existe</td>
-    </tr>
-    <tr>
-      <td>-f name</td>
-      <td><em>name</em> es un archivo normal (no es un directorio)</td>
-    </tr>
-    <tr>
-      <td>-s name</td>
-      <td><em>name</em> NO tiene tamaño cero</td>
-    </tr>
-    <tr>
-      <td>-d name</td>
-      <td><em>name</em> es un directorio</td>
-    </tr>
-    <tr>
-      <td>-r name</td>
-      <td><em>name</em> tiene permiso de lectura para el user que corre el script</td>
-    </tr>
-    <tr>
-      <td>-w name</td>
-      <td><em>name</em> tiene permiso de escritura para el user que corre el script</td>
-    </tr>
-    <tr>
-      <td>-x name</td>
-      <td><em>name</em> tiene permiso de ejecución para el user que corre el script</td>
-    </tr>
-  </tbody>
+</section>
+<section id="condicionales-con-archivos">
+<h4>Condicionales con archivos<a class="headerlink" href="#condicionales-con-archivos" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>operador</p></th>
+<th class="head"><p>Devuelve <em>true</em> si</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-e name</p></td>
+<td><p><em>name</em> existe</p></td>
+</tr>
+<tr class="row-odd"><td><p>-f name</p></td>
+<td><p><em>name</em> es un archivo normal (no es un directorio)</p></td>
+</tr>
+<tr class="row-even"><td><p>-s name</p></td>
+<td><p><em>name</em> NO tiene tamaño cero</p></td>
+</tr>
+<tr class="row-odd"><td><p>-d name</p></td>
+<td><p><em>name</em> es un directorio</p></td>
+</tr>
+<tr class="row-even"><td><p>-r name</p></td>
+<td><p><em>name</em> tiene permiso de lectura para el user que corre el script</p></td>
+</tr>
+<tr class="row-odd"><td><p>-w name</p></td>
+<td><p><em>name</em> tiene permiso de escritura para el user que corre el script</p></td>
+</tr>
+<tr class="row-even"><td><p>-x name</p></td>
+<td><p><em>name</em> tiene permiso de ejecución para el user que corre el script</p></td>
+</tr>
+</tbody>
 </table>
-
-<p></p>
-<p>Por ejemplo, podemos hacer un script que nos informe sobre el contenido de un directorio:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="c">#!/bin/bash</span>
-	<span class="k">for </span>file <span class="k">in</span> <span class="k">$(</span>ls<span class="k">)</span>;
-	<span class="k">do
-	  if</span> <span class="o">[[</span> -d <span class="nv">$file</span> <span class="o">]]</span>;
-	  <span class="k">then
-	    </span><span class="nb">echo </span>directorio: <span class="nv">$file</span>
-	  <span class="k">else
-	    if</span> <span class="o">[[</span> -x <span class="nv">$file</span> <span class="o">]]</span>;
-	    <span class="k">then
-	      </span><span class="nb">echo </span>archivo ejecutable: <span class="nv">$file</span>
-	    <span class="k">else
-	      </span><span class="nb">echo </span>archivo no ejecutable: <span class="nv">$file</span>
-	    <span class="k">fi
-	  fi
-	done</span>
-</code></pre>
+<p><span class="raw-html-m2r"><p></p></span>
+Por ejemplo, podemos hacer un script que nos informe sobre el contenido de un directorio:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+for file in $(ls);
+do
+  if [[ -d $file ]];
+  then
+    echo directorio: $file
+  else
+    if [[ -x $file ]];
+    then
+      echo archivo ejecutable: $file
+    else
+      echo archivo no ejecutable: $file
+    fi
+  fi
+done
+</pre></div>
 </div>
-
-<h2 id="manipulación-de-cadenas-de-texto">Manipulación de cadenas de texto</h2>
-
-<h3 id="extraer-subcadena">Extraer subcadena</h3>
-
-<p>Mediante <code class="highlighter-rouge">${cadena:posicion:longitud}</code> podemos extraer una subcadena de otra cadena. Si omitimos :longitud, entonces extraerá todos los caracteres hasta el final de cadena.</p>
-
-<p>Por ejemplo en la cadena <code class="highlighter-rouge">string=abcABC123ABCabc</code>:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">echo ${string:0}</code> : abcABC123ABCabc</li>
-  <li><code class="highlighter-rouge">echo ${string:0:1}</code> : a (primer caracter)</li>
-  <li><code class="highlighter-rouge">echo ${string:7} :</code>  23ABCabc</li>
-  <li><code class="highlighter-rouge">echo ${string:7:3}</code> : 23A (3 caracteres desde posición 7)</li>
-  <li><code class="highlighter-rouge">echo ${string:7:-3}</code> : 23ABCabc (desde posición 7 hasta el final)</li>
-  <li><code class="highlighter-rouge">echo ${string: -4}</code> : Cabc (atención al espacio antes del menos)</li>
-  <li><code class="highlighter-rouge">echo ${string: -4:2}</code> : Ca (atención al espacio antes del menos)</li>
+</section>
+</section>
+</section>
+<section id="manipulacion-de-cadenas-de-texto">
+<h2>Manipulación de cadenas de texto<a class="headerlink" href="#manipulacion-de-cadenas-de-texto" title="Permalink to this headline">¶</a></h2>
+<section id="extraer-subcadena">
+<h3>Extraer subcadena<a class="headerlink" href="#extraer-subcadena" title="Permalink to this headline">¶</a></h3>
+<p>Mediante <code class="docutils literal notranslate"><span class="pre">${cadena:posicion:longitud}</span></code> podemos extraer una subcadena de otra cadena. Si omitimos :longitud, entonces extraerá todos los caracteres hasta el final de cadena.</p>
+<p>Por ejemplo en la cadena <code class="docutils literal notranslate"><span class="pre">string=abcABC123ABCabc</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${string:0}</span></code> : abcABC123ABCabc</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${string:0:1}</span></code> : a (primer caracter)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${string:7}</span> <span class="pre">:</span></code>  23ABCabc</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${string:7:3}</span></code> : 23A (3 caracteres desde posición 7)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${string:7:-3}</span></code> : 23ABCabc (desde posición 7 hasta el final)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${string:</span> <span class="pre">-4}</span></code> : Cabc (atención al espacio antes del menos)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${string:</span> <span class="pre">-4:2}</span></code> : Ca (atención al espacio antes del menos)</p></li>
 </ul>
-
-<h3 id="borrar-subcadena">Borrar subcadena</h3>
-
+</section>
+<section id="borrar-subcadena">
+<h3>Borrar subcadena<a class="headerlink" href="#borrar-subcadena" title="Permalink to this headline">¶</a></h3>
 <p>Hay diferentes formas de borrar subcadenas de una cadena:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">${cadena#subcadena}</code> : borra la coincidencia más corta de subcadena desde el principio de cadena</li>
-  <li><code class="highlighter-rouge">${cadena##subcadena}</code> : borra la coincidencia más larga de subcadena desde el principio de cadena</li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">${cadena#subcadena}</span></code> : borra la coincidencia más corta de subcadena desde el principio de cadena</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">${cadena##subcadena}</span></code> : borra la coincidencia más larga de subcadena desde el principio de cadena</p></li>
 </ul>
-
-<p>Por ejemplo, en la cadena <code class="highlighter-rouge">string=abcABC123ABCabc</code>:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">echo ${string#a*C}</code> : 123ABCabc</li>
-  <li><code class="highlighter-rouge">echo ${string##a*C}</code> : abc</li>
+<p>Por ejemplo, en la cadena <code class="docutils literal notranslate"><span class="pre">string=abcABC123ABCabc</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${string#a*C}</span></code> : 123ABCabc</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${string##a*C}</span></code> : abc</p></li>
 </ul>
-
-<h3 id="reemplazar-subcadena">Reemplazar subcadena</h3>
-
+</section>
+<section id="reemplazar-subcadena">
+<h3>Reemplazar subcadena<a class="headerlink" href="#reemplazar-subcadena" title="Permalink to this headline">¶</a></h3>
 <p>También existen diferentes formas de reemplazar subcadenas de una cadena:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">${cadena/buscar/reemplazar}</code> : Sustituye la primera coincidencia de <em>buscar</em> con <em>reemplazar</em></li>
-  <li><code class="highlighter-rouge">${cadena//buscar/reemplazar}</code> : Sustituye todas las coincidencias de <em>buscar</em> con <em>reemplazar</em></li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">${cadena/buscar/reemplazar}</span></code> : Sustituye la primera coincidencia de <em>buscar</em> con <em>reemplazar</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">${cadena//buscar/reemplazar}</span></code> : Sustituye todas las coincidencias de <em>buscar</em> con <em>reemplazar</em></p></li>
 </ul>
-
-<p>Por ejemplo, en la cadena <code class="highlighter-rouge">string=abcABC123ABCabc</code>:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">echo ${string/abc/xyz}</code> : xyzABC123ABCabc.</li>
-  <li><code class="highlighter-rouge">echo ${string//abc/xyz}</code> : xyzABC123ABCxyz.</li>
+<p>Por ejemplo, en la cadena <code class="docutils literal notranslate"><span class="pre">string=abcABC123ABCabc</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${string/abc/xyz}</span></code> : xyzABC123ABCabc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${string//abc/xyz}</span></code> : xyzABC123ABCxyz.</p></li>
 </ul>
-
-<h2 id="operaciones-aritméticas">Operaciones aritméticas</h2>
-
+</section>
+</section>
+<section id="operaciones-aritmeticas">
+<h2>Operaciones aritméticas<a class="headerlink" href="#operaciones-aritmeticas" title="Permalink to this headline">¶</a></h2>
 <p>Por último, Bash también permite la operaciones aritméticas con número enteros:</p>
-<ul>
-  <li>+ - : suma, resta</li>
+<ul class="simple">
+<li><ul>
+<li><ul>
+<li><p>: suma, resta</p></li>
 </ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ $num=10
-  ~$ echo $((num + 2))
-</code></pre>
-</div>
-<ul>
-  <li>** : potencia</li>
+</li>
 </ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ echo $((num ** 2))
-</code></pre>
-</div>
-<ul>
-  <li>* / % : multiplicación, división, resto (módulo)</li>
+</li>
 </ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ echo $((num * 2))
-  ~$ echo $((num / 2))
-  ~$ echo $((num % 2))
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ $num=10
+~$ echo $((num + 2))
+</pre></div>
 </div>
-<ul>
-  <li>VAR++ VAR– : post-incrementa, post-decrementa</li>
+<ul class="simple">
+<li><p>** : potencia</p></li>
 </ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ echo $((num++))
-  ~$ echo $num
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ echo $((num ** 2))
+</pre></div>
 </div>
-<ul>
-  <li>++VAR –VAR : pre-incrementa, pre-decrementa</li>
+<ul class="simple">
+<li><ul>
+<li><p>/ % : multiplicación, división, resto (módulo)</p></li>
 </ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  ~$ echo $((++num))
-  ~$ echo $num
-</code></pre>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ echo $((num * 2))
+~$ echo $((num / 2))
+~$ echo $((num % 2))
+</pre></div>
 </div>
-
-<h2 id="parallel">Parallel</h2>
-
+<ul class="simple">
+<li><p>VAR++ VAR– : post-incrementa, post-decrementa</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ echo $((num++))
+~$ echo $num
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>++VAR –VAR : pre-incrementa, pre-decrementa</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ echo $((++num))
+~$ echo $num
+</pre></div>
+</div>
+</section>
+<section id="parallel">
+<h2>Parallel<a class="headerlink" href="#parallel" title="Permalink to this headline">¶</a></h2>
 <p><em>parallel</em> es un programa que permite la ejecución en paralelo de diferentes trabajos siempre que dispongamos de un ordenador o  ordenadores con más de un procesador.</p>
-
 <p>Aunque este programa no tiene nada que ver con los scripts de Bash,  sí que hacer uso de éstos no resultará muy útil para preparar el archivo de entrada para <em>parallel</em>.  Este programa requiere pasarle un archivo donde cada línea es trabajo a realizar y puede consistir tanto en un comando como en un pequeño script a ejecutar. Y es ahí donde saber algo de scripting en Bash nos puede facilitar la tarea. Veamos un ejemplo de <em>input</em> para <em>parallel</em>:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	to_run.txt:
-	zcat file1.fasta.gz | grep '&gt;' | sed 's/&gt;//' | bgzip &gt; sample_names1.txt.gz
-	zcat file2.fasta.gz | grep '&gt;' | sed 's/&gt;//' | bgzip &gt; sample_names2.txt.gz
-	zcat file3.fasta.gz | grep '&gt;' | sed 's/&gt;//' | bgzip &gt; sample_names3.txt.gz
-	zcat file4.fasta.gz | grep '&gt;' | sed 's/&gt;//' | bgzip &gt; sample_names4.txt.gz
-	zcat file5.fasta.gz | grep '&gt;' | sed 's/&gt;//' | bgzip &gt; sample_names5.txt.gz
-	zcat file6.fasta.gz | grep '&gt;' | sed 's/&gt;//' | bgzip &gt; sample_names6.txt.gz
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">to_run</span><span class="o">.</span><span class="n">txt</span><span class="p">:</span>
+<span class="n">zcat</span> <span class="n">file1</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">gz</span> <span class="o">|</span> <span class="n">grep</span> <span class="s1">&#39;&gt;&#39;</span> <span class="o">|</span> <span class="n">sed</span> <span class="s1">&#39;s/&gt;//&#39;</span> <span class="o">|</span> <span class="n">bgzip</span> <span class="o">&gt;</span> <span class="n">sample_names1</span><span class="o">.</span><span class="n">txt</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">zcat</span> <span class="n">file2</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">gz</span> <span class="o">|</span> <span class="n">grep</span> <span class="s1">&#39;&gt;&#39;</span> <span class="o">|</span> <span class="n">sed</span> <span class="s1">&#39;s/&gt;//&#39;</span> <span class="o">|</span> <span class="n">bgzip</span> <span class="o">&gt;</span> <span class="n">sample_names2</span><span class="o">.</span><span class="n">txt</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">zcat</span> <span class="n">file3</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">gz</span> <span class="o">|</span> <span class="n">grep</span> <span class="s1">&#39;&gt;&#39;</span> <span class="o">|</span> <span class="n">sed</span> <span class="s1">&#39;s/&gt;//&#39;</span> <span class="o">|</span> <span class="n">bgzip</span> <span class="o">&gt;</span> <span class="n">sample_names3</span><span class="o">.</span><span class="n">txt</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">zcat</span> <span class="n">file4</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">gz</span> <span class="o">|</span> <span class="n">grep</span> <span class="s1">&#39;&gt;&#39;</span> <span class="o">|</span> <span class="n">sed</span> <span class="s1">&#39;s/&gt;//&#39;</span> <span class="o">|</span> <span class="n">bgzip</span> <span class="o">&gt;</span> <span class="n">sample_names4</span><span class="o">.</span><span class="n">txt</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">zcat</span> <span class="n">file5</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">gz</span> <span class="o">|</span> <span class="n">grep</span> <span class="s1">&#39;&gt;&#39;</span> <span class="o">|</span> <span class="n">sed</span> <span class="s1">&#39;s/&gt;//&#39;</span> <span class="o">|</span> <span class="n">bgzip</span> <span class="o">&gt;</span> <span class="n">sample_names5</span><span class="o">.</span><span class="n">txt</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">zcat</span> <span class="n">file6</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">gz</span> <span class="o">|</span> <span class="n">grep</span> <span class="s1">&#39;&gt;&#39;</span> <span class="o">|</span> <span class="n">sed</span> <span class="s1">&#39;s/&gt;//&#39;</span> <span class="o">|</span> <span class="n">bgzip</span> <span class="o">&gt;</span> <span class="n">sample_names6</span><span class="o">.</span><span class="n">txt</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
 </div>
-
 <p><em>parallel</em> no viene instalado por defecto en algunas distribuciones Linux, por tanto, lo primero que debemos hacer es instalarlo:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	~$ sudo apt-get install parallel
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ sudo apt-get install parallel
+</pre></div>
 </div>
-
 <p>Con la opción <em>-j</em> podemos especificarle el número de trabajos simultáneos. Así pues, si tenemos 4 procesadores disponibles y queremos correr un trabajo por procesador correríamos:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	~$ parallel -j 4 to_run.txt
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ parallel -j 4 to_run.txt
+</pre></div>
 </div>
-
-<h2 id="ejercicios">Ejercicios</h2>
-
-<ol>
-  <li>
-    <p>Haz un script que cree 40 archivos <em>.txt</em> en una carpeta de tu escritorio (usa <em>touch</em> para crearlos)</p>
-  </li>
-  <li>
-    <p>Haz un script que comprima con <em>gzip</em> sólo los archivos 25 y 29.</p>
-  </li>
-  <li>
-    <p>Escribe un script que cambie la extensión de los ficheros que contengan un 3 en su nombre de <em>.txt</em> a <em>.md</em>.</p>
-  </li>
-  <li>
-    <p>Crea un script que copie todos los archivos (no directorios) <em>/etc</em> a una carpeta de tu escritorio.</p>
-  </li>
-  <li>
-    <p>Prepara un script que cuenta el número de directorios y archivos que hay en <em>/etc</em></p>
-  </li>
-  <li>
-    <p>Haz un script que devuelva el número de archivos que has guardado</p>
-  </li>
-  <li>
-    <p>Supon que tenemos un programa en Python llamado <em>scan_qtl.py</em> que requiere tres parámetros de entrada <em>a</em>, <em>b</em>. Queremos correr todas la combinaciones paramétricas posibles para <em>a</em> de 1 a 10 de 1 en 1 y <em>b</em> = [pop1, pop2, pop3, all]. Prepa el archivo de entrada para usar en <em>parallel</em>. La línea de ejecución del programa sería algo similar a <code class="highlighter-rouge">python scan_qtl.py 1 pop1 &gt; results.txt</code></p>
-  </li>
-  <li>
-    <p>En una nueva versión de <em>scan_qtl.py</em>, el programa admite un tercer parámetro <em>c</em> = [1, 10, 100 y 1000]. Prepara el archivo de entrada para usar en <em>parallel</em> con todas las combinaciones paramétricas de <em>a</em>, <em>b</em> y <em>c</em>. La línea de ejecución del programa sería algo similar a <code class="highlighter-rouge">python scan_qtl.py 1 pop1 100 &gt; results.txt</code></p>
-  </li>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Haz un script que cree 40 archivos <em>.txt</em> en una carpeta de tu escritorio (usa <em>touch</em> para crearlos)</p></li>
+<li><p>Haz un script que comprima con <em>gzip</em> sólo los archivos 25 y 29.</p></li>
+<li><p>Escribe un script que cambie la extensión de los ficheros que contengan un 3 en su nombre de <em>.txt</em> a <em>.md</em>.</p></li>
+<li><p>Crea un script que copie todos los archivos (no directorios) <em>/etc</em> a una carpeta de tu escritorio.</p></li>
+<li><p>Prepara un script que cuenta el número de directorios y archivos que hay en <em>/etc</em></p></li>
+<li><p>Haz un script que devuelva el número de archivos que has guardado</p></li>
+<li><p>Supon que tenemos un programa en Python llamado <em>scan_qtl.py</em> que requiere tres parámetros de entrada <em>a</em>, <em>b</em>. Queremos correr todas la combinaciones paramétricas posibles para <em>a</em> de 1 a 10 de 1 en 1 y <em>b</em> = [pop1, pop2, pop3, all]. Prepa el archivo de entrada para usar en <em>parallel</em>. La línea de ejecución del programa sería algo similar a <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">scan_qtl.py</span> <span class="pre">1</span> <span class="pre">pop1</span> <span class="pre">&gt;</span> <span class="pre">results.txt</span></code></p></li>
+<li><p>En una nueva versión de <em>scan_qtl.py</em>, el programa admite un tercer parámetro <em>c</em> = [1, 10, 100 y 1000]. Prepara el archivo de entrada para usar en <em>parallel</em> con todas las combinaciones paramétricas de <em>a</em>, <em>b</em> y <em>c</em>. La línea de ejecución del programa sería algo similar a <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">scan_qtl.py</span> <span class="pre">1</span> <span class="pre">pop1</span> <span class="pre">100</span> <span class="pre">&gt;</span> <span class="pre">results.txt</span></code></p></li>
 </ol>
+</section>
+</section>
 
-  </div>
 
-</article>
 
-      </div>
+        
+
     </main>
 
-    <footer class="site-footer">
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
 
-  <div class="wrapper">
-
-    <h2 class="footer-heading">Curso Unix</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>
-            
-              Curso Unix
-            
-            </li>
-            
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          
-
-          
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>Introduction to the Linux command line.</p>
-      </div>
-    </div>
-
-  </div>
-
-</footer>
-
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 
   </body>
-
 </html>

@@ -1,0 +1,216 @@
+
+NCBI database search
+~~~~~~~~~~~~~~~~~~~~
+
+NCBI database search
+====================
+
+This is a tutorial based on the `NCBI's search <http://www.ncbi.nlm.nih.gov/entrez/query/static/help/entrez_tutorial_BIB.pdf>`_ tutorial.
+
+We can use the `NCBI search <https://www.ncbi.nlm.nih.gov/search>`_ interface to access databases related, among other things, to:
+
+
+* Bibliography
+* Nucleotide sequences
+* Protein sequences
+* Complete genomes
+* Protein structures
+
+To show how NCBI search works we are going to search for information about the gene MLH1, a human gene involved in human colon cancer.
+
+We want to look for:
+
+
+* mRNA that better represents the gene
+* Most relevant bibliographic references
+* Protein sequences
+* Conserved domains
+* Similar proteins
+* Mutations found in the gene
+* Protein structure.
+* Genome region in which the gene is located
+
+Go to the `NCBI search <https://www.ncbi.nlm.nih.gov/search>`_ site and look for the gene name: MLH1
+
+You will get results for the search in many of the NCBI's databases.
+
+There are tools and filters to reduce the number of results obtained:
+
+
+* 
+  You can look for results that have more than one search term. For instance, you can look for MLH1 and Human using *AND*. Look for "MLH1 AND Human"
+
+* 
+  You can also restrict the search to particular fields, otherwise the search terms can occur at any place in the found records. To restrict the search you have to write the field ID between square brackets. Try with "MLH1 AND Human[ORGN]".
+  You can also build this complex queries in the advance query page of some of the databases, e.g. the `advance query <http://www.ncbi.nlm.nih.gov/nuccore/advanced>`_ page of the Nucleotide Database.
+
+Main GenBank fields.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+     - Search field
+   * - Locus name
+     - Unique sequence name
+     - [ACCN]
+   * - Sequence length
+     - Sequence Length
+     - [SLEN]
+   * - Molecule Type
+     - DNA, genomic, mRNA, etc.
+     - [PROP]
+   * - Genbank Division
+     - Division for the sequence
+     - [PROP]
+   * - Modification Date
+     - Date for the last edit
+     - [MDAT]
+   * - Definition
+     - Brief description
+     - [TITL]
+   * - Accession
+     - Unique accession ID. It does not changes with modifications
+     - [ACCN]
+   * - Version
+     - Version number of the sequence
+     - All fields
+   * - Keywords
+     - keywords that describe the sequence
+     - [KYWD]
+   * - Source
+     - Common name for the source species
+     - [ORGN]
+   * - Organism
+     - Oficial name for the source species
+     - [ORGN]
+   * - Reference
+     - Related publications
+     - [TITL] [AUTH] [JOUR]
+   * - Features
+     - Regions of interest
+     - [FKEY]
+   * - CDS
+     - Coding Sequence
+     - [FKEY]
+
+
+We can go to the results in one of the databases, for instance Nucleotide, and evaluate the results.
+
+In the database search result page you have aditional filters available in the left column and the search query used in the right column.
+Also in the search column you can find your recent search history.
+
+You can also search in the page for any of the databases without going back to the general search page.
+For instance, you could search only in the Nucleotide database by searching in the `Nucleotide Database <http://www.ncbi.nlm.nih.gov/nuccore/>`_ page instead of in the general search page.
+
+mRNA
+====
+
+There are different nucleotide databases in NCBI, but let's do some searches in the `Nucleotide Database <http://www.ncbi.nlm.nih.gov/nuccore/>`_.
+
+
+* 
+  How many records do we get if we look for "colon cancer" in the Nucleotide Database?
+
+* 
+  How many records do you expect to get if you look for MLH1? How many do you get? Why?
+
+To look for the sequences that best represent the MLH1 gene it is better to look in the RefSeq database.
+We can filter down the results that we got by selecting RefSeq in "Source Databases" in the left column.
+
+There are still many results for MLH1 in RefSeq.
+We can get less results if we restrict the search to the *Definition* field by doing the search "MLH1[TITL]"
+
+We haven't filter down the results to get only human results yet.
+We could do it by using the search "MLH1[TITL] AND Human[ORGN]", but we can also do it by going to the `advanced query <http://www.ncbi.nlm.nih.gov/nuccore/advanced>`_ page.
+In the advance query form we can select the fields from drop down menus instead of using the square bracket syntax and also we can use a previous search and add terms to it by using the numbers displayed in the history table.
+For isntance we could do something similar to "Human[ORGN] AND #1"
+
+How many results do you get?
+
+Bibliographic References
+========================
+
+Once we have located the sequence of interest it is very easy to find related information in the search result page or in the page for any of the records by going to the section related information.
+Thus we can look for the papers related to our search or to any of the sequence records.
+
+In the Pubmed case we can differentiate the references that include the complete free text by looking for PMC.
+
+Other related information
+=========================
+
+Most of NCBI's databases are related in this way so we can go from sequences to papers, from papers to genes, from genes to structures, etc.
+
+Look for the related proteins to the MLH1 human gene for its homologous genes.
+
+In the page for any of its proteins you can look for conserved domains.
+
+
+* Which are its domains?
+* Which are their functions?
+* Which other proteins share any of its domains?
+
+Blast search
+============
+
+Also in its protein page you can do a Blast search by going to the Blink and look for other proteins with similar sequences.
+
+Within the Blink blast search we have Display Options that allow us to filter down the results and get only the results with a Swiss-Prot entry or the results with a PDB structure.
+
+Gene
+====
+
+There is in NCBI a Gene database that collects all the information for the genes of some species.
+You can access to the the gene page by looking in the gene database or by following a link in the related information section of any record in the other databases.
+
+Mutations
+=========
+
+In the gene page you can access to the related SNPs found in that gene in SNP Geneview.
+
+In the Geneview page you can look for the SNPs with clinical information in Clinical Source.
+
+
+* Are there any mutation with a related 3D structure?
+* Any mutation with links to OMIM? (Look in the column Clinically Associated)
+
+Genomic region
+==============
+
+In the protein, mRNA or RefSeqGene page you have a Graphics link to show the record information in a genome graphical browser instead of in the Genbank format.
+
+You can also get a representation of the genomic region using the related information link "Map viewer".
+
+Exercise 1
+==========
+
+Look for the most relevant information for any of the human genes FXN, OCA2 or FOXP2.
+
+
+* Molecular function
+* Related diseases
+* Genomic structure
+* Protein sequence
+* Homologous sequences in other species
+
+Exercise 2
+==========
+
+Are there any genes described for the HYPERCHOLESTEROLEMIA?
+
+Which would be the most convenient database to look for human diseases?
+
+Exercise 3
+==========
+
+Look for information related to the possible carcinogenic effects of: nicotine, milk, cannabis and banana.
+
+Look for information in Google and Pubmed?
+
+
+* 
+  How many references have you found in both searches? Are the references consistent? Can you get solid conclusion? Which evidences would you value the most?
+
+* 
+  Look in Pubmed, but only in the "meta-analysis" references. Which conclusions can you reach now?

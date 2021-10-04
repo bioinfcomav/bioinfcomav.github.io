@@ -1,589 +1,479 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <title>Sequence Alignment</title>
-  <meta name="description" content="Introduction to Bioinformatics for the Biotechnology degree.">
-
-  <link rel="stylesheet" href="/courses/biotech3/css/main.css">
-  <link rel="canonical" href="/courses/biotech3/theory/sequence_alignment.html">
-  <link rel="alternate" type="application/rss+xml" title="Bioinformatics" href="/courses/biotech3/feed.xml">
-</head>
-
-
+    <title>Sequence Alignment &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Blast" href="blast.html" />
+    <link rel="prev" title="Biological Databases" href="databases.html" /> 
+  </head>
   <body>
 
-    <header class="site-header" role="banner">
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
 
-  <div class="wrapper">
 
-    <a class="site-title" href="/courses/biotech3/">Bioinformatics</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/alignment.html">Sequence Alignment Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/assembly.html">Assembly</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/blast.html">Blast</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/blast.html">Blast Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/covid.html">COVID19</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/databases.html">Biological Databases</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/emboss.html">Introduction to EMBOSS</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/entrez.html">NCBI database search Practice</a>
-          
-        
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/">Home</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/linux.html">Unix CLI</a>
-          
-        
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/multiple.html">Multiple Sequence Alignment Practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/multiple.html">Multiple Sequence Alignment</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/norms.html">Norms</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/phylogeny.html">Phylogeny practice</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/phylogeny.html">Phylogeny and evolution</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/prev_knowledge.html">Previous Knowledge</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/sequence_alignment.html">Sequence Alignment</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/theory/structural_annotation.html">Structural Annotation</a>
-          
-        
-          
-          <a class="page-link" href="/courses/biotech3/practice/structural_annotation.html">Structural Annotation</a>
-          
-        
-      </div>
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a>Software</a>
+                <ul>
+                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
+                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+               </ul>
+            </li>
+            <li><a href="courses.html">Courses</a>
+                <ul>
+                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="courses/unix/index.html">Linux</a></li>
+                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+               </ul>
+        </ul>
     </nav>
 
-  </div>
-
-</header>
-
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">Sequence Alignment</h1>
-  </header>
-
-  <div class="post-content">
-    <h1 id="biological-meaning">Biological meaning</h1>
-
+    <main>
+                
+    
+  <section id="sequence-alignment">
+<h1>Sequence Alignment<a class="headerlink" href="#sequence-alignment" title="Permalink to this headline">¶</a></h1>
+<section id="biological-meaning">
+<h2>Biological meaning<a class="headerlink" href="#biological-meaning" title="Permalink to this headline">¶</a></h2>
 <p>In general, the more similar two sequences are, the more similar should their functions be and more phylogenetically close they should be.
 The sequences for the same gene in a group of species will be more different the more distant phylogenetically they are.
 Sequences will get mutations over time, so the more time has passed since two species split, the more mutations will have their sequences and the more different their sequences will be.
 Mutations can be residue (nucleotide or aminoacid) substitutions, insertions or deletions.</p>
-
-<p><img src="../static/finches.jpg" alt="Darwin finches" /></p>
-
+<a class="reference external image-reference" href="../static/finches.jpg"><img alt="Darwin finches" src="../_images/finches.jpg" /></a>
 <p>(From BSCS, Biological Science: Molecules to Man, Houghton Mifflin Co., 1963)</p>
-
-<p><img src="../static/finch_tree.png" alt="Finches tree" /></p>
-
+<a class="reference external image-reference" href="../static/finch_tree.png"><img alt="Finches tree" src="../_images/finch_tree.png" /></a>
 <p>Biological sequences are similar, usually, because they are homologous, because they share a common ancestor.
 Homology is not a quantitative concept, two sequences can be homologous or not, but they cannot be 50% homologous.
 They either share a common ancestor or they don’t.</p>
-
 <p>How do we know that two sequences are homologous?
 Usually we infer it from their similarity.
 If two biological sequences are similar we tend to infer that they are similar because they are homologous.</p>
-
-<h2 id="usefulness">Usefulness</h2>
-
+<section id="usefulness">
+<h3>Usefulness<a class="headerlink" href="#usefulness" title="Permalink to this headline">¶</a></h3>
 <p>Alignments could be used to:</p>
-
-<ul>
-  <li>Quantify the phylogenetic distance between two sequences</li>
-  <li>Look for functional domains</li>
-  <li>Compare a mRNA with its genomic region</li>
-  <li>Identify polymorphisms and mutations between sequences</li>
+<ul class="simple">
+<li><p>Quantify the phylogenetic distance between two sequences</p></li>
+<li><p>Look for functional domains</p></li>
+<li><p>Compare a mRNA with its genomic region</p></li>
+<li><p>Identify polymorphisms and mutations between sequences</p></li>
 </ul>
-
-<h1 id="sequence-alignment">Sequence alignment</h1>
-
+</section>
+</section>
+<section id="id1">
+<h2>Sequence alignment<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>The first step to compare two sequences is, usually, to align them.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">alignment</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>No alignment
+ <span class="n">CGATGCTAGCGTATCGTAGTCTATCGTAC</span>
+              <span class="o">|</span>     <span class="o">||</span>
+ <span class="n">ACGATGCTAGCGTTTCGTATCATCGTA</span>
 
- CGATGCTAGCGTATCGTAGTCTATCGTAC
-              |     ||
- ACGATGCTAGCGTTTCGTATCATCGTA
+<span class="n">Alignned</span>
 
-Alignned
-
- -CGATGCTAGCGTATCGTAGTCTATCGTAC
-  |||||||||||| |||||||||||||||
- ACGATGCTAGCGTTTCGTA-TC-ATCGTA-
-</code></pre>
+ <span class="o">-</span><span class="n">CGATGCTAGCGTATCGTAGTCTATCGTAC</span>
+  <span class="o">||||||||||||</span> <span class="o">|||||||||||||||</span>
+ <span class="n">ACGATGCTAGCGTTTCGTA</span><span class="o">-</span><span class="n">TC</span><span class="o">-</span><span class="n">ATCGTA</span><span class="o">-</span>
+</pre></div>
 </div>
-
 <p>There could be substitutions, changes of one residue with another, or gaps.
 Gaps are missing residues and could be due to a deletion in one sequence or an insertion in the other sequence.</p>
-
 <p>Gaps complicate the alignments.
 Algorithms should take into account the possibility of introducing gaps and once we allow them to create gaps several alignments can be constructed between two sequences.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">gaps</span> <span class="p">(</span><span class="mi">10</span> <span class="n">matches</span><span class="p">)</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>No gaps (10 matches)
+ <span class="n">a</span><span class="p">:</span>  <span class="n">ATATTGCTACGTATATCAT</span>
+         <span class="o">||||||||||</span>
+ <span class="n">b</span><span class="p">:</span> <span class="n">ATATATGCTACGTATCAT</span>
 
- a:  ATATTGCTACGTATATCAT
-         ||||||||||
- b: ATATATGCTACGTATCAT
+<span class="n">With</span> <span class="n">one</span> <span class="n">gap</span> <span class="p">(</span><span class="mi">14</span> <span class="n">matches</span><span class="p">)</span>
 
-With one gap (14 matches)
+ <span class="n">a</span><span class="p">:</span> <span class="n">ATAT</span><span class="o">-</span><span class="n">TGCTACGTATATCAT</span>
+    <span class="o">||||</span> <span class="o">||||||||||</span>
+ <span class="n">b</span><span class="p">:</span> <span class="n">ATATATGCTACGTATCAT</span>
 
- a: ATAT-TGCTACGTATATCAT
-    |||| ||||||||||
- b: ATATATGCTACGTATCAT
-
-With two gaps (16 matches)
- a: ATAT-TGCTACGTATATCAT
-    |||| |||||||  ||||||
- b: ATATATGCTACG--TATCAT
-</code></pre>
+<span class="n">With</span> <span class="n">two</span> <span class="n">gaps</span> <span class="p">(</span><span class="mi">16</span> <span class="n">matches</span><span class="p">)</span>
+ <span class="n">a</span><span class="p">:</span> <span class="n">ATAT</span><span class="o">-</span><span class="n">TGCTACGTATATCAT</span>
+    <span class="o">||||</span> <span class="o">|||||||</span>  <span class="o">||||||</span>
+ <span class="n">b</span><span class="p">:</span> <span class="n">ATATATGCTACG</span><span class="o">--</span><span class="n">TATCAT</span>
+</pre></div>
 </div>
-
 <p>The objective of a sequence alignment is, usually, to align the homologous positions of the two sequences.
 The homologous positions are the ones that come from the same position in the ancestral sequence.
 We don’t know the ancestral sequence, so we won’t be completely sure that we have succeeded.
 Another complementary objective could be to align protein regions that have the same structure or function.</p>
-
 <p>Aligning similar sequences by any algorithm usually creates alignments that are usually correct, but when sequences are very different aligning them could be a challenge.
 Once a long time has passed since the split of the species the sequences can be so changed by the mutations that any meaningful similarities could have been lost an creating a meaningful alignment could be very difficult.</p>
-
-<h2 id="evaluating-the-alignments">Evaluating the alignments</h2>
-
+<section id="evaluating-the-alignments">
+<h3>Evaluating the alignments<a class="headerlink" href="#evaluating-the-alignments" title="Permalink to this headline">¶</a></h3>
 <p>To be able to compare the different possible alignments we can score them.
 We can create a scoring system that gives more points to alignments that are biologically more reasonable.
 Ideally we would create a scoring system that gives more points to the alignments that align the homologous positions.</p>
-
 <p>A naive scoring system could be to count the number of matching positions, or the number of matching positions along 100 residues.
 Usually the scoring systems also take into account the number of gaps.
 They penalize the alignments depending on the number and the length of the gaps present.
 So the main features taken into account to create an scoring system are usually:</p>
-
-<ul>
-  <li>number of matching residues (taking into account the similarity if they are aminoacids)</li>
-  <li>number of missmatches</li>
-  <li>number of gaps</li>
-  <li>length of the gaps</li>
+<ul class="simple">
+<li><p>number of matching residues (taking into account the similarity if they are aminoacids)</p></li>
+<li><p>number of missmatches</p></li>
+<li><p>number of gaps</p></li>
+<li><p>length of the gaps</p></li>
 </ul>
-
 <p>We can devise different scoring schemes with those measures.
 For instances:</p>
-
-<ul>
-  <li>scoring schema 1: match +1, mismatch: 0, gap creation: -1 gap extension: -1</li>
-  <li>scoring schema 1: match +1, mismatch: -1, gap creation: -1 gap extension: 0</li>
+<ul class="simple">
+<li><p>scoring schema 1: match +1, mismatch: 0, gap creation: -1 gap extension: -1</p></li>
+<li><p>scoring schema 1: match +1, mismatch: -1, gap creation: -1 gap extension: 0</p></li>
 </ul>
-
 <p>Of course, one alignment will have a different score under different scoring schemes.
 Speaking of the score of an alignment it is meaningless if we do not take into account the scoring schema used.
 It also has no sense to compare the scores of different alignments done under different schemes.</p>
-
 <p>Once we have decided which scoring schema to use, the alignment algorithm should try to create the alignment that obtains the maximum score under that particular scoring schema.</p>
-
 <p>Every software implementation of an algorithm will usually have some default values for its parameters.
 These default values have been calibrated by the software creator to work well in a particular problem.
 The bioinformatician should be aware of how well those values apply to the particular problem at hand.
 Usually, if the problem is similar to the one that motivated the creation of the software the default value will work OK because the original creator of the software usually knows how to optimize his software for that task.
 When our problem is different from the original one we have to be aware of the changes to adapt the software to our needs.</p>
-
-<h2 id="gobal-and-local-alignments">Gobal and local alignments</h2>
-
+</section>
+<section id="gobal-and-local-alignments">
+<h3>Gobal and local alignments<a class="headerlink" href="#gobal-and-local-alignments" title="Permalink to this headline">¶</a></h3>
 <p>We could divide the alignment algorithms in two types: global and local.
 The global algorithms try to create an alignment that covers completely both sequences adding whatever gaps necessary.
 The local algorithms try to align only the most similar regions.
 If removing a region from one end of a sequence improves the alignment score they will do it.</p>
-
 <p>Local alignments are usually the best option unless we are sure that the sequences are similar in all its extension.
 Besides, the local alignment algorithms will create a global alignment with both sequences covered if they are similar enough.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Global</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Global
+  <span class="n">TACGGGGCTAGCTA</span><span class="o">-</span><span class="n">TCGTAG</span>
+  <span class="o">||||</span>    <span class="o">|||</span>    <span class="o">||||||</span>
+  <span class="n">TAGC</span><span class="o">----</span><span class="n">TAG</span><span class="o">----</span><span class="n">TCGTAG</span>
 
-  TACGGGGCTAGCTA-TCGTAG
-  ||||    |||    ||||||
-  TAGC----TAG----TCGTAG
+<span class="n">Local</span>
 
-Local
-
-    TAGCTA-TCGTAG
-    |||||| ||||||
-    TAGCTAGTCGTAG
-</code></pre>
+    <span class="n">TAGCTA</span><span class="o">-</span><span class="n">TCGTAG</span>
+    <span class="o">||||||</span> <span class="o">||||||</span>
+    <span class="n">TAGCTAGTCGTAG</span>
+</pre></div>
 </div>
-
 <p>The main practical problem with local alignment algorithms is that they are computationally more demanding that its gobal equivalents.
 Global alignments are usually only used within the multiple alignment algorithms (alignments with more than two sequences).</p>
-
-<h1 id="alignment-methods">Alignment methods</h1>
-
-<h2 id="dot-plot-or-dot-matrix">Dot plot (or Dot matrix)</h2>
-
+</section>
+</section>
+<section id="alignment-methods">
+<h2>Alignment methods<a class="headerlink" href="#alignment-methods" title="Permalink to this headline">¶</a></h2>
+<section id="dot-plot-or-dot-matrix">
+<h3>Dot plot (or Dot matrix)<a class="headerlink" href="#dot-plot-or-dot-matrix" title="Permalink to this headline">¶</a></h3>
 <p>This alignment method creates a graphical representation of the alignment.
 It creates intuitive representations and it has the advantage that it will show different alternative alignments between two sequences.
 Other, more standard, alignment methods usually give back only one alignment, the best one, unless instructed otherwise.</p>
-
 <p>Dot plot methods are quite good to study the structure of the sequences involved.
 They can show repetitions, insertions and deletions clearly.</p>
-
 <p>Once we have identified the regions that match between two sequences we could use another method to create a more conventional text based alignment.</p>
-
 <p>To create a dot plot alignment one sequence is put in the horizontal axis and the other in vertical one.
 The matches between both sequences are shown as marks in the corresponding position.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>   CATGCT
- A  x
- T   x  x
- G    x
- C x   x
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">CATGCT</span>
+<span class="n">A</span>  <span class="n">x</span>
+<span class="n">T</span>   <span class="n">x</span>  <span class="n">x</span>
+<span class="n">G</span>    <span class="n">x</span>
+<span class="n">C</span> <span class="n">x</span>   <span class="n">x</span>
+</pre></div>
 </div>
-
 <p>The alignment is shown as a diagonal in the plot.</p>
-
-<p><img src="../static/dot.png" alt="Dot Plot" /></p>
-
+<a class="reference external image-reference" href="../static/dot.png"><img alt="Dot Plot" src="../_images/dot.png" /></a>
 <p>There are different programs to create dot plots.
-An example is dotmatcher from the <a href="http://emboss.sourceforge.net/">emboss</a> suite.</p>
-
+An example is dotmatcher from the <a class="reference external" href="http://emboss.sourceforge.net/">emboss</a> suite.</p>
 <p>It is easy to detect big insertions, deletions and forward and reverse repeats.</p>
-
-<p><img src="../static/dotplots.png" alt="Dot Plot with altered structured" /></p>
-
+<a class="reference external image-reference" href="../static/dotplots.png"><img alt="Dot Plot with altered structured" src="../_images/dotplots.png" /></a>
 <p>Tandem duplication.</p>
-
-<p><img src="../static/duplicacion_dotmatrix.png" alt="Dot Plot duplication" /></p>
-
+<a class="reference external image-reference" href="../static/duplicacion_dotmatrix.png"><img alt="Dot Plot duplication" src="../_images/duplicacion_dotmatrix.png" /></a>
 <p>And we can do a genome wide analysis.</p>
-
-<p><img src="../static/arabidopsis.png" alt="Arabidopsis Dot Plot" /></p>
-
+<a class="reference external image-reference" href="../static/arabidopsis.png"><img alt="Arabidopsis Dot Plot" src="../_images/arabidopsis.png" /></a>
 <p>One limitation of the dotplot method is that although we detect similar regions we do not obtain the alignment.</p>
-
-<h2 id="sensitivity-and-specificity">Sensitivity and Specificity</h2>
-
+</section>
+<section id="sensitivity-and-specificity">
+<h3>Sensitivity and Specificity<a class="headerlink" href="#sensitivity-and-specificity" title="Permalink to this headline">¶</a></h3>
 <p>A variation of the dot plot algorithm can compare windows of several residues instead of individual residues.
 In that case a similarity threshold is set to mark a position as similar.
 These parameters will influence the sensitivity and specificity of the analysis.
 If we increase the threshold for a given window size or we decrease the window size for a given threshold we will obtain less spurious signals.</p>
-
-<p><img src="../static/protein_dottup_3.png" alt="protein dotup word 3" />
-<img src="../static/protein_dottup_4.png" alt="protein dotup word 4" /></p>
-
+<a class="reference external image-reference" href="../static/protein_dottup_3.png"><img alt="protein dotup word 3" src="../_images/protein_dottup_3.png" /></a>
+<a class="reference external image-reference" href="../static/protein_dottup_4.png"><img alt="protein dotup word 4" src="../_images/protein_dottup_4.png" /></a>
 <p>The more stringent the parameters the less noise we will detect, but the more real alignments we will loose.
-This is related with two very important concepts that can be applied to many bioinformatic and statistical analyses: <a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">sensitivity and specificity</a>.</p>
-
+This is related with two very important concepts that can be applied to many bioinformatic and statistical analyses: <a class="reference external" href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">sensitivity and specificity</a>.</p>
 <p>In a dotplot analysis we can draw a dot when two homologous positions match.
 That would be a true positive.
 But, if we draw a dot when the two positions are similar but they are not homologous we have a false negative.</p>
-
 <p>With the negatives we have a similar problem.
 In the dotplot case a negative is a position with no dot.
 We can have true negatives, positions that does not have a dot and that are not homologous and false negatives, positions that do not have a dot, but that are in fact homologous.</p>
-
 <p>The sentitivity, also called recall, is the proportion of positives that are called positives by the analysis.
 It is the true positive rate.
 Ideally we would like to have a 100% percent sensitivity, we would like to mark as positives in the analysis all the true positives.</p>
-
 <p>The specificity is the proportion of true negatives that are called negative by our analysis.
 It is also know as true negative rate.
 Ideally we would like to call all true negatives as negatives.</p>
-
-<p><img src="../static/sensitivity_specificity.png" alt="Senstitivity and Specificity" /></p>
-
+<a class="reference external image-reference" href="../static/sensitivity_specificity.png"><img alt="Senstitivity and Specificity" src="../_images/sensitivity_specificity.png" /></a>
 <p>In practice most of the time we will miss some positives, so the sensitivity will be lower than 100% and we will detect signals for some negatives.
 In the dotplot case a false positive would be a region that is marked as similar, but that it is not homologous and a false negative it is a region that is not marked as similar, but that it really is.</p>
-
 <p>Different analysis or different parameter sets will have different sensitivities and specificities.
 These are very important characteristics of the analyses.</p>
-
-<h2 id="smith-and-waterman-algorithm">Smith and Waterman algorithm</h2>
-
+</section>
+<section id="smith-and-waterman-algorithm">
+<h3>Smith and Waterman algorithm<a class="headerlink" href="#smith-and-waterman-algorithm" title="Permalink to this headline">¶</a></h3>
 <p>There are plenty of algorithms to create text based pairwise sequence alignments.</p>
-
 <p>These algorithms are based on creating a matrix equivalent to the 2D representation created by the dot plot.
 In those matrices the fragments that will constitute the alignments can be seen as diagonals.</p>
-
 <p>Dotplot diagonals suggest paths in the space of possible alignments.
 Each of these paths are a possible fragment of the final alignment.</p>
-
-<p><img src="../static/dot_plot_path.png" alt="Dot Plot Path" /></p>
-
-<p>A general approach to detect the path through these diagonals is call <a href="https://en.wikipedia.org/wiki/Sequence_alignment#Dynamic_programming_2">dinamic programing</a>.
-One of the first algorithms implemented following these philosophy was the <a href="https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm">Needleman-Wunsch</a> algorithm.
+<a class="reference external image-reference" href="../static/dot_plot_path.png"><img alt="Dot Plot Path" src="../_images/dot_plot_path.png" /></a>
+<p>A general approach to detect the path through these diagonals is call <a class="reference external" href="https://en.wikipedia.org/wiki/Sequence_alignment#Dynamic_programming_2">dinamic programing</a>.
+One of the first algorithms implemented following these philosophy was the <a class="reference external" href="https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm">Needleman-Wunsch</a> algorithm.
 This algorithm creates global alignments of two sequences given a scoring schema.
 It is implemented in several programs, one of them is needle from the EMBOSS suite.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">########################################</span>
+<span class="c1"># Program:  needle</span>
+<span class="c1"># Rundate:  Tue Oct 02 10:58:05 2007</span>
+<span class="c1"># Align_format: srspair</span>
+<span class="c1"># Report_file: /ebi/extserv/old-work/needle-20071002-10580428983041.output</span>
+<span class="c1">########################################</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>########################################
-# Program:  needle
-# Rundate:  Tue Oct 02 10:58:05 2007
-# Align_format: srspair
-# Report_file: /ebi/extserv/old-work/needle-20071002-10580428983041.output
-########################################
+<span class="c1">#=======================================</span>
+<span class="c1">#</span>
+<span class="c1"># Aligned_sequences: 2</span>
+<span class="c1"># 1: SNAK_DROME</span>
+<span class="c1"># 2: PCE_TACTR</span>
+<span class="c1"># Matrix: EBLOSUM62</span>
+<span class="c1"># Gap_penalty: 10.0</span>
+<span class="c1"># Extend_penalty: 0.5</span>
+<span class="c1">#</span>
+<span class="c1"># Length: 462</span>
+<span class="c1"># Identity:     126/462 (27.3%)</span>
+<span class="c1"># Similarity:   184/462 (39.8%)</span>
+<span class="c1"># Gaps:         114/462 (24.7%)</span>
+<span class="c1"># Score: 440.5</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#=======================================</span>
 
-#=======================================
-#
-# Aligned_sequences: 2
-# 1: SNAK_DROME
-# 2: PCE_TACTR
-# Matrix: EBLOSUM62
-# Gap_penalty: 10.0
-# Extend_penalty: 0.5
-#
-# Length: 462
-# Identity:     126/462 (27.3%)
-# Similarity:   184/462 (39.8%)
-# Gaps:         114/462 (24.7%)
-# Score: 440.5
-#
-#
-#=======================================
+<span class="n">SNAK_DROME</span>         <span class="mi">1</span> <span class="n">MIILWSLIVH</span><span class="o">--</span><span class="n">LQLTCLHLILQTPNLEALDALEIINYQTTKYTIPEVWK</span>     <span class="mi">48</span>
+                           <span class="p">::</span><span class="o">|</span><span class="p">:</span>  <span class="o">..|.|..|</span><span class="p">::</span><span class="o">.......|</span>      <span class="p">:</span><span class="o">.|..</span><span class="p">::</span><span class="o">..|</span>
+<span class="n">PCE_TACTR</span>          <span class="mi">1</span>       <span class="n">MLVNNVFSLLCFPLLMSVVRCSTL</span><span class="o">------</span><span class="n">SRQRRQFVFP</span><span class="o">----</span>     <span class="mi">34</span>
 
-SNAK_DROME         1 MIILWSLIVH--LQLTCLHLILQTPNLEALDALEIINYQTTKYTIPEVWK     48
-                           ::|:  ..|.|..|::.......|      :.|..::..|    
-PCE_TACTR          1       MLVNNVFSLLCFPLLMSVVRCSTL------SRQRRQFVFP----     34
+<span class="n">SNAK_DROME</span>        <span class="mi">49</span> <span class="n">EQPVATIGEDVDDQDTEDEESYLKFGDDAEVRTSVSEGLHEGAFCRRSFD</span>     <span class="mi">98</span>
+                                      <span class="o">|||.</span>                      <span class="o">.|...|.</span>
+<span class="n">PCE_TACTR</span>         <span class="mi">35</span> <span class="o">-----------------</span><span class="n">DEEE</span><span class="o">----------------------</span><span class="n">LCSNRFT</span>     <span class="mi">45</span>
 
-SNAK_DROME        49 EQPVATIGEDVDDQDTEDEESYLKFGDDAEVRTSVSEGLHEGAFCRRSFD     98
-                                      |||.                      .|...|.
-PCE_TACTR         35 -----------------DEEE----------------------LCSNRFT     45
+<span class="n">SNAK_DROME</span>        <span class="mi">99</span> <span class="n">GRSGYCILAYQCLHVIREYRVHGTRIDICTHRNNVPVICCPLADKHVLAQ</span>    <span class="mi">148</span>
+                      <span class="o">..|.|.....|..</span><span class="p">::::</span><span class="o">...</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">..||......|.</span><span class="p">:</span><span class="o">|||</span> <span class="o">...||</span>
+<span class="n">PCE_TACTR</span>         <span class="mi">46</span> <span class="o">-</span><span class="n">EEGTCKNVLDCRILLQKNDYNLLKESICGFEGITPKVCCP</span><span class="o">-</span><span class="n">KSSHV</span><span class="o">---</span>     <span class="mi">90</span>
 
-SNAK_DROME        99 GRSGYCILAYQCLHVIREYRVHGTRIDICTHRNNVPVICCPLADKHVLAQ    148
-                      ..|.|.....|..::::...:..:..||......|.:||| ...||   
-PCE_TACTR         46 -EEGTCKNVLDCRILLQKNDYNLLKESICGFEGITPKVCCP-KSSHV---     90
+<span class="n">SNAK_DROME</span>       <span class="mi">149</span> <span class="n">RISATKCQEYNAAARRLHLTDTGRTFSGKQCVPSVP</span><span class="o">-----------</span><span class="n">LIV</span>    <span class="mi">187</span>
+                      <span class="o">||</span><span class="p">:</span><span class="o">|</span><span class="p">:</span><span class="o">.........|</span>          <span class="o">..||..|</span><span class="p">::</span><span class="o">|</span>           <span class="o">.|</span><span class="p">:</span>
+<span class="n">PCE_TACTR</span>         <span class="mi">91</span> <span class="o">-</span><span class="n">ISSTQAPPETTTTER</span><span class="o">----------</span><span class="n">PPKQIPPNLPEVCGIHNTTTTRII</span>    <span class="mi">129</span>
 
-SNAK_DROME       149 RISATKCQEYNAAARRLHLTDTGRTFSGKQCVPSVP-----------LIV    187
-                      ||:|:.........|          ..||..|::|           .|:
-PCE_TACTR         91 -ISSTQAPPETTTTER----------PPKQIPPNLPEVCGIHNTTTTRII    129
+<span class="n">SNAK_DROME</span>       <span class="mi">188</span> <span class="n">GGTPTRHGLFPHMAALGWTQGSGSKDQDIKWGCGGALVSELYVLTAAHCA</span>    <span class="mi">237</span>
+                     <span class="o">||.....|.</span><span class="p">:</span><span class="o">|.|.|</span><span class="p">:</span><span class="o">...||.....|</span>     <span class="o">||||||</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">|</span><span class="p">:</span><span class="o">||</span><span class="p">:</span><span class="o">||.</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">130</span> <span class="n">GGREAPIGAWPWMTAVYIKQGGIRSVQ</span><span class="o">-----</span><span class="n">CGGALVTNRHVITASHCV</span>    <span class="mi">174</span>
 
-SNAK_DROME       188 GGTPTRHGLFPHMAALGWTQGSGSKDQDIKWGCGGALVSELYVLTAAHCA    237
-                     ||.....|.:|.|.|:...||.....|     ||||||:..:|:||:||.
-PCE_TACTR        130 GGREAPIGAWPWMTAVYIKQGGIRSVQ-----CGGALVTNRHVITASHCV    174
+<span class="n">SNAK_DROME</span>       <span class="mi">238</span> <span class="n">TSGS</span><span class="o">----</span><span class="n">KPPDM</span><span class="o">--</span><span class="n">VRLGARQLNET</span><span class="o">--</span><span class="n">SATQQDIKILIIVLHPKYRSSA</span>    <span class="mi">279</span>
+                     <span class="o">.</span><span class="p">:</span><span class="o">.</span><span class="p">:</span>    <span class="o">.|.|</span><span class="p">:</span>  <span class="o">||||...|..|</span>  <span class="o">.</span><span class="p">:</span><span class="o">...|..</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">..|..</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">.</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">175</span> <span class="n">VNSAGTDVMPADVFSVRLGEHNLYSTDDDSNPIDFAVTSVKHHEHFVLAT</span>    <span class="mi">224</span>
 
-SNAK_DROME       238 TSGS----KPPDM--VRLGARQLNET--SATQQDIKILIIVLHPKYRSSA    279
-                     .:.:    .|.|:  ||||...|..|  .:...|..:..:..|..:..:.
-PCE_TACTR        175 VNSAGTDVMPADVFSVRLGEHNLYSTDDDSNPIDFAVTSVKHHEHFVLAT    224
+<span class="n">SNAK_DROME</span>       <span class="mi">280</span> <span class="n">YYHDIALLKLTRRVKFSEQVRPACL</span><span class="o">----</span><span class="n">WQLPELQIPTVVAAGWGRTEF</span>    <span class="mi">325</span>
+                     <span class="o">|.</span><span class="p">:</span><span class="o">|||</span><span class="p">:</span><span class="o">|.|...|.|</span><span class="p">::::</span><span class="o">||.||</span>    <span class="o">.</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">|.</span><span class="p">:</span><span class="o">......|||.|.|</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">225</span> <span class="n">YLNDIAILTLNDTVTFTDRIRPICLPYRKLRYDDLAMRKPFITGWGTTAF</span>    <span class="mi">274</span>
 
-SNAK_DROME       280 YYHDIALLKLTRRVKFSEQVRPACL----WQLPELQIPTVVAAGWGRTEF    325
-                     |.:|||:|.|...|.|::::||.||    .:..:|.:......|||.|.|
-PCE_TACTR        225 YLNDIAILTLNDTVTFTDRIRPICLPYRKLRYDDLAMRKPFITGWGTTAF    274
+<span class="n">SNAK_DROME</span>       <span class="mi">326</span> <span class="n">LGAKSNALRQVDLDVVPQMTCKQIYRKERRLPRGIIEGQFCAGYLPGGRD</span>    <span class="mi">375</span>
+                     <span class="o">.|..|..||</span><span class="p">:</span><span class="o">|.|.</span><span class="p">:</span><span class="o">.....|</span><span class="p">:</span><span class="o">|.|.|</span><span class="p">:</span>    <span class="o">..|.....|||</span><span class="p">:</span><span class="o">..||</span><span class="p">:</span><span class="o">|</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">275</span> <span class="n">NGPSSAVLREVQLPIWEHEACRQAYEKD</span><span class="o">----</span><span class="n">LNITNVYMCAGFADGGKD</span>    <span class="mi">320</span>
 
-SNAK_DROME       326 LGAKSNALRQVDLDVVPQMTCKQIYRKERRLPRGIIEGQFCAGYLPGGRD    375
-                     .|..|..||:|.|.:.....|:|.|.|:    ..|.....|||:..||:|
-PCE_TACTR        275 NGPSSAVLREVQLPIWEHEACRQAYEKD----LNITNVYMCAGFADGGKD    320
+<span class="n">SNAK_DROME</span>       <span class="mi">376</span> <span class="n">TCQGDSGGPIHALLPEYNCVAFVVGITSFGKFCAAPNAPGVYTRLYSYLD</span>    <span class="mi">425</span>
+                     <span class="o">.||||||||</span><span class="p">:</span>  <span class="p">:</span><span class="o">||......</span><span class="p">:::</span><span class="o">||.||||.||.|..|||||</span><span class="p">::</span><span class="o">..</span><span class="p">:</span><span class="o">||</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">321</span> <span class="n">ACQGDSGGPM</span><span class="o">--</span><span class="n">MLPVKTGEFYLIGIVSFGKKCALPGFPGVYTKVTEFLD</span>    <span class="mi">368</span>
 
-SNAK_DROME       376 TCQGDSGGPIHALLPEYNCVAFVVGITSFGKFCAAPNAPGVYTRLYSYLD    425
-                     .||||||||:  :||......:::||.||||.||.|..|||||::..:||
-PCE_TACTR        321 ACQGDSGGPM--MLPVKTGEFYLIGIVSFGKKCALPGFPGVYTKVTEFLD    368
-
-SNAK_DROME       426 WIEKIAFKQH      435
-                     ||     .:|  
-PCE_TACTR        369 WI-----AEHMV    375
-</code></pre>
+<span class="n">SNAK_DROME</span>       <span class="mi">426</span> <span class="n">WIEKIAFKQH</span>      <span class="mi">435</span>
+                     <span class="o">||</span>     <span class="o">.</span><span class="p">:</span><span class="o">|</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">369</span> <span class="n">WI</span><span class="o">-----</span><span class="n">AEHMV</span>    <span class="mi">375</span>
+</pre></div>
 </div>
-
 <p>The main limitation of the Needleman–Wunsch algorithm is that it is global, so we should only use it if we know beforehand that both sequences are similar in all its extension.</p>
-
-<p><a href="https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm">Smith and Waterman</a> proposed a variation of the algorithm that is capable of generating local alignments.
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm">Smith and Waterman</a> proposed a variation of the algorithm that is capable of generating local alignments.
 This approach gives better results because it does not force the sequences to be similar in all its extension.
 If the best, higher scoring alignment, is a global one that aligns completely both sequences the Smith-Waterman algorithm will create it, otherwise it will generate a local alignment.</p>
-
 <p>This algorithm has multiple implementations, one of them is the water program in the EMBOSS suite.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">########################################</span>
+<span class="c1"># Program:  water</span>
+<span class="c1"># Rundate:  Tue Oct 02 11:00:39 2007</span>
+<span class="c1"># Align_format: srspair</span>
+<span class="c1"># Report_file: /ebi/extserv/old-work/water-20071002-11003873398600.output</span>
+<span class="c1">########################################</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  ########################################
-  # Program:  water
-  # Rundate:  Tue Oct 02 11:00:39 2007
-  # Align_format: srspair
-  # Report_file: /ebi/extserv/old-work/water-20071002-11003873398600.output
-  ########################################
+<span class="c1">#=======================================</span>
+<span class="c1">#</span>
+<span class="c1"># Aligned_sequences: 2</span>
+<span class="c1"># 1: SNAK_DROME</span>
+<span class="c1"># 2: PCE_TACTR</span>
+<span class="c1"># Matrix: EBLOSUM62</span>
+<span class="c1"># Gap_penalty: 10.0</span>
+<span class="c1"># Extend_penalty: 0.5</span>
+<span class="c1">#</span>
+<span class="c1"># Length: 362</span>
+<span class="c1"># Identity:     116/362 (32.0%)</span>
+<span class="c1"># Similarity:   165/362 (45.6%)</span>
+<span class="c1"># Gaps:          50/362 (13.8%)</span>
+<span class="c1"># Score: 452.0</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#=======================================</span>
 
-  #=======================================
-  #
-  # Aligned_sequences: 2
-  # 1: SNAK_DROME
-  # 2: PCE_TACTR
-  # Matrix: EBLOSUM62
-  # Gap_penalty: 10.0
-  # Extend_penalty: 0.5
-  #
-  # Length: 362
-  # Identity:     116/362 (32.0%)
-  # Similarity:   165/362 (45.6%)
-  # Gaps:          50/362 (13.8%)
-  # Score: 452.0
-  #
-  #
-  #=======================================
+<span class="n">SNAK_DROME</span>        <span class="mi">89</span> <span class="n">EGAFCRRSFDGRSGYCILAYQCLHVIREYRVHGTRIDICTHRNNVPVICC</span>    <span class="mi">138</span>
+                     <span class="o">|...|...|.</span> <span class="o">..|.|.....|..</span><span class="p">::::</span><span class="o">...</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">..||......|.</span><span class="p">:</span><span class="o">||</span>
+<span class="n">PCE_TACTR</span>         <span class="mi">36</span> <span class="n">EEELCSNRFT</span><span class="o">-</span><span class="n">EEGTCKNVLDCRILLQKNDYNLLKESICGFEGITPKVCC</span>     <span class="mi">84</span>
 
-  SNAK_DROME        89 EGAFCRRSFDGRSGYCILAYQCLHVIREYRVHGTRIDICTHRNNVPVICC    138
-                       |...|...|. ..|.|.....|..::::...:..:..||......|.:||
-  PCE_TACTR         36 EEELCSNRFT-EEGTCKNVLDCRILLQKNDYNLLKESICGFEGITPKVCC     84
+<span class="n">SNAK_DROME</span>       <span class="mi">139</span> <span class="n">PLADKHVLAQRISATKCQEYNAAARRLHLTDTGRTFSGKQCVPSVP</span><span class="o">----</span>    <span class="mi">184</span>
+                     <span class="o">|</span> <span class="o">...||</span>    <span class="o">||</span><span class="p">:</span><span class="o">|</span><span class="p">:</span><span class="o">.........|</span>          <span class="o">..||..|</span><span class="p">::</span><span class="o">|</span>
+<span class="n">PCE_TACTR</span>         <span class="mi">85</span> <span class="n">P</span><span class="o">-</span><span class="n">KSSHV</span><span class="o">----</span><span class="n">ISSTQAPPETTTTER</span><span class="o">----------</span><span class="n">PPKQIPPNLPEVCG</span>    <span class="mi">119</span>
 
-  SNAK_DROME       139 PLADKHVLAQRISATKCQEYNAAARRLHLTDTGRTFSGKQCVPSVP----    184
-                       | ...||    ||:|:.........|          ..||..|::|    
-  PCE_TACTR         85 P-KSSHV----ISSTQAPPETTTTER----------PPKQIPPNLPEVCG    119
+<span class="n">SNAK_DROME</span>       <span class="mi">185</span> <span class="o">-------</span><span class="n">LIVGGTPTRHGLFPHMAALGWTQGSGSKDQDIKWGCGGALVSE</span>    <span class="mi">227</span>
+                            <span class="o">.|</span><span class="p">:</span><span class="o">||.....|.</span><span class="p">:</span><span class="o">|.|.|</span><span class="p">:</span><span class="o">...||.....|</span>     <span class="o">||||||</span><span class="p">:</span><span class="o">.</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">120</span> <span class="n">IHNTTTTRIIGGREAPIGAWPWMTAVYIKQGGIRSVQ</span><span class="o">-----</span><span class="n">CGGALVTN</span>    <span class="mi">164</span>
 
-  SNAK_DROME       185 -------LIVGGTPTRHGLFPHMAALGWTQGSGSKDQDIKWGCGGALVSE    227
-                              .|:||.....|.:|.|.|:...||.....|     ||||||:.
-  PCE_TACTR        120 IHNTTTTRIIGGREAPIGAWPWMTAVYIKQGGIRSVQ-----CGGALVTN    164
+<span class="n">SNAK_DROME</span>       <span class="mi">228</span> <span class="n">LYVLTAAHCATSGS</span><span class="o">----</span><span class="n">KPPDM</span><span class="o">--</span><span class="n">VRLGARQLNET</span><span class="o">--</span><span class="n">SATQQDIKILII</span>    <span class="mi">269</span>
+                     <span class="o">.</span><span class="p">:</span><span class="o">|</span><span class="p">:</span><span class="o">||</span><span class="p">:</span><span class="o">||..</span><span class="p">:</span><span class="o">.</span><span class="p">:</span>    <span class="o">.|.|</span><span class="p">:</span>  <span class="o">||||...|..|</span>  <span class="o">.</span><span class="p">:</span><span class="o">...|..</span><span class="p">:</span><span class="o">..</span><span class="p">:</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">165</span> <span class="n">RHVITASHCVVNSAGTDVMPADVFSVRLGEHNLYSTDDDSNPIDFAVTSV</span>    <span class="mi">214</span>
 
-  SNAK_DROME       228 LYVLTAAHCATSGS----KPPDM--VRLGARQLNET--SATQQDIKILII    269
-                       .:|:||:||..:.:    .|.|:  ||||...|..|  .:...|..:..:
-  PCE_TACTR        165 RHVITASHCVVNSAGTDVMPADVFSVRLGEHNLYSTDDDSNPIDFAVTSV    214
+<span class="n">SNAK_DROME</span>       <span class="mi">270</span> <span class="n">VLHPKYRSSAYYHDIALLKLTRRVKFSEQVRPACL</span><span class="o">----</span><span class="n">WQLPELQIPTV</span>    <span class="mi">315</span>
+                     <span class="o">..|..</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">.|.</span><span class="p">:</span><span class="o">|||</span><span class="p">:</span><span class="o">|.|...|.|</span><span class="p">::::</span><span class="o">||.||</span>    <span class="o">.</span><span class="p">:</span><span class="o">..</span><span class="p">:</span><span class="o">|.</span><span class="p">:</span><span class="o">...</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">215</span> <span class="n">KHHEHFVLATYLNDIAILTLNDTVTFTDRIRPICLPYRKLRYDDLAMRKP</span>    <span class="mi">264</span>
 
-  SNAK_DROME       270 VLHPKYRSSAYYHDIALLKLTRRVKFSEQVRPACL----WQLPELQIPTV    315
-                       ..|..:..:.|.:|||:|.|...|.|::::||.||    .:..:|.:...
-  PCE_TACTR        215 KHHEHFVLATYLNDIAILTLNDTVTFTDRIRPICLPYRKLRYDDLAMRKP    264
+<span class="n">SNAK_DROME</span>       <span class="mi">316</span> <span class="n">VAAGWGRTEFLGAKSNALRQVDLDVVPQMTCKQIYRKERRLPRGIIEGQF</span>    <span class="mi">365</span>
+                     <span class="o">...|||.|.|.|..|..||</span><span class="p">:</span><span class="o">|.|.</span><span class="p">:</span><span class="o">.....|</span><span class="p">:</span><span class="o">|.|.|</span><span class="p">:</span>    <span class="o">..|.....</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">265</span> <span class="n">FITGWGTTAFNGPSSAVLREVQLPIWEHEACRQAYEKD</span><span class="o">----</span><span class="n">LNITNVYM</span>    <span class="mi">310</span>
 
-  SNAK_DROME       316 VAAGWGRTEFLGAKSNALRQVDLDVVPQMTCKQIYRKERRLPRGIIEGQF    365
-                       ...|||.|.|.|..|..||:|.|.:.....|:|.|.|:    ..|.....
-  PCE_TACTR        265 FITGWGTTAFNGPSSAVLREVQLPIWEHEACRQAYEKD----LNITNVYM    310
+<span class="n">SNAK_DROME</span>       <span class="mi">366</span> <span class="n">CAGYLPGGRDTCQGDSGGPIHALLPEYNCVAFVVGITSFGKFCAAPNAPG</span>    <span class="mi">415</span>
+                     <span class="o">|||</span><span class="p">:</span><span class="o">..||</span><span class="p">:</span><span class="o">|.||||||||</span><span class="p">:</span>  <span class="p">:</span><span class="o">||......</span><span class="p">:::</span><span class="o">||.||||.||.|..||</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">311</span> <span class="n">CAGFADGGKDACQGDSGGPM</span><span class="o">--</span><span class="n">MLPVKTGEFYLIGIVSFGKKCALPGFPG</span>    <span class="mi">358</span>
 
-  SNAK_DROME       366 CAGYLPGGRDTCQGDSGGPIHALLPEYNCVAFVVGITSFGKFCAAPNAPG    415
-                       |||:..||:|.||||||||:  :||......:::||.||||.||.|..||
-  PCE_TACTR        311 CAGFADGGKDACQGDSGGPM--MLPVKTGEFYLIGIVSFGKKCALPGFPG    358
-
-  SNAK_DROME       416 VYTRLYSYLDWI    427
-                       |||::..:||||
-  PCE_TACTR        359 VYTKVTEFLDWI    370
-</code></pre>
+<span class="n">SNAK_DROME</span>       <span class="mi">416</span> <span class="n">VYTRLYSYLDWI</span>    <span class="mi">427</span>
+                     <span class="o">|||</span><span class="p">::</span><span class="o">..</span><span class="p">:</span><span class="o">||||</span>
+<span class="n">PCE_TACTR</span>        <span class="mi">359</span> <span class="n">VYTKVTEFLDWI</span>    <span class="mi">370</span>
+</pre></div>
 </div>
-
 <p>Of course, the result will depend not only on the sequences, but on the scoring schema.
 For instance, if we use a higher penalty for creating gaps we will obtain alignments with fewer gaps.</p>
-
 <p>The nicest property of the Smith-Waterman alignment is that it has been demonstrated that it will generate the optimal alignment, the one with the highest score, given two sequences and a scoring schema.
 So, if we could, it would be advisable to use always this algorithm.
 Take into account that several alignments could have the same score, so we can have several alignments with the highest score.</p>
-
 <p>The main problem with the Smith-Waterman algorithm is its slowness.
 It works very well with small sequences, but it is not practical when the sequences are large.
 The time it takes to create the scoring matrix for a naive Smith-Waterman implementation depends of m x n (being m and n the length of the sequences).</p>
-
-<h2 id="more-than-one-alignment">More than one alignment</h2>
-
+</section>
+<section id="more-than-one-alignment">
+<h3>More than one alignment<a class="headerlink" href="#more-than-one-alignment" title="Permalink to this headline">¶</a></h3>
 <p>In the dotplot graphical results we saw that some time there could be no just one but several valid alignments.
 Usually the alignment software that implements the Smith-Waterman algorithm will only print just one alignment by default, the higher scoring one.
 If there a multiple alignments we will miss them unless we instruct the software otherwise.</p>
-
-<h1 id="aminoacid-substitution-matrices">Aminoacid substitution matrices</h1>
-
+</section>
+</section>
+<section id="aminoacid-substitution-matrices">
+<h2>Aminoacid substitution matrices<a class="headerlink" href="#aminoacid-substitution-matrices" title="Permalink to this headline">¶</a></h2>
 <p>When scoring a position of an alignment between two nucleotide sequences we can consider a match if the nucleotide match and a mismatch if the nucleotides are different</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ACGT        ACGT
-  |
-ACGT        ACAT
-  ^           ^
-  match       mismatch
-</code></pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ACGT</span>        <span class="n">ACGT</span>
+  <span class="o">|</span>
+<span class="n">ACGT</span>        <span class="n">ACAT</span>
+  <span class="o">^</span>           <span class="o">^</span>
+  <span class="n">match</span>       <span class="n">mismatch</span>
+</pre></div>
 </div>
-
 <p>With the aminoacids we can be more subtle because there are aminoacids that are chemically or functionally similar.
 For instance, we could score higher a substitution of a hydrophobic aminoacid (like Alanine) with another hydrophic aminoacid (like Valine) than with a polar one (like Glutamine).</p>
-
 <p>But if we decide to use such an scoring schema, how should we decided which are the scores to use for each possible aminoacid substitution?
-A possible way of creating such an <a href="https://en.wikipedia.org/wiki/Substitution_matrix">aminoacid subtitution scoring matrix</a> would be to count how many times each pair the possible aminoacid substitutions are found at homologous positions in alignments of homologous proteins.
+A possible way of creating such an <a class="reference external" href="https://en.wikipedia.org/wiki/Substitution_matrix">aminoacid subtitution scoring matrix</a> would be to count how many times each pair the possible aminoacid substitutions are found at homologous positions in alignments of homologous proteins.
 The pairs that tend to appear at the same positions could be considered functionally equivalent and scored higher than the ones that in few instances are found at the same positions.
 Following this method we could create a substitution matrix for all possible aminoacid substitutions.</p>
-
-<p>A series of matrices built in such a way are the <a href="https://en.wikipedia.org/wiki/Point_accepted_mutation">PAM</a> matrices.
+<p>A series of matrices built in such a way are the <a class="reference external" href="https://en.wikipedia.org/wiki/Point_accepted_mutation">PAM</a> matrices.
 There are several PAM matrices and not just one because they are built from comparison of sequences that are closer or further appart in evolutionary time.
 They are named by the number of aminoacid mutations for every 100 aminoacids that differentiate the sequences compared to create the matrices.
 There are, for instance PAM100, PAM160 and PAM200 matrices.
 Take into account that a substitution can underlie several mutations, hence there could be more than 100 mutations in 100 aminoacids.
 A higher number is related with a longer evolutionary time.</p>
-
 <p>Another commonly used set of matrices are the BLOSUM matrices.
 They are based on the same idea, but instead of being built with complete alignments they are built by using highly conserved blocks.
 This allows the BLOSUM matrices to cover longer evolutionary times than the PAM matrices because aligning very distant sequences in all their extension can be challenging, but aligning the most conserved blocks of those sequences could be easier.
 In the BLOSUM matrices the number reflects the minimum percentage of identity allowed between the sequences so BLOSUM 70 used sequences that were more similar than BLOSUM 50.</p>
-
 <p>We will see that a very related concept, the nucleotide evolution model, is used in the phylogenetic analyses, but they are seldom used by the alignment software.</p>
-
-<h1 id="statistical-significance-of-the-alignments">Statistical significance of the alignments</h1>
-
+</section>
+<section id="statistical-significance-of-the-alignments">
+<h2>Statistical significance of the alignments<a class="headerlink" href="#statistical-significance-of-the-alignments" title="Permalink to this headline">¶</a></h2>
 <p>One general problem with the bioinformatic algorithms is that they usually generate a result, but some times that result could be meaningless.
 For instance, we could generate two random sequences and align them.
 The Smith-Waterman algorithm would generate an alignment, but despite being its optimal alignment it would be meaningless.</p>
-
 <p>In the DNA alignments is quite easy to decide with alignments are meaningful because the spurious ones tend to be very short.
 In the protein alignments it is usually not that clear because we are allowing to aminoacid to be similar and not just identical and that tends to produce longer alignments even when they are meaningless.</p>
-
 <p>The solution to this problem is to calculate some statistic that reflect the significance of the solution obtained.
 As we will see there is software that calculate these kind of statistical significance measures, like BLAST.</p>
+</section>
+</section>
 
-  </div>
 
-</article>
 
-      </div>
+        
+
     </main>
 
-    
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 
   </body>
-
 </html>

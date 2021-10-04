@@ -1,0 +1,300 @@
+
+Assembly
+~~~~~~~~
+
+Práctica de ensamblaje
+======================
+
+Cromatogramas
+-------------
+
+La información obtenida en los secuenciadores automáticos se guarda en ficheros binarios.
+
+Estos ficheros suelen incluir, además del cromatograma procesado (trace), la secuencia de nucleótidos obtenida y la calidad asociada a la misma.
+
+Los secuenciadores Sanger de Applied generan los datos en formato abi.
+
+Estos ficheros abi se pueden leer con distintos programas: chromas, el Sequence  Scanner (Win), FintchTV (Mac, PC, Linux) o el trev del paquete de análisis Staden (Mac, Pc, Linux).
+
+El formato utilizado por el Staden para guardar los cromatogramas es el scf.
+
+En el NCBI se pueden encontrar, por ejemplo en la sección EST, algunas secuencias que incluyen también el cromatograma original.
+
+Análisis de cromatogramas con el Trev
+-------------------------------------
+
+Descargar los el fichero cromprimido de cromatogramas de :download:`ejemplo <../static/assembly/cromatogramas.zip>`.
+
+Abrir los cromatogramas que habíamos descargado con el trev de uno en uno y comprobar su calidad.
+El trev denomina a la calidad confidence.
+Conviene pedir al trev que marque la calidad de la asignación de cada base (view -> display confidence).
+
+Marcar las regiones de mala calidad del principio y el final de las secuencias (edit -> left quality, edit -> right quality).
+
+Evaluar para cada un de ellos:
+
+
+* 
+  ¿Tiene señal? ¿Se ven bandas o es todo ruido?
+
+* 
+  ¿Dónde comienza la región de buena calidad? ¿Dónde termina?
+
+* 
+  ¿Acaba la región de mala calidad de forma brusca?
+
+* 
+  Posible diagnóstico de los problemas.
+
+* 
+  ¿Hay bases mal interpretadas por el basecaller?
+
+* 
+  ¿Hay mucho ruido de fondo?
+
+* 
+  Guardar la secuencia obtenida en texto plano.
+
+Análisis de cromatogramas automático con el pregap
+--------------------------------------------------
+
+El PreGap puede analizar automáticamente la calidad y otros aspectos de los cromatogramas determinando las regiones de buena y mala calidad.
+
+Reanalizar con el PreGap los cromatogramas anteriores.
+
+El PreGap generará para cada archivo abi original un archivo de texto con extensión exp.
+En este archivo exp incluirá la secuencia, la calidad y los puntos que delimitan las regiones de buena calidad y las regiones que se corresponden con vector.
+
+Con el Trev abrir los ficheros analizados (.exp) y comparar los analisis manuales con el realizado por el PreGap.
+
+Alineamiento manual
+-------------------
+
+Usando el Openoffice draw realiza un alineamiento manual con estas :download:`lecturas <../static/assembly/reads.odp>`.
+Las letras y colores identifican secuencias similares en esa región. Obtén los contigs, pero recuerda que pueden aparecer problemas con el repetitivo, vectores, splicing alternativo, etc.
+
+Cuando lo tengas compara con este :download:`resultado <../static/assembly/manual_result.pdf>`.
+
+Ensamblaje de ESTs 1
+--------------------
+
+Ahora vamos a realizar un proyecto de secuenciación a partir de varias lecturas generadas por Sanger.
+
+Descargar los cromatogramas del fichero cromprimido :download:`secuencias1 <../static/assembly/secuencias1.zip>`.
+
+Preanalizar las secuencias con el PreGap y utilizar los ficheros producidos para crear el proyecto con el Gap4.
+
+¿Cuántas secuencias se han introducido en la base de datos?
+
+¿Cuántos contigs se han producido?. ¿De cuantas lecturas?
+
+Ejecutar el editor de contigs y comprobar el contig producido, comprobar las incongruencias en las secuencias viendo los cromatogramas.
+
+Practicar con las diferentes opciones y análisis del programa Gap4
+
+Salvar los consensos en ficheros separados y en un único fichero
+
+Ensamblaje de ESTs 2
+--------------------
+
+Ahora vamos a realizar un proyecto de secuenciación a partir de lecturas de ESTs. Descargar el fichero comprimido :download:`secuencias2 <../static/assembly/secuencias2.zip>`.
+
+Una vez hayais obtenido los contigs con el Gap4:
+
+
+* 
+  Comprobar el número de contigs obtenido.
+
+* 
+  El número de secuencias por contigs
+
+* 
+  Buscar regiones similares en el interior del contig utilizando el análisis de Internal Join del Gap4.
+
+* 
+  ¿Que sucede?.
+
+Editar alguna de los regiones encontradas.
+
+
+* ¿Por qué el Gap4 no junta esos contigs?.
+
+Repetir todo el análisis pero ahora incluyendo las opciones de búsqueda de adaptadores y vector del PreGap4.
+
+
+* 
+  ¿Cuantos contigs aparecen ahora?.
+
+* 
+  Comprueba si existen regiones similares internas y justifica su existencia
+
+Control calidad ensamblaje
+--------------------------
+
+`SGN <http://solgenomics.net/>`_ ha secuenciado un borrador del genoma de *Nicotiana benthamiana*.
+
+El método de secuenciación ha sido el siguiente:
+A partir del ADN genómico, se han creado tres librerias para Illumina HiSeq-2000:
+
+
+* una paired end con un tamaño de inserto de 500 pb aprox (4 líneas)
+* a mate-pair libreria con un tamaño de inserto de 2Kb (1 línea
+* a mate pair libreria con un tamaño de inserto de 5Kb (1 línea)
+
+Se muestran las estadśiticas que corresponden a dos ensamblados distintos realizados con el SOAPdenovo.
+
+¿Cuál de los dos corresponder a la v0.3 y v0.42 del ensamblaje?
+
+¿Cuál prefieres?
+
+.. list-table::
+   :header-rows: 1
+
+   * - Statistic
+     - Result
+   * - Sequence Count
+     - 3,010,735 sequences
+   * - Total Length
+     - 2462490758 bp
+   * - Longest sequence
+     - 208210 bp
+   * - Shortest sequence
+     - 201 bp
+   * - Average length
+     - 5336.26 bp
+   * - N95 length
+     - 1564 bp
+   * - N95 index
+     - 215459 sequences
+   * - N90 length
+     - 3403 bp
+   * - N90 index
+     - 163811 sequences
+   * - N75 length
+     - 8068 bp
+   * - N75 index
+     - 96046 sequences
+   * - N50 length
+     - 16480 bp
+   * - N50 index
+     - 42984 sequences
+
+
+.. list-table::
+   :header-rows: 1
+
+   * - Statistic
+     - Result
+   * - Sequence Count
+     - 461,463 sequences
+   * - Total Length
+     - 2899410662 bp
+   * - Longest sequence
+     - 103554 bp
+   * - Shortest sequence
+     - 201 bp
+   * - Average length
+     - 963.02 bp
+   * - N95 length
+     - 233 bp
+   * - N95 index
+     - 2338365 sequences
+   * - N90 length
+     - 274 bp
+   * - N90 index
+     - 1763126 sequences
+   * - N75 length
+     - 619 bp
+   * - N75 index
+     - 606395 sequences
+   * - N50 length
+     - 4140 bp
+   * - N50 index
+     - 156329 sequences
+
+
+Comparación de ensamblajes
+--------------------------
+
+Se han utilizado varios ensambladores para ensamblar el cloroplasto de *N. benthamiana* (100Kb aprox).
+
+Se utilizaron 883811 Illumina pair-ends de un tamaño de 101pb y un tamaño de inserto de 400bp (cobertura 1700X). El SOAPdenovo se utilizó con todas las secuencias y con solo un subconjunto de estas.
+
+Los resultados del experimento realizado por el Dr Aureliano Bombarely fueron:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Assembler
+     - Total Scaffold Size (Kb)
+     - Number Scaffolds
+     - Scaffold Max. Len (b)
+     - Scaffold N50
+     - Total Contig Size (Kb)
+     - Number Contigs
+     - Contig Max. Length (b)
+     - Contigs N50
+     - Running Time (min)
+   * - SOAP K63 cov >255
+     - 1019
+     - 7712
+     - 1,395
+     - 127
+     - 1024
+     - 7790
+     - 547
+     - 127
+     - 4.75
+   * - SOAP K63 subset
+     - 134
+     - 20
+     - 110,468
+     - 110,468
+     - 133
+     - 40
+     - 35,718
+     - 13,627
+     - 0.5
+   * - SOAP K63 subset + GapCloser
+     - -
+     - -
+     - -
+     - -
+     - 133
+     - 20
+     - 109,638
+     - 18,725
+     - 1
+   * - ABySS
+     - 170
+     - 25
+     - 61,293
+     - 37,547
+     - 170
+     - 28
+     - 57,534
+     - 37,547
+     - 20
+   * - Velvet
+     - -
+     - -
+     - -
+     - -
+     - 255
+     - 1138
+     - 2,445
+     - 215
+     - 2
+   * - Ray
+     - 1327
+     - 10418
+     - 45,896
+     - 116
+     - 1325
+     - 10423
+     - 45,896
+     - 116
+     - 20
+
+
+¿ Qué ensamblador utilizarías?

@@ -1,0 +1,208 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Instalando software &mdash; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" /> 
+  </head>
+  <body>
+
+<div class="body">
+    <header>
+        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
+    </header>
+
+
+    <nav class="horizontal_nav page_nav">
+        <ul>
+            <li><a href="index.html">Bioinformatics & genomics</a>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="getting_here.html">Getting here</a></li>
+<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
+               </ul>
+            </li>
+            <li><a>Software</a>
+                <ul>
+                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
+                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+               </ul>
+            </li>
+            <li><a href="courses.html">Courses</a>
+                <ul>
+                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="courses/unix/index.html">Linux</a></li>
+                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+               </ul>
+        </ul>
+    </nav>
+
+    <main>
+                
+    
+  <section id="instalando-software">
+<h1>Instalando software<a class="headerlink" href="#instalando-software" title="Permalink to this headline">¶</a></h1>
+<p>En los sistemas Linux las <a class="reference external" href="http://es.wikipedia.org/wiki/Distribuci%C3%B3n_Linux">distribuciones</a> se encargan de preparar una gran cantidad de software para ser instalado.
+Por ejemplo, cuando queremos instalar un programa de edición fotográfica como el <em>gimp</em> no es necesario ni recomendable ir a la página web de los creadores del software para descargar el software.
+La distribución que estemos utilizando ya se ha encargado de buscar el software y empaquetarlo para que el software pueda ser instalado de un modo estandarizado.
+Por lo tanto si queremos instalar el <em>gimp</em> o cualquier otro programa lo que debemos hacer es utilizar las herramientas que la distribución a preparado para administrar el software que tenemos instalado en nuestro ordenador.
+Por ejemplo, en Ubuntu, abriríamos la aplicación llamada <em>Software center</em> y en ella buscaríamos el <em>gimp</em>.
+Con un solo <em>click</em> el programa quedaría instalado e integrado en nuestro sistema.</p>
+<p>Además todo el software instalado por este método se actualiza cuando los desarrolladores del software corrigen fallos o problemas de seguridad sin que nosotros debamos preocuparnos por ello.
+La propia distribución se encarga de recopilar esas mejoras y de aplicarlas a todo el software que tengamos instalado.</p>
+<p>El modo de operación es bastante distinto al usual en <em>Windows</em>.
+En <em>Windows</em> seríamos nosotros los que compraríamos el software y lo instalaríamos a partir de un CD o de un archivo descargado desde la web.
+Esta es, dicho sea de paso, una de las fuentes de virus y troyanos más habitual.
+Mientras que las distribuciones Linux facilitan la instalación de un software certificado y libre de virus en <em>Windows</em> debemos ser nosotros quienes nos encarguemos de verificar que el software está libre de virus.
+Seríamos nosotros también los encargados de estar al tanto de instalar las actualizaciones o los fallos de seguridad a no ser que cada software implemente esta funcionalidad.</p>
+<p>En los manuales: <code class="xref download docutils literal notranslate"><span class="pre">Getting</span> <span class="pre">Started</span> <span class="pre">with</span> <span class="pre">Ubuntu</span></code> y <code class="xref download docutils literal notranslate"><span class="pre">Ubuntu</span> <span class="pre">Pocket</span> <span class="pre">Guide</span></code> hay una explicación bastante completa sobre qué es una paquete, un repositorio y sobre qué herramientas podemos utilizar en el escritorio y en la línea de comandos para administrar el software por lo que en esta introducción no profundizaremos en estos temas.</p>
+<p>Por desgracia, la cantidad de software incluido en las distribuciones no es infinito y, aunque el catálogo es amplio y más que suficiente para la gran mayoría de las aplicaciones que un usuario doméstico o de la administración pueda necesitar, hay programas, especialmente los hechos para campos específicos que no están incluidos en las distribuciones.
+Para biología Debian y Ubuntu incluyen programas como el EMBOSS, el Blast o Biopython, pero hay otros muchos que no se incluyen y que tendremos que gestionar nosotros mismos.</p>
+<section id="estandar-de-jerarquia-del-sistema-de-archivos">
+<h2>Estándar de jerarquía del sistema de archivos<a class="headerlink" href="#estandar-de-jerarquia-del-sistema-de-archivos" title="Permalink to this headline">¶</a></h2>
+<p>Antes de instalar software no administrado por nuestra distribución conviene que tengamos una idea de como se organiza el sistema de archivos en Linux para que entendamos dónde se instala el software.
+Linux sigue una norma estándar llamada <a class="reference external" href="http://es.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Estándar de jerarquía del sistema de archivos</a> que define los directorios del sistema y la localización de los distintos tipos de archivos.</p>
+<p>En Unix todos los archivos y directorios aparecen bajo el directorio raíz (/).
+Es habitual que dentro del directorio raíz existen tres jerarquías en las que se distribuyen los archivos y directorios de los programas:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>/, <em>jerarquía primaria</em>. De ella cuelgan el resto de jerarquías. Los archivos incluidos directamente en esta jerarquía son sólo los esenciales para el sistema, como por ejemplo los comandos: <em>cp</em>, <em>ls</em> o <em>mkdir</em>.</p></li>
+<li><p>/usr/, <em>jerarquía secundaria</em>. Contiene la mayoría de aplicaciones del sistema. En las distribuciones Linux es la jerarquía en las que los programas de uso común son instalados, como por ejemplo el LibreOffice o el entorno de usuario Gnome.</p></li>
+<li><p>/usr/local/, <em>jerarquía terciaria</em>. Contiene la mayoría de las aplicaciones que instalamos sin la mediación de la distribución.</p></li>
+</ul>
+</div></blockquote>
+<p>Dentro de cada una de las jerarquías hay varios directorios en los que se distribuyen los archivos de las aplicaciones dependiendo del tipo de archivo.
+Por ejemplo, los ejecutables se encuentran en los directorios <em>bin</em> y las librerías en <em>lib</em>.
+En mi ordenador el ejecutable <em>cp</em>, que es esencial para el sistema se encuentra en <em>/bin/cp</em>, el editor de textos <em>gedit</em> que ha sido instalado por la distribución y no es esencial para el sistema se encuentra en <em>/usr/bin/gedit</em> y el alineador de secuencias <em>bwa</em> que yo he instalado manualmente sin utilizar el gestor de paquetes se encuentra en <em>/usr/local/bin/bwa</em>.</p>
+<p>A diferencia de otros sistemas operativos en los sistemas Linux las aplicaciones normalmente no están contenidas en un sólo directorio.
+Los ejecutables están en <em>bin</em>, las librerías de los que dependen en <em>lib</em>, etc.
+Cuando se instalan programas estáticos, que incluyen todas sus librerías, suelen instalarse en <em>/opt/</em>.
+<em>opt/</em> sigue un modelo similar al <em>Archivos de programa</em> de <em>Windows</em>.
+No es muy común que los programas se instalen de esta forma en <em>Linux</em>, pero algunos programas como el <em>IDE java eclipse</em> sí suelen instalarse en /opt</p>
+</section>
+<section id="instalando-programas-compilados">
+<h2>Instalando programas compilados<a class="headerlink" href="#instalando-programas-compilados" title="Permalink to this headline">¶</a></h2>
+<p>Una vez hemos visto dónde debemos instalar los programas que administremos sin la ayuda de la distribución (en <em>/usr/local</em>) vamos a ver como instalaríamos el mapeador de secuencias cortas <a class="reference external" href="http://bowtie-bio.sourceforge.net/">bowtie</a>.
+En su página de <a class="reference external" href="http://sourceforge.net/projects/bowtie-bio/files/">descargas</a> encontramos los ficheros:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>bowtie-0.12.7-macos-10.5-x86_64.zip</p></li>
+<li><p>bowtie-0.12.7-macos-10.5-x86-i386.zip</p></li>
+<li><p>bowtie-0.12.7-win32.zip</p></li>
+<li><p>bowtie-0.12.7-linux-x86_64.zip</p></li>
+<li><p>bowtie-0.12.7-linux-i386.zip</p></li>
+<li><p>bowtie-0.12.7-src.zip</p></li>
+</ul>
+</div></blockquote>
+<p>Los ficheros de interés en un sistema Linux son los marcados como linux-x86_64, linux-i386 y src.
+Los dos primeros incluyen el programa compilado y el tercero el código fuente listo para compilar.
+Normalmente si se nos ofrece el programa precompilado para nuestra arquitectura podemos simplemente copiar el programa a <em>/usr/local</em>.
+En este caso el programa lo han precompilado para dos arquitecturas: x86_64 y i386.
+x86_64 se refiere a los microprocesadores <em>Intel</em> y <em>AMD</em> de 64 bits e i386 a los de 32 bits.
+Esta arquitectura no tiene que coincidir con nuestro procesador sino con la versión de la distribución que tenemos instalada.
+Por ejemplo, Ubuntu y Debian tienen versiones para 32 y 64 bits, pero en un ordenador con un microprocesador de 64 bits podemos optar por instalar la versión de la distribución de 32 bits.
+La arquitectura del programa compilado debe coincidir con la de la distribución que tengamos instalada, no con la de nuestro microprocesador.</p>
+<section id="instalando-un-precompilado">
+<h3>Instalando un precompilado<a class="headerlink" href="#instalando-un-precompilado" title="Permalink to this headline">¶</a></h3>
+<p>Supongamos que queremos instalar la versión de 64 bits del programa precompilado.
+Una vez que hemos descargado el fichero zip (que en muchas ocasiones será en realidad un tar.gz), lo descomprimimos.
+En el directorio descomprimido encontramos los ejecutables, en este caso el <em>bowtie</em> y otros archivos adicionales, en este caso <em>scrips</em> en el directorio <em>scripts</em> y ficheros de ejemplos en los directorios <em>indexes</em>, <em>genomes</em> y <em>reads</em>.
+Es posible que entre todos estos ficheros haya un <em>README</em> o un <em>INSTALL</em> si es así debemos leerlos antes de continuar.</p>
+<p>La forma más sencilla de instalar el programa es mover el directorio completo a <em>/usr/local/bowtie/</em>.
+Una vez hecho deberemos añadir los directorios en los que hay ejecutables a nuestro $PATH.
+Sino lo hacemos no podremos ejecutar el programa a no ser que incluyamos la ruta completa al ejecutables <em>/usr/local/bowtie/bowtie</em>.</p>
+<p>Para incluir el directorio con los ejecutables en la variable <em>$PATH</em> debemos modificar la variable con la siguiente orden:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ export PATH=$PATH:/usr/local/bowtie/:/usr/local/bowtie/scripts/
+</pre></div>
+</div>
+<p>Una vez ejecutada esta orden ya podríamos ejecutar el bowtie en la terminal.
+El problema de este método es que cada vez que nos salimos de la sesión del terminal esta modificación del $PATH se pierde.
+Para que el $PATH sea el que deseamos siempre que entremos al sistema el comando anterior debe ser ejecutado, esto podemos conseguirlo incluyéndolo en el fichero <em>.bashrc</em> situado en nuestra $HOME.
+<em>.bashrc</em> se ejecuta automáticamente cada vez que entramos en un <em>shell</em> y se utiliza para adaptar las variables de entorno, como por ejemplo $PATH, a nuestras necesidades.</p>
+</section>
+<section id="instalando-un-programa-desde-el-codigo-fuente">
+<h3>Instalando un programa desde el código fuente<a class="headerlink" href="#instalando-un-programa-desde-el-codigo-fuente" title="Permalink to this headline">¶</a></h3>
+<p>Podemos optar por instalar un programa partiendo desde el código fuente, para ello debemos antes compilarlo.
+Este suele ser un caso bastante habitual en las aplicaciones bioinformáticas, para los casos en los que los desarrolladores no han creado binarios compilados para nuestra arquitectura.</p>
+<p>Normalmente los ficheros con el código fuente con ficheros comprimidos <em>tar.gz</em>, pero en el ejemplo que nos ocupa es un fichero comprimido <em>zip</em>.
+Una vez descomprimido normalmente encontraremos un fichero <em>INSTALL</em> o <em>README</em> si es así debemos leerlos antes de continuar.</p>
+<p>El caso más habitual es que entre los archivos descomprimidos haya un <em>shell script</em> ejecutable llamado <em>configure</em>.
+Si es así el procedimiento a seguir suele ser ejecutar la secuencia de comandos <em>./configure</em>, <em>make</em>, <em>make install</em>.
+<em>configure</em> verificará que nuestro sistema dispone de todos las librerías y utilidades necesarias para instalar el programa y creará una serie de ficheros <em>Makefile</em>.
+Una vez terminado el <em>configure</em> y creados los <em>Makefile</em> satisfactoriamente podemos ejecutar el comando <em>make</em> y el programa se compilará para nuestra arquitectura.
+El <em>configure</em> también suele ser el encargado de determinar en qué jerarquía del sistema de archivos se instalará el programa.
+Lo habitual es que estos programas compilados manualmente se instalen en la tercera jerarquía, <em>/usr/local/</em>.</p>
+<p>Para poder compilar los programas necesitamos tener instaladas una serie de aplicaciones.
+En Ubuntu por defecto estas aplicaciones no se instalan en el sistema.
+Para instalarlas debemos instalar el paquete build-essential:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install build-essential
+</pre></div>
+</div>
+<p>Este comando instalará, entre otras cosas el compilador <em>gcc</em> y los <em>headers</em> de las librerías básicas del sistema.
+Los <em>headers</em> se encuentran en los paquetes <em>dev</em> (<em>devel</em> en <em>RedHat</em> y derivados) y son necesarios para poder compilar programas que requieran las librerías.
+Para compilar un programa que utilice una librería no es suficiente con tener instalada la librería, necesitamos instalar el paquete <em>dev</em> con los <em>headers</em>.
+Si el <em>configure</em> se queja de que alguna librería no está instalada lo más habitual es que no tengamos el correspondiente paquete <em>dev</em> instalado.</p>
+<p>Una vez tenemos todas las librerías requeridas instaladas el compilador podrá compilar el programa cuando ejecutemos el <em>make</em>.
+Este proceso debe terminar sin errores, si algo falla debemos leer la salida del <em>make</em> y buscar el fallo.
+Normalmente el fallo suele deberse a la falta de alguna librería.
+Si el fallo es más complicado lo más recomendable es buscar primero en <em>google</em> y si no encontramos la solución preguntar a los desarrolladores del software por el problema.</p>
+<p>Una vez compilado soló queda ejecutar <em>make install</em> para que el software se instale.
+Como lo habitual es que el programa esté destinado a ser instalado en <em>/usr/local/</em> para pode ejecutar el <em>make install</em> deberemos tener privilegios de administrador.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo make install
+</pre></div>
+</div>
+<p>Con esto el programa debe estar listo para ser ejecutado puesto que el binario ejecutable debe haber sido copiado por el comando <em>make install</em> a algún directorio del $PATH, normalmente a <em>/usr/local/bin</em>.</p>
+</section>
+</section>
+</section>
+
+
+
+        
+
+    </main>
+
+</div>
+    <footer>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
+    </footer>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16108274-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>
