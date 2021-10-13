@@ -1,0 +1,32 @@
+
+Software
+========
+Some of the software produced by the bioinformatic group at COMAV might be useful from other researchers. We make available with that hope.
+
+
+Old and unused software
+-----------------------
+
+ngs_crumbs
+__________
+:doc:`ngs_crumbs <ngs_crumbs/index>` ngs_crumbs aims to be a collection of small ngs data processing utilities.
+
+ngs_backbone
+____________
+
+:doc:`ngs_backbone <ngs_backbone/index>` is a bioinformatic application created to work on sequence analysis by using NGS (Next Generation Sequencing)  and sanger sequences. It is capable of cleaning reads, do de novo assembly or mapping against a reference and annotate SNPs, SSRs, ORFs, GO terms and sequence descriptions.
+
+clean_reads
+___________
+
+:doc:`clean_reads <clean_reads/index>` cleans Next Generation Sequencing reads from the following platforms: 454, Illumina, solid and Sanger.
+
+sff_extract
+___________
+
+:doc:`sff_extract <sff_extract/index>` reads the information from the 454 sff files and stores the sequence, quality and adapter clips in fasta and xml files.
+
+EST2uni
+_______
+
+EST2uni was a tool similar to backbone, but unable to handle NGS data. EST2uni has been deprecated in favor of :doc:`ngs_backbone <ngs_backbone/index>`.

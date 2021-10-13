@@ -41,28 +41,43 @@
 
     <nav class="horizontal_nav page_nav">
         <ul>
-            <li><a href="index.html">Bioinformatics & genomics</a>
+            <li><a href="/index.html">Bioinformatics & genomics</a>
                 <ul>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="people.html">People</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="getting_here.html">Getting here</a></li>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/people.html">People</a></li>
+                    <li><a href="/publications.html">Publications</a></li>
+                    <li><a href="/getting_here.html">Getting here</a></li>
 <!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
                </ul>
             </li>
-            <li><a>Software</a>
+            <li><a href="/software.html">Software</a>
                 <ul>
-                    <li><a href="https://github.com/bioinfcomav">Git</a></li>
-                    <li><a href="https://github.com/JoseBlanca">Git Jose Blanca</a></li>
+
+                    <li><a href="https://github.com/JoseBlanca/">Git</a></li><!--
+                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
+                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
+                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
+                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
+                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
                </ul>
             </li>
-            <li><a href="courses.html">Courses</a>
+            <li><a href="/databases.html">Databases</a>
                 <ul>
-                    <li><a href="courses/intro_bioinf/index.html">Bionformática básica</a></li>
-                    <li><a href="courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
-                    <li><a href="courses/linux/index.html">Linux y Python</a></li>
-                    <li><a href="courses/unix/index.html">Linux</a></li>
-                    <li><a href="courses/biotech3/index.html">Bioinf biotecnología</a></li>
+                    <li><a href="https://melogene.upv.es">Melogene</a></li>
+                    <li><a href="https://cucurbigene.upv.es">Cucurbigene</a></li>
+               </ul>
+            </li>
+            <li><a ref=''>Downloads</a>
+                <ul>
+                    <li><a href="/downloads/zucchini">Zucchini</a></li>
+               </ul>
+            </li>
+            <li><a href="/courses.html">Courses</a>
+                <ul>
+                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
+                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
+                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
+                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
                </ul>
         </ul>
     </nav>
@@ -87,38 +102,32 @@
 <h1>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this headline">¶</a></h1>
 <section id="mapping-and-count-sequences">
 <h2>Mapping and count sequences<a class="headerlink" href="#mapping-and-count-sequences" title="Permalink to this headline">¶</a></h2>
-<p>The objective is to map and count redas using an <a class="reference download internal" download="" href="_downloads/8b0bd8b64c5c16bef1f43a4e9488ffb6/SRR45_region.fastq"><code class="xref download docutils literal notranslate"><span class="pre">example</span> <span class="pre">file</span></code></a>  of a RNAseq experience  with only a sample. We use <a class="reference external" href="https://ccb.jhu.edu/software/tophat/index.shtml">TopHat</a>  to map read againt the <a class="reference download internal" download="" href="_downloads/970c0364472e11c04558b39a7495b09a/sl2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genome</span></code></a> and <a class="reference external" href="http://cole-trapnell-lab.github.io/cufflinks/manual/">Cufflinks</a> to count the reads.</p>
-<p>First we create an index of genome file.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/rnaseq$ mkdir rnaseq
+<p>The objective is to map and count redas using an <a class="reference download internal" download="" href="_downloads/8b0bd8b64c5c16bef1f43a4e9488ffb6/SRR45_region.fastq"><code class="xref download docutils literal notranslate"><span class="pre">example</span> <span class="pre">file</span></code></a>  of a RNAseq experience  with only a sample. We use <a class="reference external" href="http://daehwankimlab.github.io/hisat2/">Hisat2</a>  to map read againt the <a class="reference download internal" download="" href="_downloads/970c0364472e11c04558b39a7495b09a/sl2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genome</span></code></a> and <a class="reference external" href="https://ccb.jhu.edu/software/stringtie/">StringTie</a> to count the reads.</p>
+<p>First we download the <a class="reference download internal" download="" href="_downloads/2917d130a06ff95710fced6d4c9a6d11/sl2_index.zip"><code class="xref download docutils literal notranslate"><span class="pre">index</span> <span class="pre">files</span> <span class="pre">of</span> <span class="pre">genome</span></code></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine: mkdir rnaseq
 ngs_user@machine:~$ cd rnaseq
-ngs_user@machine:~/rnaseq$ bowtie2-build sl2.fasta sl2
+ngs_user@machine:~/rnaseq$ gunzip sl2_index.zip
 </pre></div>
 </div>
 <p>Now, we map the reads.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/rnaseq$ tophat sl2 SRR45_region.fastq
-
-ngs_user@machine:~/rnaseq$ cd tophat_out
-
-ngs_user@machine:~/rnaseq/tophat_out$ less align_summary.txt
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/rnaseq$ hisat2 -x sl2_index -U SRR45_region.fastq -S SRR45.sam
 </pre></div>
 </div>
 <p>We sort and index the bam file to open with IGV.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/rnaseq/tophat_out$ samtools sort accepted_hits.bam -o accepted_hits.sort.bam
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/rnaseq/tophat_out$ samtools view -hb -o SRR45.bam -S SRR45.sam
 
-ngs_user@machine:~/rnaseq/tophat_out$ samtools index accepted_hits.sort.bam
+ngs_user@machine:~/rnaseq/tophat_out$ sort SRR45.bam -o SRR45_sort.bam
 </pre></div>
 </div>
-<p>Now, we can construct the transcripts and the number of reads in each transcript. We need also the <a class="reference download internal" download="" href="_downloads/c6390e112c9e9176d201208d13aca3a2/sl2.gff3"><code class="xref download docutils literal notranslate"><span class="pre">genome</span> <span class="pre">annotation</span> <span class="pre">file</span></code></a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/rnaseq/tophat_out$ cufflinks -g sl2.gff3 accepted_hits.bam
-
-ngs_user@machine:~/rnaseq/tophat_out$ ls
-
-ngs_user@machine:~/rnaseq/tophat_out$ less transcripts.gtf
-
-ngs_user@machine:~/rnaseq/tophat_out$ less genes.fpkm_tracking
+<p>Now, we can construct the transcripts and the number of reads in each transcript.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/rnaseq/tophat_out$ stringtie  SRR45_sort.bam  -o SRR45.gtf -A SRR45_exp.txt
 </pre></div>
 </div>
-<p>Load the accepted_hits.sort.bam file, the transcripts.gtf and the annotation file sl2.gff3 on the IGV to test the mapping and transcript assembly done with Cufflinks. The next steps will be integrate all transcript assemblies of all samples to create a new annotation file and use it to quantify again the reads of each sample. After that we will start the normalization, differential analysis, etc.</p>
+<p>To use the gene models as reference, we need also the <a class="reference download internal" download="" href="_downloads/c6390e112c9e9176d201208d13aca3a2/sl2.gff3"><code class="xref download docutils literal notranslate"><span class="pre">genome</span> <span class="pre">annotation</span> <span class="pre">file</span></code></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/rnaseq/tophat_out$ stringtie  SRR45_sort.bam -G sl2.gff3 -o SRR45_ref.gtf -A SRR45_exp_ref.txt
+</pre></div>
+</div>
+<p>Load the bam sorted file, the gtf files and the annotation file sl2.gff3 on the IGV to test the mapping and transcript assembly done with StrinTie. The next steps will be integrate all transcript assemblies of all samples to create a new annotation file and use it to quantify again the reads of each sample. After that we will start the normalization, differential analysis, etc.</p>
 </section>
 </section>
 

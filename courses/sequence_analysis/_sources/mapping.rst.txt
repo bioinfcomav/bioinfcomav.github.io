@@ -262,9 +262,9 @@ First we prepare the directory and we download the reference and the reads.
 
 The reference is in genbank format.
 To index it we have to transform it to fasta format.
-We can do it with convert_format included in the seq_crumbs package::
+We can do it with seqret included in the `Emboss package <http://emboss.sourceforge.net/>`_::
 
-  ngs_user@machine:~/mito$ convert_format -f fasta mito_human_ref_nc_012920.gb -o mito_human_ref.fasta
+  ngs_user@machine:~/mito$ seqret  mito_human_ref_nc_012920.gb fasta:mito_human_ref.fasta
 
 Now we can index the mithocondrial genome::
 
@@ -406,7 +406,7 @@ To be able to filter by region first we have to sort and index the bam file.
 
 Now we can filter with samtools view::
 
-  ngs_user@machine:~/mito$ samtools view -b -q 30 sorted_alignments.bam NC_012920.1:0-10000 > filtered_alignments.bam
+  ngs_user@machine:~/mito$ samtools view -b -q 30 sorted_alignments.bam NC_012920:0-10000 > filtered_alignments.bam
 
 BAM statistics
 ______________
@@ -468,12 +468,12 @@ There are other optional information that can be added to the read group. The co
 
 We add the read groups to the 454 and Illumina BAM files::
 
-  ngs_user@machine:~$ picard-tools AddOrReplaceReadGroups ID=illumina LB=illumina PL=illumina PU=none SM=individual1 SORT_ORDER=coordinate INPUT=illumina.bam OUTPUT=illumina.rg.bam
-  ngs_user@machine:~$ picard-tools AddOrReplaceReadGroups ID=454 LB=454 PL=454 PU=none SM=individual2 SORT_ORDER=coordinate INPUT=454.bam OUTPUT=454.rg.bam
+  ngs_user@machine:~$ java -jar /home/ngs/programas/picard-tools/picard.jar AddOrReplaceReadGroups ID=illumina LB=illumina PL=illumina PU=none SM=individual1 SORT_ORDER=coordinate INPUT=illumina.bam OUTPUT=illumina.rg.bam
+  ngs_user@machine:~$ java -jar /home/ngs/programas/picard-tools/picard.jar AddOrReplaceReadGroups ID=454 LB=454 PL=454 PU=none SM=individual2 SORT_ORDER=coordinate INPUT=454.bam OUTPUT=454.rg.bam
 
 Now that we have the read groups set we can merge both BAM files::
 
-  ngs_user@machine:~$ picard-tools MergeSamFiles SORT_ORDER=coordinate ASSUME_SORTED=true INPUT=454.rg.bam INPUT=illumina.rg.bam OUTPUT=merged.bam
+  ngs_user@machine:~$ java -jar /home/ngs/programas/picard-tools/picard.jar MergeSamFiles SORT_ORDER=coordinate ASSUME_SORTED=true INPUT=454.rg.bam INPUT=illumina.rg.bam OUTPUT=merged.bam
 
 Maize mapping
 _____________

@@ -1,17 +1,32 @@
-Course materials
-================
+Courses
+========
+
+Course Materials
+_________________
 
 Post-graduate courses:
 
-	* `Bionformática básica <courses/intro_bioinf/index.html>`_
-	* `NGS sequence analysis <courses/sequence_analysis/index.html>`_
-	* `Linux y Python para las ciencias de la vida <courses/linux/index.html>`_
-	* `Linux <courses/unix/>`_
+	* `Bionformática básica </courses/intro_bioinf/index.html>`_
+	* `NGS sequence analysis </courses/sequence_analysis/index.html>`_
+	* `Linux y Python para las ciencias de la vida </courses/linux/index.html>`_
+	* `Linux para las ciencias de la vida </courses/unix/>`_
 
-UPV degrees:
+UPV Biotechnology degree:
 
-	* `Bioinformatica  <courses/biotech3/index.html>`_
-	* `Aplicaciones de la genómica a la mejora vegetal <https://drive.google.com/open?id=1vkpYb3wQXqWWEGX8Zq6b43m2Jx7nKQx7>`_.
+	* `Bioinformatica  </courses/biotech3>`_
+	* `Materiales <https://drive.google.com/open?id=1vkpYb3wQXqWWEGX8Zq6b43m2Jx7nKQx7>`_ para el curso de Aplicaciones de la genómica a la Mejora vegetal.
 
+
+
+Upcoming courses
+________________
+17th ed. NGS sequence analysis:
+
+	* Inscription Period is open
+	* From 25/11/19 to 29/11/19
+	* More `information <https://www.cfp.upv.es/formacion-permanente/cursos/introduccion-al-analisis-de-secuencias-ngs_idiomaes-cursoid67193-cid67193.html>`_
+
+
+Mail us if your are interested in these courses and we will inform once the registration is about to open.
 
 If you are interested in organize these courses in your organization, please contact us.

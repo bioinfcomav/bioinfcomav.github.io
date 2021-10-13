@@ -21,48 +21,45 @@ Practical tasks
 Mapping and count sequences
 ___________________________
 
-The objective is to map and count redas using an :download:`example file <downloads/SRR45_region.fastq>`  of a RNAseq experience  with only a sample. We use `TopHat <https://ccb.jhu.edu/software/tophat/index.shtml>`_  to map read againt the :download:`genome <downloads/sl2.fasta>` and `Cufflinks <http://cole-trapnell-lab.github.io/cufflinks/manual/>`_ to count the reads.
+The objective is to map and count redas using an :download:`example file <downloads/SRR45_region.fastq>`  of a RNAseq experience  with only a sample. We use `Hisat2 <http://daehwankimlab.github.io/hisat2/>`_  to map read againt the :download:`genome <downloads/sl2.fasta>` and `StringTie <https://ccb.jhu.edu/software/stringtie/>`__ to count the reads.
 
-First we create an index of genome file.
+First we download the :download:`index files of genome <downloads/sl2_index.zip>`.
 
 ::
 
-  ngs_user@machine:~/rnaseq$ mkdir rnaseq
+  ngs_user@machine: mkdir rnaseq
   ngs_user@machine:~$ cd rnaseq      
-  ngs_user@machine:~/rnaseq$ bowtie2-build sl2.fasta sl2
+  ngs_user@machine:~/rnaseq$ gunzip sl2_index.zip
 
 Now, we map the reads.
 
 ::
 
-  ngs_user@machine:~/rnaseq$ tophat sl2 SRR45_region.fastq
+  ngs_user@machine:~/rnaseq$ hisat2 -x sl2_index -U SRR45_region.fastq -S SRR45.sam
 
-  ngs_user@machine:~/rnaseq$ cd tophat_out
-
-  ngs_user@machine:~/rnaseq/tophat_out$ less align_summary.txt
-
+  
 
 We sort and index the bam file to open with IGV.
 
 ::
 
-  ngs_user@machine:~/rnaseq/tophat_out$ samtools sort accepted_hits.bam -o accepted_hits.sort.bam
+  ngs_user@machine:~/rnaseq/tophat_out$ samtools view -hb -o SRR45.bam -S SRR45.sam
 
-  ngs_user@machine:~/rnaseq/tophat_out$ samtools index accepted_hits.sort.bam
+  ngs_user@machine:~/rnaseq/tophat_out$ sort SRR45.bam -o SRR45_sort.bam
 
 
-Now, we can construct the transcripts and the number of reads in each transcript. We need also the :download:`genome annotation file <downloads/sl2.gff3>`
+Now, we can construct the transcripts and the number of reads in each transcript. 
 
 ::
 
-  ngs_user@machine:~/rnaseq/tophat_out$ cufflinks -g sl2.gff3 accepted_hits.bam
-
-  ngs_user@machine:~/rnaseq/tophat_out$ ls
-
-  ngs_user@machine:~/rnaseq/tophat_out$ less transcripts.gtf
-
-  ngs_user@machine:~/rnaseq/tophat_out$ less genes.fpkm_tracking
+ ngs_user@machine:~/rnaseq/tophat_out$ stringtie  SRR45_sort.bam  -o SRR45.gtf -A SRR45_exp.txt
 
 
+To use the gene models as reference, we need also the :download:`genome annotation file <downloads/sl2.gff3>`
+::
 
-Load the accepted_hits.sort.bam file, the transcripts.gtf and the annotation file sl2.gff3 on the IGV to test the mapping and transcript assembly done with Cufflinks. The next steps will be integrate all transcript assemblies of all samples to create a new annotation file and use it to quantify again the reads of each sample. After that we will start the normalization, differential analysis, etc.
+  ngs_user@machine:~/rnaseq/tophat_out$ stringtie  SRR45_sort.bam -G sl2.gff3 -o SRR45_ref.gtf -A SRR45_exp_ref.txt
+
+ 
+
+Load the bam sorted file, the gtf files and the annotation file sl2.gff3 on the IGV to test the mapping and transcript assembly done with StrinTie. The next steps will be integrate all transcript assemblies of all samples to create a new annotation file and use it to quantify again the reads of each sample. After that we will start the normalization, differential analysis, etc.

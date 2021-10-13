@@ -24,7 +24,6 @@ Contact: jcanizares@upv.es
 
 Former
 ______
-
 - Peio Ziarsolo
 - David Sánchez Matarredona
 - Javier Montero-Pau
