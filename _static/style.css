@@ -90,6 +90,35 @@ header h1{
 /*  height:1024px;*/
 }
 
+.body h1 {
+  margin:0;
+  padding:32px 0 8px 0;
+  padding-top:32px;
+  text-align:center;
+  color:#002697;
+  overflow:hidden;
+}
+
+.body h2 {
+  margin:0;
+  padding:32px 0 8px 0;
+  font-size:32px;
+  text-align:left;
+  border-bottom:1px solid #002697;
+  font-weight:normal;
+  color:#002697;
+  overflow:hidden;
+}
+.body h3 {
+  margin:0;
+  padding:32px 0 8px 0;
+  font-size:24px;
+  text-align:left;
+  border-bottom:1px solid #002697;
+  font-weight:normal;
+  overflow:hidden;
+}
+
 .page_nav a{
   color:#555;
   display:block;

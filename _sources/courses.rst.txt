@@ -6,14 +6,14 @@ _________________
 
 Post-graduate courses:
 
-	* `Bionformática básica </courses/intro_bioinf/index.html>`_
-	* `NGS sequence analysis </courses/sequence_analysis/index.html>`_
-	* `Linux y Python para las ciencias de la vida </courses/linux/index.html>`_
-	* `Linux para las ciencias de la vida </courses/unix/>`_
+	* `Bionformática básica <courses/intro_bioinf/index.html>`_
+	* `NGS sequence analysis <courses/sequence_analysis/index.html>`_
+	* `Linux y Python para las ciencias de la vida <courses/linux/index.html>`_
+	* `Linux para las ciencias de la vida <courses/unix/>`_
 
 UPV Biotechnology degree:
 
-	* `Bioinformatica  </courses/biotech3>`_
+	* `Bioinformatica  <courses/biotech3/index.html>`_
 	* `Materiales <https://drive.google.com/open?id=1vkpYb3wQXqWWEGX8Zq6b43m2Jx7nKQx7>`_ para el curso de Aplicaciones de la genómica a la Mejora vegetal.
 
 
