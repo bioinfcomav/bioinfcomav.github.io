@@ -153,7 +153,6 @@ Vertical and horizontal lines divide the chromosomes.</p>
 <ul class="simple">
 <li><p>How do you interpret the result?</p></li>
 </ul>
-<p>[comment]: # colors in dotplots are related to the synonymous vs non-synonymous changes. They show how much time has passed since the split</p>
 </section>
 <section id="virus-repeats-dotplot">
 <h3>Virus repeats dotplot<a class="headerlink" href="#virus-repeats-dotplot" title="Permalink to this headline">¶</a></h3>
@@ -196,10 +195,6 @@ Draw a dotplot comparing its sequence against itself.</p>
 </div>
 <p>How similar are the sequences?
 Why is different from the previous attempt?</p>
-<p>[comment]: # Para comentar:</p>
-<p>[comment]: # - siempre que se haga un alineamiento se obtendrá un resultado. Aunque no tenga sentido.</p>
-<p>[comment]: #    - Hay que evaluar el resultado obtenido para ver si es correcto o si ha habido algún problema</p>
-<p>[comment]: #    - Los programas están hechos para resolver una cuestión concreta. En este caso el matcher hace el alineamiento entre dos secuencias. Lo cual no quiere decir que eso sea exactamente lo que queremos hacer nosotros. El matcher alinea las dos secuencias en la misma dirección, pero puede que nosotros hubiésemos asumido que puede hacerlo en ambas direcciones.</p>
 <p>What would happen if we were to run the following command (Try to answer it before executing the command)?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ matcher -sreverse1 -sreverse2 sequence1.fasta sequence2.fasta stdout
 </pre></div>
@@ -215,7 +210,6 @@ We also could use these methods to align homologous proteins within a species.</
 </div>
 <p>How similar are the sequences?</p>
 <p>Is this alignment local or global? Why?</p>
-<p>[comment]: #  El algoritmo de alineamiento es local y, en este caso, el alineamiento es local porque hay fragmentos al final de las secuencias que no están alineados. Para poder saberlo debemos saber cuál es la longitud de las secuencias. Podemos aprovechar para recordar como se usaba el grep y el wc para ver la longitud de secuencia de un fichero fasta. Se puede comparar con el dotplot de las mismas dos secuencias que se hizo en la práctica anterior.</p>
 </section>
 <section id="conserved-regions">
 <h3>Conserved regions<a class="headerlink" href="#conserved-regions" title="Permalink to this headline">¶</a></h3>
@@ -230,8 +224,6 @@ There are regions that are more conversed and regions that are less conserved.</
 <li><p>Is the alignment local?</p></li>
 <li><p>Why are there regions that has not been aligned?</p></li>
 </ul>
-<p>[comment]: # por que son muy diferentes porque no están conservadas
-[comment]: # por que el alineamiento tendría una puntuación menor</p>
 <p>Why some regions are more similar than others?</p>
 <ul class="simple">
 <li><p>Is there anything special with aminoacids 92, 100, 101, 104, 108, 111, 112, 122 and 124 in the human frataxin?</p></li>
@@ -251,13 +243,6 @@ Ask matcher to show 3 alternative alignments</p>
 </pre></div>
 </div>
 <p>Why the first alignment is the best one?</p>
-<p>[comment]: # - No todo lo que tiene función tiene una secuencia muy conservada. Hay distintos grados de conservación</p>
-<p>[comment]: #    - No sólo el centro activo está conservado.</p>
-<p>[comment]: #    - Leyenda Igual :, similar .</p>
-<p>[comment]: #    - aprovechar para recordar como se decide qué es igual y qué es similar. Con las matrices de similitud.</p>
-<p>[comment]: #    - Las proteínas tienden a parecerse más que el ADN.</p>
-<p>[comment]: #    - Un alineamiento múltiple podría ayudar a evaluar si la alineación del péptido señal alinea residuos homólogos o no.</p>
-<p>[comment]: #    - Se puede deducir la historia evolutiva a partir de la secuencia.</p>
 </section>
 </section>
 <section id="gobal-alignments">
