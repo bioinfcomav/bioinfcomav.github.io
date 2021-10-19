@@ -121,9 +121,10 @@ It is important to read this manual before using BEDTools in a real question.</p
 </section>
 <section id="summary-of-the-main-bedtools">
 <h2>Summary of the main BEDTools<a class="headerlink" href="#summary-of-the-main-bedtools" title="Permalink to this headline">¶</a></h2>
-<section id="intersectbed">
-<h3>intersectBed<a class="headerlink" href="#intersectbed" title="Permalink to this headline">¶</a></h3>
-<p>This tools answers the question of which features of two sets overlap.
+<p>You have a list with all bedtools <a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/bedtools-suite.html">utilities</a>.</p>
+<section id="intersect">
+<h3>intersect<a class="headerlink" href="#intersect" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/bedtools-suite.html">intersect</a> answers the question of which features of two sets overlap.
 It works with BED/GFF/VCF and BAM files.</p>
 <p>intersectBed can report different overlaps.
 By default it will report the overlapping segment:</p>
@@ -162,9 +163,9 @@ chr1 150  200  chr1   150  250
 <p>intersectBed can also count, with the <em>-c</em> parameter,  the number of features that overlap in every region defined in the a file.</p>
 <p>intersectBed has many other features and possibilities that are explained in its manual, like minimum fraction of overlap or strandedness.</p>
 </section>
-<section id="windowbed">
-<h3>windowBed<a class="headerlink" href="#windowbed" title="Permalink to this headline">¶</a></h3>
-<p>Similar to intersectBed, windowBed searches for overlapping features in A and B.
+<section id="window">
+<h3>window<a class="headerlink" href="#window" title="Permalink to this headline">¶</a></h3>
+<p>Similar to intersectBed, <a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/window.html">window</a> searches for overlapping features in A and B.
 However, windowBed adds a specified number (1000, by default) of base pairs upstream and downstream of each feature in A.
 In effect, this allows features in B that are “near” features in A to be detected.
 If an overlap is found in B, both the original A feature and the original B feature are reported.</p>
@@ -184,9 +185,9 @@ chr1 1000 1500  chr1 100  300
 </pre></div>
 </div>
 </section>
-<section id="closestbed">
-<h3>closestBed<a class="headerlink" href="#closestbed" title="Permalink to this headline">¶</a></h3>
-<p>Similar to intersectBed, closestBed searches for overlapping features in A and B.
+<section id="closest">
+<h3>closest<a class="headerlink" href="#closest" title="Permalink to this headline">¶</a></h3>
+<p>Similar to intersectBed, <a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/closest.html">closest</a> searches for overlapping features in A and B.
 In the event that no feature in B overlaps the current feature in A, closestBed will report the closest (that is, least genomic distance from the start or end of A) feature in B.
 For example, one might want to find which is the closest gene to a significant GWAS polymorphism. Note that closestBed will report an overlapping feature as the closest.
 That is, it does not restrict to closest non-overlapping feature.</p>
@@ -206,9 +207,9 @@ chr1 600  700  chr1  900  1000
 </pre></div>
 </div>
 </section>
-<section id="subtractbed">
-<h3>subtractBed<a class="headerlink" href="#subtractbed" title="Permalink to this headline">¶</a></h3>
-<p>subtractBed searches for features in B that overlap A.
+<section id="subtract">
+<h3>subtract<a class="headerlink" href="#subtract" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/subtract.html">subtract</a> searches for features in B that overlap A.
 If an overlapping feature is found in B, the overlapping portion is removed from A and the remaining portion of A is reported.
 If a feature in B overlaps all of a feature in A, the A feature will not be reported.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chromosome</span>    <span class="o">================================================================</span>
@@ -228,9 +229,9 @@ chr1 20  30
 </pre></div>
 </div>
 </section>
-<section id="mergebed">
-<h3>mergeBed<a class="headerlink" href="#mergebed" title="Permalink to this headline">¶</a></h3>
-<p>mergeBed combines overlapping or “book-ended” (that is, one base pair away) features in a feature file into a single feature which spans all of the combined features.</p>
+<section id="merge">
+<h3>merge<a class="headerlink" href="#merge" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/merge.html">merge</a> combines overlapping or “book-ended” (that is, one base pair away) features in a feature file into a single feature which spans all of the combined features.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chromosome</span>    <span class="o">================================================================</span>
 <span class="n">BED</span> <span class="n">File</span> <span class="n">A</span>             <span class="o">===========</span>                             <span class="o">=======</span>
                  <span class="o">=========</span>                            <span class="o">=============</span>   <span class="o">====</span>
@@ -249,9 +250,9 @@ chr1 600  850
 </pre></div>
 </div>
 </section>
-<section id="coveragebed">
-<h3>coverageBed<a class="headerlink" href="#coveragebed" title="Permalink to this headline">¶</a></h3>
-<p>coverageBed computes both the depth and breadth of coverage of features in file A across the features in file B. For example, coverageBed can compute the coverage of sequence alignments (file A) across 1 kilobase (arbitrary) windows (file B) tiling a genome of interest.
+<section id="coverage">
+<h3>coverage<a class="headerlink" href="#coverage" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/coverage.html">coverage</a> computes both the depth and breadth of coverage of features in file A across the features in file B. For example, coverageBed can compute the coverage of sequence alignments (file A) across 1 kilobase (arbitrary) windows (file B) tiling a genome of interest.
 One advantage that coverageBed offers is that it not only counts the number of features that overlap an interval in file B, it also computes the fraction of bases in B interval that were overlapped by one or more features.
 Thus, coverageBed also computes the breadth of coverage for each interval in B.</p>
 <dl class="simple">
@@ -286,9 +287,9 @@ chr2  0   100  0  0    100  0.0000000
 </pre></div>
 </div>
 </section>
-<section id="genomecoveragebed">
-<h3>genomeCoverageBed<a class="headerlink" href="#genomecoveragebed" title="Permalink to this headline">¶</a></h3>
-<p>genomeCoverageBed computes a histogram of feature coverage (e.g., aligned sequences) for a given genome.
+<section id="genomecov">
+<h3>genomeCov<a class="headerlink" href="#genomecov" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/genomecov.html">genomeCov</a> computes a histogram of feature coverage (e.g., aligned sequences) for a given genome.
 Optionally, by using the –d option, it will report the depth of coverage at each base on each chromosome in the genome file (-g).</p>
 <dl class="simple">
 <dt>The default output format is as follows:</dt><dd><ul class="simple">
@@ -316,9 +317,9 @@ genome  1    520  1500 0.346667
 </pre></div>
 </div>
 </section>
-<section id="fastafrombed">
-<h3>fastaFromBed<a class="headerlink" href="#fastafrombed" title="Permalink to this headline">¶</a></h3>
-<p>fastaFromBed extracts sequences from a FASTA file for each of the intervals defined in a BED file.</p>
+<section id="getfasta">
+<h3>getfasta<a class="headerlink" href="#getfasta" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/getfasta.html">getfasta</a> extracts sequences from a FASTA file for each of the intervals defined in a BED file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat test.fa
 &gt;chr1
 AAAAAAAACCCCCCCCCCCCCGCTACTGGGGGGGGGGGGGGGGGG
@@ -331,9 +332,9 @@ AAACC
 </pre></div>
 </div>
 </section>
-<section id="sortbed">
-<h3>SortBed<a class="headerlink" href="#sortbed" title="Permalink to this headline">¶</a></h3>
-<p>sortBed sorts a feature file by chromosome and other criteria.</p>
+<section id="sort">
+<h3>sort<a class="headerlink" href="#sort" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/sort.html">sort</a> sorts a feature file by chromosome and other criteria.</p>
 <p>By default, sortBed sorts a BED file by chromosome and then by start position in ascending order.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat A.bed
 chr1  800 1000

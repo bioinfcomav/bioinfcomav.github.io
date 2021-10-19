@@ -48,10 +48,12 @@ Merge nearby repetitive elements into a single entry, so long as they are within
 Summary of the main BEDTools
 ----------------------------
 
-intersectBed
-____________
+You have a list with all bedtools `utilities <https://bedtools.readthedocs.io/en/latest/content/bedtools-suite.html>`_.
 
-This tools answers the question of which features of two sets overlap.
+intersect
+_________
+
+`intersect <https://bedtools.readthedocs.io/en/latest/content/bedtools-suite.html>`_ answers the question of which features of two sets overlap.
 It works with BED/GFF/VCF and BAM files.
 
 intersectBed can report different overlaps.
@@ -96,10 +98,10 @@ intersectBed can also count, with the *-c* parameter,  the number of features th
 intersectBed has many other features and possibilities that are explained in its manual, like minimum fraction of overlap or strandedness.
 
 
-windowBed
-_________
+window
+______
 
-Similar to intersectBed, windowBed searches for overlapping features in A and B.
+Similar to intersectBed, `window <https://bedtools.readthedocs.io/en/latest/content/tools/window.html>`_ searches for overlapping features in A and B.
 However, windowBed adds a specified number (1000, by default) of base pairs upstream and downstream of each feature in A.
 In effect, this allows features in B that are “near” features in A to be detected.
 If an overlap is found in B, both the original A feature and the original B feature are reported.
@@ -121,10 +123,10 @@ If an overlap is found in B, both the original A feature and the original B feat
   $ windowBed –a A.bed –b B.bed
   chr1 1000 1500  chr1 100  300
 
-closestBed
-__________
+closest
+_______
 
-Similar to intersectBed, closestBed searches for overlapping features in A and B.
+Similar to intersectBed, `closest <https://bedtools.readthedocs.io/en/latest/content/tools/closest.html>`_ searches for overlapping features in A and B.
 In the event that no feature in B overlaps the current feature in A, closestBed will report the closest (that is, least genomic distance from the start or end of A) feature in B.
 For example, one might want to find which is the closest gene to a significant GWAS polymorphism. Note that closestBed will report an overlapping feature as the closest. 
 That is, it does not restrict to closest non-overlapping feature.
@@ -146,10 +148,10 @@ That is, it does not restrict to closest non-overlapping feature.
   $ closestBed –a A.bed –b B.bed
   chr1 600  700  chr1  900  1000
 
-subtractBed
-___________
+subtract
+________
 
-subtractBed searches for features in B that overlap A.
+`subtract <https://bedtools.readthedocs.io/en/latest/content/tools/subtract.html>`_ searches for features in B that overlap A.
 If an overlapping feature is found in B, the overlapping portion is removed from A and the remaining portion of A is reported.
 If a feature in B overlaps all of a feature in A, the A feature will not be reported.
 
@@ -171,10 +173,10 @@ If a feature in B overlaps all of a feature in A, the A feature will not be repo
   $ subtractBed –a A.bed –b B.bed
   chr1 20  30
 
-mergeBed
-________
+merge
+_____
 
-mergeBed combines overlapping or “book-ended” (that is, one base pair away) features in a feature file into a single feature which spans all of the combined features.
+`merge <https://bedtools.readthedocs.io/en/latest/content/tools/merge.html>`_ combines overlapping or “book-ended” (that is, one base pair away) features in a feature file into a single feature which spans all of the combined features.
 
 ::
 
@@ -195,10 +197,10 @@ mergeBed combines overlapping or “book-ended” (that is, one base pair away) 
   chr1 100  250
   chr1 600  850
 
-coverageBed
-___________
+coverage
+________
 
-coverageBed computes both the depth and breadth of coverage of features in file A across the features in file B. For example, coverageBed can compute the coverage of sequence alignments (file A) across 1 kilobase (arbitrary) windows (file B) tiling a genome of interest.
+`coverage <https://bedtools.readthedocs.io/en/latest/content/tools/coverage.html>`_ computes both the depth and breadth of coverage of features in file A across the features in file B. For example, coverageBed can compute the coverage of sequence alignments (file A) across 1 kilobase (arbitrary) windows (file B) tiling a genome of interest.
 One advantage that coverageBed offers is that it not only counts the number of features that overlap an interval in file B, it also computes the fraction of bases in B interval that were overlapped by one or more features.
 Thus, coverageBed also computes the breadth of coverage for each interval in B.
 
@@ -232,10 +234,10 @@ After each interval in B, coverageBed will report:
   chr1  100 200  1  100  100  1.0000000
   chr2  0   100  0  0    100  0.0000000
 
-genomeCoverageBed
-_________________
+genomeCov
+_________
 
-genomeCoverageBed computes a histogram of feature coverage (e.g., aligned sequences) for a given genome.
+`genomeCov <https://bedtools.readthedocs.io/en/latest/content/tools/genomecov.html>`_ computes a histogram of feature coverage (e.g., aligned sequences) for a given genome.
 Optionally, by using the –d option, it will report the depth of coverage at each base on each chromosome in the genome file (-g).
 
 The default output format is as follows:
@@ -261,10 +263,10 @@ The default output format is as follows:
   genome  0    980  1500 0.653333
   genome  1    520  1500 0.346667
 
-fastaFromBed
-____________
+getfasta
+________
 
-fastaFromBed extracts sequences from a FASTA file for each of the intervals defined in a BED file.
+`getfasta <https://bedtools.readthedocs.io/en/latest/content/tools/getfasta.html>`_ extracts sequences from a FASTA file for each of the intervals defined in a BED file.
 
 ::
 
@@ -278,10 +280,10 @@ fastaFromBed extracts sequences from a FASTA file for each of the intervals defi
   >chr1:5-10
   AAACC
 
-SortBed
-_______
+sort
+____
 
-sortBed sorts a feature file by chromosome and other criteria.
+`sort <https://bedtools.readthedocs.io/en/latest/content/tools/sort.html>`_ sorts a feature file by chromosome and other criteria.
 
 By default, sortBed sorts a BED file by chromosome and then by start position in ascending order.
 
