@@ -23,7 +23,7 @@ Distance methods
 ================
 
 You have a :download:`multiple sequence alignment <../static/phylogeny/aprot.fasta>` alignment.
-Generate two trees without bootstrap (set "Test of Phylogeny" as None)one using neighbor-joining and another using UPGMA.
+Generate two trees without bootstrap (set "Test of Phylogeny" as None): one using neighbor-joining and another using UPGMA.
 
 
 * Visualize the trees obtained.
@@ -31,7 +31,7 @@ Generate two trees without bootstrap (set "Test of Phylogeny" as None)one using 
 * Which clades do they share? You can change the order in which the branches are drawn without changing their topologies to be able to compare the trees.
 * Which tree is better
 
-Use this other `multiple sequence alignment :download:<../static/phylogeny/hprot.fasta>` to generate a new neighbor-joining tree without bootstrap.
+Use this other :download:`multiple sequence alignment <../static/phylogeny/hprot.fasta>` to generate a new neighbor-joining tree without bootstrap.
 
 
 * Is this tree informative? Why?

@@ -131,7 +131,7 @@ We want to build a phylogeny within the animals and we decide to use a :download
 
 Which would be the advantages and disadvantages of using nr vs refseq?
 
-If we use refseq do we get the same result by using blastn vs tblastx?
+If we use refseq do we get the same result by using blastn vs blastx?
 How many sequences do we get for both databases?
 Why are we getting theses results?
 
