@@ -1,12 +1,22 @@
 Publications
 ============
 
+Dissemination articles
+______________________
+========================================= ======
+Journal                                   Title
+========================================= ======
+
+El país. 2021                             `El tomate no es natural, es un tesoro creado por el ingenio humano <https://elpais.com/ciencia/2021-12-03/el-tomate-no-es-natural-es-un-tesoro-creado-por-el-ingenio-humano.html>`_
 
 2021
 ____
 ========================================= ======
 Journal                                   Title
 ========================================= ======
+Planta                                    `Large-scale gene gains and losses molded the NLR defense arsenal during the Cucurbita evolution <https://link.springer.com/article/10.1007/s00425-021-03717-x>`_
+Int J Mol Sci                             `Early Embryo Exposure to Assisted Reproductive Manipulation Induced Subtle Changes in Liver Epigenetics with No Apparent Negative Health Consequences in Rabbit <https://www.mdpi.com/1422-0067/22/18/9716>`_
+Agronomy                                  `Integrative Transcriptomic and Metabolomic Analysis at Organ Scale Reveals Gene Modules Involved in the Responses to Suboptimal Nitrogen Supply in Tomato  <https://www.mdpi.com/2073-4395/11/7/1320>`_
 Industrial Crops and Products             `Flower induction and development in saffron: Timing and hormone signalling pathways <https://www.sciencedirect.com/science/article/pii/S0926669021001345>`_
 Plant Methods                             `K-seq, an affordable, reliable, and open Klenow NGS-based genotyping technology <https://plantmethods.biomedcentral.com/articles/10.1186/s13007-021-00733-6>`_
 Genes                                     `Discovery of a Major QTL Controlling Trichome IV Density in Tomato Using K-Seq Genotyping <https://www.mdpi.com/2073-4425/12/2/243>`_

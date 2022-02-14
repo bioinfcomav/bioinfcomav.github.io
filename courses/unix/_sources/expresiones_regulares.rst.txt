@@ -20,7 +20,7 @@ Expresiones alternativas
 ------------------------
 
 Una expresión u otra.
-Imaginemos que tenemos un fichero con los :download:`orígenes <./demo_data/origenes.txt>` de los pacientes de un estudio sobre síndrome de Usher.
+Imaginemos que tenemos un fichero con los `orígenes <./demo_data/origenes.txt>`_ de los pacientes de un estudio sobre síndrome de Usher.
 Queremos seleccionar todos los pacientes que vienen de Valencia o Castellón.
 Podemos hacerlo utilizando la sintaxis para expresiones alternativas:
 
@@ -240,7 +240,7 @@ Ejercicios
 #. 
    ¿Qué ficheros o directorios en /etc continen un número en el nombre?
 
-    Trabajando con el fichero de los :download:`orígenes <./demo_data/origenes.txt>` de los pacientes de Usher resolver las siguientes cuestiones.
+    Trabajando con el fichero de los `orígenes <./demo_data/origenes.txt>`_ de los pacientes de Usher resolver las siguientes cuestiones.
 
 #. 
    Seleccionar los pacientes enviados por el hospital de Castellón.
@@ -254,7 +254,7 @@ Ejercicios
 #. 
    En el fichero de pacientes de Usher hay algunas líneas separadas por espacios y otras por tabuladores, cambiar todos los separadores a comas.
 
-    Disponemos de un fichero con una :download:`caracterización morfológica <./demo_data/caracterizacion_plantas.txt>` de unas plantas.
+    Disponemos de un fichero con una `caracterización morfológica <./demo_data/caracterizacion_plantas.txt>`_ de unas plantas.
 
 #. 
    Recuperar aquellas plantas numeradas con 1 o con 3 dígitos.
