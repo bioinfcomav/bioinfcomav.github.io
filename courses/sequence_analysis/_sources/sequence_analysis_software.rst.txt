@@ -2,9 +2,6 @@
 NGS analysis software
 =====================
 
-.. figure:: _images/sequence_software_presentation.png
-   :width: 400px
+.. raw:: html
 
-   :download:`Sequence analysis software <downloads/sequence_analysis_software.odp>` (:download:`pdf <downloads/sequence_analysis_software.pdf>`)
-
-
+   <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vToE2wWzTpdHC5rYwLVNGRlCT4JrkBJmh_MHKuZrDr3xN5rBmEnj32LbCnHmtxU4aMlD7CWcZMTKV0x/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
