@@ -1,10 +1,8 @@
 
-NGS applications
-----------------
+NGS application examples
+========================
 
-.. figure:: _images/ngs_applications.png
-   :width: 400px
+.. raw:: html
 
-   :download:`NGS application examples <downloads/ngs_application_examples.odp>` (:download:`pdf <downloads/ngs_application_examples.pdf>`)
-
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQq9Kaj_3-cUWukdkHJ1g9kjSdbKqWfbusibMcEr8cJC95-C_J_X3Z5rCLfS4vJXJ9XvA8Gl_VafA6B/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 

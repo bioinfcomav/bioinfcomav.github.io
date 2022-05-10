@@ -2,7 +2,7 @@
 NGS sequence analysis
 =====================
 
-The course deals with the analysis from NGS reads from the 454, Solid and Illumina sequencers.
+The course deals with the analysis from NGS reads.
 The main topics are:
 
   * read quality control,
@@ -14,10 +14,10 @@ The main topics are:
 .. figure:: _images/ngs_map.png
    :width: 600px
 
-The lessons will be mostly practical with a little theoretical introduction. Several exercises will be proposed to introduce to the students in a gradual way to the field.
+The lessons will be mostly practical with some theoretical introduction. Several exercises will be proposed to introduce to the students in a gradual way to the field.
 All software used in the course will be free software freely available in the web.
 
-Despite that a small introduction to unix console usage is included in this course, could be interesting to the students  to practice  with the basic orders before to assist to the course. There are several interesting courses on line, such as:
+Despite that a small introduction to unix console usage is included in this course, could be interesting to the students  to practice  with the basic commands before. There are several interesting courses on line, such as:
 
 `Informática para las ciencias de la vida: Unix y Python <http://bioinf.comav.upv.es/courses/linux/index.html>`_
 
@@ -30,6 +30,10 @@ Professors: Joaquín Cañizares Sales, Jose Blanca, Peio Ziarsolo
 
 Lessons
 _______
+
+All presentations are available as google slides: `NGS presentations <https://drive.google.com/drive/folders/14CcFQXuwzrgk2VAi9qM17z749ax15UBd?usp=sharing>`_
+
+
 
 .. toctree::
    :maxdepth: 1

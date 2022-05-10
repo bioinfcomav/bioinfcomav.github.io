@@ -1,13 +1,31 @@
-Sequencing Platforms
+Sequencing platforms
 ====================
 
 
-.. figure:: _images/sequencing_technologies_presentation.png
-   :width: 400px
+Sequencing platforms
+--------------------
 
-   :download:`Sequencing Technologies presentation <downloads/sequencing_technologies.odp>` (:download:`pdf <downloads/sequencing_technologies.pdf>`)
+.. raw:: html
 
-Molecular Ecologist has an excellent review on all `NGS platforms <http://www.molecularecologist.com/next-gen-fieldguide-2014/>`_.
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR4ifPwmrKqQDnq-rfDblNQcWs-vbQ1jWrp8sF1n-w5hcxHEqqNVv_SZy3vanGPtY0JmWoM9lP04mYU/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
+Sequence quality
+----------------
 
+.. raw:: html
 
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTWt9hau1jC7XhzVPeRKBT9NOt-S5BMwR3yuLAqo6wVQpz53HZtImRYkxyZKMpzkPBNs8K9zwcb8JYn/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+Sample complexity reduction
+---------------------------
+
+.. raw:: html
+
+   <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRBhlZJUNVxfCkaVvOfbqGKM68cKqZjv0aeGTqp1HyMP6FjlX5jMdWvEZ3SiLmIJz9WrqyGQx9UOqYL/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+NGS challenges
+--------------
+
+.. raw:: html
+
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTB61euVewg2A_qZgu8IfgIpSsaL5581zNoHXekehx1lwvcj-jk-uaW7EtjHl1R89GHPJ0cfBAH8acr/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>

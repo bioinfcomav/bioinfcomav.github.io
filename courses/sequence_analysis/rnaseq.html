@@ -77,13 +77,7 @@
     
   <section id="ngs-expression-analysis">
 <h1>NGS expression analysis<a class="headerlink" href="#ngs-expression-analysis" title="Permalink to this headline">¶</a></h1>
-<figure class="align-default" id="id1">
-<a class="reference internal image-reference" href="_images/expression_presentation.png"><img alt="_images/expression_presentation.png" src="_images/expression_presentation.png" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-text"><a class="reference download internal" download="" href="_downloads/db335957628bd306f667c806b36ef5a7/rnaseq.odp"><code class="xref download docutils literal notranslate"><span class="pre">RNA-seq</span></code></a> (<a class="reference download internal" download="" href="_downloads/db335957628bd306f667c806b36ef5a7/rnaseq.odp"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<p>There are several interesting RNA-Seq reviews: <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-8">A survey of best practices for RNA-seq data analysis</a>, <a class="reference external" href="http://www.bioconductor.org/help/workflows/rnaseqGene/">RNA-seq workflow: gene-level exploratory analysis and differential expression</a>, <a class="reference external" href="http://genomebiology.com/2010/11/12/220">From RNA-seq reads to differential expression results</a>, <a class="reference external" href="http://www.biomedcentral.com/1741-7007/9/34">Microarrays, deep sequencing and the true measure of the transcriptome</a>, <a class="reference external" href="http://www.nature.com/nmeth/journal/v8/n6/full/nmeth.1613.html">Computational methods for transcriptome annotation and quantification using RNA-seq</a>, <a class="reference external" href="http://www.nature.com/nrg/journal/v12/n10/full/nrg3068.html">Next-generation transcriptome assembly</a>, <a class="reference external" href="http://biorxiv.org/content/early/2016/02/18/035642">An opinionated guide to the proper care and feeding of your transcriptome</a> and <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0553-5">Evaluation of de novo transcriptome assemblies from RNA-Seq data</a>.</p>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR3x87hIUakq-ObmWls9FaxCoWwCvK8EFc9cTk5b2g9TV0y94Fuwbg3WoAyzTtj7He_WtX_bM12qjTh/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe><p>There are several interesting RNA-Seq reviews: <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-8">A survey of best practices for RNA-seq data analysis</a>, <a class="reference external" href="http://www.bioconductor.org/help/workflows/rnaseqGene/">RNA-seq workflow: gene-level exploratory analysis and differential expression</a>, <a class="reference external" href="http://genomebiology.com/2010/11/12/220">From RNA-seq reads to differential expression results</a>, <a class="reference external" href="http://www.biomedcentral.com/1741-7007/9/34">Microarrays, deep sequencing and the true measure of the transcriptome</a>, <a class="reference external" href="http://www.nature.com/nmeth/journal/v8/n6/full/nmeth.1613.html">Computational methods for transcriptome annotation and quantification using RNA-seq</a>, <a class="reference external" href="http://www.nature.com/nrg/journal/v12/n10/full/nrg3068.html">Next-generation transcriptome assembly</a>, <a class="reference external" href="http://biorxiv.org/content/early/2016/02/18/035642">An opinionated guide to the proper care and feeding of your transcriptome</a> and <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0553-5">Evaluation of de novo transcriptome assemblies from RNA-Seq data</a>.</p>
 <p>There are also some interesting studies regarding the <a class="reference external" href="http://www.biomedcentral.com/1471-2164/14/328">post-processing</a>, <a class="reference external" href="http://www.biomedcentral.com/content/pdf/1471-2164-14-465.pdf">quality</a> of the assembled transcriptomes, the <a class="reference external" href="http://biorxiv.org/content/biorxiv/early/2014/07/14/007088.full.pdf">alternative transcript</a> reconstruction success of different algorithms, the <a class="reference external" href="http://genomebiology.com/2014/15/12/553/abstract">evaluation</a> of different assembly strategies.</p>
 <p><a class="reference external" href="http://www.nature.com/nbt/journal/v33/n3/full/nbt.3122.html">StringTie</a> reconstruction algorithm.</p>
 <p><a class="reference external" href="http://hibberdlab.com/transrate/">transrate</a>, a software to evaluate the transcriptome assembly quality.</p>
@@ -96,7 +90,7 @@
 <p>First we download the <a class="reference download internal" download="" href="_downloads/2917d130a06ff95710fced6d4c9a6d11/sl2_index.zip"><code class="xref download docutils literal notranslate"><span class="pre">index</span> <span class="pre">files</span> <span class="pre">of</span> <span class="pre">genome</span></code></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine: mkdir rnaseq
 ngs_user@machine:~$ cd rnaseq
-ngs_user@machine:~/rnaseq$ gunzip sl2_index.zip
+ngs_user@machine:~/rnaseq$ unzip sl2.index.zip
 </pre></div>
 </div>
 <p>Now, we map the reads.</p>
@@ -106,7 +100,7 @@ ngs_user@machine:~/rnaseq$ gunzip sl2_index.zip
 <p>We sort and index the bam file to open with IGV.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/rnaseq/tophat_out$ samtools view -hb -o SRR45.bam -S SRR45.sam
 
-ngs_user@machine:~/rnaseq/tophat_out$ sort SRR45.bam -o SRR45_sort.bam
+ngs_user@machine:~/rnaseq/tophat_out$ samtools sort SRR45.bam -o SRR45_sort.bam
 </pre></div>
 </div>
 <p>Now, we can construct the transcripts and the number of reads in each transcript.</p>

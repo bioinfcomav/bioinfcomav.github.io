@@ -88,67 +88,17 @@ Assembling the human genome was a difficult task, re-sequencing and mapping the 
 <p>The main computational difference is that the typical software used to assemble requires a time that depends on the total reads length squared or the genome length squared (or quite a lot of memory) while the mapping is just lineal with the reads length.
 For a review take a look at <a class="reference external" href="http://www.nature.com/nmeth/journal/v6/n11s/abs/nmeth.1376.html">Sense from sequence reads</a>, but the take home message is that the assembly is time and memory consuming while the mapping can be done in standard computer.</p>
 <p>Also, it is important to notice that the read length is a critical parameter for the assemblies, but this is not the case for the mapping.
-We can map short reads with ease and high accuracy in most cases.
-<a class="reference external" href="http://www.plosone.org/article/info:doi/10.1371/journal.pone.0006323">Palmieri and Schlötterer</a> reviewed this aspect in 2009.</p>
+We can map short reads with ease and high accuracy in most cases.</p>
 </section>
 <section id="id1">
 <h2>Mapping<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>The mapping is the process of comparing each one of the reads with the reference genome.
 We will obtain one alignment, or more, between each read and the genome.</p>
-<figure class="align-default" id="id4">
-<a class="reference internal image-reference" href="_images/mapping_presentation.png"><img alt="_images/mapping_presentation.png" src="_images/mapping_presentation.png" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-text"><a class="reference download internal" download="" href="_downloads/4ca00b3556425c9d64f5c464a2e8ae7e/mapping.odp"><code class="xref download docutils literal notranslate"><span class="pre">Sequence</span> <span class="pre">Mapping</span></code></a> (<a class="reference download internal" download="" href="_downloads/ade1c54cc4e85d94048945d2ce47d14d/mapping.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<p>Like for any other bioinformatic task there is a lot of mapping software available.
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQzwBdtOqJUrWapiUrymwJHaWIx6Af0PXLDJ8AxevQjyVJxPW2lytnQnRkZCvmpya97m8byeqlU2eX4/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe><p>Like for any other bioinformatic task there is a lot of mapping software available.
 The most commonly used programs are <a class="reference external" href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">bowtie2</a> and <a class="reference external" href="http://bio-bwa.sourceforge.net/">bwa</a>.
 These tools differ on the algorithm used, the sensitivity, the memory requirements, the speed, and the sequence length requirements.</p>
 <p>Seqanswers keep a comprehensive list of <a class="reference external" href="http://seqanswers.com/wiki/How-to/short_read_aligners">mappers</a>.
 In <a class="reference external" href="http://www.nature.com/srep/2011/110805/srep00055/full/srep00055.html">Next generation sequencing has lower sequence coverage and poorer SNP-detection capability in the regulatory regions</a> the authors review some of these programs.</p>
-</section>
-<section id="sam-format">
-<h2>SAM format<a class="headerlink" href="#sam-format" title="Permalink to this headline">¶</a></h2>
-<p>In general all mappers render the result in a common file format, the <a class="reference external" href="http://samtools.sourceforge.net/SAM1.pdf">SAM</a> format.
-This format is not meant for human consumption, although we can open the text version of the file.
-There is a growing collection of software created for dealing with these files. We can merge, sort, filter, realign and browse them. Some useful programs are:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><a class="reference external" href="http://samtools.sourceforge.net/">samtools</a> and <a class="reference external" href="http://samtools.sourceforge.net/">picard</a> to merge, sort and filter.</p></li>
-<li><p><a class="reference external" href="http://www.broadinstitute.org/igv/">IGV</a> for browsing.</p></li>
-<li><p><a class="reference external" href="http://www.broadinstitute.org/gsa/wiki/index.php/The_Genome_Analysis_Toolkit">GATK</a> to recalibrate the quality scores, to realign the sequences and many other algorithms.</p></li>
-</ul>
-</div></blockquote>
-<p>Also the most common SNP callers would require a SAM file to work.</p>
-<p>We can encounter SAM files in two flavors: SAM and BAM. The BAM is the binary version and the SAM is just the equivalent text file. They hold exactly the same information and we can convert between them with samtools.
-These files are composed of two parts, a header in which the sequences used as references are named and the alignment section in which the alignments for all reads are shown.
-The read groups are defined also in the header.
-A read group is a collection of reads that share some characteristics like:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Sample. Name of the individual sequenced.</p></li>
-<li><p>Library.</p></li>
-<li><p>Platform. Technology used (454, Sanger, Illumina, Solid)</p></li>
-</ul>
-</div></blockquote>
-</section>
-<section id="sam-realignment">
-<h2>SAM realignment<a class="headerlink" href="#sam-realignment" title="Permalink to this headline">¶</a></h2>
-<p>The mapping is done read by read (pairwise instead of multiple alignment), so the alignment obtained could present some artifacts.
-There are a couple of ways to avoid these artifacts.
-One is to inspect the alignment in order to realign the regions with problems to fix them.
-Another is to mark those problematic regions in order to avoid calling SNPs in there.</p>
-<p>The GATK software has an option to <a class="reference external" href="http://www.broadinstitute.org/gsa/wiki/index.php/Local_realignment_around_indels">realign</a> a BAM file generating a new one with these problems solved.
-It would be specially advisable running this analysis, specially if we are going to take into account the small indels.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reference</span> <span class="n">CAATC</span>   <span class="n">realignment</span> <span class="n">CAATC</span>
-<span class="n">read1</span>     <span class="n">CA</span><span class="o">-</span><span class="n">TC</span>      <span class="o">----&gt;</span>    <span class="n">CA</span><span class="o">-</span><span class="n">TC</span>
-<span class="n">read2</span>     <span class="n">C</span><span class="o">-</span><span class="n">ATC</span>               <span class="n">CA</span><span class="o">-</span><span class="n">TC</span>
-</pre></div>
-</div>
-<p>samtools has the option (calmd) to calculate a probability for each position in the BAM file of having alignment artifacts.
-samtools calculates a probability for each position of being incorrectly aligned.
-The results is a Phred-scaled probability called Base Alignment Quality (BAQ).
-This BAQ can be combined with the sequencing quality to obtain the probability for each position of being a sequening error or a misalignment.</p>
 </section>
 <section id="duplicated-reads">
 <h2>Duplicated reads<a class="headerlink" href="#duplicated-reads" title="Permalink to this headline">¶</a></h2>
@@ -166,7 +116,6 @@ From the picard wiki:</p>
 <div><p>Q: How does MarkDuplicates work?
 A: Essentially what it does (for pairs; single-end data is also handled) is to find the 5’ coordinates and mapping orientations of each read pair. When doing this it takes into account all clipping that has taking place as well as any gaps or jumps in the alignment. You can thus think of it as determining “if all the bases from the read were aligned, where would the 5’ most base have been aligned”. It then matches all read pairs that have identical 5’ coordinates and orientations and marks as duplicates all but the “best” pair. “Best” is defined as the read pair having the highest sum of base qualities as bases with Q &gt;= 15.</p>
 </div></blockquote>
-<p>Another software capable of looking for duplicates is <a class="reference external" href="https://github.com/GregoryFaust/samblaster">samblaster</a>.</p>
 </section>
 <section id="practical-tasks">
 <h2>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this headline">¶</a></h2>
@@ -490,12 +439,12 @@ A read group has some information attached:</p>
 </div></blockquote>
 <p>There are other optional information that can be added to the read group. The complete list is included in the header section of the SAM file specification.</p>
 <p>We add the read groups to the 454 and Illumina BAM files:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~$ java -jar /home/ngs/programas/picard-tools/picard.jar AddOrReplaceReadGroups ID=illumina LB=illumina PL=illumina PU=none SM=individual1 SORT_ORDER=coordinate INPUT=illumina.bam OUTPUT=illumina.rg.bam
-ngs_user@machine:~$ java -jar /home/ngs/programas/picard-tools/picard.jar AddOrReplaceReadGroups ID=454 LB=454 PL=454 PU=none SM=individual2 SORT_ORDER=coordinate INPUT=454.bam OUTPUT=454.rg.bam
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>java -jar /home/ngs/programas/picard_tools/picard.jar AddOrReplaceReadGroups ID=illumina LB=illumina PL=illumina PU=none SM=individual1 SORT_ORDER=coordinate INPUT=illumina.bam OUTPUT=illumina.rg.bam
+ngs_user@machine:~$ java -jar /home/ngs/programas/picard_tools/picard.jar AddOrReplaceReadGroups ID=454 LB=454 PL=454 PU=none SM=individual2 SORT_ORDER=coordinate INPUT=454.bam OUTPUT=454.rg.bam
 </pre></div>
 </div>
 <p>Now that we have the read groups set we can merge both BAM files:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~$ java -jar /home/ngs/programas/picard-tools/picard.jar MergeSamFiles SORT_ORDER=coordinate ASSUME_SORTED=true INPUT=454.rg.bam INPUT=illumina.rg.bam OUTPUT=merged.bam
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~$ java -jar /home/ngs/programas/picard_tools/picard.jar MergeSamFiles SORT_ORDER=coordinate ASSUME_SORTED=true INPUT=454.rg.bam INPUT=illumina.rg.bam OUTPUT=merged.bam
 </pre></div>
 </div>
 </section>
@@ -503,7 +452,6 @@ ngs_user@machine:~$ java -jar /home/ngs/programas/picard-tools/picard.jar AddOrR
 <h3>Maize mapping<a class="headerlink" href="#maize-mapping" title="Permalink to this headline">¶</a></h3>
 <p>We are going to continue with the maize SNP calling practice.
 In the read cleaning section we prepared some 454 and Illumina cleaned reads, now we should map them against the maize transcriptome reference.</p>
-<p>If you have any problem with this practice you can read the complete <a class="reference internal" href="maize_snp_calling.html"><span class="doc">walkthrough</span></a> for this maize practice.</p>
 </section>
 </section>
 </section>

@@ -10,7 +10,7 @@ Analyze the format and quality for each of the :download:`read files <downloads/
 Hints
 _____
 
-You might use guess_seq_format and calculate_stats from seq_crumbs or fastqc.
+You might use fastqc.
 Take into account that the solid reads might be double encoded.
 
 Clean adapters and contaminants
@@ -19,31 +19,20 @@ Clean adapters and contaminants
 We have some :download:`454 <downloads/to_clean_454.fastq.gz>` and :download:`Illumina <downloads/to_clean_illumina.fastq.gz>` reads that might have adapters in them due to the cloning process.
 Do they really have :download:`adapters <downloads/oligos.fasta>`?
 These reads also come from a RNA-Seq experiment and might have :download:`ribosomic RNA <downloads/arabidpsis_rrna.fasta>` that we should filter out before doing any further analysis.
-Try to assess and solve these problems with fastqc and seq_crumbs.
+Try to assess these problems with fastqc.
 
 Hints
 _____
 
-Evaluate the quality, look for overrepresented k-mers and take a look at the base composition of the first bases of the reads with fastqc or seq_crumbs.
+Evaluate the quality, look for overrepresented k-mers and take a look at the base composition of the first bases of the reads with fastqc.
 
-To remove the adaptor you could use trim_blast_short (from seq_crumbs), `cutadapt <http://code.google.com/p/cutadapt/>`_, `scythe <https://github.com/vsbuffalo/scythe>`_ or `fastx <http://hannonlab.cshl.edu/fastx_toolkit/>`_.
+To remove the adaptor you could use `cutadapt <http://code.google.com/p/cutadapt/>`_, `scythe <https://github.com/vsbuffalo/scythe>`_ or `fastx <http://hannonlab.cshl.edu/fastx_toolkit/>`_.
 
-To trim the quality you could use trim_quality (from seq_crumbs), fastx, `sequence cleaner <http://seqclean.sourceforge.net/>`_, or `sickle <https://github.com/najoshi/sickle>`_.
-
-To filter the small reads you could use filter_by_length (from seq_crumbs) and to remove the ribosomic reads filter_by_blast (seq_crumbs).
+To trim the quality you could use fastx, `sequence cleaner <http://seqclean.sourceforge.net/>`_, or `sickle <https://github.com/najoshi/sickle>`_.
 
 
-Split 454 matepairs
--------------------
 
-We have received some 454 titanium mate pair :download:`reads <downloads/454_mates.fastq>`.
-First we need to split both ends of the mate pair for each reads and then we have to trim using a quality criteria, filter out the small read segments (smaller than 40 base pairs).
-Finally we need to obtain two files with the interleaved forward and reverse fragments of the reads that still have both and another file with the orphaned segments.
 
-Hint
-____
-
-In seq_crumbs there are scripts for all steps.
 
 Mithocondrial assembly
 ----------------------
@@ -110,5 +99,5 @@ The sequencing service has send the :download:`reads <downloads/cucurbita_reads.
 3. Map the reads.
 4. Call the SNPs.
 
-There a :doc:`walkthroughs <final_practice_walkthrough>` for some of these tasks.
+
 

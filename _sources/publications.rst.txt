@@ -1,14 +1,24 @@
-Publications
-============
-
 Dissemination articles
-______________________
+======================
+
 ========================================= ======
 Journal                                   Title
 ========================================= ======
-
 El país. 2021                             `El tomate no es natural, es un tesoro creado por el ingenio humano <https://elpais.com/ciencia/2021-12-03/el-tomate-no-es-natural-es-un-tesoro-creado-por-el-ingenio-humano.html>`_
+The conversation. 2022                    `La domesticación del tomate en América: un viaje de ida y vuelta <https://theconversation.com/la-domesticacion-del-tomate-en-america-un-viaje-de-ida-y-vuelta-174844>`_
+The conversation. 2022                    `Historia del tomate: del desprecio de las élites al éxito industrial <https://theconversation.com/historia-del-tomate-del-desprecio-de-las-elites-al-exito-industrial-179072>`_
+========================================= ======
 
+Publications
+============
+2022
+____
+========================================= ======
+Journal                                   Title
+========================================= ======
+Journal of Experimental Botany            `European traditional tomatoes galore: a result of farmers’ selection of a few diversity-rich loci <https://academic.oup.com/jxb/advance-article/doi/10.1093/jxb/erac072/6561782?login=true>`_
+Horticulture Research                     `Haplotype analyses reveal novel insights into tomato history and domestication driven by long-distance migrations and latitudinal adaptations <https://academic.oup.com/hr/article/doi/10.1093/hr/uhac030/6532226?login=true>`_
+========================================= ======
 2021
 ____
 ========================================= ======

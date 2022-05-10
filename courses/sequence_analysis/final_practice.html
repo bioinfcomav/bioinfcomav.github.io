@@ -28,8 +28,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
-    <link rel="next" title="Walktroughs for the final tasks" href="final_practice_walkthrough.html" />
-    <link rel="prev" title="Maize SNP calling walkthrough" href="maize_snp_calling.html" /> 
+    <link rel="prev" title="BEDTools" href="bedtools.html" /> 
   </head>
   <body>
 
@@ -82,7 +81,7 @@
 <p>Analyze the format and quality for each of the <a class="reference download internal" download="" href="_downloads/f31694b73246caf74a35a4b4e769c831/ngs_reads.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">read</span> <span class="pre">files</span></code></a> and determine the sequencing platform and version.</p>
 <section id="hints">
 <h3>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h3>
-<p>You might use guess_seq_format and calculate_stats from seq_crumbs or fastqc.
+<p>You might use fastqc.
 Take into account that the solid reads might be double encoded.</p>
 </section>
 </section>
@@ -91,23 +90,12 @@ Take into account that the solid reads might be double encoded.</p>
 <p>We have some <a class="reference download internal" download="" href="_downloads/d70096f74556f4dca8ecc3cdb4c7ec7a/to_clean_454.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">454</span></code></a> and <a class="reference download internal" download="" href="_downloads/ae9690b2973b9cae11d10a7dd922a803/to_clean_illumina.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">Illumina</span></code></a> reads that might have adapters in them due to the cloning process.
 Do they really have <a class="reference download internal" download="" href="_downloads/a48e7f9a9954de9d437195f5a1a1ad19/oligos.fasta"><code class="xref download docutils literal notranslate"><span class="pre">adapters</span></code></a>?
 These reads also come from a RNA-Seq experiment and might have <a class="reference download internal" download="" href="_downloads/2b9edaffd86087331f85b9990fc1a54d/arabidpsis_rrna.fasta"><code class="xref download docutils literal notranslate"><span class="pre">ribosomic</span> <span class="pre">RNA</span></code></a> that we should filter out before doing any further analysis.
-Try to assess and solve these problems with fastqc and seq_crumbs.</p>
+Try to assess these problems with fastqc.</p>
 <section id="id1">
 <h3>Hints<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Evaluate the quality, look for overrepresented k-mers and take a look at the base composition of the first bases of the reads with fastqc or seq_crumbs.</p>
-<p>To remove the adaptor you could use trim_blast_short (from seq_crumbs), <a class="reference external" href="http://code.google.com/p/cutadapt/">cutadapt</a>, <a class="reference external" href="https://github.com/vsbuffalo/scythe">scythe</a> or <a class="reference external" href="http://hannonlab.cshl.edu/fastx_toolkit/">fastx</a>.</p>
-<p>To trim the quality you could use trim_quality (from seq_crumbs), fastx, <a class="reference external" href="http://seqclean.sourceforge.net/">sequence cleaner</a>, or <a class="reference external" href="https://github.com/najoshi/sickle">sickle</a>.</p>
-<p>To filter the small reads you could use filter_by_length (from seq_crumbs) and to remove the ribosomic reads filter_by_blast (seq_crumbs).</p>
-</section>
-</section>
-<section id="split-454-matepairs">
-<h2>Split 454 matepairs<a class="headerlink" href="#split-454-matepairs" title="Permalink to this headline">¶</a></h2>
-<p>We have received some 454 titanium mate pair <a class="reference download internal" download="" href="_downloads/cabcd17a61d29171c5cf70dd36c078da/454_mates.fastq"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a>.
-First we need to split both ends of the mate pair for each reads and then we have to trim using a quality criteria, filter out the small read segments (smaller than 40 base pairs).
-Finally we need to obtain two files with the interleaved forward and reverse fragments of the reads that still have both and another file with the orphaned segments.</p>
-<section id="hint">
-<h3>Hint<a class="headerlink" href="#hint" title="Permalink to this headline">¶</a></h3>
-<p>In seq_crumbs there are scripts for all steps.</p>
+<p>Evaluate the quality, look for overrepresented k-mers and take a look at the base composition of the first bases of the reads with fastqc.</p>
+<p>To remove the adaptor you could use <a class="reference external" href="http://code.google.com/p/cutadapt/">cutadapt</a>, <a class="reference external" href="https://github.com/vsbuffalo/scythe">scythe</a> or <a class="reference external" href="http://hannonlab.cshl.edu/fastx_toolkit/">fastx</a>.</p>
+<p>To trim the quality you could use fastx, <a class="reference external" href="http://seqclean.sourceforge.net/">sequence cleaner</a>, or <a class="reference external" href="https://github.com/najoshi/sickle">sickle</a>.</p>
 </section>
 </section>
 <section id="mithocondrial-assembly">
@@ -123,8 +111,8 @@ The reads are Illumina paired end and we want to assemble them:</p>
 <li><p>Take a look at the contigs.</p></li>
 </ol>
 </div></blockquote>
-<section id="id2">
-<h3>Hint<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<section id="hint">
+<h3>Hint<a class="headerlink" href="#hint" title="Permalink to this headline">¶</a></h3>
 <p>We have already seen how to assemble a mithocondrial genome using velvet.</p>
 </section>
 </section>
@@ -139,8 +127,8 @@ Once you have the mapping note how many reads had been mapped and open the mappi
 <p>We want to compare the mithocondrial DNA of a yoruba individual with the <a class="reference download internal" download="" href="_downloads/eaef58983741eb3091f95f9b176023a0/human_cambridge_reference_mito.fasta"><code class="xref download docutils literal notranslate"><span class="pre">reference</span></code></a> cambrigde mithocondrial sequence.
 We have 40000 Illumnia <a class="reference download internal" download="" href="_downloads/ef4616aea6da2e1253a1831e01206640/mito_yoruba_reads_40k.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a>.
 Do two SNP callings one with bowtie2 and samtools and another with ngs_backbone and compare them.</p>
-<section id="id3">
-<h3>Hints<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<section id="id2">
+<h3>Hints<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Why ngs_backbone does not find any SNP at the first attempt?
 Modify the backbone.conf parameters related with the quality and look for the SNPs again (e.j. min_quality=21, min_reads_for_allele=10).</p>
 <p>You can compare the SNP callings with bedtools or grep.</p>
@@ -150,8 +138,8 @@ Modify the backbone.conf parameters related with the quality and look for the SN
 <section id="obtain-the-snp-flanking-sequence">
 <h2>Obtain the SNP flanking sequence<a class="headerlink" href="#obtain-the-snp-flanking-sequence" title="Permalink to this headline">¶</a></h2>
 <p>Search for the common SNPs of the two previous SNP calls and create a fasta file with 100 pair bases around each SNP.</p>
-<section id="id4">
-<h3>Hints<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<section id="id3">
+<h3>Hints<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>You can use the intersectBed, flankBed and fastaFromBed tools.</p>
 </section>
 </section>
@@ -166,7 +154,6 @@ The sequencing service has send the <a class="reference download internal" downl
 <li><p>Map the reads.</p></li>
 <li><p>Call the SNPs.</p></li>
 </ol>
-<p>There a <a class="reference internal" href="final_practice_walkthrough.html"><span class="doc">walkthroughs</span></a> for some of these tasks.</p>
 </section>
 </section>
 

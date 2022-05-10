@@ -2,10 +2,9 @@
 NGS expression analysis
 -----------------------
 
-.. figure:: _images/expression_presentation.png
-   :width: 400px
+.. raw:: html
 
-   :download:`RNA-seq <downloads/rnaseq.odp>` (:download:`pdf <downloads/rnaseq.odp>`)
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR3x87hIUakq-ObmWls9FaxCoWwCvK8EFc9cTk5b2g9TV0y94Fuwbg3WoAyzTtj7He_WtX_bM12qjTh/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 There are several interesting RNA-Seq reviews: `A survey of best practices for RNA-seq data analysis <https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-8>`_, `RNA-seq workflow: gene-level exploratory analysis and differential expression <http://www.bioconductor.org/help/workflows/rnaseqGene/>`_, `From RNA-seq reads to differential expression results <http://genomebiology.com/2010/11/12/220>`_, `Microarrays, deep sequencing and the true measure of the transcriptome <http://www.biomedcentral.com/1741-7007/9/34>`_, `Computational methods for transcriptome annotation and quantification using RNA-seq <http://www.nature.com/nmeth/journal/v8/n6/full/nmeth.1613.html>`_, `Next-generation transcriptome assembly <http://www.nature.com/nrg/journal/v12/n10/full/nrg3068.html>`_, `An opinionated guide to the proper care and feeding of your transcriptome <http://biorxiv.org/content/early/2016/02/18/035642>`_ and `Evaluation of de novo transcriptome assemblies from RNA-Seq data <https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0553-5>`_.
 
@@ -29,7 +28,7 @@ First we download the :download:`index files of genome <downloads/sl2_index.zip>
 
   ngs_user@machine: mkdir rnaseq
   ngs_user@machine:~$ cd rnaseq      
-  ngs_user@machine:~/rnaseq$ gunzip sl2_index.zip
+  ngs_user@machine:~/rnaseq$ unzip sl2.index.zip
 
 Now, we map the reads.
 
@@ -45,7 +44,7 @@ We sort and index the bam file to open with IGV.
 
   ngs_user@machine:~/rnaseq/tophat_out$ samtools view -hb -o SRR45.bam -S SRR45.sam
 
-  ngs_user@machine:~/rnaseq/tophat_out$ sort SRR45.bam -o SRR45_sort.bam
+  ngs_user@machine:~/rnaseq/tophat_out$ samtools sort SRR45.bam -o SRR45_sort.bam
 
 
 Now, we can construct the transcripts and the number of reads in each transcript. 

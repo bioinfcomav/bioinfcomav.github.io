@@ -2,31 +2,62 @@
 Sequence assembly
 =================
 
+Introduction
+------------
 
-.. figure:: _images/assemblies_presentation.png
-   :width: 400px
+.. raw:: html
 
-   :download:`Sequence assembly <downloads/assembly.odp>` (:download:`pdf <downloads/assembly.pdf>`)
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRqLGDx-UtMthtDTP2r2zw8ExX5oANsGvpzfXIPqzCZ17td0CkNOHXIHKGx4bGtvlS-c-9RHDOrhY5U/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-Some nice reviews about the sequence assembly are: `Next-Generation Sequence Assembly: Four Stages of Data Processing and Computational Challenges  <http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003345>`_, `Assembly algorithms for next-generation sequencing data <http://www.sciencedirect.com/science/article/pii/S0888754310000492>`_, `Sense from sequence reads: methods for alignment and assembly <http://www.nature.com/nmeth/journal/v6/n11s/abs/nmeth.1376.html>`_, `A Practical Comparison of De Novo Genome Assembly Software Tools for Next-Generation Sequencing Technologies <http://www.plosone.org/article/info:doi%2F10.1371%2Fjournal.pone.0017915>`_, and `Comparison of the two major classes of assembly algorithms: overlap–layout–consensus and de-bruijn-graph <http://bfg.oxfordjournals.org/content/11/1/25.full>`_.
-A review about the new low memory genome assemblers: `Comparing Memory-Efficient Genome Assemblers on Stand-Alone and Cloud Infrastructures <http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0075505>`_.
-A review about the long reads and about the technologies used to assemble the scaffolds into chromosomes: `Third generation sequencing and the future of genomics <http://www.biorxiv.org/content/early/2016/04/13/048603.full.pdf+html>`_, and `The impact of third generation genomic technologies on plant genome assembly <http://www.sciencedirect.com/science/article/pii/S1369526616301315>`_.
+Assembly algorithms
+-------------------
 
-Assembly software
+.. raw:: html
+
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQFkJSF7SqqiJ9edeflFG563DeTIBgKgvDrqaVhsUyiOG7IMrSadAf94SbZEns5QbYHXQNXwUzNXDUY/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+Scaffolding
+-----------
+
+.. raw:: html
+
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTs_sbM5wK95T8TMHYTkD_Wk1d-QvG3HRoh_7ImGQI41Q7n1K5q5xi4LxOO0VrFX_tsg0FmIPVdyakO/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+Haplotypes
+----------
+
+.. raw:: html
+
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRtHrzlwqRcGNZyxfmmyJmh-95zDfF9o0GOkumrS6E9vhvFHxCMr6S01wKKZbCnQeTjSgb1ovMdobtE/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+Assembly quality assesment
+--------------------------
+
+.. raw:: html
+
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRtB1QEKHe6TO-GJ1fzhb5oSi9KV1HUYvRmv5warIOjmC--VkFmj_ISF3Q0bVVPfRw_LARtD9NpSXjW/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+Cucurbita example
 -----------------
 
-Some useful assembly software:
+.. raw:: html
 
-  * `Staden <http://staden.sourceforge.net/>`_ (Sanger).
-  * `Celera assembler <http://sourceforge.net/apps/mediawiki/wgs-assembler/index.php?title=Main_Page>`_ (genomic).
-  * `SOAPdenovo <http://soap.genomics.org.cn/soapdenovo.html>`_ (Illumina, genomic).
-  * `trinity <http://trinityrnaseq.sourceforge.net/>`_ (Illumina and 454, transcriptome).
-  * `Mira <http://www.chevreux.org/projects_mira.html>`_ (454 and not many Illumina reads).
-  * `iAssembler <http://bioinfo.bti.cornell.edu/tool/iAssembler/>`_ (454, transcriptome).
-  * `newbler <http://454.com/products/analysis-software/index.asp>`_ (454).
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT6AhdXXpBlX5VyIH3vUCXzQzCTsWoFMma5nNMeniKVUc_OWivVHPcQii-3EuuSsjDkHcrmsKKvySf3/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-In the seqanswer wiki there is a more comprehensive list with `assembly software <http://seqanswers.com/wiki/Special:BrowseData/Bioinformatics%20application?Bioinformatics_method=Assembly>`_.
+Human example
+-------------
 
+.. raw:: html
+
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTfSRijqmr5HVIrlsPdPoRox-VttlNjAln_T33hpSDextUqkPF-onIeFzt8uvd2cHAuQiXme_2ntpka/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+Tetraploid potato example
+-------------------------
+
+.. raw:: html
+
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQf0ggGJvaojnonPVHPd8752axVA0qj_91zU3vq8ciGJVUxM-KpEnzF3ROlc5V43xKY0NKyoYqD8G4z/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 Read cleaning
 -------------
@@ -64,20 +95,6 @@ It is particularly useful for reducing the compute requirements for de novo sequ
 The authors `report <http://ivory.idyll.org/blog/apr-12/what-is-diginorm.html>`_ that the process requires low memory, works with a single pass and without reference.
 They also `warn <http://ivory.idyll.org/blog//why-you-shouldnt-use-diginorm.html>`_ that digital normalization should not be used by default if an assembly with all reads can be accomplished.
 
-
-Illumina matepair chimeras
---------------------------
-
-Unlike the 454 matepair libraries the Illumina libraries do not include a linker to differentiate where the sequence tracks that come from the different genomic segments are joined in the library templates.
-We can split the forward and reverse segments in the 454 matepairs just looking for the linker, but that is not possible in the Illumina matepairs.
-In most cases the forward and reverse reads that come from a template will be located in the forward and reverse pairends respectively, but not always.
-In some cases some reads could be chimeric and could include segments that are non-contigous in the original genome.
-This chimeras could confuse the assemblers.
-Due to this reason the SOAPdenovo developers recommend not to use the matepair Illumina libraries to build the contigs and to use them only for the scaffolding step.
-The CABOG developers look for these `chimeras <http://sourceforge.net/apps/mediawiki/wgs-assembler/index.php?title=Preprocessing#Disambiguating_Innie_from_Outie_Pairs>`_ before starting the assembly.
-For more information about this issue you can read a poster about `Illumina mate-pair classification <http://sourceforge.net/apps/mediawiki/wgs-assembler/index.php?title=Pair_classification_within_Illumina_mate_pair_data>`_ at the CABOG wiki.
-
-We have develop some seq_crumbs modules to fix and filter out these chimeras.
 
 Practical tasks
 ---------------
@@ -264,11 +281,7 @@ We will create a directory named mito and we will download the reads in it.
   ngs_user@machine:~$ mkdir mito
   ngs_user@machine:~$ cd mito/
   ngs_user@machine:~/mito$ ls
-  downloads/mito_reads.fastq.gz
-
-Now we have to uncompress the reads::
-
-  ngs_user@machine:~/mito$ tar -xvzf downloads/mito_reads.fastq.gz
+  mito_reads.fastq.gz
 
 velvet is divided in two binaries, velveth and velvetg.
 velveth creates a hash index and velvetg does the assembly.
@@ -294,53 +307,7 @@ Once we run both commands we obtain the assembly::
 
 
 In the assem directories you can find fasta sequences for the contigs in the contigs.fa and the reads assembled into the contigs in the velvet_asm.afg file.
-You can calculate several statistics for the fasta files with the assembly_stats executable for each directory and compare the results::
 
-  ngs_user@machine:~/mito$ assembly_stats assem_21/contigs.fa
-  ngs_user@machine:~/mito$ assembly_stats assem_25/contigs.fa
-  ngs_user@machine:~/mito$ assembly_stats assem_29/contigs.fa
-   "Contig Stats": 
-    "L10": 18,
-    "L20": 44,
-    "L30": 78,
-    "L40": 117,
-    "L50": 159,
-    "N10": 119,
-    "N20": 90,
-    "N30": 76,
-    "N40": 67,
-    "N50": 62,
-    "gc_content": 44.42754725179231,
-    "longest": 305,
-    "mean": 59.77922077922078,
-    "median": 50.0,
-    "sequence_count": 462,
-    "shortest": 41,
-    "total_bps": 27618
-  
-  "Scaffold Stats":
-    "L10": 13,
-    "L20": 38,
-    "L30": 72,
-    "L40": 110,
-    "L50": 153,
-    "N10": 134,
-    "N20": 96,
-    "N30": 78,
-    "N40": 68,
-    "N50": 62,
-    "gc_content": 44.42754725179231,
-    "longest": 542,
-    "mean": 61.130434782608695,
-    "median": 50.0,
-    "sequence_count": 460,
-    "shortest": 41,
-    "total_bps": 28120
-
-
-Which k-mer give better results?
-
-How this results compare with the SOAPdenovo ones?
 
 To take a look at the assembly you can use `tablet <http://bioinf.scri.ac.uk/tablet/>`_ and open the afg file.
 

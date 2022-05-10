@@ -17,7 +17,6 @@ For a review take a look at `Sense from sequence reads <http://www.nature.com/nm
 
 Also, it is important to notice that the read length is a critical parameter for the assemblies, but this is not the case for the mapping.
 We can map short reads with ease and high accuracy in most cases.
-`Palmieri and Schlötterer <http://www.plosone.org/article/info:doi/10.1371/journal.pone.0006323>`_ reviewed this aspect in 2009.
 
 Mapping
 -------
@@ -25,10 +24,9 @@ Mapping
 The mapping is the process of comparing each one of the reads with the reference genome.
 We will obtain one alignment, or more, between each read and the genome.
 
-.. figure:: _images/mapping_presentation.png
-   :width: 400px
+.. raw:: html
 
-   :download:`Sequence Mapping <downloads/mapping.odp>` (:download:`pdf <downloads/mapping.pdf>`)
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQzwBdtOqJUrWapiUrymwJHaWIx6Af0PXLDJ8AxevQjyVJxPW2lytnQnRkZCvmpya97m8byeqlU2eX4/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 Like for any other bioinformatic task there is a lot of mapping software available.
 The most commonly used programs are `bowtie2 <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`_ and `bwa <http://bio-bwa.sourceforge.net/>`_.
@@ -37,50 +35,6 @@ These tools differ on the algorithm used, the sensitivity, the memory requiremen
 Seqanswers keep a comprehensive list of `mappers <http://seqanswers.com/wiki/How-to/short_read_aligners>`_.
 In `Next generation sequencing has lower sequence coverage and poorer SNP-detection capability in the regulatory regions <http://www.nature.com/srep/2011/110805/srep00055/full/srep00055.html>`_ the authors review some of these programs.
 
-
-SAM format
-----------
-
-In general all mappers render the result in a common file format, the `SAM <http://samtools.sourceforge.net/SAM1.pdf>`_ format.
-This format is not meant for human consumption, although we can open the text version of the file.
-There is a growing collection of software created for dealing with these files. We can merge, sort, filter, realign and browse them. Some useful programs are:
-
-  * `samtools <http://samtools.sourceforge.net/>`_ and `picard <http://samtools.sourceforge.net/>`_ to merge, sort and filter.
-  * `IGV <http://www.broadinstitute.org/igv/>`_ for browsing.
-  * `GATK <http://www.broadinstitute.org/gsa/wiki/index.php/The_Genome_Analysis_Toolkit>`_ to recalibrate the quality scores, to realign the sequences and many other algorithms.
-
-Also the most common SNP callers would require a SAM file to work.
-
-We can encounter SAM files in two flavors: SAM and BAM. The BAM is the binary version and the SAM is just the equivalent text file. They hold exactly the same information and we can convert between them with samtools.
-These files are composed of two parts, a header in which the sequences used as references are named and the alignment section in which the alignments for all reads are shown.
-The read groups are defined also in the header.
-A read group is a collection of reads that share some characteristics like:
-
-  * Sample. Name of the individual sequenced.
-  * Library.
-  * Platform. Technology used (454, Sanger, Illumina, Solid)
-
-SAM realignment
----------------
-
-The mapping is done read by read (pairwise instead of multiple alignment), so the alignment obtained could present some artifacts.
-There are a couple of ways to avoid these artifacts.
-One is to inspect the alignment in order to realign the regions with problems to fix them.
-Another is to mark those problematic regions in order to avoid calling SNPs in there.
-
-The GATK software has an option to `realign <http://www.broadinstitute.org/gsa/wiki/index.php/Local_realignment_around_indels>`_ a BAM file generating a new one with these problems solved.
-It would be specially advisable running this analysis, specially if we are going to take into account the small indels.
-
-::
-
-   reference CAATC   realignment CAATC
-   read1     CA-TC      ---->    CA-TC
-   read2     C-ATC               CA-TC
-
-samtools has the option (calmd) to calculate a probability for each position in the BAM file of having alignment artifacts.
-samtools calculates a probability for each position of being incorrectly aligned.
-The results is a Phred-scaled probability called Base Alignment Quality (BAQ).
-This BAQ can be combined with the sequencing quality to obtain the probability for each position of being a sequening error or a misalignment.
 
 
 Duplicated reads
@@ -101,8 +55,6 @@ From the picard wiki:
 
   Q: How does MarkDuplicates work?
   A: Essentially what it does (for pairs; single-end data is also handled) is to find the 5' coordinates and mapping orientations of each read pair. When doing this it takes into account all clipping that has taking place as well as any gaps or jumps in the alignment. You can thus think of it as determining "if all the bases from the read were aligned, where would the 5' most base have been aligned". It then matches all read pairs that have identical 5' coordinates and orientations and marks as duplicates all but the "best" pair. "Best" is defined as the read pair having the highest sum of base qualities as bases with Q >= 15.
-
-Another software capable of looking for duplicates is `samblaster <https://github.com/GregoryFaust/samblaster>`_.
 
 
 Practical tasks
@@ -468,12 +420,12 @@ There are other optional information that can be added to the read group. The co
 
 We add the read groups to the 454 and Illumina BAM files::
 
-  ngs_user@machine:~$ java -jar /home/ngs/programas/picard-tools/picard.jar AddOrReplaceReadGroups ID=illumina LB=illumina PL=illumina PU=none SM=individual1 SORT_ORDER=coordinate INPUT=illumina.bam OUTPUT=illumina.rg.bam
-  ngs_user@machine:~$ java -jar /home/ngs/programas/picard-tools/picard.jar AddOrReplaceReadGroups ID=454 LB=454 PL=454 PU=none SM=individual2 SORT_ORDER=coordinate INPUT=454.bam OUTPUT=454.rg.bam
+  java -jar /home/ngs/programas/picard_tools/picard.jar AddOrReplaceReadGroups ID=illumina LB=illumina PL=illumina PU=none SM=individual1 SORT_ORDER=coordinate INPUT=illumina.bam OUTPUT=illumina.rg.bam
+  ngs_user@machine:~$ java -jar /home/ngs/programas/picard_tools/picard.jar AddOrReplaceReadGroups ID=454 LB=454 PL=454 PU=none SM=individual2 SORT_ORDER=coordinate INPUT=454.bam OUTPUT=454.rg.bam
 
 Now that we have the read groups set we can merge both BAM files::
 
-  ngs_user@machine:~$ java -jar /home/ngs/programas/picard-tools/picard.jar MergeSamFiles SORT_ORDER=coordinate ASSUME_SORTED=true INPUT=454.rg.bam INPUT=illumina.rg.bam OUTPUT=merged.bam
+  ngs_user@machine:~$ java -jar /home/ngs/programas/picard_tools/picard.jar MergeSamFiles SORT_ORDER=coordinate ASSUME_SORTED=true INPUT=454.rg.bam INPUT=illumina.rg.bam OUTPUT=merged.bam
 
 Maize mapping
 _____________
@@ -481,4 +433,3 @@ _____________
 We are going to continue with the maize SNP calling practice.
 In the read cleaning section we prepared some 454 and Illumina cleaned reads, now we should map them against the maize transcriptome reference.
 
-If you have any problem with this practice you can read the complete :doc:`walkthrough <maize_snp_calling>` for this maize practice.
