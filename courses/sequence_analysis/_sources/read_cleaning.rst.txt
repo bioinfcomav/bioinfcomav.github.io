@@ -13,6 +13,11 @@ Assessing the read quality
 We can assess the quality of the reads by taking a look at their length distribution, phred quality distribution, nucleotide frequencies and complexity.
 It is highly recommended to take a look at the excellent documentation found in the `fastqc <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_ and `prinseq <http://prinseq.sourceforge.net/manual.html>`_ sites.
 
+Software to assess the read quality:
+
+  * `fastqc <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
+  * `fastp <https://github.com/OpenGene/fastp>`_
+
 The length distribution of the reads is a basic quality check.
 We have to make sure that the length distribution complies with the expected distribution for the sequencing technology that we have used.
 
@@ -244,13 +249,9 @@ Usual read cleaning software
 
 There are plenty of software to process the reads, but some that we have used are:
 
-  * `Prinseq <http://prinseq.sourceforge.net/manual.html>`_.
   * `Trimmomatic <http://www.usadellab.org/cms/?page=trimmomatic>`_.
   * `cutadapt <http://code.google.com/p/cutadapt/>`_
-  * `pregap4 <http://staden.sourceforge.net/>`_ (only for Sanger)
-  * `lucy <http://lucy.sourceforge.net/>`_ (long reads, created for Sanger)
-
-In the seqanswers `wiki <http://seqanswers.com/wiki/Special:BrowseData>`_ they keep a more comprehensive list.
+  * `fastp <https://github.com/OpenGene/fastp>`_
 
 Practical tasks
 ---------------

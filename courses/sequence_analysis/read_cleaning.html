@@ -85,6 +85,13 @@
 <h2>Assessing the read quality<a class="headerlink" href="#assessing-the-read-quality" title="Permalink to this headline">¶</a></h2>
 <p>We can assess the quality of the reads by taking a look at their length distribution, phred quality distribution, nucleotide frequencies and complexity.
 It is highly recommended to take a look at the excellent documentation found in the <a class="reference external" href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">fastqc</a> and <a class="reference external" href="http://prinseq.sourceforge.net/manual.html">prinseq</a> sites.</p>
+<p>Software to assess the read quality:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">fastqc</a></p></li>
+<li><p><a class="reference external" href="https://github.com/OpenGene/fastp">fastp</a></p></li>
+</ul>
+</div></blockquote>
 <p>The length distribution of the reads is a basic quality check.
 We have to make sure that the length distribution complies with the expected distribution for the sequencing technology that we have used.</p>
 <a class="reference internal image-reference" href="_images/454_length_distribution.png"><img alt="_images/454_length_distribution.png" src="_images/454_length_distribution.png" style="width: 450px;" /></a>
@@ -265,14 +272,11 @@ Some reflections about this issue have been published: <a class="reference exter
 <p>There are plenty of software to process the reads, but some that we have used are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference external" href="http://prinseq.sourceforge.net/manual.html">Prinseq</a>.</p></li>
 <li><p><a class="reference external" href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a>.</p></li>
 <li><p><a class="reference external" href="http://code.google.com/p/cutadapt/">cutadapt</a></p></li>
-<li><p><a class="reference external" href="http://staden.sourceforge.net/">pregap4</a> (only for Sanger)</p></li>
-<li><p><a class="reference external" href="http://lucy.sourceforge.net/">lucy</a> (long reads, created for Sanger)</p></li>
+<li><p><a class="reference external" href="https://github.com/OpenGene/fastp">fastp</a></p></li>
 </ul>
 </div></blockquote>
-<p>In the seqanswers <a class="reference external" href="http://seqanswers.com/wiki/Special:BrowseData">wiki</a> they keep a more comprehensive list.</p>
 </section>
 <section id="practical-tasks">
 <h2>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this headline">¶</a></h2>
