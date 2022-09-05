@@ -3,7 +3,7 @@
 Norms
 -----
 
-Bioinformatics 2021-2022, norms and regulations
+Bioinformatics 2022-2023, norms and regulations
 
 Contact
 =======
@@ -52,33 +52,20 @@ Course evaluation
 
 
 * 
-  1 open answer exam (40%)
+  2 open answer exams (40% each)
 
 
-  * This written exam will deal with theoretical and practical aspects of the subject matter.
-  * The exam date will be: January 10th.
+  * Two written exams, one  will deal with theoretical and the other with practical aspects of the subject matter.
+  * The exams date will be ...
+
 
 * 
-  5 Short test questions (15%)
-
-
-  * These short questions will deal with theoretical and practical aspect of the subject matter.
-  * Will be proposed along the course.
-
-* 
-  5 Problems (15%)
-
-
-  * Exercises and problems similar to the exam ones.
-  * Will be proposed along the course.
-
-* 
-  A practical exercise (30%).
+  A practical exercise (20%).
 
 
   * A presentation and a brief report will be prepared. These files should be uploaded to PoliformaT by December 1th.
   * We will propose several topics for the practical exercises and each group will choose one
-  * A presentation will be done in December from 13th to 17th.
+  * A presentation will be done the 12th and 14th december.
   * One person from one group for every topic proposed will do the presentation. Both the person and the group will be chosen randomly. The rest will discuss the presentation.
   * Both the reports and the presentations will be evaluated.
 
@@ -87,12 +74,12 @@ Norms
 
 Each exam or exercise not taken will be evaluated as 0.
 
-It is required to pass the written exam with at least 50% of the score to pass the course.
+It is required to pass the written exams with at least 50% of the total exam score (4/8) to pass the course. It's necesary to have the 50% total score  to pass the course (5/10)
 
 The students will be able to overcome the exam grade by writing a final extra exam.
 
-In the case of failing the practical exercise or problems, this failed score could be overcame by writing a final extra practical exam. There will be a final exam in January.
+In the case of failing the practical exercise , this failed score could be overcame by writing a final extra practical exam. There will be a final exam in January.
 
 Any student will be able to do the final extra exams, but the grades from the previous exams will not be kept in that case. Only the final extra exam grade will be taken into account.
 
-The tests and evaluations will also include the evaluation of the transversal competences for with this subject is a control point: Application of the practical thinking and management and time planning.
+The evaluations will also include the evaluation of the transversal competences for with this subject is a control point: Application of the practical thinking and management and time planning.
