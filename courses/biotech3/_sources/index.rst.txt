@@ -55,4 +55,4 @@ Practice
    Multiple Sequence Alignment <practice/multiple.rst>
    Structural annotation <practice/structural_annotation.rst>
    Phylogeny <practice/phylogeny.rst>
-   Assembly <practice/assembly.rst>
+   
