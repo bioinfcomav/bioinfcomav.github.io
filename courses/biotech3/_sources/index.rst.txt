@@ -15,8 +15,7 @@ Norms
    :titlesonly:
 
    Norms <norms.rst>
-   Covid19 <covid.rst>
-
+   
 Previous knowledge
 ------------------
 
