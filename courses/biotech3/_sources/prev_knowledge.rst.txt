@@ -14,7 +14,7 @@ Previous knowledge test:
 * `ARA <https://docs.google.com/forms/d/1UzK2GJ7zUU7eSRnoNfIVzPhMi_h4jyHQFeLSwTfkSq0/edit?usp=sharing>`_
 * `Castellano <https://docs.google.com/forms/d/1iE23H6hoAKSm8Zab7vRlxGwPKF4SPAvoXPJjZbWyhJc/edit?usp=sharing>`_
 
-`Test results <https://docs.google.com/presentation/d/1o25VCqQfy_y60QhZaU6Xs4X8IJFUP0rngWdDUR33Bz8/edit?usp=sharing>`_
+`Test results <>`_
 
 Computer Knowledge
 ==================
