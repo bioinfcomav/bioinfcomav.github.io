@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Introduction to EMBOSS &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -24,12 +24,13 @@
     <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
     <link rel="next" title="Sequence Alignment" href="alignment.html" />
-    <link rel="prev" title="Unix CLI" href="linux.html" /> 
+    <link rel="prev" title="NCBI database search" href="entrez.html" /> 
   </head>
   <body>
 
@@ -76,14 +77,14 @@
                 
     
   <section id="introduction-to-emboss">
-<h1>Introduction to EMBOSS<a class="headerlink" href="#introduction-to-emboss" title="Permalink to this headline">¶</a></h1>
+<h1>Introduction to EMBOSS<a class="headerlink" href="#introduction-to-emboss" title="Permalink to this heading">¶</a></h1>
 <section id="emboss">
-<h2>EMBOSS<a class="headerlink" href="#emboss" title="Permalink to this headline">¶</a></h2>
+<h2>EMBOSS<a class="headerlink" href="#emboss" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="http://emboss.sourceforge.net/">EMBOSS</a> is a suite of programs developed to do molecular biology by EMBnet.
 EMBOSS is <a class="reference external" href="https://en.wikipedia.org/wiki/Free_software">free software</a> and although it is primarily developed for Linux it also runs in MS Windows and Mac OS X.</p>
 <p>EMBOSS is comprised by hunders of programs and includes utilities to align sequences, translate RNA to proteins, identify protien motifs, analyze repetitions, calculate codon usage statistics and many more analyses.</p>
 <section id="running-emboss-commands">
-<h3>Running EMBOSS commands<a class="headerlink" href="#running-emboss-commands" title="Permalink to this headline">¶</a></h3>
+<h3>Running EMBOSS commands<a class="headerlink" href="#running-emboss-commands" title="Permalink to this heading">¶</a></h3>
 <p>The EMBOSS utilities have a <a class="reference external" href="https://en.wikipedia.org/wiki/Command-line_interface">Command Line Interface</a> and all can be run from a text terminal.
 The <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/groups.html">documentation</a> for the EMBOSS aplications is written taking into account mainly the Command Line Interface.</p>
 <p>But there are other ways to run the EMBOSS software.</p>
@@ -94,7 +95,7 @@ Jemboss is a Graphical User Interface application, like any of the other common 
 </section>
 </section>
 <section id="identify-the-command">
-<h2>Identify the command<a class="headerlink" href="#identify-the-command" title="Permalink to this headline">¶</a></h2>
+<h2>Identify the command<a class="headerlink" href="#identify-the-command" title="Permalink to this heading">¶</a></h2>
 <p>When we do not know which of the EMBOSS commands to use we can use another EMBOSS command, <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/wossname.html">wossname</a>, to search in the EMBOSS command list.</p>
 <p>Get a list with all commands:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ wossname
@@ -106,7 +107,7 @@ Jemboss is a Graphical User Interface application, like any of the other common 
 </div>
 </section>
 <section id="getting-help-for-a-command">
-<h2>Getting help for a command<a class="headerlink" href="#getting-help-for-a-command" title="Permalink to this headline">¶</a></h2>
+<h2>Getting help for a command<a class="headerlink" href="#getting-help-for-a-command" title="Permalink to this heading">¶</a></h2>
 <p>The <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/groups.html">command</a> manuals can be found in the web.</p>
 <p>They are also available in any EMBOSS installation by using the <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/tfm.html">tfm</a> command.
 For instance, to read the manual for the <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/water.html">water</a> command we could run:</p>
@@ -120,7 +121,7 @@ For instance, to read the manual for the <a class="reference external" href="htt
 </div>
 </section>
 <section id="example-change-a-sequence-format">
-<h2>Example: change a sequence format<a class="headerlink" href="#example-change-a-sequence-format" title="Permalink to this headline">¶</a></h2>
+<h2>Example: change a sequence format<a class="headerlink" href="#example-change-a-sequence-format" title="Permalink to this heading">¶</a></h2>
 <p>To get familiar with the EMBOSS way of running the analyse we will change the format of a sequence file.
 EMBOSS has a program to modify sequence files: <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/seqret.html">seqret</a></p>
 <p>seqret can change the sequence format, trim the sequences and reverse-complement them.

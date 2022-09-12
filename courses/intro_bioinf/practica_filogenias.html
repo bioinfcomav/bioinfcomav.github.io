@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Prácticas filogenias &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -76,13 +77,13 @@
                 
     
   <section id="practicas-filogenias">
-<h1>Prácticas filogenias<a class="headerlink" href="#practicas-filogenias" title="Permalink to this headline">¶</a></h1>
+<h1>Prácticas filogenias<a class="headerlink" href="#practicas-filogenias" title="Permalink to this heading">¶</a></h1>
 <p>En esta práctica vamos a realizar diferentes filogenias utilizando diferentes método de reconstrucción filogenética.
 El programa que utilizaremos es el <a class="reference external" href="http://www.megasoftware.net/">Mega</a>.</p>
 <section id="ejercicios-de-filogenia">
-<h2>Ejercicios de filogenia<a class="headerlink" href="#ejercicios-de-filogenia" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios de filogenia<a class="headerlink" href="#ejercicios-de-filogenia" title="Permalink to this heading">¶</a></h2>
 <section id="ejercicio-1">
-<h3>Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Permalink to this headline">¶</a></h3>
+<h3>Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Permalink to this heading">¶</a></h3>
 <p>Seguir en el tutorial del Mega las secciones:</p>
 <blockquote>
 <div><ul class="simple">
@@ -97,7 +98,7 @@ El programa que utilizaremos es el <a class="reference external" href="http://ww
 </div></blockquote>
 </section>
 <section id="ejercicio-2">
-<h3>Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Permalink to this headline">¶</a></h3>
+<h3>Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Permalink to this heading">¶</a></h3>
 <p>A partir de los alineamientos <a class="reference download internal" download="" href="_downloads/63ff1ef21ebffbe30746bd14342bb17b/aprot.fasta"><code class="xref download docutils literal notranslate"><span class="pre">aprot.fasta,</span></code></a> y <a class="reference download internal" download="" href="_downloads/d41cb244e7eb68248c60e8ae0094e5b2/hprot.fasta"><code class="xref download docutils literal notranslate"><span class="pre">hprot.fasta,</span></code></a> generar un árbol por el método de Neighbor joining sin bootstrap.</p>
 <p>Método:</p>
 <blockquote>
@@ -109,22 +110,22 @@ El programa que utilizaremos es el <a class="reference external" href="http://ww
 </div></blockquote>
 </section>
 <section id="ejercicio-3">
-<h3>Ejercicio 3<a class="headerlink" href="#ejercicio-3" title="Permalink to this headline">¶</a></h3>
+<h3>Ejercicio 3<a class="headerlink" href="#ejercicio-3" title="Permalink to this heading">¶</a></h3>
 <p>Utilizando los dos alineamientos del ejercicio anterior crear dos árboles validándolos por el método de bootstrap con 100 réplicas.</p>
 <p>¿Se obtienen los mismos árboles que en el ejercicio anterior?</p>
 <p>¿Qué sucede si colapsamos los nodos no significativos? ¿Por qué?</p>
 </section>
 <section id="ejercicio-4">
-<h3>Ejercicio 4<a class="headerlink" href="#ejercicio-4" title="Permalink to this headline">¶</a></h3>
+<h3>Ejercicio 4<a class="headerlink" href="#ejercicio-4" title="Permalink to this heading">¶</a></h3>
 <p>Vamos a trabajar con las secuencias de la <a class="reference download internal" download="" href="_downloads/3c069167530b0e3a2fe944e8134dc04e/frataxina.fasta"><code class="xref download docutils literal notranslate"><span class="pre">frataxina</span></code></a>.</p>
 <section id="alineamiento">
-<h4>Alineamiento<a class="headerlink" href="#alineamiento" title="Permalink to this headline">¶</a></h4>
+<h4>Alineamiento<a class="headerlink" href="#alineamiento" title="Permalink to this heading">¶</a></h4>
 <p>Realizar un alineamiento mediante clustalx.
 Alternativamente podríamos hacer el alineamiento directamente dentro del Mega utilizando el algoritmo del clustal o del muscle.</p>
 <p>Una vez generado el alineamiento revisarlo.</p>
 </section>
 <section id="alineamiento-mediante-el-metodo-de-maxima-parsimonia">
-<h4>Alineamiento mediante el método de máxima parsimonia<a class="headerlink" href="#alineamiento-mediante-el-metodo-de-maxima-parsimonia" title="Permalink to this headline">¶</a></h4>
+<h4>Alineamiento mediante el método de máxima parsimonia<a class="headerlink" href="#alineamiento-mediante-el-metodo-de-maxima-parsimonia" title="Permalink to this heading">¶</a></h4>
 <p>Aplicar el método sin bootstrap.
 ¿Se obtienen varios árboles?
 ¿Por qué?</p>
@@ -132,11 +133,11 @@ Alternativamente podríamos hacer el alineamiento directamente dentro del Mega u
 ¿Podemos concluir que la vaca está más alejada del macaco que el chimpancé?</p>
 </section>
 <section id="alineamiento-mediante-el-metodo-neighbor-joining">
-<h4>Alineamiento mediante el método neighbor joining<a class="headerlink" href="#alineamiento-mediante-el-metodo-neighbor-joining" title="Permalink to this headline">¶</a></h4>
+<h4>Alineamiento mediante el método neighbor joining<a class="headerlink" href="#alineamiento-mediante-el-metodo-neighbor-joining" title="Permalink to this heading">¶</a></h4>
 <p>Hacer el árbol con bootstrap.</p>
 </section>
 <section id="comparacion-de-los-arboles">
-<h4>Comparación de los árboles<a class="headerlink" href="#comparacion-de-los-arboles" title="Permalink to this headline">¶</a></h4>
+<h4>Comparación de los árboles<a class="headerlink" href="#comparacion-de-los-arboles" title="Permalink to this heading">¶</a></h4>
 <p>¿Son iguales los árboles? ¿Por qué?</p>
 <p>¿Son iguales al de tus compañeros? ¿Por qué?</p>
 <p>Prueba a verlo con distancia real (filograma) o sin distancia real de las ramas.</p>
@@ -144,20 +145,20 @@ Alternativamente podríamos hacer el alineamiento directamente dentro del Mega u
 </section>
 </section>
 <section id="ejercicio-5">
-<h3>Ejercicio 5<a class="headerlink" href="#ejercicio-5" title="Permalink to this headline">¶</a></h3>
+<h3>Ejercicio 5<a class="headerlink" href="#ejercicio-5" title="Permalink to this heading">¶</a></h3>
 <p>Filogenias de monos del viejo mundo.
 Realizar los árboles mediante parsimonia, neighbor joining y Máxima verosimilitud de las siguientes <a class="reference download internal" download="" href="_downloads/0ef91db61343cb980c524399c4c11e12/hepcidina.fasta"><code class="xref download docutils literal notranslate"><span class="pre">secuencias.</span></code></a></p>
 <p>Comparar los árboles obtenidos por los distintos métodos.</p>
 </section>
 <section id="ejercicio-6">
-<h3>Ejercicio 6<a class="headerlink" href="#ejercicio-6" title="Permalink to this headline">¶</a></h3>
+<h3>Ejercicio 6<a class="headerlink" href="#ejercicio-6" title="Permalink to this heading">¶</a></h3>
 <p>En la NCBI hay una base de datos de estudios filogenéticos y poblacionales, <a class="reference external" href="http://www.ncbi.nlm.nih.gov/popset">Popset</a>.
 En ella se almacenan las secuencias utilizadas en los diferentes estudios en diferentes especies, de modo que podemos repetir esos análisis o realizar otros con esas secuencias.</p>
 <p>Descargar de la base de datos las secuencias del marcador <a class="reference external" href="http://www.ncbi.nlm.nih.gov/popset/224980415">COS-At5g14320</a> utilizadas en el articulo “Do potatoes and tomatoes have a single evolutionary history, and what proportion of the genome supports this history?”.Rodriguez,F., Wu,F., Ane,C., Tanksley,S. and Spooner,D.M.(2009) BMC Evol. Biol. 9:191.</p>
 <p>Descargar las secuencias y reconstruir la filogenia de estas especies mediante Neighbor_joining.</p>
 </section>
 <section id="ejercicio-7">
-<h3>Ejercicio 7<a class="headerlink" href="#ejercicio-7" title="Permalink to this headline">¶</a></h3>
+<h3>Ejercicio 7<a class="headerlink" href="#ejercicio-7" title="Permalink to this heading">¶</a></h3>
 <p>Filogenia de las hemoglobinas humanas.</p>
 <p>A partir de la secuencias de la hemoglobina subunidad <a class="reference download internal" download="" href="_downloads/bdd9f98d769c59aa2d6fcd2c3c934cb1/beta.fasta"><code class="xref download docutils literal notranslate"><span class="pre">beta</span></code></a> identifica mediante blast todas las subunidades de la hemoglobina humana y reconstruye su filogénia para identificar los procesos de duplicación que han dado lugar a cada una de ellas.
 Utiliza la mioglobina como outgroup.</p>

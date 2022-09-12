@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Cadenas de texto &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
@@ -76,7 +77,7 @@
                 
     
   <section id="cadenas-de-texto">
-<h1>Cadenas de texto<a class="headerlink" href="#cadenas-de-texto" title="Permalink to this headline">¶</a></h1>
+<h1>Cadenas de texto<a class="headerlink" href="#cadenas-de-texto" title="Permalink to this heading">¶</a></h1>
 <p>La cadena de texto (<em>STRing</em>) es uno de los tipos básicos de objetos de los que Python dispone.
 Crear una cadena de texto es muy sencillo, basta con escribir un texto entre comillas simples, dobles o triples:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;ATG&#39;</span>
@@ -105,7 +106,7 @@ Por ejemplo, imaginemos que queremos transformar un entero en texto:</p>
 Las funciones que vamos a ver a continuación se aplican a objetos del tipo cadena de texto (<em>str</em>), pero no funcionarían igual en enteros (<em>int</em>) o en números con coma (<em>float</em>).
 Para poder utilizar estas funciones con esos otros tipos primero hemos de convertirlo a una cadena de texto con la función str().</p>
 <section id="las-cadenas-de-texto-son-objetos">
-<h2>Las cadenas de texto son objetos<a class="headerlink" href="#las-cadenas-de-texto-son-objetos" title="Permalink to this headline">¶</a></h2>
+<h2>Las cadenas de texto son objetos<a class="headerlink" href="#las-cadenas-de-texto-son-objetos" title="Permalink to this heading">¶</a></h2>
 <p>En Python las cadenas de texto son <a class="reference external" href="http://es.wikipedia.org/wiki/Objetos_%28programaci%C3%B3n_orientada_a_objetos%29">objetos</a>.
 Los objetos tienen una definición informática estricta y una filosofía de programación asociada, pero lo único que necesitaremos saber para este curso es que los objetos además de los datos que contienen, incluyen funcionalidades para trabajar con ellos que definen el comportamiento de dichos objetos.
 Por ejemplo:</p>
@@ -122,7 +123,7 @@ Un método no es más que una función que actúa sobre los datos que el objeto 
 De todo esto lo único que debemos recordar es que los objetos con los que vamos a trabajar, nos ofrecerán multitud de funcionalidades extra.</p>
 </section>
 <section id="funcionalidades-de-las-cadenas-de-texto">
-<h2>Funcionalidades de las cadenas de texto<a class="headerlink" href="#funcionalidades-de-las-cadenas-de-texto" title="Permalink to this headline">¶</a></h2>
+<h2>Funcionalidades de las cadenas de texto<a class="headerlink" href="#funcionalidades-de-las-cadenas-de-texto" title="Permalink to this heading">¶</a></h2>
 <p>Las cadenas de texto incluyen multitud de métodos para derivar nuevas cadenas de texto a partir de ellas.
 A continuación veremos algunos ejemplos.</p>
 <p>Podemos, por ejemplo, eliminar los espacios en blanco que encontremos al principio y al final de una cadena de texto mediante el método <em>strip</em>:</p>
@@ -208,7 +209,7 @@ Para obtener una descripción completa del funcionamiento lo mejor es consultar 
 <p>Además, en la ayuda, se nos informará de otras funcionalidades de las cadenas de texto que en esta breve introducción no hemos mencionado.</p>
 </section>
 <section id="indices">
-<h2>Índices<a class="headerlink" href="#indices" title="Permalink to this headline">¶</a></h2>
+<h2>Índices<a class="headerlink" href="#indices" title="Permalink to this heading">¶</a></h2>
 <p>Las cadenas de texto son en realidad secuencias ordenadas de caracteres.
 En “ATG” el primer carácter es “A”, el segundo es “T” y el tercero es “G”.
 Python dispone de una sintaxis que nos permite extraer subcadenas (rebanadas) de texto muy fácilmente:</p>
@@ -272,7 +273,7 @@ TypeError: &#39;str&#39; object does not support item assignment
 </div>
 </section>
 <section id="herramientas-avanzadas">
-<h2>Herramientas avanzadas<a class="headerlink" href="#herramientas-avanzadas" title="Permalink to this headline">¶</a></h2>
+<h2>Herramientas avanzadas<a class="headerlink" href="#herramientas-avanzadas" title="Permalink to this heading">¶</a></h2>
 <p>Las cadenas de texto incluyen además un método <em>format</em> que nos permite crear prácticamente cualquier cadena que podamos imaginar.
 Este método está bien explicado en el <a class="reference external" href="http://docs.python.org/tutorial/inputoutput.html">tutorial</a> oficial.</p>
 <p>Python dispone de un tipo de cadena de texto llamada <em>unicode</em>.
@@ -283,7 +284,7 @@ Su uso es bastante similar al de las cadenas de texto que hemos visto, pero incl
 Para poder utilizar esta funcionalidad hay que importar el módulo de la librería estándar llamando <em>re</em>.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Crea una cadena de texto “Hola caracola” y guárdala en la variable texto.</p></li>
 <li><p>A partir de un fichero de texto hemos leído la cadena ‘  paciente,nombre,apellido   \n’. ¿Cómo podemos eliminar el retorno de carro y los espacios del principio y el final de la línea?</p></li>
@@ -299,7 +300,7 @@ Para poder utilizar esta funcionalidad hay que importar el módulo de la librer�
 </ol>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Crea una cadena de texto “Hola caracola” y guárdala en la variable texto.</p></li>
 </ol>

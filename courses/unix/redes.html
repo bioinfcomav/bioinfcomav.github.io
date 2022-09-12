@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Redes &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -75,38 +76,38 @@
                 
     
   <section id="redes">
-<h1>Redes<a class="headerlink" href="#redes" title="Permalink to this headline">¶</a></h1>
+<h1>Redes<a class="headerlink" href="#redes" title="Permalink to this heading">¶</a></h1>
 <p>Vamos a repasar algunos commandos genericos de Linux para poder conocer la configuracion actual del sistema.</p>
 <section id="ip">
-<h2>IP<a class="headerlink" href="#ip" title="Permalink to this headline">¶</a></h2>
+<h2>IP<a class="headerlink" href="#ip" title="Permalink to this heading">¶</a></h2>
 <p>Una dirección IP es un número que identifica un dispositivo (computadora, tableta, portátil, smartphone) que utilice el protocolo IP (Internet Protocol).</p>
 </section>
 <section id="puerto">
-<h2>Puerto<a class="headerlink" href="#puerto" title="Permalink to this headline">¶</a></h2>
+<h2>Puerto<a class="headerlink" href="#puerto" title="Permalink to this heading">¶</a></h2>
 <p>En el ámbito de Internet, un puerto es el valor que se usa, en el modelo de la capa de transporte, para distinguir entre las múltiples aplicaciones que se pueden conectar al mismo host, o puesto de trabajo.
 Aunque muchos de los puertos se asignan de manera arbitraria, ciertos puertos se asignan, por convenio, a ciertas aplicaciones particulares o servicios de carácter universal. Por ejemplo el puerto 80 para el protocolo http(web).</p>
 </section>
 <section id="direccion-estatica-o-dinamicas">
-<h2>Direccion estática o dinámicas<a class="headerlink" href="#direccion-estatica-o-dinamicas" title="Permalink to this headline">¶</a></h2>
+<h2>Direccion estática o dinámicas<a class="headerlink" href="#direccion-estatica-o-dinamicas" title="Permalink to this heading">¶</a></h2>
 <p>Las ips se pueden configurar para que sea la que nosotros le digamos( direccion estática) o para que nos la de un servidior externo (Direccion dinámica). Lo más comun es que la configuracion sea dinamica y que no tengamos que preocupernos sobre las diferentes configuraciones.(DHCP)</p>
 </section>
 <section id="dns">
-<h2>DNS<a class="headerlink" href="#dns" title="Permalink to this headline">¶</a></h2>
+<h2>DNS<a class="headerlink" href="#dns" title="Permalink to this heading">¶</a></h2>
 <p>Cuando queremos acceder a una página web, en el ordenador no solemos escribir la IP del ordenador donde está alojada la página. Solemos escribir el nombre del dominio. El servicio encargado de traducir los dominios en ips es el DNS.(Domain Name Server)</p>
 <p>Cuando tecleamos en el navegador google.es, lo primero que hace el navegador es preguntarle al servidor dns cual es la IP a la que está asociado ese dominio, cuando se la devuelve, el navegador llega al servidor usando la IP, no el dominio.</p>
 <p>Para nosotros sería muy dificil recordar las ips de las diferentes páginas webs, más aun, cuando estas están continuamente cambiando. Para guardar la relación dominio ip, es para lo que existen los DNS.</p>
 </section>
 <section id="puerta-de-enlace">
-<h2>Puerta de enlace<a class="headerlink" href="#puerta-de-enlace" title="Permalink to this headline">¶</a></h2>
+<h2>Puerta de enlace<a class="headerlink" href="#puerta-de-enlace" title="Permalink to this heading">¶</a></h2>
 <p>La pasarela (en inglés gateway) o puerta de enlace, es el dispositivo que actúa de interfaz de conexión entre aparatos o dispositivos, y también posibilita compartir recursos entre dos o más computadoras.</p>
 </section>
 <section id="dispositivos-de-red">
-<h2>Dispositivos de red<a class="headerlink" href="#dispositivos-de-red" title="Permalink to this headline">¶</a></h2>
+<h2>Dispositivos de red<a class="headerlink" href="#dispositivos-de-red" title="Permalink to this heading">¶</a></h2>
 <p>Son aquellos elementos fisicos que permiten al ordenador communicarse con otro ordenador. Existen dispositivos que permiten conectarse de forma inalambrica y mediante cable.</p>
 <p>En linux a cada uno de los dispositivos se les da un identificador, y es este identificador por el cual podremos configurarlos.</p>
 <p>Cada dispositivo de red tiene una MAC. Es un identificador unico entre todos los dispositivos de red que existen en el mundo. En las redes de computadoras, la dirección MAC (siglas en inglés de media access control; en español “control de acceso al medio”) es un identificador de 48 bits (6 bloques hexadecimales) que corresponde de forma única a una tarjeta o dispositivo de red. Se conoce también como dirección física.</p>
 <section id="ping">
-<h3>Ping<a class="headerlink" href="#ping" title="Permalink to this headline">¶</a></h3>
+<h3>Ping<a class="headerlink" href="#ping" title="Permalink to this heading">¶</a></h3>
 <p>Ping es una utilidad diagnostica que nos permite conocer el estado de la comunicacion entre un ordenador y otro.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ping google.es
 PING google.es (216.58.201.131) 56(84) bytes of data.
@@ -118,7 +119,7 @@ PING google.es (216.58.201.131) 56(84) bytes of data.
 <p>Es muy util porque en caso de problemas de conectividad nos ayudara a diagnosticar la fuente del problema.</p>
 </section>
 <section id="ifconfig">
-<h3>ifconfig<a class="headerlink" href="#ifconfig" title="Permalink to this headline">¶</a></h3>
+<h3>ifconfig<a class="headerlink" href="#ifconfig" title="Permalink to this heading">¶</a></h3>
 <p>Es un programa disponible en varias versiones del sistema operativo UNIX, que permite configurar o desplegar numerosos parámetros de las interfaces de red, como la dirección IP o la máscara de red. Si se llama sin argumentos suele mostrar la configuración vigente de las interfaces de red activas, con detalles como la dirección MAC o el tráfico que ha circulado por las mismas hasta el momento. Las interfaces de red en Linux se suelen denominar eth (eth0, eth1, etc.).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ifconfig
 enp0s3    Link encap:Ethernet  direcciónHW 08:00:27:33:99:e7
@@ -142,7 +143,7 @@ lo        Link encap:Bucle local
 </div>
 </section>
 <section id="route">
-<h3>route<a class="headerlink" href="#route" title="Permalink to this headline">¶</a></h3>
+<h3>route<a class="headerlink" href="#route" title="Permalink to this heading">¶</a></h3>
 <p>Con el comando route, podremos saber cual es el gateway o puerta de acceso de las interfaces del ordenador.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ route -n
 Tabla de rutas IP del núcleo
@@ -154,7 +155,7 @@ Destino         Pasarela        Genmask         Indic Métric Ref    Uso Interfa
 </div>
 </section>
 <section id="resolv-conf">
-<h3>resolv.conf<a class="headerlink" href="#resolv-conf" title="Permalink to this headline">¶</a></h3>
+<h3>resolv.conf<a class="headerlink" href="#resolv-conf" title="Permalink to this heading">¶</a></h3>
 <p>Si queremos saber cuales son las DNS que estamos utilizando, lo podemos mirar en el fichero resolf.conf</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cat /etc/resolv.conf
 # Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8)
@@ -178,7 +179,7 @@ proxybioinf.comav.upv.es mail is handled by 10 albali.cc.upv.es.
 </section>
 </section>
 <section id="servicios">
-<h1>Servicios<a class="headerlink" href="#servicios" title="Permalink to this headline">¶</a></h1>
+<h1>Servicios<a class="headerlink" href="#servicios" title="Permalink to this heading">¶</a></h1>
 <p>Los servicios son una serie de procesos que se ejecutan al arrancar el ordenador y que se quedan ejecutando en <em>background</em>.</p>
 <p>Tenemos servicios que se encargan desde la configuracion de red como servicios para mostrarnos las paginas web. En ubuntu y debian podemos ver todos los servicios que estan ejecutandose con el siguiente comando:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ systemctl list-units

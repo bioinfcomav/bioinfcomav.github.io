@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Dealing with big result files &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -76,7 +77,7 @@
                 
     
   <section id="dealing-with-big-result-files">
-<h1>Dealing with big result files<a class="headerlink" href="#dealing-with-big-result-files" title="Permalink to this headline">¶</a></h1>
+<h1>Dealing with big result files<a class="headerlink" href="#dealing-with-big-result-files" title="Permalink to this heading">¶</a></h1>
 <p>In a lot of genomic analyses our troubles are not over once we get the results.
 Usually these results consists of huge text files.
 For instance a file with all SNPs found between to plant varieties or with all SNPs found in a particular human individual would be a vcf file with thousands of lines.
@@ -85,7 +86,7 @@ We can open the file, search in it, merge it, etc.
 In these practice several of these tools are used to extract interesting genomic information from some results.</p>
 <p>Before trying to do the practice be sure to take a good look at the <a class="reference external" href="https://bioinf.comav.upv.es/courses/unix/procesamiento_texto.html">text files</a> section of the Unix course.</p>
 <section id="practical-task-dealing-with-text-files">
-<h2>Practical task: Dealing with text files<a class="headerlink" href="#practical-task-dealing-with-text-files" title="Permalink to this headline">¶</a></h2>
+<h2>Practical task: Dealing with text files<a class="headerlink" href="#practical-task-dealing-with-text-files" title="Permalink to this heading">¶</a></h2>
 <p>Somebody has analyzed the cucurbita transcriptome for us and has send us the <a class="reference download internal" download="" href="_downloads/9654df6af878d6892eac94bd9c82b93a/cucurbita.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">result</span></code></a>.
 These results include two files, a binary spreadsheet file with the functional annotation of the genes and a VCF file with the SNPs found in them.</p>
 <p>We are asked to extract the following information from those results:</p>
@@ -108,7 +109,7 @@ These results include two files, a binary spreadsheet file with the functional a
 </ul>
 </section>
 <section id="id1">
-<h2>Practical task: Dealing with text files<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>Practical task: Dealing with text files<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>1 Convert the binary spreadsheet file to a csv text format by using OpenOffice.</p>
 <p>2 Find the list of “transcription” related genes. How many genes are?</p>
 <p>We could do:</p>

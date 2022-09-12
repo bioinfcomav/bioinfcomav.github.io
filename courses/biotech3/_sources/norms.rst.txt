@@ -3,7 +3,7 @@
 Norms
 -----
 
-Bioinformatics 2022-2023, norms and regulations
+Bioinformatics 2021-2022, norms and regulations
 
 Contact
 =======
@@ -42,14 +42,10 @@ During the practical classes the analysis explained in the theoretical classes w
 
 The course web site will be updated throughout the course.
 
-Attendance to practical and theoretical classes are not mandatory.
-
-
 Tutoring
 --------
 
-Students are encouraged to use tutoring extensively. Tutoring appointments should be made by email and meeting will be online.
-
+You should make an appointment by email for tutoring.
 
 Course evaluation
 =================
@@ -59,9 +55,8 @@ Course evaluation
   2 open answer exams (40% each)
 
 
-  * Two written exams, one  will deal with theoretical and the other with practical aspects of the subject matter.
-  * The exams date will be ...
-
+  * Two written exams, one will deal with theoretical and the other with practical aspects of the subject matter.
+  * The exam dates will be: ...
 
 * 
   A practical exercise (20%).
@@ -69,16 +64,14 @@ Course evaluation
 
   * A presentation and a brief report will be prepared. These files should be uploaded to PoliformaT by December 1th.
   * We will propose several topics for the practical exercises and each group will choose one
-  * A presentation will be done the 12th and 14th december.
+  * A presentation will be done in December from 12th to 14th.
   * One person from one group for every topic proposed will do the presentation. Both the person and the group will be chosen randomly. The rest will discuss the presentation.
   * Both the reports and the presentations will be evaluated.
 
 Norms
 -----
 
-Each exam or exercise not taken will be evaluated as 0.
-
-It is required to pass the written exams with at least 50% of the total exam score (4/8) to pass the course. It's necesary to have the 50% total score  to pass the course (5/10)
+It is required to pass the written exams with at least 50% of the total exam score (4/8) to pass the course. It's necesary to have the 50% total score to pass the course (5/10)
 
 The students will be able to overcome the exam grade by writing a final extra exam.
 

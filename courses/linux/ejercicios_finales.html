@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Ejercicios finales &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -75,9 +76,9 @@
                 
     
   <section id="ejercicios-finales">
-<h1>Ejercicios finales<a class="headerlink" href="#ejercicios-finales" title="Permalink to this headline">¶</a></h1>
+<h1>Ejercicios finales<a class="headerlink" href="#ejercicios-finales" title="Permalink to this heading">¶</a></h1>
 <section id="ejercicios-linux">
-<h2>Ejercicios linux<a class="headerlink" href="#ejercicios-linux" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios linux<a class="headerlink" href="#ejercicios-linux" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Seleccionar la linea 123 del fichero <a class="reference download internal" download="" href="_downloads/9bce0e4eba7e74591baab487df7ca394/microarray_adenoma_hk69.csv"><code class="xref download docutils literal notranslate"><span class="pre">microarray_adenoma_hk69.csv</span></code></a>.</p></li>
 <li><p>Usa el fichero con el formato <a class="reference external" href="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41">vcf</a>  <a class="reference download internal" download="" href="_downloads/77a1884c326c63564ea49e4fd13f7798/test.vcf"><code class="xref download docutils literal notranslate"><span class="pre">test.vcf</span></code></a> selecciona aquellos snps que han pasado todos los filtros. Selecciona tambien aquellos snps que no han pasado el filtro de calidad.</p></li>
@@ -94,7 +95,7 @@ En él, hay claves que no tienen valor.
 El ejercicio consiste en mostrar el nombre de las claves que no tienen valor.</p>
 </section>
 <section id="contar-genes-y-sondas">
-<h2>Contar genes y sondas<a class="headerlink" href="#contar-genes-y-sondas" title="Permalink to this headline">¶</a></h2>
+<h2>Contar genes y sondas<a class="headerlink" href="#contar-genes-y-sondas" title="Permalink to this heading">¶</a></h2>
 <p>Hemos hecho un programa que cuenta genes y sondas, pero no lo hace bien, ¿podrías arreglarlo?</p>
 <p>El fichero de entrada es:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gen</span><span class="p">,</span><span class="n">sonda</span><span class="p">,</span><span class="n">expresion</span>
@@ -127,7 +128,7 @@ El ejercicio consiste en mostrar el nombre de las claves que no tienen valor.</p
 </div>
 </section>
 <section id="comparar-listas-de-genes">
-<h2>Comparar listas de genes<a class="headerlink" href="#comparar-listas-de-genes" title="Permalink to this headline">¶</a></h2>
+<h2>Comparar listas de genes<a class="headerlink" href="#comparar-listas-de-genes" title="Permalink to this heading">¶</a></h2>
 <p>Queremos comparar dos listas de genes y obtener cuales son exclusivos en ambas listas y cuales compartidos.
 Las listas provienen de la primera columna de los siguientes ficheros:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gen1</span> <span class="mf">1.4</span> <span class="mf">1.5</span>
@@ -186,7 +187,7 @@ Las listas provienen de la primera columna de los siguientes ficheros:</p>
 </div>
 </section>
 <section id="cambiar-nombres">
-<h2>Cambiar nombres<a class="headerlink" href="#cambiar-nombres" title="Permalink to this headline">¶</a></h2>
+<h2>Cambiar nombres<a class="headerlink" href="#cambiar-nombres" title="Permalink to this heading">¶</a></h2>
 <p>Tenemos un fichero que incluye una columna con nombres de muestras y queremos modificar esos nombres para que estén normalizados.</p>
 <p>Fichero entrada:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ECU</span><span class="o">-</span><span class="mi">1</span> <span class="n">grande</span> <span class="mf">1.7</span>
@@ -237,15 +238,15 @@ Las listas provienen de la primera columna de los siguientes ficheros:</p>
 </div>
 </section>
 <section id="recortar-ficheros-fasta">
-<h2>Recortar ficheros fasta<a class="headerlink" href="#recortar-ficheros-fasta" title="Permalink to this headline">¶</a></h2>
+<h2>Recortar ficheros fasta<a class="headerlink" href="#recortar-ficheros-fasta" title="Permalink to this heading">¶</a></h2>
 <p>Dado un fichero fasta queremos obtener un nuevo fichero en el que a cada secuencia le hayamos cortado un número de bases dado por el principio (left_clip) y por el final (right_clip). Si la secuencia resultante fuese más corta que un tamaño mínimo (min_len) debería descartarse y no incluirse en el fichero final.</p>
 </section>
 <section id="extrayendo-una-lista-de-secuencias-de-un-fichero">
-<h2>Extrayendo una lista de secuencias de un fichero<a class="headerlink" href="#extrayendo-una-lista-de-secuencias-de-un-fichero" title="Permalink to this headline">¶</a></h2>
+<h2>Extrayendo una lista de secuencias de un fichero<a class="headerlink" href="#extrayendo-una-lista-de-secuencias-de-un-fichero" title="Permalink to this heading">¶</a></h2>
 <p>Dado un fichero con miles de secuencias, ¿cómo podríamos extraer unas cuantas de las que conocemos el nombre?</p>
 </section>
 <section id="calcular-la-calidad-media-de-las-secuencias-en-un-fichero-fastq">
-<h2>Calcular la calidad media de las secuencias en un fichero fastq<a class="headerlink" href="#calcular-la-calidad-media-de-las-secuencias-en-un-fichero-fastq" title="Permalink to this headline">¶</a></h2>
+<h2>Calcular la calidad media de las secuencias en un fichero fastq<a class="headerlink" href="#calcular-la-calidad-media-de-las-secuencias-en-un-fichero-fastq" title="Permalink to this heading">¶</a></h2>
 <p>Los ficheros <a class="reference external" href="http://en.wikipedia.org/wiki/FASTQ_format">fastq</a> utilizados principalmente en análisis NGS son similares a los ficheros fasta y tienen el formato:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>@seq1
 ATTGNGCATTTCAAATAACTTGAAACATAAACGAGTTCCCACAC
@@ -294,7 +295,7 @@ AGATATCGGTCTGCAATATGCATAAAACCTATTGTAACGACTCG
 <p>Para prácticar puedes intentar hacer el programa de nuevo, pero esta vez sin utilizar BioPython.</p>
 </section>
 <section id="contar-contigs-por-genoteca">
-<h2>Contar contigs por genoteca<a class="headerlink" href="#contar-contigs-por-genoteca" title="Permalink to this headline">¶</a></h2>
+<h2>Contar contigs por genoteca<a class="headerlink" href="#contar-contigs-por-genoteca" title="Permalink to this heading">¶</a></h2>
 <p>Hemos realizado un alineamiento de secuencias 454 y Sanger con el ensamblador <a class="reference external" href="http://www.chevreux.org/projects_mira.html">MIRA</a>.
 Uno de los ficheros de resultados contiene la lista de lecturas que contribuyen a cada contig.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
@@ -323,7 +324,7 @@ El resultado que pretendemos obtener debe ser similar a:</p>
 </div>
 </section>
 <section id="copiar-anotacion-go">
-<h2>Copiar anotación GO<a class="headerlink" href="#copiar-anotacion-go" title="Permalink to this headline">¶</a></h2>
+<h2>Copiar anotación GO<a class="headerlink" href="#copiar-anotacion-go" title="Permalink to this heading">¶</a></h2>
 <p>Hemos realizado un blast de unos genes de S. stercoralis contra la base de datos de proteínas de C. elegans.
 El blast lo hemos transformado en un <a class="reference download internal" download="" href="_downloads/17575fe718cb4180cc55adf3fd5298d2/unigenes_blast_report.txt"><code class="xref download docutils literal notranslate"><span class="pre">informe</span></code></a>, con el siguiente formato:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sstercoralis_12317</span> <span class="n">WBGene00000064</span> <span class="n">WBGene00000066</span> <span class="n">WBGene00000066</span>
@@ -352,15 +353,15 @@ GO:0000005      ribosomal chaperone activity    F
 <p>Queremos obtener un fichero en el que a cada unigen de S. stercoralis se le asocien los términos GO que le correspondan a partir de las proteinas de C. elegans.</p>
 </section>
 <section id="enumerar-k-mers">
-<h2>Enumerar K-mers<a class="headerlink" href="#enumerar-k-mers" title="Permalink to this headline">¶</a></h2>
+<h2>Enumerar K-mers<a class="headerlink" href="#enumerar-k-mers" title="Permalink to this heading">¶</a></h2>
 <p>Tenemos un fichero de secuencias en formato fasta <a class="reference download internal" download="" href="_downloads/971c581adfdef80790024f480c41cdac/seqs_5.fasta"><code class="xref download docutils literal notranslate"><span class="pre">seqs_5.fasta</span></code></a>, y queremos contar las apariciones de todos las trozos de secuencia de un tamaño determinado, en este caso el tamaño de los trozos que vamos a contar será de 20 bases.:  Muetra por pantalla el resultado del conteo.</p>
 <p>Ayuda:Si tenemos una secuencia ATCGT, y pedimos un tamaño de secuencia de 3, los trozos de secuencia que tenemos son: ATC, TCG, CGT</p>
 </section>
 </section>
 <section id="soluciones">
-<h1>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h1>
+<h1>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h1>
 <section id="id1">
-<h2>Ejercicios linux<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios linux<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Seleccionar la linea 123 del fichero microarray_adenoma_hk69.csv</p></li>
 </ol>
@@ -397,7 +398,7 @@ El ejercicio consiste en mostrar el nombre de las claves que no tienen valor.</p
 </dl>
 </section>
 <section id="id3">
-<h2>Contar genes y sondas<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>Contar genes y sondas<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">DictReader</span>
@@ -420,7 +421,7 @@ El ejercicio consiste en mostrar el nombre de las claves que no tienen valor.</p
 </div>
 </section>
 <section id="id4">
-<h2>Comparar listas de genes<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>Comparar listas de genes<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">DictReader</span><span class="p">,</span> <span class="n">reader</span>
@@ -465,7 +466,7 @@ El ejercicio consiste en mostrar el nombre de las claves que no tienen valor.</p
 </div>
 </section>
 <section id="id5">
-<h2>Cambiar nombres<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>Cambiar nombres<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">reader</span>
@@ -500,7 +501,7 @@ El ejercicio consiste en mostrar el nombre de las claves que no tienen valor.</p
 </div>
 </section>
 <section id="id6">
-<h2>Recortar ficheros fasta<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>Recortar ficheros fasta<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
 
 <span class="k">def</span> <span class="nf">recortar_secuencias</span><span class="p">(</span><span class="n">in_fname</span><span class="p">,</span> <span class="n">out_fname</span><span class="p">,</span> <span class="n">left_clip</span><span class="p">,</span> <span class="n">right_clip</span><span class="p">,</span> <span class="n">min_len</span><span class="p">):</span>
@@ -531,7 +532,7 @@ El ejercicio consiste en mostrar el nombre de las claves que no tienen valor.</p
 </div>
 </section>
 <section id="id7">
-<h2>Extrayendo una lista de secuencias de un fichero<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2>Extrayendo una lista de secuencias de un fichero<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
 
 <span class="k">def</span> <span class="nf">extraer_secuencias</span><span class="p">(</span><span class="n">seq_names</span><span class="p">,</span> <span class="n">in_fname</span><span class="p">,</span> <span class="n">out_fname</span><span class="p">):</span>
@@ -551,7 +552,7 @@ El ejercicio consiste en mostrar el nombre de las claves que no tienen valor.</p
 </div>
 </section>
 <section id="id8">
-<h2>Calcular la calidad media de las secuencias en un fichero fastq<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2>Calcular la calidad media de las secuencias en un fichero fastq<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
 <p>Solución 1 utilizando BioPython:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
@@ -710,7 +711,7 @@ Alternativamente se puede hacer que las secuencias sean procesadas de una en una
 </div>
 </section>
 <section id="contigs-por-genoteca">
-<h2>Contigs por genoteca<a class="headerlink" href="#contigs-por-genoteca" title="Permalink to this headline">¶</a></h2>
+<h2>Contigs por genoteca<a class="headerlink" href="#contigs-por-genoteca" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/env python</span>
 
 <span class="c1">#en cuantos contigs participa cada una de las genotecas?</span>
@@ -780,7 +781,7 @@ Alternativamente se puede hacer que las secuencias sean procesadas de una en una
 </div>
 </section>
 <section id="id9">
-<h2>Copiar anotación GO<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2>Copiar anotación GO<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="k">def</span> <span class="nf">leer_go_desc</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
@@ -908,7 +909,7 @@ Alternativamente se puede hacer que las secuencias sean procesadas de una en una
 </div>
 </section>
 <section id="id10">
-<h2>Enumerar K-mers<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2>Enumerar K-mers<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
 

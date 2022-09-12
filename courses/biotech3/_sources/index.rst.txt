@@ -3,10 +3,16 @@ Bioinformatics
 ==============
 
 This introduction to bioinformatics will deal mainly with sequence analysis and it is aimed to the 3rd course of the degree in Biotechnology.
+The main course ideas are covered in these `Slides <https://drive.google.com/drive/folders/1mkI1j48pEnzzJv4zGSq_-n_WYlJbZO9k?usp=sharing>`_.
 
 The lessons will be mainly practical. They will have a brief theoretical introduction and several practical exercises.
 
-:download:`Introductory presentation <presentations/intro_bioinf.odp>`
+`Timetable <http://www.upv.es/titulaciones/GB/menu_1014041c.html>`_.
+
+Introduction
+------------
+
+What is bioinformatics? :download:`Introductory presentation <presentations/intro_bioinf.odp>`.
 
 Norms
 -----
@@ -15,7 +21,7 @@ Norms
    :titlesonly:
 
    Norms <norms.rst>
-   
+
 Previous knowledge
 ------------------
 
@@ -24,7 +30,6 @@ Previous knowledge
 
    Previous knowledge <prev_knowledge.rst>
 
-`Slides <https://drive.google.com/drive/folders/1mkI1j48pEnzzJv4zGSq_-n_WYlJbZO9k?usp=sharing>`_
 
 Theory
 ------
@@ -47,11 +52,10 @@ Practice
    :titlesonly:
 
    NCBI search <practice/entrez.rst>
-   Linux <practice/linux.rst>
    Emboss <practice/emboss.rst>
    Sequence Alignment <practice/alignment.rst>
    Blast <practice/blast.rst>
    Multiple Sequence Alignment <practice/multiple.rst>
    Structural annotation <practice/structural_annotation.rst>
    Phylogeny <practice/phylogeny.rst>
-   
+

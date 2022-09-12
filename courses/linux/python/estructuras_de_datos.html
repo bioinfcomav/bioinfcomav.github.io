@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Diccionarios &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
@@ -76,7 +77,7 @@
                 
     
   <section id="diccionarios">
-<h1>Diccionarios<a class="headerlink" href="#diccionarios" title="Permalink to this headline">¶</a></h1>
+<h1>Diccionarios<a class="headerlink" href="#diccionarios" title="Permalink to this heading">¶</a></h1>
 <p>Un diccionario es una estructura de datos que nos permite guardar parejas de claves y valores.</p>
 <a class="reference internal image-reference" href="../_images/python_dict.png"><img alt="../_images/python_dict.png" class="align-center" src="../_images/python_dict.png" style="width: 250px;" /></a>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;rubisco&#39;</span><span class="p">,</span> <span class="s1">&#39;secuencia&#39;</span><span class="p">:</span> <span class="s1">&#39;CGACTTAGCTATCTGACTAGCT&#39;</span><span class="p">}</span>
@@ -188,7 +189,7 @@ Esto resulta especialmente útil para iterar en los diccionarios dentro de los b
 <p>Por supuesto, los diccionarios tienen otras muchas funcionalidades, para estudiarlas se puede leer la sección correspondiente a los <a class="reference external" href="http://docs.python.org/library/stdtypes.html#mapping-types-dict">diccionarios</a> en la documentación de Python o se puede consultar algunos de los manuales de referencia que se han citado anteriormente.</p>
 </section>
 <section id="sets">
-<h1>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h1>
+<h1>Sets<a class="headerlink" href="#sets" title="Permalink to this heading">¶</a></h1>
 <p>Un <em>set</em>, como su nombre indica, es un conjunto de objetos.
 Estos objetos deben ser, como en el caso de los valores de los diccionarios, inmutables, o siendo estrictos <em>hasheables</em>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -310,7 +311,7 @@ Por supuesto, esta operación no es simétrica:</p>
 </pre></div>
 </div>
 <section id="estructuras-de-datos-anidadas">
-<h2>Estructuras de datos anidadas<a class="headerlink" href="#estructuras-de-datos-anidadas" title="Permalink to this headline">¶</a></h2>
+<h2>Estructuras de datos anidadas<a class="headerlink" href="#estructuras-de-datos-anidadas" title="Permalink to this heading">¶</a></h2>
 <p>Una de las principales fortalezas de las listas y los diccionarios, así como de otras estructuras de datos más complejas es que podemos combinarlas unas dentro de otras como si de una colección de muñecas rusas se tratase.
 Por ejemplo, podemos describir un conjunto de genes mediante una lista de diccionarios:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">genes</span> <span class="o">=</span> <span class="p">[</span> <span class="p">{</span><span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;ADH&#39;</span><span class="p">,</span> <span class="s1">&#39;seq&#39;</span><span class="p">:</span> <span class="s1">&#39;GATA&#39;</span><span class="p">},</span>
@@ -339,7 +340,7 @@ Por ejemplo, podemos describir un conjunto de genes mediante una lista de diccio
 <p>Podemos anidar estas estructuras tanto como lo deseemos, aunque en la práctica si necesitamos más de dos niveles tal vez debamos utilizar otro modo de almacenar la información puesto que este puede que sea demasiado complicado como para tenerlo en la cabeza mientras estamos programando.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Almacenamos el número de individuos por país en un diccionario:</p></li>
 </ol>
@@ -409,7 +410,7 @@ Ambas listas se encuentran disponibles en sendos ficheros:</p>
 <p>Generar, a partir de esta información, las listas de proteinas exclusivas de la muestra 1 y 2 así como las proteínas que aparecen en ambos experimentos.</p>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Almacenamos el número de individuos por país en un diccionario:</p></li>
 </ol>

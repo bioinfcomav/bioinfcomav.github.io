@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Ensamblaje y mapeo de secuencias tipo Sanger &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -76,7 +77,7 @@
                 
     
   <section id="ensamblaje-y-mapeo-de-secuencias-tipo-sanger">
-<h1>Ensamblaje y mapeo de secuencias tipo Sanger<a class="headerlink" href="#ensamblaje-y-mapeo-de-secuencias-tipo-sanger" title="Permalink to this headline">¶</a></h1>
+<h1>Ensamblaje y mapeo de secuencias tipo Sanger<a class="headerlink" href="#ensamblaje-y-mapeo-de-secuencias-tipo-sanger" title="Permalink to this heading">¶</a></h1>
 <p>Hasta ahora en el curso hemos hablado de como analizar secuencias de genes, genomas, de mensajeros.
 Pero no hemos tenido en cuenta como se obtienen esas secuencias.
 Todas las tecnologías de secuenciación producen fragmentos más o menos cortos y a partir de estos se debe recomponer la secuencia del fragmento analizado, ya sea un genoma, un BAC o un producto de PCR.
@@ -86,13 +87,13 @@ En muchos de los casos el resultado no será la secuencia completa del fragmento
 <img alt="_images/ensamblaje.jpg" src="_images/ensamblaje.jpg" />
 </figure>
 <section id="ensamblaje-de-secuencias">
-<h2>Ensamblaje de secuencias<a class="headerlink" href="#ensamblaje-de-secuencias" title="Permalink to this headline">¶</a></h2>
+<h2>Ensamblaje de secuencias<a class="headerlink" href="#ensamblaje-de-secuencias" title="Permalink to this heading">¶</a></h2>
 <p>El proceso de <a class="reference external" href="http://en.wikipedia.org/wiki/Sequence_assembly#De-novo_vs._mapping_assembly">ensamblaje</a> consta de tres fases: limpieza de secuencias, alineamiento de secuencias y ensamblaje.</p>
 <figure class="align-center">
 <img alt="_images/proceso_ensamblaje.jpg" src="_images/proceso_ensamblaje.jpg" />
 </figure>
 <section id="limpieza">
-<h3>Limpieza<a class="headerlink" href="#limpieza" title="Permalink to this headline">¶</a></h3>
+<h3>Limpieza<a class="headerlink" href="#limpieza" title="Permalink to this heading">¶</a></h3>
 <p>Es el primer paso a realizar ante cualquier proyecto de secuenciación.
 Los secuenciadores devuelven las secuencias crudas y suele ser necesario eliminar o bloquear diferentes regiones que contengan:</p>
 <blockquote>
@@ -106,7 +107,7 @@ Los secuenciadores devuelven las secuencias crudas y suele ser necesario elimina
 <p>Estas regiones interfieren con el ensamblaje y en la mayoría de los programas de ensamblaje es necesario eliminarlas o enmascarlas antes de comenzar.</p>
 </section>
 <section id="alineamiento-de-secuencias">
-<h3>Alineamiento de secuencias<a class="headerlink" href="#alineamiento-de-secuencias" title="Permalink to this headline">¶</a></h3>
+<h3>Alineamiento de secuencias<a class="headerlink" href="#alineamiento-de-secuencias" title="Permalink to this heading">¶</a></h3>
 <p>El siguiente paso es alinear todas las secuencias con todas las secuencias dos a dos para identificar que secuencias solapan entre si.
 Vamos a identificar pares o grupos de secuencias con fragmentos de secuencias comunes.
 El resultado es una red de interacciones entre las secuencias que alinean entre si, en el que en cada borde está localizado una secuencia.</p>
@@ -115,7 +116,7 @@ El resultado es una red de interacciones entre las secuencias que alinean entre 
 </figure>
 </section>
 <section id="id1">
-<h3>Ensamblaje de secuencias<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>Ensamblaje de secuencias<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <p>A partir de estos grafos realizados con las secuencias identificadas que comparten regiones comunes, se crea el ensamblaje.
 A diferencia de un alineamiento múltiple los ensambladores no fuerzan que todas las secuencias cubran la totalidad del alineamiento, este se va alargando con la adición de nuevas secuencias.
 Existen diferentes algoritmos que a partir de la información almacenada en el grafo ordenan y ensamblar las secuencias utilizando alineación múltiple para obtener la mejor distribución de las secuencias solapantes.
@@ -128,7 +129,7 @@ Existen diferentes reglas para construir el consenso, pero es indispensable que 
 </section>
 </section>
 <section id="problemas-del-ensamblaje-de-secuencias">
-<h2>Problemas del ensamblaje de secuencias<a class="headerlink" href="#problemas-del-ensamblaje-de-secuencias" title="Permalink to this headline">¶</a></h2>
+<h2>Problemas del ensamblaje de secuencias<a class="headerlink" href="#problemas-del-ensamblaje-de-secuencias" title="Permalink to this heading">¶</a></h2>
 <p>Hay varios factores que afectan a la calidad del ensamblaje, la calidad de las secuencias, el número de veces que se lee cada posición (cobertura), la longitud de las secuencias y la existencia de secuencias repetidas.</p>
 <figure class="align-center">
 <img alt="_images/problemas_ensamblaje.jpg" src="_images/problemas_ensamblaje.jpg" />
@@ -149,7 +150,7 @@ Para evitar estos falsos positivos podemos tener en cuenta una serie de factores
 <p>Los errores causados por la mala calidad, escasa cobertura, longitud de secuencias son evitables mediante la limpieza de secuencias o la adición de nuevas secuencias al ensamblaje.
 Pero el problema de las secuencias repetidas no puede obviarse ya que en los genomas, sobretodo en los eucariotas, existe un alto porcentaje de secuencias repetidas.</p>
 <section id="secuencias-repetidas">
-<h3>Secuencias repetidas<a class="headerlink" href="#secuencias-repetidas" title="Permalink to this headline">¶</a></h3>
+<h3>Secuencias repetidas<a class="headerlink" href="#secuencias-repetidas" title="Permalink to this heading">¶</a></h3>
 <p>Las lecturas que únicamente contienen el mismo ADN repetitivo ensamblaran entre si aunque provengan de regiones distintas del genoma, solo podremos diferenciarlas si contienen alguna parte de secuencia única.
 Esto hace que si la longitud del ADN repetitivo es mayor que el tamaño de las lecturas los ensambladores no puedan ensamblar estas regiones ya que solapan con multitud de copias, esto crea gaps y diferentes contigs.
 Las regiones repetidas más pequeñas que la longitud de las secuencias se podrán ensamblar perfectamente siempre que tengamos una lectura que la cruce en su totalidad, es decir que tenga en sus extremos secuencias de copia única.
@@ -170,7 +171,7 @@ Al secuenciar los fragmentos por ambos extremos se puede utilizar esta informaci
 </section>
 </section>
 <section id="terminologia">
-<h2>Terminología<a class="headerlink" href="#terminologia" title="Permalink to this headline">¶</a></h2>
+<h2>Terminología<a class="headerlink" href="#terminologia" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Read: una secuencia obtenida del secuenciador.</p></li>
@@ -189,7 +190,7 @@ Al secuenciar los fragmentos por ambos extremos se puede utilizar esta informaci
 <p>from Jason Miller</p>
 </section>
 <section id="programas">
-<h2>Programas<a class="headerlink" href="#programas" title="Permalink to this headline">¶</a></h2>
+<h2>Programas<a class="headerlink" href="#programas" title="Permalink to this heading">¶</a></h2>
 <p>Se han desarrollado numerosos programas para el ensamblaje de secuencias tipo Sanger.
 Podemos destacar por ejemplo <a class="reference external" href="http://www.phrap.org/">Phrap</a> , <a class="reference external" href="http://seq.cs.iastate.edu/">Cap3</a>  y el TIGR Assembler o su versión actualizada <a class="reference external" href="http://www.jcvi.org/cms/research/software/">CABOG</a>.
 Estos programas han sido diseñados y ampliamente utilizados para el ensamblaje de genomas.

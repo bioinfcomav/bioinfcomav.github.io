@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Control de flujo &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
@@ -76,7 +77,7 @@
                 
     
   <section id="control-de-flujo">
-<h1>Control de flujo<a class="headerlink" href="#control-de-flujo" title="Permalink to this headline">¶</a></h1>
+<h1>Control de flujo<a class="headerlink" href="#control-de-flujo" title="Permalink to this heading">¶</a></h1>
 <p>En el apartado anterior, en el que hicimos nuestro primer programa, vimos que los programas normalmente no se ejecutan línea por línea desde la primera hasta la última.
 Esto podría ser adecuado para resolver problemas muy sencillos, pero en la práctica resultaría muy limitado.
 En la mayoría de las ocasiones reales el programa deberá responder de un modo u otro dependiendo de las circunstancias.
@@ -106,7 +107,7 @@ Para evitarlo deberíamos introducir una salvaguarda, deberíamos hacer algo sim
 Si se da el caso de que la línea comienza por la cadena de texto <em>nombre_gen</em> simplemente hay que imprimirla, en cualquier otro caso debemos proceder a realizar el cálculo de la media antes de imprimir el resultado.
 Veamos algunos otros detalles de la sentencia <em>if</em>.</p>
 <section id="sentencia-if">
-<h2>Sentencia <em>if</em><a class="headerlink" href="#sentencia-if" title="Permalink to this headline">¶</a></h2>
+<h2>Sentencia <em>if</em><a class="headerlink" href="#sentencia-if" title="Permalink to this heading">¶</a></h2>
 <p>La sentencia <em>if</em> permite elegir ejecutar un bloque del programa u otro en función de que la condición que evalúa sea cierta o falsa.
 En su versión más simple <em>if</em> simplemente determina si el código se ejecutará o no, por ejemplo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">numero</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -132,7 +133,7 @@ En su versión más simple <em>if</em> simplemente determina si el código se ej
 </div>
 </section>
 <section id="booleanos">
-<h2>Booleanos<a class="headerlink" href="#booleanos" title="Permalink to this headline">¶</a></h2>
+<h2>Booleanos<a class="headerlink" href="#booleanos" title="Permalink to this heading">¶</a></h2>
 <p>Cuando una sentencia <em>if</em> se evalúa lo que en realidad se hace es comprobar la validez de la condición que le sigue, en el caso anterior: <em>número &lt; 0</em>.
 Si la condición es verdadera se ejecutará un bloque de código y si es falsa otro.
 En Python la verdad y la falsedad se representan mediante un tipo especial denominado booleano (<em>bool</em>).
@@ -256,7 +257,7 @@ Comúnmente este operador se utiliza para verificar si un objeto es None:</p>
 </div>
 </section>
 <section id="bucle-for">
-<h2>Bucle <em>for</em><a class="headerlink" href="#bucle-for" title="Permalink to this headline">¶</a></h2>
+<h2>Bucle <em>for</em><a class="headerlink" href="#bucle-for" title="Permalink to this heading">¶</a></h2>
 <p>La sentencia <em>for</em> ejecuta un bloque de código para una serie de elementos presentes en un iterador.
 Este iterador puede ser por ejemplo una lista.
 Por ejemplo sumemos los enteros entre 1 y 5:</p>
@@ -321,7 +322,7 @@ Por ejemplo, cuando buscamos en una lista algo, tras encontrarlo podemos utiliza
 <p><em>for</em> además dispone de un <em>else</em> en el que podemos incluir código que queremos que se ejecute cuando el el bucle haya acabado sin que ningún <em>break</em> se haya ejecutado.</p>
 </section>
 <section id="while">
-<h2>while<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h2>
+<h2>while<a class="headerlink" href="#while" title="Permalink to this heading">¶</a></h2>
 <p><em>while</em> es otro tipo de bucle.
 En este caso el bloque de código se ejecutará mientras la condición sea verdadera.
 Por ejemplo podríamos hacer:</p>
@@ -334,7 +335,7 @@ Por ejemplo podríamos hacer:</p>
 <p>El bucle <em>while</em> se suele utilizar cuando no estamos tratando con una lista o con un iterador sino que estamos recorriendo un blucle un número indeterminado de veces y queremos detenerlo sólo cuando una cierta condición sea satisfecha, no cuando una lista de elementos haya sido consumida.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <p>1. Leer un fichero que contiene una lista de palabras y guardar las palabras en una
 lista.</p>
 <dl class="simple">
@@ -366,7 +367,7 @@ lista.</p>
 </dl>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
 <p>1. Leer un fichero que contiene una lista de palabras y guardar las palabras en una
 lista.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>

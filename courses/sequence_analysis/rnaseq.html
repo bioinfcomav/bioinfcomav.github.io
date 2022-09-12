@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>NGS expression analysis &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -76,16 +77,16 @@
                 
     
   <section id="ngs-expression-analysis">
-<h1>NGS expression analysis<a class="headerlink" href="#ngs-expression-analysis" title="Permalink to this headline">¶</a></h1>
+<h1>NGS expression analysis<a class="headerlink" href="#ngs-expression-analysis" title="Permalink to this heading">¶</a></h1>
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR3x87hIUakq-ObmWls9FaxCoWwCvK8EFc9cTk5b2g9TV0y94Fuwbg3WoAyzTtj7He_WtX_bM12qjTh/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe><p>There are several interesting RNA-Seq reviews: <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-8">A survey of best practices for RNA-seq data analysis</a>, <a class="reference external" href="http://www.bioconductor.org/help/workflows/rnaseqGene/">RNA-seq workflow: gene-level exploratory analysis and differential expression</a>, <a class="reference external" href="http://genomebiology.com/2010/11/12/220">From RNA-seq reads to differential expression results</a>, <a class="reference external" href="http://www.biomedcentral.com/1741-7007/9/34">Microarrays, deep sequencing and the true measure of the transcriptome</a>, <a class="reference external" href="http://www.nature.com/nmeth/journal/v8/n6/full/nmeth.1613.html">Computational methods for transcriptome annotation and quantification using RNA-seq</a>, <a class="reference external" href="http://www.nature.com/nrg/journal/v12/n10/full/nrg3068.html">Next-generation transcriptome assembly</a>, <a class="reference external" href="http://biorxiv.org/content/early/2016/02/18/035642">An opinionated guide to the proper care and feeding of your transcriptome</a> and <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0553-5">Evaluation of de novo transcriptome assemblies from RNA-Seq data</a>.</p>
 <p>There are also some interesting studies regarding the <a class="reference external" href="http://www.biomedcentral.com/1471-2164/14/328">post-processing</a>, <a class="reference external" href="http://www.biomedcentral.com/content/pdf/1471-2164-14-465.pdf">quality</a> of the assembled transcriptomes, the <a class="reference external" href="http://biorxiv.org/content/biorxiv/early/2014/07/14/007088.full.pdf">alternative transcript</a> reconstruction success of different algorithms, the <a class="reference external" href="http://genomebiology.com/2014/15/12/553/abstract">evaluation</a> of different assembly strategies.</p>
 <p><a class="reference external" href="http://www.nature.com/nbt/journal/v33/n3/full/nbt.3122.html">StringTie</a> reconstruction algorithm.</p>
 <p><a class="reference external" href="http://hibberdlab.com/transrate/">transrate</a>, a software to evaluate the transcriptome assembly quality.</p>
 </section>
 <section id="practical-tasks">
-<h1>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this headline">¶</a></h1>
+<h1>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this heading">¶</a></h1>
 <section id="mapping-and-count-sequences">
-<h2>Mapping and count sequences<a class="headerlink" href="#mapping-and-count-sequences" title="Permalink to this headline">¶</a></h2>
+<h2>Mapping and count sequences<a class="headerlink" href="#mapping-and-count-sequences" title="Permalink to this heading">¶</a></h2>
 <p>The objective is to map and count redas using an <a class="reference download internal" download="" href="_downloads/8b0bd8b64c5c16bef1f43a4e9488ffb6/SRR45_region.fastq"><code class="xref download docutils literal notranslate"><span class="pre">example</span> <span class="pre">file</span></code></a>  of a RNAseq experience  with only a sample. We use <a class="reference external" href="http://daehwankimlab.github.io/hisat2/">Hisat2</a>  to map read againt the <a class="reference download internal" download="" href="_downloads/970c0364472e11c04558b39a7495b09a/sl2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genome</span></code></a> and <a class="reference external" href="https://ccb.jhu.edu/software/stringtie/">StringTie</a> to count the reads.</p>
 <p>First we download the <a class="reference download internal" download="" href="_downloads/2917d130a06ff95710fced6d4c9a6d11/sl2_index.zip"><code class="xref download docutils literal notranslate"><span class="pre">index</span> <span class="pre">files</span> <span class="pre">of</span> <span class="pre">genome</span></code></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine: mkdir rnaseq

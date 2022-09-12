@@ -11,10 +11,9 @@ Previous knowledge test
 Previous knowledge test:
 
 
-* `ARA <https://docs.google.com/forms/d/1UzK2GJ7zUU7eSRnoNfIVzPhMi_h4jyHQFeLSwTfkSq0/edit?usp=sharing>`_
-* `Castellano <https://docs.google.com/forms/d/1iE23H6hoAKSm8Zab7vRlxGwPKF4SPAvoXPJjZbWyhJc/edit?usp=sharing>`_
+* `ARA <https://forms.gle/apBDErV2eSWaa7Qz8>`_
+* `Castellano <https://forms.gle/AFecGV9vre8yfKK96>`_
 
-`Test results <>`_
 
 Computer Knowledge
 ==================

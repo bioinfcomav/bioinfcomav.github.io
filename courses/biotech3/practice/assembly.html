@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Assembly &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -24,11 +24,11 @@
     <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
-    <link rel="prev" title="Phylogeny" href="phylogeny.html" /> 
+    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" /> 
   </head>
   <body>
 
@@ -75,11 +75,11 @@
                 
     
   <section id="assembly">
-<h1>Assembly<a class="headerlink" href="#assembly" title="Permalink to this headline">¶</a></h1>
+<h1>Assembly<a class="headerlink" href="#assembly" title="Permalink to this heading">¶</a></h1>
 <section id="practica-de-ensamblaje">
-<h2>Práctica de ensamblaje<a class="headerlink" href="#practica-de-ensamblaje" title="Permalink to this headline">¶</a></h2>
+<h2>Práctica de ensamblaje<a class="headerlink" href="#practica-de-ensamblaje" title="Permalink to this heading">¶</a></h2>
 <section id="cromatogramas">
-<h3>Cromatogramas<a class="headerlink" href="#cromatogramas" title="Permalink to this headline">¶</a></h3>
+<h3>Cromatogramas<a class="headerlink" href="#cromatogramas" title="Permalink to this heading">¶</a></h3>
 <p>La información obtenida en los secuenciadores automáticos se guarda en ficheros binarios.</p>
 <p>Estos ficheros suelen incluir, además del cromatograma procesado (trace), la secuencia de nucleótidos obtenida y la calidad asociada a la misma.</p>
 <p>Los secuenciadores Sanger de Applied generan los datos en formato abi.</p>
@@ -88,7 +88,7 @@
 <p>En el NCBI se pueden encontrar, por ejemplo en la sección EST, algunas secuencias que incluyen también el cromatograma original.</p>
 </section>
 <section id="analisis-de-cromatogramas-con-el-trev">
-<h3>Análisis de cromatogramas con el Trev<a class="headerlink" href="#analisis-de-cromatogramas-con-el-trev" title="Permalink to this headline">¶</a></h3>
+<h3>Análisis de cromatogramas con el Trev<a class="headerlink" href="#analisis-de-cromatogramas-con-el-trev" title="Permalink to this heading">¶</a></h3>
 <p>Descargar los el fichero cromprimido de cromatogramas de <a class="reference download internal" download="" href="../_downloads/5115d381a02e58a698d9620e2766b78f/cromatogramas.zip"><code class="xref download docutils literal notranslate"><span class="pre">ejemplo</span></code></a>.</p>
 <p>Abrir los cromatogramas que habíamos descargado con el trev de uno en uno y comprobar su calidad.
 El trev denomina a la calidad confidence.
@@ -106,7 +106,7 @@ Conviene pedir al trev que marque la calidad de la asignación de cada base (vie
 </ul>
 </section>
 <section id="analisis-de-cromatogramas-automatico-con-el-pregap">
-<h3>Análisis de cromatogramas automático con el pregap<a class="headerlink" href="#analisis-de-cromatogramas-automatico-con-el-pregap" title="Permalink to this headline">¶</a></h3>
+<h3>Análisis de cromatogramas automático con el pregap<a class="headerlink" href="#analisis-de-cromatogramas-automatico-con-el-pregap" title="Permalink to this heading">¶</a></h3>
 <p>El PreGap puede analizar automáticamente la calidad y otros aspectos de los cromatogramas determinando las regiones de buena y mala calidad.</p>
 <p>Reanalizar con el PreGap los cromatogramas anteriores.</p>
 <p>El PreGap generará para cada archivo abi original un archivo de texto con extensión exp.
@@ -114,13 +114,13 @@ En este archivo exp incluirá la secuencia, la calidad y los puntos que delimita
 <p>Con el Trev abrir los ficheros analizados (.exp) y comparar los analisis manuales con el realizado por el PreGap.</p>
 </section>
 <section id="alineamiento-manual">
-<h3>Alineamiento manual<a class="headerlink" href="#alineamiento-manual" title="Permalink to this headline">¶</a></h3>
+<h3>Alineamiento manual<a class="headerlink" href="#alineamiento-manual" title="Permalink to this heading">¶</a></h3>
 <p>Usando el Openoffice draw realiza un alineamiento manual con estas <a class="reference download internal" download="" href="../_downloads/5ddb95f11b836fc32ebee0f051d1ee70/reads.odp"><code class="xref download docutils literal notranslate"><span class="pre">lecturas</span></code></a>.
 Las letras y colores identifican secuencias similares en esa región. Obtén los contigs, pero recuerda que pueden aparecer problemas con el repetitivo, vectores, splicing alternativo, etc.</p>
 <p>Cuando lo tengas compara con este <a class="reference download internal" download="" href="../_downloads/44c2c5ccc87802bc5efa90b60b01c7bf/manual_result.pdf"><code class="xref download docutils literal notranslate"><span class="pre">resultado</span></code></a>.</p>
 </section>
 <section id="ensamblaje-de-ests-1">
-<h3>Ensamblaje de ESTs 1<a class="headerlink" href="#ensamblaje-de-ests-1" title="Permalink to this headline">¶</a></h3>
+<h3>Ensamblaje de ESTs 1<a class="headerlink" href="#ensamblaje-de-ests-1" title="Permalink to this heading">¶</a></h3>
 <p>Ahora vamos a realizar un proyecto de secuenciación a partir de varias lecturas generadas por Sanger.</p>
 <p>Descargar los cromatogramas del fichero cromprimido <a class="reference download internal" download="" href="../_downloads/bae827702df53639ec03d7f58dc8c45c/secuencias1.zip"><code class="xref download docutils literal notranslate"><span class="pre">secuencias1</span></code></a>.</p>
 <p>Preanalizar las secuencias con el PreGap y utilizar los ficheros producidos para crear el proyecto con el Gap4.</p>
@@ -131,7 +131,7 @@ Las letras y colores identifican secuencias similares en esa región. Obtén los
 <p>Salvar los consensos en ficheros separados y en un único fichero</p>
 </section>
 <section id="ensamblaje-de-ests-2">
-<h3>Ensamblaje de ESTs 2<a class="headerlink" href="#ensamblaje-de-ests-2" title="Permalink to this headline">¶</a></h3>
+<h3>Ensamblaje de ESTs 2<a class="headerlink" href="#ensamblaje-de-ests-2" title="Permalink to this heading">¶</a></h3>
 <p>Ahora vamos a realizar un proyecto de secuenciación a partir de lecturas de ESTs. Descargar el fichero comprimido <a class="reference download internal" download="" href="../_downloads/a061d695f2f221c315a1882efa716258/secuencias2.zip"><code class="xref download docutils literal notranslate"><span class="pre">secuencias2</span></code></a>.</p>
 <p>Una vez hayais obtenido los contigs con el Gap4:</p>
 <ul class="simple">
@@ -151,7 +151,7 @@ Las letras y colores identifican secuencias similares en esa región. Obtén los
 </ul>
 </section>
 <section id="control-calidad-ensamblaje">
-<h3>Control calidad ensamblaje<a class="headerlink" href="#control-calidad-ensamblaje" title="Permalink to this headline">¶</a></h3>
+<h3>Control calidad ensamblaje<a class="headerlink" href="#control-calidad-ensamblaje" title="Permalink to this heading">¶</a></h3>
 <p><a class="reference external" href="http://solgenomics.net/">SGN</a> ha secuenciado un borrador del genoma de <em>Nicotiana benthamiana</em>.</p>
 <p>El método de secuenciación ha sido el siguiente:
 A partir del ADN genómico, se han creado tres librerias para Illumina HiSeq-2000:</p>
@@ -164,10 +164,6 @@ A partir del ADN genómico, se han creado tres librerias para Illumina HiSeq-200
 <p>¿Cuál de los dos corresponder a la v0.3 y v0.42 del ensamblaje?</p>
 <p>¿Cuál prefieres?</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Statistic</p></th>
 <th class="head"><p>Result</p></th>
@@ -216,10 +212,6 @@ A partir del ADN genómico, se han creado tres librerias para Illumina HiSeq-200
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Statistic</p></th>
 <th class="head"><p>Result</p></th>
@@ -269,23 +261,11 @@ A partir del ADN genómico, se han creado tres librerias para Illumina HiSeq-200
 </table>
 </section>
 <section id="comparacion-de-ensamblajes">
-<h3>Comparación de ensamblajes<a class="headerlink" href="#comparacion-de-ensamblajes" title="Permalink to this headline">¶</a></h3>
+<h3>Comparación de ensamblajes<a class="headerlink" href="#comparacion-de-ensamblajes" title="Permalink to this heading">¶</a></h3>
 <p>Se han utilizado varios ensambladores para ensamblar el cloroplasto de <em>N. benthamiana</em> (100Kb aprox).</p>
 <p>Se utilizaron 883811 Illumina pair-ends de un tamaño de 101pb y un tamaño de inserto de 400bp (cobertura 1700X). El SOAPdenovo se utilizó con todas las secuencias y con solo un subconjunto de estas.</p>
 <p>Los resultados del experimento realizado por el Dr Aureliano Bombarely fueron:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Assembler</p></th>
 <th class="head"><p>Total Scaffold Size (Kb)</p></th>

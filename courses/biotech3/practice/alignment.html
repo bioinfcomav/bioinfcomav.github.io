@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Sequence Alignment &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
@@ -76,9 +77,9 @@
                 
     
   <section id="sequence-alignment">
-<h1>Sequence Alignment<a class="headerlink" href="#sequence-alignment" title="Permalink to this headline">¶</a></h1>
+<h1>Sequence Alignment<a class="headerlink" href="#sequence-alignment" title="Permalink to this heading">¶</a></h1>
 <section id="sequence-alignment-practice">
-<h2>Sequence Alignment Practice<a class="headerlink" href="#sequence-alignment-practice" title="Permalink to this headline">¶</a></h2>
+<h2>Sequence Alignment Practice<a class="headerlink" href="#sequence-alignment-practice" title="Permalink to this heading">¶</a></h2>
 <p>Which EMBOSS programs can we use to do sequence alignments?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ wossname alignment
 </pre></div>
@@ -88,9 +89,9 @@ And local and global alignments?</p>
 <p>Which program is specific to align mRNA?</p>
 </section>
 <section id="dotplot">
-<h2>Dotplot<a class="headerlink" href="#dotplot" title="Permalink to this headline">¶</a></h2>
+<h2>Dotplot<a class="headerlink" href="#dotplot" title="Permalink to this heading">¶</a></h2>
 <section id="gene-structure">
-<h3>Gene structure<a class="headerlink" href="#gene-structure" title="Permalink to this headline">¶</a></h3>
+<h3>Gene structure<a class="headerlink" href="#gene-structure" title="Permalink to this heading">¶</a></h3>
 <p>We can study the exon and intron gene structure graphically by using the graphical alignment program <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/dotmatcher.html">dotmatcher</a>.
 dotmatcher can create dotplots in EMBOSS.</p>
 <p>Let’s compare the Arabidopsis <a class="reference download internal" download="" href="../_downloads/7f470d3314118d610ad8e7220f183715/AT3G4905.1.genomico.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genomic</span> <span class="pre">region</span> <span class="pre">AT3G52905.1</span></code></a> with one <a class="reference download internal" download="" href="../_downloads/1b09e08e6c6ee7cd9cf575a950388591/AT3G4905.1.cdna.fasta"><code class="xref download docutils literal notranslate"><span class="pre">cDNA</span></code></a>.</p>
@@ -109,7 +110,7 @@ dotmatcher can create dotplots in EMBOSS.</p>
 <p>Why is the main diagonal split in several segments?</p>
 </section>
 <section id="genes-in-close-species">
-<h3>Genes in close species<a class="headerlink" href="#genes-in-close-species" title="Permalink to this headline">¶</a></h3>
+<h3>Genes in close species<a class="headerlink" href="#genes-in-close-species" title="Permalink to this heading">¶</a></h3>
 <p>We can study homologous regions between two proteins, one from human and another from dog.
 Using dotmatcher we will compare the CDS the <a class="reference download internal" download="" href="../_downloads/099955f3cecea2f5195f1ec9d1766cfb/CDKL4.human.fasta"><code class="xref download docutils literal notranslate"><span class="pre">human</span></code></a> and <a class="reference download internal" download="" href="../_downloads/8e30a19254c18a3dd039a4cbb19ab02c/cyclin.dog.fasta"><code class="xref download docutils literal notranslate"><span class="pre">dog</span></code></a> genes.</p>
 <ul class="simple">
@@ -118,7 +119,7 @@ Using dotmatcher we will compare the CDS the <a class="reference download intern
 </ul>
 </section>
 <section id="tandem-repeats">
-<h3>Tandem repeats<a class="headerlink" href="#tandem-repeats" title="Permalink to this headline">¶</a></h3>
+<h3>Tandem repeats<a class="headerlink" href="#tandem-repeats" title="Permalink to this heading">¶</a></h3>
 <p>Graphical alignments are particularly well suited to study repeated or inverted regions.
 As an example we will study the repeats found in the human zinc finger <a class="reference download internal" download="" href="../_downloads/f722ff911adc4a2ad75e076119db36a5/Q9P255.fasta"><code class="xref download docutils literal notranslate"><span class="pre">Q9P255</span></code></a></p>
 <p>Align the protein against itself using dotmatcher.</p>
@@ -130,7 +131,7 @@ As an example we will study the repeats found in the human zinc finger <a class=
 </ul>
 </section>
 <section id="genomic-level-dotplots">
-<h3>Genomic level dotplots<a class="headerlink" href="#genomic-level-dotplots" title="Permalink to this headline">¶</a></h3>
+<h3>Genomic level dotplots<a class="headerlink" href="#genomic-level-dotplots" title="Permalink to this heading">¶</a></h3>
 <p>Dotplots can be used to detect long genomic <a class="reference external" href="https://en.wikipedia.org/wiki/Structural_variation">structural variants</a>.
 There are several software tools to do it, for instance the web service <a class="reference external" href="https://genomevolution.org/coge/SynMap.pl">SynMap</a>.</p>
 <p>Running these analyses is slow, so we have already run them and you have here the results.</p>
@@ -155,20 +156,20 @@ Vertical and horizontal lines divide the chromosomes.</p>
 </ul>
 </section>
 <section id="virus-repeats-dotplot">
-<h3>Virus repeats dotplot<a class="headerlink" href="#virus-repeats-dotplot" title="Permalink to this headline">¶</a></h3>
+<h3>Virus repeats dotplot<a class="headerlink" href="#virus-repeats-dotplot" title="Permalink to this heading">¶</a></h3>
 <p>An endogenous retrovirus 12 kb long and has an inverted repeat of 250 pb located at both ends.
 Draw a dotplot comparing its sequence against itself.</p>
 </section>
 <section id="interpret-the-result-of-the-dotplot-between-the-sequences-a-and-b">
-<h3>Interpret the result of the dotplot between the sequences A and B<a class="headerlink" href="#interpret-the-result-of-the-dotplot-between-the-sequences-a-and-b" title="Permalink to this headline">¶</a></h3>
+<h3>Interpret the result of the dotplot between the sequences A and B<a class="headerlink" href="#interpret-the-result-of-the-dotplot-between-the-sequences-a-and-b" title="Permalink to this heading">¶</a></h3>
 <a class="reference external image-reference" href="../static/alignments/dotplot_reversed.png"><img alt="dotplot" src="../_images/dotplot_reversed.png" /></a>
 </section>
 <section id="pcr-primer-dotplot">
-<h3>PCR primer dotplot<a class="headerlink" href="#pcr-primer-dotplot" title="Permalink to this headline">¶</a></h3>
+<h3>PCR primer dotplot<a class="headerlink" href="#pcr-primer-dotplot" title="Permalink to this heading">¶</a></h3>
 <p>You have amplified a 200 pb PCR fragment using two primers (18 and 20 pb). Draw the dotplot between the sequences of the fragment and the primers</p>
 </section>
 <section id="gene-structure-dotplot">
-<h3>Gene structure dotplot<a class="headerlink" href="#gene-structure-dotplot" title="Permalink to this headline">¶</a></h3>
+<h3>Gene structure dotplot<a class="headerlink" href="#gene-structure-dotplot" title="Permalink to this heading">¶</a></h3>
 <a class="reference external image-reference" href="../static/alignments/gene_structure.png"><img alt="dotplot" src="../_images/gene_structure.png" /></a>
 <ul class="simple">
 <li><p>Draw a dotplot between the genomic sequence and a full length cDNA of this gene.</p></li>
@@ -177,9 +178,9 @@ Draw a dotplot comparing its sequence against itself.</p>
 </section>
 </section>
 <section id="local-alignments">
-<h2>Local alignments<a class="headerlink" href="#local-alignments" title="Permalink to this headline">¶</a></h2>
+<h2>Local alignments<a class="headerlink" href="#local-alignments" title="Permalink to this heading">¶</a></h2>
 <section id="dna-sequence-alignment">
-<h3>DNA sequence alignment<a class="headerlink" href="#dna-sequence-alignment" title="Permalink to this headline">¶</a></h3>
+<h3>DNA sequence alignment<a class="headerlink" href="#dna-sequence-alignment" title="Permalink to this heading">¶</a></h3>
 <p>We are going to do a local alignment between two DNA sequences: <a class="reference download internal" download="" href="../_downloads/f38457255433c3b5ead4cdbece176c80/sequence1.fasta"><code class="xref download docutils literal notranslate"><span class="pre">sequence1</span></code></a> and <a class="reference download internal" download="" href="../_downloads/c93471efc76d4ca85b669e5501850bed/sequence2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">sequence2</span></code></a>.</p>
 <p>In the command line we would write:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ matcher sequence1.fasta sequence2.fasta stdout
@@ -201,7 +202,7 @@ Why is different from the previous attempt?</p>
 </div>
 </section>
 <section id="homologous-proteins">
-<h3>Homologous proteins<a class="headerlink" href="#homologous-proteins" title="Permalink to this headline">¶</a></h3>
+<h3>Homologous proteins<a class="headerlink" href="#homologous-proteins" title="Permalink to this heading">¶</a></h3>
 <p>We can create the best alignment between two homologous proteins from two different species, once we have decided a score system.
 We also could use these methods to align homologous proteins within a species.</p>
 <p>As an example we will align a <a class="reference download internal" download="" href="../_downloads/099955f3cecea2f5195f1ec9d1766cfb/CDKL4.human.fasta"><code class="xref download docutils literal notranslate"><span class="pre">human</span></code></a> and <a class="reference download internal" download="" href="../_downloads/8e30a19254c18a3dd039a4cbb19ab02c/cyclin.dog.fasta"><code class="xref download docutils literal notranslate"><span class="pre">canine</span></code></a> cyclin using <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/matcher.html">matcher</a> or <cite>water &lt;http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/water.html&gt;</cite>.</p>
@@ -212,7 +213,7 @@ We also could use these methods to align homologous proteins within a species.</
 <p>Is this alignment local or global? Why?</p>
 </section>
 <section id="conserved-regions">
-<h3>Conserved regions<a class="headerlink" href="#conserved-regions" title="Permalink to this headline">¶</a></h3>
+<h3>Conserved regions<a class="headerlink" href="#conserved-regions" title="Permalink to this heading">¶</a></h3>
 <p>Usually not all regions of two homologous proteins vary in the same degree.
 There are regions that are more conversed and regions that are less conserved.</p>
 <p>We can look for the more conserved regions by doing a local alignment.</p>
@@ -246,7 +247,7 @@ Ask matcher to show 3 alternative alignments</p>
 </section>
 </section>
 <section id="gobal-alignments">
-<h2>Gobal alignments<a class="headerlink" href="#gobal-alignments" title="Permalink to this headline">¶</a></h2>
+<h2>Gobal alignments<a class="headerlink" href="#gobal-alignments" title="Permalink to this heading">¶</a></h2>
 <p>We could use an algorithm that aligns both sequences in its whole length.</p>
 <p>Redo the alignments from the last two exercises using <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/needle.html">needle</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ needle frataxin.human.gb frataxin.aedes.gb stdout -auto
@@ -259,7 +260,7 @@ Ask matcher to show 3 alternative alignments</p>
 These algorithms will give a very bad result if there are regions that are not similar between the sequences.</p>
 </section>
 <section id="genic-structure-1">
-<h2>Genic structure 1<a class="headerlink" href="#genic-structure-1" title="Permalink to this headline">¶</a></h2>
+<h2>Genic structure 1<a class="headerlink" href="#genic-structure-1" title="Permalink to this heading">¶</a></h2>
 <p>We have aligned a cDNA and the  genomic sequence of a gene with matcher. Do you think that it is a good approach? Could you think on any problems regarding the approach?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>             <span class="mi">560</span>       <span class="mi">570</span>       <span class="mi">580</span>       <span class="mi">590</span>       <span class="mi">600</span>
 <span class="n">cDNA</span> <span class="n">TTCAGGAGTATTTAGATTACGCGAACAGGTATGTAAACACTGAGCCAGCA</span>
@@ -288,7 +289,7 @@ These algorithms will give a very bad result if there are regions that are not s
 </div>
 </section>
 <section id="genic-structure-2">
-<h2>Genic structure 2<a class="headerlink" href="#genic-structure-2" title="Permalink to this headline">¶</a></h2>
+<h2>Genic structure 2<a class="headerlink" href="#genic-structure-2" title="Permalink to this heading">¶</a></h2>
 <p>Determine the genic structure of the AT3G4905 <em>Arabidopsis</em> gene.
 You need to dermine where a the exons and introns located and which are the conding sequences.
 You have part of the <a class="reference download internal" download="" href="../_downloads/7f470d3314118d610ad8e7220f183715/AT3G4905.1.genomico.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genomic</span></code></a> sequence, a <a class="reference download internal" download="" href="../_downloads/1b09e08e6c6ee7cd9cf575a950388591/AT3G4905.1.cdna.fasta"><code class="xref download docutils literal notranslate"><span class="pre">cDNA</span></code></a> and the <a class="reference download internal" download="" href="../_downloads/4530a2a2f3be76030111a329915b5826/AT3G4905.1.cds.fasta"><code class="xref download docutils literal notranslate"><span class="pre">CDS</span></code></a> for that cDNA.</p>
@@ -318,7 +319,7 @@ These kind of alingments are special:</p>
 </ul>
 </section>
 <section id="protein-alignment">
-<h2>Protein alignment<a class="headerlink" href="#protein-alignment" title="Permalink to this headline">¶</a></h2>
+<h2>Protein alignment<a class="headerlink" href="#protein-alignment" title="Permalink to this heading">¶</a></h2>
 <p>The alignment between the SOX9 and NHE-RF2 proteins gave this result. could you infer that this proteins are homologues? Is this region a conserved domain? Check your answers in the databases.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#=======================================</span>
 <span class="c1">#</span>
@@ -347,7 +348,7 @@ These kind of alingments are special:</p>
 </div>
 </section>
 <section id="bl2seq">
-<h2>bl2seq<a class="headerlink" href="#bl2seq" title="Permalink to this headline">¶</a></h2>
+<h2>bl2seq<a class="headerlink" href="#bl2seq" title="Permalink to this heading">¶</a></h2>
 <p>An often used program to align two sequences is bl2seq.
 We are going to use a web service to align with <a class="reference external" href="http://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&amp;PROG_DEF=blastn&amp;BLAST_PROG_DEF=megaBlast&amp;BLAST_SPEC=blast2seq">bl2seq</a>.</p>
 <p>Blast uses a different algorithm to the software used before in this practice.
@@ -360,7 +361,7 @@ Blast is used more often to compare one sequence with a whole database of sequen
 </ul>
 </section>
 <section id="matcher-vs-bl2seq">
-<h2>matcher vs bl2seq<a class="headerlink" href="#matcher-vs-bl2seq" title="Permalink to this headline">¶</a></h2>
+<h2>matcher vs bl2seq<a class="headerlink" href="#matcher-vs-bl2seq" title="Permalink to this heading">¶</a></h2>
 <p>We have aligned using both matcher and bl2seq a sequence against itself. Could you suggest an interpretacion of the results?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">########################################</span>
 <span class="c1"># Program: matcher</span>
@@ -493,7 +494,7 @@ Blast is used more often to compare one sequence with a whole database of sequen
 </div>
 </section>
 <section id="primer-search">
-<h2>Primer search<a class="headerlink" href="#primer-search" title="Permalink to this headline">¶</a></h2>
+<h2>Primer search<a class="headerlink" href="#primer-search" title="Permalink to this heading">¶</a></h2>
 <p>We have developed two PCR primers: <a class="reference download internal" download="" href="../_downloads/e066e195736e0ca893074bbec9c60c63/primerf.fasta"><code class="xref download docutils literal notranslate"><span class="pre">primerf</span></code></a> and <a class="reference download internal" download="" href="../_downloads/95d47cfd2e7e934d1103b22bf6832873/primerr.fasta"><code class="xref download docutils literal notranslate"><span class="pre">primerr</span></code></a> to amplify the <a class="reference download internal" download="" href="../_downloads/099955f3cecea2f5195f1ec9d1766cfb/CDKL4.human.fasta"><code class="xref download docutils literal notranslate"><span class="pre">cyclin</span></code></a> CDS.</p>
 <p>Can you locate the primers in the cyclin sequence?</p>
 </section>

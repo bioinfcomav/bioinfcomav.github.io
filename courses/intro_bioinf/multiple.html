@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>ALINANEAMIENTOS MULTIPLES &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -76,9 +77,9 @@
                 
     
   <section id="alinaneamientos-multiples">
-<h1>ALINANEAMIENTOS MULTIPLES<a class="headerlink" href="#alinaneamientos-multiples" title="Permalink to this headline">¶</a></h1>
+<h1>ALINANEAMIENTOS MULTIPLES<a class="headerlink" href="#alinaneamientos-multiples" title="Permalink to this heading">¶</a></h1>
 <section id="definicion-y-diferencias-frente-a-los-alineamientos-de-2-secuencias">
-<h2>Definición y diferencias frente a los alineamientos de 2 secuencias<a class="headerlink" href="#definicion-y-diferencias-frente-a-los-alineamientos-de-2-secuencias" title="Permalink to this headline">¶</a></h2>
+<h2>Definición y diferencias frente a los alineamientos de 2 secuencias<a class="headerlink" href="#definicion-y-diferencias-frente-a-los-alineamientos-de-2-secuencias" title="Permalink to this heading">¶</a></h2>
 <p>Hablamos de alineamientos multiples (<a class="reference external" href="http://en.wikipedia.org/wiki/Multiple_sequence_alignment">MSA</a>) cuando tratamos con mas de dos secuencias.
 Este tipo de alineamientos requiere un abordaje más complejo que el de pares de secuencias ya que el uso directo de los estadísticos de alineamiento global y local requiere una gran capacidad de cálculo y solo es aplicable a problemas con muy pocas secuencias.</p>
 <p>El principal problema que nos plantean los alineamientos múltiples es la posición de los gaps en el alineamiento.
@@ -88,7 +89,7 @@ En el alineamiento, todas las secuencias tienen que tener la misma longitud y es
 </figure>
 </section>
 <section id="algoritmos-de-construccion-progresiva">
-<h2>Algoritmos de construcción progresiva<a class="headerlink" href="#algoritmos-de-construccion-progresiva" title="Permalink to this headline">¶</a></h2>
+<h2>Algoritmos de construcción progresiva<a class="headerlink" href="#algoritmos-de-construccion-progresiva" title="Permalink to this heading">¶</a></h2>
 <p>Los programas más utilizados se basan en este tipo de estrategias.
 No nos garantizan que el alineamiento obtenido sea el mejor posible, pero son capaces de encontrar una solución óptima de forma muy eficaz.
 Ejemplos de programas basados en estos métodos heurísticos: <a class="reference external" href="http://www.clustal.org/">ClustalW</a> y <a class="reference external" href="http://en.wikipedia.org/wiki/T-Coffee">T-coffe</a>.</p>
@@ -137,7 +138,7 @@ El ClustalW tiende a situar los gaps entre las zonas altamente conservadas en ve
 </figure>
 <p>Fig. Alineamiento con gaps</p>
 <section id="problemas-de-los-alineamientos-de-construccion-progresiva">
-<h3>Problemas de los alineamientos de construcción progresiva<a class="headerlink" href="#problemas-de-los-alineamientos-de-construccion-progresiva" title="Permalink to this headline">¶</a></h3>
+<h3>Problemas de los alineamientos de construcción progresiva<a class="headerlink" href="#problemas-de-los-alineamientos-de-construccion-progresiva" title="Permalink to this heading">¶</a></h3>
 <p>Los mayores problemas de este tipo de alineamientos derivan del alineamiento de la primera pareja.
 Si las dos primeras secuencias son cercanas (muy similares) el alineamiento base probablemente contenga pocos errores.
 En cambio, si estas dos secuencias son muy divergentes el alineamiento obtenido no será muy adecuado y los gaps y errores se propagarán al resto de secuencias añadidas puesto que este primer alineamiento ya no es modificado al unirse el resto de alineamientos.
@@ -147,7 +148,7 @@ Pero a pesar de estos inconvenientes, este tipo de algoritmos suelen encontrar u
 </section>
 </section>
 <section id="utilidades-de-los-alineamientos-multiples">
-<h2>Utilidades de los alineamientos múltiples<a class="headerlink" href="#utilidades-de-los-alineamientos-multiples" title="Permalink to this headline">¶</a></h2>
+<h2>Utilidades de los alineamientos múltiples<a class="headerlink" href="#utilidades-de-los-alineamientos-multiples" title="Permalink to this heading">¶</a></h2>
 <p>Los alineamientos múltiples son una herramienta fundamental.
 Estos alineamientos son imprescindibles para realizar estudios posteriores, como por ejemplo:</p>
 <blockquote>
@@ -160,7 +161,7 @@ Estos alineamientos son imprescindibles para realizar estudios posteriores, como
 </div></blockquote>
 </section>
 <section id="edicion-de-alineamientos-multiples">
-<h2>Edición de alineamientos multiples.<a class="headerlink" href="#edicion-de-alineamientos-multiples" title="Permalink to this headline">¶</a></h2>
+<h2>Edición de alineamientos multiples.<a class="headerlink" href="#edicion-de-alineamientos-multiples" title="Permalink to this heading">¶</a></h2>
 <p>Los alineamientos múltiples generados por estos programas son ficheros de texto que en principio podríamos editar con cualquier editor.
 Pero algunos formatos no resultan cómodos para ser manejados por un editor de texto o el número de secuencias o su longitud complican la edición.</p>
 <p>Existen programas especializados para editar alineamientos, uno de los mas completos es el <a class="reference external" href="http://www.mbio.ncsu.edu/bioedit/bioedit.html">Bioedit</a> , el cual nos permite además enlazar con diferentes aplicaciones como Blast, primer3, etc.

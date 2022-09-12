@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>La Shell the UNIX &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
@@ -76,7 +77,7 @@
                 
     
   <section id="la-shell-the-unix">
-<h1>La Shell the UNIX<a class="headerlink" href="#la-shell-the-unix" title="Permalink to this headline">¶</a></h1>
+<h1>La Shell the UNIX<a class="headerlink" href="#la-shell-the-unix" title="Permalink to this heading">¶</a></h1>
 <p>La Shell es un interprete de comandos.
 Es simplemente un modo alternativo de controlar un ordenador basado en una interfaz de texto.
 Podemos pedirle al ordenador que ejecute un programa o que nos proporcione una información mediante el ratón ciclando en distintos lugares del escritorio o podemos escribir una orden para conseguir el mismo objetivo.
@@ -147,7 +148,7 @@ El <em>prompt</em> y la posibilidad de ejecutar otro programa no volverán a apa
 En el caso de man para cerrar el programa hay que pulsar la tecla “q”.</p>
 </section>
 <section id="el-sistema-de-ficheros">
-<h1>El sistema de ficheros<a class="headerlink" href="#el-sistema-de-ficheros" title="Permalink to this headline">¶</a></h1>
+<h1>El sistema de ficheros<a class="headerlink" href="#el-sistema-de-ficheros" title="Permalink to this heading">¶</a></h1>
 <p>En un ordenador los archivos almacenados se organizan en directorios formando el sistema de ficheros.
 Estos directorios guardan una relación jerárquica, por ejemplo los directorios documentos y datos puede que se encuentre dentro del directorio juan.
 Esta relación se representa como:</p>
@@ -165,7 +166,7 @@ alicia juan
 </pre></div>
 </div>
 <section id="nombres-de-directorios-y-archivos">
-<h2>Nombres de directorios y archivos<a class="headerlink" href="#nombres-de-directorios-y-archivos" title="Permalink to this headline">¶</a></h2>
+<h2>Nombres de directorios y archivos<a class="headerlink" href="#nombres-de-directorios-y-archivos" title="Permalink to this heading">¶</a></h2>
 <p>En Unix los archivos pueden tener prácticamente cualquier nombre.
 Existe la convención de acabar los nombres con un punto y una pequeña extensión que indica el tipo de archivo.
 Pero esto es sólo una convención, en realidad podríamos no utilizar este tipo de nomenclatura.</p>
@@ -206,7 +207,7 @@ En este caso podemos pedir que se muestren estos archivos en el menú Ver -&gt; 
 </div>
 </section>
 <section id="el-directorio-de-trabajo">
-<h2>El directorio de trabajo<a class="headerlink" href="#el-directorio-de-trabajo" title="Permalink to this headline">¶</a></h2>
+<h2>El directorio de trabajo<a class="headerlink" href="#el-directorio-de-trabajo" title="Permalink to this heading">¶</a></h2>
 <p>Muchos de los comandos que vamos a utilizar procesan archivos.
 Para referirnos a estos archivos deberíamos indicar en qué directorio se encuentran, pero existe la convención de asumir que los archivos se encuentran en el directorio de trabajo mientras no se indique lo contrario.
 El directorio de trabajo es el directorio en el que nos encontramos en el momento actual.
@@ -234,7 +235,7 @@ $ pwd
 </div>
 </section>
 <section id="permisos">
-<h2>Permisos<a class="headerlink" href="#permisos" title="Permalink to this headline">¶</a></h2>
+<h2>Permisos<a class="headerlink" href="#permisos" title="Permalink to this heading">¶</a></h2>
 <p>Unix desde su origen ha sido un sistema multiusuario.
 Para conseguir que cada usuario pueda trabajar en sus archivos, pero que no pueda interferir accidental o deliberadamente con los archivos de otros usuarios se estableció desde el principio un sistema de permisos y privilegios.
 Por defecto un usuario tiene permiso para leer y modificar sus propios archivos y directorios, pero no los de los demás.
@@ -264,7 +265,7 @@ En el caso de los directorios el de escritura indica si podemos añadir o borrar
 <p>Estos permisos pueden ser modificados con la orden <em>chmod</em>.</p>
 </section>
 <section id="rutas-relativas-y-absolutas">
-<h2>Rutas relativas y absolutas<a class="headerlink" href="#rutas-relativas-y-absolutas" title="Permalink to this headline">¶</a></h2>
+<h2>Rutas relativas y absolutas<a class="headerlink" href="#rutas-relativas-y-absolutas" title="Permalink to this heading">¶</a></h2>
 <p>Las rutas de los directorios pueden comenzar por barra o no.
 Una ruta que comienza por barra, como /home/jose/, es absoluta porque se refiere al directorio raíz.
 Significa: ves al directorio raíz, desciende primero a home y después a jose.</p>
@@ -273,7 +274,7 @@ Por ejemplo “documentos/2009” implica que debemos ir al subdirectorio docume
 Si nos encontrásemos al ejecutar la orden en el directorio /home/jose/trabajo acabaríamos en /home/jose/trabajo/documentos/2009.</p>
 </section>
 <section id="moviendo-renombrando-y-copiando-ficheros">
-<h2>Moviendo, renombrando y copiando ficheros<a class="headerlink" href="#moviendo-renombrando-y-copiando-ficheros" title="Permalink to this headline">¶</a></h2>
+<h2>Moviendo, renombrando y copiando ficheros<a class="headerlink" href="#moviendo-renombrando-y-copiando-ficheros" title="Permalink to this heading">¶</a></h2>
 <p>En primer lugar vamos a crear un fichero de prueba:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ touch data.txt
 ~$ ls
@@ -334,7 +335,7 @@ exp_1
 </div>
 </section>
 <section id="wildcards">
-<h2>WildCards<a class="headerlink" href="#wildcards" title="Permalink to this headline">¶</a></h2>
+<h2>WildCards<a class="headerlink" href="#wildcards" title="Permalink to this heading">¶</a></h2>
 <p>En muchas ocasiones resulta útil tratar los ficheros de un modo conjunto.
 Por ejemplo, imaginemos que queremos mover todos los ficheros de texto a un directorio y la imágenes a otro.
 Creemos una pequeña demostración:</p>
@@ -366,7 +367,7 @@ Por ejemplo la orden:</p>
 <p>Borraría todos los ficheros y directorios, si lo hacemos perderemos todos los ficheros y directorios que cuelgan del actual directorio de trabajo, puede que esto sea lo que queramos, pero hemos de andar con cuidado.</p>
 </section>
 <section id="obteniendo-informacion-sobre-el-sistema-de-archivos">
-<h2>Obteniendo información sobre el sistema de archivos<a class="headerlink" href="#obteniendo-informacion-sobre-el-sistema-de-archivos" title="Permalink to this headline">¶</a></h2>
+<h2>Obteniendo información sobre el sistema de archivos<a class="headerlink" href="#obteniendo-informacion-sobre-el-sistema-de-archivos" title="Permalink to this heading">¶</a></h2>
 <p><em>ls</em> es un comando capaz de mostrarnos información extra sobre los archivos y directorios que lista.
 Por ejemplo podemos pedirle, usando la opción <em>-l</em> (Long),  que nos muestre quién es el dueño del archivo y cuanto ocupa y qué permisos tiene además de otras cosas:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls
@@ -385,7 +386,7 @@ drwxr-xr-x 2 usuario usuario 4.0K Oct 13 09:48 exp_1
 <p>Otros comandos útiles para conocer como está el sistema de archivos son <em>df</em> (Disk Free) y <em>du</em> (Disk Usage) que nos informan sobre como de llenos están los sistemas de archivos (como por ejemplo particiones del disco duro) y sobre cuando ocupan determinados ficheros o directorios.</p>
 </section>
 <section id="completado-automatico-e-historia">
-<h2>Completado automático e historia<a class="headerlink" href="#completado-automatico-e-historia" title="Permalink to this headline">¶</a></h2>
+<h2>Completado automático e historia<a class="headerlink" href="#completado-automatico-e-historia" title="Permalink to this heading">¶</a></h2>
 <p>El intérprete de comandos dispone de algunas utilidades para facilitarnos su uso.
 Una de las más utilizadas es el completado automático.
 Podemos evitarnos escribir una gran parte de los comandos haciendo uso de la tecla tabulador.
@@ -417,7 +418,7 @@ Otra forma de acceder a la historia es utilizar la combinación de teclas contro
 De este modo podemos buscar comandos antiguos sencillamente.</p>
 </section>
 <section id="donde-estan-los-ejecutables-path">
-<h2>¿Donde están los ejecutables? $PATH<a class="headerlink" href="#donde-estan-los-ejecutables-path" title="Permalink to this headline">¶</a></h2>
+<h2>¿Donde están los ejecutables? $PATH<a class="headerlink" href="#donde-estan-los-ejecutables-path" title="Permalink to this heading">¶</a></h2>
 <p>Cuando entramos en la <em>shell</em> y ejecutamos un programa la <em>shell</em> ha de saber dónde encontrar el ejecutable correspondiente a ese comando.
 Este ejecutable es un fichero con el mismo nombre que hemos escrito en la <em>shell</em> y que tiene el permiso de ejecución activado.
 Por ejemplo el ejecutable del comando <em>cp</em> es:</p>
@@ -469,7 +470,7 @@ Hola mundo!
 </div>
 </section>
 <section id="pipes">
-<h2>Pipes<a class="headerlink" href="#pipes" title="Permalink to this headline">¶</a></h2>
+<h2>Pipes<a class="headerlink" href="#pipes" title="Permalink to this heading">¶</a></h2>
 <p>Un programa en línea de comandos, además de poder leer y escribir en algunos ficheros, toma unos argumentos como entrada, realiza una tarea e imprime una salida en la pantalla.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/cli_program.png"><img alt="../_images/cli_program.png" class="align-center" src="../_images/cli_program.png" style="width: 450px;" /></a>
@@ -517,7 +518,7 @@ Esta técnica es una de las grandes fortalezas de los sistemas Unix ya que permi
 Esta técnica posibilita, entre otras cosas, el procesamiento de los ficheros de texto de una forma potente y sencilla.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>¿Cuáles son los ficheros y directorios presentes en el directorio raíz?</p></li>
 <li><p>¿Cuáles son los permisos de los directorios presentes en el directorio raíz y en nuestro directorio de usuario? ¿A quién pertenecen los ficheros y qué permisos tienen los distintos usuarios del ordenador?</p></li>
@@ -535,7 +536,7 @@ Esta técnica posibilita, entre otras cosas, el procesamiento de los ficheros de
 </ol>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>¿Cuáles son los ficheros y directorios presentes en el directorio raíz?</p></li>
 </ol>
@@ -640,7 +641,7 @@ datos1.txt  datos2.txt
 </div>
 </section>
 <section id="otras-herramientas">
-<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Permalink to this headline">¶</a></h2>
+<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Permalink to this heading">¶</a></h2>
 <p>Algunos temas que no hemos tratado en esta introducción, pero que pueden resultar de una gran utilidad son:</p>
 <blockquote>
 <div><ul class="simple">
@@ -650,7 +651,7 @@ datos1.txt  datos2.txt
 </div></blockquote>
 </section>
 <section id="bibliografia">
-<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this headline">¶</a></h2>
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this heading">¶</a></h2>
 <p>Hay varios cursos para iniciarse en el uso de la línea de comandos de Unix, como:</p>
 <blockquote>
 <div><ul class="simple">

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Expresiones regulares &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -76,7 +77,7 @@
                 
     
   <section id="expresiones-regulares">
-<h1>Expresiones regulares<a class="headerlink" href="#expresiones-regulares" title="Permalink to this headline">¶</a></h1>
+<h1>Expresiones regulares<a class="headerlink" href="#expresiones-regulares" title="Permalink to this heading">¶</a></h1>
 <p>Las expresiones regulares son un medio para describir patrones de texto.
 Imaginemos que no sólo queremos buscar en un texto todas las líneas que contienen una palabra, como por ejemplo Barcelona, sino que sólo nos interesan las líneas que <em>empiezan</em> por la palabra Barcelona, pero no las que contengan la palabra en cualquier otra posición.
 Describir el patrón “Barcelona” es trivial, tan sólo hay que escribir “Barcelona”, pero ¿cómo podemos describir “La línea comienza por la palabra Barcelona”.
@@ -89,9 +90,9 @@ Las más básicas son simplemente una lista de letras que forman una texto que d
 Por ejemplo con la expresión “Human” sólo coincidirá “Human”.
 Pero por fortuna las expresiones regulares nos permiten hacer búsquedas y substituciones mucho más complejas.</p>
 <section id="expresiones-alternativas">
-<h2>Expresiones alternativas<a class="headerlink" href="#expresiones-alternativas" title="Permalink to this headline">¶</a></h2>
+<h2>Expresiones alternativas<a class="headerlink" href="#expresiones-alternativas" title="Permalink to this heading">¶</a></h2>
 <p>Una expresión u otra.
-Imaginemos que tenemos un fichero con los <a class="reference external" href="./demo_data/origenes.txt">orígenes</a> de los pacientes de un estudio sobre síndrome de Usher.
+Imaginemos que tenemos un fichero con los <a class="reference download internal" download="" href="_downloads/3c63e62512b00db44263763c2d99dd25/origenes.txt"><code class="xref download docutils literal notranslate"><span class="pre">orígenes</span></code></a> de los pacientes de un estudio sobre síndrome de Usher.
 Queremos seleccionar todos los pacientes que vienen de Valencia o Castellón.
 Podemos hacerlo utilizando la sintaxis para expresiones alternativas:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep -E &#39;Valencia|Castellón&#39; origenes.txt
@@ -104,7 +105,7 @@ Granada Bastella Valencia sana
 <p>La barra vertical (|) separa las expresiones alternativas. En este caso significa que la palabra encontrada puede ser Valencia o Castellón.</p>
 </section>
 <section id="contenedores">
-<h2>Contenedores<a class="headerlink" href="#contenedores" title="Permalink to this headline">¶</a></h2>
+<h2>Contenedores<a class="headerlink" href="#contenedores" title="Permalink to this heading">¶</a></h2>
 <p>En muchas ocasiones nos interesa seleccionar patrones que pueden tener en una posición varias letras distintas.
 Por ejemplo podríamos describir el patrón “comienza por Usher y después tiene un número” o “comienza por usher y después tiene un par de letras”.
 Busquemos todas las líneas que tienen la palabra Usher o usher:</p>
@@ -125,11 +126,6 @@ Mallorca  Pagan   Barcelona   usher1b
 </div>
 <p>Existen rangos y tipos de caracteres predefinidos que podemos utilizar como:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>POSIX</p></th>
 <th class="head"><p>ASCII</p></th>
@@ -196,7 +192,7 @@ Valencia  Paniagua    Castellón   usher1B
 </div>
 </section>
 <section id="cuantificadores">
-<h2>Cuantificadores<a class="headerlink" href="#cuantificadores" title="Permalink to this headline">¶</a></h2>
+<h2>Cuantificadores<a class="headerlink" href="#cuantificadores" title="Permalink to this heading">¶</a></h2>
 <p>Además de indicar qué caracteres queremos permitir podemos seleccionar cuantas veces deben aparecer.
 Si no añadimos nada que indique lo contrario se asume que el carácter debe aparecer una vez, pero podríamos pedir que el carácter aparezca un número distinto de veces:</p>
 <ul class="simple">
@@ -214,7 +210,7 @@ Castellón Sogorb  valencia    usher2B
 </div>
 </section>
 <section id="puntos-de-anclaje">
-<h2>Puntos de anclaje<a class="headerlink" href="#puntos-de-anclaje" title="Permalink to this headline">¶</a></h2>
+<h2>Puntos de anclaje<a class="headerlink" href="#puntos-de-anclaje" title="Permalink to this heading">¶</a></h2>
 <p>Además de poder indicar qué y cuántas veces queremos que algo aparezca podemos indicar dónde deseamos que lo haga.
 Los puntos de anclaje más utilizados son:</p>
 <ul class="simple">
@@ -237,7 +233,7 @@ Castellón Sogorb  valencia    usher2B
 </div>
 </section>
 <section id="sustituciones">
-<h2>Sustituciones<a class="headerlink" href="#sustituciones" title="Permalink to this headline">¶</a></h2>
+<h2>Sustituciones<a class="headerlink" href="#sustituciones" title="Permalink to this heading">¶</a></h2>
 <p>Las expresiones regulares además de ser útiles para buscar patrones sirven para sustituirlos.
 Por ejemplo podemos sustituir madrid por Madrid con el siguiente comando:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ sed -r &#39;s/madrid/Madrid/&#39; origenes.txt
@@ -271,13 +267,13 @@ Por ejemplo, podríamos permutar las columnas 1 y 2 del fichero con el comando:<
 </div>
 </section>
 <section id="escapes">
-<h2>Escapes<a class="headerlink" href="#escapes" title="Permalink to this headline">¶</a></h2>
+<h2>Escapes<a class="headerlink" href="#escapes" title="Permalink to this heading">¶</a></h2>
 <p>Algunos caracteres tienen significados especiales, como ., $, (, ), [, ], o ^ y si se quieren utilizar hay que escaparlos precediéndolos con .</p>
 <p>El campo de las expresiones regulares es muy amplio y esta pequeña introducción sólo ha pretendido mostrar algunas de las posibilidades de esta gran herramienta.
 El mejor modo de aprender a utilizarlas es intentar hacer uso de ellas en problemas concretos y echar una ojeada a algunos de los libros y tutoriales que se han escrito sobre ellas.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>Buscar las líneas en las que aparece la palabra bash en el archivo /etc/passwd.</p></li>
 <li><p>Buscar en el archivo /etc/group todas las líneas que empiezan por <em>m</em>.</p></li>
@@ -285,7 +281,7 @@ El mejor modo de aprender a utilizarlas es intentar hacer uso de ellas en proble
 <li><p>¿Cuántos ficheros README hay en los subdirectorios de /usr/share/doc?</p></li>
 <li><p>¿Qué ficheros o directorios en /etc continen un número en el nombre?</p>
 <blockquote>
-<div><p>Trabajando con el fichero de los <a class="reference external" href="./demo_data/origenes.txt">orígenes</a> de los pacientes de Usher resolver las siguientes cuestiones.</p>
+<div><p>Trabajando con el fichero de los <a class="reference download internal" download="" href="_downloads/3c63e62512b00db44263763c2d99dd25/origenes.txt"><code class="xref download docutils literal notranslate"><span class="pre">orígenes</span></code></a> de los pacientes de Usher resolver las siguientes cuestiones.</p>
 </div></blockquote>
 </li>
 <li><p>Seleccionar los pacientes enviados por el hospital de Castellón.</p></li>
@@ -293,7 +289,7 @@ El mejor modo de aprender a utilizarlas es intentar hacer uso de ellas en proble
 <li><p>Buscar los pacientes que no tienen Usher3.</p></li>
 <li><p>En el fichero de pacientes de Usher hay algunas líneas separadas por espacios y otras por tabuladores, cambiar todos los separadores a comas.</p>
 <blockquote>
-<div><p>Disponemos de un fichero con una <a class="reference external" href="./demo_data/caracterizacion_plantas.txt">caracterización morfológica</a> de unas plantas.</p>
+<div><p>Disponemos de un fichero con una <a class="reference download internal" download="" href="_downloads/76c88f0e0b3c7121506f4c3367bef0c2/caracterizacion_plantas.txt"><code class="xref download docutils literal notranslate"><span class="pre">caracterización</span> <span class="pre">morfológica</span></code></a> de unas plantas.</p>
 </div></blockquote>
 </li>
 <li><p>Recuperar aquellas plantas numeradas con 1 o con 3 dígitos.</p></li>
@@ -302,7 +298,7 @@ El mejor modo de aprender a utilizarlas es intentar hacer uso de ellas en proble
 </ol>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>Buscar las líneas en las que aparece la palabra bash en el archivo /etc/passwd.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep &#39;bash&#39; /etc/passwd
@@ -374,7 +370,7 @@ El mejor modo de aprender a utilizarlas es intentar hacer uso de ellas en proble
 </div>
 </section>
 <section id="bibliografia">
-<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this headline">¶</a></h2>
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://oreilly.com/catalog/9780596528126">Mastering regular expressions</a> por Jeffrey E.F. Friedl.</p></li>
 <li><p><a class="reference external" href="http://oreilly.com/catalog/9780596520694">Regular Expressions Cookbook</a> por Jan Goyvaerts y Steven Levithan.</p></li>

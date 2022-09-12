@@ -155,4 +155,4 @@ Do a blast against the RefSeq mRNA database.
 
 Check if these to primers would work: :download:`primerf <../static/blast/primerf.fasta>` and :download:`primerr <../static/blast/primerr.fasta>`.
 
-Could you do a similar design for the `mRNA from the frataxin gene :download:<../static/blast/frataxina.fasta>` ?
+Could you do a similar design for the :download:`mRNA from the frataxin gene <../static/blast/frataxina.fasta>`?

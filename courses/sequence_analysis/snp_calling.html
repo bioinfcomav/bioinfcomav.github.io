@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>SNP calling &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -76,11 +77,11 @@
                 
     
   <section id="snp-calling">
-<h1>SNP calling<a class="headerlink" href="#snp-calling" title="Permalink to this headline">¶</a></h1>
+<h1>SNP calling<a class="headerlink" href="#snp-calling" title="Permalink to this heading">¶</a></h1>
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR2qiKIr-tDVtajc3qiE_4lIacAK2AEnSANfKCiNbViv3MJxRTrj466hEqyjUM1ZLDwBd1eYt8rD4Iw/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe><section id="practical-tasks">
-<h2>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this headline">¶</a></h2>
+<h2>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this heading">¶</a></h2>
 <section id="snp-calling-with-mpileup">
-<h3>SNP calling with mpileup<a class="headerlink" href="#snp-calling-with-mpileup" title="Permalink to this headline">¶</a></h3>
+<h3>SNP calling with mpileup<a class="headerlink" href="#snp-calling-with-mpileup" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>SNP calling with samtools’ mpileup.</p></li>
 </ol>
@@ -124,7 +125,7 @@ There are plenty of options to tweak the SNP calling process.
 To get an idea of the possibilities go to the <a class="reference external" href="http://samtools.sourceforge.net/mpileup.shtml">mpileup</a> page.</p>
 </section>
 <section id="looking-at-the-snps-using-igv">
-<h3>Looking at the SNPs using IGV<a class="headerlink" href="#looking-at-the-snps-using-igv" title="Permalink to this headline">¶</a></h3>
+<h3>Looking at the SNPs using IGV<a class="headerlink" href="#looking-at-the-snps-using-igv" title="Permalink to this heading">¶</a></h3>
 <p>In the IGV we can load the BAM, GFF and the VCF files.
 In that way we can compare the mapping with the annotation.
 To do it, open IGV and load the BAM file from the mapping subdirectory.
@@ -138,7 +139,7 @@ In this case the GFF and VCF tracks would show similar annotation.</p>
 <a class="reference internal image-reference" href="_images/igv_bam_and_vcf.png"><img alt="_images/igv_bam_and_vcf.png" src="_images/igv_bam_and_vcf.png" style="width: 650px;" /></a>
 </section>
 <section id="snp-calling-with-freebayes">
-<h3>SNP calling with FreeBayes<a class="headerlink" href="#snp-calling-with-freebayes" title="Permalink to this headline">¶</a></h3>
+<h3>SNP calling with FreeBayes<a class="headerlink" href="#snp-calling-with-freebayes" title="Permalink to this heading">¶</a></h3>
 <p><a class="reference external" href="http://bioinformatics.bc.edu/marthlab/FreeBayes">Freebayes</a> is a SNP calling program based on bayesian statistics. It is able to deal with individual and populations  or pooled and polyploid samples. FreeBayes is versatil and ajustable, then is necesary to deal with their parameters and options.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ freebayes -h
 </pre></div>
@@ -179,7 +180,7 @@ to evaluate the position.  default: 1</p>
 </div>
 </section>
 <section id="snp-calling-with-varscan">
-<h3>SNP calling with VarScan<a class="headerlink" href="#snp-calling-with-varscan" title="Permalink to this headline">¶</a></h3>
+<h3>SNP calling with VarScan<a class="headerlink" href="#snp-calling-with-varscan" title="Permalink to this heading">¶</a></h3>
 <p>The <a class="reference external" href="http://varscan.sourceforge.net/">VarsScan</a> is a SNP calling than works with more simple statistics that may be more robust in extreme read depth, pooled samples, and contaminated or impure samples. VarScan employs statistics based on thresholds for read depth, base quality, variant allele frequency, etc.</p>
 <p>First is necessary to change the alignement file from BAM to mpileuo format using samtools.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ samtools mpileup -f human_cambridge_reference_mito.fasta mito_yoruba_reads_pe1.sorted.bam &gt;mito_yoruba_reads_pe1.mpileup
@@ -206,7 +207,7 @@ ngs_user@ngsmachine:~/snp_call$ varscan mpileup2snp mito_yoruba_reads_pe1.mpileu
 <p>What did happen with the mileup snps?. Detect the mistake on the command.</p>
 </section>
 <section id="snp-calling-using-calmd">
-<h3>SNP calling using calmd<a class="headerlink" href="#snp-calling-using-calmd" title="Permalink to this headline">¶</a></h3>
+<h3>SNP calling using calmd<a class="headerlink" href="#snp-calling-using-calmd" title="Permalink to this heading">¶</a></h3>
 <p>Use freebayes to identify snps in these <a class="reference download internal" download="" href="_downloads/e39b52a94ecf5ebc10db706fb17ad458/alignments.bam"><code class="xref download docutils literal notranslate"><span class="pre">Celegans</span> <span class="pre">alignments</span></code></a> against <a class="reference download internal" download="" href="_downloads/79185616fdfc37e971281a69d48adfc1/ref.fasta"><code class="xref download docutils literal notranslate"><span class="pre">this</span> <span class="pre">reference</span> <span class="pre">sequence</span></code></a>. Take into account that this bam file has not been processed by samtools calmd. Search for snps with pre calmd processed alignment file and with the post processed file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~/snp_call$ samtools index alignments.bam
 

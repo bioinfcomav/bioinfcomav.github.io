@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Listas &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
@@ -76,7 +77,7 @@
                 
     
   <section id="listas">
-<h1>Listas<a class="headerlink" href="#listas" title="Permalink to this headline">¶</a></h1>
+<h1>Listas<a class="headerlink" href="#listas" title="Permalink to this heading">¶</a></h1>
 <p>Una lista es una colección ordenada de elementos, similar a una matriz unidimensional.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span>
@@ -206,7 +207,7 @@ Más adelante vermos cual es la diferencia entre los iteradores y las listas.</p
 Si en cualquier momento tenemos dudas sobre qué comportamiento tiene cualquiera de los métodos o funciones siempre podemos abrir un intérprete de Python y hacer una pequeña prueba con una lista.
 Por lo tanto no necesitamos memorizar cual es el comportamiento exacto de cada función sino comprender cuales son estos posibles comportamientos.</p>
 <section id="min-max-sum">
-<h2>min, max, sum<a class="headerlink" href="#min-max-sum" title="Permalink to this headline">¶</a></h2>
+<h2>min, max, sum<a class="headerlink" href="#min-max-sum" title="Permalink to this heading">¶</a></h2>
 <p>Python dispone de unas cuantas funciones que facilitan el trabajo con las listas, como por ejemplo <em>min</em>, <em>max</em> y <em>sum</em>.
 Estas funciones en realidad pueden operar sobre cualquier iterador y su funcionamiento es el que su nombre implica:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">min</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
@@ -219,7 +220,7 @@ Estas funciones en realidad pueden operar sobre cualquier iterador y su funciona
 </div>
 </section>
 <section id="funcion-map">
-<h2>Función map<a class="headerlink" href="#funcion-map" title="Permalink to this headline">¶</a></h2>
+<h2>Función map<a class="headerlink" href="#funcion-map" title="Permalink to this heading">¶</a></h2>
 <p>En muchas ocasiones nos puede interesar aplicar una función, un cálculo, sobre cada uno de los elementos de una lista o iterador.
 Esto podemos hacerlo con la función <em>map</em>.
 <em>map</em> necesita dos argumentos, la función a aplicar y la lista o iterador sobre el que aplicarlo.
@@ -232,7 +233,7 @@ El resultado será una nueva lista, la resultante de aplicar la función a cada 
 Una sintaxsis alternativa que permite obtener resultados similares es la de las <em>list comprenhensions</em>.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Separa la lista [‘id_paciente’, ‘fase1’, ‘37.1’, ‘39.3’, ‘38.1’] en tres variables: id_paciente, fase_ensayo, serie_temperaturas.</p></li>
 <li><p>Convierte los números (que están representados por cadenas de texto) de la serie de temperaturas anterior en números con coma flotante.</p></li>
@@ -265,7 +266,7 @@ Una sintaxsis alternativa que permite obtener resultados similares es la de las 
 ¿Qué pasaría si hacemos inversa = lista.reverse(), a qué sería igual la variable inversa?</p>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Separa la lista [‘id_paciente’, ‘fase1’, ‘37.1’, ‘39.3’, ‘38.1’] en tres variables: id_paciente, fase_ensayo, serie_temperaturas.</p></li>
 </ol>
@@ -411,7 +412,7 @@ Una sintaxsis alternativa que permite obtener resultados similares es la de las 
 La variable a la que asignemos el resultado quedará vacía.</p>
 </section>
 <section id="para-saber-mas">
-<h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Permalink to this headline">¶</a></h2>
+<h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Las secciones correspondientes a las listas en el tutorial oficial de Python (<a class="reference external" href="http://docs.python.org/tutorial/introduction.html#lists">1</a> y <a class="reference external" href="http://docs.python.org/tutorial/datastructures.html#more-on-lists">2</a>), pueden ser una buena continuación a este breve tutorial.</p></li>
 <li><p>Como para cualquier otra clase de objetos la ayuda disponible en el intérprete puede también ser muy útil. En este caso: <em>help(list)</em></p></li>

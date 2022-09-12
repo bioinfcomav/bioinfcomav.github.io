@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Variables de entorno &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -76,7 +77,7 @@
                 
     
   <section id="variables-de-entorno">
-<h1>Variables de entorno<a class="headerlink" href="#variables-de-entorno" title="Permalink to this headline">¶</a></h1>
+<h1>Variables de entorno<a class="headerlink" href="#variables-de-entorno" title="Permalink to this heading">¶</a></h1>
 <p>Las variables de entorno son una lista de ajustes que guardan varios estados de una sesión. Cuando se inicia una sesión ya sea en el entrono gráfico o en una terminal, se leen las variables de entorno.
 Para poder acceder al contenido de una variable podemos utilizar el commando <code class="docutils literal notranslate"><span class="pre">echo</span></code> y el nombre de la variable precedido de un $:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ echo $LANG
@@ -91,7 +92,7 @@ Para poder acceder al contenido de una variable podemos utilizar el commando <co
 </div>
 <p>Una de las variables de entorno que se puede configurar es la variable PATH.</p>
 <section id="donde-estan-los-ejecutables-path">
-<h2>¿Donde están los ejecutables? $PATH<a class="headerlink" href="#donde-estan-los-ejecutables-path" title="Permalink to this headline">¶</a></h2>
+<h2>¿Donde están los ejecutables? $PATH<a class="headerlink" href="#donde-estan-los-ejecutables-path" title="Permalink to this heading">¶</a></h2>
 <p>Cuando entramos en la <em>shell</em> y ejecutamos un programa la <em>shell</em> ha de saber dónde encontrar el ejecutable correspondiente a ese comando.
 Este ejecutable es un fichero con el mismo nombre que hemos escrito en la <em>shell</em> y que tiene el permiso de ejecución activado.
 Por ejemplo el ejecutable del comando <em>cp</em> es:</p>
@@ -159,7 +160,7 @@ nuevo PATH: PATH=/home/user/dibujacirculos/bin:$PATH
 </div>
 </section>
 <section id="home">
-<h2>HOME<a class="headerlink" href="#home" title="Permalink to this headline">¶</a></h2>
+<h2>HOME<a class="headerlink" href="#home" title="Permalink to this heading">¶</a></h2>
 <p>Otra variable de entorno que se usa mucho es la variable HOME. Hace referencia a la carpeta personal de usuario. Para el usuario <code class="docutils literal notranslate"><span class="pre">user</span></code> la carpeta es: /home/user</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ echo $HOME
 /home/user
@@ -172,7 +173,7 @@ nuevo PATH: PATH=/home/user/dibujacirculos/bin:$PATH
 <p>Por ello en el fichero <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> las variables las tenemos que definir con export delante.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Crea un directorio bin en tu directorio de trabajo. Usa Una variable de entorno en el comando. Despues añade el directorio al path, para todas las sessiones.</p></li>
 <li><p>Crea una variable de entorno nueva que muestre tu nombre. Por ejemplo NOMBRE. Haz que se pueda utilizar solo en la terminal en la que lo has creado.</p></li>

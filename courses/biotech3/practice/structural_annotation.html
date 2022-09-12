@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Structural Annotation &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
@@ -76,9 +77,9 @@
                 
     
   <section id="structural-annotation">
-<h1>Structural Annotation<a class="headerlink" href="#structural-annotation" title="Permalink to this headline">¶</a></h1>
+<h1>Structural Annotation<a class="headerlink" href="#structural-annotation" title="Permalink to this heading">¶</a></h1>
 <section id="graphic-detection-of-orfs">
-<h2>Graphic detection of ORFs<a class="headerlink" href="#graphic-detection-of-orfs" title="Permalink to this headline">¶</a></h2>
+<h2>Graphic detection of ORFs<a class="headerlink" href="#graphic-detection-of-orfs" title="Permalink to this heading">¶</a></h2>
 <p>Long ORFs are a hint of a CDS.
 ORFs can be plot using the EMBOSS program <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.6/emboss/apps/plotorf.html">plotorf</a>.</p>
 <p>Detect the ORFs in the <a class="reference download internal" download="" href="../_downloads/a047ea6286b752ba2de19cdc82b63cf4/genomic_frataxin.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genomic</span></code></a> and <a class="reference download internal" download="" href="../_downloads/c1e807dd058c592b30f1a31003e87eb6/mRNA_frataxin.fasta"><code class="xref download docutils literal notranslate"><span class="pre">mRNA</span></code></a> of the frataxin gene.</p>
@@ -87,7 +88,7 @@ ORFs can be plot using the EMBOSS program <a class="reference external" href="ht
 </div>
 </section>
 <section id="orf-translation">
-<h2>ORF translation<a class="headerlink" href="#orf-translation" title="Permalink to this headline">¶</a></h2>
+<h2>ORF translation<a class="headerlink" href="#orf-translation" title="Permalink to this heading">¶</a></h2>
 <p>Translate the largest ORF of the frataxin <a class="reference download internal" download="" href="../_downloads/c1e807dd058c592b30f1a31003e87eb6/mRNA_frataxin.fasta"><code class="xref download docutils literal notranslate"><span class="pre">mRNA</span></code></a>.
 <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.6/emboss/apps/transeq.html">transeq</a> from EMBOSS can be used to translate the ORFs.
 You have to provide to transeq the frame to translate.</p>
@@ -102,22 +103,22 @@ Do a blastp in NCBI aginst the nr database.
 Determine which should be the sequence of the translated protein taking into account the blast result.</p>
 </section>
 <section id="detection-of-the-intron-exon-and-cds-in-a-genomic-sequence">
-<h2>Detection of the intron, exon and CDS in a genomic sequence<a class="headerlink" href="#detection-of-the-intron-exon-and-cds-in-a-genomic-sequence" title="Permalink to this headline">¶</a></h2>
+<h2>Detection of the intron, exon and CDS in a genomic sequence<a class="headerlink" href="#detection-of-the-intron-exon-and-cds-in-a-genomic-sequence" title="Permalink to this heading">¶</a></h2>
 <p>Determine the exons and introns in a genomic sequence by using two kinds of evidences: comparisons with known proteins and comparisons with ESTs.</p>
 <section id="comparison-with-known-proteins">
-<h3>Comparison with known proteins<a class="headerlink" href="#comparison-with-known-proteins" title="Permalink to this headline">¶</a></h3>
+<h3>Comparison with known proteins<a class="headerlink" href="#comparison-with-known-proteins" title="Permalink to this heading">¶</a></h3>
 <p>Do a blastx aginst refseq with the <a class="reference download internal" download="" href="../_downloads/a047ea6286b752ba2de19cdc82b63cf4/genomic_frataxin.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genomic</span></code></a> sequence in NCBI.</p>
 <p>Could you propose a structure for the gene based on the blast matches obtained?</p>
 </section>
 <section id="comparison-with-ests">
-<h3>Comparison with ESTs<a class="headerlink" href="#comparison-with-ests" title="Permalink to this headline">¶</a></h3>
+<h3>Comparison with ESTs<a class="headerlink" href="#comparison-with-ests" title="Permalink to this heading">¶</a></h3>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Expressed_sequence_tag">ESTs</a> are sequences that originate from cDNAs.
 We have two ESTs: <a class="reference download internal" download="" href="../_downloads/1ff8e430e96fe25c963285f2643b9d42/est1.fasta"><code class="xref download docutils literal notranslate"><span class="pre">EST1</span></code></a> and <a class="reference download internal" download="" href="../_downloads/f3ea11912ad6ceadaef10f7d95375830/est2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">EST2</span></code></a>.
 Align them to the genomic sequence and propose a structure for the frataxin gene.</p>
 <p>Do the evidences from the blast and mRNA analyses match?</p>
 </section>
 <section id="ab-initio-prediction-of-the-gene-structure">
-<h3>Ab initio prediction of the gene structure<a class="headerlink" href="#ab-initio-prediction-of-the-gene-structure" title="Permalink to this headline">¶</a></h3>
+<h3>Ab initio prediction of the gene structure<a class="headerlink" href="#ab-initio-prediction-of-the-gene-structure" title="Permalink to this heading">¶</a></h3>
 <p>Codon usage, ORFs and splice sites can be used to infer a structure for the gene.
 Use <a class="reference external" href="http://bioinf.uni-greifswald.de/augustus/submission.php">Augustus</a> for the practice and run it with the <a class="reference download internal" download="" href="../_downloads/a047ea6286b752ba2de19cdc82b63cf4/genomic_frataxin.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genomic</span></code></a>.</p>
 <p>The Augustus predictions can be enhanced by providing Augustus ESTs and cDNAs sequences.</p>
@@ -125,16 +126,16 @@ Use <a class="reference external" href="http://bioinf.uni-greifswald.de/augustus
 <p>Do a blastp with the protein predicted by Augustus and check if the prediction looks right.</p>
 </section>
 <section id="a-possible-sequencing-error">
-<h3>A possible sequencing error<a class="headerlink" href="#a-possible-sequencing-error" title="Permalink to this headline">¶</a></h3>
+<h3>A possible sequencing error<a class="headerlink" href="#a-possible-sequencing-error" title="Permalink to this heading">¶</a></h3>
 <p>Redo the practice with a new sequence for the <a class="reference download internal" download="" href="../_downloads/2fbc1437faf0aa968d8fff93aa450054/genomic_frataxin2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genomic</span></code></a> region.</p>
 <p>Which are the differences between this sequence and the previous one?</p>
 <p>Which looks better according to the CDS prediction?</p>
 </section>
 </section>
 <section id="gene-structure-predition">
-<h2>Gene Structure predition<a class="headerlink" href="#gene-structure-predition" title="Permalink to this headline">¶</a></h2>
+<h2>Gene Structure predition<a class="headerlink" href="#gene-structure-predition" title="Permalink to this heading">¶</a></h2>
 <section id="id1">
-<h3>1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>1<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <p>Propose a structure for the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was not directional, the sequenced strand might be the sense or the antisense one. A blastx was carried out against the swissprot database with the genomic sequence.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Genomic</span> <span class="n">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 
@@ -149,7 +150,7 @@ Use <a class="reference external" href="http://bioinf.uni-greifswald.de/augustus
 </div>
 </section>
 <section id="id2">
-<h3>2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>2<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
 <p>Propose a structure for structure of the gene or genes and the mRNA or mRNAs. The cDNA library was not directional, the sequenced strand might be the sense or the antisense one.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Genomic</span> <span class="n">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 
@@ -163,7 +164,7 @@ Use <a class="reference external" href="http://bioinf.uni-greifswald.de/augustus
 </div>
 </section>
 <section id="id3">
-<h3>3<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>3<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <p>Propose a structure for structure of the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was directional, the sequenced strand is the sense one. A blastx was carried out against the swissprot database with the genomic sequence.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Genomic</span> <span class="n">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 
@@ -176,7 +177,7 @@ Use <a class="reference external" href="http://bioinf.uni-greifswald.de/augustus
 </div>
 </section>
 <section id="id4">
-<h3>4<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>4<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <p>Propose a structure for structure of the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was not directional, the sequenced strand might be the sense or the antisense one. A blastx was carried out against the swissprot database with the genomic sequence.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Genomic</span> <span class="n">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 
@@ -196,7 +197,7 @@ Use <a class="reference external" href="http://bioinf.uni-greifswald.de/augustus
 </div>
 </section>
 <section id="id5">
-<h3>5<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>5<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
 <p>Propose a structure for structure of the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was not directional, the sequenced strand might be the sense or the antisense one.  Probabilities, based on the codon usage were determined for the forward and reverse strands. The reversed ones were low and are not represented.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Genomic</span> <span class="n">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 
@@ -215,7 +216,7 @@ Use <a class="reference external" href="http://bioinf.uni-greifswald.de/augustus
 </div>
 </section>
 <section id="id6">
-<h3>6<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>6<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
 <p>Propose a structure for structure of the gene or genes and the mRNA or mRNAs, including CDSs. The cDNA library was directional, the sequenced strand is the sense one. A blastx was carried out against the swissprot database with the genomic sequence.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Genomic</span>    <span class="n">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 

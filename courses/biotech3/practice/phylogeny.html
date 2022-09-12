@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Phylogeny &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -24,11 +24,11 @@
     <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
-    <link rel="next" title="Assembly" href="assembly.html" />
     <link rel="prev" title="Structural Annotation" href="structural_annotation.html" /> 
   </head>
   <body>
@@ -76,11 +76,11 @@
                 
     
   <section id="phylogeny">
-<h1>Phylogeny<a class="headerlink" href="#phylogeny" title="Permalink to this headline">¶</a></h1>
+<h1>Phylogeny<a class="headerlink" href="#phylogeny" title="Permalink to this heading">¶</a></h1>
 <p>We are going to do different phylogenetic reconstructions using different methods.
 We are going to use the software <a class="reference external" href="http://www.megasoftware.net/">Mega</a>.</p>
 <section id="mega-tutorial">
-<h2>Mega tutorial<a class="headerlink" href="#mega-tutorial" title="Permalink to this headline">¶</a></h2>
+<h2>Mega tutorial<a class="headerlink" href="#mega-tutorial" title="Permalink to this heading">¶</a></h2>
 <p>Follow the Mega tutorial, especially the sections:</p>
 <ul class="simple">
 <li><p>Introduction</p></li>
@@ -93,42 +93,42 @@ We are going to use the software <a class="reference external" href="http://www.
 </ul>
 </section>
 <section id="distance-methods">
-<h2>Distance methods<a class="headerlink" href="#distance-methods" title="Permalink to this headline">¶</a></h2>
+<h2>Distance methods<a class="headerlink" href="#distance-methods" title="Permalink to this heading">¶</a></h2>
 <p>You have a <a class="reference download internal" download="" href="../_downloads/1c9236eff9ae08514e5f60d4446e7157/aprot.fasta"><code class="xref download docutils literal notranslate"><span class="pre">multiple</span> <span class="pre">sequence</span> <span class="pre">alignment</span></code></a> alignment.
-Generate two trees without bootstrap (set “Test of Phylogeny” as None)one using neighbor-joining and another using UPGMA.</p>
+Generate two trees without bootstrap (set “Test of Phylogeny” as None): one using neighbor-joining and another using UPGMA.</p>
 <ul class="simple">
 <li><p>Visualize the trees obtained.</p></li>
 <li><p>Are they the same?</p></li>
 <li><p>Which clades do they share? You can change the order in which the branches are drawn without changing their topologies to be able to compare the trees.</p></li>
 <li><p>Which tree is better</p></li>
 </ul>
-<p>Use this other <cite>multiple sequence alignment :download:&lt;../static/phylogeny/hprot.fasta&gt;</cite> to generate a new neighbor-joining tree without bootstrap.</p>
+<p>Use this other <a class="reference download internal" download="" href="../_downloads/7c55cdd19432ffcc143054362e72cebc/hprot.fasta"><code class="xref download docutils literal notranslate"><span class="pre">multiple</span> <span class="pre">sequence</span> <span class="pre">alignment</span></code></a> to generate a new neighbor-joining tree without bootstrap.</p>
 <ul class="simple">
 <li><p>Is this tree informative? Why?</p></li>
 </ul>
 </section>
 <section id="bootstrap">
-<h2>Bootstrap<a class="headerlink" href="#bootstrap" title="Permalink to this headline">¶</a></h2>
+<h2>Bootstrap<a class="headerlink" href="#bootstrap" title="Permalink to this heading">¶</a></h2>
 <p>Redo the trees from the previous exercise doing a boostratp with 100 replicates.</p>
 <p>Do you get the same topologies as in the previous exercise?</p>
 <p>Which are the significative clades?</p>
 <p>What remains if we collapse all clades that are not significative?</p>
 </section>
 <section id="frataxin-phylogenies">
-<h2>Frataxin phylogenies<a class="headerlink" href="#frataxin-phylogenies" title="Permalink to this headline">¶</a></h2>
+<h2>Frataxin phylogenies<a class="headerlink" href="#frataxin-phylogenies" title="Permalink to this heading">¶</a></h2>
 <p>We are going to use a multiple sequence alignment of the <a class="reference download internal" download="" href="../_downloads/69f7a2642a81e7cea7fd48e82d9cf186/frataxin_mod.meg"><code class="xref download docutils literal notranslate"><span class="pre">frataxin</span></code></a> protein.
 This is an alignment in MEGA format that can be loaded directly into MEGA.
 It includes only the conserved regions without the signal peptide.</p>
 <section id="distance-trees">
-<h3>Distance trees<a class="headerlink" href="#distance-trees" title="Permalink to this headline">¶</a></h3>
+<h3>Distance trees<a class="headerlink" href="#distance-trees" title="Permalink to this heading">¶</a></h3>
 <p>Do the neighbor-joining and UPGMA trees with boostrap</p>
 </section>
 <section id="maximum-likelihood">
-<h3>Maximum likelihood<a class="headerlink" href="#maximum-likelihood" title="Permalink to this headline">¶</a></h3>
+<h3>Maximum likelihood<a class="headerlink" href="#maximum-likelihood" title="Permalink to this heading">¶</a></h3>
 <p>Do the tree with boostrap</p>
 </section>
 <section id="compare-the-trees">
-<h3>Compare the trees<a class="headerlink" href="#compare-the-trees" title="Permalink to this headline">¶</a></h3>
+<h3>Compare the trees<a class="headerlink" href="#compare-the-trees" title="Permalink to this heading">¶</a></h3>
 <p>Are the trees identical?</p>
 <p>Are there any clades not found in both trees?</p>
 <p>Does any clade with enough support differ between both trees?</p>
@@ -136,19 +136,19 @@ It includes only the conserved regions without the signal peptide.</p>
 </section>
 </section>
 <section id="phylogenies-of-the-old-world-monkeys">
-<h2>Phylogenies of the old world monkeys<a class="headerlink" href="#phylogenies-of-the-old-world-monkeys" title="Permalink to this headline">¶</a></h2>
+<h2>Phylogenies of the old world monkeys<a class="headerlink" href="#phylogenies-of-the-old-world-monkeys" title="Permalink to this heading">¶</a></h2>
 <p>Create a phylogeny using parsimony, neighbor-joining and maximum likelihood suing the <a class="reference download internal" download="" href="../_downloads/1be8a393a9d41f79928d1bd13e0035cb/hepcidina.fasta"><code class="xref download docutils literal notranslate"><span class="pre">hepcidine</span></code></a> sequences.</p>
 <p>Compare the trees obtained by the different methods.</p>
 </section>
 <section id="solanum-and-lycopersicum">
-<h2>Solanum and Lycopersicum<a class="headerlink" href="#solanum-and-lycopersicum" title="Permalink to this headline">¶</a></h2>
+<h2>Solanum and Lycopersicum<a class="headerlink" href="#solanum-and-lycopersicum" title="Permalink to this heading">¶</a></h2>
 <p>NCBI holds <a class="reference external" href="http://www.ncbi.nlm.nih.gov/popset">Popset</a>, a database of phylogenetic and population studies.
 In Popset you can find sequences used in studies carried on in different species so you can repeat those studies with the same sequences and others.</p>
 <p>Get from the database the sequences for the marker <a class="reference external" href="http://www.ncbi.nlm.nih.gov/popset/224980415">COS-At5g14320</a> used in the study: “Do potatoes and tomatoes have a single evolutionary history, and what proportion of the genome supports this history?”.Rodriguez,F., Wu,F., Ane,C., Tanksley,S. and Spooner,D.M.(2009) BMC Evol. Biol. 9:191.</p>
 <p>Does the tomato belong to the <em>Solanum</em> genus as the potato does?</p>
 </section>
 <section id="human-hemoglobins">
-<h2>Human hemoglobins<a class="headerlink" href="#human-hemoglobins" title="Permalink to this headline">¶</a></h2>
+<h2>Human hemoglobins<a class="headerlink" href="#human-hemoglobins" title="Permalink to this heading">¶</a></h2>
 <p>Reconstruct a phylogeny for the human hemoglobins.</p>
 <p>Starting with the sequence of the <a class="reference download internal" download="" href="../_downloads/a8f1a5a255ecccbe51b7ec2714e0df86/beta.fasta"><code class="xref download docutils literal notranslate"><span class="pre">beta</span></code></a> subunit of the human hemoglobin identify using blast all the human subunits of the human hemoglobin and create its phylogeny to identify the duplication events that led to all of them.
 Use the mioglobin as an outgroup.</p>

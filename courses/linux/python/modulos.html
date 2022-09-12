@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Módulos &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
@@ -76,7 +77,7 @@
                 
     
   <section id="modulos">
-<h1>Módulos<a class="headerlink" href="#modulos" title="Permalink to this headline">¶</a></h1>
+<h1>Módulos<a class="headerlink" href="#modulos" title="Permalink to this heading">¶</a></h1>
 <p>Cuando vamos a escribir un programa además de disponer de las sentencias y funciones que constituyen el lenguaje de programación para construir el programa podemos hacer uso del código anterior que nosotros mismos u otros usuarios hayan generado.
 Por ejemplo, si necesitamos leer un fichero de secuencias <em>fasta</em> y anteriormente escribimos una función capaz de realizar el trabajo sería absurdo volver a repetir la faena.
 Una alternativa sencilla sería copiar la función desde el programa anterior.
@@ -129,7 +130,7 @@ Si no se encuentra un módulo lanzará un error.</p>
 <p>A continuación se citan las funcionalidades más útiles para un biólogo de estos módulos comunes.
 En todo los casos los módulos ofrecen muchas más funcionalidades que las descritas en este breve resumen, es recomendable leer la documentación oficial para conocer los módulos con detalle.</p>
 <section id="id1">
-<h2>os<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>os<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>os.getcwd(), devuelve el directorio de trabajo.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
@@ -150,7 +151,7 @@ En todo los casos los módulos ofrecen muchas más funcionalidades que las descr
 <p>os.rmdir(path), elimina un directorio, pero antes debe estar vacío.</p>
 </section>
 <section id="id2">
-<h2>shutil<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>shutil<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>shutil.copyfile(src, dst), copia un fichero.</p>
 <p>shutil.copy(src, dst), copia un fichero o directorio.</p>
 <p>shutil.copytree(src, dst), copia recursivamente un directorio completo.</p>
@@ -158,7 +159,7 @@ En todo los casos los módulos ofrecen muchas más funcionalidades que las descr
 <p>shutil.move(src, dst), mueve un fichero de un lugar a otro.</p>
 </section>
 <section id="id3">
-<h2>os.path<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>os.path<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>os.path.abspath(path), devuelve una versión absoluta y normalizada de la ruta.</p>
 <p>os.path.basename(path), devuelve el nombre del fichero a partir de la ruta.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s1">&#39;/home/usuario/fichero.txt&#39;</span><span class="p">)</span>
@@ -193,7 +194,7 @@ En todo los casos los módulos ofrecen muchas más funcionalidades que las descr
 </div>
 </section>
 <section id="id4">
-<h2>subprocess<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>subprocess<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <p><em>subprocess</em> nos permite ejecutar programas externos desde Python.
 El modo más potente de usar <em>subprocess</em> es mediante la clase <a class="reference external" href="http://docs.python.org/library/subprocess.html#using-the-subprocess-module">Popen</a>, pero aquí sólo vamos a ver las funciones sencillas.</p>
 <p>subprocess.call(cmd), ejecuta el comando. El comando debe darse como una lista de parámetros.</p>
@@ -207,13 +208,13 @@ El modo más potente de usar <em>subprocess</em> es mediante la clase <a class="
 </div>
 </section>
 <section id="id5">
-<h2>sys<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>sys<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
 <p>Da acceso al <em>shell</em> en el que se está ejecutando nuestro programa Python.</p>
 <p>sys.argv, devuelve una lista con los argumentos con los que se ha ejecutado el programa.</p>
 <p>sys.exit(int), sale del programa con retcode dado por el número. Este número es opcional, si no se indica será 0.</p>
 </section>
 <section id="id6">
-<h2>csv<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>csv<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
 <p><em>csv</em> es un módulo muy útil que nos permite leer ficheros tabulares:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="n">edad</span> <span class="n">diabetico</span>
 <span class="s2">&quot;Juan Pablo&quot;</span> <span class="mi">30</span> <span class="n">Si</span>
@@ -294,7 +295,7 @@ Para que el módulo funcione correctamente el fichero <em>CSV</em> debe estar ab
 Adicionalmente disponemos del argumento <em>restval</em> en el que podemos indicar cual es la cadena de texto que queremos imprimir para los datos faltantes.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Dado el programa <em>saluda.py</em> de Python:</p></li>
 </ol>
@@ -327,7 +328,7 @@ Adicionalmente disponemos del argumento <em>restval</em> en el que podemos indic
 <p>El programa debe imprimir la información relativa a una entrada y después volver a escribir la información, pero esta vez separada por comas.</p>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Dado el programa <em>saluda.py</em> de Python:</p></li>
 </ol>
@@ -473,7 +474,7 @@ Quiere decir que programa ha acabado sin errores, si hubiese ocurrido algún err
 </div>
 </section>
 <section id="para-saber-mas">
-<h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Permalink to this headline">¶</a></h2>
+<h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Permalink to this heading">¶</a></h2>
 <p>Se puede consultar la sección dedicada a los <a class="reference external" href="http://docs.python.org/tutorial/modules.html">módulos</a> del tutorial oficial de Python, así como la documentación de los distintos módulos y paquetes.</p>
 </section>
 </section>

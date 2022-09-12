@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Flujos de información &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -76,12 +77,12 @@
                 
     
   <section id="flujos-de-informacion">
-<h1>Flujos de información<a class="headerlink" href="#flujos-de-informacion" title="Permalink to this headline">¶</a></h1>
+<h1>Flujos de información<a class="headerlink" href="#flujos-de-informacion" title="Permalink to this heading">¶</a></h1>
 <p>Los programas en línea de comandos, además de poder leer y escribir en ficheros, pueden tomar argumentos como entrada, realizar una tarea e imprimir una salida en la pantalla.</p>
 <a class="reference external image-reference" href="./static/cli_program.png"><img alt="alt text" src="_images/cli_program.png" /></a>
 <p>Por ejemplo, al ejecutar el comando <em>ls</em> se imprime un listado en la pantalla. Esto que acaba siendo impreso en la pantalla constituye lo que se denomina un flujo de información.</p>
 <section id="flujos-de-informacion-estandar">
-<h2>Flujos de información estándar<a class="headerlink" href="#flujos-de-informacion-estandar" title="Permalink to this headline">¶</a></h2>
+<h2>Flujos de información estándar<a class="headerlink" href="#flujos-de-informacion-estandar" title="Permalink to this heading">¶</a></h2>
 <p>En todos los sistemas Unix existen tres flujos de información:</p>
 <ul class="simple">
 <li><p>standard input (stdin): datos que se envian al programa</p></li>
@@ -98,7 +99,7 @@
 </ul>
 </section>
 <section id="redireccion-del-flujo-estandar">
-<h2>Redirección del flujo estándar<a class="headerlink" href="#redireccion-del-flujo-estandar" title="Permalink to this headline">¶</a></h2>
+<h2>Redirección del flujo estándar<a class="headerlink" href="#redireccion-del-flujo-estandar" title="Permalink to this heading">¶</a></h2>
 <p>El flujo estándar puede ser redirigido para que no se imprima en pantalla, sino que quede almacenado en un fichero. Para redirigir el flujo de información desde la pantalla a un fichero no necesitamos más que utilizar el símbolo <em>&gt;</em> seguido del nombre de un fichero.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls &gt; listado.txt
 </pre></div>
@@ -131,7 +132,7 @@ listado.txt
 </div>
 </section>
 <section id="pipes">
-<h2>Pipes<a class="headerlink" href="#pipes" title="Permalink to this headline">¶</a></h2>
+<h2>Pipes<a class="headerlink" href="#pipes" title="Permalink to this heading">¶</a></h2>
 <p>En Unix además de redirigir los flujos de información hacia un fichero podemos unir el flujo de salida de un programa con el de entrada de otro utilizando un <em>pipe</em> (tubería).
 El símbolo para el pipe es |.</p>
 <a class="reference external image-reference" href="./static/pipe.png"><img alt="alt text" src="_images/pipe.png" /></a>
@@ -152,7 +153,7 @@ Veamos cuántos archivos y directorios hay en el directorio actual:</p>
 <p>Esta técnica posibilita, entre otras cosas, el procesamiento de los ficheros de texto de una forma potente y sencilla.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Salva la ruta del directorio actual (<em>pwd</em>) en un archivo, muévete a otro directorio y añade la dirección actual al archivo creado</p></li>
 <li><p>Haz fallar el comando <em>mkdir</em> y salva el mensaje de error en un fichero</p></li>
@@ -161,7 +162,7 @@ Veamos cuántos archivos y directorios hay en el directorio actual:</p>
 </ol>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this headline">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
 <p>1.- Salva la ruta del directorio actual (<em>pwd</em>) en un archivo, muévete a otro directorio y añade la dirección actual al archivo creado.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ pwd &gt; directions.txt
 ~$ cd /bin/

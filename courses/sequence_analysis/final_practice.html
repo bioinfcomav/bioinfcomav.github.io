@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Practical tasks &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -75,31 +76,31 @@
                 
     
   <section id="practical-tasks">
-<h1>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this headline">¶</a></h1>
+<h1>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this heading">¶</a></h1>
 <section id="determine-the-platformn-and-coding">
-<h2>Determine the platformn and coding<a class="headerlink" href="#determine-the-platformn-and-coding" title="Permalink to this headline">¶</a></h2>
+<h2>Determine the platformn and coding<a class="headerlink" href="#determine-the-platformn-and-coding" title="Permalink to this heading">¶</a></h2>
 <p>Analyze the format and quality for each of the <a class="reference download internal" download="" href="_downloads/f31694b73246caf74a35a4b4e769c831/ngs_reads.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">read</span> <span class="pre">files</span></code></a> and determine the sequencing platform and version.</p>
 <section id="hints">
-<h3>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h3>
+<h3>Hints<a class="headerlink" href="#hints" title="Permalink to this heading">¶</a></h3>
 <p>You might use fastqc.
 Take into account that the solid reads might be double encoded.</p>
 </section>
 </section>
 <section id="clean-adapters-and-contaminants">
-<h2>Clean adapters and contaminants<a class="headerlink" href="#clean-adapters-and-contaminants" title="Permalink to this headline">¶</a></h2>
+<h2>Clean adapters and contaminants<a class="headerlink" href="#clean-adapters-and-contaminants" title="Permalink to this heading">¶</a></h2>
 <p>We have some <a class="reference download internal" download="" href="_downloads/d70096f74556f4dca8ecc3cdb4c7ec7a/to_clean_454.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">454</span></code></a> and <a class="reference download internal" download="" href="_downloads/ae9690b2973b9cae11d10a7dd922a803/to_clean_illumina.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">Illumina</span></code></a> reads that might have adapters in them due to the cloning process.
 Do they really have <a class="reference download internal" download="" href="_downloads/a48e7f9a9954de9d437195f5a1a1ad19/oligos.fasta"><code class="xref download docutils literal notranslate"><span class="pre">adapters</span></code></a>?
 These reads also come from a RNA-Seq experiment and might have <a class="reference download internal" download="" href="_downloads/2b9edaffd86087331f85b9990fc1a54d/arabidpsis_rrna.fasta"><code class="xref download docutils literal notranslate"><span class="pre">ribosomic</span> <span class="pre">RNA</span></code></a> that we should filter out before doing any further analysis.
 Try to assess these problems with fastqc.</p>
 <section id="id1">
-<h3>Hints<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>Hints<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <p>Evaluate the quality, look for overrepresented k-mers and take a look at the base composition of the first bases of the reads with fastqc.</p>
 <p>To remove the adaptor you could use <a class="reference external" href="http://code.google.com/p/cutadapt/">cutadapt</a>, <a class="reference external" href="https://github.com/vsbuffalo/scythe">scythe</a> or <a class="reference external" href="http://hannonlab.cshl.edu/fastx_toolkit/">fastx</a>.</p>
 <p>To trim the quality you could use fastx, <a class="reference external" href="http://seqclean.sourceforge.net/">sequence cleaner</a>, or <a class="reference external" href="https://github.com/najoshi/sickle">sickle</a>.</p>
 </section>
 </section>
 <section id="mithocondrial-assembly">
-<h2>Mithocondrial assembly<a class="headerlink" href="#mithocondrial-assembly" title="Permalink to this headline">¶</a></h2>
+<h2>Mithocondrial assembly<a class="headerlink" href="#mithocondrial-assembly" title="Permalink to this heading">¶</a></h2>
 <p>We have recived 20000 human mithocondrial <a class="reference download internal" download="" href="_downloads/b7fc88cd84d20ef52cb7148223cf0440/mito_yoruba_reads_pe.20k.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a> from a yoruba individual.
 The reads are Illumina paired end and we want to assemble them:</p>
 <blockquote>
@@ -112,23 +113,23 @@ The reads are Illumina paired end and we want to assemble them:</p>
 </ol>
 </div></blockquote>
 <section id="hint">
-<h3>Hint<a class="headerlink" href="#hint" title="Permalink to this headline">¶</a></h3>
+<h3>Hint<a class="headerlink" href="#hint" title="Permalink to this heading">¶</a></h3>
 <p>We have already seen how to assemble a mithocondrial genome using velvet.</p>
 </section>
 </section>
 <section id="map-to-the-mithocondrial-assembly">
-<h2>Map to the mithocondrial assembly<a class="headerlink" href="#map-to-the-mithocondrial-assembly" title="Permalink to this headline">¶</a></h2>
+<h2>Map to the mithocondrial assembly<a class="headerlink" href="#map-to-the-mithocondrial-assembly" title="Permalink to this heading">¶</a></h2>
 <p>As the result of the mithocondrial assembly that we have just done with we obtained a fasta file with the scaffolds.
 Map the reads used to create the assembly using bwa to the scaffolds.
 Once you have the mapping note how many reads had been mapped and open the mapping IGV.</p>
 </section>
 <section id="human-mithocondrial-snp-calling">
-<h2>Human Mithocondrial SNP calling<a class="headerlink" href="#human-mithocondrial-snp-calling" title="Permalink to this headline">¶</a></h2>
+<h2>Human Mithocondrial SNP calling<a class="headerlink" href="#human-mithocondrial-snp-calling" title="Permalink to this heading">¶</a></h2>
 <p>We want to compare the mithocondrial DNA of a yoruba individual with the <a class="reference download internal" download="" href="_downloads/eaef58983741eb3091f95f9b176023a0/human_cambridge_reference_mito.fasta"><code class="xref download docutils literal notranslate"><span class="pre">reference</span></code></a> cambrigde mithocondrial sequence.
 We have 40000 Illumnia <a class="reference download internal" download="" href="_downloads/ef4616aea6da2e1253a1831e01206640/mito_yoruba_reads_40k.fastq.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a>.
 Do two SNP callings one with bowtie2 and samtools and another with ngs_backbone and compare them.</p>
 <section id="id2">
-<h3>Hints<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>Hints<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
 <p>Why ngs_backbone does not find any SNP at the first attempt?
 Modify the backbone.conf parameters related with the quality and look for the SNPs again (e.j. min_quality=21, min_reads_for_allele=10).</p>
 <p>You can compare the SNP callings with bedtools or grep.</p>
@@ -136,15 +137,15 @@ Modify the backbone.conf parameters related with the quality and look for the SN
 </section>
 </section>
 <section id="obtain-the-snp-flanking-sequence">
-<h2>Obtain the SNP flanking sequence<a class="headerlink" href="#obtain-the-snp-flanking-sequence" title="Permalink to this headline">¶</a></h2>
+<h2>Obtain the SNP flanking sequence<a class="headerlink" href="#obtain-the-snp-flanking-sequence" title="Permalink to this heading">¶</a></h2>
 <p>Search for the common SNPs of the two previous SNP calls and create a fasta file with 100 pair bases around each SNP.</p>
 <section id="id3">
-<h3>Hints<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>Hints<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <p>You can use the intersectBed, flankBed and fastaFromBed tools.</p>
 </section>
 </section>
 <section id="cucurbita-est-snp-calling">
-<h2>Cucurbita EST SNP calling<a class="headerlink" href="#cucurbita-est-snp-calling" title="Permalink to this headline">¶</a></h2>
+<h2>Cucurbita EST SNP calling<a class="headerlink" href="#cucurbita-est-snp-calling" title="Permalink to this heading">¶</a></h2>
 <p>We have ordered two 454 and two Illumina reads from a Cucurbita transcriptome.
 The 454 sequences came from two individuals (indi1 and indi2) and the Illumina came from a mix of different individuals.
 The sequencing service has send the <a class="reference download internal" download="" href="_downloads/ccb88514fcd9a07b9e57a540c611d847/cucurbita_reads.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a> in sanger fastq format.</p>

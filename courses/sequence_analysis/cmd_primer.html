@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Command line primer &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -76,7 +77,7 @@
                 
     
   <section id="command-line-primer">
-<h1>Command line primer<a class="headerlink" href="#command-line-primer" title="Permalink to this headline">¶</a></h1>
+<h1>Command line primer<a class="headerlink" href="#command-line-primer" title="Permalink to this heading">¶</a></h1>
 <p>The command line interface could seem a little scary for a first time user, but it is just a different way of interacting with the computer software. If you don’t have any previous command line experience don’t worry, it won’t be difficult.</p>
 <p>We can tell a computer what to do by using the mouse and pointing and clicking at buttons and menus or we just can write down the order. For instance if we want to get a list of the files in a folder we can can open a folder browser and click our way to the folder or we can just write:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls folder_name
@@ -87,7 +88,7 @@ file_2.txt
 <p>None of these two ways of communicating with the computer is better. Some tasks are more easy to do with the mouse and some others writing with the keyboard, although some say that real men use the command line.</p>
 <img alt="_images/matrix_low.jpg" src="_images/matrix_low.jpg" />
 <section id="into-the-real">
-<h2>Into the real<a class="headerlink" href="#into-the-real" title="Permalink to this headline">¶</a></h2>
+<h2>Into the real<a class="headerlink" href="#into-the-real" title="Permalink to this heading">¶</a></h2>
 <p>To use the command line launch a terminal (Applications -&gt; Accessories -&gt; Terminal). You will see something like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>user@computer:~/dir $ _
 </pre></div>
@@ -123,7 +124,7 @@ Sort entries alphabetically if none of -cftuvSUX nor --sort.
 </div>
 </section>
 <section id="conventions-used">
-<h2>Conventions used<a class="headerlink" href="#conventions-used" title="Permalink to this headline">¶</a></h2>
+<h2>Conventions used<a class="headerlink" href="#conventions-used" title="Permalink to this heading">¶</a></h2>
 <p>In this course all the commands that should be typed are showed with the complete prompt and the result that should be expected:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>user@computer:~/directory$ command_to_execute
 result
@@ -134,7 +135,7 @@ In this example we would copy “command_to_execute”.
 The lines with no dollar sign show the expected result and are included only to be compared with the actual result obtained after executing the command.</p>
 </section>
 <section id="file-system">
-<h2>File system<a class="headerlink" href="#file-system" title="Permalink to this headline">¶</a></h2>
+<h2>File system<a class="headerlink" href="#file-system" title="Permalink to this heading">¶</a></h2>
 <p>The files in the computer are organized in folders and those folders are sorted in an hierarchical structure. When the program that we are executing requires a file or a folder as input we have to give this program the path to this input. We could do:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls my_documents/
 </pre></div>
@@ -160,7 +161,7 @@ file_2.txt
 <p>If you want your life to be easier do not use spaces or non-english alphanumerical characters in the file name. They can be used, but some programs might have problems with them.</p>
 </section>
 <section id="directories">
-<h2>Directories<a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h2>
+<h2>Directories<a class="headerlink" href="#directories" title="Permalink to this heading">¶</a></h2>
 <p>In a Unix system like Linux or MacOS X the directory paths use forward slashes “/”. / is the root directory and /home/ is a subdirectory of /.</p>
 <p>Every user has a “home” directory. In this directory the user can write and delete files and directories. In a Linux system this directory is usually /home/user_name/.</p>
 <p>In a Unix system all directories are subdirectories from / (the root). When a path starts with / is said to be “absolute”. A path like “/home/user/Documents” is absolute. If we’re working in the directory /home/user we could refer to the same Documents directory just by typing “Documents”, this is a relative path.</p>
@@ -181,7 +182,7 @@ file_2.txt
 </div>
 </section>
 <section id="moving-renaming-and-copying-files">
-<h2>Moving, renaming, and copying files<a class="headerlink" href="#moving-renaming-and-copying-files" title="Permalink to this headline">¶</a></h2>
+<h2>Moving, renaming, and copying files<a class="headerlink" href="#moving-renaming-and-copying-files" title="Permalink to this heading">¶</a></h2>
 <p>Files are copied with the cp (CoPy) command and moved with the mv (MoVe) one. To create a new directory we would use the mkdir (MaKe Directory) command.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">file1</span> <span class="n">file2</span>          <span class="n">copy</span> <span class="n">the</span> <span class="n">file1</span> <span class="n">to</span> <span class="n">file2</span>
 <span class="n">mv</span> <span class="n">file1</span> <span class="n">newname</span>        <span class="n">move</span> <span class="ow">or</span> <span class="n">rename</span> <span class="n">a</span> <span class="n">file</span>
@@ -193,7 +194,7 @@ file_2.txt
 </div>
 </section>
 <section id="viewing-and-editing-files">
-<h2>Viewing and editing files<a class="headerlink" href="#viewing-and-editing-files" title="Permalink to this headline">¶</a></h2>
+<h2>Viewing and editing files<a class="headerlink" href="#viewing-and-editing-files" title="Permalink to this heading">¶</a></h2>
 <p>The Unix systems have a powerful set of text tools. We can print, browse, filter, sort, and cut text files easily. It is highly recommended to learn to use this commands if we have to deal with long text files.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">filename</span>            <span class="n">Dump</span> <span class="n">a</span> <span class="n">file</span> <span class="n">to</span> <span class="n">the</span> <span class="n">screen</span><span class="o">.</span>
 <span class="n">less</span> <span class="n">filename</span>           <span class="n">Browse</span> <span class="n">through</span> <span class="n">a</span> <span class="n">file</span><span class="p">:</span> <span class="n">q</span><span class="o">=</span><span class="n">quit</span><span class="p">,</span> <span class="o">/</span> <span class="n">search</span><span class="o">.</span>
@@ -210,7 +211,7 @@ file_2.txt
 </div>
 </section>
 <section id="standard-output">
-<h2>Standard output<a class="headerlink" href="#standard-output" title="Permalink to this headline">¶</a></h2>
+<h2>Standard output<a class="headerlink" href="#standard-output" title="Permalink to this heading">¶</a></h2>
 <p>For an Unix computer the command line screen is just a file, printing a letter in the screen is just like writing a letter in a file. So everything that it is printed to the screen can be redirected to be written in a file. We could dump the contents of a couple of files to the screen with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat file1.txt file2.txt
 </pre></div>
@@ -225,11 +226,11 @@ file_2.txt
 </div>
 </section>
 <section id="interactive-history">
-<h2>Interactive History<a class="headerlink" href="#interactive-history" title="Permalink to this headline">¶</a></h2>
+<h2>Interactive History<a class="headerlink" href="#interactive-history" title="Permalink to this heading">¶</a></h2>
 <p>In the prompt we can use the arrow keys to access our previous commands, edit them and re-execute them. We can also look for old command just by pressing Ctrl and the letter r.</p>
 </section>
 <section id="stopping-a-program">
-<h2>Stopping a program<a class="headerlink" href="#stopping-a-program" title="Permalink to this headline">¶</a></h2>
+<h2>Stopping a program<a class="headerlink" href="#stopping-a-program" title="Permalink to this heading">¶</a></h2>
 <p>In most cases we can stop a program just by pressing Ctrl + c.
 For a more fine grained control of the processes (running programs) take a look at the ps and kill commands.</p>
 <p>To print a list of all running processes you can use ps -ef:</p>
@@ -261,7 +262,7 @@ To send a signal we use the kill command with the signal number and the process 
 <p>A process can choose to ignore an abort signal (6), but it will stop immediately when a kill signal is received.</p>
 </section>
 <section id="pipes">
-<h2>Pipes<a class="headerlink" href="#pipes" title="Permalink to this headline">¶</a></h2>
+<h2>Pipes<a class="headerlink" href="#pipes" title="Permalink to this heading">¶</a></h2>
 <p>A command line software takes some inputs, processes them and finally generates some outputs.
 The input and outputs can be files stored in the hard drive or alternatively can be linked to the terminal.
 For instance, some outputs are generally printed in the terminal (standard output and errors).</p>
@@ -309,7 +310,7 @@ We can chain little commands to create complex pipelines very easily.
 For instance we could chain a software that removes adaptor sequences and another that trims bad quality regions to create a small read cleaning pipeline.</p>
 </section>
 <section id="practical-tasks-unix-introduction">
-<h2>Practical tasks: Unix introduction<a class="headerlink" href="#practical-tasks-unix-introduction" title="Permalink to this headline">¶</a></h2>
+<h2>Practical tasks: Unix introduction<a class="headerlink" href="#practical-tasks-unix-introduction" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Open a terminal and print the working direcroty.</p></li>
 </ol>

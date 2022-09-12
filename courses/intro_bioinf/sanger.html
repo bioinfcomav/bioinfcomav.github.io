@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>SECUENCIACIÓN DE SANGER &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -76,9 +77,9 @@
                 
     
   <section id="secuenciacion-de-sanger">
-<h1>SECUENCIACIÓN DE SANGER<a class="headerlink" href="#secuenciacion-de-sanger" title="Permalink to this headline">¶</a></h1>
+<h1>SECUENCIACIÓN DE SANGER<a class="headerlink" href="#secuenciacion-de-sanger" title="Permalink to this heading">¶</a></h1>
 <section id="secuenciacion-mediante-sanger">
-<h2>Secuenciación mediante Sanger<a class="headerlink" href="#secuenciacion-mediante-sanger" title="Permalink to this headline">¶</a></h2>
+<h2>Secuenciación mediante Sanger<a class="headerlink" href="#secuenciacion-mediante-sanger" title="Permalink to this heading">¶</a></h2>
 <p>La secuenciación de Sanger se basa en la polimerización del ADN y el uso de dideoxinucleótidos  que sirven como terminadores de la reacción.
 En la actualidad la reacción de secuenciación se basa en una modificación de la PCR con dideoxinucleótidos marcados con fluoróforos y se resuelve mediante una electroforesis capilar.
 El sistema más utilizado es el desarrollado por <a class="reference external" href="http://www.appliedbiosystems.com/">Applied Biosystems</a> .
@@ -92,7 +93,7 @@ Podéis encontrar numerosos documentos sobre la secuenciación de Sanger, pero p
 </figure>
 </section>
 <section id="cromatogramas">
-<h2>Cromatogramas<a class="headerlink" href="#cromatogramas" title="Permalink to this headline">¶</a></h2>
+<h2>Cromatogramas<a class="headerlink" href="#cromatogramas" title="Permalink to this heading">¶</a></h2>
 <p>La información obtenida en los secuenciadores automáticos se guarda en ficheros binarios.</p>
 <p>Estos ficheros pueden incluir, además del cromatograma procesado (trace), el dato crudo leído por el secuenciador automático, la secuencia de nucleótidos y las calidades.</p>
 <p>Hasta el momento el mercado de la secuenciación automática basada en el método de Sanger está controlado principalmente por Applied Biosystems.</p>
@@ -103,14 +104,14 @@ Podéis encontrar numerosos documentos sobre la secuenciación de Sanger, pero p
 <p>scf sólo incluye el cromatograma procesado y la secuencia.</p>
 <p>En el <a class="reference external" href="http://www.ncbi.nlm.nih.gov/Traces/trace.cgi">NCBI</a> se depositan algunos de los cromatogramas obtenidos en los proyectos de secuenciación.</p>
 <section id="basecalling">
-<h3>Basecalling<a class="headerlink" href="#basecalling" title="Permalink to this headline">¶</a></h3>
+<h3>Basecalling<a class="headerlink" href="#basecalling" title="Permalink to this heading">¶</a></h3>
 <p>A partir de los cromatogramas hay que obtener la secuencia de nucleótidos.</p>
 <p>Este proceso lo hacen automáticamente los programas que leen los cromatogramas, pero conviene que revisarlo manualmente porque en muchas ocasiones se producen fallos al asignar las bases.</p>
 <p>La secuencia propuesta por el software del secuenciador automático casi siempre tiene una gran parte al final que hay que eliminar.</p>
 </section>
 </section>
 <section id="calidad">
-<h2>Calidad<a class="headerlink" href="#calidad" title="Permalink to this headline">¶</a></h2>
+<h2>Calidad<a class="headerlink" href="#calidad" title="Permalink to this heading">¶</a></h2>
 <p>Todos los sistemas de secuenciación estiman la probabilidad de que cada uno de los nucleótidos secuenciados sean erróneos, a este parámetro se le suele denominar calidad.
 Esta estimación del error es específica de cada tecnología y la calcula el software del equipo.
 Para facilitar el análisis y la interpretación de los resultados, estos valores se suelen cambiar a una escala normalizada que utilizan todas las tecnologías de secuenciación, la escala de <a class="reference external" href="http://www.phrap.com/phred/">Phred</a>.
@@ -122,10 +123,6 @@ Está se define como:</p>
 <p>De este modo es fácil interpretar la probabilidad de error según su valor.</p>
 <blockquote>
 <div><table class="docutils align-default">
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Phred score</p></th>
 <th class="head"><p>Probabilidad de error de lectura en esa base</p></th>
@@ -149,10 +146,10 @@ Está se define como:</p>
 </div></blockquote>
 </section>
 <section id="interpretacion-de-los-cromatogramas-de-secuencia">
-<h2>Interpretación de los cromatogramas de secuencia<a class="headerlink" href="#interpretacion-de-los-cromatogramas-de-secuencia" title="Permalink to this headline">¶</a></h2>
+<h2>Interpretación de los cromatogramas de secuencia<a class="headerlink" href="#interpretacion-de-los-cromatogramas-de-secuencia" title="Permalink to this heading">¶</a></h2>
 <p>Ejemplos obtenidos de la <a class="reference external" href="http://seqcore.brcf.med.umich.edu/doc/dnaseq/trouble/badseq.html">web</a> del servicio de secuenciación de la Universidad de Michigan.</p>
 <section id="ruido">
-<h3>Ruido<a class="headerlink" href="#ruido" title="Permalink to this headline">¶</a></h3>
+<h3>Ruido<a class="headerlink" href="#ruido" title="Permalink to this heading">¶</a></h3>
 <p>En teoría un cromatograma siempre debería ser perfecto, pero no siempre es así.</p>
 <figure class="align-default">
 <img alt="_images/no_noise.gif" src="_images/no_noise.gif" />
@@ -169,7 +166,7 @@ Está se define como:</p>
 <p>Posibles causas del ruido de fondo son: una contaminación de otro ADN o una contaminación con otro cebador (normalmente el cebador reverso utilizado en la PCR).</p>
 </section>
 <section id="errores-en-el-basecalling">
-<h3>Errores en el basecalling<a class="headerlink" href="#errores-en-el-basecalling" title="Permalink to this headline">¶</a></h3>
+<h3>Errores en el basecalling<a class="headerlink" href="#errores-en-el-basecalling" title="Permalink to this heading">¶</a></h3>
 <p>Algunas veces el secuenciador automático no es capaz de colocar los picos correspondientes a las distintas bases a una distancia equidistante. Por ejemplo esto sucede con frecuencia en el dinucleótido GA.</p>
 <figure class="align-default">
 <img alt="_images/GA_space.gif" src="_images/GA_space.gif" />
@@ -185,7 +182,7 @@ Está se define como:</p>
 <p>Mal espaciado y fondo que introduce una base extra.</p>
 </section>
 <section id="heterocigotos">
-<h3>Heterocigotos<a class="headerlink" href="#heterocigotos" title="Permalink to this headline">¶</a></h3>
+<h3>Heterocigotos<a class="headerlink" href="#heterocigotos" title="Permalink to this heading">¶</a></h3>
 <p>Los programas de basecalling suelen interpretar los heterocigotos como N.</p>
 <p>Hay programas especializados en detectar estos picos dobles y en etiquetarlos adecuadamente.</p>
 <figure class="align-default">
@@ -194,7 +191,7 @@ Está se define como:</p>
 <p>Heterocigoto C/T.</p>
 </section>
 <section id="perdida-de-resolucion">
-<h3>Pérdida de resolución<a class="headerlink" href="#perdida-de-resolucion" title="Permalink to this headline">¶</a></h3>
+<h3>Pérdida de resolución<a class="headerlink" href="#perdida-de-resolucion" title="Permalink to this heading">¶</a></h3>
 <p>Incluso las buenas secuencias pierden resolución al avanzar la secuencia, debido a la cromatografía.</p>
 <p>Este es uno de los motivos que hacen que las lecturas no tenga más de 700-800 pb.</p>
 <figure class="align-default">
@@ -211,7 +208,7 @@ Está se define como:</p>
 <p>Resolución mala.</p>
 </section>
 <section id="problemas-durante-la-reaccion-de-secuenciacion">
-<h3>Problemas durante la reacción de secuenciación<a class="headerlink" href="#problemas-durante-la-reaccion-de-secuenciacion" title="Permalink to this headline">¶</a></h3>
+<h3>Problemas durante la reacción de secuenciación<a class="headerlink" href="#problemas-durante-la-reaccion-de-secuenciacion" title="Permalink to this heading">¶</a></h3>
 <p>En algunas ocasiones pueden haber problemas en la reacción de secuenciación que impiden tener una buena secuencia.</p>
 <p>Es necesario diagnosticar el problema para solucionarlo.</p>
 <p>Posibles causas para los problemas en las secuencias.</p>
@@ -272,7 +269,7 @@ Está se define como:</p>
 </section>
 </section>
 <section id="visualizacion-de-cromatogramas">
-<h2>Visualización de cromatogramas<a class="headerlink" href="#visualizacion-de-cromatogramas" title="Permalink to this headline">¶</a></h2>
+<h2>Visualización de cromatogramas<a class="headerlink" href="#visualizacion-de-cromatogramas" title="Permalink to this heading">¶</a></h2>
 <p>Descargar los el fichero cromprimido de cromatogramas de <a class="reference download internal" download="" href="_downloads/523b29e755cbaf748f37700d4c04ee83/cromatogramas.zip"><code class="xref download docutils literal notranslate"><span class="pre">ejemplo</span></code></a>.</p>
 <p>Abrir los cromatogramas que habíamos descargado con el trev de uno en uno y comprobar su calidad.</p>
 <p>Conviene pedir al trev que marque la calidad de la asignación de cada base (view -&gt; display confidence).</p>

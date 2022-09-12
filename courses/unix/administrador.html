@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Administrador &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -76,7 +77,7 @@
                 
     
   <section id="administrador">
-<h1>Administrador<a class="headerlink" href="#administrador" title="Permalink to this headline">¶</a></h1>
+<h1>Administrador<a class="headerlink" href="#administrador" title="Permalink to this heading">¶</a></h1>
 <p>Los sistemas Unix entre los que se encuentra Linux, son sistemas multiusuario, en los que muchos usuarios pueden usar el sistema concurrentemente. No todos los usuarios tienen los mismos permisos en el sistema, existe un usuario especial llamado root que es el administrador o superusuario.</p>
 <p>El usuario root a diferencia del resto de los usuarios, no tiene su carpeta personal en <code class="docutils literal notranslate"><span class="pre">/home</span></code> sino que la tiene en una carpeta separada: <code class="docutils literal notranslate"><span class="pre">/root</span></code>.</p>
 <p>Por defecto un usuario no puede modificar nada excepto su carpeta personal. Por ejemplo un usuario no puede instalar ninguna aplicacion fuera de sus carpeta personal. Para poder hacerlo el usuario tiene dos opciones:</p>
@@ -85,7 +86,7 @@
 <li><p>Convertirse en root.</p></li>
 </ol>
 <section id="sudo">
-<h2>sudo<a class="headerlink" href="#sudo" title="Permalink to this headline">¶</a></h2>
+<h2>sudo<a class="headerlink" href="#sudo" title="Permalink to this heading">¶</a></h2>
 <p>En ubuntu por defecto el usuario root está deshabilitado y la unica forma de conseguir permisos de superusuario es mediente el comando <code class="docutils literal notranslate"><span class="pre">sudo</span></code>. Escribiendo sudo en la consola delante de cualquier comando, estaremos ejecutando el comando con permisos de superusuario:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>user@virtual:~$ cat /etc/shadow
 cat: /etc/shadow: Permiso denegado
@@ -106,7 +107,7 @@ root@virtual:~#
 </div>
 </section>
 <section id="su">
-<h2>su<a class="headerlink" href="#su" title="Permalink to this headline">¶</a></h2>
+<h2>su<a class="headerlink" href="#su" title="Permalink to this heading">¶</a></h2>
 <p>Si no estamos en el grupo de <code class="docutils literal notranslate"><span class="pre">sudo</span></code> o si <code class="docutils literal notranslate"><span class="pre">sudo</span></code> no está disponible en el sistema, podemos usar el comando <code class="docutils literal notranslate"><span class="pre">su</span></code> para poder cambiar de usuario en la misma sesión.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>user@virtual:~$ su
 root@virtual:/home/user# id

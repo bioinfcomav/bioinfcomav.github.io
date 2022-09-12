@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>El sistema de ficheros &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -76,11 +77,11 @@
                 
     
   <section id="el-sistema-de-ficheros">
-<h1>El sistema de ficheros<a class="headerlink" href="#el-sistema-de-ficheros" title="Permalink to this headline">¶</a></h1>
+<h1>El sistema de ficheros<a class="headerlink" href="#el-sistema-de-ficheros" title="Permalink to this heading">¶</a></h1>
 <p>El <a class="reference external" href="https://en.wikipedia.org/wiki/File_system">sistema de archivos</a> controla como se almacenan los archivos en el ordenador.
 Sus dos tareas principales son guardar y leer archivos previamente guardados.</p>
 <section id="sistemas-jerarquicos">
-<h2>Sistemas jerárquicos<a class="headerlink" href="#sistemas-jerarquicos" title="Permalink to this headline">¶</a></h2>
+<h2>Sistemas jerárquicos<a class="headerlink" href="#sistemas-jerarquicos" title="Permalink to this heading">¶</a></h2>
 <p>Los sistemas de archivos suelen tener <a class="reference external" href="https://en.wikipedia.org/wiki/Directory_(computing">directorios</a>) en los que organizar los archivos y estos directorios suelen estar organizados jerárquicamente.
 La jerarquía implica que un directorio puede contener subdirectorios.
 El directorio más alto en la jerarquía del que cuelgan todos los demás se denomina <em>raíz</em> (root).
@@ -109,7 +110,7 @@ Es importante revisar el espacio libre en la partición en la que se encuentra /
 Recuerda que /tmp es borrado habitualmente por el sistema. Normalmente con cada nuevo arranque.</p>
 </section>
 <section id="rutas-absolutas-relativas-y-directorio-de-trabajo">
-<h2>Rutas absolutas, relativas y directorio de trabajo<a class="headerlink" href="#rutas-absolutas-relativas-y-directorio-de-trabajo" title="Permalink to this headline">¶</a></h2>
+<h2>Rutas absolutas, relativas y directorio de trabajo<a class="headerlink" href="#rutas-absolutas-relativas-y-directorio-de-trabajo" title="Permalink to this heading">¶</a></h2>
 <p>Para referirnos a un archivo o a un directorio debemos indicar su ruta (<a class="reference external" href="https://en.wikipedia.org/wiki/Path_(computing">path</a>).
 Un ejemplo de ruta podría ser:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">alicia</span><span class="o">/</span><span class="n">documentos</span><span class="o">/</span><span class="n">tesis</span><span class="o">.</span><span class="n">md</span>
@@ -160,14 +161,14 @@ cd -    Ir al directorio de trabajo previo
 </div>
 </section>
 <section id="directorio-home">
-<h2>Directorio $HOME<a class="headerlink" href="#directorio-home" title="Permalink to this headline">¶</a></h2>
+<h2>Directorio $HOME<a class="headerlink" href="#directorio-home" title="Permalink to this heading">¶</a></h2>
 <p>El directorio $HOME en los sistemas Unix, que son sistemas multiusuario, es el directorio en el que el usuario debe mantener sus ficheros y directorios.
 Fuera de este directorio el usuario tendrá unos permisos restringidos puesto que sus acciones podrían afectar a otros usuarios.</p>
 <p>En Linux los directorios $HOME de los usuarios son subdirectorios del directorio <em>/home</em>.</p>
 <p>El directorio $HOME de un usuario es además el directorio de trabajo por defecto, es decir, el directorio de trabajo que se establece cuando se abre una terminal.</p>
 </section>
 <section id="moviendo-renombrando-y-copiando-ficheros">
-<h2>Moviendo, renombrando y copiando ficheros<a class="headerlink" href="#moviendo-renombrando-y-copiando-ficheros" title="Permalink to this headline">¶</a></h2>
+<h2>Moviendo, renombrando y copiando ficheros<a class="headerlink" href="#moviendo-renombrando-y-copiando-ficheros" title="Permalink to this heading">¶</a></h2>
 <p>En primer lugar vamos a crear un fichero de prueba:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ touch data.txt
 ~$ ls
@@ -228,7 +229,7 @@ exp_1
 </div>
 </section>
 <section id="nombres-de-directorios-y-archivos">
-<h2>Nombres de directorios y archivos<a class="headerlink" href="#nombres-de-directorios-y-archivos" title="Permalink to this headline">¶</a></h2>
+<h2>Nombres de directorios y archivos<a class="headerlink" href="#nombres-de-directorios-y-archivos" title="Permalink to this heading">¶</a></h2>
 <p>En Unix los archivos pueden tener prácticamente cualquier nombre.
 Existe la convención de acabar los nombres con un punto y una pequeña extensión que indica el tipo de archivo.
 Pero esto es sólo una convención, en realidad podríamos no utilizar este tipo de nomenclatura.</p>
@@ -265,7 +266,7 @@ En este caso podemos pedir que se muestren estos archivos en el menú Ver -&gt; 
 </div>
 </section>
 <section id="wildcards">
-<h2>WildCards<a class="headerlink" href="#wildcards" title="Permalink to this headline">¶</a></h2>
+<h2>WildCards<a class="headerlink" href="#wildcards" title="Permalink to this heading">¶</a></h2>
 <p>En muchas ocasiones resulta útil tratar los ficheros de un modo conjunto.
 Por ejemplo, imaginemos que queremos mover todos los ficheros de texto a un directorio y la imágenes a otro.
 Creemos una pequeña demostración:</p>
@@ -297,7 +298,7 @@ Por ejemplo la orden:</p>
 <p>Borraría todos los ficheros y directorios que se encuentren bajo el directorio de trabajo actual, si lo hacemos perderemos todos los ficheros y directorios que cuelgan del actual directorio de trabajo, puede que esto sea lo que queramos, pero hemos de andar con cuidado.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>¿Cuáles son los ficheros y directorios presentes en el directorio raíz?</p></li>
 <li><p>¿Cuáles son todos los archivos presentes en nuestro directorio de usuario?</p></li>
@@ -314,7 +315,7 @@ Por ejemplo la orden:</p>
 </ol>
 </section>
 <section id="obteniendo-informacion-sobre-archivos-y-directorios">
-<h2>Obteniendo información sobre archivos y directorios<a class="headerlink" href="#obteniendo-informacion-sobre-archivos-y-directorios" title="Permalink to this headline">¶</a></h2>
+<h2>Obteniendo información sobre archivos y directorios<a class="headerlink" href="#obteniendo-informacion-sobre-archivos-y-directorios" title="Permalink to this heading">¶</a></h2>
 <p><em>ls</em> es un comando capaz de mostrarnos información extra sobre los archivos y directorios que lista.
 Por ejemplo podemos pedirle, usando la opción <em>-l</em> (Long),  que nos muestre quién es el dueño del archivo y cuanto ocupa y qué permisos tiene además de otras cosas:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls
@@ -340,7 +341,7 @@ El tipo de archivo está determinado por su <a class="reference external" href="
 El magic number está compuesto por una corta <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_file_signatures">serie de bytes</a> que indican el tipo de archivo.</p>
 </section>
 <section id="permisos">
-<h2>Permisos<a class="headerlink" href="#permisos" title="Permalink to this headline">¶</a></h2>
+<h2>Permisos<a class="headerlink" href="#permisos" title="Permalink to this heading">¶</a></h2>
 <p>Unix desde su origen ha sido un sistema multiusuario.
 Para conseguir que cada usuario pueda trabajar en sus archivos, pero que no pueda interferir accidental o deliberadamente con los archivos de otros usuarios se estableció desde el principio un sistema de permisos.
 Por defecto un usuario tiene permiso para leer y modificar sus propios archivos y directorios, pero no los de los demás.
@@ -423,7 +424,7 @@ $ chown diagnostico fichero.txt
 </div>
 </section>
 <section id="obteniendo-informacion-sobre-el-sistema-de-archivos">
-<h2>Obteniendo información sobre el sistema de archivos<a class="headerlink" href="#obteniendo-informacion-sobre-el-sistema-de-archivos" title="Permalink to this headline">¶</a></h2>
+<h2>Obteniendo información sobre el sistema de archivos<a class="headerlink" href="#obteniendo-informacion-sobre-el-sistema-de-archivos" title="Permalink to this heading">¶</a></h2>
 <p>El sistema de archivos puede abarcar una o más <a class="reference external" href="https://en.wikipedia.org/wiki/Disk_partitioning">particiones</a>.
 Una partición es una región de un disco o de cualquier otro medio de almacenamiento.
 Las instalaciones de Windows tienen normalmente una partición por disco, pero en Linux esto no es tan habitual.
@@ -468,7 +469,7 @@ Podemos pedir a <em>du</em> que nos muestre cuanto espacio ocupan los directorio
 </pre></div>
 </div>
 <section id="id1">
-<h3>Ejercicios<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>Ejercicios<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>¿Cuáles son los permisos de los directorios presentes en el directorio raíz y en nuestro directorio de usuario? ¿A quién pertenecen los ficheros y qué permisos tienen los distintos usuarios del ordenador?</p></li>
 <li><p>Crea un directorio en tu home y muestra los permisos que tiene.</p></li>
@@ -483,7 +484,7 @@ Podemos pedir a <em>du</em> que nos muestre cuanto espacio ocupan los directorio
 </section>
 </section>
 <section id="compresion-y-descompresion-de-ficheros">
-<h2>Compresion y descompresión de ficheros<a class="headerlink" href="#compresion-y-descompresion-de-ficheros" title="Permalink to this headline">¶</a></h2>
+<h2>Compresion y descompresión de ficheros<a class="headerlink" href="#compresion-y-descompresion-de-ficheros" title="Permalink to this heading">¶</a></h2>
 <p>Existen distintos formatos de compresión de ficheros como: gzip, bzip, zip o rar.
 Los formatos más utilizados en Unix son gzip y bzip.</p>
 <p>Comprimir un fichero con gzip o bzip:</p>
@@ -568,7 +569,7 @@ seq2.fasta
 </pre></div>
 </div>
 <section id="id2">
-<h3>Ejercicios<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>Ejercicios<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Crea un fichero de texto en el directorio ~/Documentos y comprimelo con gzip</p></li>
 <li><p>Muestra el contenido del fichero anterior en pantalla sin descomprimirlo previamente</p></li>
@@ -580,7 +581,7 @@ seq2.fasta
 </section>
 </section>
 <section id="enlaces-duros-y-blandos">
-<h2>Enlaces duros y blandos<a class="headerlink" href="#enlaces-duros-y-blandos" title="Permalink to this headline">¶</a></h2>
+<h2>Enlaces duros y blandos<a class="headerlink" href="#enlaces-duros-y-blandos" title="Permalink to this heading">¶</a></h2>
 <p>Podemos pensar en el nombre de un fichero como en una etiqueta que apunta a una posición concreta en el disco duro, en realidad es un puntero a un <a class="reference external" href="https://en.wikipedia.org/wiki/Inode">inodo</a>.</p>
 <p>Podmeos pensar en un <a class="reference external" href="https://en.wikipedia.org/wiki/Hard_link">enlace duro</a> como en un nombre adicional para un archivo.
 Si tenemos un archivo en el disco y creamos un enlace duro tendremos dos nombres para ese único archivo.</p>
@@ -632,7 +633,7 @@ hola
 <p>Los enlaces blandos funcionan incluso entre distintos sistemas de archivos o particiones, los duros no.</p>
 </section>
 <section id="id3">
-<h2>Ejercicios<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Crea un enlace simbólico a un fichero de texto dentro del direcotorio ~/Documentos</p></li>
 <li><p>Crea un enlace duro al mismo fichero.</p></li>
@@ -642,7 +643,7 @@ hola
 </ol>
 </section>
 <section id="acceso-remoto">
-<h2>Acceso remoto<a class="headerlink" href="#acceso-remoto" title="Permalink to this headline">¶</a></h2>
+<h2>Acceso remoto<a class="headerlink" href="#acceso-remoto" title="Permalink to this heading">¶</a></h2>
 <p>Una de las grandes ventajas de utilizar la terminal es que podemos acceder a terminales en otros ordenadores muy fácilmente.
 El protocolo más utilizado para acceder a terminales de forma remota es <a class="reference external" href="https://en.wikipedia.org/wiki/Secure_Shell">ssh</a> (Secure Shell).
 ssh tiene un gran número de posibilidades, pero el uso más habitual es utilizarlo para abrir terminales en ordenadores remotos que tienen un servicio ssh.
@@ -679,7 +680,7 @@ $ scp /some/local/directory/seq.txt alicia@remotehost.edu:/remote/directory/
 </pre></div>
 </div>
 <section id="id4">
-<h3>Ejercicios<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>Ejercicios<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Contectate a un servidor remoto usando ssh</p></li>
 <li><p>Transfiere un fichero desde tu ordenador al servidor</p></li>
