@@ -3,7 +3,7 @@ Bioinformatics
 ==============
 
 This introduction to bioinformatics will deal mainly with sequence analysis and it is aimed to the 3rd course of the degree in Biotechnology.
-The main course ideas are covered in these `Slides <https://drive.google.com/drive/folders/1mkI1j48pEnzzJv4zGSq_-n_WYlJbZO9k?usp=sharing>`_.
+The main course ideas are covered in these `Slides <https://drive.google.com/drive/folders/14Rj_kis0E-3t_1ufRUhQ4ElGvDkEYi6A?usp=sharing>`_.
 
 The lessons will be mainly practical. They will have a brief theoretical introduction and several practical exercises.
 

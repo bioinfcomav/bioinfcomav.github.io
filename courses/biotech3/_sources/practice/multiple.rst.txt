@@ -16,12 +16,12 @@ Is there any problem?
 What would happen if we remove the most dissimilar sequences
 ------------------------------------------------------------
 
-Redo the analysis only with the `closest mammals :download:<../static/multiple/frataxin_mamiferos_cercanos.fasta>` and compare the result with the previous one.
+Redo the analysis only with the :download:`closest mammals <../static/multiple/frataxin_mamiferos_cercanos.fasta>` and compare the result with the previous one.
 
 What would happen with more dissimilar sequences
 ------------------------------------------------
 
-Try to do the alignment with more different `sequences :download:<../static/multiple/frataxin_prot.fasta>`.
+Try to do the alignment with more different :download:`sequences <../static/multiple/frataxin_prot.fasta>`.
 
 T-Coffee
 --------

@@ -171,6 +171,6 @@ First, you can run the program with the default options and look at the output f
 
 Depending on the software that we want to use we should the interleaved or the two file version; but most of actual ones use the one file version.
 
-Is this useful? Taking into account that the reads are paired reads, can we improve the convertion?::
+Is this useful? Taking into account that the reads are paired reads, can we improve the conversion?::
 
   ngs_user@ngsmachine:~$ fastq-dump --split-files --defline-qual "+" --defline-seq '@$sn/$ri' --gzip SRR2970642
