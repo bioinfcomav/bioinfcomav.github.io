@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Funciones &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -26,6 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="../index.html" />
@@ -178,7 +179,7 @@ Esto lo podríamos escribir en comentarios cercanos a la línea de la definició
 Basta con crear una cadena de texto en la línea siguiente a la función para que la función quede comentada.
 Este texto será el que nos aparezca cuando pidamos la ayuda sobre el uso de la función.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_media</span><span class="p">(</span><span class="n">valores</span><span class="p">):</span>
-   <span class="sd">&#39;&#39;&#39;Dada una lista de valores numericos devuelve la media aritmetica.</span>
+<span class="w">   </span><span class="sd">&#39;&#39;&#39;Dada una lista de valores numericos devuelve la media aritmetica.</span>
 
 <span class="sd">   Requiere una lista de valores.</span>
 <span class="sd">   Devuelve un float con la media aritmetica de los valores.</span>
@@ -450,7 +451,7 @@ Reescribir el programa utilizando funciones.</p>
 <span class="c1"># patrones de texto e imprime las lineas coincidentes</span>
 
 <span class="k">def</span> <span class="nf">imprimir_lineas_coincidentes</span><span class="p">(</span><span class="n">nombre_fichero</span><span class="p">,</span> <span class="n">patrones</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Dado un fichero y unos patrones imprime las lineas coincidentes</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Dado un fichero y unos patrones imprime las lineas coincidentes</span>
 <span class="sd">    Para cada linea del fichero se evaluara si incluye uno de los patrones</span>
 <span class="sd">    o no. Si uno de los patrones esta presente la linea se imprimira.</span>
 
@@ -503,7 +504,7 @@ Reescribir el programa utilizando funciones.</p>
 <span class="c1">#Calcula la media entre de los tres primeros valores y los tres segundos.</span>
 
 <span class="k">def</span> <span class="nf">calcular_media</span><span class="p">(</span><span class="n">valores</span><span class="p">):</span>
-   <span class="sd">&#39;&#39;&#39;Dada una lista de valores devuelve la media.</span>
+<span class="w">   </span><span class="sd">&#39;&#39;&#39;Dada una lista de valores devuelve la media.</span>
 
 <span class="sd">    Los valores pueden ser cadenas de texto, int o float.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -577,7 +578,7 @@ Reescribir el programa utilizando funciones.</p>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transformar_genotipo</span><span class="p">(</span><span class="n">linea_genotipo</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Transforma una linea de genotipo</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Transforma una linea de genotipo</span>
 
 <span class="sd">    desde:</span>
 <span class="sd">       snp1 GG CC GC GG GC CC</span>
@@ -635,7 +636,7 @@ Reescribir el programa utilizando funciones.</p>
 
 
 <span class="k">def</span> <span class="nf">cambiar_formato_genotipos</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Transforma un fichero de genotipado a otro formato.</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Transforma un fichero de genotipado a otro formato.</span>
 
 <span class="sd">    El formato de entrada debe ser:</span>
 

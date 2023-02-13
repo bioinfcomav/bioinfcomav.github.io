@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Ejercicios finales &mdash; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -26,6 +26,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
@@ -718,7 +719,7 @@ Alternativamente se puede hacer que las secuencias sean procesadas de una en una
 
 
 <span class="k">def</span> <span class="nf">contig_stats</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Calcula la distribucion del numero de reads por genoteca</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Calcula la distribucion del numero de reads por genoteca</span>
 <span class="sd">    para un contig.</span>
 
 <span class="sd">    El nombre de la genoteca son las tres primeras letras del</span>
@@ -756,7 +757,7 @@ Alternativamente se puede hacer que las secuencias sean procesadas de una en una
         <span class="k">yield</span> <span class="n">stats</span>
 
 <span class="k">def</span> <span class="nf">hacer_stats_contigs</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Calcula la distribucion del numero de reads por genoteca.</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Calcula la distribucion del numero de reads por genoteca.</span>
 
 <span class="sd">    El nombre de la genoteca son las tres primeras letras del</span>
 <span class="sd">    nombre del read.</span>
@@ -785,7 +786,7 @@ Alternativamente se puede hacer que las secuencias sean procesadas de una en una
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="k">def</span> <span class="nf">leer_go_desc</span><span class="p">(</span><span class="n">fichero</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Lee el fichero de GO id y devuelve un diccionario.</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Lee el fichero de GO id y devuelve un diccionario.</span>
 
 <span class="sd">    El fichero tiene el formato:</span>
 <span class="sd">    !comentarios</span>
@@ -818,7 +819,7 @@ Alternativamente se puede hacer que las secuencias sean procesadas de una en una
     <span class="k">return</span> <span class="n">gos</span>
 
 <span class="k">def</span> <span class="nf">leer_c_elegans_go_annot</span><span class="p">(</span><span class="n">celegans_annot</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Lee la anotacion y devuelve un dict</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Lee la anotacion y devuelve un dict</span>
 
 <span class="sd">    La anotacion debe tener el formato:</span>
 <span class="sd">    !comentarios</span>
@@ -862,7 +863,7 @@ Alternativamente se puede hacer que las secuencias sean procesadas de una en una
     <span class="k">return</span> <span class="n">genes_gos</span>
 
 <span class="k">def</span> <span class="nf">transformar_blast_report</span><span class="p">(</span><span class="n">fichero</span><span class="p">,</span> <span class="n">annot</span><span class="p">,</span> <span class="n">go_desc</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Lee un blast report y le anyade los Gos.</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Lee un blast report y le anyade los Gos.</span>
 
 <span class="sd">    El blast report debe tener el formato:</span>
 <span class="sd">    query1 hit1 hit1 hit2 hit3</span>
