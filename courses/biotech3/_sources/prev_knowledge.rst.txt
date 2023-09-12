@@ -3,24 +3,24 @@
 Previous Knowledge
 ------------------
 
-`Previous Knowledge Presentation <presentations/prev_knowledge.odp>`_
+`Previous Knowledge Presentation <https://docs.google.com/presentation/d/1tfXl4RhY5VVuaKhUbUMT_Dn0eAZFTSVs6HtVRvDDONo/edit?usp=drive_link>`_
 
 Previous knowledge test
 =======================
 
 Previous knowledge test:
 
-
-* `ARA <https://forms.gle/apBDErV2eSWaa7Qz8>`_
-* `Castellano <https://forms.gle/AFecGV9vre8yfKK96>`_
-
-Resultados del `test de inicio de curso <https://docs.google.com/presentation/d/1UaNeuIoZS0Sr6HHrtvoPTrJ6GHsErS7VcyWhvdtAOUM/edit?usp=sharing>`_.
+* `Inglés <https://forms.gle/v3d6a7NXrSqscUsH9>`_
+* `Castellano <https://forms.gle/KNP7W7735f9agKox9>`_
 
 Computer Knowledge
 ==================
 
 No previous computer knowledge is required to follow this course, beside basic computer usage.
 But we expect the student to have some general biological knowledge.
+
+Basic statistics
+================
 
 Biology Fundamentals
 ====================
