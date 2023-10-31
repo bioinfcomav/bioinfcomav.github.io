@@ -1,93 +1,47 @@
+<!DOCTYPE html>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>NGS expression analysis &mdash; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/style.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/style.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <title>NGS expression analysis &#8212; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
     <link rel="next" title="Dealing with big result files" href="text_files.html" />
-    <link rel="prev" title="SNP calling" href="snp_calling.html" /> 
-  </head>
-  <body>
+    <link rel="prev" title="SNP calling" href="snp_calling.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-<div class="body">
-    <header>
-        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
-    </header>
+  </head><body>
+  
 
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
 
-    <nav class="horizontal_nav page_nav">
-        <ul>
-            <li><a href="/index.html">Bioinformatics & genomics</a>
-                <ul>
-                    <li><a href="/services.html">Services</a></li>
-                    <li><a href="/people.html">People</a></li>
-                    <li><a href="/publications.html">Publications</a></li>
-                    <li><a href="/getting_here.html">Getting here</a></li>
-<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
-               </ul>
-            </li>
-            <li><a href="/software.html">Software</a>
-                <ul>
-                    <li><a href="https://github.com/bioinfcomav/">Bioinf COMAV</a></li>
-                    <li><a href="https://github.com/JoseBlanca/">Jose Blanca</a></li>
-                    <!--
-                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
-                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
-                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
-                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
-                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
-               </ul>
-            </li>
-            <li><a href="/courses.html">Courses</a>
-                <ul>
-                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
-                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
-                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
-                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
-               </ul>
-        </ul>
-    </nav>
-
-    <main>
-                
-    
+          <div class="body" role="main">
+            
   <section id="ngs-expression-analysis">
-<h1>NGS expression analysis<a class="headerlink" href="#ngs-expression-analysis" title="Permalink to this heading">¶</a></h1>
+<h1>NGS expression analysis<a class="headerlink" href="#ngs-expression-analysis" title="Link to this heading">¶</a></h1>
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR3x87hIUakq-ObmWls9FaxCoWwCvK8EFc9cTk5b2g9TV0y94Fuwbg3WoAyzTtj7He_WtX_bM12qjTh/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe><p>There are several interesting RNA-Seq reviews: <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-8">A survey of best practices for RNA-seq data analysis</a>, <a class="reference external" href="http://www.bioconductor.org/help/workflows/rnaseqGene/">RNA-seq workflow: gene-level exploratory analysis and differential expression</a>, <a class="reference external" href="http://genomebiology.com/2010/11/12/220">From RNA-seq reads to differential expression results</a>, <a class="reference external" href="http://www.biomedcentral.com/1741-7007/9/34">Microarrays, deep sequencing and the true measure of the transcriptome</a>, <a class="reference external" href="http://www.nature.com/nmeth/journal/v8/n6/full/nmeth.1613.html">Computational methods for transcriptome annotation and quantification using RNA-seq</a>, <a class="reference external" href="http://www.nature.com/nrg/journal/v12/n10/full/nrg3068.html">Next-generation transcriptome assembly</a>, <a class="reference external" href="http://biorxiv.org/content/early/2016/02/18/035642">An opinionated guide to the proper care and feeding of your transcriptome</a> and <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0553-5">Evaluation of de novo transcriptome assemblies from RNA-Seq data</a>.</p>
 <p>There are also some interesting studies regarding the <a class="reference external" href="http://www.biomedcentral.com/1471-2164/14/328">post-processing</a>, <a class="reference external" href="http://www.biomedcentral.com/content/pdf/1471-2164-14-465.pdf">quality</a> of the assembled transcriptomes, the <a class="reference external" href="http://biorxiv.org/content/biorxiv/early/2014/07/14/007088.full.pdf">alternative transcript</a> reconstruction success of different algorithms, the <a class="reference external" href="http://genomebiology.com/2014/15/12/553/abstract">evaluation</a> of different assembly strategies.</p>
 <p><a class="reference external" href="http://www.nature.com/nbt/journal/v33/n3/full/nbt.3122.html">StringTie</a> reconstruction algorithm.</p>
 <p><a class="reference external" href="http://hibberdlab.com/transrate/">transrate</a>, a software to evaluate the transcriptome assembly quality.</p>
 </section>
 <section id="practical-tasks">
-<h1>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this heading">¶</a></h1>
+<h1>Practical tasks<a class="headerlink" href="#practical-tasks" title="Link to this heading">¶</a></h1>
 <section id="mapping-and-count-sequences">
-<h2>Mapping and count sequences<a class="headerlink" href="#mapping-and-count-sequences" title="Permalink to this heading">¶</a></h2>
+<h2>Mapping and count sequences<a class="headerlink" href="#mapping-and-count-sequences" title="Link to this heading">¶</a></h2>
 <p>The objective is to map and count redas using an <a class="reference download internal" download="" href="_downloads/8b0bd8b64c5c16bef1f43a4e9488ffb6/SRR45_region.fastq"><code class="xref download docutils literal notranslate"><span class="pre">example</span> <span class="pre">file</span></code></a>  of a RNAseq experience  with only a sample. We use <a class="reference external" href="http://daehwankimlab.github.io/hisat2/">Hisat2</a>  to map read againt the <a class="reference download internal" download="" href="_downloads/970c0364472e11c04558b39a7495b09a/sl2.fasta"><code class="xref download docutils literal notranslate"><span class="pre">genome</span></code></a> and <a class="reference external" href="https://ccb.jhu.edu/software/stringtie/">StringTie</a> to count the reads.</p>
 <p>First we download the <a class="reference download internal" download="" href="_downloads/2917d130a06ff95710fced6d4c9a6d11/sl2_index.zip"><code class="xref download docutils literal notranslate"><span class="pre">index</span> <span class="pre">files</span> <span class="pre">of</span> <span class="pre">genome</span></code></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine: mkdir rnaseq
@@ -118,25 +72,84 @@ ngs_user@machine:~/rnaseq/tophat_out$ samtools sort SRR45.bam -o SRR45_sort.bam
 </section>
 
 
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/comav.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="index.html">Bioinformatics at COMAV</a></h1>
 
-        
 
-    </main>
 
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sequencing_technologies.html">Sequencing technologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ngs_applications_examples.html">NGS application examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_analysis_software.html">NGS analysis software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmd_primer.html">Command line primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequence_file_formats.html">NGS sequence file formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read_cleaning.html">NGS read cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assembly.html">Sequence assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Sequence mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snp_calling.html">SNP calling and filtering</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NGS expression analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#practical-tasks">Practical tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_files.html">Dealing with big result files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bedtools.html">BEDTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_practice.html">Final practice</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="snp_calling.html" title="previous chapter">SNP calling</a></li>
+      <li>Next: <a href="text_files.html" title="next chapter">Dealing with big result files</a></li>
+  </ul></li>
+</ul>
 </div>
-    <footer>
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
-    </footer>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-16108274-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
 
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2010, Jose Blanca & Joaquin Cañizares.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
   </body>
 </html>

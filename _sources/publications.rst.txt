@@ -1,3 +1,6 @@
+Publications
+~~~~~~~~~~~~
+
 Dissemination articles
 ======================
 
@@ -11,6 +14,14 @@ The conversation. 2022                    `Historia del tomate: del desprecio de
 
 Publications
 ============
+2023
+____
+========================================= ======
+Journal                                   Title
+========================================= ======
+EMBO Reports                              `Changes in lipid metabolism driven by steroid signalling modulate proteostasis in C. elegans <https://www.embopress.org/doi/full/10.15252/embr.202255556>`_
+Procedings of the Royal Society B         `Quantitative genetic analysis of floral traits shows current limits but potential evolution in the wild <https://royalsocietypublishing.org/doi/full/10.1098/rspb.2023.0141?rfr_dat=cr_pub++0pubmed&url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org>`_
+========================================= ======
 2022
 ____
 ========================================= ======

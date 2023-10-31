@@ -1,89 +1,43 @@
+<!DOCTYPE html>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Procesamiento de ficheros de texto &mdash; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/style.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/style.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <title>Procesamiento de ficheros de texto &#8212; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
     <link rel="next" title="Expresiones regulares" href="expresiones_regulares.html" />
-    <link rel="prev" title="Flujos de información" href="pipes.html" /> 
-  </head>
-  <body>
+    <link rel="prev" title="Flujos de información" href="pipes.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-<div class="body">
-    <header>
-        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
-    </header>
+  </head><body>
+  
 
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
 
-    <nav class="horizontal_nav page_nav">
-        <ul>
-            <li><a href="/index.html">Bioinformatics & genomics</a>
-                <ul>
-                    <li><a href="/services.html">Services</a></li>
-                    <li><a href="/people.html">People</a></li>
-                    <li><a href="/publications.html">Publications</a></li>
-                    <li><a href="/getting_here.html">Getting here</a></li>
-<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
-               </ul>
-            </li>
-            <li><a href="/software.html">Software</a>
-                <ul>
-                    <li><a href="https://github.com/bioinfcomav/">Bioinf COMAV</a></li>
-                    <li><a href="https://github.com/JoseBlanca/">Jose Blanca</a></li>
-                    <!--
-                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
-                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
-                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
-                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
-                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
-               </ul>
-            </li>
-            <li><a href="/courses.html">Courses</a>
-                <ul>
-                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
-                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
-                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
-                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
-               </ul>
-        </ul>
-    </nav>
-
-    <main>
-                
-    
+          <div class="body" role="main">
+            
   <section id="procesamiento-de-ficheros-de-texto">
-<h1>Procesamiento de ficheros de texto<a class="headerlink" href="#procesamiento-de-ficheros-de-texto" title="Permalink to this heading">¶</a></h1>
+<h1>Procesamiento de ficheros de texto<a class="headerlink" href="#procesamiento-de-ficheros-de-texto" title="Link to this heading">¶</a></h1>
 <p>Uno de los puntos fuertes de los sistemas Unix estriba en la facilidad con la que pueden analizar los ficheros de texto en ellos.
 Estos sistemas incluyen una serie de herramientas que permiten realizar una gran cantidad de manipulaciones en estos ficheros sin necesidad de instalar ninguna herramienta especializada.</p>
 <p>En esta sección vamos a presentar varias de estas herramientas. Trabajaremos con el siguiente <a class="reference external" href="./demo_data/microarray_adenoma_hk69.ods">archivo de prueba</a>.</p>
 <section id="ficheros-de-texto-y-binarios">
-<h2>Ficheros de texto y binarios<a class="headerlink" href="#ficheros-de-texto-y-binarios" title="Permalink to this heading">¶</a></h2>
+<h2>Ficheros de texto y binarios<a class="headerlink" href="#ficheros-de-texto-y-binarios" title="Link to this heading">¶</a></h2>
 <p>Antes de comenzar a analizar los este tipo de ficheros debemos aclarar qué es y qué no es un <a class="reference external" href="https://en.wikipedia.org/wiki/Text_file">fichero de texto</a>.
 Un fichero de texto es un fichero dividido en líneas y cuyo contenido es exclusivamente <a class="reference external" href="https://en.wikipedia.org/wiki/Plain_text">texto simple</a>, es decir, sólo hay caracteres alfanuméricos (letras y números), retornos de carro y tabuladores.
 Los ficheros de texto pueden ser abiertos e inspeccionados sin necesidad de hacer uso de un software especial diseñado para trabajar con ellos.</p>
@@ -93,7 +47,7 @@ La información contenida en estos documentos es binaria y sólo los programas e
 Mientras otros sistemas operativos favorecen la utilización de ficheros binarios, que deben ser acompañados de herramientas especiales para poder manipularlos, en Unix se optó por crear un conjunto de herramientas para manipulación de ficheros de texto y por utilizar para los ficheros del sistema sólo ficheros de texto siempre que esto fuese posible.</p>
 </section>
 <section id="editores-de-texto">
-<h2>Editores de texto<a class="headerlink" href="#editores-de-texto" title="Permalink to this heading">¶</a></h2>
+<h2>Editores de texto<a class="headerlink" href="#editores-de-texto" title="Link to this heading">¶</a></h2>
 <p>En Linux existen editores de texto que funcionan con entorno gráfico, como el <em>gedit</em>, <em>KWrite</em> o <em>Leafpad</em>, y editores que funcionan en la terminal, como el <em>nano</em>, <em>pico</em> o <em>vim</em></p>
 <p><em>vim</em> es un editor de texto potente y versátil pero dominar su manejo requiere bastante tiempo.</p>
 <p><em>nano</em> es una versión mejorada de <em>pico</em>. Se trata de un editor simple y versátil pero mucho más fácil de usar que, por ejemplo, <em>vim</em> y está instalado por defecto en muchas distribuciones de Linux.</p>
@@ -126,7 +80,7 @@ Mientras otros sistemas operativos favorecen la utilización de ficheros binario
 </ul>
 </section>
 <section id="imprimiendo-ficheros-cat-head-y-tail">
-<h2>Imprimiendo ficheros <em>cat</em>, <em>head</em> y <em>tail</em><a class="headerlink" href="#imprimiendo-ficheros-cat-head-y-tail" title="Permalink to this heading">¶</a></h2>
+<h2>Imprimiendo ficheros <em>cat</em>, <em>head</em> y <em>tail</em><a class="headerlink" href="#imprimiendo-ficheros-cat-head-y-tail" title="Link to this heading">¶</a></h2>
 <p>A veces, si los archivos son muy grandes incluso los editores en línea pueden tener problemas para abrirlos.
 Otra forma de acceder a los contenidos del fichero sería imprimir el fichero en la terminal utilizando el comando <em>cat</em>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cat microarray_adenoma_hk69.ods
@@ -178,7 +132,7 @@ Por ejemplo, para omitir la cabecera del archivo de micro_adenoma que ocupa las 
 </div>
 </section>
 <section id="navegando-por-un-fichero-de-texto">
-<h2>Navegando por un fichero de texto<a class="headerlink" href="#navegando-por-un-fichero-de-texto" title="Permalink to this heading">¶</a></h2>
+<h2>Navegando por un fichero de texto<a class="headerlink" href="#navegando-por-un-fichero-de-texto" title="Link to this heading">¶</a></h2>
 <p>En muchas ocasiones para familiarizarnos con el fichero lo mejor es abrirlo y navegar por él.
 Podríamos abrir el fichero con un editor de texto, pero ya hemos visto que si es muy grande podríamos tener problemas.
 Existe una herramienta capaz de abrir ficheros de texto inmensos sin problemas, <em>less</em>.</p>
@@ -202,16 +156,16 @@ En cualquier momento podemos salir de <em>less</em> pulsando la tecla “q”.</
 </ul>
 </section>
 <section id="edicion-por-linea-de-comandos">
-<h2>Edición por línea de comandos<a class="headerlink" href="#edicion-por-linea-de-comandos" title="Permalink to this heading">¶</a></h2>
+<h2>Edición por línea de comandos<a class="headerlink" href="#edicion-por-linea-de-comandos" title="Link to this heading">¶</a></h2>
 <section id="wc">
-<h3><em>wc</em><a class="headerlink" href="#wc" title="Permalink to this heading">¶</a></h3>
+<h3><em>wc</em><a class="headerlink" href="#wc" title="Link to this heading">¶</a></h3>
 <p><em>wc</em> (<em>Word Count</em>) sirve para contar líneas, palabras y caracteres.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ wc leukemia microarray_adenoma_hk69.csv
 </pre></div>
 </div>
 </section>
 <section id="grep">
-<h3><em>grep</em><a class="headerlink" href="#grep" title="Permalink to this heading">¶</a></h3>
+<h3><em>grep</em><a class="headerlink" href="#grep" title="Link to this heading">¶</a></h3>
 <p>Una tarea que vamos a tener que realizar habitualmente es la de seleccionar diversas líneas en un fichero de texto.
 Por ejemplo, imaginemos que queremos saber cual es la expresión de los genes relacionados con la leucemia en el fichero del <em>microarray</em>.
 Esto, que en otros sistemas operativos podría resultar bastante complejo de hacer en Unix es trivial:</p>
@@ -262,7 +216,7 @@ Podríamos además redirigir el resultado final a un fichero para guardar el res
 Todos siguen el principio de realizar una tarea concreta pero teniendo la capacidad de enlazarse con otros.</p>
 </section>
 <section id="cut">
-<h3><em>cut</em><a class="headerlink" href="#cut" title="Permalink to this heading">¶</a></h3>
+<h3><em>cut</em><a class="headerlink" href="#cut" title="Link to this heading">¶</a></h3>
 <p>Cuando el fichero está dividido en campos, como en el caso de la tabla que estamos utilizando, podemos seleccionar alguno de estos campos utilizando el comando <em>cut</em>.
 Por ejemplo mejoremos la búsqueda que habíamos hecho quedándonos tan solo con el nombre del gen:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep leukemia microarray_adenoma_hk69.csv | cut -f 3
@@ -294,7 +248,7 @@ Pero podríamos indicarle que los campos están divididos de otro modo, por ejem
 </div>
 </section>
 <section id="sed">
-<h3><em>sed</em><a class="headerlink" href="#sed" title="Permalink to this heading">¶</a></h3>
+<h3><em>sed</em><a class="headerlink" href="#sed" title="Link to this heading">¶</a></h3>
 <p>El <em>sed</em> (<em>stream editor</em>) es un editor de texto un tanto especial que toma las líneas de una en una,
 les aplica la transformación que le indiquemos y devuelve las líneas modificadas.</p>
 <p>Por ejemplo, la lista de genes que hemos obtenido en el apartado anterior puede servirnos para muchos propósitos, pero todavía no está limpia del todo, quedaría mejor si eliminásemos las comillas que rodean los campos:</p>
@@ -318,7 +272,7 @@ Además, a la expresión le hemos añadido una “g”, con este modificador le 
 <p><em>sed</em> acepta expresiones regulares como patrones y con ellas puede realizar prácticamente cualquier substitución que podamos imaginar.</p>
 </section>
 <section id="sort">
-<h3><em>sort</em><a class="headerlink" href="#sort" title="Permalink to this heading">¶</a></h3>
+<h3><em>sort</em><a class="headerlink" href="#sort" title="Link to this heading">¶</a></h3>
 <p>Si deseamos ordenar alfabéticamente un fichero de texto tan sólo tenemos que utilizar el comando <em>sort</em>.
 Por ejemplo, podemos ordenar los genes relacionados con la leucemia:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep leukemia microarray_adenoma_hk69.csv | cut -f 3,4| sort
@@ -328,7 +282,7 @@ Por ejemplo, podemos ordenar los genes relacionados con la leucemia:</p>
 Para ver qué se puede hacer con <em>sort</em> lo más recomendable es leer su manual.</p>
 </section>
 <section id="uniq">
-<h3><em>uniq</em><a class="headerlink" href="#uniq" title="Permalink to this heading">¶</a></h3>
+<h3><em>uniq</em><a class="headerlink" href="#uniq" title="Link to this heading">¶</a></h3>
 <p>En el ejemplo anterior, al ordenar con <em>sort</em>, hemos visto que en la lista que hemos obtenido hay genes repetidos.
 Con el comando <em>uniq</em> podemos eliminar las líneas duplicadas consecutivas.
 Para que la eliminación sea completa hay que recordad ordenar con <em>sort</em> antes de utilizar <em>uniq</em>:</p>
@@ -337,7 +291,7 @@ Para que la eliminación sea completa hay que recordad ordenar con <em>sort</em>
 </div>
 </section>
 <section id="shuf">
-<h3><em>shuf</em><a class="headerlink" href="#shuf" title="Permalink to this heading">¶</a></h3>
+<h3><em>shuf</em><a class="headerlink" href="#shuf" title="Link to this heading">¶</a></h3>
 <p><em>shuf</em> permite obtener permutaciones aleatorias del archivo de entrada, o bien obtener líneas aleatorias.</p>
 <p>Si no le pasamos ningún parámeto a <em>shuf</em> obtendremos permutaciones aleatorias:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls / | shuf
@@ -350,9 +304,9 @@ Para que la eliminación sea completa hay que recordad ordenar con <em>sort</em>
 </section>
 </section>
 <section id="herramientas-para-unir-archivos">
-<h2>Herramientas para unir archivos<a class="headerlink" href="#herramientas-para-unir-archivos" title="Permalink to this heading">¶</a></h2>
+<h2>Herramientas para unir archivos<a class="headerlink" href="#herramientas-para-unir-archivos" title="Link to this heading">¶</a></h2>
 <section id="paste">
-<h3><em>paste</em><a class="headerlink" href="#paste" title="Permalink to this heading">¶</a></h3>
+<h3><em>paste</em><a class="headerlink" href="#paste" title="Link to this heading">¶</a></h3>
 <p><em>paste</em> une ficheros tabulares línea por línea.
 Supongamos que tenemos dos ficheros, uno con datos sobre la progresión de la enfermedad de una serie de enfermos y otro con el genotipado de los mismos:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacientes</span><span class="p">:</span>
@@ -385,7 +339,7 @@ id_paciente,nivel_colesterol,id_paciente,SNP_a,SNP_b
 </div>
 </section>
 <section id="join">
-<h3><em>join</em><a class="headerlink" href="#join" title="Permalink to this heading">¶</a></h3>
+<h3><em>join</em><a class="headerlink" href="#join" title="Link to this heading">¶</a></h3>
 <p><em>join</em> es una herramienta muy potente, pero sencilla. Permite unir dos ficheros de texto en uno usando una columna como clave común. Por defecto, <em>join</em> asume que el separador de campos es el espacio.</p>
 <p><em>join</em> es una especie de <em>paste</em> en la que la columna común que sirve como enlace entre ambas tablas no queda duplicada y no requiere que un elemento esté en los dos archivos. <em>join</em> lo que sí que requiere es que ambos archivos estén ordenados por la columna que se queiere usar como clave
 Imaginemos que tenemos los dos ficheros siguientes: <a class="reference external" href="./demo_data/file1.txt">file1.txt</a> y <a class="reference external" href="./demo_data/file2.txt">file2.txt</a></p>
@@ -438,7 +392,7 @@ rst 9 ttt
 </section>
 </section>
 <section id="codificacion-de-caracteres">
-<h2>Codificación de caracteres<a class="headerlink" href="#codificacion-de-caracteres" title="Permalink to this heading">¶</a></h2>
+<h2>Codificación de caracteres<a class="headerlink" href="#codificacion-de-caracteres" title="Link to this heading">¶</a></h2>
 <p>Los ordenadores codifican los caracteres del lenguaje natural utilizando números.
 Los ficheros de texto no son pues más que ficheros de números que el ordenador transforma en caracteres utilizando una tabla de codificación de caracteres antes de imprimirlos.
 Una de las tablas de codificación más populares es la <a class="reference external" href="https://es.wikipedia.org/wiki/ASCII">ASCII</a>, en ella se incluyen los caracteres utilizados en la lengua inglesa, pero no los acentos o los caracteres de otros alfabetos.
@@ -461,7 +415,7 @@ Por ejemplo si tenemos un archivo con una codificación <a class="reference exte
 </div>
 </section>
 <section id="fin-de-linea">
-<h2>Fin de línea<a class="headerlink" href="#fin-de-linea" title="Permalink to this heading">¶</a></h2>
+<h2>Fin de línea<a class="headerlink" href="#fin-de-linea" title="Link to this heading">¶</a></h2>
 <p>Para marcar el final de una línea en un fichero de texto se utiliza un carácter especial.
 Por desgracia no ha habido un acuerdo a la hora de decidirse cual es el carácter que debe usarse.
 Unix, Windows y Mac OS utilizan caracteres diferentes.
@@ -477,7 +431,7 @@ Casi todos los editores de texto permiten hacer el cambio entre los distintos fi
 </div>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">¶</a></h2>
 <p>Se ha realizado un estudio de un nuevo tratamiento para un linfoma y nos han enviado dos ficheros.
 En el llamando <a class="reference external" href="demo_data/cancer_progresion.txt">cancer_progresion.txt</a> se encuentran tanto los datos de los pacientes como el resultado del tratamiento.
 En el <a class="reference external" href="demo_data/cancer_ciego.txt">segundo</a> se encuentra la tabla que nos permitirá desentrañar el ensayo del doble ciego, con el identificador de cada paciente y la dosis de droga que se le administró.</p>
@@ -497,7 +451,7 @@ En el <a class="reference external" href="demo_data/cancer_ciego.txt">segundo</a
 </ol>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Link to this heading">¶</a></h2>
 <p>1.- Sobre el archivo microarray_adenoma_hk69, recupera sólo el primer resultado.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ tail -n +21 microarray_adenoma_hk69.csv | head -1
 </pre></div>
@@ -598,7 +552,7 @@ $ grep &#39;&gt;gi|311207420|gb|GT728904.1|GT728904&#39; seqs_2.fasta
 </div>
 </section>
 <section id="bibliografia">
-<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this heading">¶</a></h2>
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Chris Herborth, <a class="reference external" href="http://www.ibm.com/developerworks/aix/library/au-textprocess.html">Text processing with UNIX</a></p></li>
 <li><p>TDLP, <a class="reference external" href="http://tldp.org/LDP/abs/html/textproc.html">Text Processing Commands</a></p></li>
@@ -607,25 +561,100 @@ $ grep &#39;&gt;gi|311207420|gb|GT728904.1|GT728904&#39; seqs_2.fasta
 </section>
 
 
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/comav.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="index.html">Bioinformatics at COMAV</a></h1>
 
-        
 
-    </main>
 
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="unix_intro.html">Unix y Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix_intro.html#introduccion-a-ubuntu">Introducción a Ubuntu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix_intro.html#la-terminal-de-unix">La terminal de UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unix_intro.html#bibliografia">Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sistema_de_ficheros.html">Sistema de ficheros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_procesos.html">Control de procesos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipes.html">Flujos de información</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Procesamiento de ficheros de texto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ficheros-de-texto-y-binarios">Ficheros de texto y binarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editores-de-texto">Editores de texto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#imprimiendo-ficheros-cat-head-y-tail">Imprimiendo ficheros <em>cat</em>, <em>head</em> y <em>tail</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#navegando-por-un-fichero-de-texto">Navegando por un fichero de texto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edicion-por-linea-de-comandos">Edición por línea de comandos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#herramientas-para-unir-archivos">Herramientas para unir archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#codificacion-de-caracteres">Codificación de caracteres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fin-de-linea">Fin de línea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soluciones">Soluciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bibliografia">Bibliografía</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="expresiones_regulares.html">Expresiones regulares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts_bash.html">Scripts de Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administrador.html">Administrador</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administracion_software1.html">Administración de software 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variables_de_entorno.html">Variables de entorno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administracion_software2.html">Administracion de software 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="administracion_software2.html#programas-que-se-pueden-instalar">Programas que se pueden instalar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="redes.html">Redes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="redes.html#servicios">Servicios</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="pipes.html" title="previous chapter">Flujos de información</a></li>
+      <li>Next: <a href="expresiones_regulares.html" title="next chapter">Expresiones regulares</a></li>
+  </ul></li>
+</ul>
 </div>
-    <footer>
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
-    </footer>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-16108274-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
 
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2010, Jose Blanca & Joaquin Cañizares.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
   </body>
 </html>

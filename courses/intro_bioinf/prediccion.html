@@ -1,88 +1,42 @@
+<!DOCTYPE html>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Métodos predictivos en ADN y ARN &mdash; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/style.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/style.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <title>Métodos predictivos en ADN y ARN &#8212; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
     <link rel="next" title="Métodos de predicción de ADN y ARN" href="practica_prediccion.html" />
-    <link rel="prev" title="Búsqueda de secuencias utilizando BLAST" href="practica_blast.html" /> 
-  </head>
-  <body>
+    <link rel="prev" title="Búsqueda de secuencias utilizando BLAST" href="practica_blast.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-<div class="body">
-    <header>
-        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
-    </header>
+  </head><body>
+  
 
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
 
-    <nav class="horizontal_nav page_nav">
-        <ul>
-            <li><a href="/index.html">Bioinformatics & genomics</a>
-                <ul>
-                    <li><a href="/services.html">Services</a></li>
-                    <li><a href="/people.html">People</a></li>
-                    <li><a href="/publications.html">Publications</a></li>
-                    <li><a href="/getting_here.html">Getting here</a></li>
-<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
-               </ul>
-            </li>
-            <li><a href="/software.html">Software</a>
-                <ul>
-                    <li><a href="https://github.com/bioinfcomav/">Bioinf COMAV</a></li>
-                    <li><a href="https://github.com/JoseBlanca/">Jose Blanca</a></li>
-                    <!--
-                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
-                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
-                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
-                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
-                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
-               </ul>
-            </li>
-            <li><a href="/courses.html">Courses</a>
-                <ul>
-                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
-                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
-                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
-                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
-               </ul>
-        </ul>
-    </nav>
-
-    <main>
-                
-    
+          <div class="body" role="main">
+            
   <section id="metodos-predictivos-en-adn-y-arn">
-<h1>Métodos predictivos en ADN y ARN<a class="headerlink" href="#metodos-predictivos-en-adn-y-arn" title="Permalink to this heading">¶</a></h1>
+<h1>Métodos predictivos en ADN y ARN<a class="headerlink" href="#metodos-predictivos-en-adn-y-arn" title="Link to this heading">¶</a></h1>
 <p>Una secuencia de nucleótidos no nos aporta ninguna información, salvo que seamos capaces de descifrarla. Para ello, debemos conocer el código de cifrado y tener las herramientas necesarias para descifrar la secuencia de una cadena de ADN. Usando estas herramientas podemos predecir sin datos experimentales que información contiene la secuencia. Podemos predecir la secuencia de la proteína que codifica, la localización de exones e intrones, etc. Pero hay que tener en cuenta que el resultado que obtenemos es una predicción teórica que deberá ser confirmada mediante experimentos.</p>
 <p>La predicción de las estructuras presentes en una secuencia y el descifrado de la información son de vital importancia en los proyectos genoma; ya que nos enfrentamos a una secuencia que contiene numerosos genes que no han sido estudiados experimentalmente y de los cuales no se tiene ninguna información previa.</p>
 <section id="traduccion-de-una-secuencia-de-nucleotidos">
-<h2>Traducción de una secuencia de nucleótidos<a class="headerlink" href="#traduccion-de-una-secuencia-de-nucleotidos" title="Permalink to this heading">¶</a></h2>
+<h2>Traducción de una secuencia de nucleótidos<a class="headerlink" href="#traduccion-de-una-secuencia-de-nucleotidos" title="Link to this heading">¶</a></h2>
 <p>Traducir una secuencia en una de las predicciones más fáciles. Conocemos el código de la información y no presenta ninguna complicación el análisis.</p>
 <p>El código es el código genético: cada aminoácido es codificado por unos varios tripletes y las señales de inicio y parada también están codificadas por tripletes. Lo único que tenemos que hacer es transcribir a ARN y leer la secuencia en formato triplete.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADN</span> <span class="n">AGGTTTACATGTAGAGGA</span><span class="o">.....</span><span class="n">TGA</span>
@@ -118,31 +72,31 @@
 <p>Los programas de traducción nos dan la secuencia de las proteínas codificadas por las pautas de lectura independientemente de que comiencen con un codón de inicio o contengan codones de parada. Únicamente leen el ADN.</p>
 </section>
 <section id="traduccion-inversa">
-<h2>Traducción inversa<a class="headerlink" href="#traduccion-inversa" title="Permalink to this heading">¶</a></h2>
+<h2>Traducción inversa<a class="headerlink" href="#traduccion-inversa" title="Link to this heading">¶</a></h2>
 <p>También podemos deducir la secuencia de nucleótidos a partir de una secuencia de aminoácidos. El problema es que hay varios codones que pueden codificar el mismo aminoácido, por lo que la secuencia calculada tendrá ambigüedades. Programa <a class="reference external" href="http://emboss.sourceforge.net/apps/cvs/emboss/apps/backtranambig.html">backtranambig</a>.</p>
 <figure class="align-center">
 <img alt="_images/back.png" src="_images/back.png" />
 </figure>
 </section>
 <section id="busqueda-de-pautas-de-lectura-abierta-orf">
-<h2>Búsqueda de pautas de lectura abierta (ORF)<a class="headerlink" href="#busqueda-de-pautas-de-lectura-abierta-orf" title="Permalink to this heading">¶</a></h2>
+<h2>Búsqueda de pautas de lectura abierta (ORF)<a class="headerlink" href="#busqueda-de-pautas-de-lectura-abierta-orf" title="Link to this heading">¶</a></h2>
 <p>En vez de traducir directamente la secuencia podemos hacer que el programa solo nos muestre aquellas regiones comprendidas entre un codón de inicio y un codón de parada. Además de mostrarlas hay programas que nos devuelven la secuencia de aminoácidos que codifica esa región. Por ejemplo el programa <a class="reference external" href="http://emboss.bioinformatics.nl/cgi-bin/emboss/help/plotorf">plotorf</a> o <a class="reference external" href="http://emboss.bioinformatics.nl/cgi-bin/emboss/help/showorf">showorf</a>.</p>
 <figure class="align-center">
 <img alt="_images/imagen3_t6.png" src="_images/imagen3_t6.png" />
 </figure>
 </section>
 <section id="busqueda-de-dianas-de-restriccion">
-<h2>Búsqueda de dianas de restricción<a class="headerlink" href="#busqueda-de-dianas-de-restriccion" title="Permalink to this heading">¶</a></h2>
+<h2>Búsqueda de dianas de restricción<a class="headerlink" href="#busqueda-de-dianas-de-restriccion" title="Link to this heading">¶</a></h2>
 <p>Estas herramientas localizan en la secuencia dianas de enzimas de restricción. Necesitamos una base de datos de las secuencias reconocidas por las diferentes enzimas, por ejemplo: Rebase. El programa nos localizará las dianas identificándolas en nuestra secuencia. Uno de los programas que podemos utilizar es <a class="reference external" href="http://emboss.bioinformatics.nl/cgi-bin/emboss/help/remap">remap</a> .</p>
 <figure class="align-center">
 <img alt="_images/enzimas.png" src="_images/enzimas.png" />
 </figure>
 </section>
 <section id="prediccion-de-regiones-promotoras">
-<h2>Predicción de regiones promotoras<a class="headerlink" href="#prediccion-de-regiones-promotoras" title="Permalink to this heading">¶</a></h2>
+<h2>Predicción de regiones promotoras<a class="headerlink" href="#prediccion-de-regiones-promotoras" title="Link to this heading">¶</a></h2>
 <p>Hasta ahora nos hemos centrado en problemas poco complejos debido a que el código utilizado para almacenar la información es exacto y conocido (código genético, secuencias dianas). El reconocimiento de las regiones promotoras se basa en la identificación de las secuencias reconocidas por las proteínas generales del complejo de la transcripción y de los factores de transcripción específicos. Las dianas de los factores de transcripción están menos conservadas y presentan mucha variación en su secuencia, suelen ser secuencias muy cortas (tienen poca complejidad y existe bastante probabilidad de que las encontremos al azar) y además muchas de las dianas no están profundamente estudiadas con lo que partimos de información limitada. Esto complica la predicción de promotores, ya que no podemos centrarnos en la búsqueda de una secuencia exacta y además tendremos que valorar si la identificación es significativa o no tiene sentido biológico.</p>
 <section id="secuencias-de-union">
-<h3>Secuencias de unión<a class="headerlink" href="#secuencias-de-union" title="Permalink to this heading">¶</a></h3>
+<h3>Secuencias de unión<a class="headerlink" href="#secuencias-de-union" title="Link to this heading">¶</a></h3>
 <p>Las secuencias que tenemos que reconocer pertenecen a dos tipos:</p>
 <p>Secuencias presentes en la mayoría de promotores.</p>
 <p>Secuencias en procariotas:</p>
@@ -196,7 +150,7 @@ secuencia TTTAAA sea una diana real es del 0,0001.
 </section>
 </section>
 <section id="prediccion-de-pautas-de-lectura">
-<h2>Predicción de pautas de lectura<a class="headerlink" href="#prediccion-de-pautas-de-lectura" title="Permalink to this heading">¶</a></h2>
+<h2>Predicción de pautas de lectura<a class="headerlink" href="#prediccion-de-pautas-de-lectura" title="Link to this heading">¶</a></h2>
 <p>La ventaja al trabajar con procariotas es que sus genes no están separados por intrones y que sus regiones intergénicas no son grandes y al igual que en los mRNAs eucarióticos las regiones codificantes no están fragmentadas. En teoría la predicción de regiones codificantes correspondería con la identificación de los genes, ya que estos contienen una pauta de lectura continua. En caso de genomas eucarióticos la predicción de regiones codificantes tiene que ir acompañada de la predicción de la estructura exón e intron, al estar las pautas truncadas.</p>
 <p>El primer problema lo encontramos al buscar pautas abiertas de lectura. Para un mismo fragmento podemos encontrar una ORF en calquiera de las pautas de lectura.</p>
 <p>Búsqueda de pautas de lectura abiertas</p>
@@ -222,15 +176,15 @@ secuencia TTTAAA sea una diana real es del 0,0001.
 <p>Existen estrategias para solucionar este problema. Una de ellas esta basado en el uso de los codones y tercera base no es al azar. El programa va analizar hexámeros de nucleótidos de regiones ya caracterizadas para determinar la probabilidad de asociaciones de estos nucleótidos en regiones codificantes y no codificantes. Con ello se crea un modelo de región codificante que será especifico para la especie analizada. Este modelo permite analizar y detectar las regiones con mayor probabilidad de ser codificantes y no se verá tan afectado por mutaciones puntuales o cambios de pauta de lectura. Un programa que utiliza este sistema es el <a class="reference external" href="http://exon.biology.gatech.edu/background.html">Genemark_HMM</a> .</p>
 </section>
 <section id="prediccion-de-la-estructura-genica">
-<h2>Predicción de la estructura génica<a class="headerlink" href="#prediccion-de-la-estructura-genica" title="Permalink to this heading">¶</a></h2>
+<h2>Predicción de la estructura génica<a class="headerlink" href="#prediccion-de-la-estructura-genica" title="Link to this heading">¶</a></h2>
 <p>Predecir la estructura de un gen en procariotas es posible utilizando la combinación de los dos análisis que hemos visto: detección de regiones promotoras y búsqueda de ORFs. Pero en eucariotas la situación es mucho más compleja, los genes presentan intrones y exones (tienen la pauta de lectura fragmentada), hay exones que no presentan regiones codificates, el tamaño de las regiones no codificantes (intrones , regiones intragénicas, promotores, etc) pueden ser muy grandes.</p>
 <section id="busqueda-de-regiones-codificantes">
-<h3>Búsqueda de regiones codificantes<a class="headerlink" href="#busqueda-de-regiones-codificantes" title="Permalink to this heading">¶</a></h3>
+<h3>Búsqueda de regiones codificantes<a class="headerlink" href="#busqueda-de-regiones-codificantes" title="Link to this heading">¶</a></h3>
 <p>La podemos realizar por los métodos vistos anteriormente, localizando pautas de lectura abiertas y validándolas con los métodos ya comentados (uso de codones, tercer posición, o métodos más complejos como los del Genemark). Otro modo es buscar homologías usando la traducción de las seis pautas de lectura, con blastx por ejemplo.</p>
 <p>Estos métodos no resultan muy prácticos cuando nos enfrentamos a genes fragmentados, aunque son útiles para buscar las ORFs en cDNAs o genes sin intrones</p>
 </section>
 <section id="comparacion-con-mrnas-o-est">
-<h3>Comparación con mRNAs o EST<a class="headerlink" href="#comparacion-con-mrnas-o-est" title="Permalink to this heading">¶</a></h3>
+<h3>Comparación con mRNAs o EST<a class="headerlink" href="#comparacion-con-mrnas-o-est" title="Link to this heading">¶</a></h3>
 <p>Una forma de conseguir la correcta ORF es determinar las regiones exónicas e intrónicas de modo que podamos recomponerla juntando los exones. Existen varios métodos para determinar la estructura de un gen.</p>
 <p>Uno forma de encontrar la estructura es alinear las secuencias genómicas con los mRNAs o secuencias de los ESTs disponibles. De este modo determinaremos exactamente las regiones exónicas. En el emboss podemos utilizar: <a class="reference external" href="http://emboss.bioinformatics.nl/cgi-bin/emboss/help/esim4">esim4</a> (mRNAs) o <a class="reference external" href="http://emboss.sourceforge.net/apps/cvs/emboss/apps/est2genome.html">est2genome</a> (ESTs).</p>
 <p>Alineamiento de un EST con un fragmento genómico</p>
@@ -240,7 +194,7 @@ secuencia TTTAAA sea una diana real es del 0,0001.
 <p>Este método tiene el inconveniente de que necesitamos tener ESTs o mRNAs de los genes y esto no es siempre posible. De hecho muchos de los genes no los vamos a tener representados en las colecciones de ESTs. Otro problema es que el gen no este cubierto totalmente por los ESTs, lo que nos produciría una identificación parcial de la secuencia.</p>
 </section>
 <section id="uso-de-redes-neuronales-y-busqueda-de-patrones">
-<h3>Uso de redes neuronales y búsqueda de patrones<a class="headerlink" href="#uso-de-redes-neuronales-y-busqueda-de-patrones" title="Permalink to this heading">¶</a></h3>
+<h3>Uso de redes neuronales y búsqueda de patrones<a class="headerlink" href="#uso-de-redes-neuronales-y-busqueda-de-patrones" title="Link to this heading">¶</a></h3>
 <p>Existen diferentes programas que van a combinar diferentes análisis para identificar genes y predecir su estructura. El método de abordaje es diferente (redes neuronales o búsqueda de patrones) pero se basan en la identificación y puntuación de características como por ejemplo:</p>
 <blockquote>
 <div><ul class="simple">
@@ -263,25 +217,90 @@ secuencia TTTAAA sea una diana real es del 0,0001.
 </section>
 
 
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/comav.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="index.html">Bioinformatics at COMAV</a></h1>
 
-        
 
-    </main>
 
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bases_datos.html">Bases de datos biológicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_bases.html">Práctica bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alineamientos.html">Alineamientos de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_jemboss.html">Práctica jemboss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_alineamientos.html">Práctica de alineamientos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blast.html">Búsqueda de secuencias en bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast.html">Práctica Blast</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Métodos predictivos en ADN y ARN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_prediccion.html">Práctica predicción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">Alineamientos múltiples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_multiple.html">Práctica alineamiento múltiple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filogenias.html">Introducción al análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_filogenias.html">Práctica análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast2go.html">Práctica anotación con Blast2GO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_visores.html">Prácticas bases de datos genómicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion.html">Ejercicio anotación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion2.html">Ejercicio prediccion 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sanger.html">Secuenciación de Sanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ensamblaje.html">Ensamblaje de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_ensamblaje.html">Práctica ensamblaje de secuencias</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="practica_blast.html" title="previous chapter">Búsqueda de secuencias utilizando BLAST</a></li>
+      <li>Next: <a href="practica_prediccion.html" title="next chapter">Métodos de predicción de ADN y ARN</a></li>
+  </ul></li>
+</ul>
 </div>
-    <footer>
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
-    </footer>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-16108274-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
 
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2010, Jose Blanca & Joaquin Cañizares.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
   </body>
 </html>

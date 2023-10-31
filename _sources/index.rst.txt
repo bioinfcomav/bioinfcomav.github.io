@@ -31,7 +31,7 @@ We have a broad experience on the field of sequence analysis, both sanger and NG
 .. _COMAV: http://www.comav.upv.es/index2_eng.html
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :hidden:
 
    self
@@ -39,14 +39,8 @@ We have a broad experience on the field of sequence analysis, both sanger and NG
    genomics
    services
    people
-   ngs_backbone <ngs_backbone/index>
-   clean_reads <clean_reads/index>
-   sff_extract <sff_extract/index>
-   psubprocess <psubprocess/index>
    publications
    courses
    git <http://github.com/JoseBlanca/>
-   wiki <http://bioinf.comav.upv.es/notes/>
-   databases
    getting_here
 

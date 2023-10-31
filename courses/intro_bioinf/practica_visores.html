@@ -1,84 +1,38 @@
+<!DOCTYPE html>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Prácticas bases de datos genómicas &mdash; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/style.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/style.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <title>Prácticas bases de datos genómicas &#8212; Bioinformatics at COMAV 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="Bioinformatics at COMAV 0.1 documentation" href="index.html" />
     <link rel="next" title="EJERCICIO 1: ANOTACIÓN DE UNA REGIÓN GENÓMICA" href="ejercicio_prediccion.html" />
-    <link rel="prev" title="Anotación automática, Blast2GO" href="practica_blast2go.html" /> 
-  </head>
-  <body>
+    <link rel="prev" title="Anotación automática, Blast2GO" href="practica_blast2go.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-<div class="body">
-    <header>
-        <h1><a href="index.html">Bioinformatics at COMAV</a></h1>
-    </header>
+  </head><body>
+  
 
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
 
-    <nav class="horizontal_nav page_nav">
-        <ul>
-            <li><a href="/index.html">Bioinformatics & genomics</a>
-                <ul>
-                    <li><a href="/services.html">Services</a></li>
-                    <li><a href="/people.html">People</a></li>
-                    <li><a href="/publications.html">Publications</a></li>
-                    <li><a href="/getting_here.html">Getting here</a></li>
-<!--                    <li><a href="http://bioinf.comav.upv.es/notes/">Wiki</a></li>-->
-               </ul>
-            </li>
-            <li><a href="/software.html">Software</a>
-                <ul>
-                    <li><a href="https://github.com/bioinfcomav/">Bioinf COMAV</a></li>
-                    <li><a href="https://github.com/JoseBlanca/">Jose Blanca</a></li>
-                    <!--
-                    <li><a href="/seq_crumbs/index.html">seq_crumbs</a></li>
-                    <li><a href="/ngs_backbone/index.html">ngs_backbone</a></li>
-                    <li><a href="/clean_reads/index.html">clean_reads</a></li>
-                    <li><a href="/sff_extract/index.html">sff_extract</a></li>
-                    <li><a href="/psubprocess/index.html">psubprocess</a></li>-->
-               </ul>
-            </li>
-            <li><a href="/courses.html">Courses</a>
-                <ul>
-                    <li><a href="/courses/intro_bioinf/index.html">Bionformática básica</a></li>
-                    <li><a href="/courses/sequence_analysis/index.html">NGS sequence analysis</a></li>
-                    <li><a href="/courses/linux/index.html">Linux y Python</a></li>
-                    <li><a href="/courses/unix/index.html">Linux para Biologos</a></li>
-               </ul>
-        </ul>
-    </nav>
-
-    <main>
-                
-    
+          <div class="body" role="main">
+            
   <section id="practicas-bases-de-datos-genomicas">
-<h1>Prácticas bases de datos genómicas<a class="headerlink" href="#practicas-bases-de-datos-genomicas" title="Permalink to this heading">¶</a></h1>
+<h1>Prácticas bases de datos genómicas<a class="headerlink" href="#practicas-bases-de-datos-genomicas" title="Link to this heading">¶</a></h1>
 <p>Se han desarrollado numerosas bases de datos para los diferentes genomas secuenciados, pero la mayoría de ellas utilizan los mismos programas, visores y estructuras para manejar la información. En esta práctica vamos a profundizar en el manejo de bases de datos utilizando visores de genoma. Como modelo vamos a utilizar el visor del <a class="reference external" href="http://www.ensembl.org/index.html">Ensembl</a> y de la <a class="reference external" href="http://www.ncbi.nlm.nih.gov/">NCBI</a>.</p>
 <p>El objetivo es familiarizarse con este tipo de bases de datos y visores gráficos que nos permiten responden en cuestión de minutos a problemas de este tipo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Acabas</span> <span class="n">de</span> <span class="n">ser</span> <span class="n">contratado</span> <span class="n">por</span> <span class="n">una</span> <span class="n">empresa</span> <span class="n">de</span> <span class="n">diagnostico</span> <span class="n">clínico</span><span class="o">.</span> <span class="n">Te</span> <span class="n">solicitan</span>
@@ -104,7 +58,7 @@
 </pre></div>
 </div>
 <section id="manejo-del-ensembl">
-<h2>Manejo del Ensembl<a class="headerlink" href="#manejo-del-ensembl" title="Permalink to this heading">¶</a></h2>
+<h2>Manejo del Ensembl<a class="headerlink" href="#manejo-del-ensembl" title="Link to this heading">¶</a></h2>
 <p>Vamos a practicar con el visor de genomas del <a class="reference external" href="http://www.ensembl.org/index.html">Ensembl</a> y los datos del genoma humano. Hay una seeria de <a class="reference external" href="http://www.ensembl.org/info/website/tutorials/index.html">tutoriales</a> disponibles.</p>
 <p>Buscar la región correspondiente al gen humano SLC9A3R2. Identificar:</p>
 <ul class="simple">
@@ -113,11 +67,11 @@
 <li><p>Identificar los cambios presentes en el primer exón del gen y su frecuencia en la población europea.</p></li>
 </ul>
 <section id="catenin-beta-1">
-<h3>Catenin beta 1<a class="headerlink" href="#catenin-beta-1" title="Permalink to this heading">¶</a></h3>
+<h3>Catenin beta 1<a class="headerlink" href="#catenin-beta-1" title="Link to this heading">¶</a></h3>
 <p>Ahora identificar esos datos para el gen catenin beta 1.</p>
 </section>
 <section id="busqueda-de-paralogos-y-ortologos">
-<h3>Búsqueda de parálogos y ortólogos<a class="headerlink" href="#busqueda-de-paralogos-y-ortologos" title="Permalink to this heading">¶</a></h3>
+<h3>Búsqueda de parálogos y ortólogos<a class="headerlink" href="#busqueda-de-paralogos-y-ortologos" title="Link to this heading">¶</a></h3>
 <p>Puedes seguir el <a class="reference external" href="http://www.ensembl.org/Multi/Help/Movie?db=core;id=423">tutorial</a> del Ensembl para manejar la información sobre genómica comparativa.</p>
 <p>Localiza el gen CASP5 humano y contesta a las siguientes cuestiones:</p>
 <ul class="simple">
@@ -132,11 +86,11 @@
 </section>
 </section>
 <section id="manejo-del-map-viewer">
-<h2>Manejo del Map Viewer<a class="headerlink" href="#manejo-del-map-viewer" title="Permalink to this heading">¶</a></h2>
+<h2>Manejo del Map Viewer<a class="headerlink" href="#manejo-del-map-viewer" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="http://www.ncbi.nlm.nih.gov/mapview">MapViewer</a> es un visor de mapas de la NCBI. En el encontramos mapas genéticos, citogenéticos, físicos, etc lincados entre si y a la secuencia del genoma humano. Es una herramienta muy útil para pasar de unas coordenadas a otras y recopilar disintos tipos de datos.</p>
 <p>Por ejemplo podemos identificar todos los clones, genes y enfermedades descritas cercanas al marcador SNP rs11934801.</p>
 <section id="busqueda-de-snps">
-<h3>Búsqueda de SNPs<a class="headerlink" href="#busqueda-de-snps" title="Permalink to this heading">¶</a></h3>
+<h3>Búsqueda de SNPs<a class="headerlink" href="#busqueda-de-snps" title="Link to this heading">¶</a></h3>
 <p>Hemos obtenido esta  <a class="reference download internal" download="" href="_downloads/b1d84ad5244d1b468e7dc27859f428b6/secuencia.fasta"><code class="xref download docutils literal notranslate"><span class="pre">secuencia</span></code></a> de un paciente. Utilizando el Blast y la información de la dbSNPs y el MapVier.</p>
 <ul class="simple">
 <li><p>Identifica si hay algun SNP conocido en al región que cubre esa secuencia.</p></li>
@@ -148,32 +102,97 @@
 </ul>
 </section>
 <section id="ejercicio-final">
-<h3>Ejercicio final<a class="headerlink" href="#ejercicio-final" title="Permalink to this heading">¶</a></h3>
+<h3>Ejercicio final<a class="headerlink" href="#ejercicio-final" title="Link to this heading">¶</a></h3>
 <p>Realiza el ejercicio planteado al inicio de la práctica.</p>
 </section>
 </section>
 </section>
 
 
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/comav.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="index.html">Bioinformatics at COMAV</a></h1>
 
-        
 
-    </main>
 
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bases_datos.html">Bases de datos biológicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_bases.html">Práctica bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alineamientos.html">Alineamientos de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_jemboss.html">Práctica jemboss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_alineamientos.html">Práctica de alineamientos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blast.html">Búsqueda de secuencias en bases de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast.html">Práctica Blast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediccion.html">Métodos predictivos en ADN y ARN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_prediccion.html">Práctica predicción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">Alineamientos múltiples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_multiple.html">Práctica alineamiento múltiple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filogenias.html">Introducción al análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_filogenias.html">Práctica análisis de filogenias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_blast2go.html">Práctica anotación con Blast2GO</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Prácticas bases de datos genómicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion.html">Ejercicio anotación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejercicio_prediccion2.html">Ejercicio prediccion 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sanger.html">Secuenciación de Sanger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ensamblaje.html">Ensamblaje de secuencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica_ensamblaje.html">Práctica ensamblaje de secuencias</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="practica_blast2go.html" title="previous chapter">Anotación automática, Blast2GO</a></li>
+      <li>Next: <a href="ejercicio_prediccion.html" title="next chapter">EJERCICIO 1: ANOTACIÓN DE UNA REGIÓN GENÓMICA</a></li>
+  </ul></li>
+</ul>
 </div>
-    <footer>
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title">Bioinformatics at COMAV</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Reconocimiento 4.0 Internacional License</a>.
-    </footer>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-16108274-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
 
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2010, Jose Blanca & Joaquin Cañizares.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
   </body>
 </html>
