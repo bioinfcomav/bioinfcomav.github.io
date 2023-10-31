@@ -35,6 +35,7 @@
 Existe un excelente libro de introducción a Python: <a class="reference external" href="https://ehmatthes.github.io/pcc/">Python Crash Course</a>.</p>
 <p>Recuerda que puedes trabajar en estos ejercicios con el editor online de <a class="reference external" href="https://futurecoder.io/course/#ide">Future coder</a>.</p>
 <p>Para instalar Python junto a las librerías más utilizadas en bioinformática puedes utilizar <a class="reference external" href="https://www.anaconda.com/download">anaconda</a>.</p>
+<p>Las soluciones a los ejercicios puedes encontraslas en: <a class="reference external" href="soluciones.html">ejercicios y soluciones</a>.</p>
 <section id="ejercicios">
 <h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">¶</a></h2>
 <section id="adivinar-un-numero">
@@ -44,145 +45,26 @@ Existe un excelente libro de introducción a Python: <a class="reference externa
 <section id="par-o-impar">
 <h3>Par o impar<a class="headerlink" href="#par-o-impar" title="Link to this heading">¶</a></h3>
 <p>Crea un programa que pida un número entero y que devuelva si es par o impar.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Introduce un entero: &#39;</span><span class="p">)</span>
-<span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is odd&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1"> is even&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
 </section>
 <section id="palindromos">
 <h3>Palindromos<a class="headerlink" href="#palindromos" title="Link to this heading">¶</a></h3>
 <p>Escribe un programa que compruebe si una palabra es palindrómica o no.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Introduce una palabra: &#39;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s1"> es palindrómica&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s1"> no es palindrómica, al revés se leería: </span><span class="si">{</span><span class="n">word</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
 </section>
 <section id="sitio-de-restriccion">
 <h3>Sitio de restricción<a class="headerlink" href="#sitio-de-restriccion" title="Link to this heading">¶</a></h3>
 <p>Busca el sitio de restricción en una secuencia de ADN.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eco_ri_site</span> <span class="o">=</span> <span class="s1">&#39;GAATTC&#39;</span>
-<span class="n">sequence</span> <span class="o">=</span> <span class="s1">&#39;ctagctagtcgtagctagtcagaattcgtcgtagtcagcta&#39;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">sequence</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">eco_ri_site</span><span class="p">))</span>
-</pre></div>
-</div>
 </section>
 <section id="secuencia-reversa-y-complementaria">
 <h3>Secuencia reversa y complementaria<a class="headerlink" href="#secuencia-reversa-y-complementaria" title="Link to this heading">¶</a></h3>
 <p>Haz un programa que cree una secuencia de ADN reversa y complementaria.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="s1">&#39;ACTGGTA&#39;</span>
-
-<span class="n">COMPLEMENTARY_NUCLS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">}</span>
-
-<span class="n">comp_seq</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">nucl</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
-    <span class="n">compl_nucl</span> <span class="o">=</span> <span class="n">COMPLEMENTARY_NUCLS</span><span class="p">[</span><span class="n">nucl</span><span class="p">]</span>
-    <span class="n">comp_seq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">compl_nucl</span><span class="p">)</span>
-<span class="n">comp_seq</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">comp_seq</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">comp_seq</span><span class="p">)</span>
-
-<span class="n">seq2</span> <span class="o">=</span> <span class="s1">&#39;CTAGACTA&#39;</span>
-</pre></div>
-</div>
 </section>
 <section id="conversor-fahrenheit-a-celsius">
 <h3>Conversor Fahrenheit a Celsius<a class="headerlink" href="#conversor-fahrenheit-a-celsius" title="Link to this heading">¶</a></h3>
 <p>Crea una función que convierta de fahrenheit a celsius y otra que lo haga al revés.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_to_celsius</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">):</span>
-    <span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="n">fahrenheit</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">5.0</span> <span class="o">/</span> <span class="mf">9.0</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">celsius</span>
-
-
-<span class="k">def</span> <span class="nf">convert_to_fahrenheit</span><span class="p">(</span><span class="n">celsius</span><span class="p">):</span>
-    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="p">(</span><span class="n">celsius</span> <span class="o">*</span> <span class="mf">9.0</span> <span class="o">/</span> <span class="mf">5.0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span>
-    <span class="k">return</span> <span class="n">fahrenheit</span>
-
-
-<span class="n">fahrenheit</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Temperature in fahrenheit: &quot;</span><span class="p">)</span>
-<span class="n">fahrenheit</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">)</span>
-
-<span class="n">celsius</span> <span class="o">=</span> <span class="n">convert_to_celsius</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Celsius: &quot;</span><span class="p">,</span> <span class="n">celsius</span><span class="p">)</span>
-<span class="n">fahrenheit</span> <span class="o">=</span> <span class="n">convert_to_fahrenheit</span><span class="p">(</span><span class="n">celsius</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fahrenheit&quot;</span><span class="p">,</span> <span class="n">fahrenheit</span><span class="p">)</span>
-</pre></div>
-</div>
 </section>
 <section id="juego-del-ahorcado">
 <h3>Juego del ahorcado<a class="headerlink" href="#juego-del-ahorcado" title="Link to this heading">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-
-<span class="k">def</span> <span class="nf">create_revealed_string</span><span class="p">(</span><span class="n">secret_word</span><span class="p">,</span> <span class="n">guessed_letters</span><span class="p">):</span>
-
-    <span class="n">num_letters_missing</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">revealed_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">secret_word</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">letter</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="n">guessed_letters</span><span class="p">:</span>
-            <span class="n">revealed_letter</span> <span class="o">=</span> <span class="n">letter</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">revealed_letter</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
-            <span class="n">num_letters_missing</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">revealed_string</span> <span class="o">+=</span> <span class="n">revealed_letter</span>
-    <span class="k">return</span> <span class="n">revealed_string</span>
-
-<span class="n">DICTIONARY</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hola&#39;</span><span class="p">,</span> <span class="s1">&#39;caracola&#39;</span><span class="p">,</span> <span class="s1">&#39;casa&#39;</span><span class="p">,</span> <span class="s1">&#39;barco&#39;</span><span class="p">]</span>
-<span class="n">INITIAL_NUM_ATTEMPS</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="k">def</span> <span class="nf">create_revealed_string</span><span class="p">(</span><span class="n">secret_word</span><span class="p">,</span> <span class="n">guessed_letters</span><span class="p">):</span>
-
-    <span class="n">num_letters_missing</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">revealed_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">secret_word</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">letter</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="n">guessed_letters</span><span class="p">:</span>
-            <span class="n">revealed_letter</span> <span class="o">=</span> <span class="n">letter</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">revealed_letter</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
-            <span class="n">num_letters_missing</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">revealed_string</span> <span class="o">+=</span> <span class="n">revealed_letter</span>
-    <span class="k">return</span> <span class="n">revealed_string</span>
-
-
-<span class="k">def</span> <span class="nf">play_game</span><span class="p">():</span>
-    <span class="n">secret_word</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">DICTIONARY</span><span class="p">)</span>
-    <span class="n">guessed_letters</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-    <span class="n">num_attempts</span> <span class="o">=</span> <span class="n">INITIAL_NUM_ATTEMPS</span>
-    <span class="n">won</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">guessed_letter</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Pick a letter &#39;</span><span class="p">)</span>
-        <span class="n">guessed_letters</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">guessed_letter</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-
-        <span class="n">revealed_string</span> <span class="o">=</span> <span class="n">create_revealed_string</span><span class="p">(</span><span class="n">secret_word</span><span class="p">,</span> <span class="n">guessed_letters</span><span class="p">)</span>
-        <span class="n">num_attempts</span> <span class="o">-=</span> <span class="mi">1</span>
-
-        <span class="n">num_letters_to_guess</span> <span class="o">=</span> <span class="n">revealed_string</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">num_letters_to_guess</span><span class="p">:</span>
-            <span class="n">won</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="k">break</span>
-        <span class="k">elif</span> <span class="n">num_letters_to_guess</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">num_attempts</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The guess so far: &#39;</span><span class="p">,</span> <span class="n">revealed_string</span><span class="p">,</span> <span class="n">guessed_letters</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">won</span> <span class="o">=</span> <span class="kc">False</span>
-                <span class="k">break</span>
-
-    <span class="k">if</span> <span class="n">won</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Congratulations, you have won the game&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You have lost&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The secret word was: &#39;</span><span class="p">,</span> <span class="n">secret_word</span><span class="p">)</span>
-
-
-<span class="n">play_game</span><span class="p">()</span>
-</pre></div>
-</div>
+<p>Crea un juego del ahorcado.</p>
 </section>
 <section id="hola-mundo-en-el-visual-studio-code">
 <h3>Hola mundo en el Visual Studio Code<a class="headerlink" href="#hola-mundo-en-el-visual-studio-code" title="Link to this heading">¶</a></h3>
@@ -190,34 +72,7 @@ Existe un excelente libro de introducción a Python: <a class="reference externa
 </section>
 <section id="lee-un-fichero-fasta">
 <h3>Lee un fichero fasta<a class="headerlink" href="#lee-un-fichero-fasta" title="Link to this heading">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
-
-<span class="k">def</span> <span class="nf">parse_fasta</span><span class="p">(</span><span class="n">fhand</span><span class="p">):</span>
-    <span class="n">seq</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fhand</span><span class="p">:</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">seq</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="n">seq</span>
-            <span class="n">items</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">seq</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;seq&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>
-            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-                <span class="n">name</span><span class="p">,</span> <span class="n">description</span> <span class="o">=</span> <span class="n">items</span>
-                <span class="n">seq</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;seq&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="n">description</span><span class="p">}</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Fixme, we should not be here&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">seq</span><span class="p">[</span><span class="s2">&quot;seq&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">line</span>
-    <span class="k">if</span> <span class="n">seq</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">seq</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">fasta_fhand</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="s2">&quot;&gt;seq1 description</span><span class="se">\n</span><span class="s2">ATCT</span><span class="se">\n</span><span class="s2">ACTGC</span><span class="se">\n</span><span class="s2">&gt;seq2</span><span class="se">\n</span><span class="s2">ACTGTG</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">seqs</span> <span class="o">=</span> <span class="n">parse_fasta</span><span class="p">(</span><span class="n">fasta_fhand</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">seqs</span><span class="p">))</span>
-</pre></div>
-</div>
+<p>Crea una función capaz de leer ficheros fasta.</p>
 </section>
 <section id="calcular-el-porcentaje-de-gc-por-secuencia">
 <h3>Calcular el porcentaje de GC por secuencia<a class="headerlink" href="#calcular-el-porcentaje-de-gc-por-secuencia" title="Link to this heading">¶</a></h3>

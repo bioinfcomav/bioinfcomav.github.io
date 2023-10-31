@@ -8,6 +8,8 @@ Recuerda que puedes trabajar en estos ejercicios con el editor online de `Future
 
 Para instalar Python junto a las librerías más utilizadas en bioinformática puedes utilizar `anaconda <https://www.anaconda.com/download>`_.
 
+Las soluciones a los ejercicios puedes encontraslas en: `ejercicios y soluciones <soluciones.html>`_.
+
 Ejercicios
 ##########
 
@@ -21,154 +23,35 @@ Par o impar
 
 Crea un programa que pida un número entero y que devuelva si es par o impar.
 
-.. code-block:: python
-
-    number = input('Introduce un entero: ')
-    number = int(number)
-    if number % 2:
-        print(f'{number} is odd')
-    else:
-        print(f'{number} is even')
 
 Palindromos
 -----------
 
 Escribe un programa que compruebe si una palabra es palindrómica o no.
 
-.. code-block:: python
-
-    word = input('Introduce una palabra: ')
-
-    if word.lower() == word.lower()[::-1]:
-        print(f'{word} es palindrómica')
-    else:
-        print(f'{word} no es palindrómica, al revés se leería: {word[::-1]}')
-
 Sitio de restricción
 --------------------
 
 Busca el sitio de restricción en una secuencia de ADN.
 
-.. code-block:: python
-
-    eco_ri_site = 'GAATTC'
-    sequence = 'ctagctagtcgtagctagtcagaattcgtcgtagtcagcta'
-
-    print(sequence.upper().find(eco_ri_site))
 
 Secuencia reversa y complementaria
 ----------------------------------
 
 Haz un programa que cree una secuencia de ADN reversa y complementaria.
 
-.. code-block:: python
-
-    seq = 'ACTGGTA'
-
-    COMPLEMENTARY_NUCLS = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
-
-    comp_seq = []
-    for nucl in reversed(seq):
-        compl_nucl = COMPLEMENTARY_NUCLS[nucl]
-        comp_seq.append(compl_nucl)
-    comp_seq = ''.join(comp_seq)
-    print(comp_seq)
-
-    seq2 = 'CTAGACTA'
 
 Conversor Fahrenheit a Celsius
 ------------------------------
 
 Crea una función que convierta de fahrenheit a celsius y otra que lo haga al revés.
 
-.. code-block:: python
-
-    def convert_to_celsius(fahrenheit):
-        celsius = (fahrenheit - 32.0) * (5.0 / 9.0)
-        return celsius
-
-
-    def convert_to_fahrenheit(celsius):
-        fahrenheit = (celsius * 9.0 / 5.0) + 32
-        return fahrenheit
-
-
-    fahrenheit = input("Temperature in fahrenheit: ")
-    fahrenheit = float(fahrenheit)
-
-    celsius = convert_to_celsius(fahrenheit)
-    print("Celsius: ", celsius)
-    fahrenheit = convert_to_fahrenheit(celsius)
-    print("Fahrenheit", fahrenheit)
 
 Juego del ahorcado
 ------------------
 
-.. code-block:: python
+Crea un juego del ahorcado.
 
-    import random
-
-    def create_revealed_string(secret_word, guessed_letters):
-
-        num_letters_missing = 0
-        revealed_string = ''
-        for letter in secret_word:
-            if letter.upper() in guessed_letters:
-                revealed_letter = letter
-            else:
-                revealed_letter = '-'
-                num_letters_missing += 1
-            revealed_string += revealed_letter
-        return revealed_string
-
-    DICTIONARY = ['hola', 'caracola', 'casa', 'barco']
-    INITIAL_NUM_ATTEMPS = 10
-
-    def create_revealed_string(secret_word, guessed_letters):
-
-        num_letters_missing = 0
-        revealed_string = ''
-        for letter in secret_word:
-            if letter.upper() in guessed_letters:
-                revealed_letter = letter
-            else:
-                revealed_letter = '-'
-                num_letters_missing += 1
-            revealed_string += revealed_letter
-        return revealed_string
-
-
-    def play_game():
-        secret_word = random.choice(DICTIONARY)
-        guessed_letters = set()
-        num_attempts = INITIAL_NUM_ATTEMPS
-        won = None
-        while True:
-            guessed_letter = input('Pick a letter ')
-            guessed_letters.add(guessed_letter.upper())
-        
-            revealed_string = create_revealed_string(secret_word, guessed_letters)
-            num_attempts -= 1
-        
-            num_letters_to_guess = revealed_string.count('-')
-            if not num_letters_to_guess:
-                won = True
-                break
-            elif num_letters_to_guess:
-                if num_attempts:
-                    print('The guess so far: ', revealed_string, guessed_letters)
-                else:
-                    won = False
-                    break
-        
-        if won:
-            print('Congratulations, you have won the game')
-        else:
-            print('You have lost')
-        print('The secret word was: ', secret_word)
-
-
-    play_game()
 
 Hola mundo en el Visual Studio Code
 -----------------------------------
@@ -178,34 +61,8 @@ El `Visual Studio Code <https://code.visualstudio.com/download>`_ es un excelent
 Lee un fichero fasta
 --------------------
 
-.. code-block:: python
+Crea una función capaz de leer ficheros fasta.
 
-    from io import StringIO
-
-    def parse_fasta(fhand):
-        seq = None
-        for line in fhand:
-            line = line.strip()
-            if line[0] == ">":
-                if seq:
-                    yield seq
-                items = line[1:].split(" ", 1)
-                if len(items) == 1:
-                    seq = {"name": items[0], "seq": ""}
-                elif len(items) == 2:
-                    name, description = items
-                    seq = {"name": name, "seq": "", "description": description}
-                else:
-                    raise RuntimeError("Fixme, we should not be here")
-            else:
-                seq["seq"] += line
-        if seq:
-            yield seq
-
-    if __name__ == "__main__":
-        fasta_fhand = StringIO(">seq1 description\nATCT\nACTGC\n>seq2\nACTGTG\n")
-        seqs = parse_fasta(fasta_fhand)
-        print(list(seqs))
 
 Calcular el porcentaje de GC por secuencia
 ------------------------------------------
