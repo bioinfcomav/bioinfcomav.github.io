@@ -205,3 +205,16 @@ Calcular el porcentaje de GC por secuencia
 
 Dado un fichero fasta con secuencias, calcula el porcentaje de GC para cada una de ellas.
 
+Introducción a pandas y numpy
+#############################
+
+`Pandas <https://pandas.pydata.org/>`_ y `numpy <https://numpy.org/>`_ son dos librerías ampliamente utilizadas en el análisis de datos.
+
+`¿Qué son los dataframes y arrays? <https://docs.google.com/presentation/d/1SwSMC8IJlX4vwVc2cdjYscJ0ALbuekQe0MaV2H3Fu9M/edit?usp=sharing>`_.
+
+Numpy tiene un excelente `tutorial de introducción numpy <https://numpy.org/devdocs/user/absolute_beginners.html>`_, además de mucha más `documentación <https://numpy.org/learn/>`_.
+
+Pandas tiene un tutorial sobre `DataFrame y Series <https://pandas.pydata.org/docs/user_guide/dsintro.html#dsintro>`_ y una introducción a `pandas en 10 minutos <https://pandas.pydata.org/docs/user_guide/10min.html>`_.
+
+En mi curso sobre `análisis de datos <https://github.com/JoseBlanca/py_industriales/tree/main/analisis>`_ hay otra introducción a numpy y pandas que incluye ejercicios.
+
