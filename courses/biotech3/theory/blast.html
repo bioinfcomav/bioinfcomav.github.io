@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Blast &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
-    <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Multiple Sequence Alignment" href="multiple.html" />
     <link rel="prev" title="Sequence Alignment" href="sequence_alignment.html" />
@@ -32,9 +36,9 @@
           <div class="body" role="main">
             
   <section id="blast">
-<h1>Blast<a class="headerlink" href="#blast" title="Link to this heading">¶</a></h1>
+<h1>Blast<a class="headerlink" href="#blast" title="Permalink to this heading">¶</a></h1>
 <section id="sequence-database-search">
-<h2>Sequence database search<a class="headerlink" href="#sequence-database-search" title="Link to this heading">¶</a></h2>
+<h2>Sequence database search<a class="headerlink" href="#sequence-database-search" title="Permalink to this heading">¶</a></h2>
 <p>One very common bioinfomatic problem is to look for a sequence in a sequence database by comparing it with a query sequence of our own.
 For instance, we could have a sequence isolated from a virus and we could look in the database for similar sequences in other to assign the species.
 We can also look for similar genes in other species having the sequence of the gene in one species.</p>
@@ -44,14 +48,14 @@ The problem with those algorithms is the speed.
 We need a very fast a aligner becase the sequence databases are commonly comprised by many millions of sequences.</p>
 </section>
 <section id="id1">
-<h2>BLAST<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<h2>BLAST<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/BLAST">BLAST</a> is one of the most used algorithms in bioinformatics.</p>
 <p>BLAST includes a family of related algorithms capable of aligning a query sequence against all the sequences in a database in a very fast way.</p>
 <p>BLAST will produce local alignments of the query sequence against the sequences in the database.</p>
 <p>BLAST also generates a expect value that is related with the statistical significance of the alignment.</p>
 <p>BLAST can refer to the family of algorithms, to the NCBI <a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK279690/">BLAST</a> implementation and to the NCBI <a class="reference external" href="http://blast.ncbi.nlm.nih.gov/Blast.cgi">BLAST</a> server.</p>
 <section id="algorithm">
-<h3>Algorithm<a class="headerlink" href="#algorithm" title="Link to this heading">¶</a></h3>
+<h3>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this heading">¶</a></h3>
 <p>BLAST uses a very fast algorithm based on words (also known as k-tuples or kmers).</p>
 <p>BLAST is many orders of magnitude faster than any Smith &amp; Waterman implementation.
 To achive that speed it will create less acurate alignments and it will be somewhat less sentitive.
@@ -89,7 +93,7 @@ Each alignmed is a High Scoring Pair (HSP) in the BLAST nomenclature.
 A database sequence and the query sequence can have several HSPs.</p>
 </section>
 <section id="e-value">
-<h3>e-value<a class="headerlink" href="#e-value" title="Link to this heading">¶</a></h3>
+<h3>e-value<a class="headerlink" href="#e-value" title="Permalink to this heading">¶</a></h3>
 <p>Once we have the alignments we should ask: are the alignments statistically significative?</p>
 <p>Let’s try to align to random sequences:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Query</span><span class="o">=</span> <span class="n">unknown</span>
@@ -125,7 +129,7 @@ We can not compare e-values obtained for different databases.</p>
 </section>
 </section>
 <section id="blast-example">
-<h2>BLAST example<a class="headerlink" href="#blast-example" title="Link to this heading">¶</a></h2>
+<h2>BLAST example<a class="headerlink" href="#blast-example" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Blast</span> <span class="n">of</span> <span class="n">sequence</span> <span class="n">c15d_01</span><span class="o">-</span><span class="n">D10</span><span class="o">-</span><span class="n">M13R_c</span> <span class="n">against</span> <span class="n">database</span> <span class="n">arabidopsis</span>
 <span class="n">BLASTX</span> <span class="mf">2.2.10</span> <span class="p">[</span><span class="n">Oct</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">2004</span><span class="p">]</span>
 
@@ -220,7 +224,7 @@ We can not compare e-values obtained for different databases.</p>
 </div>
 </section>
 <section id="blast-programs">
-<h2>BLAST programs<a class="headerlink" href="#blast-programs" title="Link to this heading">¶</a></h2>
+<h2>BLAST programs<a class="headerlink" href="#blast-programs" title="Permalink to this heading">¶</a></h2>
 <p>BLAST has different programs to compare different kinds of sequences.</p>
 <ul class="simple">
 <li><p>BLASTN compares a nucleotide sequence with a nucleotide database</p></li>
@@ -231,20 +235,20 @@ We can not compare e-values obtained for different databases.</p>
 </ul>
 </section>
 <section id="megablast">
-<h2>MEGABLAST<a class="headerlink" href="#megablast" title="Link to this heading">¶</a></h2>
+<h2>MEGABLAST<a class="headerlink" href="#megablast" title="Permalink to this heading">¶</a></h2>
 <p>Megablast is an algorithm derived from BLAST.
 It is faster than BLAST although a little bit less sensitive.
 It will be faster than BLAST, but it will miss the match if the sequences are very different.</p>
 </section>
 <section id="blast-2-sequences">
-<h2>BLAST 2 sequences<a class="headerlink" href="#blast-2-sequences" title="Link to this heading">¶</a></h2>
+<h2>BLAST 2 sequences<a class="headerlink" href="#blast-2-sequences" title="Permalink to this heading">¶</a></h2>
 <p>It uses the BLAST algorithm to do a pairwise alignment.
 It does not uses a database.</p>
 <p>It is a very fast way to get a rough alignment (not as good as a Smith and Waterman one).
 It has the advantage of trying to align both strands.</p>
 </section>
 <section id="psi-blast-and-delta-blast">
-<h2>PSI-BLAST and DELTA-BLAST<a class="headerlink" href="#psi-blast-and-delta-blast" title="Link to this heading">¶</a></h2>
+<h2>PSI-BLAST and DELTA-BLAST<a class="headerlink" href="#psi-blast-and-delta-blast" title="Permalink to this heading">¶</a></h2>
 <p>PSI-BLAST and DELTA-BLAST are two alternative algorithms to blastp that are more sensitive.
 They can be used to find distant relatives in the sequences.</p>
 <p>PSI-BLAST (Position-Specific Iterated BLAST) is based on the use of <a class="reference external" href="https://en.wikipedia.org/wiki/Position_weight_matrix">Position-Specific Scoring Matrices</a> (PSSM).
@@ -352,7 +356,7 @@ With the results creates a PSSM and uses that to search in the protein database.
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

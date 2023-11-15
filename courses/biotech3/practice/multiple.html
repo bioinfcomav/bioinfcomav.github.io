@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Multiple Sequence Alignment &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
-    <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Structural Annotation" href="structural_annotation.html" />
     <link rel="prev" title="Blast Practice" href="blast.html" />
@@ -32,35 +36,35 @@
           <div class="body" role="main">
             
   <section id="multiple-sequence-alignment">
-<h1>Multiple Sequence Alignment<a class="headerlink" href="#multiple-sequence-alignment" title="Link to this heading">¶</a></h1>
+<h1>Multiple Sequence Alignment<a class="headerlink" href="#multiple-sequence-alignment" title="Permalink to this heading">¶</a></h1>
 <section id="clustal-omega-protein-alignment">
-<h2>Clustal Omega protein alignment<a class="headerlink" href="#clustal-omega-protein-alignment" title="Link to this heading">¶</a></h2>
+<h2>Clustal Omega protein alignment<a class="headerlink" href="#clustal-omega-protein-alignment" title="Permalink to this heading">¶</a></h2>
 <p>We are going to use the clustal omega program to analyze some homologous proteins to the human frataxin in <a class="reference download internal" download="" href="../_downloads/695321845f3acbd024acad468cf1edd6/frataxin_mamiferos.fasta"><code class="xref download docutils literal notranslate"><span class="pre">mammals</span></code></a>.</p>
 <p>You can use clustal <a class="reference external" href="https://www.ebi.ac.uk/Tools/msa/clustalo/">omega</a> in the ebi server.
 There are also on-line servers that create clustalw alignments and you can read its</p>
 <p>Create an alignment check the result.
 Is there any problem?</p>
 <section id="what-would-happen-if-we-remove-the-most-dissimilar-sequences">
-<h3>What would happen if we remove the most dissimilar sequences<a class="headerlink" href="#what-would-happen-if-we-remove-the-most-dissimilar-sequences" title="Link to this heading">¶</a></h3>
+<h3>What would happen if we remove the most dissimilar sequences<a class="headerlink" href="#what-would-happen-if-we-remove-the-most-dissimilar-sequences" title="Permalink to this heading">¶</a></h3>
 <p>Redo the analysis only with the <a class="reference download internal" download="" href="../_downloads/fcbee16caac02e50b56e9fb40a418669/frataxin_mamiferos_cercanos.fasta"><code class="xref download docutils literal notranslate"><span class="pre">closest</span> <span class="pre">mammals</span></code></a> and compare the result with the previous one.</p>
 </section>
 <section id="what-would-happen-with-more-dissimilar-sequences">
-<h3>What would happen with more dissimilar sequences<a class="headerlink" href="#what-would-happen-with-more-dissimilar-sequences" title="Link to this heading">¶</a></h3>
+<h3>What would happen with more dissimilar sequences<a class="headerlink" href="#what-would-happen-with-more-dissimilar-sequences" title="Permalink to this heading">¶</a></h3>
 <p>Try to do the alignment with more different <a class="reference download internal" download="" href="../_downloads/7ef0b6cf2089123525c930f52e9523c7/frataxin_prot.fasta"><code class="xref download docutils literal notranslate"><span class="pre">sequences</span></code></a>.</p>
 </section>
 <section id="t-coffee">
-<h3>T-Coffee<a class="headerlink" href="#t-coffee" title="Link to this heading">¶</a></h3>
+<h3>T-Coffee<a class="headerlink" href="#t-coffee" title="Permalink to this heading">¶</a></h3>
 <p>Compare the result with the one given by <a class="reference external" href="http://tcoffee.crg.cat/apps/tcoffee/do:regular">T-Coffee</a></p>
 <p>Once you have the result you can use the TCS tool in the same server to get an idea of which sites are reliable which are not.</p>
 </section>
 <section id="conserved-domains">
-<h3>Conserved domains<a class="headerlink" href="#conserved-domains" title="Link to this heading">¶</a></h3>
+<h3>Conserved domains<a class="headerlink" href="#conserved-domains" title="Permalink to this heading">¶</a></h3>
 <p>Compare the result with the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/Structure/cdd/cddsrv.cgi?uid=29607">domain</a> stored in NCBI for the frataxin.</p>
 <p>Is this domain similar to any of our alignments?</p>
 </section>
 </section>
 <section id="dna-sequence-alignment">
-<h2>DNA sequence alignment<a class="headerlink" href="#dna-sequence-alignment" title="Link to this heading">¶</a></h2>
+<h2>DNA sequence alignment<a class="headerlink" href="#dna-sequence-alignment" title="Permalink to this heading">¶</a></h2>
 <p>We can also align DNA sequences.
 This is useful to do phylogenetic analysis and to look for mutations in the sequences.
 We are going to look for the SNPs in the <a class="reference download internal" download="" href="../_downloads/42a4d4f309f3c79baf7ea0dfdf1d00c9/seq_dna.fasta"><code class="xref download docutils literal notranslate"><span class="pre">CT099</span></code></a> gene of <em>Lycopersicum pimpinellifolium</em>. Align them using <a class="reference external" href="http://www.ebi.ac.uk/Tools/msa/mafft/">MAFFT</a>.</p>
@@ -150,7 +154,7 @@ We are going to look for the SNPs in the <a class="reference download internal" 
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

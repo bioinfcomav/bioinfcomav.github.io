@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Sequence Alignment &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
-    <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Blast" href="blast.html" />
     <link rel="prev" title="Biological Databases" href="databases.html" />
@@ -32,9 +36,9 @@
           <div class="body" role="main">
             
   <section id="sequence-alignment">
-<h1>Sequence Alignment<a class="headerlink" href="#sequence-alignment" title="Link to this heading">¶</a></h1>
+<h1>Sequence Alignment<a class="headerlink" href="#sequence-alignment" title="Permalink to this heading">¶</a></h1>
 <section id="biological-meaning">
-<h2>Biological meaning<a class="headerlink" href="#biological-meaning" title="Link to this heading">¶</a></h2>
+<h2>Biological meaning<a class="headerlink" href="#biological-meaning" title="Permalink to this heading">¶</a></h2>
 <p>In general, the more similar two sequences are, the more similar should their functions be and more phylogenetically close they should be.
 The sequences for the same gene in a group of species will be more different the more distant phylogenetically they are.
 Sequences will get mutations over time, so the more time has passed since two species split, the more mutations will have their sequences and the more different their sequences will be.
@@ -49,7 +53,7 @@ They either share a common ancestor or they don’t.</p>
 Usually we infer it from their similarity.
 If two biological sequences are similar we tend to infer that they are similar because they are homologous.</p>
 <section id="usefulness">
-<h3>Usefulness<a class="headerlink" href="#usefulness" title="Link to this heading">¶</a></h3>
+<h3>Usefulness<a class="headerlink" href="#usefulness" title="Permalink to this heading">¶</a></h3>
 <p>Alignments could be used to:</p>
 <ul class="simple">
 <li><p>Quantify the phylogenetic distance between two sequences</p></li>
@@ -60,7 +64,7 @@ If two biological sequences are similar we tend to infer that they are similar b
 </section>
 </section>
 <section id="id1">
-<h2>Sequence alignment<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<h2>Sequence alignment<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>The first step to compare two sequences is, usually, to align them.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">alignment</span>
 
@@ -104,7 +108,7 @@ Another complementary objective could be to align protein regions that have the 
 <p>Aligning similar sequences by any algorithm usually creates alignments that are usually correct, but when sequences are very different aligning them could be a challenge.
 Once a long time has passed since the split of the species the sequences can be so changed by the mutations that any meaningful similarities could have been lost an creating a meaningful alignment could be very difficult.</p>
 <section id="evaluating-the-alignments">
-<h3>Evaluating the alignments<a class="headerlink" href="#evaluating-the-alignments" title="Link to this heading">¶</a></h3>
+<h3>Evaluating the alignments<a class="headerlink" href="#evaluating-the-alignments" title="Permalink to this heading">¶</a></h3>
 <p>To be able to compare the different possible alignments we can score them.
 We can create a scoring system that gives more points to alignments that are biologically more reasonable.
 Ideally we would create a scoring system that gives more points to the alignments that align the homologous positions.</p>
@@ -135,7 +139,7 @@ Usually, if the problem is similar to the one that motivated the creation of the
 When our problem is different from the original one we have to be aware of the changes to adapt the software to our needs.</p>
 </section>
 <section id="gobal-and-local-alignments">
-<h3>Gobal and local alignments<a class="headerlink" href="#gobal-and-local-alignments" title="Link to this heading">¶</a></h3>
+<h3>Gobal and local alignments<a class="headerlink" href="#gobal-and-local-alignments" title="Permalink to this heading">¶</a></h3>
 <p>We could divide the alignment algorithms in two types: global and local.
 The global algorithms try to create an alignment that covers completely both sequences adding whatever gaps necessary.
 The local algorithms try to align only the most similar regions.
@@ -160,9 +164,9 @@ Global alignments are usually only used within the multiple alignment algorithms
 </section>
 </section>
 <section id="alignment-methods">
-<h2>Alignment methods<a class="headerlink" href="#alignment-methods" title="Link to this heading">¶</a></h2>
+<h2>Alignment methods<a class="headerlink" href="#alignment-methods" title="Permalink to this heading">¶</a></h2>
 <section id="dot-plot-or-dot-matrix">
-<h3>Dot plot (or Dot matrix)<a class="headerlink" href="#dot-plot-or-dot-matrix" title="Link to this heading">¶</a></h3>
+<h3>Dot plot (or Dot matrix)<a class="headerlink" href="#dot-plot-or-dot-matrix" title="Permalink to this heading">¶</a></h3>
 <p>This alignment method creates a graphical representation of the alignment.
 It creates intuitive representations and it has the advantage that it will show different alternative alignments between two sequences.
 Other, more standard, alignment methods usually give back only one alignment, the best one, unless instructed otherwise.</p>
@@ -191,7 +195,7 @@ An example is dotmatcher from the <a class="reference external" href="http://emb
 <p>One limitation of the dotplot method is that although we detect similar regions we do not obtain the alignment.</p>
 </section>
 <section id="sensitivity-and-specificity">
-<h3>Sensitivity and Specificity<a class="headerlink" href="#sensitivity-and-specificity" title="Link to this heading">¶</a></h3>
+<h3>Sensitivity and Specificity<a class="headerlink" href="#sensitivity-and-specificity" title="Permalink to this heading">¶</a></h3>
 <p>A variation of the dot plot algorithm can compare windows of several residues instead of individual residues.
 In that case a similarity threshold is set to mark a position as similar.
 These parameters will influence the sensitivity and specificity of the analysis.
@@ -219,7 +223,7 @@ In the dotplot case a false positive would be a region that is marked as similar
 These are very important characteristics of the analyses.</p>
 </section>
 <section id="smith-and-waterman-algorithm">
-<h3>Smith and Waterman algorithm<a class="headerlink" href="#smith-and-waterman-algorithm" title="Link to this heading">¶</a></h3>
+<h3>Smith and Waterman algorithm<a class="headerlink" href="#smith-and-waterman-algorithm" title="Permalink to this heading">¶</a></h3>
 <p>There are plenty of algorithms to create text based pairwise sequence alignments.</p>
 <p>These algorithms are based on creating a matrix equivalent to the 2D representation created by the dot plot.
 In those matrices the fragments that will constitute the alignments can be seen as diagonals.</p>
@@ -369,14 +373,14 @@ It works very well with small sequences, but it is not practical when the sequen
 The time it takes to create the scoring matrix for a naive Smith-Waterman implementation depends of m x n (being m and n the length of the sequences).</p>
 </section>
 <section id="more-than-one-alignment">
-<h3>More than one alignment<a class="headerlink" href="#more-than-one-alignment" title="Link to this heading">¶</a></h3>
+<h3>More than one alignment<a class="headerlink" href="#more-than-one-alignment" title="Permalink to this heading">¶</a></h3>
 <p>In the dotplot graphical results we saw that some time there could be no just one but several valid alignments.
 Usually the alignment software that implements the Smith-Waterman algorithm will only print just one alignment by default, the higher scoring one.
 If there a multiple alignments we will miss them unless we instruct the software otherwise.</p>
 </section>
 </section>
 <section id="aminoacid-substitution-matrices">
-<h2>Aminoacid substitution matrices<a class="headerlink" href="#aminoacid-substitution-matrices" title="Link to this heading">¶</a></h2>
+<h2>Aminoacid substitution matrices<a class="headerlink" href="#aminoacid-substitution-matrices" title="Permalink to this heading">¶</a></h2>
 <p>When scoring a position of an alignment between two nucleotide sequences we can consider a match if the nucleotide match and a mismatch if the nucleotides are different</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ACGT</span>        <span class="n">ACGT</span>
   <span class="o">|</span>
@@ -404,7 +408,7 @@ In the BLOSUM matrices the number reflects the minimum percentage of identity al
 <p>We will see that a very related concept, the nucleotide evolution model, is used in the phylogenetic analyses, but they are seldom used by the alignment software.</p>
 </section>
 <section id="statistical-significance-of-the-alignments">
-<h2>Statistical significance of the alignments<a class="headerlink" href="#statistical-significance-of-the-alignments" title="Link to this heading">¶</a></h2>
+<h2>Statistical significance of the alignments<a class="headerlink" href="#statistical-significance-of-the-alignments" title="Permalink to this heading">¶</a></h2>
 <p>One general problem with the bioinformatic algorithms is that they usually generate a result, but some times that result could be meaningless.
 For instance, we could generate two random sequences and align them.
 The Smith-Waterman algorithm would generate an alignment, but despite being its optimal alignment it would be meaningless.</p>
@@ -497,7 +501,7 @@ As we will see there is software that calculate these kind of statistical signif
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

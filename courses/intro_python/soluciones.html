@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../../">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Introducción a la programación con Python &#8212; Bioinf at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
-    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../../search.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -30,20 +34,20 @@
           <div class="body" role="main">
             
   <section id="introduccion-a-la-programacion-con-python">
-<h1>Introducción a la programación con Python<a class="headerlink" href="#introduccion-a-la-programacion-con-python" title="Link to this heading">¶</a></h1>
+<h1>Introducción a la programación con Python<a class="headerlink" href="#introduccion-a-la-programacion-con-python" title="Permalink to this heading">¶</a></h1>
 <p>Para complementar estos ejercicios tienes más material en el curso de <a class="reference external" href="https://github.com/JoseBlanca/py_industriales">análisis de datos con Python</a>.
 Existe un excelente libro de introducción a Python: <a class="reference external" href="https://ehmatthes.github.io/pcc/">Python Crash Course</a>.</p>
 <p>Recuerda que puedes trabajar en estos ejercicios con el editor online de <a class="reference external" href="https://futurecoder.io/course/#ide">Future coder</a>.</p>
 <p>Para instalar Python junto a las librerías más utilizadas en bioinformática puedes utilizar <a class="reference external" href="https://www.anaconda.com/download">anaconda</a>.</p>
 <p>Las soluciones a los ejercicios puedes encontraslas en: <a class="reference external" href="soluciones.html">ejercicios y soluciones</a>.</p>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <section id="adivinar-un-numero">
-<h3>Adivinar un número<a class="headerlink" href="#adivinar-un-numero" title="Link to this heading">¶</a></h3>
+<h3>Adivinar un número<a class="headerlink" href="#adivinar-un-numero" title="Permalink to this heading">¶</a></h3>
 <p>Escribe un programa que elija al azar un número entre el uno y el diez, que le pregunte al jugador un número y que compruebe si has acertado o no.</p>
 </section>
 <section id="par-o-impar">
-<h3>Par o impar<a class="headerlink" href="#par-o-impar" title="Link to this heading">¶</a></h3>
+<h3>Par o impar<a class="headerlink" href="#par-o-impar" title="Permalink to this heading">¶</a></h3>
 <p>Crea un programa que pida un número entero y que devuelva si es par o impar.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Introduce un entero: &#39;</span><span class="p">)</span>
 <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
@@ -55,7 +59,7 @@ Existe un excelente libro de introducción a Python: <a class="reference externa
 </div>
 </section>
 <section id="palindromos">
-<h3>Palindromos<a class="headerlink" href="#palindromos" title="Link to this heading">¶</a></h3>
+<h3>Palindromos<a class="headerlink" href="#palindromos" title="Permalink to this heading">¶</a></h3>
 <p>Escribe un programa que compruebe si una palabra es palindrómica o no.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Introduce una palabra: &#39;</span><span class="p">)</span>
 
@@ -67,7 +71,7 @@ Existe un excelente libro de introducción a Python: <a class="reference externa
 </div>
 </section>
 <section id="sitio-de-restriccion">
-<h3>Sitio de restricción<a class="headerlink" href="#sitio-de-restriccion" title="Link to this heading">¶</a></h3>
+<h3>Sitio de restricción<a class="headerlink" href="#sitio-de-restriccion" title="Permalink to this heading">¶</a></h3>
 <p>Busca el sitio de restricción en una secuencia de ADN.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eco_ri_site</span> <span class="o">=</span> <span class="s1">&#39;GAATTC&#39;</span>
 <span class="n">sequence</span> <span class="o">=</span> <span class="s1">&#39;ctagctagtcgtagctagtcagaattcgtcgtagtcagcta&#39;</span>
@@ -77,7 +81,7 @@ Existe un excelente libro de introducción a Python: <a class="reference externa
 </div>
 </section>
 <section id="secuencia-reversa-y-complementaria">
-<h3>Secuencia reversa y complementaria<a class="headerlink" href="#secuencia-reversa-y-complementaria" title="Link to this heading">¶</a></h3>
+<h3>Secuencia reversa y complementaria<a class="headerlink" href="#secuencia-reversa-y-complementaria" title="Permalink to this heading">¶</a></h3>
 <p>Haz un programa que cree una secuencia de ADN reversa y complementaria.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="s1">&#39;ACTGGTA&#39;</span>
 
@@ -95,7 +99,7 @@ Existe un excelente libro de introducción a Python: <a class="reference externa
 </div>
 </section>
 <section id="conversor-fahrenheit-a-celsius">
-<h3>Conversor Fahrenheit a Celsius<a class="headerlink" href="#conversor-fahrenheit-a-celsius" title="Link to this heading">¶</a></h3>
+<h3>Conversor Fahrenheit a Celsius<a class="headerlink" href="#conversor-fahrenheit-a-celsius" title="Permalink to this heading">¶</a></h3>
 <p>Crea una función que convierta de fahrenheit a celsius y otra que lo haga al revés.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_to_celsius</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">):</span>
     <span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="n">fahrenheit</span> <span class="o">-</span> <span class="mf">32.0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">5.0</span> <span class="o">/</span> <span class="mf">9.0</span><span class="p">)</span>
@@ -118,7 +122,7 @@ Existe un excelente libro de introducción a Python: <a class="reference externa
 </div>
 </section>
 <section id="juego-del-ahorcado">
-<h3>Juego del ahorcado<a class="headerlink" href="#juego-del-ahorcado" title="Link to this heading">¶</a></h3>
+<h3>Juego del ahorcado<a class="headerlink" href="#juego-del-ahorcado" title="Permalink to this heading">¶</a></h3>
 <p>Crea un juego del ahorcado.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
@@ -174,11 +178,154 @@ Existe un excelente libro de introducción a Python: <a class="reference externa
 </div>
 </section>
 <section id="hola-mundo-en-el-visual-studio-code">
-<h3>Hola mundo en el Visual Studio Code<a class="headerlink" href="#hola-mundo-en-el-visual-studio-code" title="Link to this heading">¶</a></h3>
+<h3>Hola mundo en el Visual Studio Code<a class="headerlink" href="#hola-mundo-en-el-visual-studio-code" title="Permalink to this heading">¶</a></h3>
 <p>El <a class="reference external" href="https://code.visualstudio.com/download">Visual Studio Code</a> es un excelente editor de código.</p>
 </section>
+</section>
+<section id="mas-ejercicios">
+<h2>Más ejercicios<a class="headerlink" href="#mas-ejercicios" title="Permalink to this heading">¶</a></h2>
+<section id="frio-o-caliente">
+<h3>Frío o caliente<a class="headerlink" href="#frio-o-caliente" title="Permalink to this heading">¶</a></h3>
+<p>Escribe un programa que pregunte al usuario la temperatura actual y que responda diciendo si hace frío o calor.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperatura_habitacion</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Cual es la temperatura actual? &#39;</span><span class="p">)</span>
+<span class="n">temperatura_habitacion</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">temperatura_habitacion</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">temperatura_habitacion</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hace bastante frío&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">temperatura_habitacion</span> <span class="o">&lt;</span> <span class="mi">22</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hace algo de frío&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">temperatura_habitacion</span> <span class="o">&lt;</span> <span class="mi">26</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Se está bastante bien&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">temperatura_habitacion</span> <span class="o">&lt;</span> <span class="mi">28</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hace algo de calor&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hace calor&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="divide-la-cadena-de-texto">
+<h3>Divide la cadena de texto<a class="headerlink" href="#divide-la-cadena-de-texto" title="Permalink to this heading">¶</a></h3>
+<p>Escribe un programa que elimine un número determinado de letras, el que se le pida en una variable, de una cadena de texto e imprima el resultado.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s1">&#39;Hola Caracola&#39;</span>
+<span class="n">num_caracteres_a_eliminar</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="n">texto</span><span class="p">[</span><span class="n">num_caracteres_a_eliminar</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="escribe-asteriscos">
+<h3>Escribe asteriscos<a class="headerlink" href="#escribe-asteriscos" title="Permalink to this heading">¶</a></h3>
+<p>Escribe un programa que pida un número e imprima ese mismo número de asteriscos “*”. (Puedes utilizar la función <a class="reference external" href="https://docs.python.org/3/library/functions.html#func-range">range</a>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Escribe un número: &#39;</span><span class="p">)</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="elimina-letras">
+<h3>Elimina letras<a class="headerlink" href="#elimina-letras" title="Permalink to this heading">¶</a></h3>
+<p>Escribe un programa que elimine algunas letras de una cadena de texto, las que le des en una lista, utilizando un bucle <em>for</em>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s1">&#39;Hola Caracola&#39;</span>
+<span class="n">caracteres_a_eliminar</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]</span>
+
+<span class="n">nuevo_texto</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">texto</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">caracteres_a_eliminar</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">nuevo_texto</span> <span class="o">=</span> <span class="n">nuevo_texto</span> <span class="o">+</span> <span class="n">letra</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">nuevo_texto</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="escribe-el-numero-reverso">
+<h3>Escribe el número reverso<a class="headerlink" href="#escribe-el-numero-reverso" title="Permalink to this heading">¶</a></h3>
+<p>Escribe un programa que genere el número con las cifras al revés separadas por espacios. Por ejemplo, si le das “7563” el resultado debería ser “3 6 5 7”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="mi">56783</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+
+<span class="n">cifras</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">cifra</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
+    <span class="n">cifras</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cifra</span><span class="p">)</span>
+
+<span class="n">numero</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cifras</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>Par o impar<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>Escribe un programa que imprima cada número del 1 al 20 y que indique si es par o impar.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">,</span> <span class="s1">&#39;impar&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">,</span> <span class="s1">&#39;par&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="tablas-de-multiplicar">
+<h3>Tablas de multiplicar<a class="headerlink" href="#tablas-de-multiplicar" title="Permalink to this heading">¶</a></h3>
+<p>Escribe un programa que imprima las tablas de multiplicar hasta el 10.
+.. code-block:: python</p>
+<blockquote>
+<div><dl>
+<dt>for numero1 in range(1, 10):</dt><dd><dl class="simple">
+<dt>for numero2 in range(1, 10):</dt><dd><p>print(f’{numero1} x {numero2} = ‘, numero1 * numero2)</p>
+</dd>
+</dl>
+<p>print()</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="piramide-de-numeros">
+<h3>Pirámide de números<a class="headerlink" href="#piramide-de-numeros" title="Permalink to this heading">¶</a></h3>
+<p>Escribe un programa que imprima el siguiente patrón:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mi">2</span> <span class="mi">2</span>
+<span class="mi">3</span> <span class="mi">3</span> <span class="mi">3</span>
+<span class="mi">4</span> <span class="mi">4</span> <span class="mi">4</span> <span class="mi">4</span>
+<span class="mi">5</span> <span class="mi">5</span> <span class="mi">5</span> <span class="mi">5</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">numero_chr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+    <span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="n">numero_chr</span><span class="p">]</span> <span class="o">*</span> <span class="n">numero</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">numeros</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="caracteres-impares">
+<h3>Caracteres impares<a class="headerlink" href="#caracteres-impares" title="Permalink to this heading">¶</a></h3>
+<p>Escribe un programa que imprima las letras impares de una cadena de texto. (Puedes utilizar la función <a class="reference external" href="https://docs.python.org/3/library/functions.html#enumerate">enumerate</a>)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s1">&#39;Hola caracola&#39;</span>
+
+<span class="k">for</span> <span class="n">indice</span><span class="p">,</span> <span class="n">letra</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">texto</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">indice</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="suma-los-primeros-numeros">
+<h3>Suma los primeros números<a class="headerlink" href="#suma-los-primeros-numeros" title="Permalink to this heading">¶</a></h3>
+<p>Escribe un programa que sume los números desde 0 a 50 utilizando un bucle <em>for</em>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ultimo_numero</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ultimo_numero</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">suma</span> <span class="o">=</span> <span class="n">suma</span> <span class="o">+</span> <span class="n">num</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La suma total es: &#39;</span><span class="p">,</span> <span class="n">suma</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 <section id="lee-un-fichero-fasta">
-<h3>Lee un fichero fasta<a class="headerlink" href="#lee-un-fichero-fasta" title="Link to this heading">¶</a></h3>
+<h3>Lee un fichero fasta<a class="headerlink" href="#lee-un-fichero-fasta" title="Permalink to this heading">¶</a></h3>
 <p>Crea una función capaz de leer ficheros fasta.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
 
@@ -210,12 +357,12 @@ Existe un excelente libro de introducción a Python: <a class="reference externa
 </div>
 </section>
 <section id="calcular-el-porcentaje-de-gc-por-secuencia">
-<h3>Calcular el porcentaje de GC por secuencia<a class="headerlink" href="#calcular-el-porcentaje-de-gc-por-secuencia" title="Link to this heading">¶</a></h3>
+<h3>Calcular el porcentaje de GC por secuencia<a class="headerlink" href="#calcular-el-porcentaje-de-gc-por-secuencia" title="Permalink to this heading">¶</a></h3>
 <p>Dado un fichero fasta con secuencias, calcula el porcentaje de GC para cada una de ellas.</p>
 </section>
 </section>
 <section id="introduccion-a-pandas-y-numpy">
-<h2>Introducción a pandas y numpy<a class="headerlink" href="#introduccion-a-pandas-y-numpy" title="Link to this heading">¶</a></h2>
+<h2>Introducción a pandas y numpy<a class="headerlink" href="#introduccion-a-pandas-y-numpy" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://pandas.pydata.org/">Pandas</a> y <a class="reference external" href="https://numpy.org/">numpy</a> son dos librerías ampliamente utilizadas en el análisis de datos.</p>
 <p><a class="reference external" href="https://docs.google.com/presentation/d/1SwSMC8IJlX4vwVc2cdjYscJ0ALbuekQe0MaV2H3Fu9M/edit?usp=sharing">¿Qué son los dataframes y arrays?</a>.</p>
 <p>Numpy tiene un excelente <a class="reference external" href="https://numpy.org/devdocs/user/absolute_beginners.html">tutorial de introducción numpy</a>, además de mucha más <a class="reference external" href="https://numpy.org/learn/">documentación</a>.</p>
@@ -289,7 +436,7 @@ Existe un excelente libro de introducción a Python: <a class="reference externa
       &copy;2010-2023, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

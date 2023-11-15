@@ -58,6 +58,67 @@ Hola mundo en el Visual Studio Code
 
 El `Visual Studio Code <https://code.visualstudio.com/download>`_ es un excelente editor de código.
 
+Más ejercicios
+##############
+
+Frío o caliente
+---------------
+
+Escribe un programa que pregunte al usuario la temperatura actual y que responda diciendo si hace frío o calor.
+
+Divide la cadena de texto
+-------------------------
+
+Escribe un programa que elimine un número determinado de letras, el que se le pida en una variable, de una cadena de texto e imprima el resultado.
+
+Escribe asteriscos
+------------------
+
+Escribe un programa que pida un número e imprima ese mismo número de asteriscos "*". (Puedes utilizar la función `range <https://docs.python.org/3/library/functions.html#func-range>`_).
+
+Elimina letras
+--------------
+
+Escribe un programa que elimine algunas letras de una cadena de texto, las que le des en una lista, utilizando un bucle *for*.
+
+
+Escribe el número reverso
+-------------------------
+
+Escribe un programa que genere el número con las cifras al revés separadas por espacios. Por ejemplo, si le das "7563" el resultado debería ser "3 6 5 7".
+
+
+Par o impar
+-----------
+
+Escribe un programa que imprima cada número del 1 al 20 y que indique si es par o impar.
+
+
+Tablas de multiplicar
+---------------------
+
+Escribe un programa que imprima las tablas de multiplicar hasta el 10.
+
+
+
+Pirámide de números
+-------------------
+
+Escribe un programa que imprima el siguiente patrón::
+
+
+Caracteres impares
+------------------
+
+Escribe un programa que imprima las letras impares de una cadena de texto. (Puedes utilizar la función `enumerate <https://docs.python.org/3/library/functions.html#enumerate>`_)
+
+
+Suma los primeros números
+-------------------------
+
+Escribe un programa que sume los números desde 0 a 50 utilizando un bucle *for*.
+
+
 Lee un fichero fasta
 --------------------
 
@@ -68,6 +129,7 @@ Calcular el porcentaje de GC por secuencia
 ------------------------------------------
 
 Dado un fichero fasta con secuencias, calcula el porcentaje de GC para cada una de ellas.
+
 
 Introducción a pandas y numpy
 #############################

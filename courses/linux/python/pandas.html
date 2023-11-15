@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>pandas &#8212; Bioinf at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
-    <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Ejercicios finales" href="../ejercicios_finales.html" />
     <link rel="prev" title="Numpy" href="scipy.html" />
@@ -32,7 +36,7 @@
           <div class="body" role="main">
             
   <section id="pandas">
-<h1>pandas<a class="headerlink" href="#pandas" title="Link to this heading">¶</a></h1>
+<h1>pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">¶</a></h1>
 <p><a class="reference external" href="http://pandas.pydata.org/">pandas</a> es un paquete de Python que proporciona estructuras de datos similares a los dataframes de R.
 Pandas depende de Numpy, la librería que añade un potente tipo matricial a Python.
 Los principales tipos de datos que pueden representarse con pandas son:</p>
@@ -64,7 +68,7 @@ Los principales tipos de datos que pueden representarse con pandas son:</p>
 <p>Nosotros vamos a ver el uso básico de los dos primeros tipos de objetos, para un mayor detalle puedes consultar su <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/dsintro.html">manual</a>.</p>
 <p>pandas tiene una <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/index.html">documentación</a> muy completa y diversos <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html">tutoriales</a>.</p>
 <section id="series">
-<h2>Series<a class="headerlink" href="#series" title="Link to this heading">¶</a></h2>
+<h2>Series<a class="headerlink" href="#series" title="Permalink to this heading">¶</a></h2>
 <p>Las Series se pueden crear tanto a partir de listas como de diccionarios.
 De manera opcional podemos especificar una lista con las etiquetas de las filas.</p>
 <p>Primero necesitamos cargar la librería correspondiente:</p>
@@ -104,7 +108,7 @@ De manera opcional podemos especificar una lista con las etiquetas de las filas.
 </div>
 </section>
 <section id="dataframe">
-<h2>DataFrame<a class="headerlink" href="#dataframe" title="Link to this heading">¶</a></h2>
+<h2>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this heading">¶</a></h2>
 <p>Los DataFrame se pueden crear de diferentes maneras, una forma común de crearlos es partir de listas o diccionarios de listas, de diccionarios o de Series.
 En los DataFrame tenemos la opción de especificar tanto el <strong>index</strong> (el nombre de las filas) como <strong>columns</strong> (el nombre de las columnas).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">form</span> <span class="n">pandas</span> <span class="kn">import</span> <span class="nn">DataFrame</span>
@@ -167,7 +171,7 @@ En los DataFrame tenemos la opción de especificar tanto el <strong>index</stron
 </div>
 </section>
 <section id="extraer-y-filtrar-datos">
-<h2>Extraer y filtrar datos<a class="headerlink" href="#extraer-y-filtrar-datos" title="Link to this heading">¶</a></h2>
+<h2>Extraer y filtrar datos<a class="headerlink" href="#extraer-y-filtrar-datos" title="Permalink to this heading">¶</a></h2>
 <p>Para seleccionar datos usamos los métodos <em>loc</em>, <em>iloc</em> e <em>ix</em>.
 <em>loc</em> permite seleccionar dato usando las etiquetas de filas y columnas, <em>iloc</em> basándose en posición e <em>ix</em> basándose tanto en etiquetas como posición.
 En el caso de una Serie, devuelve un único valor y en el caso de los DataFrame puede devolver tanto una Serie si sólo se indica la posición de fila, o un valor único si se indican fila y columna.</p>
@@ -248,7 +252,7 @@ En el caso de una Serie, devuelve un único valor y en el caso de los DataFrame 
 </div>
 </section>
 <section id="fusionar-datos">
-<h2>Fusionar datos<a class="headerlink" href="#fusionar-datos" title="Link to this heading">¶</a></h2>
+<h2>Fusionar datos<a class="headerlink" href="#fusionar-datos" title="Permalink to this heading">¶</a></h2>
 <p><em>concat</em> permite concatenar Series y DataFrame.
 Mediante la opción axis, podemos controlar si la unión se debe hacer por filas o por columnas.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">concat</span>
@@ -357,7 +361,7 @@ Este comportamiento se puede modificar usando la opción <em>how</em>.
 </div>
 </section>
 <section id="metodos-de-interes">
-<h2>Métodos de interés<a class="headerlink" href="#metodos-de-interes" title="Link to this heading">¶</a></h2>
+<h2>Métodos de interés<a class="headerlink" href="#metodos-de-interes" title="Permalink to this heading">¶</a></h2>
 <p>Existen múltiples métodos que nos permiten visualizar y modificar los datos almacenados en Series y DataFrame.
 Aquí vamos a ver sólo unos cuantos ejemplos de métodos que pueden ser de utilidad:</p>
 <p><em>head</em> y <em>tail</em> permiten ver una pequeña parte de los datos tanto del principio como del final.</p>
@@ -428,7 +432,7 @@ Algunos ejemplos de estos métodos son:</p>
 </div>
 </section>
 <section id="leer-y-escribir-archivos">
-<h2>Leer y escribir archivos<a class="headerlink" href="#leer-y-escribir-archivos" title="Link to this heading">¶</a></h2>
+<h2>Leer y escribir archivos<a class="headerlink" href="#leer-y-escribir-archivos" title="Permalink to this heading">¶</a></h2>
 <p>Los objetos de pandas permiten tanto leer datos en diversos formatos (<em>read_csv, read_excel, read_json, read_html, read_pickle….</em>) como escribir en ellos (<em>to_csv, to_excel, to_json, to_html, to_pickle….</em>).
 Permite incluso leer y escribir en el portapapeles (<em>read_clipboard, to_clipboard</em>).
 Veamos un par de ejemplos sencillo de cómo leer y escribir un archivo CSV (comma separated value)</p>
@@ -474,7 +478,7 @@ O si nuestro fichero no incluyera una fila con columnas o no fuera la primera l�
 </div>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <p>Tenemos un <a class="reference download internal" download="" href="../_downloads/a698895a8592482666e4b80197347888/ejer_pandas.csv"><code class="xref download docutils literal notranslate"><span class="pre">fichero</span></code></a> csv con datos sobre origen, peso y tamaño de diferentes individuos de una especie</p>
 <ol class="arabic simple">
 <li><p>Lee el fichero</p></li>
@@ -640,7 +644,7 @@ O si nuestro fichero no incluyera una fila con columnas o no fuera la primera l�
       &copy;2010-2023, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

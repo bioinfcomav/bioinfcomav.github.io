@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Flujos de información &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
-    <script src="_static/documentation_options.js?v=2709fde1"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Procesamiento de ficheros de texto" href="procesamiento_texto.html" />
     <link rel="prev" title="Control de procesos" href="control_procesos.html" />
@@ -32,12 +36,12 @@
           <div class="body" role="main">
             
   <section id="flujos-de-informacion">
-<h1>Flujos de información<a class="headerlink" href="#flujos-de-informacion" title="Link to this heading">¶</a></h1>
+<h1>Flujos de información<a class="headerlink" href="#flujos-de-informacion" title="Permalink to this heading">¶</a></h1>
 <p>Los programas en línea de comandos, además de poder leer y escribir en ficheros, pueden tomar argumentos como entrada, realizar una tarea e imprimir una salida en la pantalla.</p>
 <a class="reference external image-reference" href="./static/cli_program.png"><img alt="alt text" src="_images/cli_program.png" /></a>
 <p>Por ejemplo, al ejecutar el comando <em>ls</em> se imprime un listado en la pantalla. Esto que acaba siendo impreso en la pantalla constituye lo que se denomina un flujo de información.</p>
 <section id="flujos-de-informacion-estandar">
-<h2>Flujos de información estándar<a class="headerlink" href="#flujos-de-informacion-estandar" title="Link to this heading">¶</a></h2>
+<h2>Flujos de información estándar<a class="headerlink" href="#flujos-de-informacion-estandar" title="Permalink to this heading">¶</a></h2>
 <p>En todos los sistemas Unix existen tres flujos de información:</p>
 <ul class="simple">
 <li><p>standard input (stdin): datos que se envian al programa</p></li>
@@ -54,7 +58,7 @@
 </ul>
 </section>
 <section id="redireccion-del-flujo-estandar">
-<h2>Redirección del flujo estándar<a class="headerlink" href="#redireccion-del-flujo-estandar" title="Link to this heading">¶</a></h2>
+<h2>Redirección del flujo estándar<a class="headerlink" href="#redireccion-del-flujo-estandar" title="Permalink to this heading">¶</a></h2>
 <p>El flujo estándar puede ser redirigido para que no se imprima en pantalla, sino que quede almacenado en un fichero. Para redirigir el flujo de información desde la pantalla a un fichero no necesitamos más que utilizar el símbolo <em>&gt;</em> seguido del nombre de un fichero.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls &gt; listado.txt
 </pre></div>
@@ -87,7 +91,7 @@ listado.txt
 </div>
 </section>
 <section id="pipes">
-<h2>Pipes<a class="headerlink" href="#pipes" title="Link to this heading">¶</a></h2>
+<h2>Pipes<a class="headerlink" href="#pipes" title="Permalink to this heading">¶</a></h2>
 <p>En Unix además de redirigir los flujos de información hacia un fichero podemos unir el flujo de salida de un programa con el de entrada de otro utilizando un <em>pipe</em> (tubería).
 El símbolo para el pipe es |.</p>
 <a class="reference external image-reference" href="./static/pipe.png"><img alt="alt text" src="_images/pipe.png" /></a>
@@ -108,7 +112,7 @@ Veamos cuántos archivos y directorios hay en el directorio actual:</p>
 <p>Esta técnica posibilita, entre otras cosas, el procesamiento de los ficheros de texto de una forma potente y sencilla.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Salva la ruta del directorio actual (<em>pwd</em>) en un archivo, muévete a otro directorio y añade la dirección actual al archivo creado</p></li>
 <li><p>Haz fallar el comando <em>mkdir</em> y salva el mensaje de error en un fichero</p></li>
@@ -117,7 +121,7 @@ Veamos cuántos archivos y directorios hay en el directorio actual:</p>
 </ol>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Link to this heading">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
 <p>1.- Salva la ruta del directorio actual (<em>pwd</em>) en un archivo, muévete a otro directorio y añade la dirección actual al archivo creado.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ pwd &gt; directions.txt
 ~$ cd /bin/
@@ -230,7 +234,7 @@ Veamos cuántos archivos y directorios hay en el directorio actual:</p>
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

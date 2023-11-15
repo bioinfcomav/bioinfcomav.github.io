@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Procesamiento de ficheros de texto &#8212; Bioinf at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
-    <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Expresiones regulares" href="expresiones_regulares.html" />
     <link rel="prev" title="La Shell the UNIX" href="shell.html" />
@@ -32,12 +36,12 @@
           <div class="body" role="main">
             
   <section id="procesamiento-de-ficheros-de-texto">
-<h1>Procesamiento de ficheros de texto<a class="headerlink" href="#procesamiento-de-ficheros-de-texto" title="Link to this heading">¶</a></h1>
+<h1>Procesamiento de ficheros de texto<a class="headerlink" href="#procesamiento-de-ficheros-de-texto" title="Permalink to this heading">¶</a></h1>
 <p>Uno de los puntos fuertes de los sistemas Unix estriba en la facilidad con la que pueden analizar los ficheros de texto en ellos.
 Estos sistemas incluyen una serie de herramientas que permiten realizar una gran cantidad de manipulaciones en estos ficheros sin necesidad de instalar ninguna herramienta especializada.
 Estas son las herramientas que vamos a presentar en esta sección.</p>
 <section id="ficheros-de-texto-y-binarios">
-<h2>Ficheros de texto y binarios<a class="headerlink" href="#ficheros-de-texto-y-binarios" title="Link to this heading">¶</a></h2>
+<h2>Ficheros de texto y binarios<a class="headerlink" href="#ficheros-de-texto-y-binarios" title="Permalink to this heading">¶</a></h2>
 <p>Antes de comenzar a analizar los este tipo de ficheros debemos aclarar qué es y qué no es un fichero de texto.
 Un fichero de texto es un fichero dividido en líneas y cuyo contenido es texto.
 A pesar de lo que pudiese parecer a priori, un documento del Microsoft Office o del LibreOffice no es un fichero de texto.
@@ -51,7 +55,7 @@ Mientras otros sistemas operativos favorecen la utilización de ficheros binario
 Estas herramientas de manejo de ficheros de texto nos permiten realizar complejas manipulaciones de un modo muy sencillo y son uno de los principales atractivos de los sistemas Unix para el manejo de grandes cantidades de información.</p>
 </section>
 <section id="imprimiendo-ficheros-cat-head-y-tail">
-<h2>Imprimiendo ficheros <em>cat</em>, <em>head</em> y <em>tail</em><a class="headerlink" href="#imprimiendo-ficheros-cat-head-y-tail" title="Link to this heading">¶</a></h2>
+<h2>Imprimiendo ficheros <em>cat</em>, <em>head</em> y <em>tail</em><a class="headerlink" href="#imprimiendo-ficheros-cat-head-y-tail" title="Permalink to this heading">¶</a></h2>
 <p>En esta sección vamos a trabajar con el archivo de prueba <a class="reference download internal" download="" href="../_downloads/9bce0e4eba7e74591baab487df7ca394/microarray_adenoma_hk69.csv"><code class="xref download docutils literal notranslate"><span class="pre">microarray_adenoma_hk69.csv</span></code></a>.
 En este fichero están almacenados los resultados de un experimento de expresión diferencial en el que se han analizado distintos adenomas.
 Este es un fichero tabular en el que la información que se representa dividiendo los campos mediante comas o tabuladores.
@@ -94,7 +98,7 @@ Esto suele hacer que los programas terminen lo que estén haciendo inmediatament
 </div>
 </section>
 <section id="navegando-por-un-fichero-de-texto">
-<h2>Navegando por un fichero de texto<a class="headerlink" href="#navegando-por-un-fichero-de-texto" title="Link to this heading">¶</a></h2>
+<h2>Navegando por un fichero de texto<a class="headerlink" href="#navegando-por-un-fichero-de-texto" title="Permalink to this heading">¶</a></h2>
 <p>En muchas ocasiones para familiarizarnos con el fichero lo mejor es abrirlo y navegar por él.
 Podríamos abrir el fichero con un editor de texto, pero ya hemos visto que si es muy grande podríamos tener problemas.
 Existe una herramienta capaz de abrir ficheros de texto inmensos sin problemas, <em>less</em>.
@@ -117,7 +121,7 @@ En cualquier momento podemos salir de <em>less</em> pulsando la tecla “q”.</
 </div>
 </section>
 <section id="grep">
-<h2><em>grep</em><a class="headerlink" href="#grep" title="Link to this heading">¶</a></h2>
+<h2><em>grep</em><a class="headerlink" href="#grep" title="Permalink to this heading">¶</a></h2>
 <p>Una tarea que vamos a tener que realizar habitualmente es la de seleccionar diversas líneas en un fichero de texto.
 Por ejemplo, imaginemos que queremos saber cual es la expresión de los genes relacionados con la leucemia en el fichero del <em>microarray</em>.
 Esto, que en otros sistemas operativos podría resultar bastante complejo de hacer en Unix es trivial:</p>
@@ -161,7 +165,7 @@ Podríamos además redirigir el resultado final a un fichero para guardar el res
 Todos siguen el principio de realizar una tarea concreta pero teniendo la capacidad de enlazarse con otros.</p>
 </section>
 <section id="wc">
-<h2><em>wc</em><a class="headerlink" href="#wc" title="Link to this heading">¶</a></h2>
+<h2><em>wc</em><a class="headerlink" href="#wc" title="Permalink to this heading">¶</a></h2>
 <p><em>wc</em> (<em>Word Count</em>) sirve para contar líneas, palabras y caracteres.
 Por ejemplo podemos enlazarlo con el <em>grep</em> y contar cuantos genes relacionados con la leucemia hay en el fichero.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep leukemia microarray_adenoma_hk69.csv | wc
@@ -170,7 +174,7 @@ Por ejemplo podemos enlazarlo con el <em>grep</em> y contar cuantos genes relaci
 </div>
 </section>
 <section id="cut">
-<h2><em>cut</em><a class="headerlink" href="#cut" title="Link to this heading">¶</a></h2>
+<h2><em>cut</em><a class="headerlink" href="#cut" title="Permalink to this heading">¶</a></h2>
 <p>Cuando el fichero está dividido en campos, como en el caso de la tabla que estamos utilizando, podemos seleccionar alguno de estos campos utilizando el comando <em>cut</em>.
 Por ejemplo mejoremos la búsqueda que habíamos hecho quedándonos tan solo con el nombre y la descripción del gen:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep leukemia microarray_adenoma_hk69.csv | cut -f 3,4
@@ -190,7 +194,7 @@ Pero podríamos indicarle que los campos están divididos de otro modo, por ejem
 </div>
 </section>
 <section id="sed">
-<h2><em>sed</em><a class="headerlink" href="#sed" title="Link to this heading">¶</a></h2>
+<h2><em>sed</em><a class="headerlink" href="#sed" title="Permalink to this heading">¶</a></h2>
 <p>La lista de genes que hemos obtenido en el apartado anterior puede servirnos para muchos propósitos, pero todavía no está limpia del todo, quedaría mejor si eliminásemos las comillas que rodean los campos.
 Esta tarea podemos realizarla con el comando <em>sed</em> (<em>stream editor</em>).
 <em>sed</em> toma las líneas de una en una, les aplica la transformación que le indiquemos y devuelve las líneas modificadas.
@@ -214,7 +218,7 @@ Además, a la expresión le hemos añadido una “g”, con este modificador le 
 <p><em>sed</em> acepta expresiones regulares como patrones y con ellas puede realizar prácticamente cualquier substitución que podamos imaginar.</p>
 </section>
 <section id="sort">
-<h2><em>sort</em><a class="headerlink" href="#sort" title="Link to this heading">¶</a></h2>
+<h2><em>sort</em><a class="headerlink" href="#sort" title="Permalink to this heading">¶</a></h2>
 <p>Si deseamos ordenar alfabéticamente un fichero de texto tan sólo tenemos que utilizar el comando <em>sort</em>.
 Por ejemplo, podemos ordenar los genes relacionados con la leucemia:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep leukemia microarray_adenoma_hk69.csv | cut -f 3 ,4| sort
@@ -224,7 +228,7 @@ Por ejemplo, podemos ordenar los genes relacionados con la leucemia:</p>
 Para ver qué se puede hacer con <em>sort</em> lo más recomendable es leer su manual.</p>
 </section>
 <section id="uniq">
-<h2><em>uniq</em><a class="headerlink" href="#uniq" title="Link to this heading">¶</a></h2>
+<h2><em>uniq</em><a class="headerlink" href="#uniq" title="Permalink to this heading">¶</a></h2>
 <p>En el ejemplo anterior, al ordenar con <em>sort</em>, hemos visto que en la lista que hemos obtenido hay genes repetidos.
 Con el comando <em>uniq</em> podemos eliminar las líneas duplicadas consecutivas.
 Para que la eliminación sea completa hay que recordad ordenar con <em>sort</em> antes de utilizar <em>uniq</em>:</p>
@@ -233,7 +237,7 @@ Para que la eliminación sea completa hay que recordad ordenar con <em>sort</em>
 </div>
 </section>
 <section id="paste">
-<h2><em>paste</em><a class="headerlink" href="#paste" title="Link to this heading">¶</a></h2>
+<h2><em>paste</em><a class="headerlink" href="#paste" title="Permalink to this heading">¶</a></h2>
 <p><em>paste</em> une ficheros tabulares línea por línea.
 Supongamos que tenemos dos ficheros, uno con datos sobre la progresión de la enfermedad de una serie de enfermos y otro con el genotipado de los mismos:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pacientes</span><span class="p">:</span>
@@ -265,7 +269,7 @@ id_paciente,nivel_colesterol,id_paciente,SNP_a,SNP_b
 </div>
 </section>
 <section id="join">
-<h2><em>join</em><a class="headerlink" href="#join" title="Link to this heading">¶</a></h2>
+<h2><em>join</em><a class="headerlink" href="#join" title="Permalink to this heading">¶</a></h2>
 <p><em>join</em> es una herramienta muy potente, pero sencilla.
 Permite unir dos ficheros de texto tabulares en uno usando una columna como clave común.
 <em>join</em> es una especie de <em>paste</em> en la que las filas no tienen porqué estar ordenadas y la columna común que sirve como enlace entre ambas tablas no queda duplicada.
@@ -296,7 +300,7 @@ industria  Murcia    rojo      ovalado         normal
 </div>
 </section>
 <section id="codificacion-de-caracteres">
-<h2>Codificación de caracteres<a class="headerlink" href="#codificacion-de-caracteres" title="Link to this heading">¶</a></h2>
+<h2>Codificación de caracteres<a class="headerlink" href="#codificacion-de-caracteres" title="Permalink to this heading">¶</a></h2>
 <p>Los ordenadores codifican los caracteres del lenguaje natural utilizando números.
 Los ficheros de texto no son pues más que ficheros de números que el ordenador transforma en caracteres utilizando una tabla de codificación de caracteres antes de imprimirlos.
 Una de las tablas de codificación más populares es la ASCII, en ella se incluyen los caracteres utilizados en la lengua inglesa, pero no los acentos o los caracteres de otros alfabetos.
@@ -319,7 +323,7 @@ Por ejemplo si tenemos un archivo con una codificación <a class="reference down
 </div>
 </section>
 <section id="fin-de-linea">
-<h2>Fin de línea<a class="headerlink" href="#fin-de-linea" title="Link to this heading">¶</a></h2>
+<h2>Fin de línea<a class="headerlink" href="#fin-de-linea" title="Permalink to this heading">¶</a></h2>
 <p>Para marcar el final de una línea en un fichero de texto se utiliza un carácter especial.
 Por desgracia no ha habido un acuerdo a la hora de decidirse cual es el carácter que debe usarse.
 Unix, Windows y Mac OS utilizan caracteres diferentes.
@@ -328,7 +332,7 @@ Desgraciadamente el notepad del Windows no es capaz de hacerlo por lo que si abr
 Casi todos los editores de texto permiten hacer el cambio entre los distintos finales de línea.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <p>Se ha realizado un estudio de un nuevo tratamiento para un linfoma y nos han enviado dos ficheros.
 En el llamando <a class="reference download internal" download="" href="../_downloads/03aa299018634672d6f6893481e9124c/cancer_progresion.txt"><code class="xref download docutils literal notranslate"><span class="pre">cancer_progresion.txt</span></code></a> se encuentran tanto los datos de los pacientes como el resultado del tratamiento.
 En el segundo <a class="reference download internal" download="" href="../_downloads/3702b466754849ee66ff16dbaadf6171/cancer_ciego.txt"><code class="xref download docutils literal notranslate"><span class="pre">fichero</span></code></a> se encuentra la tabla que nos permitirá desentrañar el ensayo del doble ciego, con el identificador de cada paciente y la dosis de droga que se le administró.</p>
@@ -349,7 +353,7 @@ En el segundo <a class="reference download internal" download="" href="../_downl
 </ol>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Link to this heading">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>¿Cuántos pacientes había en el estudio?</p></li>
 </ol>
@@ -464,12 +468,12 @@ $ grep -v &quot;^@&quot; tomate.sam| sort -k 3,4|cut -f 1
 </div>
 </section>
 <section id="otras-herramientas">
-<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Link to this heading">¶</a></h2>
+<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Permalink to this heading">¶</a></h2>
 <p>Existen editores de textos avanzados muy potentes: <a class="reference external" href="http://es.wikipedia.org/wiki/Vim">vi</a> y <a class="reference external" href="http://es.wikipedia.org/wiki/Emacs">emacs</a>.
 El único inconveniente de estos magníficos editores es que aprender a manejarlos puede requerir algo de tiempo.</p>
 </section>
 <section id="bibliografia">
-<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Link to this heading">¶</a></h2>
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Chris Herborth, <a class="reference external" href="http://www.ibm.com/developerworks/aix/library/au-textprocess.html">Text processing with UNIX</a></p></li>
 <li><p>TDLP, <a class="reference external" href="http://tldp.org/LDP/abs/html/textproc.html">Text Processing Commands</a></p></li>
@@ -584,7 +588,7 @@ El único inconveniente de estos magníficos editores es que aprender a manejarl
       &copy;2010-2023, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Administracion de software 1 &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
-    <script src="_static/documentation_options.js?v=2709fde1"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Variables de entorno" href="variables_de_entorno.html" />
     <link rel="prev" title="Administrador" href="administrador.html" />
@@ -32,7 +36,7 @@
           <div class="body" role="main">
             
   <section id="administracion-de-software-1">
-<h1>Administracion de software 1<a class="headerlink" href="#administracion-de-software-1" title="Link to this heading">¶</a></h1>
+<h1>Administracion de software 1<a class="headerlink" href="#administracion-de-software-1" title="Permalink to this heading">¶</a></h1>
 <p>En los sistemas Linux las <a class="reference external" href="http://es.wikipedia.org/wiki/Distribución_Linux">distribuciones</a> se encargan de preparar una gran cantidad de software para ser instalado.
 Por ejemplo, cuando queremos instalar un programa de edición fotográfica como el <em>gimp</em> no es necesario ni recomendable ir a la página web de los creadores del software para descargar el software.
 La distribución que estemos utilizando ya se ha encargado de buscar el software y empaquetarlo para que el software pueda ser instalado de un modo estandarizado.
@@ -49,19 +53,19 @@ Seríamos nosotros también los encargados de estar al tanto de instalar las act
 <p>Por desgracia, la cantidad de software incluido en las distribuciones no es infinito y, aunque el catálogo es amplio y más que suficiente para la gran mayoría de las aplicaciones que un usuario doméstico o de la administración pueda necesitar, hay programas, especialmente los hechos para campos específicos que no están incluidos en las distribuciones.
 Para biología Debian y Ubuntu incluyen programas como el EMBOSS, el Blast o Biopython, pero hay otros muchos que no se incluyen y que tendremos que gestionar nosotros mismos.</p>
 <section id="repositorios">
-<h2>Repositorios<a class="headerlink" href="#repositorios" title="Link to this heading">¶</a></h2>
+<h2>Repositorios<a class="headerlink" href="#repositorios" title="Permalink to this heading">¶</a></h2>
 <p>Los repositorios son los bancos de datos que alojan los catalogos de aplicaciones de las distribuciones. Todas las distribuciones tienen sus propios repositorios, se encargan de mantenerlos actualizados, de hacer tests de seguridad y de buscar errores en las aplcaciones.</p>
 <p>Ademas de los repositorios de de las distribuciones, tambien tenemos repositorios de otras fuentes, los más conocidos son los PPA(Personal Package Archives). Son repositorios que los usuarios ponen a disposicion de otros usuarios para que puedan instalarse aplicaciones que las distribuciones no tienen, como por ejemplo el Java de oracle.</p>
 <p>En ubuntu y debian el fichero donde encontramos la configuracion de los repositorios es <code class="docutils literal notranslate"><span class="pre">/etc/apt/sources.list</span></code>.  Cada una de las lineas del fichero nos da acceso a los paquetes de un repositorio. En cada repositorio tenemos un listado con las aplicaciones que dispone, la version de cada paquete y una direcciones para poder descargar e instalarla.</p>
 <p>En el directorio <code class="docutils literal notranslate"><span class="pre">/etc/apt/sources.list.d</span></code> podemos tener tambien ficheros con más lineas de repositorios.</p>
 </section>
 <section id="herramientas-de-manejo-de-paquetes">
-<h2>Herramientas de manejo de paquetes<a class="headerlink" href="#herramientas-de-manejo-de-paquetes" title="Link to this heading">¶</a></h2>
+<h2>Herramientas de manejo de paquetes<a class="headerlink" href="#herramientas-de-manejo-de-paquetes" title="Permalink to this heading">¶</a></h2>
 <p>Existen aplicaciones graficas para poder actualizar o instalar nuevos paquetes. En ubuntu tenemos el <em>Software de Ubuntu</em> que nos permite instalar aplicaciones de una forma fácil y comoda.</p>
 <p>Tenemos que tener en cuenta que si usamos <em>Software de Ubuntu</em> solo podremos acceder a unos cuantos paquetes disponibles en la distribucion. El porque es algo que podemos preguntar a Ubuntu.</p>
 <p>Por debajo esta aplicacion utiliza Apt(del inglés Advanced Package Tool) que es un set de herramientas del nucleo de debian y que Ubuntu a importado. APT es uno de los sistemas más avanzados en cuento a la gestion de software.</p>
 <section id="apt">
-<h3>APT<a class="headerlink" href="#apt" title="Link to this heading">¶</a></h3>
+<h3>APT<a class="headerlink" href="#apt" title="Permalink to this heading">¶</a></h3>
 <p>Apt es un set de herramientas que nos ayudan a que la instalacion, borrado o actualizacion de programas sea experiencia no traumatica. Apt esta compuesto de muchos programas, en el curso nos vamos a centrar en aquellos que consideramos más utiles:
 Para borrar, instalar, actualizar:</p>
 <ul class="simple">
@@ -100,7 +104,7 @@ Para borrar, instalar, actualizar:</p>
 </li>
 </ul>
 <section id="ejercicios">
-<h4>Ejercicios:<a class="headerlink" href="#ejercicios" title="Link to this heading">¶</a></h4>
+<h4>Ejercicios:<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h4>
 <ol class="arabic simple">
 <li><p>Instalar un editor de texto grafico.</p></li>
 <li><p>Borrarlo junto con su configuracion.</p></li>
@@ -113,7 +117,7 @@ Para borrar, instalar, actualizar:</p>
 </section>
 </section>
 <section id="dpkg">
-<h3>dpkg<a class="headerlink" href="#dpkg" title="Link to this heading">¶</a></h3>
+<h3>dpkg<a class="headerlink" href="#dpkg" title="Permalink to this heading">¶</a></h3>
 <p>Es otra herramienta para interactuar con paquetes .deb. Con las diferentes opciones de dpkg se pueden instalar y borrar programas pero al no tener en cuenta las dependencias , lo hace más tedioso de usar.
 Aunqie tiene varias opciones que las hacen muy util:</p>
 <ul class="simple">
@@ -121,7 +125,7 @@ Aunqie tiene varias opciones que las hacen muy util:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">dpkg</span> <span class="pre">-L</span></code>  paquete : Lista la ruta de todos los ficheros que se han intalado al instalar el paquete.</p></li>
 </ul>
 <section id="id1">
-<h4>Ejercicios:<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h4>
+<h4>Ejercicios:<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
 <ol class="arabic simple">
 <li><p>Cuantos paquetes tienes instalados en tu sistema?<a class="reference external" href="https://linuxprograms.wordpress.com/2010/05/11/status-dpkg-list/">Pista</a></p></li>
 <li><p>Cuantos ficheros se instalan cuando instalas el paquete que instala el makeblastdb. Cuantos de ellos son ejecutables?</p></li>
@@ -211,7 +215,7 @@ Aunqie tiene varias opciones que las hacen muy util:</p>
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

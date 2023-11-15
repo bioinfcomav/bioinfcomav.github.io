@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Alineamiento de secuencias &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
-    <script src="_static/documentation_options.js?v=2709fde1"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Jemboss" href="practica_jemboss.html" />
     <link rel="prev" title="Bases datos de secuencia" href="practica_bases.html" />
@@ -32,9 +36,9 @@
           <div class="body" role="main">
             
   <section id="alineamiento-de-secuencias">
-<h1>Alineamiento de secuencias<a class="headerlink" href="#alineamiento-de-secuencias" title="Link to this heading">¶</a></h1>
+<h1>Alineamiento de secuencias<a class="headerlink" href="#alineamiento-de-secuencias" title="Permalink to this heading">¶</a></h1>
 <section id="significado-biologico">
-<h2>Significado biológico<a class="headerlink" href="#significado-biologico" title="Link to this heading">¶</a></h2>
+<h2>Significado biológico<a class="headerlink" href="#significado-biologico" title="Permalink to this heading">¶</a></h2>
 <p>Las secuencias de ADN y proteína definen la función de las proteínas en los seres vivos.</p>
 <p>Cuando más similares sean dos secuencias más similares tenderán a ser las funciones de las proteínas codificadas por ellas.</p>
 <p>Las secuencias de un mismo gen en un conjunto de especies serán más distintas cuanto más alejadas filogenéticamente estén las especies comparadas.</p>
@@ -56,7 +60,7 @@
 <p>En las secuencias, además de sustituciones de un residuo por otro pueden darse inserciones o deleciones.</p>
 </section>
 <section id="utilidad">
-<h2>Utilidad<a class="headerlink" href="#utilidad" title="Link to this heading">¶</a></h2>
+<h2>Utilidad<a class="headerlink" href="#utilidad" title="Permalink to this heading">¶</a></h2>
 <p>Los alineamientos sirven, entre otras cosas para:</p>
 <blockquote>
 <div><ul class="simple">
@@ -68,7 +72,7 @@
 </div></blockquote>
 </section>
 <section id="id1">
-<h2>Alineamiento de secuencias<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<h2>Alineamiento de secuencias<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>Para poder cuantificar el grado de similitud de dos secuencias lo primero que hay que hacer es alinearlas.</p>
 <p>Sin alinear</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CGATGCTAGCGTATCGTAGTCTATCGTAC</span>
@@ -108,7 +112,7 @@
 <p>El objetivo del alineamiento es conseguir alinear las posiciones homólogas.</p>
 </section>
 <section id="puntuacion-de-los-alineamientos">
-<h2>Puntuación de los alineamientos<a class="headerlink" href="#puntuacion-de-los-alineamientos" title="Link to this heading">¶</a></h2>
+<h2>Puntuación de los alineamientos<a class="headerlink" href="#puntuacion-de-los-alineamientos" title="Permalink to this heading">¶</a></h2>
 <p>El alineamiento con mejor puntuación debería ser el más razonable desde un punto de vista biológico, el que alinea más posiciones homólogas.</p>
 <p>Se recurre a medidas objetivas.</p>
 <p>Para comparar distintos alineamientos entre sí se pueden asignar puntuaciones.</p>
@@ -136,7 +140,7 @@ Este último suele ser menos costoso.</p>
 <p>Para buscar el alineamiento óptimo se han desarrollado varios algoritmos y programas.</p>
 </section>
 <section id="alineamientos-globales-y-locales">
-<h2>Alineamientos globales y locales<a class="headerlink" href="#alineamientos-globales-y-locales" title="Link to this heading">¶</a></h2>
+<h2>Alineamientos globales y locales<a class="headerlink" href="#alineamientos-globales-y-locales" title="Permalink to this heading">¶</a></h2>
 <p>Hay dos tipos de alineamientos principales: globales y locales.</p>
 <p>En el global se intenta que el alineamiento cubra las dos secuencias completamente introduciendo los gaps que sean necesarios.</p>
 <p>En el local se alinean sólo las zonas más parecidas.</p>
@@ -166,9 +170,9 @@ Si no es así debemos preocuparnos por entender como funciona el programa y como
 El límite para las secuencias de proteínas está alrededor del 25% de identidad.</p>
 </section>
 <section id="metodos-de-alineamiento">
-<h2>Métodos de alineamiento<a class="headerlink" href="#metodos-de-alineamiento" title="Link to this heading">¶</a></h2>
+<h2>Métodos de alineamiento<a class="headerlink" href="#metodos-de-alineamiento" title="Permalink to this heading">¶</a></h2>
 <section id="matriz-de-puntos-dot-matrix-o-dot-plot">
-<h3>Matriz de puntos (dot matrix o dot plot)<a class="headerlink" href="#matriz-de-puntos-dot-matrix-o-dot-plot" title="Link to this heading">¶</a></h3>
+<h3>Matriz de puntos (dot matrix o dot plot)<a class="headerlink" href="#matriz-de-puntos-dot-matrix-o-dot-plot" title="Permalink to this heading">¶</a></h3>
 <p>Representa los alineamientos gráficamente.</p>
 <p>Da unos resultados intuitivos e informa de posibles alineamientos alternativos.</p>
 <p>Sirve para descubrir repeticiones, inserciones, deleciones (largas).</p>
@@ -231,7 +235,7 @@ Para cada posición de la secuencia A se estudian todas las posiciones de la sec
 <p>El método tiene una limitación importante, nos muestra las regiones similares, pero no obtenemos un alineamiento.</p>
 </section>
 <section id="algoritmo-de-programacion-dinamica">
-<h3>Algoritmo de programación dinámica<a class="headerlink" href="#algoritmo-de-programacion-dinamica" title="Link to this heading">¶</a></h3>
+<h3>Algoritmo de programación dinámica<a class="headerlink" href="#algoritmo-de-programacion-dinamica" title="Permalink to this heading">¶</a></h3>
 <p>Este método permite encontrar el alineamiento óptimo dadas dos secuencias y un esquema de puntuación determinado.</p>
 <p>En principio estos alineamientos se corresponden con las diagonales del método gráfico.</p>
 <p>Fue utilizado por primera vez por <a class="reference external" href="http://es.wikipedia.org/wiki/Algoritmo_Needleman-Wunsch">Needleman y Wunsch</a> para hacer alineamientos globales</p>
@@ -376,7 +380,7 @@ Dos de los más utilizados son <a class="reference external" href="http://emboss
 </section>
 </section>
 <section id="matrices-de-sustitucion">
-<h2>Matrices de sustitución<a class="headerlink" href="#matrices-de-sustitucion" title="Link to this heading">¶</a></h2>
+<h2>Matrices de sustitución<a class="headerlink" href="#matrices-de-sustitucion" title="Permalink to this heading">¶</a></h2>
 <p>Dos nucleótidos pueden o ser iguales o diferentes, pero en el caso de los aminoácidos la situación es más compleja.</p>
 <p>Dos aminoácidos pueden ser iguales, diferentes o más o menos parecidos.
 Por ejemplo un aminoácido neutro se parecerá más a otro aminoácido neutro que a uno ácido.</p>
@@ -418,14 +422,14 @@ A cada comparación se le da una puntuación que indica como es de frecuente que
 <p>Existen otras matrices de sustitución creadas con fines específicos, por ejemplo para buscar proteínas con estructuras similares.</p>
 </section>
 <section id="penalizaciones-por-gaps-gap-penalties">
-<h2>Penalizaciones por gaps (Gap penalties)<a class="headerlink" href="#penalizaciones-por-gaps-gap-penalties" title="Link to this heading">¶</a></h2>
+<h2>Penalizaciones por gaps (Gap penalties)<a class="headerlink" href="#penalizaciones-por-gaps-gap-penalties" title="Permalink to this heading">¶</a></h2>
 <p>Sirven para indicar al algoritmo si queremos favorecer la aparición de gaps en el alineamiento o no.</p>
 <p>Normalmente se pueden modificar dos gap penalties, el de creación de un nuevo gap y el de extensión del gap.</p>
 <p>Si se ponen unos gap penalties muy altos no aparecerán gaps en el alineamiento, si son muy bajos aparecerán demasiados.</p>
 <p>Es una buena idea utilizar los valores por defecto a no ser que tengamos alguna razón para cambiarlos.</p>
 </section>
 <section id="significacion-de-los-alineamientos">
-<h2>Significación de los alineamientos<a class="headerlink" href="#significacion-de-los-alineamientos" title="Link to this heading">¶</a></h2>
+<h2>Significación de los alineamientos<a class="headerlink" href="#significacion-de-los-alineamientos" title="Permalink to this heading">¶</a></h2>
 <p>Siempre que alimentemos una algoritmo de alineamiento con un par de secuencias obtendremos un alineamiento, incluso aunque las secuencias estén compuestas por letras al azar y no se parezcan nada entre sí.</p>
 <p>Por lo tanto además de hacer el alineamiento hay que estimar la significación estadística del mismo.</p>
 <p>Si trabajamos con secuencias de ADN es fácil hacerse una idea de lo bueno que es el alineamiento puesto que al valorar positivamente sólo la identidad los alineamientos obtenidos por azar suelen ser muy cortos.</p>
@@ -514,7 +518,7 @@ Hay que estudiar estos índices para no confundir alineamientos espúreos con re
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

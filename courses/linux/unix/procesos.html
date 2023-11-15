@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Administración Básica &#8212; Bioinf at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
-    <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Instalando software" href="administracion_software.html" />
     <link rel="prev" title="Expresiones regulares" href="expresiones_regulares.html" />
@@ -32,9 +36,9 @@
           <div class="body" role="main">
             
   <section id="administracion-basica">
-<h1>Administración Básica<a class="headerlink" href="#administracion-basica" title="Link to this heading">¶</a></h1>
+<h1>Administración Básica<a class="headerlink" href="#administracion-basica" title="Permalink to this heading">¶</a></h1>
 <section id="procesos">
-<h2>Procesos<a class="headerlink" href="#procesos" title="Link to this heading">¶</a></h2>
+<h2>Procesos<a class="headerlink" href="#procesos" title="Permalink to this heading">¶</a></h2>
 <p>Un procesos es una instancia de un programa en ejecución.
 Haciendo análisis bioinformáticos muchas veces ejecutaremos programas que duren un tiempo considerable.
 Es interesante que durante el tiempo que dure el proceso conozcamos cual es su estado.</p>
@@ -48,7 +52,7 @@ Por ejemplo, si cinco usuarios desde equipos diferentes, ejecutan el mismo progr
 Prácticamente todo lo que se está ejecutando en el sistema en cualquier momento es un proceso, incluyendo la <em>shell</em>, el ambiente gráfico, que puede tener múltiples procesos, etc.</p>
 <p>Los entornos UNIX tienen una serie de herramientas para poder conocer el estado de los procesos y del sistema en general.</p>
 <section id="ps">
-<h3><em>ps</em><a class="headerlink" href="#ps" title="Link to this heading">¶</a></h3>
+<h3><em>ps</em><a class="headerlink" href="#ps" title="Permalink to this heading">¶</a></h3>
 <p>El comando <em>ps</em> (<em>process status</em>) nos informa sobre el estado de los procesos.
 Dependiendo de los parámetros que le demos nos mostrara un tipo de información u otra.
 Por ejemplo con la opción <em>-ef</em> podremos ver todos los procesos que actualmente están en ejecución en el sistema:</p>
@@ -58,7 +62,7 @@ Por ejemplo con la opción <em>-ef</em> podremos ver todos los procesos que actu
 <p>En este caso la segunda columna nos indicará el <em>PID</em> o identificador único del proceso.</p>
 </section>
 <section id="kill">
-<h3><em>kill</em><a class="headerlink" href="#kill" title="Link to this heading">¶</a></h3>
+<h3><em>kill</em><a class="headerlink" href="#kill" title="Permalink to this heading">¶</a></h3>
 <p>El comando <em>kill</em> a pesar de su nombre no sólo sirve para matar o terminar procesos sino también para enviar señales  a los procesos.
 La señal por defecto (cuando no se indica ninguna es terminar o matar el proceso), y la sintaxis es kill PID, siendo PID el número de ID del proceso.
 Pero hay otras señales que podemos enviar.
@@ -74,13 +78,13 @@ $ kill -9 4719
 </div>
 </section>
 <section id="top">
-<h3><em>top</em><a class="headerlink" href="#top" title="Link to this heading">¶</a></h3>
+<h3><em>top</em><a class="headerlink" href="#top" title="Permalink to this heading">¶</a></h3>
 <p>Una herramienta muy usada y muy útil para el monitoreo en tiempo real del estado de los procesos y de otras variantes del sistema es el programa llamado top, se ejecuta desde la línea de comandos, es interactivo y por defecto se actualiza cada 3 segundos.</p>
 <p>Estando dentro de la aplicación, presionando ‘h’ se accede a una ayuda de los posibles comandos que permiten configurar top, por ejemplo, al presionar ‘s’ pregunta por el tiempo en segundos de actualización, etc.</p>
 <p>Una alternativa más moderna al comando <em>top</em>, que normalmente no es instalada por defecto, es <em>htop</em>.</p>
 </section>
 <section id="df-y-free">
-<h3><em>df</em> y <em>free</em><a class="headerlink" href="#df-y-free" title="Link to this heading">¶</a></h3>
+<h3><em>df</em> y <em>free</em><a class="headerlink" href="#df-y-free" title="Permalink to this heading">¶</a></h3>
 <p><em>df</em> y <em>free</em> son dos herramientas muy útiles a la hora de conocer el estado de nuestro sistema.
 <em>df</em> nos indica cuanto espacio disponemos en cada dispositivo de almacenamiento y <em>free</em> nos muestra información sobre el uso y disponibilidad de la memoria.
 En el caso de <em>df</em> para poder leer cómodamente el informe es aconsejable usar la opción <em>-h</em>, ya que así generará la información en una forma más fácil de leer para los seres humanos.
@@ -91,7 +95,7 @@ En el caso de <em>free</em> disponemos de la opción <em>-m</em>, que nos mostra
 </div>
 </section>
 <section id="ejercicios">
-<h3>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">¶</a></h3>
+<h3>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Averigua todos los procesos que hay en ejecución.</p></li>
 <li><p>Cuantos procesos tiene tu usuario en ejecución?</p></li>
@@ -100,7 +104,7 @@ En el caso de <em>free</em> disponemos de la opción <em>-m</em>, que nos mostra
 </ol>
 </section>
 <section id="soluciones">
-<h3>Soluciones<a class="headerlink" href="#soluciones" title="Link to this heading">¶</a></h3>
+<h3>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>ps -ef nombre_de_usuario| wc</p></li>
 <li><p>ps -u nombre_de_usuario| wc</p></li>
@@ -109,7 +113,7 @@ En el caso de <em>free</em> disponemos de la opción <em>-m</em>, que nos mostra
 </ol>
 </section>
 <section id="utilidades-avanzadas">
-<h3>Utilidades avanzadas<a class="headerlink" href="#utilidades-avanzadas" title="Link to this heading">¶</a></h3>
+<h3>Utilidades avanzadas<a class="headerlink" href="#utilidades-avanzadas" title="Permalink to this heading">¶</a></h3>
 <p>Si vamos a trabajar con procesos largos es muy recomendable aprender a utilizar el comando <em>screen</em>.
 <em>screen</em> nos permite manejar distintos shells interactivos a la vez y mantenerlos abiertos entre diferentes conexiones o sesiones de trabajo.
 Resulta muy cómodo para mantener procesos largos en servidores remotos sin tener que tener una conexión establecida continuamente.</p>
@@ -208,7 +212,7 @@ Resulta muy cómodo para mantener procesos largos en servidores remotos sin tene
       &copy;2010-2023, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Módulos &#8212; Bioinf at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
-    <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Paquetes útiles en biología" href="biopython.html" />
     <link rel="prev" title="Generadores" href="generadores.html" />
@@ -32,7 +36,7 @@
           <div class="body" role="main">
             
   <section id="modulos">
-<h1>Módulos<a class="headerlink" href="#modulos" title="Link to this heading">¶</a></h1>
+<h1>Módulos<a class="headerlink" href="#modulos" title="Permalink to this heading">¶</a></h1>
 <p>Cuando vamos a escribir un programa además de disponer de las sentencias y funciones que constituyen el lenguaje de programación para construir el programa podemos hacer uso del código anterior que nosotros mismos u otros usuarios hayan generado.
 Por ejemplo, si necesitamos leer un fichero de secuencias <em>fasta</em> y anteriormente escribimos una función capaz de realizar el trabajo sería absurdo volver a repetir la faena.
 Una alternativa sencilla sería copiar la función desde el programa anterior.
@@ -85,7 +89,7 @@ Si no se encuentra un módulo lanzará un error.</p>
 <p>A continuación se citan las funcionalidades más útiles para un biólogo de estos módulos comunes.
 En todo los casos los módulos ofrecen muchas más funcionalidades que las descritas en este breve resumen, es recomendable leer la documentación oficial para conocer los módulos con detalle.</p>
 <section id="id1">
-<h2>os<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<h2>os<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>os.getcwd(), devuelve el directorio de trabajo.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
@@ -106,7 +110,7 @@ En todo los casos los módulos ofrecen muchas más funcionalidades que las descr
 <p>os.rmdir(path), elimina un directorio, pero antes debe estar vacío.</p>
 </section>
 <section id="id2">
-<h2>shutil<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<h2>shutil<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>shutil.copyfile(src, dst), copia un fichero.</p>
 <p>shutil.copy(src, dst), copia un fichero o directorio.</p>
 <p>shutil.copytree(src, dst), copia recursivamente un directorio completo.</p>
@@ -114,7 +118,7 @@ En todo los casos los módulos ofrecen muchas más funcionalidades que las descr
 <p>shutil.move(src, dst), mueve un fichero de un lugar a otro.</p>
 </section>
 <section id="id3">
-<h2>os.path<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<h2>os.path<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>os.path.abspath(path), devuelve una versión absoluta y normalizada de la ruta.</p>
 <p>os.path.basename(path), devuelve el nombre del fichero a partir de la ruta.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s1">&#39;/home/usuario/fichero.txt&#39;</span><span class="p">)</span>
@@ -149,7 +153,7 @@ En todo los casos los módulos ofrecen muchas más funcionalidades que las descr
 </div>
 </section>
 <section id="id4">
-<h2>subprocess<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<h2>subprocess<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <p><em>subprocess</em> nos permite ejecutar programas externos desde Python.
 El modo más potente de usar <em>subprocess</em> es mediante la clase <a class="reference external" href="http://docs.python.org/library/subprocess.html#using-the-subprocess-module">Popen</a>, pero aquí sólo vamos a ver las funciones sencillas.</p>
 <p>subprocess.call(cmd), ejecuta el comando. El comando debe darse como una lista de parámetros.</p>
@@ -163,13 +167,13 @@ El modo más potente de usar <em>subprocess</em> es mediante la clase <a class="
 </div>
 </section>
 <section id="id5">
-<h2>sys<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<h2>sys<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
 <p>Da acceso al <em>shell</em> en el que se está ejecutando nuestro programa Python.</p>
 <p>sys.argv, devuelve una lista con los argumentos con los que se ha ejecutado el programa.</p>
 <p>sys.exit(int), sale del programa con retcode dado por el número. Este número es opcional, si no se indica será 0.</p>
 </section>
 <section id="id6">
-<h2>csv<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<h2>csv<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
 <p><em>csv</em> es un módulo muy útil que nos permite leer ficheros tabulares:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="n">edad</span> <span class="n">diabetico</span>
 <span class="s2">&quot;Juan Pablo&quot;</span> <span class="mi">30</span> <span class="n">Si</span>
@@ -250,7 +254,7 @@ Para que el módulo funcione correctamente el fichero <em>CSV</em> debe estar ab
 Adicionalmente disponemos del argumento <em>restval</em> en el que podemos indicar cual es la cadena de texto que queremos imprimir para los datos faltantes.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Dado el programa <em>saluda.py</em> de Python:</p></li>
 </ol>
@@ -283,7 +287,7 @@ Adicionalmente disponemos del argumento <em>restval</em> en el que podemos indic
 <p>El programa debe imprimir la información relativa a una entrada y después volver a escribir la información, pero esta vez separada por comas.</p>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Link to this heading">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Dado el programa <em>saluda.py</em> de Python:</p></li>
 </ol>
@@ -429,7 +433,7 @@ Quiere decir que programa ha acabado sin errores, si hubiese ocurrido algún err
 </div>
 </section>
 <section id="para-saber-mas">
-<h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Link to this heading">¶</a></h2>
+<h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Permalink to this heading">¶</a></h2>
 <p>Se puede consultar la sección dedicada a los <a class="reference external" href="http://docs.python.org/tutorial/modules.html">módulos</a> del tutorial oficial de Python, así como la documentación de los distintos módulos y paquetes.</p>
 </section>
 </section>
@@ -533,7 +537,7 @@ Quiere decir que programa ha acabado sin errores, si hubiese ocurrido algún err
       &copy;2010-2023, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

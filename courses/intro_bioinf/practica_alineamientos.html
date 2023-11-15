@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Alineamiento de secuencias &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
-    <script src="_static/documentation_options.js?v=2709fde1"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Búsqueda de secuencias en bases de datos" href="blast.html" />
     <link rel="prev" title="Jemboss" href="practica_jemboss.html" />
@@ -32,7 +36,7 @@
           <div class="body" role="main">
             
   <section id="alineamiento-de-secuencias">
-<h1>Alineamiento de secuencias<a class="headerlink" href="#alineamiento-de-secuencias" title="Link to this heading">¶</a></h1>
+<h1>Alineamiento de secuencias<a class="headerlink" href="#alineamiento-de-secuencias" title="Permalink to this heading">¶</a></h1>
 <p>Vamos a utilizar la versión gráfica del EMBOSS (Jemboss) en windows, en esta guía también se incluyen los comandos utilizados si se trabaja con la versión terminal del EMBOSS de Linux.</p>
 <p>¿Qué programas del EMBOSS nos sirven para hacer alineamientos?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ wossname alignment
@@ -42,9 +46,9 @@
 <p>¿Y para los alineamientos locales y globales?</p>
 <p>¿Cuáles son específicos para alinear genómico con ARN mesajero?</p>
 <section id="dotplot">
-<h2>Dotplot<a class="headerlink" href="#dotplot" title="Link to this heading">¶</a></h2>
+<h2>Dotplot<a class="headerlink" href="#dotplot" title="Permalink to this heading">¶</a></h2>
 <section id="estructura-de-un-gen">
-<h3>Estructura de un gen<a class="headerlink" href="#estructura-de-un-gen" title="Link to this heading">¶</a></h3>
+<h3>Estructura de un gen<a class="headerlink" href="#estructura-de-un-gen" title="Permalink to this heading">¶</a></h3>
 <p>Se puede estudiar la distribución de exones e intrones de un gen gráficamente utilizando el programa <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/dotmatcher.html">dotmatcher</a>.</p>
 <p><a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/dotmatcher.html">dotmatcher</a> permite hacer dotplots dentro del EMBOSS.
 También podemos utilizarlo en una página <a class="reference external" href="http://emboss.bioinformatics.nl/cgi-bin/emboss/dotmatcher">externa</a> (<a class="reference external" href="http://www.hpa-bioinfotools.org.uk/pise/dotmatcher.html">servidor</a> <a class="reference external" href="http://www.hpa-bioinfotools.org.uk/pise/dotmatcher.html">alternativo</a>).</p>
@@ -54,7 +58,7 @@ También podemos utilizarlo en una página <a class="reference external" href="h
 <p>¿Por qué está cortada en varios segmentos la diagonal principal?</p>
 </section>
 <section id="genes-en-especies-cercanas">
-<h3>Genes en especies cercanas<a class="headerlink" href="#genes-en-especies-cercanas" title="Link to this heading">¶</a></h3>
+<h3>Genes en especies cercanas<a class="headerlink" href="#genes-en-especies-cercanas" title="Permalink to this heading">¶</a></h3>
 <p>En general el dotplot sirve para ver gráficamente qué regiones de las secuencias se parecen entre sí.</p>
 <p>Se puede estudiar qué regiones son similares entre proteínas homólogas de organismos más o menos distantes.</p>
 <p>Utilizando el <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/dotmatcher.html">dotmatcher</a> vamos a comparar los ARN mesajeros de dos ciclinas homólogas, una <a class="reference download internal" download="" href="_downloads/4d9532c1d0207f6b5cb266d4a1c1d2da/CDKL4.human.fasta"><code class="xref download docutils literal notranslate"><span class="pre">humana</span></code></a> y otra <a class="reference download internal" download="" href="_downloads/f6506392d43870719cb933c706be7f29/cyclin.dog.fasta"><code class="xref download docutils literal notranslate"><span class="pre">canina</span></code></a>.</p>
@@ -62,7 +66,7 @@ También podemos utilizarlo en una página <a class="reference external" href="h
 <p>¿A qué puede deberse que unas regiones estén más conservadas que otras?</p>
 </section>
 <section id="repeticiones-en-tandem">
-<h3>Repeticiones en tándem<a class="headerlink" href="#repeticiones-en-tandem" title="Link to this heading">¶</a></h3>
+<h3>Repeticiones en tándem<a class="headerlink" href="#repeticiones-en-tandem" title="Permalink to this heading">¶</a></h3>
 <p>El método de alineamiento gráfico es el mejor para observar regiones repetidas o invertidas.</p>
 <p>Como ejemplo vamos a estudiar las repeticiones presentes en el dedo de zinc humano <a class="reference download internal" download="" href="_downloads/0517af785e4dd7741e45f8a2b3189a3f/Q9P255.fasta"><code class="xref download docutils literal notranslate"><span class="pre">Q9P255</span></code></a>.</p>
 <p>Hacer un dotplot utilizando el dotmatcher de esta proteína consigo misma.</p>
@@ -76,16 +80,16 @@ También podemos utilizarlo en una página <a class="reference external" href="h
 <p>Ver la estructura de las proteínas <a class="reference external" href="http://www.uniprot.org/uniprot/Q9P255">Q9P255</a> y <a class="reference external" href="http://www.uniprot.org/uniprot/P03001">P03001</a> en la Uniprot.</p>
 </section>
 <section id="deteccion-de-reordenaciones-cromosomicas">
-<h3>Detección de reordenaciones cromosómicas<a class="headerlink" href="#deteccion-de-reordenaciones-cromosomicas" title="Link to this heading">¶</a></h3>
+<h3>Detección de reordenaciones cromosómicas<a class="headerlink" href="#deteccion-de-reordenaciones-cromosomicas" title="Permalink to this heading">¶</a></h3>
 <p>Hemos comentado que los dot plots son perfectos para identificar grandes cambios en la estructura de los cromosomas. En la NCBI hay un <a class="reference external" href="http://www.ncbi.nlm.nih.gov/sutils/geneplot.cgi">programa</a> que nos permite comaparar genomas bacterianos entre si. En realidad no es un dotplot si no la integración gráfica de las comparaciones realizados con el programa Blast para identificar ortólogos (Blast recíproco), pero nos va a servir para ver la utilidad de los dotplots.</p>
 <p>Seleccionar en el panel A  Xanthomonas campestris pv. campestris y en el panel B Xanthomonas anopodis pv. citri. Determina las regiones sinténicas y los cambios estructurales que ha habido.</p>
 <p>Compara Yersinia pestis subsp. Antiqua with: Y. pesudotuberculosis and Y. pestis KIM. ¿Qué ves en cada caso? ¿Podrías explicar las diferencias?</p>
 </section>
 </section>
 <section id="alineamientos-locales">
-<h2>Alineamientos locales<a class="headerlink" href="#alineamientos-locales" title="Link to this heading">¶</a></h2>
+<h2>Alineamientos locales<a class="headerlink" href="#alineamientos-locales" title="Permalink to this heading">¶</a></h2>
 <section id="proteinas-homologas">
-<h3>Proteínas homólogas<a class="headerlink" href="#proteinas-homologas" title="Link to this heading">¶</a></h3>
+<h3>Proteínas homólogas<a class="headerlink" href="#proteinas-homologas" title="Permalink to this heading">¶</a></h3>
 <p>Se puede obtener el mejor alineamiento entre dos proteínas homólogas de especies diferentes.</p>
 <p>Este mismo método serviría para alinear familias proteicas dentro de la misma especie.</p>
 <p>Como ejemplo alinear las ciclinas <a class="reference download internal" download="" href="_downloads/4d9532c1d0207f6b5cb266d4a1c1d2da/CDKL4.human.fasta"><code class="xref download docutils literal notranslate"><span class="pre">humana</span></code></a> y <a class="reference download internal" download="" href="_downloads/f6506392d43870719cb933c706be7f29/cyclin.dog.fasta"><code class="xref download docutils literal notranslate"><span class="pre">canina</span></code></a> utilizando el <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/matcher.html">matcher</a> o el <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/water.html">water</a>.</p>
@@ -96,7 +100,7 @@ También podemos utilizarlo en una página <a class="reference external" href="h
 <p>¿Hemos obtenido un alineamiento local o global? ¿Por qué?</p>
 </section>
 <section id="regiones-conservadas">
-<h3>Regiones conservadas<a class="headerlink" href="#regiones-conservadas" title="Link to this heading">¶</a></h3>
+<h3>Regiones conservadas<a class="headerlink" href="#regiones-conservadas" title="Permalink to this heading">¶</a></h3>
 <p>Normalmente no todas las regiones varían del mismo modo entre proteínas homólogas de especies alejadas.</p>
 <p>Podemos descubrir qué regiones se conservan utilizando un alineamiento local.</p>
 <p>Alinear las frataxinas <a class="reference download internal" download="" href="_downloads/dd2dd17508b3f2c8d9115568cfddb16d/frataxin.human.gb"><code class="xref download docutils literal notranslate"><span class="pre">humana</span></code></a> y del <a class="reference download internal" download="" href="_downloads/8397a0040c2dfcdb8212504f89ba6f21/frataxin.aedes.gb"><code class="xref download docutils literal notranslate"><span class="pre">mosquito</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">fiebre</span> <span class="pre">amarilla</span></code></a>  utilizando el <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/matcher.html">matcher</a> o el <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/water.html">water</a>.</p>
@@ -118,7 +122,7 @@ También podemos utilizarlo en una página <a class="reference external" href="h
 <p>¿Es peor este nuevo alineamiento?</p>
 </section>
 <section id="alineamientos-globales">
-<h3>Alineamientos globales<a class="headerlink" href="#alineamientos-globales" title="Link to this heading">¶</a></h3>
+<h3>Alineamientos globales<a class="headerlink" href="#alineamientos-globales" title="Permalink to this heading">¶</a></h3>
 <p>Se puede utilizar un algoritmo de alineamiento global que exija que la totalidad de ambas secuencias se alinee.</p>
 <p>Hacer un alineamiento global de los ejemplos anteriores utilizando el <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/needle.html">needle</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">needle</span> <span class="n">frataxin</span><span class="o">.</span><span class="n">human</span><span class="o">.</span><span class="n">gb</span> <span class="n">frataxin</span><span class="o">.</span><span class="n">aedes</span><span class="o">.</span><span class="n">gb</span> <span class="n">stdout</span> <span class="o">-</span><span class="n">auto</span>
@@ -129,7 +133,7 @@ También podemos utilizarlo en una página <a class="reference external" href="h
 Estos algoritmos suelen dar malos resultados si hay regiones que no son similares entre las dos secuencias.</p>
 </section>
 <section id="estructura-genica">
-<h3>Estructura génica<a class="headerlink" href="#estructura-genica" title="Link to this heading">¶</a></h3>
+<h3>Estructura génica<a class="headerlink" href="#estructura-genica" title="Permalink to this heading">¶</a></h3>
 <p>El EMBOSS dispone de un programa creado específicamente para alinear ARN mesajero y ADN genómico, <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.4/emboss/apps/est2genome.html">est2genome</a>.</p>
 <p>Podemos probarlo con el gen de Arabidopsis AT3G52905.1 <a class="reference download internal" download="" href="_downloads/9f97408e43249fce4314763df2903762/AT3G4905.1.genomico.fasta"><code class="xref download docutils literal notranslate"><span class="pre">(genómico,</span></code></a>  <a class="reference download internal" download="" href="_downloads/d3cc2640ce5d7e4e447fc9cc569d29f4/AT3G4905.1.cdna.fasta"><code class="xref download docutils literal notranslate"><span class="pre">mRNA)</span></code></a> (genómico, mRNA).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">est2genome</span> <span class="n">AT3G4905</span><span class="mf">.1</span><span class="o">.</span><span class="n">cdna</span><span class="o">.</span><span class="n">fasta</span> <span class="n">AT3G4905</span><span class="mf">.1</span><span class="o">.</span><span class="n">genomico</span><span class="o">.</span><span class="n">fasta</span> <span class="n">stdout</span> <span class="o">-</span><span class="n">auto</span>
@@ -224,7 +228,7 @@ Estos algoritmos suelen dar malos resultados si hay regiones que no son similare
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

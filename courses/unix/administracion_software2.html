@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Administracion de software 2 &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
-    <script src="_static/documentation_options.js?v=2709fde1"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Redes" href="redes.html" />
     <link rel="prev" title="Variables de entorno" href="variables_de_entorno.html" />
@@ -32,9 +36,9 @@
           <div class="body" role="main">
             
   <section id="administracion-de-software-2">
-<h1>Administracion de software 2<a class="headerlink" href="#administracion-de-software-2" title="Link to this heading">¶</a></h1>
+<h1>Administracion de software 2<a class="headerlink" href="#administracion-de-software-2" title="Permalink to this heading">¶</a></h1>
 <section id="estandar-de-jerarquia-del-sistema-de-archivos">
-<h2>Estándar de jerarquía del sistema de archivos<a class="headerlink" href="#estandar-de-jerarquia-del-sistema-de-archivos" title="Link to this heading">¶</a></h2>
+<h2>Estándar de jerarquía del sistema de archivos<a class="headerlink" href="#estandar-de-jerarquia-del-sistema-de-archivos" title="Permalink to this heading">¶</a></h2>
 <p>Antes de instalar software no administrado por nuestra distribución conviene que tengamos una idea de como se organiza el sistema de archivos en Linux para que entendamos dónde se instala el software.
 Linux sigue una norma estándar llamada <a class="reference external" href="http://es.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Estándar de jerarquía del sistema de archivos</a> que define los directorios del sistema y la localización de los distintos tipos de archivos.</p>
 <p>En Unix todos los archivos y directorios aparecen bajo el directorio raíz (/).
@@ -54,15 +58,15 @@ Cuando se instalan programas estáticos, que incluyen todas sus librerías, suel
 No es muy común que los programas se instalen de esta forma en <em>Linux</em>, pero algunos programas como el <em>IDE java eclipse</em> sí suelen instalarse en /opt</p>
 </section>
 <section id="instalando-programas">
-<h2>Instalando programas<a class="headerlink" href="#instalando-programas" title="Link to this heading">¶</a></h2>
+<h2>Instalando programas<a class="headerlink" href="#instalando-programas" title="Permalink to this heading">¶</a></h2>
 <section id="readme-e-install">
-<h3>README e INSTALL<a class="headerlink" href="#readme-e-install" title="Link to this heading">¶</a></h3>
+<h3>README e INSTALL<a class="headerlink" href="#readme-e-install" title="Permalink to this heading">¶</a></h3>
 <p>Cuando queramos instalar aplicaciones que no estén en repositorios o que la aplicación que queremos está pero necesitamos una versión más nueva, tendremos que ir programa por programa instalandolo.
 No existe una sola forma de instalarlos, pero si que todos los programas suelen tener algún tipo de documento en el que se explica como  instalar el programa.
 Normalmente este documento suele llamarse README o INSTALL, aunque no hay ninguna regla que diga que esos sean los nombres, por lo que lo primero que tenemos que hacer cuando nos descargemos la aplicación es buscar el documento en el que se encuentre el modo de instalar la aplicación.</p>
 </section>
 <section id="instalando-programas-compilados">
-<h3>Instalando programas compilados<a class="headerlink" href="#instalando-programas-compilados" title="Link to this heading">¶</a></h3>
+<h3>Instalando programas compilados<a class="headerlink" href="#instalando-programas-compilados" title="Permalink to this heading">¶</a></h3>
 <p>Una vez hemos visto dónde debemos instalar los programas que administremos sin la ayuda de la distribución (<em>/usr/local</em>) vamos a ver como instalaríamos el mapeador de secuencias cortas <a class="reference external" href="http://bowtie-bio.sourceforge.net/">bowtie</a>.
 En su página de  <a class="reference external" href="https://sourceforge.net/projects/bowtie-bio/files/bowtie/1.1.2/">descargas</a> encontramos los siguientes ficheros:</p>
 <ul class="simple">
@@ -107,7 +111,7 @@ Para que el $PATH sea el que deseamos siempre que entremos al sistema el comando
 </ol>
 </section>
 <section id="instalando-un-programa-desde-el-codigo-fuente">
-<h3>Instalando un programa desde el código fuente<a class="headerlink" href="#instalando-un-programa-desde-el-codigo-fuente" title="Link to this heading">¶</a></h3>
+<h3>Instalando un programa desde el código fuente<a class="headerlink" href="#instalando-un-programa-desde-el-codigo-fuente" title="Permalink to this heading">¶</a></h3>
 <p>Cuando no tenemos la posibilidad de instalarnos el programa ni desde la distribuición ni usando binarios compilados, podemos optar por instalar un programa partiendo desde el código fuente, para ello primero tenemos que compilarlo.
 Compilar significa traducir el código en texto escrito por humanos en un código que el ordenador entienda; codigo binario.
 Este suele ser un caso bastante habitual en las aplicaciones bioinformáticas, para los casos en los que los desarrolladores no han creado binarios compilados para nuestra arquitectura.</p>
@@ -149,12 +153,12 @@ Como lo habitual es que el programa esté destinado a ser instalado en <em>/usr/
 </ol>
 </section>
 <section id="instalando-programas-java">
-<h3>Instalando programas Java.<a class="headerlink" href="#instalando-programas-java" title="Link to this heading">¶</a></h3>
+<h3>Instalando programas Java.<a class="headerlink" href="#instalando-programas-java" title="Permalink to this heading">¶</a></h3>
 <p>Java es un lenguaje de programación de proposito general. Es un lenguaje muy usado en programas de bioinformatica porque es un lenguaje multiplataforma. Escribes una vez el codigo y lo puedes usar en los distintos sistemas operativos.</p>
 <p>Cual es el truco? Tienes que tener instalado en el sistema el interprete de java. Este interprete será especial para cada sistema operativo, pero podrá ejecutar cualquier codigo java. Existen diferentes interpretes de java, algunos son software libre, y suelen estar en la distribución y luego tenemos el java de Oracle.</p>
 <p>Para poder ejecutar un programa de java, necesitaremos un <em>Java runtime enviroment(JRE)</em>. Podemos instalar varios:</p>
 <section id="java-libres">
-<h4>Java libres<a class="headerlink" href="#java-libres" title="Link to this heading">¶</a></h4>
+<h4>Java libres<a class="headerlink" href="#java-libres" title="Permalink to this heading">¶</a></h4>
 <p>Una forma de tener java en nuestro sistema es mediante las versines libres que nos ofrecen las distribuciones. Hay muchas variantes y distintas versiones para cada variante, por lo que si no sabemos que version instalar lo mejor es instalar la que la distribucion propone por defecto.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ java
 El programa «java» puede encontrarse en los siguientes paquetes:
@@ -171,7 +175,7 @@ Intente: sudo apt install &lt;paquete seleccionado&gt;
 </div>
 </section>
 <section id="java-de-oracle">
-<h4>Java de oracle<a class="headerlink" href="#java-de-oracle" title="Link to this heading">¶</a></h4>
+<h4>Java de oracle<a class="headerlink" href="#java-de-oracle" title="Permalink to this heading">¶</a></h4>
 <p>Oracle es la empresa dueña de java. Ellos son los que lo desarrollan y por lo tanto su interprete de java suele ser el de referencia. No es software libre y por lo tanto las distrbuciones no lo pueden distribuir, pero existen formas sencilla de instalarlos.
 En ubuntu tenemos un <a class="reference external" href="https://launchpad.net/~webupd8team/+archive/ubuntu/java">PPA</a> en el que podemos instalar un instalador que nos instalará el java de oracle.
 Para instalarlo:</p>
@@ -182,7 +186,7 @@ Para instalarlo:</p>
 </div>
 </section>
 <section id="ejecutar-programas-java">
-<h4>Ejecutar programas java<a class="headerlink" href="#ejecutar-programas-java" title="Link to this heading">¶</a></h4>
+<h4>Ejecutar programas java<a class="headerlink" href="#ejecutar-programas-java" title="Permalink to this heading">¶</a></h4>
 <p>Como siempre lo primero que tenemos que hacer es leernos la documentación donde nos diga como ejecutarlo. Una forma habitual de distribuir los programas en java es distribuyendo un fichero <code class="docutils literal notranslate"><span class="pre">.jar</span></code>. P.ej trimmomatic. En estos casos para ejecutarlos lo tendremos que hacer de la siguiente manera:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ java -jar Trimmommatic.jar
 </pre></div>
@@ -207,7 +211,7 @@ icedtea-netx - NetX - implementation of the Java Network Launching Protocol (JNL
 </section>
 </section>
 <section id="python">
-<h3>Python<a class="headerlink" href="#python" title="Link to this heading">¶</a></h3>
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this heading">¶</a></h3>
 <p>Python es otro lenguaje de programación de proposito general. Es un lenguaje interpretado, por lo que no hay que traducir el código fuente en código binario. De eso ya se encargara el interprete de python cada vez que ejecutamos algo.</p>
 <p>Normalmente las distribuciones de linux suelen instalar python por defecto. Ahora mismo hay dos versiones de python conviviendo juntas; python2 y python3. Cuando veamos python a secas, hará referencia a python2. Se pueden instalar las dos simultaneamente y tendremos que usar la versión que nuestro programs/libreria requiera.
 Cuando instalamos una aplicacion en python solo lo instalaremos para la versión que estemos usando en ese momento. Las librerias son únicas para esa versión. Para saber cual de las 2 versiones estamos usando podemos usar el comando <code class="docutils literal notranslate"><span class="pre">which</span></code></p>
@@ -233,7 +237,7 @@ Cuando instalamos una aplicacion en python solo lo instalaremos para la versión
 <li><p>Si el programa es un solo ejecutable, lo podemos instalar como cualquier otro ejecutable.</p></li>
 </ol>
 <section id="virtualenv">
-<h4>Virtualenv<a class="headerlink" href="#virtualenv" title="Link to this heading">¶</a></h4>
+<h4>Virtualenv<a class="headerlink" href="#virtualenv" title="Permalink to this heading">¶</a></h4>
 <p>Python nos permite, en aquellos entornos en los que no tenemos permisos para instalar fuera de nuestra HOME, crear un entorno virtual en el directorio que le digamos. Así, podremos instalar las apliaciones que necesitemos sin hacer cambios en el sistema.
 Con el comando <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> crearemos un entorno virtual en python2. Y con el comando <code class="docutils literal notranslate"><span class="pre">pyvenv</span></code> crearemos un entorno virtual en python3:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>user@virtual:~$ virtualenv pyenv2
@@ -262,7 +266,7 @@ user@virtual:~$ source pyenv2/bin/activate
 </section>
 </section>
 <section id="r">
-<h3>R<a class="headerlink" href="#r" title="Link to this heading">¶</a></h3>
+<h3>R<a class="headerlink" href="#r" title="Permalink to this heading">¶</a></h3>
 <p>R es un entorno y lenguaje de programación con un enfoque al análisis estadístico.
 Para poder ejecutar cualquier libreria o progrma en R lo primero que tenemos que instalar es el interprete de R. La mejor forma es hacerlo desde un paquete de la distribución:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  ~$ sudo apt-get install r-base
@@ -287,7 +291,7 @@ R utilizan un repositorio llamado cran para distribuir los paquetes. Estos paque
 </section>
 </section>
 <section id="programas-que-se-pueden-instalar">
-<h1>Programas que se pueden instalar<a class="headerlink" href="#programas-que-se-pueden-instalar" title="Link to this heading">¶</a></h1>
+<h1>Programas que se pueden instalar<a class="headerlink" href="#programas-que-se-pueden-instalar" title="Permalink to this heading">¶</a></h1>
 <ul class="simple">
 <li><p>samtools</p></li>
 <li><p>bedtools</p></li>
@@ -396,7 +400,7 @@ R utilizan un repositorio llamado cran para distribuir los paquetes. Estos paque
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

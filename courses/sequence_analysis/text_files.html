@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Dealing with big result files &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
-    <script src="_static/documentation_options.js?v=2709fde1"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="BEDTools" href="bedtools.html" />
     <link rel="prev" title="NGS expression analysis" href="rnaseq.html" />
@@ -32,7 +36,7 @@
           <div class="body" role="main">
             
   <section id="dealing-with-big-result-files">
-<h1>Dealing with big result files<a class="headerlink" href="#dealing-with-big-result-files" title="Link to this heading">¶</a></h1>
+<h1>Dealing with big result files<a class="headerlink" href="#dealing-with-big-result-files" title="Permalink to this heading">¶</a></h1>
 <p>In a lot of genomic analyses our troubles are not over once we get the results.
 Usually these results consists of huge text files.
 For instance a file with all SNPs found between to plant varieties or with all SNPs found in a particular human individual would be a vcf file with thousands of lines.
@@ -41,7 +45,7 @@ We can open the file, search in it, merge it, etc.
 In these practice several of these tools are used to extract interesting genomic information from some results.</p>
 <p>Before trying to do the practice be sure to take a good look at the <a class="reference external" href="https://bioinf.comav.upv.es/courses/unix/procesamiento_texto.html">text files</a> section of the Unix course.</p>
 <section id="practical-task-dealing-with-text-files">
-<h2>Practical task: Dealing with text files<a class="headerlink" href="#practical-task-dealing-with-text-files" title="Link to this heading">¶</a></h2>
+<h2>Practical task: Dealing with text files<a class="headerlink" href="#practical-task-dealing-with-text-files" title="Permalink to this heading">¶</a></h2>
 <p>Somebody has analyzed the cucurbita transcriptome for us and has send us the <a class="reference download internal" download="" href="_downloads/9654df6af878d6892eac94bd9c82b93a/cucurbita.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">result</span></code></a>.
 These results include two files, a binary spreadsheet file with the functional annotation of the genes and a VCF file with the SNPs found in them.</p>
 <p>We are asked to extract the following information from those results:</p>
@@ -64,7 +68,7 @@ These results include two files, a binary spreadsheet file with the functional a
 </ul>
 </section>
 <section id="id1">
-<h2>Practical task: Dealing with text files<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<h2>Practical task: Dealing with text files<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>1 Convert the binary spreadsheet file to a csv text format by using OpenOffice.</p>
 <p>2 Find the list of “transcription” related genes. How many genes are?</p>
 <p>We could do:</p>
@@ -187,7 +191,7 @@ CUTC005474      782     .       C       A       59
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Funciones &#8212; Bioinf at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
-    <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Leyendo y escribiendo ficheros" href="ficheros.html" />
     <link rel="prev" title="Ejercicios de repaso" href="ejercicios_repaso.html" />
@@ -41,7 +45,7 @@
 <script type="text/javascript" src="../_downloads/js/pytutor.js"></script>
 <link rel="stylesheet" href="../_downloads/css/pytutor.css"/>
 <!-- End dependencies for pytutor.js --><section id="funciones">
-<h1>Funciones<a class="headerlink" href="#funciones" title="Link to this heading">¶</a></h1>
+<h1>Funciones<a class="headerlink" href="#funciones" title="Permalink to this heading">¶</a></h1>
 <p>Hasta el momento en los programas que hemos hecho el flujo de ejecución ha sido más o menos lineal.
 Los programas comenzaban a ejecutarse por la primera línea y continuaban línea por línea hasta llegar a la última, en la que el programa terminaba.
 Es cierto que hemos alterado el flujo de ejecución mediante sentencias condicionales (<em>if</em>) y bucles (<em>for</em> y <em>while</em>), que nos han permitido ejecutar un bloque del código dependiendo de si una cierta condición se cumplía o no, pero este modo de programación lineal y no estructurada es un tanto limitado.
@@ -102,7 +106,7 @@ Algunas de estas acciones requerirán parámetros o devolverán resultados mient
 <p>Otra ventaja de las funciones es que nos permiten reutilizar partes del código.
 Por ejemplo si tenemos que leer una tabla de datos en un programa y creamos una función para resolver el problema cuando en otro programa necesitemos leer otra tabla podremos utilizar la función que previamente habíamos definido.</p>
 <section id="return">
-<h2>return<a class="headerlink" href="#return" title="Link to this heading">¶</a></h2>
+<h2>return<a class="headerlink" href="#return" title="Permalink to this heading">¶</a></h2>
 <p>Las funciones pueden tener cero, uno o varias sentencias <em>return</em>.
 Podríamos, por ejemplo, crear una función que determinase si un número es impar con dos <em>return</em> .</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">es_impar</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
@@ -127,7 +131,7 @@ En realidad, en este caso, cuando el bloque de código termine de ejecutarse se 
 <p>Las funciones en Python presentan un amplio abanico de posibilidades que no vamos a estudiar en este tutorial como: argumentos con valores por defecto, argumentos con nombre y argumentos agrupados.</p>
 </section>
 <section id="documentando-las-funciones">
-<h2>Documentando las funciones<a class="headerlink" href="#documentando-las-funciones" title="Link to this heading">¶</a></h2>
+<h2>Documentando las funciones<a class="headerlink" href="#documentando-las-funciones" title="Permalink to this heading">¶</a></h2>
 <p>Para mantener el código legible conviene documentar qué hace la función, cuál es su objetivo, qué parámetros requiere y qué resultado va a devolver.
 Esto lo podríamos escribir en comentarios cercanos a la línea de la definición de la función, pero Python dispone de un sencillo mecanismo de documentación de funciones.
 Basta con crear una cadena de texto en la línea siguiente a la función para que la función quede comentada.
@@ -143,7 +147,7 @@ Este texto será el que nos aparezca cuando pidamos la ayuda sobre el uso de la 
 <p>Por convención en la primera línea de la documentación se suele escribir una sucinta descripción de la función y en las siguientes se dan los detalles relevantes.</p>
 </section>
 <section id="main">
-<h2>main<a class="headerlink" href="#main" title="Link to this heading">¶</a></h2>
+<h2>main<a class="headerlink" href="#main" title="Permalink to this heading">¶</a></h2>
 <p>Hasta el momento hemos creado nuestros pequeños programas sin estructura alguna.
 Simplemente hemos escrito los comandos a ejecutar uno tras otros, pero este no es el formato habitual en el que los usuarios de Python utilizan el lenguaje.
 Lo normal es incluir todo el código en alguna función.
@@ -166,7 +170,7 @@ De hecho por razones que ahora no vienen al caso y que tienen que ver con los m�
 </div>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Corrige el siguiente programa para calcular el área de un triángulo.</p></li>
 </ol>
@@ -268,7 +272,7 @@ Reescribir el programa utilizando funciones.</p>
 </div>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Link to this heading">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Corrige el siguiente programa para calcular el área de un triángulo.</p></li>
 </ol>
@@ -632,7 +636,7 @@ Reescribir el programa utilizando funciones.</p>
 </div>
 </section>
 <section id="para-saber-mas">
-<h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Link to this heading">¶</a></h2>
+<h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Permalink to this heading">¶</a></h2>
 <p>Una vez nos acostumbremos a utilizar la funcionalidad básica que hemos visto en esta sección sería recomendable estudiar estas características avanzadas en el <a class="reference external" href="http://docs.python.org/tutorial/controlflow.html#defining-functions">tutorial oficial</a> o en un texto como el <a class="reference external" href="http://cpp.wesc.webfactional.com/">Core Python programming</a> de Chun.</p>
 </section>
 </section>
@@ -733,7 +737,7 @@ Reescribir el programa utilizando funciones.</p>
       &copy;2010-2023, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

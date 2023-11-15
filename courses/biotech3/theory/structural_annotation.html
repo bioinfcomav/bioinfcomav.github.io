@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Structural Annotation &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
-    <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Phylogeny and evolution" href="phylogeny.html" />
     <link rel="prev" title="Multiple Sequence Alignment" href="multiple.html" />
@@ -32,7 +36,7 @@
           <div class="body" role="main">
             
   <section id="structural-annotation">
-<h1>Structural Annotation<a class="headerlink" href="#structural-annotation" title="Link to this heading">¶</a></h1>
+<h1>Structural Annotation<a class="headerlink" href="#structural-annotation" title="Permalink to this heading">¶</a></h1>
 <p>A DNA sequence, for instance a genome sequence, has much more value if we can annotate were are the different features like promoters, exons, introns, CDSs, transposons, etc.
 The annotation of those regions in a sequence is the structural annotation.
 This structural annotation is usually acompanied by a further functional annotation that will try to show the functions for these different regions.
@@ -46,7 +50,7 @@ These later annotations that start with just the sequence to be annotated are us
 <p>We have to take into account that we can have different degrees of confidence in these annotations.
 They can be supported by different amounts of experimental evidence and the methods used to create them can have different degrees of sensitivity and specificity.</p>
 <section id="restriction-maps">
-<h2>Restriction maps<a class="headerlink" href="#restriction-maps" title="Link to this heading">¶</a></h2>
+<h2>Restriction maps<a class="headerlink" href="#restriction-maps" title="Permalink to this heading">¶</a></h2>
 <p>A restriction map is a kind of physical map that shows the location of the restriction sites within a DNA sequence.</p>
 <p>To create a restriction map we need a database with the restriction enzyme sites.
 One popular option is to use <a class="reference external" href="http://rebase.neb.com/rebase/rebase.html">Rebase</a>.
@@ -56,7 +60,7 @@ Then a software programe can be used to look for the restriction sites in the nu
 <p>A restriction map can be used to map the sequences against a bigger physical map. Nowadays is quite common to use the maps created by the Bionano company for that porpose.</p>
 </section>
 <section id="translating-a-dna-sequence">
-<h2>Translating a DNA sequence<a class="headerlink" href="#translating-a-dna-sequence" title="Link to this heading">¶</a></h2>
+<h2>Translating a DNA sequence<a class="headerlink" href="#translating-a-dna-sequence" title="Permalink to this heading">¶</a></h2>
 <p>Predicting which peptide can be encoded by a DNA sequence is quite straightforward.
 We need the DNA sequence, the genetic code and the location of the start codon.</p>
 <p>A DNA sequence is transcribed to RNA and translated to a peptide by using the genetic code.</p>
@@ -90,7 +94,7 @@ For instance, the human mithocondria uses a slight variation of the genetic code
 <p>EMBOSS has two programs to get the six possible translations <a class="reference external" href="http://emboss.open-bio.org/rel/rel6/apps/transeq.html">transeq</a> and <a class="reference external" href="http://emboss.open-bio.org/rel/rel6/apps/sixpack.html">sixpack</a>.</p>
 <a class="reference external image-reference" href="../static/annotation/6_pautas.png"><img alt="six frames" src="../_images/6_pautas.png" /></a>
 <section id="backtranslation">
-<h3>Backtranslation<a class="headerlink" href="#backtranslation" title="Link to this heading">¶</a></h3>
+<h3>Backtranslation<a class="headerlink" href="#backtranslation" title="Permalink to this heading">¶</a></h3>
 <p>We can also backtranslate a peptide sequence to a nucleotide sequence.
 In this case, due the degeneracy of the genetic code we will get many nucleotide uncertanities.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">peptide</span>
@@ -105,7 +109,7 @@ EMBOSS can do it with the program <a class="reference external" href="http://emb
 </section>
 </section>
 <section id="codon-usage-tables">
-<h2>Codon usage tables<a class="headerlink" href="#codon-usage-tables" title="Link to this heading">¶</a></h2>
+<h2>Codon usage tables<a class="headerlink" href="#codon-usage-tables" title="Permalink to this heading">¶</a></h2>
 <p>There is a <a class="reference external" href="https://en.wikipedia.org/wiki/Codon_usage_bias">codon</a> usage bias, not all synonymous codons are used in the same frequency.
 Different organisms have different biases.
 They tend to prefer one codon over others to code for a particular aminoacid.</p>
@@ -114,13 +118,13 @@ They tend to prefer one codon over others to code for a particular aminoacid.</p
 <p>There is a <a class="reference external" href="http://www.kazusa.or.jp/codon/">codon usage database</a> available on line.</p>
 </section>
 <section id="orfs">
-<h2>ORFs<a class="headerlink" href="#orfs" title="Link to this heading">¶</a></h2>
+<h2>ORFs<a class="headerlink" href="#orfs" title="Permalink to this heading">¶</a></h2>
 <p>An <a class="reference external" href="https://en.wikipedia.org/wiki/Open_reading_frame">Open Reading Frame</a> (ORF) is the strecth of a reading frame that do not contain a stop codon.
 An AUG codon in a ORF might indicate the translation start.</p>
 <a class="reference external image-reference" href="../static/annotation/orfs.png"><img alt="orfs" src="../_images/orfs.png" /></a>
 <p>There is software in EMBOSS to show the ORFs (<a class="reference external" href="http://emboss.open-bio.org/rel/rel6/apps/plotorf.html">plotorf</a>) and to get their translations (<a class="reference external" href="http://emboss.open-bio.org/rel/rel6/apps/showorf.html">showorf</a>).</p>
 <section id="cds-prediction">
-<h3>CDS prediction<a class="headerlink" href="#cds-prediction" title="Link to this heading">¶</a></h3>
+<h3>CDS prediction<a class="headerlink" href="#cds-prediction" title="Permalink to this heading">¶</a></h3>
 <p>Long ORFs might indicate the presence of a <a class="reference external" href="https://en.wikipedia.org/wiki/Coding_region">coding sequence</a> and of a corresponding gene.
 In the procaryotes it is easier to detect long ORFs because they are not broken by the introns.
 In the eucaryotes the ORFs will be fragmented in multiple regions and they will be harder to detect.
@@ -152,7 +156,7 @@ One example of such software is <a class="reference external" href="http://exon.
 </section>
 </section>
 <section id="promoter-prediction">
-<h2>Promoter prediction<a class="headerlink" href="#promoter-prediction" title="Link to this heading">¶</a></h2>
+<h2>Promoter prediction<a class="headerlink" href="#promoter-prediction" title="Permalink to this heading">¶</a></h2>
 <p>It would be very valuable to locate the promoter union sites for the standard proteins of the transcription process and the union sites for the transcription factors.
 Locating a promoter region in a genomic sequence is not a straightforward task.
 Transcription factor targets have several characteristics that difficult their location, they are:</p>
@@ -167,7 +171,7 @@ Just by looking at those small sequences will create a lot of false positives.</
 A DNA region heavily coiled around the histones will have less chances to get accessed by the proteins involved in the transcription.
 Histone location can be influence by the DNA composition, by the methilation or by other factors that do not depend of the DNA sequences, so it is difficult to predict it.</p>
 <section id="typical-promoter-sequences">
-<h3>Typical promoter sequences<a class="headerlink" href="#typical-promoter-sequences" title="Link to this heading">¶</a></h3>
+<h3>Typical promoter sequences<a class="headerlink" href="#typical-promoter-sequences" title="Permalink to this heading">¶</a></h3>
 <p>There are sequences that are typically found in most promoters.
 Their composition depend on the species.</p>
 <p>In bacteria there is a <a class="reference external" href="https://en.wikipedia.org/wiki/Pribnow_box">Pribnow box</a>.
@@ -182,14 +186,14 @@ The <a class="reference external" href="https://en.wikipedia.org/wiki/GC_box">GC
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/CAAT_box">CCAAT box</a> is usually located 60 to 100 bases upstream of the transcription starting site and its consensus sequence is GGCCAATCT.</p>
 </section>
 <section id="transcription-factor-sites">
-<h3>Transcription factor sites<a class="headerlink" href="#transcription-factor-sites" title="Link to this heading">¶</a></h3>
+<h3>Transcription factor sites<a class="headerlink" href="#transcription-factor-sites" title="Permalink to this heading">¶</a></h3>
 <p>There are many DNA motifs recognized by the transcript factors.
 Each transcription factor recognizes some particular sequences different from the other ones.
 These sequences are usually small and the transcription factor, in most cases, can lock to them even if they chage a little, so they can ve more or less conserved between different promoters.</p>
 <p>Every gene is controlled by different transcription factors and the location of the sequences recognized by the factors can be quite variable and can be far appart from the transcrition initiation site.</p>
 </section>
 <section id="describing-the-sites">
-<h3>Describing the sites<a class="headerlink" href="#describing-the-sites" title="Link to this heading">¶</a></h3>
+<h3>Describing the sites<a class="headerlink" href="#describing-the-sites" title="Permalink to this heading">¶</a></h3>
 <p>The sites which are binded by the transcription factors are variable, but we have to describe them.
 We can use different ways to describe those sites.</p>
 <p>We can use a consensus sequence.
@@ -206,7 +210,7 @@ It could be well the case that TATAAA is more common than TATAAT, but that infor
 <a class="reference external image-reference" href="../static/multiple/sequence_logo.png"><img alt="Sequence logo" src="../_images/sequence_logo.png" /></a>
 </section>
 <section id="detecting-transcription-factor-sites">
-<h3>Detecting transcription factor sites<a class="headerlink" href="#detecting-transcription-factor-sites" title="Link to this heading">¶</a></h3>
+<h3>Detecting transcription factor sites<a class="headerlink" href="#detecting-transcription-factor-sites" title="Permalink to this heading">¶</a></h3>
 <p>There are different computational methods to predict the biding sites for the transcription factors, but none of them can do highly accurate predictions.
 The best of them are capable of recognizing at most 60% of the promoters, and they product many false positives.
 There are several programs to do the transcription site an promoter detection like:
@@ -217,18 +221,18 @@ The sites binded by the transcription factors will tend to be more consereved th
 </section>
 </section>
 <section id="gene-structure-prediction">
-<h2>Gene structure prediction<a class="headerlink" href="#gene-structure-prediction" title="Link to this heading">¶</a></h2>
+<h2>Gene structure prediction<a class="headerlink" href="#gene-structure-prediction" title="Permalink to this heading">¶</a></h2>
 <p>The gene structure prediction is the process of predicting the location of the genes in a genomic sequence as well as its elements like promoters, exons, introns and coding regions.</p>
 <p>These genes can be protein coding or RNA coding.</p>
 <section id="cdss-and-orfs">
-<h3>CDSs and ORFs<a class="headerlink" href="#cdss-and-orfs" title="Link to this heading">¶</a></h3>
+<h3>CDSs and ORFs<a class="headerlink" href="#cdss-and-orfs" title="Permalink to this heading">¶</a></h3>
 <p>In procaryotes the problem of looking for protein coding genes is easier because the CDSs won’t be fragmented in pieces by the introns and the appearance of long ORFs will be a strong indication of their presence.
 In eucaryotes the problem is harder to solve because the introns split the CDSs and the ORFs won’t be as informative.
 Also, the size of the non-coding regions can be quite large, specially the introns.</p>
 <p>In locating genes that do not code for proteins we won’t be able to use any ORF hints.</p>
 </section>
 <section id="alignment-with-ests-or-cdnas">
-<h3>Alignment with ESTs or cDNAs<a class="headerlink" href="#alignment-with-ests-or-cdnas" title="Link to this heading">¶</a></h3>
+<h3>Alignment with ESTs or cDNAs<a class="headerlink" href="#alignment-with-ests-or-cdnas" title="Permalink to this heading">¶</a></h3>
 <p>We can use the information provided by the ESTs or cDNA to locate regions expressed in the genome. These regions will tend to be genes.
 We can also use this information to build the structure of the different mRNAs that a gene can produce.</p>
 <p>We can use the programs <a class="reference external" href="http://emboss.sourceforge.net/apps/cvs/emboss/apps/est2genome.html">est2genome</a> and <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.2/embassy/esim4/esim4.html">esim4</a> from EMBOSS to do these alignments.</p>
@@ -243,7 +247,7 @@ Even with these data at hand we should consider different limitations:</p>
 </ul>
 </section>
 <section id="comparison-with-proteins-from-other-species">
-<h3>Comparison with proteins from other species<a class="headerlink" href="#comparison-with-proteins-from-other-species" title="Link to this heading">¶</a></h3>
+<h3>Comparison with proteins from other species<a class="headerlink" href="#comparison-with-proteins-from-other-species" title="Permalink to this heading">¶</a></h3>
 <p>We can compare our genome to a protein database by using BLAST.</p>
 <p>If we detect a match in a genome to a protein sequence from other species we have a hint that that genomic sequence might be part of a gene.
 Of course these method has also some limitations:</p>
@@ -254,7 +258,7 @@ Of course these method has also some limitations:</p>
 </section>
 </section>
 <section id="combining-different-evidences">
-<h2>Combining different evidences<a class="headerlink" href="#combining-different-evidences" title="Link to this heading">¶</a></h2>
+<h2>Combining different evidences<a class="headerlink" href="#combining-different-evidences" title="Permalink to this heading">¶</a></h2>
 <p>There are different programs that try to predict the gene structure by taking into account the different evidences.
 They take into account:</p>
 <ul class="simple">
@@ -354,7 +358,7 @@ Of course, the more evidence and the higher quality that evidence is the easier 
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>
