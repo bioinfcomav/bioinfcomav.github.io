@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Búsqueda de secuencias utilizando BLAST &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Métodos predictivos en ADN y ARN" href="prediccion.html" />
     <link rel="prev" title="Búsqueda de secuencias en bases de datos" href="blast.html" />
@@ -36,13 +32,13 @@
           <div class="body" role="main">
             
   <section id="busqueda-de-secuencias-utilizando-blast">
-<h1>Búsqueda de secuencias utilizando BLAST<a class="headerlink" href="#busqueda-de-secuencias-utilizando-blast" title="Permalink to this heading">¶</a></h1>
+<h1>Búsqueda de secuencias utilizando BLAST<a class="headerlink" href="#busqueda-de-secuencias-utilizando-blast" title="Link to this heading">¶</a></h1>
 <p>La familia de programas <a class="reference external" href="http://www.ncbi.nlm.nih.gov/BLAST/">BLAST</a> es la más utilizada para buscar secuencias similares en una base de datos dada una secuencia problema.</p>
 <p>Esta práctica consta de dos partes, en la primera nos familiarizaremos con el interfaz web del servidor BLAST del NCBI y en la segunda utilizaremos BLAST para resolver algunos problemas prácticos.</p>
 <section id="blast-en-el-ncbi">
-<h2>BLAST en el NCBI<a class="headerlink" href="#blast-en-el-ncbi" title="Permalink to this heading">¶</a></h2>
+<h2>BLAST en el NCBI<a class="headerlink" href="#blast-en-el-ncbi" title="Link to this heading">¶</a></h2>
 <section id="formulario-de-busqueda">
-<h3>Formulario de búsqueda<a class="headerlink" href="#formulario-de-busqueda" title="Permalink to this heading">¶</a></h3>
+<h3>Formulario de búsqueda<a class="headerlink" href="#formulario-de-busqueda" title="Link to this heading">¶</a></h3>
 <p>La página principal del <a class="reference external" href="http://www.ncbi.nlm.nih.gov/BLAST/">BLAST</a> en el NCBI nos permite elegir directamente distintos organismos (Human, Mouse, etc.), distintos programas (blastn, blastp, etc.) y otras búsquedas más especializadas.
 Vamos a hacer un blast con ADN (nucleotide blast) utilizando una secuencia de ejemplo de <a class="reference download internal" download="" href="_downloads/f69d17cdb5c7068eb59d06394e800a67/tc573649.fasta"><code class="xref download docutils literal notranslate"><span class="pre">rata</span></code></a>.</p>
 <figure class="align-center">
@@ -65,7 +61,7 @@ Cuanto más sensible sea el algoritmo más tiempo tardará la búsqueda.</p>
 </figure>
 </section>
 <section id="pagina-de-resultados">
-<h3>Página de resultados<a class="headerlink" href="#pagina-de-resultados" title="Permalink to this heading">¶</a></h3>
+<h3>Página de resultados<a class="headerlink" href="#pagina-de-resultados" title="Link to this heading">¶</a></h3>
 <p>El resultado del BLAST se divide en varias secciones.
 En la primera se nos informa sobre la versión del programa utilizado, el nombre de la base de datos y el número de secuencias buscadas.</p>
 <figure class="align-center">
@@ -99,7 +95,7 @@ Para cada una de ellas se muestra la descripción y los alineamientos correspond
 </section>
 </section>
 <section id="anotacion-de-secuencias">
-<h2>Anotación de secuencias<a class="headerlink" href="#anotacion-de-secuencias" title="Permalink to this heading">¶</a></h2>
+<h2>Anotación de secuencias<a class="headerlink" href="#anotacion-de-secuencias" title="Link to this heading">¶</a></h2>
 <p>Hemos obtenido en un proyecto de secuenciación de Amblyomma variegatum secuencias de varios genes (<a class="reference download internal" download="" href="_downloads/14458198ee9d77ed171f5ee1db449eb3/tc154.fasta"><code class="xref download docutils literal notranslate"><span class="pre">1</span></code></a>, <a class="reference download internal" download="" href="_downloads/df7a88aeb9095606636ce14c6582c1c5/tc55.fasta"><code class="xref download docutils literal notranslate"><span class="pre">2</span></code></a>, <a class="reference download internal" download="" href="_downloads/c870d9c4c92f235184468c0afcc3eabe/tc320.fasta"><code class="xref download docutils literal notranslate"><span class="pre">3</span></code></a>, <a class="reference download internal" download="" href="_downloads/227099269d8fd763bc9731f942658dfa/tc3.fasta"><code class="xref download docutils literal notranslate"><span class="pre">4</span></code></a>) y queremos saber cual es la función de cada una de ellas.</p>
 <p>¿Qué tipo de base de datos sería mejor utilizar ADN o proteína?</p>
 <p>¿Qué programa habría que utilizar?</p>
@@ -108,7 +104,7 @@ Para cada una de ellas se muestra la descripción y los alineamientos correspond
 <p>¿Qué puede significar esto? ¿Pasaría lo mismo si hubiésemos utilizado la swissprot? ¿Habría sido mejor utilizar la swissprot?</p>
 </section>
 <section id="clasificacion">
-<h2>Clasificación<a class="headerlink" href="#clasificacion" title="Permalink to this heading">¶</a></h2>
+<h2>Clasificación<a class="headerlink" href="#clasificacion" title="Link to this heading">¶</a></h2>
 <p>Nos envían de un hospital una muestra de sangre de un paciente para que ayudemos en el diagnóstico.
 Al parecer tiene una enfermedad causada por un microorganismo, ¿por cual?.</p>
 <p>Para poder solucionar el problema extraemos ADN genómico a partir de la sangre del paciente y hacemos una PCR utilizando unos cebadores diseñados para amplificar la región ITS1.
@@ -119,7 +115,7 @@ Una vez obtenida la PCR la enviamos a secuenciar y obtenemos la secuencia para u
 <p>Teniendo en cuenta que la tasa de error en la secuenciación se encuentra alrededor del 2%, ¿conviene gastar el dinero en amplificar y secuenciar otras secuencias para asegurarse de la especie del microorganismo o es suficiente con lo que hemos obtenido?</p>
 </section>
 <section id="filogenia">
-<h2>Filogenia<a class="headerlink" href="#filogenia" title="Permalink to this heading">¶</a></h2>
+<h2>Filogenia<a class="headerlink" href="#filogenia" title="Link to this heading">¶</a></h2>
 <p>Queremos establecer la filogenia dentro de los animales y para ello decidimos utilizar la secuencia del ARN mensajero de la  <a class="reference download internal" download="" href="_downloads/ad985ed26f9e61417b682a94bc6157ff/frataxina.fasta"><code class="xref download docutils literal notranslate"><span class="pre">frataxina</span></code></a>.</p>
 <p>¿Qué ventajas y desventajas tendría utilizar la base de datos nr o la refseq mRNA?</p>
 <p>Utilizando la refseq, ¿Se obtiene el mismo resultado utilizando blastn y tblastx? ¿Cuántas secuencias se obtienen en uno y otro caso? ¿Por qué?</p>
@@ -208,7 +204,7 @@ Una vez obtenida la PCR la enviamos a secuenciar y obtenemos la secuencia para u
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

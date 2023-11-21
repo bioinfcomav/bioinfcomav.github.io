@@ -119,6 +119,51 @@ Suma los primeros números
 Escribe un programa que sume los números desde 0 a 50 utilizando un bucle *for*.
 
 
+Ejercicios con listas y diccionarios
+####################################
+
+Máximo y mínimo
+---------------
+
+Crea una función que calcule el máximo y el mínimo de una lista de números utilizando un bucle *for*.
+Compara el resultado con el que dan las funciones `min <https://docs.python.org/3/library/functions.html#min>`_ y `max <https://docs.python.org/3/library/functions.html#max>`_..
+
+
+Reverso de una lista
+--------------------
+
+Escribe un programa que cree una lista en orden inverso utilizando un bucle *for* y compara con el resultado de la función `reversed <https://docs.python.org/3/library/functions.html#reversed>`_.
+
+
+Filtra una lista de números
+---------------------------
+
+Escribe una función a la que dada una lista de números y un valor máximo, devuelva una nueva lista con los números menores o iguales al valor máximo.
+
+
+Cuenta las palabras
+-------------------
+
+Dada una cadena de texto con palabras escribe un programa que cuente el número de veces que aparece cada palabra.
+
+
+Base datos de genes
+-------------------
+
+Disponemos de la siguiente información almacenada en un fichero o cadena de texto.
+
+.. code-block:: python
+
+    '''nombre funcion cromosoma start end
+    gen1 kinasa chrom1 13904 18904
+    gen2 polimerasa chrom1 43904 49904
+    gen3 fosfatasa chrom2 1904 5904
+    '''
+
+Queremos crear una base de datos que guarde la información relativa a los genes, por ejemplo en un diccionario.
+Una vez creada la base de datos deseamos que el usuario pueda pedir la información dando el nombre de un gen y que el programa imprima la información relativa a ese gen.
+
+
 Lee un fichero fasta
 --------------------
 

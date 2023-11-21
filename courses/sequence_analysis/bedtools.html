@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>BEDTools &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Practical tasks" href="final_practice.html" />
     <link rel="prev" title="Dealing with big result files" href="text_files.html" />
@@ -36,7 +32,7 @@
           <div class="body" role="main">
             
   <section id="bedtools">
-<h1>BEDTools<a class="headerlink" href="#bedtools" title="Permalink to this heading">¶</a></h1>
+<h1>BEDTools<a class="headerlink" href="#bedtools" title="Link to this heading">¶</a></h1>
 <p>The <a class="reference external" href="https://github.com/arq5x/bedtools2">BEDTools</a> allow a fast and flexible way of comparing large datasets of genomic features.
 The BEDtools utilities allow one to address common genomics tasks such as finding feature overlaps and computing coverage.
 Its name is due to an historical reason because nowadays they can process the most commonly used feature file formats like: <a class="reference external" href="http://genome.ucsc.edu/FAQ/FAQformat.html#format1">BED</a>, <a class="reference external" href="http://www.sequenceontology.org/gff3.shtml">GFF</a>, <a class="reference external" href="http://www.1000genomes.org/wiki/analysis/vcf4.0">VCF</a>, and <a class="reference external" href="http://samtools.sourceforge.net/">SAM</a>.
@@ -52,7 +48,7 @@ The following are examples of common questions that one can address with BEDTool
 <p>The following notes a partially taken from the excellent BEDTools <a class="reference external" href="http://bedtools.readthedocs.org/en/latest/">manual</a>.
 It is important to read this manual before using BEDTools in a real question.</p>
 <section id="bedtools-usage">
-<h2>BEDTools usage<a class="headerlink" href="#bedtools-usage" title="Permalink to this heading">¶</a></h2>
+<h2>BEDTools usage<a class="headerlink" href="#bedtools-usage" title="Link to this heading">¶</a></h2>
 <p>Some examples taken from the excellent BEDTools manual.</p>
 <p>Report the base-pair overlap between the features in two BED files:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$intersectBed -a reads.bed -b genes.bed
@@ -80,10 +76,10 @@ It is important to read this manual before using BEDTools in a real question.</p
 </div>
 </section>
 <section id="summary-of-the-main-bedtools">
-<h2>Summary of the main BEDTools<a class="headerlink" href="#summary-of-the-main-bedtools" title="Permalink to this heading">¶</a></h2>
+<h2>Summary of the main BEDTools<a class="headerlink" href="#summary-of-the-main-bedtools" title="Link to this heading">¶</a></h2>
 <p>You have a list with all bedtools <a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/bedtools-suite.html">utilities</a>.</p>
 <section id="intersect">
-<h3>intersect<a class="headerlink" href="#intersect" title="Permalink to this heading">¶</a></h3>
+<h3>intersect<a class="headerlink" href="#intersect" title="Link to this heading">¶</a></h3>
 <p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/bedtools-suite.html">intersect</a> answers the question of which features of two sets overlap.
 It works with BED/GFF/VCF and BAM files.</p>
 <p>intersectBed can report different overlaps.
@@ -124,7 +120,7 @@ chr1 150  200  chr1   150  250
 <p>intersectBed has many other features and possibilities that are explained in its manual, like minimum fraction of overlap or strandedness.</p>
 </section>
 <section id="window">
-<h3>window<a class="headerlink" href="#window" title="Permalink to this heading">¶</a></h3>
+<h3>window<a class="headerlink" href="#window" title="Link to this heading">¶</a></h3>
 <p>Similar to intersectBed, <a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/window.html">window</a> searches for overlapping features in A and B.
 However, windowBed adds a specified number (1000, by default) of base pairs upstream and downstream of each feature in A.
 In effect, this allows features in B that are “near” features in A to be detected.
@@ -146,7 +142,7 @@ chr1 1000 1500  chr1 100  300
 </div>
 </section>
 <section id="closest">
-<h3>closest<a class="headerlink" href="#closest" title="Permalink to this heading">¶</a></h3>
+<h3>closest<a class="headerlink" href="#closest" title="Link to this heading">¶</a></h3>
 <p>Similar to intersectBed, <a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/closest.html">closest</a> searches for overlapping features in A and B.
 In the event that no feature in B overlaps the current feature in A, closestBed will report the closest (that is, least genomic distance from the start or end of A) feature in B.
 For example, one might want to find which is the closest gene to a significant GWAS polymorphism. Note that closestBed will report an overlapping feature as the closest.
@@ -168,7 +164,7 @@ chr1 600  700  chr1  900  1000
 </div>
 </section>
 <section id="subtract">
-<h3>subtract<a class="headerlink" href="#subtract" title="Permalink to this heading">¶</a></h3>
+<h3>subtract<a class="headerlink" href="#subtract" title="Link to this heading">¶</a></h3>
 <p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/subtract.html">subtract</a> searches for features in B that overlap A.
 If an overlapping feature is found in B, the overlapping portion is removed from A and the remaining portion of A is reported.
 If a feature in B overlaps all of a feature in A, the A feature will not be reported.</p>
@@ -190,7 +186,7 @@ chr1 20  30
 </div>
 </section>
 <section id="merge">
-<h3>merge<a class="headerlink" href="#merge" title="Permalink to this heading">¶</a></h3>
+<h3>merge<a class="headerlink" href="#merge" title="Link to this heading">¶</a></h3>
 <p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/merge.html">merge</a> combines overlapping or “book-ended” (that is, one base pair away) features in a feature file into a single feature which spans all of the combined features.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chromosome</span>    <span class="o">================================================================</span>
 <span class="n">BED</span> <span class="n">File</span> <span class="n">A</span>             <span class="o">===========</span>                             <span class="o">=======</span>
@@ -211,7 +207,7 @@ chr1 600  850
 </div>
 </section>
 <section id="coverage">
-<h3>coverage<a class="headerlink" href="#coverage" title="Permalink to this heading">¶</a></h3>
+<h3>coverage<a class="headerlink" href="#coverage" title="Link to this heading">¶</a></h3>
 <p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/coverage.html">coverage</a> computes both the depth and breadth of coverage of features in file A across the features in file B. For example, coverageBed can compute the coverage of sequence alignments (file A) across 1 kilobase (arbitrary) windows (file B) tiling a genome of interest.
 One advantage that coverageBed offers is that it not only counts the number of features that overlap an interval in file B, it also computes the fraction of bases in B interval that were overlapped by one or more features.
 Thus, coverageBed also computes the breadth of coverage for each interval in B.</p>
@@ -248,7 +244,7 @@ chr2  0   100  0  0    100  0.0000000
 </div>
 </section>
 <section id="genomecov">
-<h3>genomeCov<a class="headerlink" href="#genomecov" title="Permalink to this heading">¶</a></h3>
+<h3>genomeCov<a class="headerlink" href="#genomecov" title="Link to this heading">¶</a></h3>
 <p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/genomecov.html">genomeCov</a> computes a histogram of feature coverage (e.g., aligned sequences) for a given genome.
 Optionally, by using the –d option, it will report the depth of coverage at each base on each chromosome in the genome file (-g).</p>
 <dl class="simple">
@@ -278,7 +274,7 @@ genome  1    520  1500 0.346667
 </div>
 </section>
 <section id="getfasta">
-<h3>getfasta<a class="headerlink" href="#getfasta" title="Permalink to this heading">¶</a></h3>
+<h3>getfasta<a class="headerlink" href="#getfasta" title="Link to this heading">¶</a></h3>
 <p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/getfasta.html">getfasta</a> extracts sequences from a FASTA file for each of the intervals defined in a BED file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat test.fa
 &gt;chr1
@@ -293,7 +289,7 @@ AAACC
 </div>
 </section>
 <section id="sort">
-<h3>sort<a class="headerlink" href="#sort" title="Permalink to this heading">¶</a></h3>
+<h3>sort<a class="headerlink" href="#sort" title="Link to this heading">¶</a></h3>
 <p><a class="reference external" href="https://bedtools.readthedocs.io/en/latest/content/tools/sort.html">sort</a> sorts a feature file by chromosome and other criteria.</p>
 <p>By default, sortBed sorts a BED file by chromosome and then by start position in ascending order.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat A.bed
@@ -320,7 +316,7 @@ chr1  800 1000
 </section>
 </section>
 <section id="other-files-used-by-bedtools">
-<h2>Other files used by BEDTools<a class="headerlink" href="#other-files-used-by-bedtools" title="Permalink to this heading">¶</a></h2>
+<h2>Other files used by BEDTools<a class="headerlink" href="#other-files-used-by-bedtools" title="Link to this heading">¶</a></h2>
 <p>Some tools need the length of the genome being used.
 In those cases a tab-delimited <em>genome file</em> with the length of the molecules of the genome has to be provided.
 An example would be:</p>
@@ -335,7 +331,7 @@ An example would be:</p>
 This format is used to represent disjoint features like the paired-end sequence alignments.</p>
 </section>
 <section id="notes-regarding-usage">
-<h2>Notes regarding usage<a class="headerlink" href="#notes-regarding-usage" title="Permalink to this heading">¶</a></h2>
+<h2>Notes regarding usage<a class="headerlink" href="#notes-regarding-usage" title="Link to this heading">¶</a></h2>
 <p>All BEDTools load the “B” file into memory and process the “A” file one-by-one against the features in “B”.
 Therefore when possible, one should make set the smaller of the two files to be the “B” file.
 For example, you’ll discover that finding overlaps between a list of 30,000 genes and 100 million aligned sequences will work much more efficiently with the genes file set as BED file “B”.</p>
@@ -345,7 +341,7 @@ For example, you’ll discover that finding overlaps between a list of 30,000 ge
 </div>
 </section>
 <section id="practical-task">
-<h2>Practical Task<a class="headerlink" href="#practical-task" title="Permalink to this heading">¶</a></h2>
+<h2>Practical Task<a class="headerlink" href="#practical-task" title="Link to this heading">¶</a></h2>
 <p>Given the following genome calculate some statistics:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                      <span class="mi">11111111112222222222333333333344444444445555555555</span>
              <span class="mi">12345678901234567890123456789012345678901234567890123456789</span>
@@ -513,7 +509,7 @@ genome        3       1       590     0.00169492
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Multiple Sequence Alignment &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Structural Annotation" href="structural_annotation.html" />
     <link rel="prev" title="Blast" href="blast.html" />
@@ -36,9 +32,9 @@
           <div class="body" role="main">
             
   <section id="multiple-sequence-alignment">
-<h1>Multiple Sequence Alignment<a class="headerlink" href="#multiple-sequence-alignment" title="Permalink to this heading">¶</a></h1>
+<h1>Multiple Sequence Alignment<a class="headerlink" href="#multiple-sequence-alignment" title="Link to this heading">¶</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
 <p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Multiple_sequence_alignment">Multiple Sequence Alignment</a> is an alignment of more than two sequences.
 We could align several DNA or protein sequences.</p>
 <a class="reference external image-reference" href="../static/multiple/alig_mul_prot.png"><img alt="Multiple Alignment" src="../_images/alig_mul_prot.png" /></a>
@@ -54,7 +50,7 @@ The algorithms will try to align homologous positions or regions with the same s
 <a class="reference external image-reference" href="../static/multiple/evol_seqs_homologas.png"><img alt="Evol seqs homologas" src="../_images/evol_seqs_homologas.png" /></a>
 </section>
 <section id="multiple-alignment-algorithm">
-<h2>Multiple alignment algorithm<a class="headerlink" href="#multiple-alignment-algorithm" title="Permalink to this heading">¶</a></h2>
+<h2>Multiple alignment algorithm<a class="headerlink" href="#multiple-alignment-algorithm" title="Link to this heading">¶</a></h2>
 <p>Multiple alignments are computationally much more difficult than pair-wise alignments.
 It would be ideal to use an analog of the Smith &amp; Waterman algorithm capable of looking for optimal alignments in the diagonals of a multidimensional matrix given a scoring schema.
 This algorithm would had to create a multidimensional matrix with one dimension for each sequence.
@@ -73,7 +69,7 @@ This was also the case in the pair-wise case, but remember that the multiple ali
 There are other algorithms to assemble sequencing projects.</p>
 </section>
 <section id="progressive-contruction-algorithms">
-<h2>Progressive contruction algorithms<a class="headerlink" href="#progressive-contruction-algorithms" title="Permalink to this heading">¶</a></h2>
+<h2>Progressive contruction algorithms<a class="headerlink" href="#progressive-contruction-algorithms" title="Link to this heading">¶</a></h2>
 <p>In Multiple Sequence Alignment it is quite common that the algorithms use a progressive alignment strategy.
 These methods are fast and allow to align thousands of sequences.</p>
 <p>Before starting the alignemnt, as in the pair-wise case, we have to decide which is the scoring schema that we are going to use for the matches, gaps and gap extensions.
@@ -178,17 +174,17 @@ The T-Coffe algorithm follows the steps:</p>
 T-Coffee is slower than CLUSTALW and that is one of its main limitations, it can not work with more than few hundred sequences.</p>
 </section>
 <section id="iterative-algorithms">
-<h2>Iterative algorithms<a class="headerlink" href="#iterative-algorithms" title="Permalink to this heading">¶</a></h2>
+<h2>Iterative algorithms<a class="headerlink" href="#iterative-algorithms" title="Link to this heading">¶</a></h2>
 <p>These methods are similar to the progressive ones, but in each step the previous alignments are reevaluated.
 Some of the most popular iterative methods are: <a class="reference external" href="http://drive5.com/muscle/">Muscle</a> and <a class="reference external" href="http://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html">MAFFT</a> are two popular examples of these algorithms.</p>
 </section>
 <section id="hidden-markov-models">
-<h2>Hidden Markov models<a class="headerlink" href="#hidden-markov-models" title="Permalink to this heading">¶</a></h2>
+<h2>Hidden Markov models<a class="headerlink" href="#hidden-markov-models" title="Link to this heading">¶</a></h2>
 <p>The most advanced algorithms to date are based on <a class="reference external" href="https://en.wikipedia.org/wiki/Hidden_Markov_model">Hidden</a> <a class="reference external" href="https://en.wikipedia.org/wiki/Markov_model">Markov Models</a> and they have improvements in the guide tree construction, like the <a class="reference external" href="http://almob.biomedcentral.com/articles/10.1186/1748-7188-5-21">sequence embedding</a>, that reduce the computation time.</p>
 <p><a class="reference external" href="http://www.clustal.org/omega/">Clustal Omega</a> is one of these algorithms and can create alignments as accurate of the T-Coffee, but with many thousands of sequences.</p>
 </section>
 <section id="alignment-evaluation">
-<h2>Alignment evaluation<a class="headerlink" href="#alignment-evaluation" title="Permalink to this heading">¶</a></h2>
+<h2>Alignment evaluation<a class="headerlink" href="#alignment-evaluation" title="Link to this heading">¶</a></h2>
 <p>Once we have created our Multiple Sequence Alignment we should check that the result is OK.
 We could open the multiple alignment in a viewer to assess the quality of the different regions of the aligment or we could automate this assesment.
 Usually not all the regions have an alignment of the same quality.
@@ -197,7 +193,7 @@ The more conserved regions will be more easily aligned than the more variable on
 We can remove those regions manually or we can use an especialized algorithm like <a class="reference external" href="http://trimal.cgenomics.org/">trimAl</a>.</p>
 </section>
 <section id="software-for-multiple-alignments">
-<h2>Software for multiple alignments<a class="headerlink" href="#software-for-multiple-alignments" title="Permalink to this heading">¶</a></h2>
+<h2>Software for multiple alignments<a class="headerlink" href="#software-for-multiple-alignments" title="Link to this heading">¶</a></h2>
 <p>There are different software packages that implement the described algorithms.
 These softwares include CLI and GUI programs as well as web services.</p>
 <p>One package usually employed is <a class="reference external" href="http://www.megasoftware.net/">MEGA</a>.
@@ -290,7 +286,7 @@ Another old software, that has been abandoned by its developer is <a class="refe
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>NGS file formats &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Read QA and Cleaning" href="read_cleaning.html" />
     <link rel="prev" title="Command line primer" href="cmd_primer.html" />
@@ -36,18 +32,18 @@
           <div class="body" role="main">
             
   <section id="ngs-file-formats">
-<h1>NGS file formats<a class="headerlink" href="#ngs-file-formats" title="Permalink to this heading">¶</a></h1>
+<h1>NGS file formats<a class="headerlink" href="#ngs-file-formats" title="Link to this heading">¶</a></h1>
 <p>There are lots of file formats related to NGS analyses.
 The most common ones are:</p>
 <a class="reference internal image-reference" href="_images/ngs_map_read_file_formats.png"><img alt="_images/ngs_map_read_file_formats.png" src="_images/ngs_map_read_file_formats.png" style="width: 650px;" /></a>
 <a class="reference internal image-reference" href="_images/ngs_file_formats.png"><img alt="_images/ngs_file_formats.png" src="_images/ngs_file_formats.png" style="width: 650px;" /></a>
 <section id="sequence-file-formats">
-<h2>Sequence file formats<a class="headerlink" href="#sequence-file-formats" title="Permalink to this heading">¶</a></h2>
+<h2>Sequence file formats<a class="headerlink" href="#sequence-file-formats" title="Link to this heading">¶</a></h2>
 <p>The different sequence related formats include different information about the sequence.
 The most common file formats in the NGS world are: fastq and sff.</p>
 </section>
 <section id="sff">
-<h2>SFF<a class="headerlink" href="#sff" title="Permalink to this heading">¶</a></h2>
+<h2>SFF<a class="headerlink" href="#sff" title="Link to this heading">¶</a></h2>
 <p>The <a class="reference external" href="http://www.ncbi.nlm.nih.gov/Traces/trace.cgi?cmd=show&amp;f=formats&amp;m=doc&amp;s=format#sff">SFF</a> (Standard Flowgram Format) files are the 454 equivalent to the ABI chromatogram files.
 They hold information about:</p>
 <blockquote>
@@ -66,7 +62,7 @@ Roche provides one executable able to do it with the 454 machine.
 Alternatively we can use the <a class="reference external" href="http://bioinf.comav.upv.es/sff_extract/index.html">sff_extract</a> tool to obtain a fasta file.</p>
 </section>
 <section id="fasta">
-<h2>Fasta<a class="headerlink" href="#fasta" title="Permalink to this heading">¶</a></h2>
+<h2>Fasta<a class="headerlink" href="#fasta" title="Link to this heading">¶</a></h2>
 <p>The fasta format is based on a simple text.
 Each sequence starts with a “&gt;” followed by the sequence name, an space and, optionally, the description</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">seq_1</span> <span class="n">description</span>
@@ -87,7 +83,7 @@ In this cases both the sequence and the quality file should have the sequences i
 </div>
 </section>
 <section id="sanger-fastq">
-<h2>sanger fastq<a class="headerlink" href="#sanger-fastq" title="Permalink to this heading">¶</a></h2>
+<h2>sanger fastq<a class="headerlink" href="#sanger-fastq" title="Link to this heading">¶</a></h2>
 <p>The <a class="reference external" href="http://en.wikipedia.org/wiki/FASTQ_format">fastq</a> format was developed to provide a convenient way of storing the sequence and the quality scores in the same file.
 These are text files and they look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>@seq_1
@@ -118,7 +114,7 @@ I - Illumina      Phred+64,  raw reads typically (0, 40)
 </div>
 </section>
 <section id="illummina-fastq">
-<h2>Illummina fastq<a class="headerlink" href="#illummina-fastq" title="Permalink to this heading">¶</a></h2>
+<h2>Illummina fastq<a class="headerlink" href="#illummina-fastq" title="Link to this heading">¶</a></h2>
 <p>This file is almost identical to a sanger fastq file, but the encoding for the quality scores is different.
 When we deal with a fastq file we have to be sure about which kind of file we are dealing with, an illumina fastq or a sanger fastq. Unfortunately they are not easy to differentiate.
 Also you have to take into account that solexa used to had a third fastq format, the solexa fastq, although this one is mostly obsoleted.
@@ -126,20 +122,20 @@ Recently Illumina has also decided to distribute its files as Sanger fastq, so t
 <p>One of the seq_crumbs utilities, guess_seq_format, is able to differentiate the Sanger from the Illumina version by looking for quality characters exclusive of the Sanger version.</p>
 </section>
 <section id="sra">
-<h2>SRA<a class="headerlink" href="#sra" title="Permalink to this heading">¶</a></h2>
+<h2>SRA<a class="headerlink" href="#sra" title="Link to this heading">¶</a></h2>
 <p>SRA is the file format in which all <a class="reference external" href="http://www.ncbi.nlm.nih.gov/sra">NCBI SRA</a> content is provided.
 SRA files are binary files and we need specific tools to extract the information.
 There is a toolkit (<a class="reference external" href="https://github.com/ncbi/sra-tools">SRA Toolkit</a>)developed by NCBI to deal with these binary files.</p>
 </section>
 <section id="compressed-files">
-<h2>Compressed files<a class="headerlink" href="#compressed-files" title="Permalink to this heading">¶</a></h2>
+<h2>Compressed files<a class="headerlink" href="#compressed-files" title="Link to this heading">¶</a></h2>
 <p>Sometime these sequence text file can be found compressed to save up hard drive space.
 The most common compression formats are <a class="reference external" href="http://en.wikipedia.org/wiki/Gzip">gzip</a> and <a class="reference external" href="http://samtools.sourceforge.net/tabix.shtml">bgzip</a>.
 bgzip is a gzip variant commonly used in genomics because, although it is a little less efficient in the compression ratio, it allows random access.
 Most software is becoming compatible with these formats.</p>
 </section>
 <section id="paired-files">
-<h2>Paired files<a class="headerlink" href="#paired-files" title="Permalink to this heading">¶</a></h2>
+<h2>Paired files<a class="headerlink" href="#paired-files" title="Link to this heading">¶</a></h2>
 <p>It is common to obtain two reads from a single molecule.
 Examples of these techniques are the Illumina pair-ends and mate-pairs.
 In this cases for each read there is another paired read.
@@ -168,7 +164,7 @@ In this case the files should hold the reads exactly in the same order.</p>
 </div>
 <p>Depending on the software that we want to use we should the interleaved or the two file version; but most of actual ones use the one file version.</p>
 <section id="id2">
-<h3>SRA toolkit<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<h3>SRA toolkit<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
 <p>Download the <a class="reference external" href="https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR2970642/SRR2970642">sra file</a> <a class="reference external" href="https://www.ncbi.nlm.nih.gov/sra/SRX1460040">(file info)</a> and use fastq-dump to convert to fastq format.</p>
 <p>First, you can run the program with the default options and look at the output file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@ngsmachine:~$ fastq-dump SRR2970642
@@ -255,7 +251,7 @@ In this case the files should hold the reads exactly in the same order.</p>
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

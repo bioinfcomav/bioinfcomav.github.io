@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>PEP 8 - La guía de estilo para Python &#8212; Bioinf at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -34,13 +30,13 @@
           <div class="body" role="main">
             
   <section id="pep-8-la-guia-de-estilo-para-python">
-<h1>PEP 8 - La guía de estilo para Python<a class="headerlink" href="#pep-8-la-guia-de-estilo-para-python" title="Permalink to this heading">¶</a></h1>
+<h1>PEP 8 - La guía de estilo para Python<a class="headerlink" href="#pep-8-la-guia-de-estilo-para-python" title="Link to this heading">¶</a></h1>
 <p>La comunidad de usuarios de Python ha adoptado una guía de estilo que facilita la lectura del código y la consistencia entre programas de distintos usuarios.
 Esta guía no es de seguimiento obligatorio, pero es altamente recomendable.
 El documento completo se denomina <a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">PEP 8</a>.
 En este resumen vamos a ver algunas de las recomendaciones relativas a las materias que hemos visto en este curso.</p>
 <section id="indentacion">
-<h2>Indentación<a class="headerlink" href="#indentacion" title="Permalink to this heading">¶</a></h2>
+<h2>Indentación<a class="headerlink" href="#indentacion" title="Link to this heading">¶</a></h2>
 <p>Utilizar siempre 4 espacios y nunca mezclar tabuladores y espacios.</p>
 <p>Si se continua una línea hay dos opciones aceptables:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Si</span><span class="p">:</span> <span class="c1"># opcion 1</span>
@@ -57,17 +53,17 @@ En este resumen vamos a ver algunas de las recomendaciones relativas a las mater
 </div>
 </section>
 <section id="tamano-maximo-de-linea">
-<h2>Tamaño máximo de línea<a class="headerlink" href="#tamano-maximo-de-linea" title="Permalink to this heading">¶</a></h2>
+<h2>Tamaño máximo de línea<a class="headerlink" href="#tamano-maximo-de-linea" title="Link to this heading">¶</a></h2>
 <p>Las líneas deben limitarse a un máximo de 79 caracteres.</p>
 </section>
 <section id="lineas-en-blanco">
-<h2>Líneas en blanco<a class="headerlink" href="#lineas-en-blanco" title="Permalink to this heading">¶</a></h2>
+<h2>Líneas en blanco<a class="headerlink" href="#lineas-en-blanco" title="Link to this heading">¶</a></h2>
 <p>Separar las definiciones de las clases y funciones con dos líneas en blanco.
 Los métodos dentro de clases se separan con una línea en blanco.
 Se recomienda utilizar líneas en blanco para separar partes del código, por ejemplo dentro de una función, que realizan tareas diferenciadas.</p>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">¶</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">¶</a></h2>
 <p>Los imports de distintos módulos deben estar en líneas diferentes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Si</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">os</span>
     <span class="kn">import</span> <span class="nn">sys</span>
@@ -89,7 +85,7 @@ Se recomienda utilizar líneas en blanco para separar partes del código, por ej
 <p>Cada grupo de imports debe estar separado por una línea en blanco.</p>
 </section>
 <section id="espacios-en-blanco-en-expresiones">
-<h2>Espacios en blanco en expresiones<a class="headerlink" href="#espacios-en-blanco-en-expresiones" title="Permalink to this heading">¶</a></h2>
+<h2>Espacios en blanco en expresiones<a class="headerlink" href="#espacios-en-blanco-en-expresiones" title="Link to this heading">¶</a></h2>
 <p>Evitar espacios en blanco extra en:</p>
 <blockquote>
 <div><ul class="simple">
@@ -149,7 +145,7 @@ Booleans (and, or, not).</p></li>
 </section>
 </section>
 <section id="el-zen-de-python">
-<h1>El zen de Python<a class="headerlink" href="#el-zen-de-python" title="Permalink to this heading">¶</a></h1>
+<h1>El zen de Python<a class="headerlink" href="#el-zen-de-python" title="Link to this heading">¶</a></h1>
 </section>
 
 
@@ -238,7 +234,7 @@ Booleans (and, or, not).</p></li>
       &copy;2010-2023, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

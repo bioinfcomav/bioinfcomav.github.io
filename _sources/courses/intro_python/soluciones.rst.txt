@@ -324,6 +324,168 @@ Escribe un programa que sume los números desde 0 a 50 utilizando un bucle *for*
     print('La suma total es: ', suma)
 
 
+Ejercicios con listas y diccionarios
+####################################
+
+Máximo y mínimo
+---------------
+
+Crea una función que calcule el máximo y el mínimo de una lista de números utilizando un bucle *for*.
+Compara el resultado con el que dan las funciones `min <https://docs.python.org/3/library/functions.html#min>`_ y `max <https://docs.python.org/3/library/functions.html#max>`_..
+
+.. code-block:: python
+
+    def calcula_min_y_max(numeros):
+        min_ = None
+        max_ = None
+        for numero in numeros:
+            if min_ is None or numero < min_:
+                min_ = numero
+            if max_ is None or numero > max_:
+                max_ = numero
+        return min_, max_
+
+    numeros = [3, 4, 5, 2]
+    min_, max_ = calcula_min_y_max(numeros)
+    print(min_, min(numeros))
+    print(max_, max(numeros))
+
+Reverso de una lista
+--------------------
+
+Escribe un programa que cree una lista en orden inverso utilizando un bucle *for* y compara con el resultado de la función `reversed <https://docs.python.org/3/library/functions.html#reversed>`_.
+
+.. code-block:: python
+
+    def crea_lista_reversa(lista):
+        reversa = []
+        for index in range(1, len(lista) + 1):
+            reversa.append(lista[-index])
+        return reversa
+
+    lista = ['hola', 0, 3, None, True]
+    rev_lista = crea_lista_reversa(lista)
+    print(rev_lista)
+    print(list(reversed(lista)))
+
+Filtra una lista de números
+---------------------------
+
+Escribe una función a la que dada una lista de números y un valor máximo, devuelva una nueva lista con los números menores o iguales al valor máximo.
+
+.. code-block:: python
+
+    def elimina_valores_grandes(numeros, maximo_aceptable):
+        numeros_aceptados = []
+        for numero in numeros:
+            if numero <= maximo_aceptable:
+                numeros_aceptados.append(numero)
+        return numeros_aceptados
+        
+    numeros = [1, 8, 5, 10, 2, 7]
+    numeros_pequenos = elimina_valores_grandes(numeros, 5)
+    print(numeros_pequenos)
+
+Cuenta las palabras
+-------------------
+
+Dada una cadena de texto con palabras escribe un programa que cuente el número de veces que aparece cada palabra.
+
+.. code-block:: python
+
+    from collections import Counter
+
+    def  cuenta_palabras(texto):
+        palabras = texto.strip().split(' ')
+        cuentas = {}
+        for palabra in palabras:
+            palabra = palabra.lower()
+            if palabra in cuentas:
+                cuentas[palabra] += 1
+            else:
+                cuentas[palabra] = 1
+        return cuentas
+
+    def  cuenta_palabras2(texto):
+        palabras = texto.strip().lower().split(' ')
+        cuentas = Counter(palabras)
+        return cuentas
+
+    texto = 'En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lantejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda.'
+    cuentas = cuenta_palabras(texto)
+    print(cuentas)
+    cuentas2 = cuenta_palabras2(texto)
+    print(cuentas2)
+
+Base datos de genes
+-------------------
+
+Disponemos de la siguiente información almacenada en un fichero o cadena de texto.
+
+.. code-block:: python
+
+    '''nombre funcion cromosoma start end
+    gen1 kinasa chrom1 13904 18904
+    gen2 polimerasa chrom1 43904 49904
+    gen3 fosfatasa chrom2 1904 5904
+    '''
+
+Queremos crear una base de datos que guarde la información relativa a los genes, por ejemplo en un diccionario.
+Una vez creada la base de datos deseamos que el usuario pueda pedir la información dando el nombre de un gen y que el programa imprima la información relativa a ese gen.
+
+.. code-block:: python
+
+    from csv import DictReader
+    from io import StringIO
+
+    texto = '''nombre funcion cromosoma start end
+    gen1 kinasa chrom1 13904 18904
+    gen2 polimerasa chrom1 43904 49904
+    gen3 fosfatasa chrom2 1904 5904
+    '''
+
+    def crea_base_de_datos(texto):
+        genes = {}
+        primera_linea = True
+        for linea in texto.splitlines():
+            if primera_linea:
+                primera_linea = False
+                continue
+            items = linea.strip().split()
+            gen = {'funcion': items[1], 'cromosoma': items[2], 'start': int(items[3]), 'end': int(items[4])}
+            genes[items[0]] = gen
+        return gen
+            
+    def crea_base_de_datos2(fhand):
+        fields = next(fhand).strip().split()
+        reader = DictReader(fhand, fields, delimiter=' ')
+        genes = {}
+        for record in reader:
+            record['start'] = int(record['start'])
+            record['end'] = int(record['end'])
+            genes[record['nombre']] = record
+        return genes
+
+
+    def consulta_base_datos(genes):
+        while True:
+            nombre_gen = input('introduce el nombre de un gen: ')
+            if nombre_gen == 'fin':
+                break
+            elif nombre_gen in genes:
+                gen = genes[nombre_gen]
+                print(f'Información para {nombre_gen}: {gen["funcion"]} {gen["cromosoma"]}:{gen["start"]}-{gen["end"]}')
+            else:
+                print(f'Gen desconocido: {nombre_gen}. Escribe "fin" para terminar.')
+        
+
+    genes = crea_base_de_datos(texto)
+    # Otra alternativa
+    genes = crea_base_de_datos2(StringIO(texto))
+
+    consulta_base_datos(genes)
+
+
 Lee un fichero fasta
 --------------------
 

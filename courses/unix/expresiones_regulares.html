@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Expresiones regulares &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Scripts de bash" href="scripts_bash.html" />
     <link rel="prev" title="Procesamiento de ficheros de texto" href="procesamiento_texto.html" />
@@ -36,7 +32,7 @@
           <div class="body" role="main">
             
   <section id="expresiones-regulares">
-<h1>Expresiones regulares<a class="headerlink" href="#expresiones-regulares" title="Permalink to this heading">¶</a></h1>
+<h1>Expresiones regulares<a class="headerlink" href="#expresiones-regulares" title="Link to this heading">¶</a></h1>
 <p>Las expresiones regulares son un medio para describir patrones de texto.
 Imaginemos que no sólo queremos buscar en un texto todas las líneas que contienen una palabra, como por ejemplo Barcelona, sino que sólo nos interesan las líneas que <em>empiezan</em> por la palabra Barcelona, pero no las que contengan la palabra en cualquier otra posición.
 Describir el patrón “Barcelona” es trivial, tan sólo hay que escribir “Barcelona”, pero ¿cómo podemos describir “La línea comienza por la palabra Barcelona”.
@@ -49,7 +45,7 @@ Las más básicas son simplemente una lista de letras que forman una texto que d
 Por ejemplo con la expresión “Human” sólo coincidirá “Human”.
 Pero por fortuna las expresiones regulares nos permiten hacer búsquedas y substituciones mucho más complejas.</p>
 <section id="expresiones-alternativas">
-<h2>Expresiones alternativas<a class="headerlink" href="#expresiones-alternativas" title="Permalink to this heading">¶</a></h2>
+<h2>Expresiones alternativas<a class="headerlink" href="#expresiones-alternativas" title="Link to this heading">¶</a></h2>
 <p>Una expresión u otra.
 Imaginemos que tenemos un fichero con los <a class="reference download internal" download="" href="_downloads/3c63e62512b00db44263763c2d99dd25/origenes.txt"><code class="xref download docutils literal notranslate"><span class="pre">orígenes</span></code></a> de los pacientes de un estudio sobre síndrome de Usher.
 Queremos seleccionar todos los pacientes que vienen de Valencia o Castellón.
@@ -64,7 +60,7 @@ Granada Bastella Valencia sana
 <p>La barra vertical (|) separa las expresiones alternativas. En este caso significa que la palabra encontrada puede ser Valencia o Castellón.</p>
 </section>
 <section id="contenedores">
-<h2>Contenedores<a class="headerlink" href="#contenedores" title="Permalink to this heading">¶</a></h2>
+<h2>Contenedores<a class="headerlink" href="#contenedores" title="Link to this heading">¶</a></h2>
 <p>En muchas ocasiones nos interesa seleccionar patrones que pueden tener en una posición varias letras distintas.
 Por ejemplo podríamos describir el patrón “comienza por Usher y después tiene un número” o “comienza por usher y después tiene un par de letras”.
 Busquemos todas las líneas que tienen la palabra Usher o usher:</p>
@@ -151,7 +147,7 @@ Valencia  Paniagua    Castellón   usher1B
 </div>
 </section>
 <section id="cuantificadores">
-<h2>Cuantificadores<a class="headerlink" href="#cuantificadores" title="Permalink to this heading">¶</a></h2>
+<h2>Cuantificadores<a class="headerlink" href="#cuantificadores" title="Link to this heading">¶</a></h2>
 <p>Además de indicar qué caracteres queremos permitir podemos seleccionar cuantas veces deben aparecer.
 Si no añadimos nada que indique lo contrario se asume que el carácter debe aparecer una vez, pero podríamos pedir que el carácter aparezca un número distinto de veces:</p>
 <ul class="simple">
@@ -169,7 +165,7 @@ Castellón Sogorb  valencia    usher2B
 </div>
 </section>
 <section id="puntos-de-anclaje">
-<h2>Puntos de anclaje<a class="headerlink" href="#puntos-de-anclaje" title="Permalink to this heading">¶</a></h2>
+<h2>Puntos de anclaje<a class="headerlink" href="#puntos-de-anclaje" title="Link to this heading">¶</a></h2>
 <p>Además de poder indicar qué y cuántas veces queremos que algo aparezca podemos indicar dónde deseamos que lo haga.
 Los puntos de anclaje más utilizados son:</p>
 <ul class="simple">
@@ -192,7 +188,7 @@ Castellón Sogorb  valencia    usher2B
 </div>
 </section>
 <section id="sustituciones">
-<h2>Sustituciones<a class="headerlink" href="#sustituciones" title="Permalink to this heading">¶</a></h2>
+<h2>Sustituciones<a class="headerlink" href="#sustituciones" title="Link to this heading">¶</a></h2>
 <p>Las expresiones regulares además de ser útiles para buscar patrones sirven para sustituirlos.
 Por ejemplo podemos sustituir madrid por Madrid con el siguiente comando:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ sed -r &#39;s/madrid/Madrid/&#39; origenes.txt
@@ -226,13 +222,13 @@ Por ejemplo, podríamos permutar las columnas 1 y 2 del fichero con el comando:<
 </div>
 </section>
 <section id="escapes">
-<h2>Escapes<a class="headerlink" href="#escapes" title="Permalink to this heading">¶</a></h2>
+<h2>Escapes<a class="headerlink" href="#escapes" title="Link to this heading">¶</a></h2>
 <p>Algunos caracteres tienen significados especiales, como ., $, (, ), [, ], o ^ y si se quieren utilizar hay que escaparlos precediéndolos con .</p>
 <p>El campo de las expresiones regulares es muy amplio y esta pequeña introducción sólo ha pretendido mostrar algunas de las posibilidades de esta gran herramienta.
 El mejor modo de aprender a utilizarlas es intentar hacer uso de ellas en problemas concretos y echar una ojeada a algunos de los libros y tutoriales que se han escrito sobre ellas.</p>
 </section>
 <section id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>Buscar las líneas en las que aparece la palabra bash en el archivo /etc/passwd.</p></li>
 <li><p>Buscar en el archivo /etc/group todas las líneas que empiezan por <em>m</em>.</p></li>
@@ -257,7 +253,7 @@ El mejor modo de aprender a utilizarlas es intentar hacer uso de ellas en proble
 </ol>
 </section>
 <section id="soluciones">
-<h2>Soluciones<a class="headerlink" href="#soluciones" title="Permalink to this heading">¶</a></h2>
+<h2>Soluciones<a class="headerlink" href="#soluciones" title="Link to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>Buscar las líneas en las que aparece la palabra bash en el archivo /etc/passwd.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ grep &#39;bash&#39; /etc/passwd
@@ -329,7 +325,7 @@ El mejor modo de aprender a utilizarlas es intentar hacer uso de ellas en proble
 </div>
 </section>
 <section id="bibliografia">
-<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this heading">¶</a></h2>
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://oreilly.com/catalog/9780596528126">Mastering regular expressions</a> por Jeffrey E.F. Friedl.</p></li>
 <li><p><a class="reference external" href="http://oreilly.com/catalog/9780596520694">Regular Expressions Cookbook</a> por Jan Goyvaerts y Steven Levithan.</p></li>
@@ -425,7 +421,7 @@ El mejor modo de aprender a utilizarlas es intentar hacer uso de ellas en proble
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Introducción a Python &#8212; Bioinf at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Cadenas de texto" href="cadenas_de_texto.html" />
     <link rel="prev" title="Instalando software" href="../unix/administracion_software.html" />
@@ -45,9 +41,9 @@
 <script type="text/javascript" src="../_downloads/js/pytutor.js"></script>
 <link rel="stylesheet" href="../_downloads/css/pytutor.css"/>
 <!-- End dependencies for pytutor.js --><section id="introduccion-a-python">
-<h1>Introducción a Python<a class="headerlink" href="#introduccion-a-python" title="Permalink to this heading">¶</a></h1>
+<h1>Introducción a Python<a class="headerlink" href="#introduccion-a-python" title="Link to this heading">¶</a></h1>
 <section id="porque-python">
-<h2>¿Porqué Python?<a class="headerlink" href="#porque-python" title="Permalink to this heading">¶</a></h2>
+<h2>¿Porqué Python?<a class="headerlink" href="#porque-python" title="Link to this heading">¶</a></h2>
 <p>Programar consiste en escribir una serie de instrucciones que el ordenador interpretará.
 Estas instrucciones constituirán una herramienta.
 Por ejemplo, podemos escribir un programa para hacer medias aritméticas.
@@ -101,7 +97,7 @@ Esta sencillez no limita en modo alguno al lenguaje, de hecho Python es más mod
 </dl>
 </section>
 <section id="creando-y-ejecutando-hola-mundo">
-<h2>Creando y ejecutando “Hola mundo”<a class="headerlink" href="#creando-y-ejecutando-hola-mundo" title="Permalink to this heading">¶</a></h2>
+<h2>Creando y ejecutando “Hola mundo”<a class="headerlink" href="#creando-y-ejecutando-hola-mundo" title="Link to this heading">¶</a></h2>
 <p>Para seguir la tradición informática lo primero que vamos a hacer es escribir un programa que imprima “Hola mundo”.
 Para ello vamos a abrir un interprete de comandos de Python escribiendo python en la línea de comandos:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python
@@ -119,7 +115,7 @@ Python tiene distintas versiones, la más moderna es la 3.3, pero las más utili
 Este curso está escrito para las versiones 2.x porque las 3.x todavía no son usadas ampliamente.
 De todos modos las diferencias entre ambas versiones son mínimas y lo que vamos a ver en el curso es aplicable a ambas.</p>
 <p>Tras la información sobre la versión y sobre algún otro asunto aparecen tres símbolos “mayor que”:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
 <p>Este es un prompt similar al del shell al que ya estamos acostumbrados.
@@ -172,7 +168,7 @@ hola_mundo.py: orden no encontrada
 </div>
 </section>
 <section id="aritmetica-basica">
-<h2>Aritmética básica<a class="headerlink" href="#aritmetica-basica" title="Permalink to this heading">¶</a></h2>
+<h2>Aritmética básica<a class="headerlink" href="#aritmetica-basica" title="Link to this heading">¶</a></h2>
 <p>Python puede ser utilizado como una calculadora:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python
 &gt;&gt;&gt; 1 + 1
@@ -217,7 +213,7 @@ Afortunadamente este comportamiento del operador división ha sido corregido en 
 </div>
 </section>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">¶</a></h2>
+<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">¶</a></h2>
 <p>Además de hacer aritmética podemos guardar los resultados para utilizarlos posteriormente:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span>
@@ -260,7 +256,7 @@ Si no hemos entendido lo anterior lo que sigue nos parecerá muy extraño:</p>
 Técnicamente podríamos decir que en Python las variables representan referencias a los objetos, no a los objetos en sí.</p>
 </section>
 <section id="nombres-de-variables">
-<h2>Nombres de variables<a class="headerlink" href="#nombres-de-variables" title="Permalink to this heading">¶</a></h2>
+<h2>Nombres de variables<a class="headerlink" href="#nombres-de-variables" title="Link to this heading">¶</a></h2>
 <p>Podemos nombrar las variables prácticamente como queramos, pero hay que tener en cuenta algunas restricciones:</p>
 <blockquote>
 <div><ul class="simple">
@@ -275,7 +271,7 @@ Si abrimos un programa nuestro tres meses después de haberlo escrito y nos enco
 Habría sido mucho más claro nombrar la variable como “media = 3.5”.</p>
 </section>
 <section id="tipos-de-objetos">
-<h2>Tipos de objetos<a class="headerlink" href="#tipos-de-objetos" title="Permalink to this heading">¶</a></h2>
+<h2>Tipos de objetos<a class="headerlink" href="#tipos-de-objetos" title="Link to this heading">¶</a></h2>
 <p>En Python los objetos con los que trabajamos pueden ser de distinto tipo, como: enteros (INTeger), números con parte decimal (FLOAT) o cadenas de texto (STRing).
 Podemos pedirle a Python que nos informe sobre el tipo de cualquier objeto con la orden <em>type</em>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -313,14 +309,14 @@ Por ejemplo, el 3 representado como un entero o como una cadena de texto no es l
 </div>
 </section>
 <section id="herramientas-avanzadas">
-<h2>Herramientas avanzadas<a class="headerlink" href="#herramientas-avanzadas" title="Permalink to this heading">¶</a></h2>
+<h2>Herramientas avanzadas<a class="headerlink" href="#herramientas-avanzadas" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Los editores de texto potentes como vi o emacs pueden ser una gran ayuda cuando se programa, aunque su aprendizaje no es trivial.</p></li>
 <li><p>IDEs para Python. Si todavía no sabes lo que es un IDE o te preguntas si lo necesitas o no es que todavía no lo necesitas, pero para programadores avanzados los IDEs como Eclipse con Pydev pueden ser muy útiles.</p></li>
 </ul>
 </section>
 <section id="bibliografia">
-<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this heading">¶</a></h2>
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>En el sitio principal de Python mantienen una gran lista de tutoriales y libros para <a class="reference external" href="http://wiki.python.org/moin/BeginnersGuide/NonProgrammers">aprender Python</a>.</p></li>
 <li><p>El <a class="reference external" href="http://docs.python.org/tutorial/index.html">tutorial informal</a> de Python, disponible en <a class="reference external" href="http://docs.python.org.ar/tutorial/appetite.html">castellano</a> está también orientado a usuarios noveles y utiliza una aproximación similar a este.</p></li>
@@ -429,7 +425,7 @@ Por ejemplo, el 3 representado como un entero o como una cadena de texto no es l
       &copy;2010-2023, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

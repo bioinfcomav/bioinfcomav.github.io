@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Anotación automática, Blast2GO &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Prácticas bases de datos genómicas" href="practica_visores.html" />
     <link rel="prev" title="Prácticas filogenias" href="practica_filogenias.html" />
@@ -36,7 +32,7 @@
           <div class="body" role="main">
             
   <section id="anotacion-automatica-blast2go">
-<h1>Anotación automática, Blast2GO<a class="headerlink" href="#anotacion-automatica-blast2go" title="Permalink to this heading">¶</a></h1>
+<h1>Anotación automática, Blast2GO<a class="headerlink" href="#anotacion-automatica-blast2go" title="Link to this heading">¶</a></h1>
 <p>Hemos visto en temas anteriores que la secuencia sin analizar no nos aporta ninguna información; por lo que es necesario extraer ésta a partir de la secuencia. En el curso hemos visto diferentes programas que podemos utilizar, pero que no son muy útiles cuando tenemos miles de secuencias para anotar. Existen programas especificos para identificar y extraer información, por ejemplo para alinear cDNAs con ADN genómico podemos utilizar el <a class="reference external" href="http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastDocs">Blast</a> , <a class="reference external" href="http://emboss.open-bio.org/wiki/Appdoc:Est2genome">est2genome</a> o otros pensados para grandes proyectos como <a class="reference external" href="http://tophat.cbcb.umd.edu/">Tophat</a> o <a class="reference external" href="http://research-pub.gene.com/gmap/">GMAP</a>. Pero todos estos programas necesitan de un procesado de datos posterior que nos permita integrar los resultado en un fichero de anotación y ponerlo en el formato adecuado para posteriores análisis. Esto es un proceso complejo que necesita cierto dominio en informática y bioinformática. En esta práctica vamos a usar un programa gráfico que está diseñado para la anotación funcional, podemos utilizarlo para anotar funcionalmente cDNA, ESTs o CDS o proteínas predichas a partir de datos genómicos. El programa que utilizaremos es el <a class="reference external" href="https://www.blast2go.com/">Blast2GO</a>, que está diseñado especialmente para anotar usando los términos <a class="reference external" href="http://www.geneontology.org/GO.doc.shtml">GO</a>. Pero además este programa nos puede ser muy ítil al facilitar el manejo y la búsqueda de información de nuestras secuencias.</p>
 <p>Iniciar el <a class="reference external" href="https://www.blast2go.com/start-blast2go-2-8">programa</a> usando la versión de 512Mb de memoria, suficiente para el número de secuencias que vamos a utilizar.</p>
 <p>Vamos a realizar de forma guiada este ejercicio.</p>
@@ -52,12 +48,12 @@
 </ul>
 </div></blockquote>
 <section id="anotacion-de-unigenes-obtenidos-a-partir-de-un-proyecto-de-secuenciacion">
-<h2>Anotación de unigenes obtenidos a partir de un proyecto de secuenciación<a class="headerlink" href="#anotacion-de-unigenes-obtenidos-a-partir-de-un-proyecto-de-secuenciacion" title="Permalink to this heading">¶</a></h2>
+<h2>Anotación de unigenes obtenidos a partir de un proyecto de secuenciación<a class="headerlink" href="#anotacion-de-unigenes-obtenidos-a-partir-de-un-proyecto-de-secuenciacion" title="Link to this heading">¶</a></h2>
 <p>Vamos a simular con un número pequeño de secuencias (para acortar los tiempos del Blast, etc) la anotación de un proyecto de secuenciación del transcriptoma. Descargar el <a class="reference download internal" download="" href="_downloads/7622c84de37406d547191ff4a5514390/secuencias_test.fasta"><code class="xref download docutils literal notranslate"><span class="pre">fichero</span></code></a> con las secuencias y guardarlo en un directorio.</p>
 <p>Anotar el conjunto de secuencias con el Blast2GO.</p>
 </section>
 <section id="estadisticas-y-analisis-de-la-anotacion">
-<h2>Estadísticas y análisis de la anotación<a class="headerlink" href="#estadisticas-y-analisis-de-la-anotacion" title="Permalink to this heading">¶</a></h2>
+<h2>Estadísticas y análisis de la anotación<a class="headerlink" href="#estadisticas-y-analisis-de-la-anotacion" title="Link to this heading">¶</a></h2>
 <p>El Blast2GO también realiza estadísticas que nos permiten por un lado valorar la anotación realizada y por otro, extraer información funcional. Puede realizar desde los típicos circulos de porcentajes de términos GO presentes en un grupo de secuencias, a comparaciones de dos grupos de secuencias para identificar términos sobrepresentados. Para practicar usaremos un proyecto ya anotado con más secuencias.</p>
 <p>Descargar el <a class="reference download internal" download="" href="_downloads/b76266cdbf3126c9aa323cc20bb74e66/proyecto_data.zip"><code class="xref download docutils literal notranslate"><span class="pre">fichero</span> <span class="pre">comprimido</span></code></a> y descomprimirlo.</p>
 <p>Cargar el proyecto en el Blast2GO y obtener las estadísticas disponibles como:</p>
@@ -70,7 +66,7 @@
 </div></blockquote>
 </section>
 <section id="informacion-adicional">
-<h2>Información adicional<a class="headerlink" href="#informacion-adicional" title="Permalink to this heading">¶</a></h2>
+<h2>Información adicional<a class="headerlink" href="#informacion-adicional" title="Link to this heading">¶</a></h2>
 <p>Existen anotaciones disponibles ya realizadas de diferentes especies y plataformas de microarray, disponibles en la pagina web del <a class="reference external" href="http://www.b2gfar.org/">Blast2go_Far</a>. Descargar una anotación y practicar las diferentes estadísticas con datos reales, es recomendable ejecutar el Blast2G0 con 1 o 2 Gb de memoria.</p>
 <p><a class="reference internal" href="prediccion.html"><span class="doc">Ir a la teoría del tema</span></a></p>
 </section>
@@ -154,7 +150,7 @@
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

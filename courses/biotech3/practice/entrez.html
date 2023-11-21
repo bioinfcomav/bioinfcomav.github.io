@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>NCBI database search &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Introduction to EMBOSS" href="emboss.html" />
     <link rel="prev" title="Sequence analysis" href="../theory/sequence_analysis.html" />
@@ -36,9 +32,9 @@
           <div class="body" role="main">
             
   <section id="ncbi-database-search">
-<h1>NCBI database search<a class="headerlink" href="#ncbi-database-search" title="Permalink to this heading">¶</a></h1>
+<h1>NCBI database search<a class="headerlink" href="#ncbi-database-search" title="Link to this heading">¶</a></h1>
 <section id="id1">
-<h2>NCBI database search<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<h2>NCBI database search<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
 <p>This is a tutorial based on the <a class="reference external" href="http://www.ncbi.nlm.nih.gov/entrez/query/static/help/entrez_tutorial_BIB.pdf">NCBI’s search</a> tutorial.</p>
 <p>We can use the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/search">NCBI search</a> interface to access databases related, among other things, to:</p>
 <ul class="simple">
@@ -142,7 +138,7 @@ Also in the search column you can find your recent search history.</p>
 For instance, you could search only in the Nucleotide database by searching in the <a class="reference external" href="http://www.ncbi.nlm.nih.gov/nuccore/">Nucleotide Database</a> page instead of in the general search page.</p>
 </section>
 <section id="mrna">
-<h2>mRNA<a class="headerlink" href="#mrna" title="Permalink to this heading">¶</a></h2>
+<h2>mRNA<a class="headerlink" href="#mrna" title="Link to this heading">¶</a></h2>
 <p>There are different nucleotide databases in NCBI, but let’s do some searches in the <a class="reference external" href="http://www.ncbi.nlm.nih.gov/nuccore/">Nucleotide Database</a>.</p>
 <ul class="simple">
 <li><p>How many records do we get if we look for “colon cancer” in the Nucleotide Database?</p></li>
@@ -159,13 +155,13 @@ For isntance we could do something similar to “Human[ORGN] AND #1”</p>
 <p>How many results do you get?</p>
 </section>
 <section id="bibliographic-references">
-<h2>Bibliographic References<a class="headerlink" href="#bibliographic-references" title="Permalink to this heading">¶</a></h2>
+<h2>Bibliographic References<a class="headerlink" href="#bibliographic-references" title="Link to this heading">¶</a></h2>
 <p>Once we have located the sequence of interest it is very easy to find related information in the search result page or in the page for any of the records by going to the section related information.
 Thus we can look for the papers related to our search or to any of the sequence records.</p>
 <p>In the Pubmed case we can differentiate the references that include the complete free text by looking for PMC.</p>
 </section>
 <section id="other-related-information">
-<h2>Other related information<a class="headerlink" href="#other-related-information" title="Permalink to this heading">¶</a></h2>
+<h2>Other related information<a class="headerlink" href="#other-related-information" title="Link to this heading">¶</a></h2>
 <p>Most of NCBI’s databases are related in this way so we can go from sequences to papers, from papers to genes, from genes to structures, etc.</p>
 <p>Look for the related proteins to the MLH1 human gene for its homologous genes.</p>
 <p>In the page for any of its proteins you can look for conserved domains.</p>
@@ -176,17 +172,17 @@ Thus we can look for the papers related to our search or to any of the sequence 
 </ul>
 </section>
 <section id="blast-search">
-<h2>Blast search<a class="headerlink" href="#blast-search" title="Permalink to this heading">¶</a></h2>
+<h2>Blast search<a class="headerlink" href="#blast-search" title="Link to this heading">¶</a></h2>
 <p>Also in its protein page you can do a Blast search by going to the Blink and look for other proteins with similar sequences.</p>
 <p>Within the Blink blast search we have Display Options that allow us to filter down the results and get only the results with a Swiss-Prot entry or the results with a PDB structure.</p>
 </section>
 <section id="gene">
-<h2>Gene<a class="headerlink" href="#gene" title="Permalink to this heading">¶</a></h2>
+<h2>Gene<a class="headerlink" href="#gene" title="Link to this heading">¶</a></h2>
 <p>There is in NCBI a Gene database that collects all the information for the genes of some species.
 You can access to the the gene page by looking in the gene database or by following a link in the related information section of any record in the other databases.</p>
 </section>
 <section id="mutations">
-<h2>Mutations<a class="headerlink" href="#mutations" title="Permalink to this heading">¶</a></h2>
+<h2>Mutations<a class="headerlink" href="#mutations" title="Link to this heading">¶</a></h2>
 <p>In the gene page you can access to the related SNPs found in that gene in SNP Geneview.</p>
 <p>In the Geneview page you can look for the SNPs with clinical information in Clinical Source.</p>
 <ul class="simple">
@@ -195,12 +191,12 @@ You can access to the the gene page by looking in the gene database or by follow
 </ul>
 </section>
 <section id="genomic-region">
-<h2>Genomic region<a class="headerlink" href="#genomic-region" title="Permalink to this heading">¶</a></h2>
+<h2>Genomic region<a class="headerlink" href="#genomic-region" title="Link to this heading">¶</a></h2>
 <p>In the protein, mRNA or RefSeqGene page you have a Graphics link to show the record information in a genome graphical browser instead of in the Genbank format.</p>
 <p>You can also get a representation of the genomic region using the related information link “Map viewer”.</p>
 </section>
 <section id="exercise-1">
-<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">¶</a></h2>
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">¶</a></h2>
 <p>Look for the most relevant information for any of the human genes FXN, OCA2 or FOXP2.</p>
 <ul class="simple">
 <li><p>Molecular function</p></li>
@@ -211,12 +207,12 @@ You can access to the the gene page by looking in the gene database or by follow
 </ul>
 </section>
 <section id="exercise-2">
-<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">¶</a></h2>
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">¶</a></h2>
 <p>Are there any genes described for the HYPERCHOLESTEROLEMIA?</p>
 <p>Which would be the most convenient database to look for human diseases?</p>
 </section>
 <section id="exercise-3">
-<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">¶</a></h2>
+<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">¶</a></h2>
 <p>Look for information related to the possible carcinogenic effects of: nicotine, milk, cannabis and banana.</p>
 <p>Look for information in Google and Pubmed?</p>
 <ul class="simple">
@@ -308,7 +304,7 @@ You can access to the the gene page by looking in the gene database or by follow
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

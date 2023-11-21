@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Blast Practice &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Multiple Sequence Alignment" href="multiple.html" />
     <link rel="prev" title="Sequence Alignment" href="alignment.html" />
@@ -36,37 +32,37 @@
           <div class="body" role="main">
             
   <section id="blast-practice">
-<h1>Blast Practice<a class="headerlink" href="#blast-practice" title="Permalink to this heading">¶</a></h1>
+<h1>Blast Practice<a class="headerlink" href="#blast-practice" title="Link to this heading">¶</a></h1>
 <section id="blast-database-search">
-<h2>BLAST database search<a class="headerlink" href="#blast-database-search" title="Permalink to this heading">¶</a></h2>
+<h2>BLAST database search<a class="headerlink" href="#blast-database-search" title="Link to this heading">¶</a></h2>
 <p>BLAST is the most used program to look for similar sequences in a database.</p>
 <p>This practice is divided in two parts.
 In the first one we will get familiar with NCBI’s <a class="reference external" href="https://blast.ncbi.nlm.nih.gov/">BLAST server</a> and in the second we will use it to solve some practical problems.</p>
 </section>
 <section id="ncbi-s-blast-server">
-<h2>NCBI’s BLAST server<a class="headerlink" href="#ncbi-s-blast-server" title="Permalink to this heading">¶</a></h2>
+<h2>NCBI’s BLAST server<a class="headerlink" href="#ncbi-s-blast-server" title="Link to this heading">¶</a></h2>
 <p>In the main <a class="reference external" href="https://blast.ncbi.nlm.nih.gov/">BLAST</a> page at NCBI we can select different BLAST algorithms (blastn, blastp, blastx and tblastn) or different organism: Human, Mouse, Rat, etc.
 We can also run more specialized BLAST searches like Primer-BLAST or VecScreen.</p>
 <p>We are going to run a BLASTN search using a <a class="reference download internal" download="" href="../_downloads/59c61266e08a41a924a5da9c191e59f8/tc573649.fasta"><code class="xref download docutils literal notranslate"><span class="pre">rat</span></code></a> sequence.</p>
 <section id="query-sequence">
-<h3>Query sequence<a class="headerlink" href="#query-sequence" title="Permalink to this heading">¶</a></h3>
+<h3>Query sequence<a class="headerlink" href="#query-sequence" title="Link to this heading">¶</a></h3>
 <p>In the BLAST form we can paste our query sequence or, alternatively, we can introduce a NCBI sequence ID.
 We can restrict the search to a region in the sequence.</p>
 </section>
 <section id="database">
-<h3>Database<a class="headerlink" href="#database" title="Permalink to this heading">¶</a></h3>
+<h3>Database<a class="headerlink" href="#database" title="Link to this heading">¶</a></h3>
 <p>The database choice is one of the most important ones because it will completely change the result.
 We have several databases available like: Human genomic + transcript, nt (all nucleotide sequences), Reference RNA, Reference genomic, Genomic sequences, etc.
 Alternatively, we can write an Entrez query and the query result will become the sequence database in which we will look for.</p>
 </section>
 <section id="program">
-<h3>Program<a class="headerlink" href="#program" title="Permalink to this heading">¶</a></h3>
+<h3>Program<a class="headerlink" href="#program" title="Link to this heading">¶</a></h3>
 <p>Finnaly we can select which algorithm do we want to use: megablast, discontinious megablast and blastn.
 We can select the algorithm depending on the speed and the sensitivity that we want.</p>
 <p>There are extra parameters in the section “algorithm parameters” like number of sequences to report or filters applied to the sequences.</p>
 </section>
 <section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">¶</a></h3>
 <p>We are going to blast the <a class="reference download internal" download="" href="../_downloads/59c61266e08a41a924a5da9c191e59f8/tc573649.fasta"><code class="xref download docutils literal notranslate"><span class="pre">rat</span></code></a> sequence against the human database using megablast.</p>
 <p>Once we submit the blast job we get a page in which we are inform about the estimated time to get the results.</p>
 <p>The blast result page is divided in several.
@@ -89,7 +85,7 @@ For each subject sequence the description and the alignments corresponding to th
 </section>
 </section>
 <section id="sequence-function-annotation">
-<h2>Sequence function annotation<a class="headerlink" href="#sequence-function-annotation" title="Permalink to this heading">¶</a></h2>
+<h2>Sequence function annotation<a class="headerlink" href="#sequence-function-annotation" title="Link to this heading">¶</a></h2>
 <p>We have obtained from a sequencing project of <em>Amblyomma variegatum</em> several transcript sequences corresponding to different genes: <a class="reference download internal" download="" href="../_downloads/b414827f30736a9789eae9e385f98efe/tc154.fasta"><code class="xref download docutils literal notranslate"><span class="pre">tc154</span></code></a> , <a class="reference download internal" download="" href="../_downloads/7c92ed24978063c1bfc91d93534e1401/tc55.fasta"><code class="xref download docutils literal notranslate"><span class="pre">tc55</span></code></a> , <a class="reference download internal" download="" href="../_downloads/f344766b31aba77048ac599418dd2488/tc320.fasta"><code class="xref download docutils literal notranslate"><span class="pre">tc320</span></code></a> and <a class="reference download internal" download="" href="../_downloads/3c23f054eaef239d3d396f5fb419b5e5/tc3.fasta"><code class="xref download docutils literal notranslate"><span class="pre">tc3</span></code></a>.
 We want to find out the function for the proteins coded by those transcripts.</p>
 <p>Which database type should we use DNA or protein?</p>
@@ -98,7 +94,7 @@ We want to find out the function for the proteins coded by those transcripts.</p
 <p>Many proteins are tagged as predicted or hypothetical, what could that mean? Would we find this kind of proteins in Swiss-Prot? Would it be better to use Swiss-Prot?</p>
 </section>
 <section id="species-classification">
-<h2>Species classification<a class="headerlink" href="#species-classification" title="Permalink to this heading">¶</a></h2>
+<h2>Species classification<a class="headerlink" href="#species-classification" title="Link to this heading">¶</a></h2>
 <p>We are working in a hospital and we get a blood sample from a patient.
 The patient seems to have some kind of infection, but which one?</p>
 <p>To help with the diagnose we extract genomic DNA from the patient blood and we do a PCR using primers design to amplify the ITS1 region.
@@ -111,7 +107,7 @@ Can we determine the strain with this sequence?</p>
 <p>Having into account that the sequencing error rate is 2%, should we get additional sequences from the species or is it enough with the one that we have?</p>
 </section>
 <section id="phylogeny">
-<h2>Phylogeny<a class="headerlink" href="#phylogeny" title="Permalink to this heading">¶</a></h2>
+<h2>Phylogeny<a class="headerlink" href="#phylogeny" title="Link to this heading">¶</a></h2>
 <p>We want to build a phylogeny within the animals and we decide to use a <a class="reference download internal" download="" href="../_downloads/725f1519f2e84ed375614832ee1f6993/frataxina.fasta"><code class="xref download docutils literal notranslate"><span class="pre">mRNA</span> <span class="pre">from</span> <span class="pre">the</span> <span class="pre">frataxin</span> <span class="pre">gene</span></code></a>.</p>
 <p>Which would be the advantages and disadvantages of using nr vs refseq?</p>
 <p>If we use refseq do we get the same result by using blastn vs blastx?
@@ -124,7 +120,7 @@ This sequece have a better e-value than some primate sequences, why?</p>
 <p>Once you have the blast result that you like the most download all sequences by clicking in “Select All” and “Get selected sequences”.</p>
 </section>
 <section id="primer-design">
-<h2>Primer design<a class="headerlink" href="#primer-design" title="Permalink to this heading">¶</a></h2>
+<h2>Primer design<a class="headerlink" href="#primer-design" title="Link to this heading">¶</a></h2>
 <p>We want to amplify a region of a human cyclin from an RNA sample to check the expression.
 We want to design some priemrs and we want to make sure that the primers won’t amplify messengers from other genes.
 You can use the Primer-BLAST program.
@@ -217,7 +213,7 @@ Do a blast against the RefSeq mRNA database.</p>
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

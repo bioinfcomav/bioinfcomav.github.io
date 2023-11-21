@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Mapping &#8212; Bioinformatics at COMAV 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="SNP calling" href="snp_calling.html" />
     <link rel="prev" title="Sequence assembly" href="assembly.html" />
@@ -36,9 +32,9 @@
           <div class="body" role="main">
             
   <section id="mapping">
-<h1>Mapping<a class="headerlink" href="#mapping" title="Permalink to this heading">¶</a></h1>
+<h1>Mapping<a class="headerlink" href="#mapping" title="Link to this heading">¶</a></h1>
 <section id="assembly-versus-mapping">
-<h2>Assembly versus mapping<a class="headerlink" href="#assembly-versus-mapping" title="Permalink to this heading">¶</a></h2>
+<h2>Assembly versus mapping<a class="headerlink" href="#assembly-versus-mapping" title="Link to this heading">¶</a></h2>
 <p>Once we have a collection of reads there are two different kinds of analyses.
 If we do not have any previous genomic information we would have to assemble the reads into a genome or transcriptome, as we have already seen in the assembly section.
 Alternatively, if we had genome already available we could map our reads against that genome.
@@ -51,7 +47,7 @@ For a review take a look at <a class="reference external" href="http://www.natur
 We can map short reads with ease and high accuracy in most cases.</p>
 </section>
 <section id="id1">
-<h2>Mapping<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<h2>Mapping<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
 <p>The mapping is the process of comparing each one of the reads with the reference genome.
 We will obtain one alignment, or more, between each read and the genome.</p>
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQzwBdtOqJUrWapiUrymwJHaWIx6Af0PXLDJ8AxevQjyVJxPW2lytnQnRkZCvmpya97m8byeqlU2eX4/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe><p>Like for any other bioinformatic task there is a lot of mapping software available.
@@ -61,7 +57,7 @@ These tools differ on the algorithm used, the sensitivity, the memory requiremen
 In <a class="reference external" href="http://www.nature.com/srep/2011/110805/srep00055/full/srep00055.html">Next generation sequencing has lower sequence coverage and poorer SNP-detection capability in the regulatory regions</a> the authors review some of these programs.</p>
 </section>
 <section id="duplicated-reads">
-<h2>Duplicated reads<a class="headerlink" href="#duplicated-reads" title="Permalink to this heading">¶</a></h2>
+<h2>Duplicated reads<a class="headerlink" href="#duplicated-reads" title="Link to this heading">¶</a></h2>
 <p>The reads that originate from the same original template are considered duplicated, as we already discussed in the read cleaning section.
 These duplicated reads align exactly at the same position on the reference genome because their sequence starts exactly at the same point.</p>
 <p>If we ignored the sequencing errors the duplicated reads should had exactly the same sequence, but there will be errors.
@@ -78,9 +74,9 @@ A: Essentially what it does (for pairs; single-end data is also handled) is to f
 </div></blockquote>
 </section>
 <section id="practical-tasks">
-<h2>Practical tasks<a class="headerlink" href="#practical-tasks" title="Permalink to this heading">¶</a></h2>
+<h2>Practical tasks<a class="headerlink" href="#practical-tasks" title="Link to this heading">¶</a></h2>
 <section id="mapping-pipeline">
-<h3>Mapping Pipeline<a class="headerlink" href="#mapping-pipeline" title="Permalink to this heading">¶</a></h3>
+<h3>Mapping Pipeline<a class="headerlink" href="#mapping-pipeline" title="Link to this heading">¶</a></h3>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Index the reference secuence. Each reference/genome only needs to be indexed once for each mapper. Each mapper has it own command to index the reference.</p></li>
@@ -92,7 +88,7 @@ A: Essentially what it does (for pairs; single-end data is also handled) is to f
 </div></blockquote>
 </section>
 <section id="read-mapping-with-bowtie2">
-<h3>Read mapping with bowtie2<a class="headerlink" href="#read-mapping-with-bowtie2" title="Permalink to this heading">¶</a></h3>
+<h3>Read mapping with bowtie2<a class="headerlink" href="#read-mapping-with-bowtie2" title="Link to this heading">¶</a></h3>
 <p>1. Align the <a class="reference download internal" download="" href="_downloads/aac05c3b9bf5b4911c5db742beb7c98a/brca_reads.fastq"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a> to the <a class="reference download internal" download="" href="_downloads/c107eb5975f56730b01f66c669729a08/brca.fasta"><code class="xref download docutils literal notranslate"><span class="pre">brca</span></code></a> sequence with <a class="reference external" href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">Bowtie2</a> creating a directory named brca.
 (Take a look at the <a class="reference external" href="http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml">Bowtie2 manual</a> first).</p>
 <p>The first thing to do is to create the index. In a new terminal execute:</p>
@@ -144,7 +140,7 @@ ngs_user@machine:~/brca$ samtools index bowtie2_alignment.sorted.bam
 <p>Now we could view the BAM file IGV</p>
 </section>
 <section id="id3">
-<h3>Read mapping with bowtie2<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<h3>Read mapping with bowtie2<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
 <p>Map these <a class="reference download internal" download="" href="_downloads/e9ceb33db8093a5c19c421fdd8b1eb34/reads.fasta"><code class="xref download docutils literal notranslate"><span class="pre">reads</span></code></a> against this <a class="reference download internal" download="" href="_downloads/4b6536ebabe905eacc74f00266f267cd/genomic.fasta"><code class="xref download docutils literal notranslate"><span class="pre">reference</span></code></a> and view the result with igv.</p>
 <p>Index the reference:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bowtie2-build genomic.fasta index
@@ -171,7 +167,7 @@ $ samtools index alignment.sorted.bam
 </div>
 </section>
 <section id="map-454-reads">
-<h3>Map 454 reads<a class="headerlink" href="#map-454-reads" title="Permalink to this heading">¶</a></h3>
+<h3>Map 454 reads<a class="headerlink" href="#map-454-reads" title="Link to this heading">¶</a></h3>
 <p>Download some <a class="reference download internal" download="" href="_downloads/225cf5a7139138e7e667d0c33f00c272/maize_454.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">454</span> <span class="pre">reads</span></code></a> with its corresponding reference and map them using bwa mem.</p>
 <p>First we create a directory to do the practice and uncompress the reads in it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~$ cd
@@ -206,7 +202,7 @@ maize_454.tar.gz  reference.ann  reference.pac
 </div>
 </section>
 <section id="map-illumina-reads-against-the-human-mithocondrial-reference">
-<h3>Map Illumina reads against the human mithocondrial reference<a class="headerlink" href="#map-illumina-reads-against-the-human-mithocondrial-reference" title="Permalink to this heading">¶</a></h3>
+<h3>Map Illumina reads against the human mithocondrial reference<a class="headerlink" href="#map-illumina-reads-against-the-human-mithocondrial-reference" title="Link to this heading">¶</a></h3>
 <p>Map the <a class="reference download internal" download="" href="_downloads/5f32e22df4786c22a53d086e78141026/mito_reads.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">Yoruba</span> <span class="pre">reads</span></code></a> to the human <a class="reference download internal" download="" href="_downloads/4ded52761aa122e7c608904aa85eb130/mito_human_ref_nc_012920.gb"><code class="xref download docutils literal notranslate"><span class="pre">mithocondrial</span> <span class="pre">reference</span></code></a> using bowtie2.</p>
 <p>First we prepare the directory and we download the reference and the reads.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~$ cd
@@ -289,7 +285,7 @@ Would it be any difference if we were to use the most sensible preset setting: <
 <p>Why do you think this is happening?</p>
 </section>
 <section id="create-a-sorted-and-indexed-bam">
-<h3>Create a sorted and indexed BAM<a class="headerlink" href="#create-a-sorted-and-indexed-bam" title="Permalink to this heading">¶</a></h3>
+<h3>Create a sorted and indexed BAM<a class="headerlink" href="#create-a-sorted-and-indexed-bam" title="Link to this heading">¶</a></h3>
 <p>Transform the SAM file obtained in the previous task into a sorted and indexed BAM file.</p>
 <p>Most of the software that deals with SAM files require a sorted and indexed BAM file.
 We can transform from the text based SAM to the binary BAM using the samtools view command.
@@ -318,7 +314,7 @@ aligned_reads.bam  sorted_alignments.bam  sorted_alignments.bam.bai
 <p>We could use this sorted BAM to do any downstream analysis or to visualize it with IGV.</p>
 </section>
 <section id="taking-a-look-at-a-bam-file">
-<h3>Taking a look at a BAM file<a class="headerlink" href="#taking-a-look-at-a-bam-file" title="Permalink to this heading">¶</a></h3>
+<h3>Taking a look at a BAM file<a class="headerlink" href="#taking-a-look-at-a-bam-file" title="Link to this heading">¶</a></h3>
 <p>We can visualize a sorted and indexed BAM file using the <a class="reference external" href="http://www.broadinstitute.org/igv/">Integrative Genome Viewer</a> (IGV).
 IGV has an extensive <a class="reference external" href="http://www.broadinstitute.org/igv/UserGuide">User Guide</a>, so if you have any doubts refer to it.
 IGV is capable of opening and showing along the genome not just the BAM files, but also GFF, VCF, BED and other files.</p>
@@ -331,7 +327,7 @@ IGV is capable of opening and showing along the genome not just the BAM files, b
 <p>Play around with IGV, select different regions, zoom into a region and look for some SNP.</p>
 </section>
 <section id="filtering-with-samtools">
-<h3>Filtering with samtools<a class="headerlink" href="#filtering-with-samtools" title="Permalink to this heading">¶</a></h3>
+<h3>Filtering with samtools<a class="headerlink" href="#filtering-with-samtools" title="Link to this heading">¶</a></h3>
 <p>The reads present in a SAM file can be filtered using the samtools view command.
 We can filter by read group, flag, mapping quality, and genome location.
 Let’s create a BAM file filtering the SAM file from the previous practice with only the reads located in the first 10 kilobases of the mithocondrial genome that have a mapping quality over 30.</p>
@@ -342,7 +338,7 @@ Let’s create a BAM file filtering the SAM file from the previous practice with
 </div>
 </section>
 <section id="bam-statistics">
-<h3>BAM statistics<a class="headerlink" href="#bam-statistics" title="Permalink to this heading">¶</a></h3>
+<h3>BAM statistics<a class="headerlink" href="#bam-statistics" title="Link to this heading">¶</a></h3>
 <p>How many reads do we have in the filtered BAM file that we have just created?
 We can obtain statistics about the reads present and about the number of reads marked with each flag by running the flagstat command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ngs_user@machine:~/mito$ samtools flagstat sorted_alignments.bam
@@ -382,7 +378,7 @@ NC_012920   16569   19938   60
 <p>The last line starts with a start and count the unmapped reads that are not located in any chromosome of the reference.</p>
 </section>
 <section id="bam-merging">
-<h3>BAM merging<a class="headerlink" href="#bam-merging" title="Permalink to this heading">¶</a></h3>
+<h3>BAM merging<a class="headerlink" href="#bam-merging" title="Link to this heading">¶</a></h3>
 <p>Merge the BAM files corresponding to an <a class="reference download internal" download="" href="_downloads/9cea7d9b5b586bb362955f6fd3004934/illumina.bam"><code class="xref download docutils literal notranslate"><span class="pre">Illumina</span></code></a> and a <a class="reference download internal" download="" href="_downloads/8b49166355f4f57a7c3221770cccd47c/454.bam"><code class="xref download docutils literal notranslate"><span class="pre">454</span></code></a> alignments against the same reference.
 We could do it with the samtools merge utility, but it has a very limited functionality, so the recommended tool to do it would be <a class="reference external" href="http://broadinstitute.github.io/picard/command-line-overview.html#Overview">Picard tools</a>.</p>
 <p>One important detail to consider is that usually we want to attach a tag to every read to mark the original  BAM file to which it belonged before the merging.
@@ -409,7 +405,7 @@ ngs_user@machine:~$ java -jar /home/ngs/programas/picard_tools/picard.jar AddOrR
 </div>
 </section>
 <section id="maize-mapping">
-<h3>Maize mapping<a class="headerlink" href="#maize-mapping" title="Permalink to this heading">¶</a></h3>
+<h3>Maize mapping<a class="headerlink" href="#maize-mapping" title="Link to this heading">¶</a></h3>
 <p>We are going to continue with the maize SNP calling practice.
 In the read cleaning section we prepared some 454 and Illumina cleaned reads, now we should map them against the maize transcriptome reference.</p>
 </section>
@@ -488,7 +484,7 @@ In the read cleaning section we prepared some 454 and Illumina cleaned reads, no
       &copy;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>
