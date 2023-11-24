@@ -1,0 +1,307 @@
+Basic Python Cheat Sheets
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Cadenas de texto
+################
+
+Pueden crearse con comillas dobles o sencillas:
+
+.. code-block:: python
+
+    >>> 'Hola'
+    'Hola'
+    >>> "Caracola"
+    'Caracola'
+
+Con triples comillas podemos crear cadenas de texto que ocupen varias líneas.
+
+.. code-block:: python
+
+    '''Hola
+
+    Caracola'''
+
+Type casting a cadena de texto:
+
+.. code-block:: python
+
+    >>> str(42)
+    '42'
+
+Longitud de una cadena de texto:
+
+.. code-block:: python
+
+    >>> len('Monty')
+    5
+
+Eliminar caracteres del inicio y del final (por defecto espacios y tabuladores):
+
+.. code-block:: python
+
+    >>> ' ATGC '.strip()
+    'ATGC'
+
+Contar el número de veces que aparece un carácter:
+
+.. code-block:: python
+
+    >>> 'GATA'.count('A')
+    2
+
+Minúsculas y mayúsculas:
+
+.. code-block:: python
+
+    >>> 'Gata'.lower()
+    'gata'
+    >>> 'Gata'.upper()
+    'GATA'
+    
+Reemplazar un carácter por otro:
+
+.. code-block:: python
+
+    >>> 'GATC'.replace('C', 'A')
+    'GATA'
+
+Buscar la posición de un carácter en la cadena:
+
+.. code-block:: python
+
+    >>> 'GATA'.find('T')
+    2
+    >>> 'GATA'.find('O')
+    -1
+
+Dividir una cadena en una lista de subcadenas, por defecto utilizando el espacio y el retorno de carro:
+
+.. code-block:: python
+
+    >>> 'Monty Python'.split()
+    ['Monty', 'Python']
+
+Unir una lista de cadenas de texto utilizando otra como separador:
+
+.. code-block:: python
+
+    >>> ' '.join(['Monty', 'Python'])
+    'Monty Python'
+
+Unir dos cadenas utilizando el operador suma:
+
+.. code-block:: python
+
+   >>> 'Monty' + 'Python'
+    'MontyPython'
+
+`f-strings <https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings>`_:
+
+.. code-block:: python
+
+    >>> a = 'Hola'
+    >>> b = 'Caracola'
+    >>> f'{a} {b}.'
+    'Hola Caracola.'
+
+listas
+######
+
+Creación de listas:
+
+.. code-block:: python
+
+   >>> l1 = [1, 2, 'hola']
+   >>> l2 = list([1, 2])
+   >>> l3 = []
+   >>> l4 = list()
+
+Número de elementos, longitud:
+
+.. code-block:: python
+
+    >>> print(len([1, 2, 3]))
+    3
+
+Añadir elementos al final.
+
+.. code-block:: python
+
+    >>> l = [1, 2, 3]
+    >>> l.append(4)
+    >>> l.extend([5, 6])
+    >>> print(l)
+    [1, 2, 3, 4, 5, 6]
+
+Unir dos listas para crear una nueva.
+
+.. code-block:: python
+
+    >>> l1 = [1, 2, 3]
+    >>> l2 = [4, 5, 6]
+    >>> l = l1 + l2
+    >>> print(l)
+    [1, 2, 3, 4, 5, 6]
+
+Obtener el reverso o ordenar una lista.
+
+.. code-block:: python
+
+    >>> print(list(reversed(l)))
+    [3, 2, 1]
+    >>> l = [2, 1, 3]
+    >>> print(list(reversed(l)))
+    [3, 1, 2]
+    >>> print(list(sorted(l)))
+    [1, 2, 3]
+
+Comprobar si un elemento está incluido en la lista:
+
+.. code-block:: python
+
+    >>> l = len([1, 2, 3])
+    >>> 3 in l
+    True
+    >>> 4 in l
+    False
+
+Indexado de secuencias, como cadenas de texto o listas
+######################################################
+
+.. code-block:: python
+
+    >>> texto = 'Monty Python'
+    >>> print('0', texto[0])
+    0 M
+    >>> print('0:3', texto[0:3])
+    0:3 Mon
+    >>> print('None:3', texto[:3])
+    None:3 Mon
+    >>> print('2:4', texto[2:4])
+    2:4 nt
+    >>> print('-1', texto[-1])
+    -1 n
+    >>> print('-2:None', texto[-2:])
+    -2:None on
+    >>> texto[::-1]
+    'nohtyP ytnoM'
+
+Diccionarios
+############
+
+Construcción de diccionarios.
+
+.. code-block:: python
+
+    >>> d = {'clave1': 'valor1', 'clave2': 2}
+    >>> print(d)
+    {'clave1': 'valor1', 'clave2': 2}
+    >>> d = {}
+    >>> d['clave'] = 'valor'
+    >>> print(d)
+    {'clave': 'valor'}
+    >>> lista = [('clave1', 'valor1'), ('clave2', 'valor2')]
+    >>> d = dict(lista)
+    >>> print(d)
+    {'clave1': 'valor1', 'clave2': 'valor2'}
+
+Número de elementos en un diccionario.
+
+.. code-block:: python
+
+    >>> d = {'clave1': 'valor1', 'clave2': 2}
+    >>> print(d)
+    2
+
+Iteración.
+
+.. code-block:: python
+
+    >>> d = {'a': 1, 'b': 2}
+    >>> print(list(d.keys()))
+    ['a', 'b']
+    >>> print(list(d))
+    ['a', 'b']
+    >>> print(list(d.values()))
+    [1, 2]
+    >>> print(list(d.items()))
+    [('a', 1), ('b', 2)]
+
+Comprobando si una clave existe.
+
+.. code-block:: python
+
+    >>> d = {'a': 1, 'b': 2}
+    >>> 'a' in d
+    True
+    >>> 1 in d
+    False
+
+Booleanos
+#########
+
+`bool <https://docs.python.org/3/library/functions.html#bool>`_ es la función para hacer type casting a booleano.
+Los valores vacíos de los tipos serán *False* y los demás *True*:
+
+.. code-block:: python
+
+    >>> bool(0)
+    False
+    >>> bool(None)
+    False
+    >>> bool('')
+    False
+    >>> bool({})
+    False
+    >>> bool([])
+    False
+    >>> bool(1)
+    True
+    >>> bool('Hola')
+    True
+    >>> bool([1, 2])
+    True
+
+Operadores de comparación:
+
+.. code-block:: python
+
+    >>> 1 == 0
+    False
+    >>> 1 >= 0
+    True
+    >>> 1 > 0
+    True
+    >>> 1 >= 1
+    True
+    >>> 1 < 0
+    False
+    >>> 1 != 0
+    True
+    >>> a = None
+    >>> a is None
+    True
+
+Aritmética booleana:
+
+    >>> True and True
+    True
+    >>> True and False
+    False
+    >>> False and True
+    False
+    >>> False and False
+    False
+    >>> True or True
+    True
+    >>> True or False
+    True
+    >>> False or True
+    True
+    >>> False or False
+    False
+    >>> not False
+    True
+    >>> not True
+    False
+

@@ -8,10 +8,15 @@ Recuerda que puedes trabajar en estos ejercicios con el editor online de `Future
 
 Para instalar Python junto a las librerías más utilizadas en bioinformática puedes utilizar `anaconda <https://www.anaconda.com/download>`_.
 
-Las soluciones a los ejercicios puedes encontraslas en: `ejercicios y soluciones <soluciones.html>`_.
+Cheat sheets
+############
+
+Resumen de los métodos más utilizados para los tipos básicos en Python: `Basic Python Cheat Sheets <basic_python_cheat_sheets.html>`_
 
 Ejercicios
 ##########
+
+Las soluciones a los ejercicios puedes encontraslas en: `ejercicios y soluciones <soluciones.html>`_.
 
 Adivinar un número
 ------------------
