@@ -23,7 +23,8 @@ Máster en mejora genética:
 
 Grado en ingeniería biomédica:
 
-    * Materiales para el curso de `bioética <https://drive.google.com/drive/folders/18unlDAC8TG1CEoPbp0n5xbZ_4svrzvBL?usp=sharing>`_
+    * Materiales para el curso de `bioética <https://drive.google.com/drive/folders/18unlDAC8TG1CEoPbp0n5xbZ_4svrzvBL?usp=sharing>`_.
+	* Materiales para el curso de Python para `análisis de datos <https://docs.google.com/presentation/d/1leUJQ8PUmXT9jM1b0bE08xsZMG3P5xx531BY9zOwGJE/edit?usp=sharing>`_.
 
 Mail us if your are interested in these courses and we will inform once the registration is about to open.
 
