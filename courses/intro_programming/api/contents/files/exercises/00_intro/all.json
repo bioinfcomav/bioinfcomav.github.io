@@ -1,0 +1,43 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2024-08-30T08:50:11.123447Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2024-08-29T12:31:56.581066Z",
+      "mimetype": null,
+      "name": "0000_hello_world.ipynb",
+      "path": "files/exercises/00_intro/0000_hello_world.ipynb",
+      "size": 5226,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2024-08-30T08:50:11.123447Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2024-08-29T12:31:56.582066Z",
+      "mimetype": null,
+      "name": "0001_flow_and_variables.ipynb",
+      "path": "files/exercises/00_intro/0001_flow_and_variables.ipynb",
+      "size": 6630,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2024-08-30T08:50:11.123447Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2024-08-30T08:50:11.123447Z",
+  "mimetype": null,
+  "name": "00_intro",
+  "path": "files/exercises/00_intro",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

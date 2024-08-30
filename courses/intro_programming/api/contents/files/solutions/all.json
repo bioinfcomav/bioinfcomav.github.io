@@ -1,0 +1,43 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2024-08-30T08:50:11.125447Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2024-08-30T08:50:11.125447Z",
+      "mimetype": null,
+      "name": "01_types_and_operators",
+      "path": "files/solutions/01_types_and_operators",
+      "size": null,
+      "type": "directory",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2024-08-30T08:50:11.125447Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2024-08-30T08:50:11.125447Z",
+      "mimetype": null,
+      "name": "00_intro",
+      "path": "files/solutions/00_intro",
+      "size": null,
+      "type": "directory",
+      "writable": true
+    }
+  ],
+  "created": "2024-08-30T08:50:11.125447Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2024-08-30T08:50:11.125447Z",
+  "mimetype": null,
+  "name": "solutions",
+  "path": "files/solutions",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

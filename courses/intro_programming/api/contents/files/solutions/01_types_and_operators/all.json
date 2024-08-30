@@ -1,0 +1,57 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2024-08-30T08:50:11.125447Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2024-08-29T12:31:56.583066Z",
+      "mimetype": null,
+      "name": "0100_types.ipynb",
+      "path": "files/solutions/01_types_and_operators/0100_types.ipynb",
+      "size": 2591,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2024-08-30T08:50:11.125447Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2024-08-30T08:39:05.536020Z",
+      "mimetype": null,
+      "name": "0102_comparisons_and_bool_operators.ipynb",
+      "path": "files/solutions/01_types_and_operators/0102_comparisons_and_bool_operators.ipynb",
+      "size": 4510,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2024-08-30T08:50:11.125447Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2024-08-30T08:29:45.600076Z",
+      "mimetype": null,
+      "name": "0101_operators.ipynb",
+      "path": "files/solutions/01_types_and_operators/0101_operators.ipynb",
+      "size": 4450,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2024-08-30T08:50:11.125447Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2024-08-30T08:50:11.125447Z",
+  "mimetype": null,
+  "name": "01_types_and_operators",
+  "path": "files/solutions/01_types_and_operators",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}
