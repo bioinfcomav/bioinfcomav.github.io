@@ -1,0 +1,333 @@
+[
+  {
+    "objectID": "intro/hello_world.html",
+    "href": "intro/hello_world.html",
+    "title": "Hello world",
+    "section": "",
+    "text": "The aim of this exercise is to learn how to write and execute Python code.",
+    "crumbs": [
+      "Home",
+      "Basics",
+      "Hello world"
+    ]
+  },
+  {
+    "objectID": "intro/hello_world.html#objectives",
+    "href": "intro/hello_world.html#objectives",
+    "title": "Hello world",
+    "section": "",
+    "text": "The aim of this exercise is to learn how to write and execute Python code.",
+    "crumbs": [
+      "Home",
+      "Basics",
+      "Hello world"
+    ]
+  },
+  {
+    "objectID": "intro/hello_world.html#rationale",
+    "href": "intro/hello_world.html#rationale",
+    "title": "Hello world",
+    "section": "Rationale",
+    "text": "Rationale\nThere are plenty of programing languages, but all of them share some common principles. Computers execute machine code, a binary set of instructions that are carried out by the computer processors, but usually human do not write binary machine code, or even assembly language, the written code directly translatable to machine code.\nMost of the time programers write code in languages that are easier to write and read by us, humans. These codes, in turn, have to be translated to machine code. This process of translation is called compilation. Compilation is a complex process that comprises several steps, and different compilers and programming languages divide theses steps differently. There are compilers, like the C or C++ compiles, that take the code and compile it into a binary executable that can be directly run in a computer, while there are other, like the Python interpreter of the Java compiler, that are capable of running directly the human readable code that create an intermediate representation called bytecode. In these cases we need to install the language interpreter to run the program. For instance, if you want to run a Java or Python program you will need to install Java or Python before.\nPython is an interpreted language, so, once you install Python you will be able to directly run Python code. However, you first need to have Python available in your computer.\nThere are many ways of installing Python like:\n\nDownloading Python from python.org.\nUsing the Windows store or the Linux packages already prepared.\nUsing a Python version manager like uv.\nHaving Python included in your web browser thanks to Pyodide.\n\nIn this exercise we are going to use JupyterLite, a version of the Jupyter, a system that allows to write and run Python code directly in a web page, that does not require any previous installation because it already includes Python, thanks to Pyodide.\nThe Notebook document is composed by cells, some are text (in markdown format), and others contain Python code that can be executed. To execute a Python cell:\n\nSelect the cell that you want to execute.\nClick the play symbol on top of the page or press shift + enter.",
+    "crumbs": [
+      "Home",
+      "Basics",
+      "Hello world"
+    ]
+  },
+  {
+    "objectID": "intro/hello_world.html#resources",
+    "href": "intro/hello_world.html#resources",
+    "title": "Hello world",
+    "section": "Resources",
+    "text": "Resources\n\nExplanation of the Jupyter Notebook interface.\nReal Python Jupyter Notebook introduction.\nJupyter Notebook tutorial by dataquest.",
+    "crumbs": [
+      "Home",
+      "Basics",
+      "Hello world"
+    ]
+  },
+  {
+    "objectID": "intro/hello_world.html#print-hello-world",
+    "href": "intro/hello_world.html#print-hello-world",
+    "title": "Hello world",
+    "section": "Print Hello world",
+    "text": "Print Hello world",
+    "crumbs": [
+      "Home",
+      "Basics",
+      "Hello world"
+    ]
+  },
+  {
+    "objectID": "intro/hello_world.html#print-hello-your-name",
+    "href": "intro/hello_world.html#print-hello-your-name",
+    "title": "Hello world",
+    "section": "Print Hello “Your Name”",
+    "text": "Print Hello “Your Name”\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint('Jane')",
+    "crumbs": [
+      "Home",
+      "Basics",
+      "Hello world"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/comparisons_and_bool_operators.html",
+    "href": "types_and_operators/comparisons_and_bool_operators.html",
+    "title": "Comparisons and boolean operators",
+    "section": "",
+    "text": "A critical part of any programming language is the comparison between items. For instance, is a number equal to the result of an operation? Is is bigger or maybe smaller? Some of the operators used are: equal (==), less than (&lt;), greater than (&gt;), not equal (!=), less or equal (&lt;=), greater or equal (&gt;).\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"1 == 1:\", 1 == 1)\nprint(\"1 == 2:\", 1 == 2)\nprint(\"1 != 2:\", 1 != 2)\nprint(\"1 &lt; 2:\", 1 &lt; 2)\nprint(\"1 &gt; 2:\", 1 &gt; 2)\nprint(\"1 &lt;= 2:\", 1 &lt;= 2)\n\n\n\n\nIt is very important to understand the difference between the assingment operator (=) and the comparison operator (==). The assigment operator is used to assign a value (an object) to a variable, whereas the comparison operator is used to find out if two objects are the same or not.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nRemember that the comparison operator is ==, not =.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nname1 = “John” name2 = “John” print(a == b)\n\n\n\n\nThere is a catch with the floats. It is OK to check if they are greater or lower, but do not use the equality operator (==) to check if they are the same because the comparison might fail. Remember that floats are approximate. If you want to check if two floats are very similar you have to use the isclose function. This function is not directly avilable, you have to import it from the math module, we will work with modules in the future.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nfrom math import isclose\n\nprint(isclose(1.0, 1.0000000000000001))\n\nprint(isclose(2.0, == 2))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nUse the comparison operator for the integers and the isclose function for the floats.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nfrom math import isclose\nprint(\"0.1 + 0.1 = 0.2:\", isclose(0.1 + 0.1, 0.2))\nprint(\"0.8 - 0.3 = 0.5:\", isclose(0.1 + 0.1, 0.2))\nprint(\"0.8 - 0.3 = 0.5:\", isclose(0.1 x 0.3, 0.03))\nprint(\"9 / 3 = 3:\", isclose(9 /3, 3))\nprint(\"4**3 = 64:\", 4**3 == 64)\nprint(\"4**3  + 3**3 = 91:\", 4**3  + 3**3 == 91)\nprint(\"(2+1)/10 = 0.3:\", isclose((2+1)/10, 0.3))\nprint(\"0.2 + 0.1 = 0.3:\", isclose(0.2 + 0.1, 0.3))\n\n\n\n\nNone represents another special case. You might check if a variable is None using the equality operator, but is it recommended to use the is operator.",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Comparisons and bool operators"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/comparisons_and_bool_operators.html#comparisons",
+    "href": "types_and_operators/comparisons_and_bool_operators.html#comparisons",
+    "title": "Comparisons and boolean operators",
+    "section": "",
+    "text": "A critical part of any programming language is the comparison between items. For instance, is a number equal to the result of an operation? Is is bigger or maybe smaller? Some of the operators used are: equal (==), less than (&lt;), greater than (&gt;), not equal (!=), less or equal (&lt;=), greater or equal (&gt;).\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"1 == 1:\", 1 == 1)\nprint(\"1 == 2:\", 1 == 2)\nprint(\"1 != 2:\", 1 != 2)\nprint(\"1 &lt; 2:\", 1 &lt; 2)\nprint(\"1 &gt; 2:\", 1 &gt; 2)\nprint(\"1 &lt;= 2:\", 1 &lt;= 2)\n\n\n\n\nIt is very important to understand the difference between the assingment operator (=) and the comparison operator (==). The assigment operator is used to assign a value (an object) to a variable, whereas the comparison operator is used to find out if two objects are the same or not.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nRemember that the comparison operator is ==, not =.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nname1 = “John” name2 = “John” print(a == b)\n\n\n\n\nThere is a catch with the floats. It is OK to check if they are greater or lower, but do not use the equality operator (==) to check if they are the same because the comparison might fail. Remember that floats are approximate. If you want to check if two floats are very similar you have to use the isclose function. This function is not directly avilable, you have to import it from the math module, we will work with modules in the future.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nfrom math import isclose\n\nprint(isclose(1.0, 1.0000000000000001))\n\nprint(isclose(2.0, == 2))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nUse the comparison operator for the integers and the isclose function for the floats.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nfrom math import isclose\nprint(\"0.1 + 0.1 = 0.2:\", isclose(0.1 + 0.1, 0.2))\nprint(\"0.8 - 0.3 = 0.5:\", isclose(0.1 + 0.1, 0.2))\nprint(\"0.8 - 0.3 = 0.5:\", isclose(0.1 x 0.3, 0.03))\nprint(\"9 / 3 = 3:\", isclose(9 /3, 3))\nprint(\"4**3 = 64:\", 4**3 == 64)\nprint(\"4**3  + 3**3 = 91:\", 4**3  + 3**3 == 91)\nprint(\"(2+1)/10 = 0.3:\", isclose((2+1)/10, 0.3))\nprint(\"0.2 + 0.1 = 0.3:\", isclose(0.2 + 0.1, 0.3))\n\n\n\n\nNone represents another special case. You might check if a variable is None using the equality operator, but is it recommended to use the is operator.",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Comparisons and bool operators"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/comparisons_and_bool_operators.html#operations-with-booleans",
+    "href": "types_and_operators/comparisons_and_bool_operators.html#operations-with-booleans",
+    "title": "Comparisons and boolean operators",
+    "section": "Operations with booleans",
+    "text": "Operations with booleans\nThe boolean type has special operators: and, or, not. These operators define a boolean arithmetic.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"True or False:\", True or False)\nprint(\"True and False:\", True and False)\nprint(\"True and not False:\", True and not False)\nprint(\"4 &lt;= 4 and True:\", 4 &lt;= 4 and True)\nprint(\"3 &gt; 2 and 4 &gt; 8:\", 3 &gt; 2 and 4 &gt; 8)\nprint(\"3 &gt; 2 or 4 &gt; 8:\", 3 &gt; 2 or 4 &gt; 8)\n\n\n\n\nExplore the boolean arithmetic which are the results for all the combinations of and and or.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nTry all True and False combinations with and and or.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"True and True: \", True and True)\nprint(\"True and False: \", True and False)\nprint(\"False and True: \", False and True)\nprint(\"False and False: \", False and False)\n\nprint(\"True or True: \", True or True)\nprint(\"True or False: \", True or False)\nprint(\"False or True: \", False or True)\nprint(\"False or False: \", False or False)",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Comparisons and bool operators"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/operators.html",
+    "href": "types_and_operators/operators.html",
+    "title": "Operators",
+    "section": "",
+    "text": "In any programming language we can do operations on data and, in most, for the basic operation a operator syntax is defined.",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Operators"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/operators.html#basic-numeric-operations",
+    "href": "types_and_operators/operators.html#basic-numeric-operations",
+    "title": "Operators",
+    "section": "Basic numeric operations",
+    "text": "Basic numeric operations\nFor instance, in Python we can sum to numbers using the + operator.\n\n\n\n\n\n\nWith integers and floats we can use the basic arithmetic operators: +, -, /, *, .\n\n\n\n\n\n\nThere is also an operator for power: **.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nwidth = 20\nheight = 5\narea = width * area\nprint(\"area = \", area)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nimport math\npi = math.pi\nr = 10\narea = 2 * pi * (r**2)\nprint(\"area = \", area)",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Operators"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/operators.html#integer-division",
+    "href": "types_and_operators/operators.html#integer-division",
+    "title": "Operators",
+    "section": "Integer division",
+    "text": "Integer division\nFor integers Python defines two other special operators: integer division (//), and remainder (%).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"9 % 3 \", 9 % 3)\nprint(\"14 % 2 \", 14 % 2)\nprint(\"14 % 3 \", 14 % 3)\nprint(\"9 // 3 \", 9 // 3)\nprint(\"14 //2 \", 14 //2)\nprint(\"14 % 3 \", 14 % 3)\n\n\n\n\nFind out if the numbers 10938 and 9893 are divisible by 3.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nUse the mod operator %, and the type casting to bool.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nnumber = 10938\nremainder = number % 3\nprint(\"Is \", number, \"divisible by 3? The remainder is:\", remainder, \"So is it not divisible? \", bool(remainder))\nnumber = 9893\nremainder = number % 3\nprint(\"Is \", number, \"divisible by 3? The remainder is:\", remainder, \"So is it not divisible? \", bool(remainder))",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Operators"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/operators.html#common-unary-operators",
+    "href": "types_and_operators/operators.html#common-unary-operators",
+    "title": "Operators",
+    "section": "Common unary operators",
+    "text": "Common unary operators\nThe operators that we have seen so far take two elements, for instance the add operator (+) takes two numbers and returns the sum of both. These operators are called binary because they take two elements. But there are also unary operators, that only act in one element. The one most commonly used is the += operator.\n\n\n\n\n\n\nThere are other unary operators, like -=, *=, \\= but they are not used as much.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nmy_age = 42\nmy_age += 1\nprint(\"After my birthday, my age will be\", my_age)\n\nnumber_of_items = 10\nnumber_of_items -= 1\nprint(\"After selling an item, the number of items will be\", number_of_items)\n\n\n\n\n\n\n\n\n\n\na = 2\na += 3\na *= 5\na /= 5\na -= 3\nprint(a)",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Operators"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/operators.html#operations-with-text-strings",
+    "href": "types_and_operators/operators.html#operations-with-text-strings",
+    "title": "Operators",
+    "section": "Operations with text strings",
+    "text": "Operations with text strings\nText strings can be added.\n\n\n\n\n\n\nOne confusing Python behaviour is that it will add two string even if there is no + sign between them. This is called string concatenation.\n\n\n\n\n\n\nThe multiplication operation is also defined for str and int. It just repeats the string the given number of times.\n\n\n\n\n\n\nWe could check is a string is included in another string by using the in operator.",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Operators"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "types_and_operators/types.html",
+    "href": "types_and_operators/types.html",
+    "title": "Types",
+    "section": "",
+    "text": "In a computer language the variables have types. For instance, we have already used numbers and text strings.\nWe can ask for the type of variable (or object).\nThe type for the string is str. In most computer languages the text is called string or something similar because for the computer a text is a string of characters.",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Types"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/types.html#number-types-int-and-float",
+    "href": "types_and_operators/types.html#number-types-int-and-float",
+    "title": "Types",
+    "section": "Number types: int and float",
+    "text": "Number types: int and float\nIn the previous example the type for the number was int (integer), but, in python, and most other languages, we have another very important numeric type: float (floating point number).\n\n\n\n\n\n\nThe main practical difference between the integer and float types is that the arithmetic for integers will be exact, but for float will be only approximate. This is not a Python quirk, but a general feature of the computers.\n\n\n\n\n\n\nThe main practical limitation, besides the inherent error due to the approximation, of the floating point arithmetic is that you have to be careful when you compare floats.",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Types"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/types.html#other-types-bool-and-none",
+    "href": "types_and_operators/types.html#other-types-bool-and-none",
+    "title": "Types",
+    "section": "Other types: bool and None",
+    "text": "Other types: bool and None\nbool (boolean) is a special type that can only have two values: True or False.\n\n\n\n\n\n\nAnother special type that you will find quite often in Python code is None. This type can only have one value: None. It is usally employed when you want to have a variable that still has no value, it signifies that it is empty.",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Types"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/types.html#python-is-dynamic",
+    "href": "types_and_operators/types.html#python-is-dynamic",
+    "title": "Types",
+    "section": "Python is dynamic",
+    "text": "Python is dynamic\nIn Python we don’t need to specify the type of a variable before using it, and we can even change the type of object that the variable refers to. That is not the case in other languages, like C or Rust. In those static languages the compiler needs to know the type of the variable beforehand, and the type of a variable can not be changed.\n\n\n\n\n\n\nModern Python has the option of specifying the types. This is not a requirement, but you will see some type hints in Python code.",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Types"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/types.html#type-casting",
+    "href": "types_and_operators/types.html#type-casting",
+    "title": "Types",
+    "section": "Type casting",
+    "text": "Type casting\nType casting or type conversion is the action of changing one type into another. Python has functions to do this type casting.\n\n\n\n\n\n\nWe can also type cast to boolean.\n\n\n\n\n\n\nFind out which int and str values will be True and False when converted to boolean.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nTry with different int and str values, like 0, 1, 2, 3, “Hello”, ” “,”“.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n# Any int, but 0, will be True\nprint(\"0\", bool(0))\nprint(\"1\", bool(0))\nprint(\"2\", bool(2))\nprint(\"3\", bool(3))\n# Any str, but the empty str, will be True\nprint('\"\"', bool(\"\"))\nprint('\"Hello\"', bool(\"Hello\"))\nprint('\" \"', bool(\" \"))\n\n\n\n\nTry to convert a boolean to integer.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"True\", int(True))\nprint(\"False\", int(False))",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Types"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/types.html#why-do-we-need-types",
+    "href": "types_and_operators/types.html#why-do-we-need-types",
+    "title": "Types",
+    "section": "Why do we need types?",
+    "text": "Why do we need types?\nFor a programming language using types is unavoidable. Different languages have different types, but they all have types. Why? Because, internally, the only thing that a computer can really store in memory is a binary number, and the same binary number can be interpreted as different objects depending on its type.",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Types"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/types.html#resources",
+    "href": "types_and_operators/types.html#resources",
+    "title": "Types",
+    "section": "Resources",
+    "text": "Resources\n\nReal Python tutorial: basic data types\nOfficial documentation: types and operations.\nBasic introduction to type and variables, str and booleans. (In Spanish).\ntype function official documentation.\nReal Python introduction to numbers and bool.\nA discussion about the floating point arithmethic in Python.",
+    "crumbs": [
+      "Home",
+      "Types and operators",
+      "Types"
+    ]
+  },
+  {
+    "objectID": "intro/flow_and_variables.html",
+    "href": "intro/flow_and_variables.html",
+    "title": "Flow and variables",
+    "section": "",
+    "text": "The computer code is execute one line (or statement) at a time. The order in which the lines are executed is called flow.\n\n\n\n\n\n\nOrder the lines in the following code, we want the computer to first say Hello, then Your Name, and, finally, an invitation to play.\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nRemember that the lines are executed in order, so change the order of the lines.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"Hello\")\nprint(\"John\")\nprint(\"Do you want to play a nice game of chess?\")",
+    "crumbs": [
+      "Home",
+      "Basics",
+      "Flow and variables"
+    ]
+  },
+  {
+    "objectID": "intro/flow_and_variables.html#flow",
+    "href": "intro/flow_and_variables.html#flow",
+    "title": "Flow and variables",
+    "section": "",
+    "text": "The computer code is execute one line (or statement) at a time. The order in which the lines are executed is called flow.\n\n\n\n\n\n\nOrder the lines in the following code, we want the computer to first say Hello, then Your Name, and, finally, an invitation to play.\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nRemember that the lines are executed in order, so change the order of the lines.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"Hello\")\nprint(\"John\")\nprint(\"Do you want to play a nice game of chess?\")",
+    "crumbs": [
+      "Home",
+      "Basics",
+      "Flow and variables"
+    ]
+  },
+  {
+    "objectID": "intro/flow_and_variables.html#variables",
+    "href": "intro/flow_and_variables.html#variables",
+    "title": "Flow and variables",
+    "section": "Variables",
+    "text": "Variables\nWhen we run programs we store information in the memory of the computer for later use. This is a fundamental idea in computers. You can think about the memory of a computer as a file cabinet in which we can store values like numbers and strings of letters. Internally the memory is divided in small pieces, like the drawers of a filing cabinet, and the computer assings a numeric adress to each of those drawers. So, for instance, we could tell the computer to store the number 42 in the address 00000100, but it would be very cumbersome to use these numeric addresses, so, instead, the we use variables, names that we create, to refer to the memory locations and contents.\nIn different programming languages and expressions a variable can refer to the value stored or to the memory address (pointer). In Python a variable will always be a reference to the object stored. You can think of it as a label in the file cabinet drawer or an arrow that points to the content of the drawer.\n\n\n\nValue stored in a variable\n\n\nIn Python we store a variable in memory by using the assigment operator =.\n\n\n\n\n\n\nPython is doing quite a lot of things for us when we write “favorite_number = 42”:\n\nIt reserves a space in the memory to be able to store the object that is going to create.\nIt creates the object 42.\nIt assigns the favorite_number variable as a reference to the created and stored object.",
+    "crumbs": [
+      "Home",
+      "Basics",
+      "Flow and variables"
+    ]
+  },
+  {
+    "objectID": "intro/flow_and_variables.html#create-and-print-variables",
+    "href": "intro/flow_and_variables.html#create-and-print-variables",
+    "title": "Flow and variables",
+    "section": "Create and print variables",
+    "text": "Create and print variables\nCreate two variables, one with your name, and another one with your surname and print them.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nname = \"Jane\"\nsurname = \"Doe\"\nprint(\"Hello \", name, \" \", surname)",
+    "crumbs": [
+      "Home",
+      "Basics",
+      "Flow and variables"
+    ]
+  },
+  {
+    "objectID": "intro/flow_and_variables.html#change-the-value-of-a-variable",
+    "href": "intro/flow_and_variables.html#change-the-value-of-a-variable",
+    "title": "Flow and variables",
+    "section": "Change the value of a variable",
+    "text": "Change the value of a variable\nThe variables can be changed to refer to different values/objects. Fix the program to show your real name by changing the value of the variable.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nname = \"John\"\nname = \"Alice\"\n\nprint(\"My name is \", name)\n\n\n\n\nGiven the following code, think about the expected output, what will the program print when you execute it?\n\n\n\n\n\n\nFix the following code to print the correct name of your Pokemons.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that variable names are not enclosed by quotes and that if you put something inside a quote Python will consider it a text string.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nmy_pokemon = \"Pikachu\"\nyour_pokemon = \"Ampharos\"\nprint(\"My favorite pokemon is\", my_pokemon)\nprint(\"Your favorite pokemon is\", your_pokemon)\n\n\n\n\nIt is very importan to understand the difference between variables and text: - variable names are not enclosed by quotes.\n\n\n\n\n\n\nWrite the name and year of release of a movie using two variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nmovie = \"The Matrix\"\nyear = 1999\nprint(movie, \"was released in\", year)",
+    "crumbs": [
+      "Home",
+      "Basics",
+      "Flow and variables"
+    ]
+  },
+  {
+    "objectID": "intro/flow_and_variables.html#resources",
+    "href": "intro/flow_and_variables.html#resources",
+    "title": "Flow and variables",
+    "section": "Resources",
+    "text": "Resources\n\nVariables in Python in Real Python.\nprint function official documentation.\nA print function tutorial in Real Python.",
+    "crumbs": [
+      "Home",
+      "Basics",
+      "Flow and variables"
+    ]
+  }
+]
