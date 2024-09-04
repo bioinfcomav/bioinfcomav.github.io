@@ -6,7 +6,6 @@
     "section": "",
     "text": "The aim of this exercise is to learn how to write and execute Python code.",
     "crumbs": [
-      "Home",
       "Basics",
       "Hello world"
     ]
@@ -18,7 +17,6 @@
     "section": "",
     "text": "The aim of this exercise is to learn how to write and execute Python code.",
     "crumbs": [
-      "Home",
       "Basics",
       "Hello world"
     ]
@@ -30,7 +28,6 @@
     "section": "Rationale",
     "text": "Rationale\nThere are plenty of programing languages, but all of them share some common principles. Computers execute machine code, a binary set of instructions that are carried out by the computer processors, but usually human do not write binary machine code, or even assembly language, the written code directly translatable to machine code.\nMost of the time programers write code in languages that are easier to write and read by us, humans. These codes, in turn, have to be translated to machine code. This process of translation is called compilation. Compilation is a complex process that comprises several steps, and different compilers and programming languages divide theses steps differently. There are compilers, like the C or C++ compiles, that take the code and compile it into a binary executable that can be directly run in a computer, while there are other, like the Python interpreter of the Java compiler, that are capable of running directly the human readable code that create an intermediate representation called bytecode. In these cases we need to install the language interpreter to run the program. For instance, if you want to run a Java or Python program you will need to install Java or Python before.\nPython is an interpreted language, so, once you install Python you will be able to directly run Python code. However, you first need to have Python available in your computer.\nThere are many ways of installing Python like:\n\nDownloading Python from python.org.\nUsing the Windows store or the Linux packages already prepared.\nUsing a Python version manager like uv.\nHaving Python included in your web browser thanks to Pyodide.\n\nIn this exercise we are going to use JupyterLite, a version of the Jupyter, a system that allows to write and run Python code directly in a web page, that does not require any previous installation because it already includes Python, thanks to Pyodide.\nThe Notebook document is composed by cells, some are text (in markdown format), and others contain Python code that can be executed. To execute a Python cell:\n\nSelect the cell that you want to execute.\nClick the play symbol on top of the page or press shift + enter.",
     "crumbs": [
-      "Home",
       "Basics",
       "Hello world"
     ]
@@ -42,7 +39,6 @@
     "section": "Resources",
     "text": "Resources\n\nExplanation of the Jupyter Notebook interface.\nReal Python Jupyter Notebook introduction.\nJupyter Notebook tutorial by dataquest.",
     "crumbs": [
-      "Home",
       "Basics",
       "Hello world"
     ]
@@ -54,7 +50,6 @@
     "section": "Print Hello world",
     "text": "Print Hello world",
     "crumbs": [
-      "Home",
       "Basics",
       "Hello world"
     ]
@@ -66,7 +61,6 @@
     "section": "Print Hello “Your Name”",
     "text": "Print Hello “Your Name”\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint('Jane')",
     "crumbs": [
-      "Home",
       "Basics",
       "Hello world"
     ]
@@ -76,9 +70,8 @@
     "href": "types_and_operators/comparisons_and_bool_operators.html",
     "title": "Comparisons and boolean operators",
     "section": "",
-    "text": "A critical part of any programming language is the comparison between items. For instance, is a number equal to the result of an operation? Is is bigger or maybe smaller? Some of the operators used are: equal (==), less than (&lt;), greater than (&gt;), not equal (!=), less or equal (&lt;=), greater or equal (&gt;).\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"1 == 1:\", 1 == 1)\nprint(\"1 == 2:\", 1 == 2)\nprint(\"1 != 2:\", 1 != 2)\nprint(\"1 &lt; 2:\", 1 &lt; 2)\nprint(\"1 &gt; 2:\", 1 &gt; 2)\nprint(\"1 &lt;= 2:\", 1 &lt;= 2)\n\n\n\n\nIt is very important to understand the difference between the assingment operator (=) and the comparison operator (==). The assigment operator is used to assign a value (an object) to a variable, whereas the comparison operator is used to find out if two objects are the same or not.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nRemember that the comparison operator is ==, not =.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nname1 = “John” name2 = “John” print(a == b)\n\n\n\n\nThere is a catch with the floats. It is OK to check if they are greater or lower, but do not use the equality operator (==) to check if they are the same because the comparison might fail. Remember that floats are approximate. If you want to check if two floats are very similar you have to use the isclose function. This function is not directly avilable, you have to import it from the math module, we will work with modules in the future.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nfrom math import isclose\n\nprint(isclose(1.0, 1.0000000000000001))\n\nprint(isclose(2.0, == 2))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nUse the comparison operator for the integers and the isclose function for the floats.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nfrom math import isclose\nprint(\"0.1 + 0.1 = 0.2:\", isclose(0.1 + 0.1, 0.2))\nprint(\"0.8 - 0.3 = 0.5:\", isclose(0.1 + 0.1, 0.2))\nprint(\"0.8 - 0.3 = 0.5:\", isclose(0.1 x 0.3, 0.03))\nprint(\"9 / 3 = 3:\", isclose(9 /3, 3))\nprint(\"4**3 = 64:\", 4**3 == 64)\nprint(\"4**3  + 3**3 = 91:\", 4**3  + 3**3 == 91)\nprint(\"(2+1)/10 = 0.3:\", isclose((2+1)/10, 0.3))\nprint(\"0.2 + 0.1 = 0.3:\", isclose(0.2 + 0.1, 0.3))\n\n\n\n\nNone represents another special case. You might check if a variable is None using the equality operator, but is it recommended to use the is operator.",
+    "text": "Official documentation on boolean operators for the built-in types.\nReal python tutorial on boolean operators.\n\n\n\nA critical part of any programming language is the comparison between items. For instance, is a number equal to the result of an operation? Is is bigger or maybe smaller? Some of the operators used are: equal (==), less than (&lt;), greater than (&gt;), not equal (!=), less or equal (&lt;=), greater or equal (&gt;).\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"1 == 1:\", 1 == 1)\nprint(\"1 == 2:\", 1 == 2)\nprint(\"1 != 2:\", 1 != 2)\nprint(\"1 &lt; 2:\", 1 &lt; 2)\nprint(\"1 &gt; 2:\", 1 &gt; 2)\nprint(\"1 &lt;= 2:\", 1 &lt;= 2)\n\n\n\n\nIt is very important to understand the difference between the assingment operator (=) and the comparison operator (==). The assigment operator is used to assign a value (an object) to a variable, whereas the comparison operator is used to find out if two objects are the same or not.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nRemember that the comparison operator is ==, not =.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nname1 = “John” name2 = “John” print(a == b)\n\n\n\n\nThere is a catch with the floats. It is OK to check if they are greater or lower, but do not use the equality operator (==) to check if they are the same because the comparison might fail. Remember that floats are approximate. If you want to check if two floats are very similar you have to use the isclose function. This function is not directly avilable, you have to import it from the math module, we will work with modules in the future.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nfrom math import isclose\n\nprint(isclose(1.0, 1.0000000000000001))\n\nprint(isclose(2.0, == 2))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nUse the comparison operator for the integers and the isclose function for the floats.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nfrom math import isclose\nprint(\"0.1 + 0.1 = 0.2:\", isclose(0.1 + 0.1, 0.2))\nprint(\"0.8 - 0.3 = 0.5:\", isclose(0.1 + 0.1, 0.2))\nprint(\"0.8 - 0.3 = 0.5:\", isclose(0.1 x 0.3, 0.03))\nprint(\"9 / 3 = 3:\", isclose(9 /3, 3))\nprint(\"4**3 = 64:\", 4**3 == 64)\nprint(\"4**3  + 3**3 = 91:\", 4**3  + 3**3 == 91)\nprint(\"(2+1)/10 = 0.3:\", isclose((2+1)/10, 0.3))\nprint(\"0.2 + 0.1 = 0.3:\", isclose(0.2 + 0.1, 0.3))\n\n\n\n\nNone represents another special case. You might check if a variable is None using the equality operator, but is it recommended to use the is operator.\n\n\n\n\n\n\n\n\n\nThe boolean type has special operators: and, or, not. These operators define a boolean arithmetic.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"True or False:\", True or False)\nprint(\"True and False:\", True and False)\nprint(\"True and not False:\", True and not False)\nprint(\"4 &lt;= 4 and True:\", 4 &lt;= 4 and True)\nprint(\"3 &gt; 2 and 4 &gt; 8:\", 3 &gt; 2 and 4 &gt; 8)\nprint(\"3 &gt; 2 or 4 &gt; 8:\", 3 &gt; 2 or 4 &gt; 8)\n\n\n\n\nExplore the boolean arithmetic which are the results for all the combinations of and and or.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nTry all True and False combinations with and and or.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"True and True: \", True and True)\nprint(\"True and False: \", True and False)\nprint(\"False and True: \", False and True)\nprint(\"False and False: \", False and False)\n\nprint(\"True or True: \", True or True)\nprint(\"True or False: \", True or False)\nprint(\"False or True: \", False or True)\nprint(\"False or False: \", False or False)",
     "crumbs": [
-      "Home",
       "Types and operators",
       "Comparisons and bool operators"
     ]
@@ -90,7 +83,6 @@
     "section": "",
     "text": "A critical part of any programming language is the comparison between items. For instance, is a number equal to the result of an operation? Is is bigger or maybe smaller? Some of the operators used are: equal (==), less than (&lt;), greater than (&gt;), not equal (!=), less or equal (&lt;=), greater or equal (&gt;).\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"1 == 1:\", 1 == 1)\nprint(\"1 == 2:\", 1 == 2)\nprint(\"1 != 2:\", 1 != 2)\nprint(\"1 &lt; 2:\", 1 &lt; 2)\nprint(\"1 &gt; 2:\", 1 &gt; 2)\nprint(\"1 &lt;= 2:\", 1 &lt;= 2)\n\n\n\n\nIt is very important to understand the difference between the assingment operator (=) and the comparison operator (==). The assigment operator is used to assign a value (an object) to a variable, whereas the comparison operator is used to find out if two objects are the same or not.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nRemember that the comparison operator is ==, not =.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nname1 = “John” name2 = “John” print(a == b)\n\n\n\n\nThere is a catch with the floats. It is OK to check if they are greater or lower, but do not use the equality operator (==) to check if they are the same because the comparison might fail. Remember that floats are approximate. If you want to check if two floats are very similar you have to use the isclose function. This function is not directly avilable, you have to import it from the math module, we will work with modules in the future.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nfrom math import isclose\n\nprint(isclose(1.0, 1.0000000000000001))\n\nprint(isclose(2.0, == 2))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nUse the comparison operator for the integers and the isclose function for the floats.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nfrom math import isclose\nprint(\"0.1 + 0.1 = 0.2:\", isclose(0.1 + 0.1, 0.2))\nprint(\"0.8 - 0.3 = 0.5:\", isclose(0.1 + 0.1, 0.2))\nprint(\"0.8 - 0.3 = 0.5:\", isclose(0.1 x 0.3, 0.03))\nprint(\"9 / 3 = 3:\", isclose(9 /3, 3))\nprint(\"4**3 = 64:\", 4**3 == 64)\nprint(\"4**3  + 3**3 = 91:\", 4**3  + 3**3 == 91)\nprint(\"(2+1)/10 = 0.3:\", isclose((2+1)/10, 0.3))\nprint(\"0.2 + 0.1 = 0.3:\", isclose(0.2 + 0.1, 0.3))\n\n\n\n\nNone represents another special case. You might check if a variable is None using the equality operator, but is it recommended to use the is operator.",
     "crumbs": [
-      "Home",
       "Types and operators",
       "Comparisons and bool operators"
     ]
@@ -99,89 +91,42 @@
     "objectID": "types_and_operators/comparisons_and_bool_operators.html#operations-with-booleans",
     "href": "types_and_operators/comparisons_and_bool_operators.html#operations-with-booleans",
     "title": "Comparisons and boolean operators",
-    "section": "Operations with booleans",
-    "text": "Operations with booleans\nThe boolean type has special operators: and, or, not. These operators define a boolean arithmetic.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"True or False:\", True or False)\nprint(\"True and False:\", True and False)\nprint(\"True and not False:\", True and not False)\nprint(\"4 &lt;= 4 and True:\", 4 &lt;= 4 and True)\nprint(\"3 &gt; 2 and 4 &gt; 8:\", 3 &gt; 2 and 4 &gt; 8)\nprint(\"3 &gt; 2 or 4 &gt; 8:\", 3 &gt; 2 or 4 &gt; 8)\n\n\n\n\nExplore the boolean arithmetic which are the results for all the combinations of and and or.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nTry all True and False combinations with and and or.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"True and True: \", True and True)\nprint(\"True and False: \", True and False)\nprint(\"False and True: \", False and True)\nprint(\"False and False: \", False and False)\n\nprint(\"True or True: \", True or True)\nprint(\"True or False: \", True or False)\nprint(\"False or True: \", False or True)\nprint(\"False or False: \", False or False)",
+    "section": "",
+    "text": "The boolean type has special operators: and, or, not. These operators define a boolean arithmetic.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"True or False:\", True or False)\nprint(\"True and False:\", True and False)\nprint(\"True and not False:\", True and not False)\nprint(\"4 &lt;= 4 and True:\", 4 &lt;= 4 and True)\nprint(\"3 &gt; 2 and 4 &gt; 8:\", 3 &gt; 2 and 4 &gt; 8)\nprint(\"3 &gt; 2 or 4 &gt; 8:\", 3 &gt; 2 or 4 &gt; 8)\n\n\n\n\nExplore the boolean arithmetic which are the results for all the combinations of and and or.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nTry all True and False combinations with and and or.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"True and True: \", True and True)\nprint(\"True and False: \", True and False)\nprint(\"False and True: \", False and True)\nprint(\"False and False: \", False and False)\n\nprint(\"True or True: \", True or True)\nprint(\"True or False: \", True or False)\nprint(\"False or True: \", False or True)\nprint(\"False or False: \", False or False)",
     "crumbs": [
-      "Home",
       "Types and operators",
       "Comparisons and bool operators"
     ]
-  },
-  {
-    "objectID": "types_and_operators/operators.html",
-    "href": "types_and_operators/operators.html",
-    "title": "Operators",
-    "section": "",
-    "text": "In any programming language we can do operations on data and, in most, for the basic operation a operator syntax is defined.",
-    "crumbs": [
-      "Home",
-      "Types and operators",
-      "Operators"
-    ]
-  },
-  {
-    "objectID": "types_and_operators/operators.html#basic-numeric-operations",
-    "href": "types_and_operators/operators.html#basic-numeric-operations",
-    "title": "Operators",
-    "section": "Basic numeric operations",
-    "text": "Basic numeric operations\nFor instance, in Python we can sum to numbers using the + operator.\n\n\n\n\n\n\nWith integers and floats we can use the basic arithmetic operators: +, -, /, *, .\n\n\n\n\n\n\nThere is also an operator for power: **.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nwidth = 20\nheight = 5\narea = width * area\nprint(\"area = \", area)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nimport math\npi = math.pi\nr = 10\narea = 2 * pi * (r**2)\nprint(\"area = \", area)",
-    "crumbs": [
-      "Home",
-      "Types and operators",
-      "Operators"
-    ]
-  },
-  {
-    "objectID": "types_and_operators/operators.html#integer-division",
-    "href": "types_and_operators/operators.html#integer-division",
-    "title": "Operators",
-    "section": "Integer division",
-    "text": "Integer division\nFor integers Python defines two other special operators: integer division (//), and remainder (%).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"9 % 3 \", 9 % 3)\nprint(\"14 % 2 \", 14 % 2)\nprint(\"14 % 3 \", 14 % 3)\nprint(\"9 // 3 \", 9 // 3)\nprint(\"14 //2 \", 14 //2)\nprint(\"14 % 3 \", 14 % 3)\n\n\n\n\nFind out if the numbers 10938 and 9893 are divisible by 3.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nUse the mod operator %, and the type casting to bool.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nnumber = 10938\nremainder = number % 3\nprint(\"Is \", number, \"divisible by 3? The remainder is:\", remainder, \"So is it not divisible? \", bool(remainder))\nnumber = 9893\nremainder = number % 3\nprint(\"Is \", number, \"divisible by 3? The remainder is:\", remainder, \"So is it not divisible? \", bool(remainder))",
-    "crumbs": [
-      "Home",
-      "Types and operators",
-      "Operators"
-    ]
-  },
-  {
-    "objectID": "types_and_operators/operators.html#common-unary-operators",
-    "href": "types_and_operators/operators.html#common-unary-operators",
-    "title": "Operators",
-    "section": "Common unary operators",
-    "text": "Common unary operators\nThe operators that we have seen so far take two elements, for instance the add operator (+) takes two numbers and returns the sum of both. These operators are called binary because they take two elements. But there are also unary operators, that only act in one element. The one most commonly used is the += operator.\n\n\n\n\n\n\nThere are other unary operators, like -=, *=, \\= but they are not used as much.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nmy_age = 42\nmy_age += 1\nprint(\"After my birthday, my age will be\", my_age)\n\nnumber_of_items = 10\nnumber_of_items -= 1\nprint(\"After selling an item, the number of items will be\", number_of_items)\n\n\n\n\n\n\n\n\n\n\na = 2\na += 3\na *= 5\na /= 5\na -= 3\nprint(a)",
-    "crumbs": [
-      "Home",
-      "Types and operators",
-      "Operators"
-    ]
-  },
-  {
-    "objectID": "types_and_operators/operators.html#operations-with-text-strings",
-    "href": "types_and_operators/operators.html#operations-with-text-strings",
-    "title": "Operators",
-    "section": "Operations with text strings",
-    "text": "Operations with text strings\nText strings can be added.\n\n\n\n\n\n\nOne confusing Python behaviour is that it will add two string even if there is no + sign between them. This is called string concatenation.\n\n\n\n\n\n\nThe multiplication operation is also defined for str and int. It just repeats the string the given number of times.\n\n\n\n\n\n\nWe could check is a string is included in another string by using the in operator.",
-    "crumbs": [
-      "Home",
-      "Types and operators",
-      "Operators"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Introduction to programming with Python",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
     "objectID": "types_and_operators/types.html",
     "href": "types_and_operators/types.html",
     "title": "Types",
     "section": "",
-    "text": "In a computer language the variables have types. For instance, we have already used numbers and text strings.\nWe can ask for the type of variable (or object).\nThe type for the string is str. In most computer languages the text is called string or something similar because for the computer a text is a string of characters.",
+    "text": "Real Python tutorial: basic data types\nOfficial documentation: types and operations.\nBasic introduction to type and variables, str and booleans. (In Spanish).\ntype function official documentation.\nReal Python introduction to numbers and bool.\nA discussion about the floating point arithmethic in Python.",
     "crumbs": [
-      "Home",
+      "Types and operators",
+      "Types"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/types.html#resources",
+    "href": "types_and_operators/types.html#resources",
+    "title": "Types",
+    "section": "",
+    "text": "Real Python tutorial: basic data types\nOfficial documentation: types and operations.\nBasic introduction to type and variables, str and booleans. (In Spanish).\ntype function official documentation.\nReal Python introduction to numbers and bool.\nA discussion about the floating point arithmethic in Python.",
+    "crumbs": [
+      "Types and operators",
+      "Types"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/types.html#types",
+    "href": "types_and_operators/types.html#types",
+    "title": "Types",
+    "section": "Types",
+    "text": "Types\nIn a computer language the variables have types. For instance, we have already used numbers and text strings.\n\n\n\n\n\n\n\nWe can ask for the type of variable (or object).\n\n\n\n\n\n\nThe type for the string is str. In most computer languages the text is called string or something similar because for the computer a text is a string of characters.",
+    "crumbs": [
       "Types and operators",
       "Types"
     ]
@@ -193,7 +138,6 @@
     "section": "Number types: int and float",
     "text": "Number types: int and float\nIn the previous example the type for the number was int (integer), but, in python, and most other languages, we have another very important numeric type: float (floating point number).\n\n\n\n\n\n\nThe main practical difference between the integer and float types is that the arithmetic for integers will be exact, but for float will be only approximate. This is not a Python quirk, but a general feature of the computers.\n\n\n\n\n\n\nThe main practical limitation, besides the inherent error due to the approximation, of the floating point arithmetic is that you have to be careful when you compare floats.",
     "crumbs": [
-      "Home",
       "Types and operators",
       "Types"
     ]
@@ -205,7 +149,6 @@
     "section": "Other types: bool and None",
     "text": "Other types: bool and None\nbool (boolean) is a special type that can only have two values: True or False.\n\n\n\n\n\n\nAnother special type that you will find quite often in Python code is None. This type can only have one value: None. It is usally employed when you want to have a variable that still has no value, it signifies that it is empty.",
     "crumbs": [
-      "Home",
       "Types and operators",
       "Types"
     ]
@@ -217,7 +160,6 @@
     "section": "Python is dynamic",
     "text": "Python is dynamic\nIn Python we don’t need to specify the type of a variable before using it, and we can even change the type of object that the variable refers to. That is not the case in other languages, like C or Rust. In those static languages the compiler needs to know the type of the variable beforehand, and the type of a variable can not be changed.\n\n\n\n\n\n\nModern Python has the option of specifying the types. This is not a requirement, but you will see some type hints in Python code.",
     "crumbs": [
-      "Home",
       "Types and operators",
       "Types"
     ]
@@ -229,7 +171,6 @@
     "section": "Type casting",
     "text": "Type casting\nType casting or type conversion is the action of changing one type into another. Python has functions to do this type casting.\n\n\n\n\n\n\nWe can also type cast to boolean.\n\n\n\n\n\n\nFind out which int and str values will be True and False when converted to boolean.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nTry with different int and str values, like 0, 1, 2, 3, “Hello”, ” “,”“.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n# Any int, but 0, will be True\nprint(\"0\", bool(0))\nprint(\"1\", bool(0))\nprint(\"2\", bool(2))\nprint(\"3\", bool(3))\n# Any str, but the empty str, will be True\nprint('\"\"', bool(\"\"))\nprint('\"Hello\"', bool(\"Hello\"))\nprint('\" \"', bool(\" \"))\n\n\n\n\nTry to convert a boolean to integer.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"True\", int(True))\nprint(\"False\", int(False))",
     "crumbs": [
-      "Home",
       "Types and operators",
       "Types"
     ]
@@ -241,21 +182,480 @@
     "section": "Why do we need types?",
     "text": "Why do we need types?\nFor a programming language using types is unavoidable. Different languages have different types, but they all have types. Why? Because, internally, the only thing that a computer can really store in memory is a binary number, and the same binary number can be interpreted as different objects depending on its type.",
     "crumbs": [
-      "Home",
       "Types and operators",
       "Types"
     ]
   },
   {
-    "objectID": "types_and_operators/types.html#resources",
-    "href": "types_and_operators/types.html#resources",
-    "title": "Types",
-    "section": "Resources",
-    "text": "Resources\n\nReal Python tutorial: basic data types\nOfficial documentation: types and operations.\nBasic introduction to type and variables, str and booleans. (In Spanish).\ntype function official documentation.\nReal Python introduction to numbers and bool.\nA discussion about the floating point arithmethic in Python.",
+    "objectID": "types_and_operators/operators.html",
+    "href": "types_and_operators/operators.html",
+    "title": "Operators",
+    "section": "",
+    "text": "In any programming language we can do operations on data and, in most, for the basic operation a operator syntax is defined.",
     "crumbs": [
-      "Home",
       "Types and operators",
-      "Types"
+      "Operators"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/operators.html#resources",
+    "href": "types_and_operators/operators.html#resources",
+    "title": "Operators",
+    "section": "Resources",
+    "text": "Resources\n\nReal python tutorial on operators and statements.\nOfficial documentation for expressions and operators.",
+    "crumbs": [
+      "Types and operators",
+      "Operators"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/operators.html#basic-numeric-operations",
+    "href": "types_and_operators/operators.html#basic-numeric-operations",
+    "title": "Operators",
+    "section": "Basic numeric operations",
+    "text": "Basic numeric operations\nFor instance, in Python we can sum to numbers using the + operator.\n\n\n\n\n\n\nWith integers and floats we can use the basic arithmetic operators: +, -, /, *, .\n\n\n\n\n\n\nThere is also an operator for power: **.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nwidth = 20\nheight = 5\narea = width * area\nprint(\"area = \", area)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nimport math\npi = math.pi\nr = 10\narea = 2 * pi * (r**2)\nprint(\"area = \", area)",
+    "crumbs": [
+      "Types and operators",
+      "Operators"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/operators.html#integer-division",
+    "href": "types_and_operators/operators.html#integer-division",
+    "title": "Operators",
+    "section": "Integer division",
+    "text": "Integer division\nFor integers Python defines two other special operators: integer division (//), and remainder (%).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"9 % 3 \", 9 % 3)\nprint(\"14 % 2 \", 14 % 2)\nprint(\"14 % 3 \", 14 % 3)\nprint(\"9 // 3 \", 9 // 3)\nprint(\"14 //2 \", 14 //2)\nprint(\"14 % 3 \", 14 % 3)\n\n\n\n\nFind out if the numbers 10938 and 9893 are divisible by 3.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nUse the mod operator %, and the type casting to bool.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nnumber = 10938\nremainder = number % 3\nprint(\"Is \", number, \"divisible by 3? The remainder is:\", remainder, \"So is it not divisible? \", bool(remainder))\nnumber = 9893\nremainder = number % 3\nprint(\"Is \", number, \"divisible by 3? The remainder is:\", remainder, \"So is it not divisible? \", bool(remainder))",
+    "crumbs": [
+      "Types and operators",
+      "Operators"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/operators.html#common-unary-operators",
+    "href": "types_and_operators/operators.html#common-unary-operators",
+    "title": "Operators",
+    "section": "Common unary operators",
+    "text": "Common unary operators\nThe operators that we have seen so far take two elements, for instance the add operator (+) takes two numbers and returns the sum of both. These operators are called binary because they take two elements. But there are also unary operators, that only act in one element. The one most commonly used is the += operator.\n\n\n\n\n\n\nThere are other unary operators, like -=, *=, \\= but they are not used as much.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nmy_age = 42\nmy_age += 1\nprint(\"After my birthday, my age will be\", my_age)\n\nnumber_of_items = 10\nnumber_of_items -= 1\nprint(\"After selling an item, the number of items will be\", number_of_items)\n\n\n\n\n\n\n\n\n\n\na = 2\na += 3\na *= 5\na /= 5\na -= 3\nprint(a)",
+    "crumbs": [
+      "Types and operators",
+      "Operators"
+    ]
+  },
+  {
+    "objectID": "control_flow/block.html",
+    "href": "control_flow/block.html",
+    "title": "Block",
+    "section": "",
+    "text": "A block of code is a set of statements, functions or instructions that are grouped together. In most programming languages the blocks of code are created by using curly braces ({}). For instance, in C the statements executed when a test condition is met would be written as:\nif (testCondition) {\n   // statements\n}\nIn Python a block of code is created by using indentation.\na = 42\n\nif a == 42:\n    # This is the first line of the block\n    print(\"This is the answer to\")\n    print(\"life, the universe, and everything else\")\n    # This is the last line of the block\n\nprint(\"We are outside the block of code defined by if\")\n\n\nIn the if and for the code starts with a colon (:)\nThe next line after the colon should be indented\nThe block ends when the indentation goes back to the previous level.\n\nThe standard is to create the indentation by using four spaces."
+  },
+  {
+    "objectID": "control_flow/for.html",
+    "href": "control_flow/for.html",
+    "title": "for loops",
+    "section": "",
+    "text": "for statement in the official documentation.\nfor loops in Real Python.",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
+    "objectID": "control_flow/for.html#resources",
+    "href": "control_flow/for.html#resources",
+    "title": "for loops",
+    "section": "",
+    "text": "for statement in the official documentation.\nfor loops in Real Python.",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
+    "objectID": "control_flow/for.html#for",
+    "href": "control_flow/for.html#for",
+    "title": "for loops",
+    "section": "for",
+    "text": "for\nfor allows us to execute a block of code for each item. The variable defined after the for keyword will take the value of each item, one at a time, one for each iteration.\n\n\n\n\n\n\nInternally the for loop works by calling the next on an iterator from the given iterable. An iterator is an object that supports the generation of one item at a time when given to the next function until it runs out of items. So the previous for would be, more or less, equivalent running the following code.\n\n\n\n\n\n\nThis kind of for loop, the one implemented in the Python, in other languages is known as a foreach loop. To have the functionallity available in other programming languages, in which the for statement just iterates over some numbers, you could combine a for loop with the range function.\n\n\n\n\n\n\nAdditionally, Python has a while statement, another way of doing loops.",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
+    "objectID": "control_flow/for.html#break",
+    "href": "control_flow/for.html#break",
+    "title": "for loops",
+    "section": "break",
+    "text": "break\nDuring at any moment the loop could be stopped, broken, by using break.",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
+    "objectID": "control_flow/for.html#continue",
+    "href": "control_flow/for.html#continue",
+    "title": "for loops",
+    "section": "continue",
+    "text": "continue\nThe continue statement allows us to move to the next iteration without running the rest of the code in the block.",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
+    "objectID": "control_flow/for.html#enumerate",
+    "href": "control_flow/for.html#enumerate",
+    "title": "for loops",
+    "section": "enumerate",
+    "text": "enumerate\nIt is quite common to need both the item and its index. We could do it like:\n\n\n\n\n\n\nHowever, this is a pattern so common that Python have solved it by using the function enumerate.\n\n\n\n\n\n\nEnumerate works by creating an iterator of tuples with two elements: the index, and the original item.\n\n\n\n\n\n\nAnd since Python supports mutiple assigment what we are doing in the for loop is equivalente to:",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
+    "objectID": "control_flow/if.html",
+    "href": "control_flow/if.html",
+    "title": "if",
+    "section": "",
+    "text": "if statement in the official documentation.\nConditional statements in Real Python.",
+    "crumbs": [
+      "Control flow",
+      "if"
+    ]
+  },
+  {
+    "objectID": "control_flow/if.html#resources",
+    "href": "control_flow/if.html#resources",
+    "title": "if",
+    "section": "",
+    "text": "if statement in the official documentation.\nConditional statements in Real Python.",
+    "crumbs": [
+      "Control flow",
+      "if"
+    ]
+  },
+  {
+    "objectID": "control_flow/if.html#if",
+    "href": "control_flow/if.html#if",
+    "title": "if",
+    "section": "if",
+    "text": "if\nif is one of the basic control flow statements. It allow us to execute some code only if a given condition is met.\n\n\n\n\n\n\nIf the condition is not met the code inside the if block won’t be executed.\n\n\n\n\n\n\nEvery line included in the block will be executed, not just the first one.",
+    "crumbs": [
+      "Control flow",
+      "if"
+    ]
+  },
+  {
+    "objectID": "control_flow/if.html#else",
+    "href": "control_flow/if.html#else",
+    "title": "if",
+    "section": "else",
+    "text": "else\nIt is common that we want to execute some code if the condition is met, and some other code when the condition was not met, for that we use else.\n\n\n\n\n\n\n\n\n\n\n\n\nFix this code:\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite some code capable of, given a pair of numbers, finding out which is the highest.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy would be wrong this solution for the highest number program and in which case would fail?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Control flow",
+      "if"
+    ]
+  },
+  {
+    "objectID": "control_flow/if.html#elif",
+    "href": "control_flow/if.html#elif",
+    "title": "if",
+    "section": "elif",
+    "text": "elif\nelif allows us to test for different conditions sequentialy.\n\n\n\n\n\n\nWhen we have several conditions only the first met will be executed.\n\n\n\n\n\n\nAs a more powerful alternative to elif Python has a match statement.\nWrite a program that writes the quote of the selected philosopher.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Control flow",
+      "if"
+    ]
+  },
+  {
+    "objectID": "control_flow/if.html#boolean-casting",
+    "href": "control_flow/if.html#boolean-casting",
+    "title": "if",
+    "section": "Boolean casting",
+    "text": "Boolean casting\nWhen a condition is evaluated, internally the if statement casts anything given to a boolean. So, you will usually see expressions like:\n\n\n\n\n\n\nIt would be very weird to write:\n\n\n\n\n\n\nRemember that everything that we talked about booleans and boolean arithmetic is applicable to the if evaluation.\nFix the following code to prevent the error when a = 0.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Control flow",
+      "if"
+    ]
+  },
+  {
+    "objectID": "control_flow/index.html",
+    "href": "control_flow/index.html",
+    "title": "Control flow",
+    "section": "",
+    "text": "The flow of the code is the order in which the statements, functions or instructions are executed. By default the code is executed line by line:\nprint(\"First\")\nprint(\"Second\")\nprint(\"Third\")\nBut this order can be altered in different ways, and these modifications are known as control flow. We could:\n\nChoose to execute some statements only if some condition is met.\nRun the same code over and over again for every item.\nCreate new functions and call them.\n\nTo understand the control of the flow of execution we need to understand the concept of a block of code. A block is a set of lines that are grouped together, for instance, the set of lines that will be executed only when a given condition if met.",
+    "crumbs": [
+      "Control flow"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "This is an introduction to Python aimed to students with no prior programming experience. There are many great introductions to Python, but we thought that it would be useful for us to create a new one that:\n\nIt relies mainly in examples and exercises.\nIt runs those examples and exercises directly in the web, avoiding the need to install Python in the first day of class.\n\nWe decided to try this approach after following the rustlings path, an exercise set aimed at teaching the Rust programming language. Rustlings assumes that the student has previously read the Rust introductory book. For this course we have decided to add resources to read at the end of each exercise set, so, the student could start by reading these resources, but we have also included examples to ease the use of this course in practical sessions with students with no previous knowlegde of the theory.\n\n\nThere are several sites that include Python in its web site and allow to run Python code:\n\nThe Future Coder IDE allows to write, run and debug Python programs.\nIn the Pyodide REPL the user can execute Python commands.\n\n\n\n\n\nThe official Python tutorial. Also, available in Spanish, French, Italian, Portuguese, and other languages.\nPython glossary.\nPython Crash Course\nThe Python Coding Book\nHow to Think Like a Computer Scientist\nGoogle Python class. Also available in Spanish, German, French, and Indonesian.\nThe Python community maintains a list of Python courses and tutorials.\nIntroducción a la programación con Python con Python3\nA course in Spanish of focused in Data Analysis with Python\n\n\n\n\n\nFuture coder\nAdam Emery’s course\nCodedex Python course\n\n\n\n\nThe official Python documentation.\n\n\n\nThis site has been built with the quarto publishing system complemented by the quarto live extension that allows Python to run in the web browser by using pyodide. Without the effort of these open source developers this resource wouldn’t exist.\n\n\n\nThis content is released under a Creative Commons BY licence.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#running-python-in-the-web",
+    "href": "index.html#running-python-in-the-web",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "There are several sites that include Python in its web site and allow to run Python code:\n\nThe Future Coder IDE allows to write, run and debug Python programs.\nIn the Pyodide REPL the user can execute Python commands.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#python-books-and-tutorials",
+    "href": "index.html#python-books-and-tutorials",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "The official Python tutorial. Also, available in Spanish, French, Italian, Portuguese, and other languages.\nPython glossary.\nPython Crash Course\nThe Python Coding Book\nHow to Think Like a Computer Scientist\nGoogle Python class. Also available in Spanish, German, French, and Indonesian.\nThe Python community maintains a list of Python courses and tutorials.\nIntroducción a la programación con Python con Python3\nA course in Spanish of focused in Data Analysis with Python",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#other-interactive-python-courses-for-beginers",
+    "href": "index.html#other-interactive-python-courses-for-beginers",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "Future coder\nAdam Emery’s course\nCodedex Python course",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#python-reference-documentation",
+    "href": "index.html#python-reference-documentation",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "The official Python documentation.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#technology",
+    "href": "index.html#technology",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "This site has been built with the quarto publishing system complemented by the quarto live extension that allows Python to run in the web browser by using pyodide. Without the effort of these open source developers this resource wouldn’t exist.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#licence",
+    "href": "index.html#licence",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "This content is released under a Creative Commons BY licence.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/strings.html",
+    "href": "types_and_operators/strings.html",
+    "title": "Strings",
+    "section": "",
+    "text": "Official documentation for the str class.\nGoogle string tutorial, available in different languages.\nReal Python string tutorial.\nString tutorial in Spanish.\nOfficial string formatting documentation.\nReal Python string formatting tutorial.\n\n\n\n\nIn most programming laguages the type used for text are called strings, because they are considered string of characters. In Python you can create an object of type str by using a string literal, like:\n\n\n\n\n\n\nString literals can be defined with single and double quotes.\n\n\n\n\n\n\nIt is also common to use triple quotes. The advantage of the triple quotes is that they can include string literals with several lines.\n\n\n\n\n\n\nFix the following code:\n\n\n\n\n\n\n\n\n\nThe string type has a rich functionality available. We can, for instance create upper- or lowercase versions of the strings. This funcionality is accessed via the string class methods. It is still too early to formally introduce the concept what is a method, so lets just show some examples.\n\n\n\n\n\n\nSo methods are used by writing a dot (.), the name of the methods and two parentheses. You can ask for the whole documentation of the str methods by using the help function.\n\n\n\n\n\n\nLet’s see some examples of the most commonly used string methods.\n\n\n\n\n\n\nWe can also split a string into a list of strings.\n\n\n\n\n\n\nIf we have a list of strings we can join them.\n\n\n\n\n\n\nWe can also get every letter by using list.\n\n\n\n\n\n\nTo find out the lenght of a string we use the function len.\n\n\n\n\n\n\nCalculate the GC content, percentage of Gs and Cs of a DNA sequence.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nYou can remove characters using replace(“character”, ““).\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe are writting some software that deal with file names, and we would like to change every .txt file into a .doc file. How could we change these file names?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe have file with values separated by commas and we want the separated by tabs, how could we do it.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThe tab character is represented by “.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImagine that we are reading a text file in which each line gives us information from one person. Remove the line feed and split the information items.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that you can remove the feed line and return characters using the strip method and that you can split a sting with the split method.\nOnce you have the three items you can do:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStrings can be converted into numbers and numbers into strings.\n\n\n\n\n\n\nFix the following code:\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStrings are a sequence of characters and they can be indexed, we can get some of the characters, by using the square brackets: [].\n\n\n\n\n\n\n\n\n\nPython positive and negative string indexes\n\n\nWe will see that this is a general property of any sequence type in Python, all of them can be indexed in the same way.\nIndexes allow us to ask for not just one, but several items, in the string case several characters using the colon (:) to separate the first and the last position. Take into account that the first position will be included in the selection but the last one will be not.\n\n\n\n\n\n\nPredict the result of running the following code:\n\n\n\n\n\n\nThe combination of the start and end position is called slice. By using this kind of indexing we are slicing the string. Slices can also be build using the slice built-in functions, but this is a more avanced topic.\nSlices, besides start and stop, allow for a third number, the step, that indicates the increment between the index of the selected items. For instance, we could use the step to select every three characters.\n\n\n\n\n\n\nStep is commonly used to reverse the string by using a step of -1.\n\n\n\n\n\n\nAnother way of reversing a string, or any Python sequence, is to use the reversed. The result won’t be exactly the same because reversed returns an iterator that has to be converted into a string. The reversed function could seem more cumbersome, but iterators have many advantages in different context. But we won’t discuss them here because this is a more advanced topic.\n\n\n\n\n\n\nExcercise, create a way of checking if a string is a palindrome.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nYou could check if the reversed string is equal to the original string.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnother useful string method is find. It allows us to look for ocurrences of a substring inside of a string. (Remember that we count from zero.)\n\n\n\n\n\n\n\n\n\nText strings can be added.\n\n\n\n\n\n\nOne confusing Python behaviour is that it will add two string even if there is no + sign between them. This is called string concatenation.\n\n\n\n\n\n\nPredict the result of running the following code:\n\n\n\n\n\n\nThe multiplication operation is also defined for str and int. It just repeats the string the given number of times.\n\n\n\n\n\n\nWe could check is a string is included in another string by using the in operator.\n\n\n\n\n\n\n\n\n\n\n\n\nFix the following code:\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that variables name can not have spaces.\nThe method capitalize creates a string with the first letter in uppercase.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFix the following code:\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nYou can create a string from a number by using the str function.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nf-strings are a very common and powerful way of creating string. You will see them a lot in the Python code. They allow, for instance to create a string from a variable in a very suscint way using curly braces ({}).\n\n\n\n\n\n\nf-strings have a very powerfull formatting language that allows to specify how the strings should be created.\n\n\n\n\n\n\n\n\n\nPython strings a UTF-8 strings. String encoding is a more advanced topic, but any seasoned programmer will end up having to understand a little bit about character encoding standards.",
+    "crumbs": [
+      "Types and operators",
+      "Strings"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/strings.html#resources",
+    "href": "types_and_operators/strings.html#resources",
+    "title": "Strings",
+    "section": "",
+    "text": "Official documentation for the str class.\nGoogle string tutorial, available in different languages.\nReal Python string tutorial.\nString tutorial in Spanish.\nOfficial string formatting documentation.\nReal Python string formatting tutorial.",
+    "crumbs": [
+      "Types and operators",
+      "Strings"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/strings.html#string-literals",
+    "href": "types_and_operators/strings.html#string-literals",
+    "title": "Strings",
+    "section": "",
+    "text": "In most programming laguages the type used for text are called strings, because they are considered string of characters. In Python you can create an object of type str by using a string literal, like:\n\n\n\n\n\n\nString literals can be defined with single and double quotes.\n\n\n\n\n\n\nIt is also common to use triple quotes. The advantage of the triple quotes is that they can include string literals with several lines.\n\n\n\n\n\n\nFix the following code:",
+    "crumbs": [
+      "Types and operators",
+      "Strings"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/strings.html#string-methods",
+    "href": "types_and_operators/strings.html#string-methods",
+    "title": "Strings",
+    "section": "",
+    "text": "The string type has a rich functionality available. We can, for instance create upper- or lowercase versions of the strings. This funcionality is accessed via the string class methods. It is still too early to formally introduce the concept what is a method, so lets just show some examples.\n\n\n\n\n\n\nSo methods are used by writing a dot (.), the name of the methods and two parentheses. You can ask for the whole documentation of the str methods by using the help function.\n\n\n\n\n\n\nLet’s see some examples of the most commonly used string methods.\n\n\n\n\n\n\nWe can also split a string into a list of strings.\n\n\n\n\n\n\nIf we have a list of strings we can join them.\n\n\n\n\n\n\nWe can also get every letter by using list.\n\n\n\n\n\n\nTo find out the lenght of a string we use the function len.\n\n\n\n\n\n\nCalculate the GC content, percentage of Gs and Cs of a DNA sequence.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nYou can remove characters using replace(“character”, ““).\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe are writting some software that deal with file names, and we would like to change every .txt file into a .doc file. How could we change these file names?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe have file with values separated by commas and we want the separated by tabs, how could we do it.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThe tab character is represented by “.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImagine that we are reading a text file in which each line gives us information from one person. Remove the line feed and split the information items.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that you can remove the feed line and return characters using the strip method and that you can split a sting with the split method.\nOnce you have the three items you can do:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote",
+    "crumbs": [
+      "Types and operators",
+      "Strings"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/strings.html#type-casting",
+    "href": "types_and_operators/strings.html#type-casting",
+    "title": "Strings",
+    "section": "",
+    "text": "Strings can be converted into numbers and numbers into strings.\n\n\n\n\n\n\nFix the following code:\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote",
+    "crumbs": [
+      "Types and operators",
+      "Strings"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/strings.html#indexing",
+    "href": "types_and_operators/strings.html#indexing",
+    "title": "Strings",
+    "section": "",
+    "text": "Strings are a sequence of characters and they can be indexed, we can get some of the characters, by using the square brackets: [].\n\n\n\n\n\n\n\n\n\nPython positive and negative string indexes\n\n\nWe will see that this is a general property of any sequence type in Python, all of them can be indexed in the same way.\nIndexes allow us to ask for not just one, but several items, in the string case several characters using the colon (:) to separate the first and the last position. Take into account that the first position will be included in the selection but the last one will be not.\n\n\n\n\n\n\nPredict the result of running the following code:\n\n\n\n\n\n\nThe combination of the start and end position is called slice. By using this kind of indexing we are slicing the string. Slices can also be build using the slice built-in functions, but this is a more avanced topic.\nSlices, besides start and stop, allow for a third number, the step, that indicates the increment between the index of the selected items. For instance, we could use the step to select every three characters.\n\n\n\n\n\n\nStep is commonly used to reverse the string by using a step of -1.\n\n\n\n\n\n\nAnother way of reversing a string, or any Python sequence, is to use the reversed. The result won’t be exactly the same because reversed returns an iterator that has to be converted into a string. The reversed function could seem more cumbersome, but iterators have many advantages in different context. But we won’t discuss them here because this is a more advanced topic.\n\n\n\n\n\n\nExcercise, create a way of checking if a string is a palindrome.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nYou could check if the reversed string is equal to the original string.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnother useful string method is find. It allows us to look for ocurrences of a substring inside of a string. (Remember that we count from zero.)",
+    "crumbs": [
+      "Types and operators",
+      "Strings"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/strings.html#operations-with-text-strings",
+    "href": "types_and_operators/strings.html#operations-with-text-strings",
+    "title": "Strings",
+    "section": "",
+    "text": "Text strings can be added.\n\n\n\n\n\n\nOne confusing Python behaviour is that it will add two string even if there is no + sign between them. This is called string concatenation.\n\n\n\n\n\n\nPredict the result of running the following code:\n\n\n\n\n\n\nThe multiplication operation is also defined for str and int. It just repeats the string the given number of times.\n\n\n\n\n\n\nWe could check is a string is included in another string by using the in operator.\n\n\n\n\n\n\n\n\n\n\n\n\nFix the following code:\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that variables name can not have spaces.\nThe method capitalize creates a string with the first letter in uppercase.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFix the following code:\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nYou can create a string from a number by using the str function.\n\n\n\n\n\n\n\n\n\n\n\nNote",
+    "crumbs": [
+      "Types and operators",
+      "Strings"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/strings.html#f-strings",
+    "href": "types_and_operators/strings.html#f-strings",
+    "title": "Strings",
+    "section": "",
+    "text": "f-strings are a very common and powerful way of creating string. You will see them a lot in the Python code. They allow, for instance to create a string from a variable in a very suscint way using curly braces ({}).\n\n\n\n\n\n\nf-strings have a very powerfull formatting language that allows to specify how the strings should be created.",
+    "crumbs": [
+      "Types and operators",
+      "Strings"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/strings.html#utf-and-the-enconding-tables",
+    "href": "types_and_operators/strings.html#utf-and-the-enconding-tables",
+    "title": "Strings",
+    "section": "",
+    "text": "Python strings a UTF-8 strings. String encoding is a more advanced topic, but any seasoned programmer will end up having to understand a little bit about character encoding standards.",
+    "crumbs": [
+      "Types and operators",
+      "Strings"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/lists.html",
+    "href": "types_and_operators/lists.html",
+    "title": "Lists",
+    "section": "",
+    "text": "Lists and tuples in the official documentation, and more on lists.\nA Real Python introduction to lists.\nlists on the google course (available in different languages).",
+    "crumbs": [
+      "Types and operators",
+      "Lists"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/lists.html#resources",
+    "href": "types_and_operators/lists.html#resources",
+    "title": "Lists",
+    "section": "",
+    "text": "Lists and tuples in the official documentation, and more on lists.\nA Real Python introduction to lists.\nlists on the google course (available in different languages).",
+    "crumbs": [
+      "Types and operators",
+      "Lists"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/lists.html#lists",
+    "href": "types_and_operators/lists.html#lists",
+    "title": "Lists",
+    "section": "Lists",
+    "text": "Lists\nSo far we have seen basic, or scalar, types like: int, float, str, bool and None. Lists are a compound type, a type capable of holding different items.\n\n\n\n\n\n\nLists can be heterogeneous, they can hold inside elements of different types.\n\n\n\n\n\n\nIn Python there is another type, very similar to a list, but that is limited to have all its elements of the same type, the array. Arrays are more efficient than lists, but in most cases the difference is not noticeable and lists are just fine.\nLists can hold any kind of type, not just basic type, but also compound types, like another list.\n\n\n\n\n\n\nIt is quite common to use lists to represent vectors, lists of numbers, and lists of lists to represent 2d-arrays, matrices.\n\n\n\n\n\n\n\nList creation with list\nAs we have seen lists can be created using square brackets ([]). But lists can also be created using the list function. This function takes any iterable and returns a list. (An iterable is an object capable of returning its members one at a time). For instance we can create a list of letters using list.",
+    "crumbs": [
+      "Types and operators",
+      "Lists"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/lists.html#lists-are-sequences",
+    "href": "types_and_operators/lists.html#lists-are-sequences",
+    "title": "Lists",
+    "section": "Lists are sequences",
+    "text": "Lists are sequences\nLists are sequences. A sequence is an object composed by items that can be accessed using indexes and that has a length, the number of items that holds. We have already seen another sequence type, the string.\n\nNumber of items, length\n\n\n\n\n\n\n\n\nIndexing\nLists items can be accessed using indexes, exactly like strings were accessed.\n\n\n\n\n\n\nYou have to be careful. When the index is just one number you will get one item, but if the index is a slice you will always get a list, even if you are selecting just one number.\n\n\n\n\n\n\nPredict the result of running the following code:\n\n\n\n\n\n\nCreate a list with the numbers from 0 to 9, extract the odd and even numbers, the first 5 and the last 5.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nreverse\nAs we did with strings we can reverse a list, or any other sequence, using the function reversed. reversed returns an iterator, so in order to have a list we need to use the list function on the reversed result.\n\n\n\n\n\n\n\n\nsorting\nLists can be sorted using the sorted function.\n\n\n\n\n\n\nsorted does the sorting doing pairwise comparisons of the elements. For a list of numbers the result is what we could expect.\n\n\n\n\n\n\nFor for the letters, or many other kinds of objects, the result can be weird.\n\n\n\n\n\n\nThe sorted function has a parameter, key, that allows to modify the elements compared. key will be a function that takes one element and returns the element to be compared. This is a topic somewhat more advanced, but you have an excellent sorting tutorial in the official documentation.\n\n\n\n\n\n\nSort the words in alphabetical order.\n\n\n\n\n\n\nThe sorted functions creates a new list, the original list will be intact.\n\n\n\n\n\n\nIf you wanted to sort the original list you could use the sort method.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\nThe string split method will split the text into a list of strings.\nThe string replace method can be used to remove unwanted text.\nThe sorted function can take a key parameter to modify the items compared during the sorting procedure.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote",
+    "crumbs": [
+      "Types and operators",
+      "Lists"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/lists.html#multiple-assignment",
+    "href": "types_and_operators/lists.html#multiple-assignment",
+    "title": "Lists",
+    "section": "Multiple assignment",
+    "text": "Multiple assignment\nLists, and tuples, can be used to assign its values to different variables.\n\n\n\n\n\n\nThis is a feature commonly used in Python that, sometimes is known as destructuring assignment. These assignments will fail if the number of items at both sides are different.",
+    "crumbs": [
+      "Types and operators",
+      "Lists"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/lists.html#list-operators",
+    "href": "types_and_operators/lists.html#list-operators",
+    "title": "Lists",
+    "section": "list operators",
+    "text": "list operators\n\nconcatenate with +\nTwo lists can be concatenated into a new list by using the + operator.\n\n\n\n\n\n\n\n\nin operator and index method\nWe can check if an item is in a list with the in operator.\n\n\n\n\n\n\nIf you need the position of the element in the list you can use the list index method.\n\n\n\n\n\n\nIf the item is found several times in the list, you will only get the index of the first appareance.\n\n\n\n\n\n\nIf you try to locate the position of an element that is not in the list, you will get an error.",
+    "crumbs": [
+      "Types and operators",
+      "Lists"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/lists.html#lists-are-mutable",
+    "href": "types_and_operators/lists.html#lists-are-mutable",
+    "title": "Lists",
+    "section": "Lists are mutable",
+    "text": "Lists are mutable\nStrings were inmutable sequences, once you create a string, it can not be changed. You can obtain a new modified string, for instance an uppercase string, but the original string will be unmodified.\n\n\n\n\n\n\nYou might have though that the original string was lost because most of the time we were reusing the name of the variable.\n\n\n\n\n\n\nBut what is going one in this code is more subtle:\n\ndna = “atcg” creates, and stores in memory, the string “atcg” and assigns the dna varible as a reference to it.\ndna.upper() creates a new string “ATCG”\ndna = dna.upper() assing the dna variable to the new string “ATCG”\nThere is now no variable referencing to the original “actg” string, so even if it would still be in memory it would be inaccessible to us.\nAt some point the Python interpreter will remove the original “actg” string from memory because it is not referenced by any variable, but this is of no concern to us. (This process is known in computer science as garbage collection, and Python is a garbage collected language).\n\nLists, on the other hand, are mutable. As an example, let’s use the append method, that appends a item to the list.\n\n\n\n\n\n\nAs you can see the variables dna and dna2 refer to the same list in memory, so when we change that list, in this case by adding a new letter, both variables print the same result. It is worth mentioning that the append method, unlike the string methods, does not return a new list.\n\nappend and extend\nThe append method adds an element to the list.\n\n\n\n\n\n\nThe extend method adds any number of elements to the list, it takes any iterable.\n\n\n\n\n\n\nPredict the result of running the following code:\n\n\n\n\n\n\nWhat would happend if you try to append a list of numbers? Try it, and explain the result.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nappend adds one item to the list and, in this case, this element happens to be the list [4, 5, 42], so no problem, we end up with a list that has this element in it.\n\n\n\n\n\n\nModify the list using indexes\nLists can also ve changed by using the indexing syntax.\n\n\n\n\n\n\nPredict the result of running the following code and think about why the two methods yield different results.\n\n\n\n\n\n\n\n\ntuples\nIn python there is another type, very similar to a list, but inmutable, the tuple. We create tuples using parentheses instead of square brackets.\n\n\n\n\n\n\nIf you try to modify a tuple, you will get an error.\n\n\n\n\n\n\nPython tuples have a gotcha. They are created using parentheses, but if you want to create a tuple with just one element you need to include a trailing comma.",
+    "crumbs": [
+      "Types and operators",
+      "Lists"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/lists.html#more-methods-help",
+    "href": "types_and_operators/lists.html#more-methods-help",
+    "title": "Lists",
+    "section": "More methods, help",
+    "text": "More methods, help\nThe functionallity offered by the list and tuple types is very rich, if you want to explore it in more detail remember the official documentation and the help function.",
+    "crumbs": [
+      "Types and operators",
+      "Lists"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/lists.html#more-exercises",
+    "href": "types_and_operators/lists.html#more-exercises",
+    "title": "Lists",
+    "section": "More exercises",
+    "text": "More exercises\nCarry out the following manipulations.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Types and operators",
+      "Lists"
     ]
   },
   {
@@ -265,7 +665,6 @@
     "section": "",
     "text": "The computer code is execute one line (or statement) at a time. The order in which the lines are executed is called flow.\n\n\n\n\n\n\nOrder the lines in the following code, we want the computer to first say Hello, then Your Name, and, finally, an invitation to play.\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nRemember that the lines are executed in order, so change the order of the lines.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"Hello\")\nprint(\"John\")\nprint(\"Do you want to play a nice game of chess?\")",
     "crumbs": [
-      "Home",
       "Basics",
       "Flow and variables"
     ]
@@ -277,7 +676,6 @@
     "section": "",
     "text": "The computer code is execute one line (or statement) at a time. The order in which the lines are executed is called flow.\n\n\n\n\n\n\nOrder the lines in the following code, we want the computer to first say Hello, then Your Name, and, finally, an invitation to play.\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nRemember that the lines are executed in order, so change the order of the lines.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nprint(\"Hello\")\nprint(\"John\")\nprint(\"Do you want to play a nice game of chess?\")",
     "crumbs": [
-      "Home",
       "Basics",
       "Flow and variables"
     ]
@@ -289,7 +687,6 @@
     "section": "Variables",
     "text": "Variables\nWhen we run programs we store information in the memory of the computer for later use. This is a fundamental idea in computers. You can think about the memory of a computer as a file cabinet in which we can store values like numbers and strings of letters. Internally the memory is divided in small pieces, like the drawers of a filing cabinet, and the computer assings a numeric adress to each of those drawers. So, for instance, we could tell the computer to store the number 42 in the address 00000100, but it would be very cumbersome to use these numeric addresses, so, instead, the we use variables, names that we create, to refer to the memory locations and contents.\nIn different programming languages and expressions a variable can refer to the value stored or to the memory address (pointer). In Python a variable will always be a reference to the object stored. You can think of it as a label in the file cabinet drawer or an arrow that points to the content of the drawer.\n\n\n\nValue stored in a variable\n\n\nIn Python we store a variable in memory by using the assigment operator =.\n\n\n\n\n\n\nPython is doing quite a lot of things for us when we write “favorite_number = 42”:\n\nIt reserves a space in the memory to be able to store the object that is going to create.\nIt creates the object 42.\nIt assigns the favorite_number variable as a reference to the created and stored object.",
     "crumbs": [
-      "Home",
       "Basics",
       "Flow and variables"
     ]
@@ -301,7 +698,6 @@
     "section": "Create and print variables",
     "text": "Create and print variables\nCreate two variables, one with your name, and another one with your surname and print them.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nname = \"Jane\"\nsurname = \"Doe\"\nprint(\"Hello \", name, \" \", surname)",
     "crumbs": [
-      "Home",
       "Basics",
       "Flow and variables"
     ]
@@ -311,9 +707,8 @@
     "href": "intro/flow_and_variables.html#change-the-value-of-a-variable",
     "title": "Flow and variables",
     "section": "Change the value of a variable",
-    "text": "Change the value of a variable\nThe variables can be changed to refer to different values/objects. Fix the program to show your real name by changing the value of the variable.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nname = \"John\"\nname = \"Alice\"\n\nprint(\"My name is \", name)\n\n\n\n\nGiven the following code, think about the expected output, what will the program print when you execute it?\n\n\n\n\n\n\nFix the following code to print the correct name of your Pokemons.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that variable names are not enclosed by quotes and that if you put something inside a quote Python will consider it a text string.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nmy_pokemon = \"Pikachu\"\nyour_pokemon = \"Ampharos\"\nprint(\"My favorite pokemon is\", my_pokemon)\nprint(\"Your favorite pokemon is\", your_pokemon)\n\n\n\n\nIt is very importan to understand the difference between variables and text: - variable names are not enclosed by quotes.\n\n\n\n\n\n\nWrite the name and year of release of a movie using two variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nmovie = \"The Matrix\"\nyear = 1999\nprint(movie, \"was released in\", year)",
+    "text": "Change the value of a variable\nThe variables can be changed to refer to different values/objects. Fix the program to show your real name by changing the value of the variable.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nname = \"John\"\nname = \"Alice\"\n\nprint(\"My name is \", name)\n\n\n\n\nGiven the following code, think about the expected output, what will the program print when you execute it?\n\n\n\n\n\n\nFix the following code to print the correct name of your Pokemons.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that variable names are not enclosed by quotes and that if you put something inside a quote Python will consider it a text string.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nmy_pokemon = \"Pikachu\"\nyour_pokemon = \"Ampharos\"\nprint(\"My favorite pokemon is\", my_pokemon)\nprint(\"Your favorite pokemon is\", your_pokemon)\n\n\n\n\nIt is very importan to understand the difference between variables and text: - variable names are not enclosed by quotes.\n\n\n\n\n\n\nWrite the name and year of release of a movie using two variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython allows for several variables to be set at the same time.",
     "crumbs": [
-      "Home",
       "Basics",
       "Flow and variables"
     ]
@@ -325,7 +720,6 @@
     "section": "Resources",
     "text": "Resources\n\nVariables in Python in Real Python.\nprint function official documentation.\nA print function tutorial in Real Python.",
     "crumbs": [
-      "Home",
       "Basics",
       "Flow and variables"
     ]
