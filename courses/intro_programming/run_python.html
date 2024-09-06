@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to programming with Python</title>
+<title>Installing and running Python – Introduction to programming with Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./run_python.html">Install and run Python</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -238,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./run_python.html" class="sidebar-item-text sidebar-link">
+  <a href="./run_python.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Install and run Python</span></a>
   </div>
 </li>
@@ -253,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to programming with Python</h1>
+<h1 class="title">Installing and running Python</h1>
 </div>
 
 
@@ -270,70 +270,57 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="an-introduction-to-programming-using-python" class="level1">
-<h1>An introduction to programming using Python</h1>
-<p>This is an introduction to Python aimed to students with no prior programming experience. There are many great introductions to Python, but we thought that it would be useful for us to create a new one that:</p>
+<p>Python code can be run in many different platforms that include: computers with different operating systems, like Windows, MacOS and Linux, embedded systems, and the web browser.</p>
+<p>However, a file with Python code, by itself, will not be executable. For instance, imagine that you create an useful Python program and you send it to a colleague. Usually he won’t be able to run it unless he first installs Python. This is what we mean when we say that Python is an <a href="https://en.wikipedia.org/wiki/Interpreter_(computing)">interpreted language</a>. We don’t need to compile the Python code to a binary file capable of being run by the operating system. The advantage of this approach is that we don’t need to compile the code for every operating system and architecture, but the limitation is that we need to install Python.</p>
+<p>Python is free and it is not difficult to install, but there are many operating systems and environments and the way in which we install Python in all of them might be different.</p>
+<section id="python-online" class="level2">
+<h2 class="anchored" data-anchor-id="python-online">Python online</h2>
+<p>So far we have run the Python code in the web browser. In fact the web pages that we have used so far in the course included a version of the Python interpreter that has run the code inside the browser.</p>
+<p>There are other sites that allow to run Python code online like:</p>
 <ul>
-<li>It relies mainly in examples and exercises.</li>
-<li>It runs those examples and exercises directly in the web, avoiding the need to install Python in the first day of class.</li>
-<li>It does not try to cover every detail of the Python language, but just what a beginner might need to start the journey.</li>
-</ul>
-<p>We decided to try this approach after following the <a href="https://github.com/rust-lang/rustlings/">rustlings</a> path, an exercise set aimed at teaching the Rust programming language. Rustlings assumes that the student has previously read the <a href="https://doc.rust-lang.org/book/">Rust introductory book</a>. For this course we have decided to add resources to read for each topic, so, the student could start by reading these resources, and then proceed to practice with the code examples and exercises. Alternatively, the examples could be used in a practical session to teach the theory and, then, the exercises could be use as the practice for the students.</p>
-<section id="why-python" class="level2">
-<h2 class="anchored" data-anchor-id="why-python">Why Python?</h2>
-<p>There are other very useful languages, like Javascript for the web, R for statistics, C or Rust for system programming, so, why should we start learning how to program in Python?</p>
-<p>Python is:</p>
-<ul>
-<li>one of the easiest languages to learn and understand. Learning how to program involves getting used to some abstract concepts related to how computers work, so the easier the language, the better the learning experience will be.</li>
-<li>very productive. The same ease of use that make Python a good learning language make it very productive for professional developers.</li>
-<li>free software. It is developed by a community and released under an <a href="https://en.wikipedia.org/wiki/Open_source">open source</a> licence.</li>
-</ul>
-<p>These characteristics make Python a very popular tool, in the <a href="https://survey.stackoverflow.co/2024/technology">2024 stackoverflow survery</a>, 51% of the developers had used Python in the last year. Only Javascript, with 62.3%, is a more popular programming language. Moreover, 67.7% of these developers want to learn an use python.</p>
-<p>According to the <a href="https://lp.jetbrains.com/python-developers-survey-2023/">2023 Python Developer survey</a> Python is used mostly for:</p>
-<ul>
-<li>Web development (21%)</li>
-<li>Data analysis (10%)</li>
-<li>Data engineering (6%)</li>
-<li>Machine learning (10%)</li>
-<li>Academic research (9%)</li>
-<li>Education (9%)</li>
-</ul>
-<p>So, if you are interested in data analysis or web development, Python is not just a great language to learn, but an interesting professional option.</p>
-</section>
-<section id="python-books-and-tutorials" class="level2">
-<h2 class="anchored" data-anchor-id="python-books-and-tutorials">Python books and tutorials</h2>
-<ul>
-<li>The official <a href="https://docs.python.org/3/tutorial/index.html">Python tutorial</a>. Also, available in <a href="https://docs.python.org/es/3/tutorial/index.html">Spanish</a>, <a href="https://docs.python.org/fr/3/tutorial/index.html">French</a>, <a href="https://docs.python.org/it/3/tutorial/index.html">Italian</a>, <a href="https://docs.python.org/pt-br/3/tutorial/index.html">Portuguese</a>, and other languages.</li>
-<li>Python <a href="https://docs.python.org/3/glossary.html">glossary</a>.</li>
-<li><a href="https://nostarch.com/python-crash-course-3rd-edition">Python Crash Course</a></li>
-<li><a href="https://thepythoncodingbook.com/">The Python Coding Book</a></li>
-<li><a href="https://runestone.academy/ns/books/published/thinkcspy/index.html">How to Think Like a Computer Scientist</a></li>
-<li>Microsoft course: <a href="https://learn.microsoft.com/en-us/training/paths/beginner-python/">Python for beginners</a>.</li>
-<li><a href="https://developers.google.com/edu/python">Google Python class</a>. Also available in <a href="https://developers.google.com/edu/python">Spanish</a>, <a href="https://developers.google.com/edu/python">German</a>, <a href="https://developers.google.com/edu/python">French</a>, and <a href="https://developers.google.com/edu/python">Indonesian</a>.</li>
-<li>The Python community maintains a <a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers">list of Python courses and tutorials</a>.</li>
-<li><a href="https://repositori.uji.es/xmlui/handle/10234/102653">Introducción a la programación con Python con Python3</a></li>
-<li>A course in Spanish of focused in <a href="https://github.com/JoseBlanca/py_industriales">Data Analysis with Python</a></li>
+<li>The <a href="https://futurecoder.io/course/#ide">Future Coder IDE</a> allows to write, run and debug Python programs.</li>
+<li>In the <a href="https://pyodide.org/en/stable/console.html">Pyodide REPL</a> the user can execute Python commands.</li>
 </ul>
 </section>
-<section id="other-interactive-python-courses-for-beginers" class="level2">
-<h2 class="anchored" data-anchor-id="other-interactive-python-courses-for-beginers">Other interactive Python courses for beginers</h2>
+<section id="operating-system-specific-installers" class="level2">
+<h2 class="anchored" data-anchor-id="operating-system-specific-installers">Operating system specific installers</h2>
+<p>Running Python online is great, but for many uses we need to install it in our computer and run it locally. Python is <a href="https://en.wikipedia.org/wiki/Open_source">open source</a> and it is freely distributed in <a href="https://www.python.org/">python.org</a>. So, one way of getting Python is to go the download section in python.org, download the latest installer for your operating system and install it. That will install Python, but you might have some issues with it:</p>
 <ul>
-<li><a href="https://futurecoder.io/course/#toc">Future coder</a></li>
-<li><a href="https://learn-python.adamemery.dev/">Adam Emery’s course</a></li>
-<li><a href="https://www.codedex.io/python/">Codedex Python course</a></li>
+<li>You will need to remember to install the Python updates.</li>
+<li>You will be able to install only one Python version at a time.</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Path_(computing)">PATH</a> <a href="https://en.wikipedia.org/wiki/Environment_variable">operating system variable</a> might end up not being correctly configured. So, although Python will be installed the interpreter won’t be directly available in the <a href="https://en.wikipedia.org/wiki/Command-line_interface">command-line shell</a>.</li>
+</ul>
+<p>Alternativery, you could use a specific installer for your operating system, like the Microsoft Store for windows or the package manager of your Linux distribution. There are many different cases and alternatives, and they are covered in the <a href="https://docs.python.org/3/using/index.html">Python Setup and Usage</a> in python.org.</p>
+</section>
+<section id="anaconda" class="level2">
+<h2 class="anchored" data-anchor-id="anaconda">Anaconda</h2>
+<p>Another alternative to install Python locally is to use the <a href="https://www.anaconda.com/download">anaconda</a> installer. Anaconda ships Python, R, and many other tools used in data analysis and it is very convenient because the Anaconda installer and navigator make the experience of using Python very similar in different operating systems.</p>
+</section>
+<section id="jupyter" class="level2">
+<h2 class="anchored" data-anchor-id="jupyter">Jupyter</h2>
+<p>An alternative way of using Python in the browser, but with a local installation is <a href="https://jupyter.org/">jupyter</a>. This is a tool commonly used in Data analysis, and it is included in the anaconda distribution.</p>
+</section>
+<section id="virtual-environments" class="level2">
+<h2 class="anchored" data-anchor-id="virtual-environments">Virtual environments</h2>
+<p>Once you start using Python professionaly it will be highly advisable to use virtual environments. This is an advanced topic for this course, but you will have to learn about virtual environments if you plan to use Python. Here you have a couple of resources:</p>
+<ul>
+<li><a href="https://jupyter.org/">Virtual environments</a> in Real Python.</li>
+<li><a href="https://docs.python.org/3/library/venv.html">venv</a> module documentation</li>
 </ul>
 </section>
-<section id="python-reference-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="python-reference-documentation">Python reference documentation</h2>
-<p>The official Python <a href="https://docs.python.org/3/">documentation</a>.</p>
+<section id="uv" class="level2">
+<h2 class="anchored" data-anchor-id="uv">uv</h2>
+<p>There is a new way to install Python: <a href="https://docs.astral.sh/uv/">uv</a>.</p>
+<p>Once you <a href="https://docs.astral.sh/uv/getting-started/installation/">install</a> uv, it will:</p>
+<ul>
+<li>manage the installation of different <a href="(https://docs.astral.sh/uv/guides/install-python/)">Python</a> <a href="https://docs.astral.sh/uv/concepts/python-versions/">versions</a>.</li>
+<li>run Python <a href="https://docs.astral.sh/uv/guides/scripts/">scripts</a></li>
+<li>manage <a href="https://docs.astral.sh/uv/concepts/projects/">Python projects</a>, with their virtual environments and <a href="https://docs.astral.sh/uv/concepts/dependencies/">dependencies</a>, for you.</li>
+</ul>
 </section>
-<section id="technology" class="level2">
-<h2 class="anchored" data-anchor-id="technology">Technology</h2>
-<p>This site has been built with the <a href="https://quarto.org/">quarto</a> publishing system complemented by the <a href="https://github.com/r-wasm/quarto-live">quarto live</a> extension that allows Python to run in the web browser by using <a href="https://pyodide.org/">pyodide</a>. Without the effort of these <a href="https://en.wikipedia.org/wiki/Open_source">open source</a> developers this resource wouldn’t exist.</p>
-</section>
-<section id="licence" class="level2">
-<h2 class="anchored" data-anchor-id="licence">Licence</h2>
-<p>This content is released under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY</a> licence.</p>
+<section id="code-editor" class="level2">
+<h2 class="anchored" data-anchor-id="code-editor">Code editor</h2>
+<p>To edit Python code you will need a code editor. <a href="https://code.visualstudio.com/">Visual Studio Code</a> is now one of the most popular ones.</p>
 
 
 <script type="ojs-module-contents">
@@ -350,7 +337,6 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
-</section>
 </section>
 
 </main> <!-- /main -->
