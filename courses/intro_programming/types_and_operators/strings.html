@@ -304,28 +304,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="strings" class="level1">
-<h1>Strings</h1>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <ul>
 <li>Official documentation for the <a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">str</a> class.</li>
 <li>Google <a href="https://developers.google.com/edu/python/strings">string tutorial</a>, available in different languages.</li>
 <li>Real Python <a href="https://realpython.com/python-strings/">string tutorial</a>.</li>
-<li><a href="https://github.com/JoseBlanca/py_industriales/blob/main/python/cadenas_de_texto.ipynb">String tutorial</a> in Spanish.</li>
 <li>Official <a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">string formatting</a> documentation.</li>
 <li>Real Python <a href="https://realpython.com/python-string-formatting/">string formatting</a> tutorial.</li>
 </ul>
 </section>
 <section id="string-literals" class="level2">
 <h2 class="anchored" data-anchor-id="string-literals">String literals</h2>
-<p>In most programming laguages the type used for text are called strings, because they are considered string of characters. In Python you can create an object of type <a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">str</a> by using a string literal, like:</p>
+<p>In most programming laguages the type used for text is called strings; a text is a string of characters. In Python you can create an object of type <a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">str</a> by using a string literal, like:</p>
 <div>
 <div id="pyodide-1">
 
 </div>
 <script type="pyodide-1-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6Ilxuc29tZV90ZXh0ID0gXCJUaGlzIGlzIGEgdGV4dCBzdHJpbmcgbGl0ZXJhbFwiIn0=
+eyJjb2RlIjoic29tZV90ZXh0ID0gXCJUaGlzIGlzIGEgdGV4dCBzdHJpbmcgbGl0ZXJhbFwiIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 <p>String literals can be defined with single and double quotes.</p>
@@ -334,7 +331,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-2-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6IlxuZ3JlZXRpbmdzMSA9IFwiSGVsbG9cIlxuZ3JlZXRpbmdzMiA9ICdIZWxsbydcbnByaW50KGdyZWV0aW5nczEsIFwiYW5kXCIsIGdyZWV0aW5nczIsIFwiYXJlIGV4YWN0bHkgdGhlIHNhbWU6XCIsIGdyZWV0aW5nczEgPT0gZ3JlZXRpbmdzMikifQ==
+eyJjb2RlIjoiZ3JlZXRpbmdzMSA9IFwiSGVsbG9cIlxuZ3JlZXRpbmdzMiA9ICdIZWxsbydcbnByaW50KGdyZWV0aW5nczEsIFwiYW5kXCIsIGdyZWV0aW5nczIsIFwiYXJlIGV4YWN0bHkgdGhlIHNhbWU6XCIsIGdyZWV0aW5nczEgPT0gZ3JlZXRpbmdzMikiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 <p>It is also common to use triple quotes. The advantage of the triple quotes is that they can include string literals with several lines.</p>
@@ -343,7 +340,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-3-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6IlxuaGFtbGV0ID0gXCJcIlwiVG8gYmUsIG9yIG5vdCB0byBiZSwgdGhhdCBpcyB0aGUgcXVlc3Rpb246XG5XaGV0aGVyICd0aXMgbm9ibGVyIGluIHRoZSBtaW5kIHRvIHN1ZmZlclxuVGhlIHNsaW5ncyBhbmQgYXJyb3dzIG9mIG91dHJhZ2VvdXMgZm9ydHVuZVwiXCJcIlxuXG5wcmludChoYW1sZXQpXG5cbnRleHRfd2l0aF9zaW5nbGVfdHJpcGxlX3F1b3RlcyA9ICcnJ1RoaXMgaXMgYW4gZXhhbXBsZVxub2YgYSB0ZXh0XG5jcmVhdGVkIHdpdGggc2luZ2xlIHRyaXBsZSBxdW90ZXMuXG4nJydcbnByaW50KHRleHRfd2l0aF9zaW5nbGVfdHJpcGxlX3F1b3RlcykifQ==
+eyJjb2RlIjoiaGFtbGV0ID0gXCJcIlwiVG8gYmUsIG9yIG5vdCB0byBiZSwgdGhhdCBpcyB0aGUgcXVlc3Rpb246XG5XaGV0aGVyICd0aXMgbm9ibGVyIGluIHRoZSBtaW5kIHRvIHN1ZmZlclxuVGhlIHNsaW5ncyBhbmQgYXJyb3dzIG9mIG91dHJhZ2VvdXMgZm9ydHVuZVwiXCJcIlxuXG5wcmludChoYW1sZXQpXG5cbnRleHRfd2l0aF9zaW5nbGVfdHJpcGxlX3F1b3RlcyA9ICcnJ0NoYXB0ZXIgMVxuIFxuVGhlIHN0b3J5IHNvIGZhcjpcbiBcbkluIHRoZSBiZWdpbm5pbmcgdGhlIFVuaXZlcnNlIHdhcyBjcmVhdGVkLlxuIFxuVGhpcyBoYXMgbWFkZSBhIGxvdCBvZiBwZW9wbGUgdmVyeSBhbmdyeSBhbmQgYmVlbiB3aWRlbHkgcmVnYXJkZWQgYXMgYSBiYWQgbW92ZS5cbicnJ1xucHJpbnQodGV4dF93aXRoX3NpbmdsZV90cmlwbGVfcXVvdGVzKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 <p>Fix the following code:</p>
@@ -352,28 +349,28 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-4-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6IlxuXCJncmVldGluZ3NcIiA9IFwiSGVsbG8gQWRhXCJcbnByaW50KGdyZWV0aW5ncykifQ==
+eyJjb2RlIjoiXCJncmVldGluZ3NcIiA9IFwiSGVsbG8gQWRhXCJcbnByaW50KGdyZWV0aW5ncykiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 </section>
 <section id="string-methods" class="level2">
 <h2 class="anchored" data-anchor-id="string-methods">String methods</h2>
-<p>The string type has a rich functionality available. We can, for instance create upper- or lowercase versions of the strings. This funcionality is accessed via the string class <a href="https://en.wikipedia.org/wiki/Method_(computer_programming)">methods</a>. It is still too early to formally introduce the concept what is a method, so lets just show some examples.</p>
+<p>The string type has a rich functionality available, through its <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">methods</a>. We can, for instance create upper- or lowercase versions of the strings. This funcionality is accessed via the string class <a href="https://en.wikipedia.org/wiki/Method_(computer_programming)">methods</a>. It is still too early to formally introduce the concept what is a method, so lets just show some examples.</p>
 <div>
 <div id="pyodide-5">
 
 </div>
 <script type="pyodide-5-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6IlxubG93ZXJjYXNlX3RleHQgPSBcIlNvbWUgVEVYVCB3aXRoIGxvd2VyIGFuZCBVUFBFUiBjYXNlIGxldHRlcnMuXCIubG93ZXIoKVxudXBwZXJjYXNlX3RleHQgPSBsb3dlcmNhc2VfdGV4dC51cHBlcigpXG5wcmludChsb3dlcmNhc2VfdGV4dClcbnByaW50KHVwcGVyY2FzZV90ZXh0KSJ9
+eyJjb2RlIjoibG93ZXJjYXNlX3RleHQgPSBcIlNvbWUgVEVYVCB3aXRoIGxvd2VyIGFuZCBVUFBFUiBjYXNlIGxldHRlcnMuXCIubG93ZXIoKVxudXBwZXJjYXNlX3RleHQgPSBsb3dlcmNhc2VfdGV4dC51cHBlcigpXG5wcmludChsb3dlcmNhc2VfdGV4dClcbnByaW50KHVwcGVyY2FzZV90ZXh0KSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
-<p>So methods are used by writing a dot (<strong>.</strong>), the name of the methods and two parentheses. You can ask for the whole documentation of the str methods by using the <a href="https://docs.python.org/3/library/functions.html#help">help</a> function.</p>
+<p>So methods are used by writing a dot (<strong>.</strong>), the name of the methods and two parentheses. You can ask for the whole documentation of any type, class or function using the <a href="https://docs.python.org/3/library/functions.html#help">help</a> function.</p>
 <div>
 <div id="pyodide-6">
 
 </div>
 <script type="pyodide-6-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6IlxuaGVscChzdHIpIn0=
+eyJjb2RlIjoiaGVscChzdHIpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 <p>Let’s see some examples of the most commonly used string methods.</p>
@@ -382,7 +379,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-7-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6IlxuIyByZW1vdmUgZXh0cmFjaGFyYWN0ZXJzIGF0IHRoZSBiZWdpbmluZyBhbmQgYXQgdGhlIGVuZFxuXG5zdHJpbmdfd2l0aF9zcGFjZXMgPSBcIiAgIFNvbWUgdGV4dCAgICBcIlxucHJpbnQoXCIqXCIgKyBzdHJpbmdfd2l0aF9zcGFjZXMgKyBcIipcIilcbnN0cmluZ193aXRoX25vX3NwYWNlcyA9IHN0cmluZ193aXRoX3NwYWNlcy5zdHJpcCgpXG5wcmludChcIipcIiArIHN0cmluZ193aXRoX25vX3NwYWNlcyArIFwiKlwiKVxuXG4jIENvdW50IG51bWJlciBvZiBvY2N1cmVuY2VzXG5cbmRuYV9zZXF1ZW5jZSA9IFwiQ1RBR0NUQVRDR0FUXCJcbnByaW50KFwiVGhlIG51bWJlciBvZiBBcyBpczogXCIsIGRuYV9zZXF1ZW5jZS5jb3VudCgnQScpKVxuXG4jIEJlIGNhcmVmdWwgYmVjYXVzZSBsb3dlciBhbmQgdXBwZXIgbGV0dGVycyBhcmUgZGlmZmVyZW50XG5cbnByaW50KFwiVGhlIG51bWJlciBvZiBhcyBpczogXCIsIGRuYV9zZXF1ZW5jZS5jb3VudCgnYScpKVxuXG4jIFdlIGNhbiByZXBsYWNlIGFuIHN0cmluZyB3aXRoIGFub3RoZXIgc3RyaW5nXG5cbnByaW50KFwiTXkgbmFtZSBpcyBKb2VcIi5yZXBsYWNlKFwiSm9lXCIsIFwiSmFuZVwiKSkifQ==
+eyJjb2RlIjoiIyByZW1vdmUgZXh0cmFjaGFyYWN0ZXJzIGF0IHRoZSBiZWdpbmluZyBhbmQgYXQgdGhlIGVuZFxuXG5zdHJpbmdfd2l0aF9zcGFjZXMgPSBcIiAgIFNvbWUgdGV4dCAgICBcIlxucHJpbnQoXCIqXCIgKyBzdHJpbmdfd2l0aF9zcGFjZXMgKyBcIipcIilcbnN0cmluZ193aXRoX25vX3NwYWNlcyA9IHN0cmluZ193aXRoX3NwYWNlcy5zdHJpcCgpXG5wcmludChcIipcIiArIHN0cmluZ193aXRoX25vX3NwYWNlcyArIFwiKlwiKVxuXG4jIENvdW50IG51bWJlciBvZiBvY2N1cmVuY2VzXG5cbmRuYV9zZXF1ZW5jZSA9IFwiQ1RBR0NUQVRDR0FUXCJcbnByaW50KFwiVGhlIG51bWJlciBvZiBBcyBpczogXCIsIGRuYV9zZXF1ZW5jZS5jb3VudCgnQScpKVxuXG4jIEJlIGNhcmVmdWwgYmVjYXVzZSBsb3dlciBhbmQgdXBwZXIgbGV0dGVycyBhcmUgZGlmZmVyZW50XG5cbnByaW50KFwiVGhlIG51bWJlciBvZiBhcyBpczogXCIsIGRuYV9zZXF1ZW5jZS5jb3VudCgnYScpKVxuXG4jIFdlIGNhbiByZXBsYWNlIGFuIHN0cmluZyB3aXRoIGFub3RoZXIgc3RyaW5nXG5cbnByaW50KFwiTXkgbmFtZSBpcyBKb2VcIi5yZXBsYWNlKFwiSm9lXCIsIFwiSmFuZVwiKSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 <p>We can also split a string into a list of strings.</p>
@@ -391,7 +388,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-8-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6IlxudGV4dCA9IFwiVGhlIEFuc3dlciB0byB0aGUgVWx0aW1hdGUgUXVlc3Rpb24gb2YgTGlmZSwgdGhlIFVuaXZlcnNlLCBhbmQgRXZlcnl0aGluZyBpcyA0MlwiXG5cbiMgc3BsaXQgYnkgc3BhY2VzIG9yIHRhYnNcbndvcmRzID0gdGV4dC5zcGxpdCgpXG5cbiMgd29yZHMgd2lsbCBiZSBhIGxpc3Qgb2Ygc3RyaW5nc1xucHJpbnQod29yZHMpXG5cbiMgd2UgY291bGQgYWxzbyBzcGxpdCB1c2luZyBhbnkgb3RoZXIgY2hhcmFjdGVyXG5sZXR0ZXJzID0gXCJhLGIsYyxkLGUsZlwiLnNwbGl0KFwiLFwiKVxucHJpbnQobGV0dGVycykifQ==
+eyJjb2RlIjoidGV4dCA9IFwiVGhlIEFuc3dlciB0byB0aGUgVWx0aW1hdGUgUXVlc3Rpb24gb2YgTGlmZSwgdGhlIFVuaXZlcnNlLCBhbmQgRXZlcnl0aGluZyBpcyA0MlwiXG5cbiMgc3BsaXQgYnkgc3BhY2VzIG9yIHRhYnNcbndvcmRzID0gdGV4dC5zcGxpdCgpXG5cbiMgd29yZHMgd2lsbCBiZSBhIGxpc3Qgb2Ygc3RyaW5nc1xucHJpbnQod29yZHMpXG5cbiMgd2UgY291bGQgYWxzbyBzcGxpdCB1c2luZyBhbnkgb3RoZXIgY2hhcmFjdGVyXG5sZXR0ZXJzID0gXCJhLGIsYyxkLGUsZlwiLnNwbGl0KFwiLFwiKVxucHJpbnQobGV0dGVycykiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 <p>If we have a list of strings we can join them.</p>
@@ -400,7 +397,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-9-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6Ilxud29yZHMgPSBbXCJJXCIsIFwiYW1cIiwgXCJsZWFybmluZ1wiLCBcIlB5dGhvblwiXVxudGV4dCA9IFwiIFwiLmpvaW4od29yZHMpXG5wcmludCh0ZXh0KVxucHJpbnQoXCJcIi5qb2luKHdvcmRzKSlcbnByaW50KFwiLSAtXCIuam9pbih3b3JkcykpIn0=
+eyJjb2RlIjoid29yZHMgPSBbXCJJXCIsIFwiYW1cIiwgXCJsZWFybmluZ1wiLCBcIlB5dGhvblwiXVxudGV4dCA9IFwiIFwiLmpvaW4od29yZHMpXG5wcmludCh0ZXh0KVxucHJpbnQoXCJcIi5qb2luKHdvcmRzKSlcbnByaW50KFwiLSAtXCIuam9pbih3b3JkcykpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 <p>We can also get every letter by using list.</p>
@@ -409,16 +406,16 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-10-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6IlxucHJpbnQobGlzdChcIlNvbWUgdGV4dFwiKSlcbnByaW50KGxpc3QoXCJBQkNERUZcIikpIn0=
+eyJjb2RlIjoicHJpbnQobGlzdChcIlNvbWUgdGV4dFwiKSlcbnByaW50KGxpc3QoXCJBQkNERUZcIikpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
-<p>To find out the lenght of a string we use the function <a href="https://docs.python.org/3/library/functions.html#len">len</a>.</p>
+<p>To find out the lenght of a string we use the <a href="https://docs.python.org/3/library/functions.html#len">len</a> function.</p>
 <div>
 <div id="pyodide-11">
 
 </div>
 <script type="pyodide-11-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6IlxudGV4dCA9IFwiU29tZSB0ZXh0XCJcbnByaW50KFwiVGhlIGxlbmd0aCBvZiB0aGUgdGV4dCBpczogXCIsIGxlbih0ZXh0KSkifQ==
+eyJjb2RlIjoidGV4dCA9IFwiU29tZSB0ZXh0XCJcbnByaW50KFwiVGhlIGxlbmd0aCBvZiB0aGUgdGV4dCBpczogXCIsIGxlbih0ZXh0KSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 <p>Calculate the GC content, percentage of Gs and Cs of a DNA sequence.</p>
@@ -427,7 +424,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-12-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImV4ZXJjaXNlIjoiZ2NfY29udGVudCIsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6InNlcXVlbmNlID0gXCJDR1QgQUdDIFRBVCBDR0EgVEdDIFRBRyBUQ0cgVEFHIFRDVCBBR0MgVEFHIFRDQVwiXG5cbnByaW50KFwiVGhlIEdDIGNvbnRlbnQgaXMgXCIpIn0=
+eyJjb2RlIjoic2VxdWVuY2UgPSBcIkNHVCBBR0MgVEFUIENHQSBUR0MgVEFHIFRDRyBUQUcgVENUIEFHQyBUQUcgVENBXCJcblxucHJpbnQoXCJUaGUgR0MgY29udGVudCBpcyBcIikiLCJhdHRyIjp7ImV4ZXJjaXNlIjoiZ2NfY29udGVudCIsImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 <div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="gc_content">
@@ -466,7 +463,7 @@ Note
 
 </div>
 <script type="pyodide-13-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6InNlcXVlbmNlID0gXCJDR1QgQUdDIFRBVCBDR0EgVEdDIFRBRyBUQ0cgVEFHIFRDVCBBR0MgVEFHIFRDQVwiXG5zZXF1ZW5jZSA9IHNlcXVlbmNlLnJlcGxhY2UoXCIgXCIsIFwiXCIpXG5udW1fZ2NzID0gc2VxdWVuY2UuY291bnQoXCJDXCIpICsgc2VxdWVuY2UuY291bnQoXCJHXCIpXG5wcmludChcIlRoZSBHQyBjb250ZW50IGlzOiBcIiwgbnVtX2djcyAvIGxlbihzZXF1ZW5jZSkgKiAxMDApIn0=
+eyJjb2RlIjoic2VxdWVuY2UgPSBcIkNHVCBBR0MgVEFUIENHQSBUR0MgVEFHIFRDRyBUQUcgVENUIEFHQyBUQUcgVENBXCJcbnNlcXVlbmNlID0gc2VxdWVuY2UucmVwbGFjZShcIiBcIiwgXCJcIilcbm51bV9nY3MgPSBzZXF1ZW5jZS5jb3VudChcIkNcIikgKyBzZXF1ZW5jZS5jb3VudChcIkdcIilcbnByaW50KFwiVGhlIEdDIGNvbnRlbnQgaXM6IFwiLCBudW1fZ2NzIC8gbGVuKHNlcXVlbmNlKSAqIDEwMCkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 </div>
@@ -479,7 +476,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-14-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImV4ZXJjaXNlIjoicmVwbGFjZV90eHQiLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJmaWxlX25hbWUgPSAnbXlfdGV4dC50eHQnXG5cbnByaW50KGZpbGVfbmFtZS4pIn0=
+eyJjb2RlIjoiZmlsZV9uYW1lID0gJ215X3RleHQudHh0J1xuXG5wcmludChmaWxlX25hbWUuKSIsImF0dHIiOnsiZXhlcmNpc2UiOiJyZXBsYWNlX3R4dCIsImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="replace_txt">
@@ -500,7 +497,7 @@ Tip
 
 </div>
 <script type="pyodide-15-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6ImZpbGVfbmFtZSA9ICdteV90ZXh0LnR4dCdcblxucHJpbnQoZmlsZV9uYW1lLnJlcGxhY2UoJy50eHQnLCAnLmRvYycpKSJ9
+eyJjb2RlIjoiZmlsZV9uYW1lID0gJ215X3RleHQudHh0J1xuXG5wcmludChmaWxlX25hbWUucmVwbGFjZSgnLnR4dCcsICcuZG9jJykpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 </div>
@@ -513,7 +510,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-16-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImV4ZXJjaXNlIjoiY29tbWFfdGFiIiwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5saW5lID0gXCJuYW1lLHN1cm5hbWUsYWdlXFxuXCJcblxucHJpbnQobGluZV93aXRoX3RhYnMpIn0=
+eyJjb2RlIjoiXG5saW5lID0gXCJuYW1lLHN1cm5hbWUsYWdlXFxuXCJcblxucHJpbnQobGluZV93aXRoX3RhYnMpIiwiYXR0ciI6eyJleGVyY2lzZSI6ImNvbW1hX3RhYiIsImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 <div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="comma_tab">
@@ -529,7 +526,7 @@ Note
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>The tab character is represented by “.</p>
+<p>The tab character is represented by “ and end of line by”“.</p>
 </div>
 </div>
 </div>
@@ -552,7 +549,7 @@ Note
 
 </div>
 <script type="pyodide-17-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6IlxubGluZSA9IFwibmFtZSxzdXJuYW1lLGFnZVxcblwiXG5cbnByaW50KGxpbmUucmVwbGFjZShcIixcIiwgXCJcXHRcIikpXG5cbiMgb3JcblxucHJpbnQoXCJcXHRcIi5qb2luKGxpbmUuc3BsaXQoXCIsXCIpKSkifQ==
+eyJjb2RlIjoiXG5saW5lID0gXCJuYW1lLHN1cm5hbWUsYWdlXFxuXCJcblxucHJpbnQobGluZS5yZXBsYWNlKFwiLFwiLCBcIlxcdFwiKSlcblxuIyBvclxuXG5wcmludChcIlxcdFwiLmpvaW4obGluZS5zcGxpdChcIixcIikpKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 </div>
@@ -565,7 +562,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-18-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImV4ZXJjaXNlIjoicmVhZF9saW5lIiwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibGluZSA9ICdKb2huLERvZSwyMFxcbidcblxucHJpbnQobmFtZSlcbnByaW50KHN1cm5hbWUpXG5wcmludChhZ2UpIn0=
+eyJjb2RlIjoibGluZSA9ICdKb2huLERvZSwyMFxcbidcblxucHJpbnQobmFtZSlcbnByaW50KHN1cm5hbWUpXG5wcmludChhZ2UpIiwiYXR0ciI6eyJleGVyY2lzZSI6InJlYWRfbGluZSIsImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 <div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="read_line">
@@ -588,7 +585,7 @@ Note
 
 </div>
 <script type="pyodide-19-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6Im5hbWUgPSBpdGVtc1swXVxuc3VybmFtZSA9IGl0ZW1zWzFdXG5hZ2UgPSBpdGVtc1thZ2VdXG5cbiMgb3Jcbm5hbWUsIHN1cm5hbWUsIGFnZSA9IGl0ZW1zIn0=
+eyJjb2RlIjoibmFtZSA9IGl0ZW1zWzBdXG5zdXJuYW1lID0gaXRlbXNbMV1cbmFnZSA9IGl0ZW1zW2FnZV1cblxuIyBvclxubmFtZSwgc3VybmFtZSwgYWdlID0gaXRlbXMiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 </div>
@@ -613,7 +610,7 @@ Note
 
 </div>
 <script type="pyodide-20-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6ImxpbmUgPSAnSm9obixEb2UsMjBcXG4nXG5pdGVtcyA9IGxpbmUuc3RyaXAoKS5zcGxpdCgnLCcpXG5uYW1lLCBzdXJuYW1lLCBhZ2UgPSBpdGVtc1xucHJpbnQobmFtZSlcbnByaW50KHN1cm5hbWUpXG5wcmludChhZ2UpIn0=
+eyJjb2RlIjoibGluZSA9ICdKb2huLERvZSwyMFxcbidcbml0ZW1zID0gbGluZS5zdHJpcCgpLnNwbGl0KCcsJylcbm5hbWUsIHN1cm5hbWUsIGFnZSA9IGl0ZW1zXG5wcmludChuYW1lKVxucHJpbnQoc3VybmFtZSlcbnByaW50KGFnZSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 </div>
@@ -629,7 +626,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-21-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6Im51bWJlciA9IGludChcIjQyXCIpXG5zdHJpbmcgPSBzdHIobnVtYmVyKVxuZmxvYXRfbnVtYmVyID0gZmxvYXQoc3RyaW5nKSJ9
+eyJjb2RlIjoibnVtYmVyID0gaW50KFwiNDJcIilcbnN0cmluZyA9IHN0cihudW1iZXIpXG5mbG9hdF9udW1iZXIgPSBmbG9hdChzdHJpbmcpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 <p>Fix the following code:</p>
@@ -638,7 +635,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-22-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImV4ZXJjaXNlIjoidG90YWwiLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJmaXJzdCA9IDIwXG5zZWNvbmQgPSBcIjQwXCJcbnRvdGFsID0gZmlyc3QgKyBzZWNvbmRcbnByaW50KHRvdGFsKSJ9
+eyJjb2RlIjoiZmlyc3QgPSAyMFxuc2Vjb25kID0gXCI0MFwiXG50b3RhbCA9IGZpcnN0ICsgc2Vjb25kXG5wcmludCh0b3RhbCkiLCJhdHRyIjp7ImV4ZXJjaXNlIjoidG90YWwiLCJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="total">
@@ -659,7 +656,7 @@ Note
 
 </div>
 <script type="pyodide-23-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6ImZpcnN0ID0gMjBcbnNlY29uZCA9IFwiNDBcIlxudG90YWwgPSBmaXJzdCArIGludChzZWNvbmQpXG5wcmludCh0b3RhbCkifQ==
+eyJjb2RlIjoiZmlyc3QgPSAyMFxuc2Vjb25kID0gXCI0MFwiXG50b3RhbCA9IGZpcnN0ICsgaW50KHNlY29uZClcbnByaW50KHRvdGFsKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 </div>
@@ -672,7 +669,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-24-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImV4ZXJjaXNlIjoibnVtYmVyX2RpZ2l0cyIsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6IiMgRm9yIGV4YW1wbGUsIDE3NzY4IGhhcyA1IGRpZ2l0cyJ9
+eyJjb2RlIjoiIyBGb3IgZXhhbXBsZSwgMTc3NjggaGFzIDUgZGlnaXRzIiwiYXR0ciI6eyJleGVyY2lzZSI6Im51bWJlcl9kaWdpdHMiLCJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="number_digits">
@@ -693,7 +690,7 @@ Note
 
 </div>
 <script type="pyodide-25-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6Im51bWJlciA9IDE3NzY4XG5wcmludChcIlRoZSBudW1iZXIgXCIsIG51bWJlciwgXCIgaGFzIFwiLCBsZW4oc3RyKG51bWJlcikpLCBcIiBkaWdpdHNcIikifQ==
+eyJjb2RlIjoibnVtYmVyID0gMTc3NjhcbnByaW50KFwiVGhlIG51bWJlciBcIiwgbnVtYmVyLCBcIiBoYXMgXCIsIGxlbihzdHIobnVtYmVyKSksIFwiIGRpZ2l0c1wiKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 </div>
@@ -709,7 +706,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-26-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6Ilxud29uZGVybGFuZCA9IFwiQWxpY2Ugd2FzIGJlZ2lubmluZyB0byBnZXQgdmVyeSB0aXJlZFwiXG5cbiMgSW4gbW9zdCBwcm9ncmFtbWluZyBsYW5ndWFnZXMgaW5kZXhlcyBzdGFydCBhdCB6ZXJvLCB0aGUgZmlyc3QgY2hhcmFjdGVyIGlzIDBcbnByaW50KHdvbmRlcmxhbmRbMF0pXG5wcmludCh3b25kZXJsYW5kWzFdKVxucHJpbnQod29uZGVybGFuZFsyXSlcbnByaW50KHdvbmRlcmxhbmRbM10pXG5wcmludCh3b25kZXJsYW5kWzRdKVxuXG4jIEluIFB5dGhvbiB3ZSBjYW4gYXNrIGZvciB0aGUgbGFzdCBjaGFyYWN0ZXIgYnkgdXNpbmcgbmVnYXRpdmUgbnVtYmVyc1xuXG5wcmludCh3b25kZXJsYW5kWy0xXSlcbnByaW50KHdvbmRlcmxhbmRbLTJdKVxucHJpbnQod29uZGVybGFuZFstM10pXG5wcmludCh3b25kZXJsYW5kWy00XSlcbnByaW50KHdvbmRlcmxhbmRbLTRdKSJ9
+eyJjb2RlIjoiXG53b25kZXJsYW5kID0gXCJBbGljZSB3YXMgYmVnaW5uaW5nIHRvIGdldCB2ZXJ5IHRpcmVkXCJcblxuIyBJbiBtb3N0IHByb2dyYW1taW5nIGxhbmd1YWdlcyBpbmRleGVzIHN0YXJ0IGF0IHplcm8sIHRoZSBmaXJzdCBjaGFyYWN0ZXIgaXMgMFxucHJpbnQod29uZGVybGFuZFswXSlcbnByaW50KHdvbmRlcmxhbmRbMV0pXG5wcmludCh3b25kZXJsYW5kWzJdKVxucHJpbnQod29uZGVybGFuZFszXSlcbnByaW50KHdvbmRlcmxhbmRbNF0pXG5cbiMgSW4gUHl0aG9uIHdlIGNhbiBhbHNvIGFzayBmb3IgdGhlIGxhc3QgY2hhcmFjdGVyIGJ5IHVzaW5nIG5lZ2F0aXZlIG51bWJlcnNcblxucHJpbnQod29uZGVybGFuZFstMV0pXG5wcmludCh3b25kZXJsYW5kWy0yXSlcbnByaW50KHdvbmRlcmxhbmRbLTNdKVxucHJpbnQod29uZGVybGFuZFstNF0pXG5wcmludCh3b25kZXJsYW5kWy00XSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -719,13 +716,13 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 </figure>
 </div>
 <p>We will see that this is a general property of any <a href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">sequence type</a> in Python, all of them can be indexed in the same way.</p>
-<p>Indexes allow us to ask for not just one, but several items, in the string case several characters using the colon (<strong>:</strong>) to separate the first and the last position. Take into account that the first position will be included in the selection but the last one will be not.</p>
+<p>Indexes allow us to ask for not just one, but several items. In the string case we will get a string with several characters. To get them we use the colon (<strong>:</strong>) to separate the first and the last position. Take into account that the first position will be included in the selection but the last one will be not.</p>
 <div>
 <div id="pyodide-27">
 
 </div>
 <script type="pyodide-27-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6Ilxud29uZGVybGFuZCA9IFwiQWxpY2Ugd2FzIGJlZ2lubmluZyB0byBnZXQgdmVyeSB0aXJlZFwiXG5cbnByaW50KHdvbmRlcmxhbmRbMDo1XSlcbnByaW50KHdvbmRlcmxhbmRbNjo5XSlcblxuIyBXZSBjYW4gb21taXQgdGhlIGZpcnN0IHBvc2l0aW9uLiBUaGF0IHdpbGwgYmUgaW50ZXJwcmV0ZWQgYXMsIGZyb20gdGhlIGJlZ2luaW5nLlxuXG5wcmludCh3b25kZXJsYW5kWzo5XSlcblxuIyBPciB3ZSBjb3VsZCBvbW1pdCB0aGUgbGFzdCBwb3NpdGlvbiwgdXAgdW50aWwgdGhlIGVuZC5cblxucHJpbnQod29uZGVybGFuZFsxMDpdKVxuXG4jIElmIHdlIG9tbWludCBib3RoIHRoZSBmaXJzdCBhbmQgbGFzdCB3ZSB3aWxsIGdldCBhIGNvbXBsZXRlIGNvcHkgb2YgdGhlIHN0cmluZywgZnJvbSB0aGUgYmVnaW5pbmcgdG8gdGhlIGVuZFxuXG5wcmludCh3b25kZXJsYW5kWzpdKVxuXG4jIE9mIGNvdXNlLCB3ZSBjYW4gYWxzbyB1c2UsIGFzIGluZGV4ZXMsIG5lZ2F0aXZlIG51bWJlclxuXG5wcmludCh3b25kZXJsYW5kWy01Ol0pIn0=
+eyJjb2RlIjoid29uZGVybGFuZCA9IFwiQWxpY2Ugd2FzIGJlZ2lubmluZyB0byBnZXQgdmVyeSB0aXJlZFwiXG5cbnByaW50KHdvbmRlcmxhbmRbMDo1XSlcbnByaW50KHdvbmRlcmxhbmRbNjo5XSlcblxuIyBXZSBjYW4gb21taXQgdGhlIGZpcnN0IHBvc2l0aW9uLiBUaGF0IHdpbGwgYmUgaW50ZXJwcmV0ZWQgYXMsIGZyb20gdGhlIGJlZ2luaW5nLlxuXG5wcmludCh3b25kZXJsYW5kWzo5XSlcblxuIyBPciB3ZSBjb3VsZCBvbW1pdCB0aGUgbGFzdCBwb3NpdGlvbiwgdXAgdW50aWwgdGhlIGVuZC5cblxucHJpbnQod29uZGVybGFuZFsxMDpdKVxuXG4jIElmIHdlIG9tbWludCBib3RoIHRoZSBmaXJzdCBhbmQgbGFzdCB3ZSB3aWxsIGdldCBhIGNvbXBsZXRlIGNvcHkgb2YgdGhlIHN0cmluZywgZnJvbSB0aGUgYmVnaW5pbmcgdG8gdGhlIGVuZFxuXG5wcmludCh3b25kZXJsYW5kWzpdKVxuXG4jIE9mIGNvdXNlLCB3ZSBjYW4gYWxzbyB1c2UsIGFzIGluZGV4ZXMsIG5lZ2F0aXZlIG51bWJlclxuXG5wcmludCh3b25kZXJsYW5kWy01Ol0pIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 <p>Predict the result of running the following code:</p>
@@ -734,17 +731,17 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-28-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6ImE9IFwiR0FBVFRDXCJcbnByaW50KGFbMDo2XSlcbnByaW50KGFbMDo1XSlcbnByaW50KGFbOjZdKSJ9
+eyJjb2RlIjoiYT0gXCJHQUFUVENcIlxucHJpbnQoYVswOjZdKVxucHJpbnQoYVswOjVdKVxucHJpbnQoYVs6Nl0pIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
-<p>The combination of the start and end position is called slice. By using this kind of indexing we are slicing the string. Slices can also be build using the <a href="(https://docs.python.org/3/library/functions.html#slice)">slice</a> built-in functions, but this is a more avanced topic.</p>
+<p>The combination of the start and end position is called slice. By using this kind of indexing we are slicing the string. Slices can also be built using the <a href="(https://docs.python.org/3/library/functions.html#slice)">slice</a> built-in functions, but this is a more avanced topic.</p>
 <p>Slices, besides start and stop, allow for a third number, the step, that indicates the increment between the index of the selected items. For instance, we could use the step to select every three characters.</p>
 <div>
 <div id="pyodide-29">
 
 </div>
 <script type="pyodide-29-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6InNlcXVlbmNlID0gJ0FjdEdjZ1RhY1QnXG5wcmludChzZXF1ZW5jZVs6OjNdKSJ9
+eyJjb2RlIjoic2VxdWVuY2UgPSAnQWN0R2NnVGFjVCdcbnByaW50KHNlcXVlbmNlWzo6M10pIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 <p>Step is commonly used to reverse the string by using a step of -1.</p>
@@ -753,16 +750,16 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-30-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6InNlcXVlbmNlID0gJ0hlbGxvJ1xucHJpbnQoc2VxdWVuY2VbOjotMV0pIn0=
+eyJjb2RlIjoic2VxdWVuY2UgPSAnSGVsbG8nXG5wcmludChzZXF1ZW5jZVs6Oi0xXSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
-<p>Another way of reversing a string, or any Python <a href="https://docs.python.org/3/glossary.html#term-sequence">sequence</a>, is to use the <a href="https://docs.python.org/3/library/functions.html#reversed">reversed</a>. The result won’t be exactly the same because reversed returns an <a href="https://docs.python.org/3/glossary.html#term-iterator">iterator</a> that has to be converted into a string. The reversed function could seem more cumbersome, but iterators have many advantages in different context. But we won’t discuss them here because this is a more advanced topic.</p>
+<p>Another way of reversing a string, or any Python <a href="https://docs.python.org/3/glossary.html#term-sequence">sequence</a>, is to use the <a href="https://docs.python.org/3/library/functions.html#reversed">reversed</a> function. The result won’t be exactly the same because reversed returns an <a href="https://docs.python.org/3/glossary.html#term-iterator">iterator</a> that has to be converted into a string. The reversed function could seem more cumbersome, but iterators have many advantages in different contexts. But we won’t discuss them here because this is a more advanced topic.</p>
 <div>
 <div id="pyodide-31">
 
 </div>
 <script type="pyodide-31-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6InN0cmluZyA9ICdIZWxsbydcbnJldmVyc2VkX3N0cmluZyA9ICcnLmpvaW4ocmV2ZXJzZWQoc3RyaW5nKSlcbnByaW50KHJldmVyc2VkX3N0cmluZykifQ==
+eyJjb2RlIjoic3RyaW5nID0gJ0hlbGxvJ1xucmV2ZXJzZWRfc3RyaW5nID0gJycuam9pbihyZXZlcnNlZChzdHJpbmcpKVxucHJpbnQocmV2ZXJzZWRfc3RyaW5nKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 <p>Excercise, create a way of checking if a string is a palindrome.</p>
@@ -771,7 +768,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-32-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImV4ZXJjaXNlIjoicGFsaW5kcm9tZSIsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6InN0cmluZyA9ICdyYWNlY2FyJ1xuXG5wcmludChcIlRoZSBzdHJpbmcgaXMgYSBwYWxpbmRyb21lOlwiLCApIn0=
+eyJjb2RlIjoic3RyaW5nID0gJ3JhY2VjYXInXG5cbnByaW50KFwiVGhlIHN0cmluZyBpcyBhIHBhbGluZHJvbWU6XCIsICkiLCJhdHRyIjp7ImV4ZXJjaXNlIjoicGFsaW5kcm9tZSIsImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 <div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="palindrome">
@@ -810,7 +807,7 @@ Note
 
 </div>
 <script type="pyodide-33-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6InN0cmluZyA9ICdyYWNlY2FyJ1xuXG5pc19wYWxpbmRyb21lID0gc3RyaW5nWzo6LTFdID09IHN0cmluZ1xuXG5wcmludChcIlRoZSBzdHJpbmcgaXMgYSBwYWxpbmRyb21lOlwiLCBpc19wYWxpbmRyb21lKVxuXG5leGVyY2lzZS4gQ2hlY2sgaWYgc29tZSB0ZXh0IGlzIGEgcGFseW5kcm9tZSJ9
+eyJjb2RlIjoic3RyaW5nID0gJ3JhY2VjYXInXG5cbmlzX3BhbGluZHJvbWUgPSBzdHJpbmdbOjotMV0gPT0gc3RyaW5nXG5cbnByaW50KFwiVGhlIHN0cmluZyBpcyBhIHBhbGluZHJvbWU6XCIsIGlzX3BhbGluZHJvbWUpXG5cbmV4ZXJjaXNlLiBDaGVjayBpZiBzb21lIHRleHQgaXMgYSBwYWx5bmRyb21lIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 </div>
@@ -823,7 +820,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-34-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImV4ZXJjaXNlIjoicmV2ZXJzZV9udW1iZXIiLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJudW1iZXIgPSA1Njc4M1xuXG4jIFRoZSByZXN1bHQgc2hvdWxkIGJlIFwiMyA4IDcgNiA1XCIifQ==
+eyJjb2RlIjoibnVtYmVyID0gNTY3ODNcblxuIyBUaGUgcmVzdWx0IHNob3VsZCBiZSBcIjMgOCA3IDYgNVwiIiwiYXR0ciI6eyJleGVyY2lzZSI6InJldmVyc2VfbnVtYmVyIiwiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="reverse_number">
@@ -844,7 +841,7 @@ Note
 
 </div>
 <script type="pyodide-35-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6Im51bWJlciA9IDU2NzgzXG5cbnByaW50KCcgJy5qb2luKHJldmVyc2VkKHN0cihudW1iZXIpKSkpIn0=
+eyJjb2RlIjoibnVtYmVyID0gNTY3ODNcblxucHJpbnQoJyAnLmpvaW4ocmV2ZXJzZWQoc3RyKG51bWJlcikpKSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 </div>
@@ -857,7 +854,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-36-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6InByaW50KFwiYWNBQ0dUYWN0dFwiLmZpbmQoXCJBQ0dUXCIpKVxuXG4jIHdoZW4gdGhlIHN1YnN0cmluZyBpcyBub3QgZm91bmQsIHRoZSBmaW5kIG1ldGhvZCByZXR1cm5zIC0xXG5wcmludChcImFjQUNHVGFjdHRcIi5maW5kKFwiYWNndFwiKSkifQ==
+eyJjb2RlIjoicHJpbnQoXCJhY0FDR1RhY3R0XCIuZmluZChcIkFDR1RcIikpXG5cbiMgd2hlbiB0aGUgc3Vic3RyaW5nIGlzIG5vdCBmb3VuZCwgdGhlIGZpbmQgbWV0aG9kIHJldHVybnMgLTFcbnByaW50KFwiYWNBQ0dUYWN0dFwiLmZpbmQoXCJhY2d0XCIpKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 <p>Find the position of the substring “wor” in the string “Hello world”, and the use that position to extract the “world” substring from “Hello world”</p>
@@ -866,7 +863,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-37-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImF1dG9ydW4iOmZhbHNlLCJleGNlcmNpc2UiOiJ3b3JsZF9wb3NpdGlvbiIsImV2YWwiOnRydWV9LCJjb2RlIjoiczE9IFwiSGVsbG8gd29ybGRcIlxuczIgPSBcIndvclwiIn0=
+eyJjb2RlIjoiczE9IFwiSGVsbG8gd29ybGRcIlxuczIgPSBcIndvclwiIiwiYXR0ciI6eyJleGNlcmNpc2UiOiJ3b3JsZF9wb3NpdGlvbiIsImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="world_position">
@@ -887,7 +884,7 @@ Tip
 
 </div>
 <script type="pyodide-38-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6InMxPSBcIkhlbGxvIHdvcmxkXCJcbnMyID0gXCJ3b3JcIlxucG9zaXRpb24gPSBzMS5maW5kKHMyKVxucHJpbnQoczFbcG9zaXRpb246XSkifQ==
+eyJjb2RlIjoiczE9IFwiSGVsbG8gd29ybGRcIlxuczIgPSBcIndvclwiXG5wb3NpdGlvbiA9IHMxLmZpbmQoczIpXG5wcmludChzMVtwb3NpdGlvbjpdKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 </div>
@@ -903,7 +900,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-39-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6InByaW50KFwiSGVsbG8gXCIgKyBcIkphbmVcIikifQ==
+eyJjb2RlIjoicHJpbnQoXCJIZWxsbyBcIiArIFwiSmFuZVwiKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 <p>One confusing Python behaviour is that it will add two string even if there is no + sign between them. This is called string concatenation.</p>
@@ -912,7 +909,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-40-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6InByaW50KFwiSGVsbG9cIiBcIkpvaG5cIikifQ==
+eyJjb2RlIjoicHJpbnQoXCJIZWxsb1wiIFwiSm9oblwiKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 <p>Predict the result of running the following code:</p>
@@ -921,7 +918,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-41-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6ImE9IFwiR0FBVFRDXCJcbmI9IFwiQ1RUQUFHXCJcblxucHJpbnQoYVswOjNdICsgYlszOjZdKVxucHJpbnQoYVswOjNdICsgYlszOjZdICsgYVszOjZdKVxucHJpbnQoYVstMjpdICsgYlstMzpdKVxucHJpbnQoYVstMjpdICsgYlstMzpdICsgYVs6Ml0pXG5wcmludChhWzJdICsgYlsyXSArIGFbLTNdKSJ9
+eyJjb2RlIjoiYT0gXCJHQUFUVENcIlxuYj0gXCJDVFRBQUdcIlxuXG5wcmludChhWzA6M10gKyBiWzM6Nl0pXG5wcmludChhWzA6M10gKyBiWzM6Nl0gKyBhWzM6Nl0pXG5wcmludChhWy0yOl0gKyBiWy0zOl0pXG5wcmludChhWy0yOl0gKyBiWy0zOl0gKyBhWzoyXSlcbnByaW50KGFbMl0gKyBiWzJdICsgYVstM10pIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 <p>The multiplication operation is also defined for str and int. It just repeats the string the given number of times.</p>
@@ -930,7 +927,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-42-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6InByaW50KFwiSGkhXCIgKiAxMCkifQ==
+eyJjb2RlIjoicHJpbnQoXCJIaSFcIiAqIDEwKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 <p>Write a program that given a number n returns the value of the operation: n + nn + nnn</p>
@@ -939,7 +936,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-43-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImV4ZXJjaXNlIjoic3VtX2NvbmNhdGVuYXRlZF9udW1zIiwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibiA9IDVcbiMgVGhlIHJlc3VsdCBzaG91bGQgYmUgNSArIDU1ICsgNTU1IC0+IDYxNSJ9
+eyJjb2RlIjoibiA9IDVcbiMgVGhlIHJlc3VsdCBzaG91bGQgYmUgNSArIDU1ICsgNTU1IC0+IDYxNSIsImF0dHIiOnsiZXhlcmNpc2UiOiJzdW1fY29uY2F0ZW5hdGVkX251bXMiLCJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 <div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="sum_concatenated_nums">
@@ -978,7 +975,7 @@ Tip
 
 </div>
 <script type="pyodide-44-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6Im4gPSA1XG5uID0gc3RyKDUpXG5yZXN1bHQgPSBpbnQobikgKyBpbnQobiAqIDIpICsgaW50KG4gKiAzKVxucHJpbnQocmVzdWx0KSJ9
+eyJjb2RlIjoibiA9IDVcbm4gPSBzdHIoNSlcbnJlc3VsdCA9IGludChuKSArIGludChuICogMikgKyBpbnQobiAqIDMpXG5wcmludChyZXN1bHQpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 </div>
@@ -991,7 +988,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-45-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6InByaW50KFwiR0FUQVwiIGluIFwiR0NDR1RBVEdDQVRHQVRBVEdDVEFHQ1RBR1wiKSJ9
+eyJjb2RlIjoicHJpbnQoXCJHQVRBXCIgaW4gXCJHQ0NHVEFUR0NBVEdBVEFUR0NUQUdDVEFHXCIpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 <div>
@@ -999,7 +996,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-46-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6IiMgRG9lcyB0aGUgZm9sbG93aW5nIGNvZGUgZ2l2ZSB0aGUgZXhwZWN0ZWQgcmVzdWx0P1xucHJpbnQoXCJnYXRhXCIgaW4gXCJjYWd0Y2FnR0FUQXRjdGFndGNndGFcIikifQ==
+eyJjb2RlIjoiIyBEb2VzIHRoZSBmb2xsb3dpbmcgY29kZSBnaXZlIHRoZSBleHBlY3RlZCByZXN1bHQ/XG5wcmludChcImdhdGFcIiBpbiBcImNhZ3RjYWdHQVRBdGN0YWd0Y2d0YVwiKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 <p>Fix the following code:</p>
@@ -1008,7 +1005,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-47-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImV4ZXJjaXNlIjoiZml4X2pvbiIsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6Im5hbWUgPSBcIkpvblwiXG5zdXJuYW1lID0gXCJTbm93XCIgXG5mdWxsIG5hbWUgPSBuYW1lICsgc3VybmFtZVxucHJpbnQoZnVsbCBuYW1lKSJ9
+eyJjb2RlIjoibmFtZSA9IFwiSm9uXCJcbnN1cm5hbWUgPSBcIlNub3dcIiBcbmZ1bGwgbmFtZSA9IG5hbWUgKyBzdXJuYW1lXG5wcmludChmdWxsIG5hbWUpIiwiYXR0ciI6eyJleGVyY2lzZSI6ImZpeF9qb24iLCJldmFsIjp0cnVlLCJjb21wbGV0aW9uIjp0cnVlLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZX19
 </script>
 </div>
 <div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="fix_jon">
@@ -1048,7 +1045,7 @@ Note
 
 </div>
 <script type="pyodide-48-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6Im5hbWUgPSBcIkpvblwiXG5zdXJuYW1lID0gXCJzbm93XCIgXG5mdWxsX25hbWUgPSBuYW1lICsgXCIgXCIgKyBzdXJuYW1lLmNhcGl0YWxpemUoKVxucHJpbnQoZnVsbF9uYW1lKVxuXG4jIE9yXG5cbm5hbWUgPSBcIkpvblwiXG5zdXJuYW1lID0gXCJzbm93XCIgXG5mdWxsX25hbWUgPSBmXCJ7bmFtZX0ge3N1cm5hbWUuY2FwaXRhbGl6ZSgpfVwiXG5wcmludChmdWxsX25hbWUpIn0=
+eyJjb2RlIjoibmFtZSA9IFwiSm9uXCJcbnN1cm5hbWUgPSBcInNub3dcIiBcbmZ1bGxfbmFtZSA9IG5hbWUgKyBcIiBcIiArIHN1cm5hbWUuY2FwaXRhbGl6ZSgpXG5wcmludChmdWxsX25hbWUpXG5cbiMgT3JcblxubmFtZSA9IFwiSm9uXCJcbnN1cm5hbWUgPSBcInNub3dcIiBcbmZ1bGxfbmFtZSA9IGZcIntuYW1lfSB7c3VybmFtZS5jYXBpdGFsaXplKCl9XCJcbnByaW50KGZ1bGxfbmFtZSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 </div>
@@ -1061,7 +1058,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-49-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImV4ZXJjaXNlIjoiZml4X2pvbjIiLCJhdXRvcnVuIjpmYWxzZSwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJuYW1lID0gXCJKb25cIlxuc3VybmFtZSA9IFwiU25vd1wiXG5BZ2UgPSAyMFxuYmlydGhfcGxhY2UgPSBcIk5vcnRoZXJuIEtpbmdkb21cIlxucHJpbnQobmFtZSArICcgJyArIHN1cm5hbWUgKyAnIGlzIOKAmCArIGFnZSArICcgeWVhcnMgb2xkIGFuZCBpcyBmcm9tIHRoZSAnICsgYmlydGhfcGxhY2UpIn0=
+eyJjb2RlIjoibmFtZSA9IFwiSm9uXCJcbnN1cm5hbWUgPSBcIlNub3dcIlxuQWdlID0gMjBcbmJpcnRoX3BsYWNlID0gXCJOb3J0aGVybiBLaW5nZG9tXCJcbnByaW50KG5hbWUgKyAnICcgKyBzdXJuYW1lICsgJyBpcyDigJggKyBhZ2UgKyAnIHllYXJzIG9sZCBhbmQgaXMgZnJvbSB0aGUgJyArIGJpcnRoX3BsYWNlKSIsImF0dHIiOnsiZXhlcmNpc2UiOiJmaXhfam9uMiIsImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 <div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="fix_jon2">
@@ -1100,7 +1097,7 @@ Note
 
 </div>
 <script type="pyodide-50-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6Im5hbWUgPSBcIkpvblwiXG5zdXJuYW1lID0gXCJTbm93XCJcbkFnZSA9IDIwXG5iaXJ0aF9wbGFjZSA9IFwiTm9ydGhlcm4gS2luZ2RvbVwiXG5wcmludChuYW1lICsgJyAnICsgc3VybmFtZSArICcgaXMgJyArIHN0cihhZ2UpICsgJyB5ZWFycyBvbGQgYW5kIGhlIGlzIGZyb20gJyArIGJpcnRoX3BsYWNlKVxuIyBPclxuXG5wcmludChmXCJ7bmFtZX0ge3N1cm5hbWV9IGlzIHthZ2V9IHllYXJzIG9sZCBhbmQgaGUgaXMgZnJvbSB7YmlydGhfcGxhY2V9XCJcIikifQ==
+eyJjb2RlIjoibmFtZSA9IFwiSm9uXCJcbnN1cm5hbWUgPSBcIlNub3dcIlxuQWdlID0gMjBcbmJpcnRoX3BsYWNlID0gXCJOb3J0aGVybiBLaW5nZG9tXCJcbnByaW50KG5hbWUgKyAnICcgKyBzdXJuYW1lICsgJyBpcyAnICsgc3RyKGFnZSkgKyAnIHllYXJzIG9sZCBhbmQgaGUgaXMgZnJvbSAnICsgYmlydGhfcGxhY2UpXG4jIE9yXG5cbnByaW50KGZcIntuYW1lfSB7c3VybmFtZX0gaXMge2FnZX0geWVhcnMgb2xkIGFuZCBoZSBpcyBmcm9tIHtiaXJ0aF9wbGFjZX1cIlwiKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 </div>
@@ -1116,7 +1113,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-51-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6InRoZV9hbnN3ZXIgPSA0MlxucHJpbnQoZlwiVGhlIGFuc3dlciB0byBsaWZlLCB0aGUgdW5pdmVyc2UsIGFuZCBldmVyeXRoaW5nIGVsc2UgaXMge3RoZV9hbnN3ZXJ9XCIpIn0=
+eyJjb2RlIjoidGhlX2Fuc3dlciA9IDQyXG5wcmludChmXCJUaGUgYW5zd2VyIHRvIGxpZmUsIHRoZSB1bml2ZXJzZSwgYW5kIGV2ZXJ5dGhpbmcgZWxzZSBpcyB7dGhlX2Fuc3dlcn1cIikiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 <p>f-strings have a very powerfull <a href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">formatting language</a> that allows to specify how the strings should be created.</p>
@@ -1125,7 +1122,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-52-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6InNvbWVfbnVtYmVyID0gMTBcbnByaW50KGZcIkFzIGEgZGVjaW1hbCBpbnRlZ2VyIHtzb21lX251bWJlcjpkfVwiKVxucHJpbnQoZlwiRmxvYXQgd2l0aCB0d28gZGVjaW1hbHMge3NvbWVfbnVtYmVyOi4yZn1cIilcbnByaW50KGZcIlBhZGRlZCBkZWNpbWFsIGludGVnZXIge3NvbWVfbnVtYmVyOjA1ZH1cIilcbnByaW50KGZcIkJpbm5hcnkgaW50ZWdlciB7c29tZV9udW1iZXI6Yn1cIikifQ==
+eyJjb2RlIjoic29tZV9udW1iZXIgPSAxMFxucHJpbnQoZlwiQXMgYSBkZWNpbWFsIGludGVnZXIge3NvbWVfbnVtYmVyOmR9XCIpXG5wcmludChmXCJGbG9hdCB3aXRoIHR3byBkZWNpbWFscyB7c29tZV9udW1iZXI6LjJmfVwiKVxucHJpbnQoZlwiUGFkZGVkIGRlY2ltYWwgaW50ZWdlciB7c29tZV9udW1iZXI6MDVkfVwiKVxucHJpbnQoZlwiQmlubmFyeSBpbnRlZ2VyIHtzb21lX251bWJlcjpifVwiKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiY29tcGxldGlvbiI6dHJ1ZSwiYXV0b3J1biI6ZmFsc2UsImVkaXQiOnRydWV9fQ==
 </script>
 </div>
 </section>
@@ -1137,7 +1134,7 @@ eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4i
 
 </div>
 <script type="pyodide-53-contents">
-eyJhdHRyIjp7ImNvbXBsZXRpb24iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImF1dG9ydW4iOmZhbHNlfSwiY29kZSI6ImltcG9ydCBzdHJpbmdcbmZvciBjaGFyYWN0ZXIgaW4gc3RyaW5nLnByaW50YWJsZTpcbiAgICBwcmludChmXCJ7Y2hhcmFjdGVyfSAtPiB7b3JkKGNoYXJhY3Rlcil9XCIpIn0=
+eyJjb2RlIjoiaW1wb3J0IHN0cmluZ1xuZm9yIGNoYXJhY3RlciBpbiBzdHJpbmcucHJpbnRhYmxlOlxuICAgIHByaW50KGZcIntjaGFyYWN0ZXJ9IC0+IHtvcmQoY2hhcmFjdGVyKX1cIikiLCJhdHRyIjp7ImV2YWwiOnRydWUsImNvbXBsZXRpb24iOnRydWUsImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlfX0=
 </script>
 </div>
 
@@ -1159,7 +1156,6 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTUzIiwiaW5saW5lIjpmYWxzZSwic291cmNl
 <script type="vfs-file">
 W10=
 </script>
-</section>
 </section>
 
 </main> <!-- /main -->
