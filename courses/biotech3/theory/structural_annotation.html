@@ -7,9 +7,10 @@
 
     <title>Structural Annotation &#8212; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
@@ -18,8 +19,9 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
 
   </head><body>
   
@@ -52,7 +54,8 @@ They can be supported by different amounts of experimental evidence and the meth
 One popular option is to use <a class="reference external" href="http://rebase.neb.com/rebase/rebase.html">Rebase</a>.
 Then a software programe can be used to look for the restriction sites in the nucleotide sequence.
 <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/remap.html">remap</a> from EMBOSS is one of the options.</p>
-<a class="reference external image-reference" href="../static/annotation/enzimas.png"><img alt="restriction map" src="../_images/enzimas.png" /></a>
+<a class="reference external image-reference" href="../static/annotation/enzimas.png"><img alt="restriction map" src="../_images/enzimas.png" />
+</a>
 <p>A restriction map can be used to map the sequences against a bigger physical map. Nowadays is quite common to use the maps created by the Bionano company for that porpose.</p>
 </section>
 <section id="translating-a-dna-sequence">
@@ -88,7 +91,8 @@ For instance, the human mithocondria uses a slight variation of the genetic code
 </pre></div>
 </div>
 <p>EMBOSS has two programs to get the six possible translations <a class="reference external" href="http://emboss.open-bio.org/rel/rel6/apps/transeq.html">transeq</a> and <a class="reference external" href="http://emboss.open-bio.org/rel/rel6/apps/sixpack.html">sixpack</a>.</p>
-<a class="reference external image-reference" href="../static/annotation/6_pautas.png"><img alt="six frames" src="../_images/6_pautas.png" /></a>
+<a class="reference external image-reference" href="../static/annotation/6_pautas.png"><img alt="six frames" src="../_images/6_pautas.png" />
+</a>
 <section id="backtranslation">
 <h3>Backtranslation<a class="headerlink" href="#backtranslation" title="Link to this heading">¶</a></h3>
 <p>We can also backtranslate a peptide sequence to a nucleotide sequence.
@@ -110,14 +114,16 @@ EMBOSS can do it with the program <a class="reference external" href="http://emb
 Different organisms have different biases.
 They tend to prefer one codon over others to code for a particular aminoacid.</p>
 <p>By counting how many times an aminoacid is used in the proteins coded by an organism nucleotide sequences a Codon Usage Table can be compiled for every species.</p>
-<a class="reference external image-reference" href="../static/annotation/codones.png"><img alt="codon usage table" src="../_images/codones.png" /></a>
+<a class="reference external image-reference" href="../static/annotation/codones.png"><img alt="codon usage table" src="../_images/codones.png" />
+</a>
 <p>There is a <a class="reference external" href="http://www.kazusa.or.jp/codon/">codon usage database</a> available on line.</p>
 </section>
 <section id="orfs">
 <h2>ORFs<a class="headerlink" href="#orfs" title="Link to this heading">¶</a></h2>
 <p>An <a class="reference external" href="https://en.wikipedia.org/wiki/Open_reading_frame">Open Reading Frame</a> (ORF) is the strecth of a reading frame that do not contain a stop codon.
 An AUG codon in a ORF might indicate the translation start.</p>
-<a class="reference external image-reference" href="../static/annotation/orfs.png"><img alt="orfs" src="../_images/orfs.png" /></a>
+<a class="reference external image-reference" href="../static/annotation/orfs.png"><img alt="orfs" src="../_images/orfs.png" />
+</a>
 <p>There is software in EMBOSS to show the ORFs (<a class="reference external" href="http://emboss.open-bio.org/rel/rel6/apps/plotorf.html">plotorf</a>) and to get their translations (<a class="reference external" href="http://emboss.open-bio.org/rel/rel6/apps/showorf.html">showorf</a>).</p>
 <section id="cds-prediction">
 <h3>CDS prediction<a class="headerlink" href="#cds-prediction" title="Link to this heading">¶</a></h3>
@@ -131,7 +137,8 @@ There are several confusing factors:</p>
 <li><p>the start codon might be outside the sequence.</p></li>
 <li><p>There might be sequencing errors that create artifactual stop codong or that shift the frame</p></li>
 </ul>
-<a class="reference external image-reference" href="../static/annotation/orfs.png"><img alt="orfs" src="../_images/orfs.png" /></a>
+<a class="reference external image-reference" href="../static/annotation/orfs.png"><img alt="orfs" src="../_images/orfs.png" />
+</a>
 <p>There are different hints that can point to the ORF that corresponds to the real CDS.</p>
 <p>The codon use table for the species can be used to detect the real CDS.
 The real CDS will tend to use the codond prefered by the species, while the other ORFs will use codons at random.
@@ -139,7 +146,8 @@ From these fact the coding likelihood of all six frames of a nucleotide sequence
 <p>Even if we don’t have the codon use table for the species we can still use the codon bias to help with the detection of the CDSs.
 The codon bias will create a bias in the nucleotide frequencies of the third base.
 We can plot the GC content of the third base of the codons along a window for all six possible frames and detect biases there.</p>
-<a class="reference external image-reference" href="../static/annotation/wobble.png"><img alt="third base bias" src="../_images/wobble.png" /></a>
+<a class="reference external image-reference" href="../static/annotation/wobble.png"><img alt="third base bias" src="../_images/wobble.png" />
+</a>
 <p>Another hint that can be used to detect CDSs is the protein conservation.
 Most proteins have similar proteins from other organisms in the database.
 BLAST can translate the six frames and can do a search aginst the known proteins.
@@ -148,7 +156,8 @@ A similarity in a fragment of a frame with a known protein is an indication that
 Also, in the eucaryotes, the CDS will be split by the introns and can be divided in different jump.
 There are software that integrates the codon usage bias, the presence of start and stop codons and the sequences required by the splice sites to calculate a probability of any region of a nucleotide sequence being a coding region.
 One example of such software is <a class="reference external" href="http://exon.gatech.edu/GeneMark/">GeneMark</a>.</p>
-<a class="reference external image-reference" href="../static/annotation/genemark.png"><img alt="GeneMark result" src="../_images/genemark.png" /></a>
+<a class="reference external image-reference" href="../static/annotation/genemark.png"><img alt="GeneMark result" src="../_images/genemark.png" />
+</a>
 </section>
 </section>
 <section id="promoter-prediction">
@@ -202,8 +211,10 @@ The problem with them is that they do not include information about the sequence
 Maybe one of the alternative nucleotides is found many more times the others.
 It could be well the case that TATAAA is more common than TATAAT, but that information is lost in the sequence pattern.</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Position_weight_matrix">Position-specific scoring matrix</a>. They include the frequency of all the residues for every position.</p>
-<a class="reference external image-reference" href="../static/annotation/pssm.png"><img alt="Scoring matrix" src="../_images/pssm.png" /></a>
-<a class="reference external image-reference" href="../static/multiple/sequence_logo.png"><img alt="Sequence logo" src="../_images/sequence_logo.png" /></a>
+<a class="reference external image-reference" href="../static/annotation/pssm.png"><img alt="Scoring matrix" src="../_images/pssm.png" />
+</a>
+<a class="reference external image-reference" href="../static/multiple/sequence_logo.png"><img alt="Sequence logo" src="../_images/sequence_logo.png" />
+</a>
 </section>
 <section id="detecting-transcription-factor-sites">
 <h3>Detecting transcription factor sites<a class="headerlink" href="#detecting-transcription-factor-sites" title="Link to this heading">¶</a></h3>
@@ -211,7 +222,8 @@ It could be well the case that TATAAA is more common than TATAAT, but that infor
 The best of them are capable of recognizing at most 60% of the promoters, and they product many false positives.
 There are several programs to do the transcription site an promoter detection like:
 <a class="reference external" href="http://emboss.sourceforge.net/apps/cvs/emboss/apps/tfscan.html">tfscan</a>, <a class="reference external" href="http://emboss.sourceforge.net/apps/cvs/emboss/apps/jaspscan.html">jaspscan</a> or <a class="reference external" href="http://compbio.ornl.gov/grailexp/">GrailEXP</a>.</p>
-<a class="reference external image-reference" href="../static/multiple/jaspscan.png"><img alt="jaspscan result" src="../_images/jaspscan.png" /></a>
+<a class="reference external image-reference" href="../static/multiple/jaspscan.png"><img alt="jaspscan result" src="../_images/jaspscan.png" />
+</a>
 <p>We can also align the promoter regions from very close species.
 The sites binded by the transcription factors will tend to be more consereved than the rest of the promoter because they have more functional relevance.</p>
 </section>
@@ -232,7 +244,8 @@ Also, the size of the non-coding regions can be quite large, specially the intro
 <p>We can use the information provided by the ESTs or cDNA to locate regions expressed in the genome. These regions will tend to be genes.
 We can also use this information to build the structure of the different mRNAs that a gene can produce.</p>
 <p>We can use the programs <a class="reference external" href="http://emboss.sourceforge.net/apps/cvs/emboss/apps/est2genome.html">est2genome</a> and <a class="reference external" href="http://emboss.sourceforge.net/apps/release/6.2/embassy/esim4/esim4.html">esim4</a> from EMBOSS to do these alignments.</p>
-<a class="reference external image-reference" href="../static/multiple/est2genome.png"><img alt="EST2genome result" src="../_images/est2genome.png" /></a>
+<a class="reference external image-reference" href="../static/multiple/est2genome.png"><img alt="EST2genome result" src="../_images/est2genome.png" />
+</a>
 <p>To be able to use these method of detecting genes we need to have transcriptomic sequence data.
 Even with these data at hand we should consider different limitations:</p>
 <ul class="simple">
@@ -277,10 +290,10 @@ Of course, the more evidence and the higher quality that evidence is the easier 
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/comav.png" alt="Logo"/>
+              <img class="logo" src="../_static/comav.png" alt="Logo of Bioinformatics at COMAV"/>
             </a></p>
 <h1 class="logo"><a href="../index.html">Bioinformatics at COMAV</a></h1>
 
@@ -291,7 +304,16 @@ Of course, the more evidence and the higher quality that evidence is the easier 
 
 
 
-<h3>Navigation</h3>
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../norms.html#tutoring">Tutoring</a></li>
@@ -328,16 +350,6 @@ Of course, the more evidence and the higher quality that evidence is the easier 
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -351,11 +363,11 @@ Of course, the more evidence and the higher quality that evidence is the easier 
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2010, Jose Blanca & Joaquin Cañizares.
+      &#169;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.0.2</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
     </div>
 

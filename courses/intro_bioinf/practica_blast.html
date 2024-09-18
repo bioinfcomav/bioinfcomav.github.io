@@ -7,9 +7,10 @@
 
     <title>Búsqueda de secuencias utilizando BLAST &#8212; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
     <script src="_static/documentation_options.js?v=2709fde1"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -18,8 +19,9 @@
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
 
   </head><body>
   
@@ -42,7 +44,8 @@
 <p>La página principal del <a class="reference external" href="http://www.ncbi.nlm.nih.gov/BLAST/">BLAST</a> en el NCBI nos permite elegir directamente distintos organismos (Human, Mouse, etc.), distintos programas (blastn, blastp, etc.) y otras búsquedas más especializadas.
 Vamos a hacer un blast con ADN (nucleotide blast) utilizando una secuencia de ejemplo de <a class="reference download internal" download="" href="_downloads/f69d17cdb5c7068eb59d06394e800a67/tc573649.fasta"><code class="xref download docutils literal notranslate"><span class="pre">rata</span></code></a>.</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="_images/blast_form.png"><img alt="_images/blast_form.png" src="_images/blast_form.png" style="width: 709.6px; height: 520.8000000000001px;" /></a>
+<a class="reference internal image-reference" href="_images/blast_form.png"><img alt="_images/blast_form.png" src="_images/blast_form.png" style="width: 709.6px; height: 520.8000000000001px;" />
+</a>
 </figure>
 <p>En la página de búsqueda del BLAST podemos modificar numerosos parámetros.</p>
 <p>El más importante de ellos es la secuencia que queremos utilizar en la búsqueda (Enter Query Sequence).
@@ -57,7 +60,8 @@ Cuanto más sensible sea el algoritmo más tiempo tardará la búsqueda.</p>
 <p>Como ejemplo realizar una búsqueda con megablast sobre la base de datos humana.</p>
 <p>Mientras el BLAST se está ejecutando veremos una página en la que se nos informa sobre el tiempo estimado que requerirá la búsqueda.</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="_images/blast_running.png"><img alt="_images/blast_running.png" src="_images/blast_running.png" style="width: 755.2px; height: 136.0px;" /></a>
+<a class="reference internal image-reference" href="_images/blast_running.png"><img alt="_images/blast_running.png" src="_images/blast_running.png" style="width: 755.2px; height: 136.0px;" />
+</a>
 </figure>
 </section>
 <section id="pagina-de-resultados">
@@ -65,7 +69,8 @@ Cuanto más sensible sea el algoritmo más tiempo tardará la búsqueda.</p>
 <p>El resultado del BLAST se divide en varias secciones.
 En la primera se nos informa sobre la versión del programa utilizado, el nombre de la base de datos y el número de secuencias buscadas.</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="_images/blast_result1.png"><img alt="_images/blast_result1.png" src="_images/blast_result1.png" style="width: 647.2px; height: 266.40000000000003px;" /></a>
+<a class="reference internal image-reference" href="_images/blast_result1.png"><img alt="_images/blast_result1.png" src="_images/blast_result1.png" style="width: 647.2px; height: 266.40000000000003px;" />
+</a>
 </figure>
 <p>A continuación aparecen una figura y una tabla con un resumen de los resultados.
 En la figura se observa una fila para cada una de las secuencias similares obtenidas (hit).
@@ -75,13 +80,15 @@ Estas regiones están pintadas de un color u otro dependiendo del E-value corres
 <p>¿Cuantos HSPs tiene el primer hit, y el segundo y el tercero?</p>
 <p>¿Tienen todos los HSPs el mismo E-value?</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="_images/blast_result2.png"><img alt="_images/blast_result2.png" src="_images/blast_result2.png" style="width: 480.8px; height: 185.60000000000002px;" /></a>
+<a class="reference internal image-reference" href="_images/blast_result2.png"><img alt="_images/blast_result2.png" src="_images/blast_result2.png" style="width: 480.8px; height: 185.60000000000002px;" />
+</a>
 </figure>
 <p>En la tabla también se encuentran los distintos resultados (hits).
 Para cada uno se puede observar la definición de la secuencia (description) y el E-value.
 En la tabla los hits están ordenados por el E-value, de menor a mayor.</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="_images/blast_result3.png"><img alt="_images/blast_result3.png" src="_images/blast_result3.png" style="width: 764.8000000000001px; height: 369.6px;" /></a>
+<a class="reference internal image-reference" href="_images/blast_result3.png"><img alt="_images/blast_result3.png" src="_images/blast_result3.png" style="width: 764.8000000000001px; height: 369.6px;" />
+</a>
 </figure>
 <p>En la siguiente sección de la página de resultados se muestran los alineamientos de la secuencia problema (query) con las distintas secuencias de la base de datos (Sbjct).
 Para cada una de ellas se muestra la descripción y los alineamientos correspondientes a los distintos HSPs.</p>
@@ -90,7 +97,8 @@ Para cada una de ellas se muestra la descripción y los alineamientos correspond
 <p>¿Con que criterio están ordenados los HSPs dentro de cada secuencia?</p>
 <p>¿Qué E-value aparece en la tabla resumen?</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="_images/blast_result4.png"><img alt="_images/blast_result4.png" src="_images/blast_result4.png" style="width: 680.0px; height: 512.0px;" /></a>
+<a class="reference internal image-reference" href="_images/blast_result4.png"><img alt="_images/blast_result4.png" src="_images/blast_result4.png" style="width: 680.0px; height: 512.0px;" />
+</a>
 </figure>
 </section>
 </section>
@@ -131,10 +139,10 @@ Una vez obtenida la PCR la enviamos a secuenciar y obtenemos la secuencia para u
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
-              <img class="logo" src="_static/comav.png" alt="Logo"/>
+              <img class="logo" src="_static/comav.png" alt="Logo of Bioinformatics at COMAV"/>
             </a></p>
 <h1 class="logo"><a href="index.html">Bioinformatics at COMAV</a></h1>
 
@@ -145,7 +153,16 @@ Una vez obtenida la PCR la enviamos a secuenciar y obtenemos la secuencia para u
 
 
 
-<h3>Navigation</h3>
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="bases_datos.html">Bases de datos biológicas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="practica_bases.html">Práctica bases de datos</a></li>
@@ -178,16 +195,6 @@ Una vez obtenida la PCR la enviamos a secuenciar y obtenemos la secuencia para u
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -201,11 +208,11 @@ Una vez obtenida la PCR la enviamos a secuenciar y obtenemos la secuencia para u
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2010, Jose Blanca & Joaquin Cañizares.
+      &#169;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.0.2</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
     </div>
 

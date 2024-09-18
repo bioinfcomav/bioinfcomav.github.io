@@ -7,9 +7,10 @@
 
     <title>Multiple Sequence Alignment &#8212; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
@@ -18,8 +19,9 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
 
   </head><body>
   
@@ -37,7 +39,8 @@
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
 <p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Multiple_sequence_alignment">Multiple Sequence Alignment</a> is an alignment of more than two sequences.
 We could align several DNA or protein sequences.</p>
-<a class="reference external image-reference" href="../static/multiple/alig_mul_prot.png"><img alt="Multiple Alignment" src="../_images/alig_mul_prot.png" /></a>
+<a class="reference external image-reference" href="../static/multiple/alig_mul_prot.png"><img alt="Multiple Alignment" src="../_images/alig_mul_prot.png" />
+</a>
 <p>Some of the most usual uses of the multiple alignments are:</p>
 <ul class="simple">
 <li><p>phylogenetic analysis</p></li>
@@ -47,7 +50,8 @@ We could align several DNA or protein sequences.</p>
 </ul>
 <p>The multiple sequence alignment asumes that the sequences are homologous, they descend from a common ancestor.
 The algorithms will try to align homologous positions or regions with the same structure or function.</p>
-<a class="reference external image-reference" href="../static/multiple/evol_seqs_homologas.png"><img alt="Evol seqs homologas" src="../_images/evol_seqs_homologas.png" /></a>
+<a class="reference external image-reference" href="../static/multiple/evol_seqs_homologas.png"><img alt="Evol seqs homologas" src="../_images/evol_seqs_homologas.png" />
+</a>
 </section>
 <section id="multiple-alignment-algorithm">
 <h2>Multiple alignment algorithm<a class="headerlink" href="#multiple-alignment-algorithm" title="Link to this heading">¶</a></h2>
@@ -84,9 +88,11 @@ These matrix will include the similarity relations between all sequences.</p>
 <p>Once we have this matrix we can determine the hierarchical relation between the sequences, which are the closest pairs and how those pairs are related and so on, by creating a <a class="reference external" href="https://en.wikipedia.org/wiki/Hierarchical_clustering">hierarchical clustering</a>, a tree.
 We can create these threes by using different fast algorithms like <a class="reference external" href="https://en.wikipedia.org/wiki/UPGMA">UPGMA</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Neighbor_joining">Neighbor joining</a>.
 These trees are usually known as guide trees.</p>
-<a class="reference external image-reference" href="../static/multiple/alin_progresivo.png"><img alt="Progressive alignment" src="../_images/alin_progresivo.png" /></a>
+<a class="reference external image-reference" href="../static/multiple/alin_progresivo.png"><img alt="Progressive alignment" src="../_images/alin_progresivo.png" />
+</a>
 <p>An example:</p>
-<a class="reference external image-reference" href="../static/multiple/arbol.png"><img alt="Progressive alignment example" src="../_images/arbol.png" /></a>
+<a class="reference external image-reference" href="../static/multiple/arbol.png"><img alt="Progressive alignment example" src="../_images/arbol.png" />
+</a>
 <p>Another example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Secuences</span><span class="p">:</span>
 <span class="n">IMPRESIONANTE</span>
@@ -209,10 +215,10 @@ Another old software, that has been abandoned by its developer is <a class="refe
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/comav.png" alt="Logo"/>
+              <img class="logo" src="../_static/comav.png" alt="Logo of Bioinformatics at COMAV"/>
             </a></p>
 <h1 class="logo"><a href="../index.html">Bioinformatics at COMAV</a></h1>
 
@@ -223,7 +229,16 @@ Another old software, that has been abandoned by its developer is <a class="refe
 
 
 
-<h3>Navigation</h3>
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../norms.html#tutoring">Tutoring</a></li>
@@ -260,16 +275,6 @@ Another old software, that has been abandoned by its developer is <a class="refe
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -283,11 +288,11 @@ Another old software, that has been abandoned by its developer is <a class="refe
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2010, Jose Blanca & Joaquin Cañizares.
+      &#169;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.0.2</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
     </div>
 

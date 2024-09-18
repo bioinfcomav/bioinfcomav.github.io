@@ -7,9 +7,10 @@
 
     <title>Flujos de información &#8212; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
     <script src="_static/documentation_options.js?v=2709fde1"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
@@ -18,8 +19,9 @@
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
 
   </head><body>
   
@@ -34,7 +36,8 @@
   <section id="flujos-de-informacion">
 <h1>Flujos de información<a class="headerlink" href="#flujos-de-informacion" title="Link to this heading">¶</a></h1>
 <p>Los programas en línea de comandos, además de poder leer y escribir en ficheros, pueden tomar argumentos como entrada, realizar una tarea e imprimir una salida en la pantalla.</p>
-<a class="reference external image-reference" href="./static/cli_program.png"><img alt="alt text" src="_images/cli_program.png" /></a>
+<a class="reference external image-reference" href="./static/cli_program.png"><img alt="alt text" src="_images/cli_program.png" />
+</a>
 <p>Por ejemplo, al ejecutar el comando <em>ls</em> se imprime un listado en la pantalla. Esto que acaba siendo impreso en la pantalla constituye lo que se denomina un flujo de información.</p>
 <section id="flujos-de-informacion-estandar">
 <h2>Flujos de información estándar<a class="headerlink" href="#flujos-de-informacion-estandar" title="Link to this heading">¶</a></h2>
@@ -90,7 +93,8 @@ listado.txt
 <h2>Pipes<a class="headerlink" href="#pipes" title="Link to this heading">¶</a></h2>
 <p>En Unix además de redirigir los flujos de información hacia un fichero podemos unir el flujo de salida de un programa con el de entrada de otro utilizando un <em>pipe</em> (tubería).
 El símbolo para el pipe es |.</p>
-<a class="reference external image-reference" href="./static/pipe.png"><img alt="alt text" src="_images/pipe.png" /></a>
+<a class="reference external image-reference" href="./static/pipe.png"><img alt="alt text" src="_images/pipe.png" />
+</a>
 <p>Hagamos un ejemplo con los comandos <em>wc</em> (Word Count) y <em>cat</em>. <em>wc</em> sirve para contar líneas, palabras y caracteres.
 Veamos cuántos archivos y directorios hay en el directorio actual:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ ls &gt; listado.txt
@@ -153,10 +157,10 @@ Veamos cuántos archivos y directorios hay en el directorio actual:</p>
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
-              <img class="logo" src="_static/comav.png" alt="Logo"/>
+              <img class="logo" src="_static/comav.png" alt="Logo of Bioinformatics at COMAV"/>
             </a></p>
 <h1 class="logo"><a href="index.html">Bioinformatics at COMAV</a></h1>
 
@@ -167,7 +171,16 @@ Veamos cuántos archivos y directorios hay en el directorio actual:</p>
 
 
 
-<h3>Navigation</h3>
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="unix_intro.html">Unix y Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="unix_intro.html#introduccion-a-ubuntu">Introducción a Ubuntu</a></li>
@@ -204,16 +217,6 @@ Veamos cuántos archivos y directorios hay en el directorio actual:</p>
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -227,11 +230,11 @@ Veamos cuántos archivos y directorios hay en el directorio actual:</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2010, Jose Blanca & Joaquin Cañizares.
+      &#169;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.0.2</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
     </div>
 

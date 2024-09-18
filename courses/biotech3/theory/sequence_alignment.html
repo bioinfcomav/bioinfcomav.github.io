@@ -7,9 +7,10 @@
 
     <title>Sequence Alignment &#8212; Bioinformatics at COMAV 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="search" title="Search" href="../search.html" />
@@ -18,8 +19,9 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
 
   </head><body>
   
@@ -39,9 +41,11 @@
 The sequences for the same gene in a group of species will be more different the more distant phylogenetically they are.
 Sequences will get mutations over time, so the more time has passed since two species split, the more mutations will have their sequences and the more different their sequences will be.
 Mutations can be residue (nucleotide or aminoacid) substitutions, insertions or deletions.</p>
-<a class="reference external image-reference" href="../static/finches.jpg"><img alt="Darwin finches" src="../_images/finches.jpg" /></a>
+<a class="reference external image-reference" href="../static/finches.jpg"><img alt="Darwin finches" src="../_images/finches.jpg" />
+</a>
 <p>(From BSCS, Biological Science: Molecules to Man, Houghton Mifflin Co., 1963)</p>
-<a class="reference external image-reference" href="../static/finch_tree.png"><img alt="Finches tree" src="../_images/finch_tree.png" /></a>
+<a class="reference external image-reference" href="../static/finch_tree.png"><img alt="Finches tree" src="../_images/finch_tree.png" />
+</a>
 <p>Biological sequences are similar, usually, because they are homologous, because they share a common ancestor.
 Homology is not a quantitative concept, two sequences can be homologous or not, but they cannot be 50% homologous.
 They either share a common ancestor or they don’t.</p>
@@ -179,15 +183,19 @@ The matches between both sequences are shown as marks in the corresponding posit
 </pre></div>
 </div>
 <p>The alignment is shown as a diagonal in the plot.</p>
-<a class="reference external image-reference" href="../static/dot.png"><img alt="Dot Plot" src="../_images/dot.png" /></a>
+<a class="reference external image-reference" href="../static/dot.png"><img alt="Dot Plot" src="../_images/dot.png" />
+</a>
 <p>There are different programs to create dot plots.
 An example is dotmatcher from the <a class="reference external" href="http://emboss.sourceforge.net/">emboss</a> suite.</p>
 <p>It is easy to detect big insertions, deletions and forward and reverse repeats.</p>
-<a class="reference external image-reference" href="../static/dotplots.png"><img alt="Dot Plot with altered structured" src="../_images/dotplots.png" /></a>
+<a class="reference external image-reference" href="../static/dotplots.png"><img alt="Dot Plot with altered structured" src="../_images/dotplots.png" />
+</a>
 <p>Tandem duplication.</p>
-<a class="reference external image-reference" href="../static/duplicacion_dotmatrix.png"><img alt="Dot Plot duplication" src="../_images/duplicacion_dotmatrix.png" /></a>
+<a class="reference external image-reference" href="../static/duplicacion_dotmatrix.png"><img alt="Dot Plot duplication" src="../_images/duplicacion_dotmatrix.png" />
+</a>
 <p>And we can do a genome wide analysis.</p>
-<a class="reference external image-reference" href="../static/arabidopsis.png"><img alt="Arabidopsis Dot Plot" src="../_images/arabidopsis.png" /></a>
+<a class="reference external image-reference" href="../static/arabidopsis.png"><img alt="Arabidopsis Dot Plot" src="../_images/arabidopsis.png" />
+</a>
 <p>One limitation of the dotplot method is that although we detect similar regions we do not obtain the alignment.</p>
 </section>
 <section id="sensitivity-and-specificity">
@@ -196,8 +204,10 @@ An example is dotmatcher from the <a class="reference external" href="http://emb
 In that case a similarity threshold is set to mark a position as similar.
 These parameters will influence the sensitivity and specificity of the analysis.
 If we increase the threshold for a given window size or we decrease the window size for a given threshold we will obtain less spurious signals.</p>
-<a class="reference external image-reference" href="../static/protein_dottup_3.png"><img alt="protein dotup word 3" src="../_images/protein_dottup_3.png" /></a>
-<a class="reference external image-reference" href="../static/protein_dottup_4.png"><img alt="protein dotup word 4" src="../_images/protein_dottup_4.png" /></a>
+<a class="reference external image-reference" href="../static/protein_dottup_3.png"><img alt="protein dotup word 3" src="../_images/protein_dottup_3.png" />
+</a>
+<a class="reference external image-reference" href="../static/protein_dottup_4.png"><img alt="protein dotup word 4" src="../_images/protein_dottup_4.png" />
+</a>
 <p>The more stringent the parameters the less noise we will detect, but the more real alignments we will loose.
 This is related with two very important concepts that can be applied to many bioinformatic and statistical analyses: <a class="reference external" href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">sensitivity and specificity</a>.</p>
 <p>In a dotplot analysis we can draw a dot when two homologous positions match.
@@ -212,7 +222,8 @@ Ideally we would like to have a 100% percent sensitivity, we would like to mark 
 <p>The specificity is the proportion of true negatives that are called negative by our analysis.
 It is also know as true negative rate.
 Ideally we would like to call all true negatives as negatives.</p>
-<a class="reference external image-reference" href="../static/sensitivity_specificity.png"><img alt="Senstitivity and Specificity" src="../_images/sensitivity_specificity.png" /></a>
+<a class="reference external image-reference" href="../static/sensitivity_specificity.png"><img alt="Senstitivity and Specificity" src="../_images/sensitivity_specificity.png" />
+</a>
 <p>In practice most of the time we will miss some positives, so the sensitivity will be lower than 100% and we will detect signals for some negatives.
 In the dotplot case a false positive would be a region that is marked as similar, but that it is not homologous and a false negative it is a region that is not marked as similar, but that it really is.</p>
 <p>Different analysis or different parameter sets will have different sensitivities and specificities.
@@ -225,7 +236,8 @@ These are very important characteristics of the analyses.</p>
 In those matrices the fragments that will constitute the alignments can be seen as diagonals.</p>
 <p>Dotplot diagonals suggest paths in the space of possible alignments.
 Each of these paths are a possible fragment of the final alignment.</p>
-<a class="reference external image-reference" href="../static/dot_plot_path.png"><img alt="Dot Plot Path" src="../_images/dot_plot_path.png" /></a>
+<a class="reference external image-reference" href="../static/dot_plot_path.png"><img alt="Dot Plot Path" src="../_images/dot_plot_path.png" />
+</a>
 <p>A general approach to detect the path through these diagonals is call <a class="reference external" href="https://en.wikipedia.org/wiki/Sequence_alignment#Dynamic_programming_2">dinamic programing</a>.
 One of the first algorithms implemented following these philosophy was the <a class="reference external" href="https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm">Needleman-Wunsch</a> algorithm.
 This algorithm creates global alignments of two sequences given a scoring schema.
@@ -420,10 +432,10 @@ As we will see there is software that calculate these kind of statistical signif
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/comav.png" alt="Logo"/>
+              <img class="logo" src="../_static/comav.png" alt="Logo of Bioinformatics at COMAV"/>
             </a></p>
 <h1 class="logo"><a href="../index.html">Bioinformatics at COMAV</a></h1>
 
@@ -434,7 +446,16 @@ As we will see there is software that calculate these kind of statistical signif
 
 
 
-<h3>Navigation</h3>
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../norms.html#tutoring">Tutoring</a></li>
@@ -471,16 +492,6 @@ As we will see there is software that calculate these kind of statistical signif
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -494,11 +505,11 @@ As we will see there is software that calculate these kind of statistical signif
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2010, Jose Blanca & Joaquin Cañizares.
+      &#169;2010, Jose Blanca & Joaquin Cañizares.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.0.2</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
     </div>
 
