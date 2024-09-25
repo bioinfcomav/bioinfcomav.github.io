@@ -235,7 +235,7 @@
     "href": "types_and_operators/dictionaries.html",
     "title": "Dictionaries",
     "section": "",
-    "text": "Read about dict, and more on dictionaries in the official documentation.\nA Real Python introduction to dictionaries.",
+    "text": "A Real Python introduction to dictionaries.\nRead about dictionaries, and more on dictionaries, in the official documentation.",
     "crumbs": [
       "Compound types",
       "Dictionaries"
@@ -246,7 +246,7 @@
     "href": "types_and_operators/dictionaries.html#resources",
     "title": "Dictionaries",
     "section": "",
-    "text": "Read about dict, and more on dictionaries in the official documentation.\nA Real Python introduction to dictionaries.",
+    "text": "A Real Python introduction to dictionaries.\nRead about dictionaries, and more on dictionaries, in the official documentation.",
     "crumbs": [
       "Compound types",
       "Dictionaries"
@@ -257,7 +257,18 @@
     "href": "types_and_operators/dictionaries.html#creation",
     "title": "Dictionaries",
     "section": "Creation",
-    "text": "Creation\nDictionaries, like lists, are compound types, they can hold several items. Lists are sequences, the elements that they hold are stored one after another, and we can access their items by their index, their position in the sequence.\n\n\n\n\n\n\n\n\n\n\n\nflowchart LR\n    subgraph values\n    John\n    Ringo\n    Paul\n    George\n    end\n    subgraph indexes\n    0\n    1\n    2\n    3\n    end\n    0 --&gt; John\n    1 --&gt; Ringo\n    2 --&gt; Paul\n    3 --&gt; George\n\n\n\n\n\n\nDictionaries also hold different values, but they are not ordered and, thus, we do not refer to them by their index. When we create a dictionary we assign a key to every value and we use those keys to access to the values.\n\n\n\n\n\nflowchart LR\n    subgraph values\n    Ringo\n    Starr\n    drums\n    end\n    subgraph keys\n    name\n    surname\n    instrument\n    end\n    name --&gt; Ringo\n    surname --&gt; Starr\n    instrument --&gt; drums\n\n\n\n\n\n\n\n\n\n\n\n\nWe create a dictionary using curly braces ({}), and we write the key and the value separated by a colon (:): {key1: value1, key2: value2}. In the previous example the keys were: “name”, “surname”, and “instrument”, and the values were: “Ringo”, “Starr”, and “drums”. As you have seen in the previous example, we can get the values stored in a dictionary by using square brackes: some_dictionary[key].\nA dictionary is a mapping, it maps keys to values. In other languages these kind of objects are called hash tables, hash maps or associative arrays.\nWe can ask Python to give us the all keys and values of a dictionary.\n\n\n\n\n\n\nBe aware that the methods keys and values return iterators, so to print lists we have to pass those iterators to the list function.\nWe can also iterate through tuples of keys and values.\n\n\n\n\n\n\nIf we want to know how many items is the dictionary holding we use the len function.",
+    "text": "Creation\nDictionaries, like lists, are compound types, they can hold several items. Lists are sequences, the elements that they hold are stored one after another, and we can access their items by their index, their position in the sequence.\nDictionaries also hold different values, but they are not ordered and, thus, we do not refer to them by their index. They are mappings, they assing a key to every value, and we use those keys to access to the values. In other languages these kind of objects are called hash tables, hash maps or associative arrays.\nAn example of a list:\n\n\n\n\n\n\n\n\n\n\n\nflowchart LR\n    subgraph values\n    John\n    Ringo\n    Paul\n    George\n    end\n    subgraph indexes\n    0\n    1\n    2\n    3\n    end\n    0 --&gt; John\n    1 --&gt; Ringo\n    2 --&gt; Paul\n    3 --&gt; George\n\n\n\n\n\n\nA dictionary:\n\n\n\n\n\nflowchart LR\n    subgraph values\n    Ringo\n    Starr\n    drums\n    end\n    subgraph keys\n    name\n    surname\n    instrument\n    end\n    name --&gt; Ringo\n    surname --&gt; Starr\n    instrument --&gt; drums\n\n\n\n\n\n\n\n\n\n\n\n\nWe create a dictionary using curly braces ({}), and we write the key and the value separated by a colon (:): {key1: value1, key2: value2}. In the previous example the keys were: “name”, “surname”, and “instrument”, and the values were: “Ringo”, “Starr”, and “drums”. As you have seen in the previous example, we can get the values stored in a dictionary by using square brackes: some_dictionary[key].\nWe can ask Python to give us the all keys and values of a dictionary.\n\n\n\n\n\n\nBe aware that the methods keys and values return iterators, so to print lists we have to pass those iterators to the list function.\nGiven the following dictionary, find out which is the minimum age of a student.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that you can use the min function to get the minimum value of a list or of an iterator.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe can also iterate through tuples of keys and values using the items method.\n\n\n\n\n\n\nIf we want to know how many items is the dictionary holding we use the len function.\n\n\n\n\n\n\nWe have two lists, one with values and another one with keys, create a dictionary using them.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nAlternatively this could be done using the zip function.\n\n\n\n\n\n\n\n\n\n\nCreate a dictionary that holds the complementary DNA nucleotides and use it to create a reverse and complementary DNA sequence.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Compound types",
+      "Dictionaries"
+    ]
+  },
+  {
+    "objectID": "types_and_operators/dictionaries.html#dicts-and-lists-can-hold-other-compound-objets",
+    "href": "types_and_operators/dictionaries.html#dicts-and-lists-can-hold-other-compound-objets",
+    "title": "Dictionaries",
+    "section": "Dicts and lists can hold other compound objets",
+    "text": "Dicts and lists can hold other compound objets\nPrint the name and age of these two students.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChange the name of the gene2 from BRCA to BRCA2:\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
     "crumbs": [
       "Compound types",
       "Dictionaries"
@@ -268,7 +279,7 @@
     "href": "types_and_operators/dictionaries.html#dicts-are-mutable",
     "title": "Dictionaries",
     "section": "dicts are mutable",
-    "text": "dicts are mutable\nDictionaries, like lists, are mutable, we can add, modify or remove, items after their creation.",
+    "text": "dicts are mutable\nDictionaries, like lists, are mutable, we can add, modify or remove, items after their creation. For instance, we can create an empty dictionary and fill it with values later.",
     "crumbs": [
       "Compound types",
       "Dictionaries"
@@ -462,6 +473,39 @@
     ]
   },
   {
+    "objectID": "exercises/set2.html#read-the-genetic-code-into-a-dictionary",
+    "href": "exercises/set2.html#read-the-genetic-code-into-a-dictionary",
+    "title": "Exercises 2",
+    "section": "Read the genetic code into a dictionary",
+    "text": "Read the genetic code into a dictionary\nThe dictionary should have the codon as the key and the aminoacid name as the value.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nsplitlines\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Exercises 2",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises/set2.html#write-a-program-that-translate-a-coding-sequence-into-a-protein",
+    "href": "exercises/set2.html#write-a-program-that-translate-a-coding-sequence-into-a-protein",
+    "title": "Exercises 2",
+    "section": "Write a program that translate a coding sequence into a protein",
+    "text": "Write a program that translate a coding sequence into a protein\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nYou can get the position of every codon using the range function. Remember that range has a step argument that can be set to 3.\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Exercises 2",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises/set2.html#guess-the-number-game",
+    "href": "exercises/set2.html#guess-the-number-game",
+    "title": "Exercises 2",
+    "section": "Guess the number game",
+    "text": "Guess the number game\nWrite a program that chooses a random number between 1 and 10 and asks the user to guess it several times. The program should finish once the user guesses correctly or once the number of available attemps has run out.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThe function randint of the random module creates random integers.\nYou can ask input from a user, like his guess, using the input function. Remember that the input function always return a string.\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Exercises 2",
+      "Exercises"
+    ]
+  },
+  {
     "objectID": "exercises/set2.html#write-a-hangman-game",
     "href": "exercises/set2.html#write-a-hangman-game",
     "title": "Exercises 2",
@@ -478,6 +522,17 @@
     "title": "Exercises 2",
     "section": "Read a fasta file",
     "text": "Read a fasta file\nIn bioinformatics we use fasta files to store DNA sequences. This is an example of a fasta file with three sequences.\n&gt;seq1\nCGCTAGCTAGTCTATCGATCTAGTCTAGCT\n&gt;seq2 some description after the space\nTGTCGATCGTAGTCATCTGATCGACGTATCTA\nCTCGAGTCATGCTATCATCATGCTAG\n&gt;seq3\nTCAGTCGATGCTATCATCGTAGCTGATCGATCTGGCA\nCTAGCAGTCGATC\nWrite a program that reads the sequences found in a fasta file and stores them in a list of dictionaries, one dictionary per sequence.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow, create functions capable of calculating the percentage of GCs in the sequences and their lengths.",
+    "crumbs": [
+      "Exercises 2",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises/set2.html#create-a-restriction-map",
+    "href": "exercises/set2.html#create-a-restriction-map",
+    "title": "Exercises 2",
+    "section": "Create a restriction map",
+    "text": "Create a restriction map\nRestriction enzymes recognize specific sequences, for instance:\n\nEcoRI: GATTC (cuts in the position between G and A, G^ATTC)\nHind III : AAGCTT (cuts in the position between A and A, AAGCT^T)\n\nGiven a sequence, create the restriction fragments that these two sequences would create:\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
     "crumbs": [
       "Exercises 2",
       "Exercises"
