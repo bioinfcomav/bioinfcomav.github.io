@@ -587,7 +587,11 @@
     "href": "control_flow/block.html",
     "title": "Block",
     "section": "",
-    "text": "A block of code is a set of statements, functions or instructions that are grouped together. In most programming languages the blocks of code are created by using curly braces ({}). For instance, in C the statements executed when a test condition is met would be written as:\nif (testCondition) {\n   // statements\n}\nIn Python a block of code is created by using indentation.\na = 42\n\nif a == 42:\n    # This is the first line of the block\n    print(\"This is the answer to\")\n    print(\"life, the universe, and everything else\")\n    # This is the last line of the block\n\nprint(\"We are outside the block of code defined by if\")\n\n\nIn the if and for the code starts with a colon (:)\nThe next line after the colon should be indented\nThe block ends when the indentation goes back to the previous level.\n\nThe standard is to create the indentation by using four spaces."
+    "text": "A block of code is a set of statements, functions or instructions that are grouped together. In most programming languages the blocks of code are created by using curly braces ({}). For instance, in C the statements executed when a test condition is met would be written as:\nif (testCondition) {\n   // statements\n}\nIn Python a block of code is created by using indentation.\na = 42\n\nif a == 42:\n    # This is the first line of the block\n    print(\"This is the answer to\")\n    print(\"life, the universe, and everything else\")\n    # This is the last line of the block\n\nprint(\"We are outside the block of code defined by if\")\n\n\nIn the if and for the code starts with a colon (:)\nThe next line after the colon should be indented\nThe block ends when the indentation goes back to the previous level.\n\nThe standard is to create the indentation by using four spaces.",
+    "crumbs": [
+      "Control flow",
+      "Code blocks"
+    ]
   },
   {
     "objectID": "control_flow/for.html",
@@ -616,7 +620,7 @@
     "href": "control_flow/for.html#for",
     "title": "for loops",
     "section": "for",
-    "text": "for\nfor allows us to execute a block of code for each item. The variable defined after the for keyword will take the value of each item, one at a time, one for each iteration.\n\n\n\n\n\n\nWhat would happen if we executed the following code? How would you fix it?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInternally the for loop works by calling the next on an iterator from the given iterable. An iterator is an object that supports the generation of one item at a time when given to the next function until it runs out of items. So the previous for would be, more or less, equivalent running the following code.\n\n\n\n\n\n\nThis kind of for loop, the one implemented in the Python, in other languages is known as a foreach loop. To have the functionallity available in other programming languages, in which the for statement just iterates over some numbers, you could combine a for loop with the range function.\nWrite a for loop that prints the first 10 natural numbers.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nYou can use a list or the range function.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nWith a list.\n\n\n\n\n\n\nWith the range function.\n\n\n\n\n\n\n\n\n\n\nCreate a program that writes the following:\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThere are many ways of solving this exercise, here you have some.\n\n\n\n\n\n\n\n\n\n\n\n\nUsing map and range.\n\n\n\n\n\n\nUsing a list comprenhension.\n\n\n\n\n\n\n\n\n\n\nAdditionally, Python has a while statement, another way of doing loops.",
+    "text": "for\nfor allows us to execute a block of code for each item. The variable defined after the for keyword will take the value of each item, one at a time, one for each iteration.\n\n\n\n\n\n\nWhat would happen if we executed the following code? How would you fix it?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInternally the for loop works by calling the next on an iterator from the given iterable. An iterator is an object that supports the generation of one item at a time, until it runs out of items, when given to the next function. So the previous for would be, more or less, equivalent running the following code.\n\n\n\n\n\n\nPython has another way of doing loops, the while statement.",
     "crumbs": [
       "Control flow",
       "for loops"
@@ -627,7 +631,7 @@
     "href": "control_flow/for.html#break",
     "title": "for loops",
     "section": "break",
-    "text": "break\nDuring at any moment the loop could be stopped, broken, by using break.",
+    "text": "break\nAt any iteration the loop could be completely stopped, broken, by using the break statement.",
     "crumbs": [
       "Control flow",
       "for loops"
@@ -645,11 +649,22 @@
     ]
   },
   {
+    "objectID": "control_flow/for.html#range",
+    "href": "control_flow/for.html#range",
+    "title": "for loops",
+    "section": "range",
+    "text": "range\nThis kind of for loop, the one implemented in the Python, in other languages is known as a foreach loop. To have the functionallity available in other programming languages, in which the for statement just iterates over some numbers, you could combine a for loop with the range function.\nWrite a for loop that prints the first 10 natural numbers.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nYou can use a list or the range function.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nWith a list.\n\n\n\n\n\n\nWith the range function.\n\n\n\n\n\n\n\n\n\n\nCreate a program that writes the following:\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThere are many ways of solving this exercise, here you have some.\n\n\n\n\n\n\n\n\n\n\n\n\nUsing map and range.\n\n\n\n\n\n\nUsing a list comprenhension.",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
     "objectID": "control_flow/for.html#enumerate",
     "href": "control_flow/for.html#enumerate",
     "title": "for loops",
     "section": "enumerate",
-    "text": "enumerate\nIt is quite common to need both the item and its index. We could do it like:\n\n\n\n\n\n\nHowever, this is a pattern so common that Python have solved it by using the function enumerate.\n\n\n\n\n\n\nEnumerate works by creating an iterator of tuples with two elements: the index, and the original item.\n\n\n\n\n\n\nAnd since Python supports mutiple assigment what we are doing in the for loop is equivalente to:",
+    "text": "enumerate\nIt is quite common to require both the item and its index. We could do it like:\n\n\n\n\n\n\nHowever, this is a pattern so common that Python have solved it using the function enumerate.\n\n\n\n\n\n\nEnumerate works by creating an iterator of tuples with two elements: the index, and the original item.\n\n\n\n\n\n\nAnd since Python supports mutiple assigment what we are doing in the for loop is equivalente to:",
     "crumbs": [
       "Control flow",
       "for loops"
@@ -869,7 +884,7 @@
     "href": "control_flow/if.html",
     "title": "if",
     "section": "",
-    "text": "if statement in the official documentation.\nConditional statements in Real Python.",
+    "text": "Conditional statements in Real Python.\nif statement in the official documentation.\nControl flow in wikipedia.",
     "crumbs": [
       "Control flow",
       "if"
@@ -880,7 +895,7 @@
     "href": "control_flow/if.html#resources",
     "title": "if",
     "section": "",
-    "text": "if statement in the official documentation.\nConditional statements in Real Python.",
+    "text": "Conditional statements in Real Python.\nif statement in the official documentation.\nControl flow in wikipedia.",
     "crumbs": [
       "Control flow",
       "if"
@@ -891,7 +906,7 @@
     "href": "control_flow/if.html#if",
     "title": "if",
     "section": "if",
-    "text": "if\nif is one of the basic control flow statements. It allow us to execute some code only if a given condition is met.\n\n\n\n\n\n\nIf the condition is not met the code inside the if block won’t be executed.\n\n\n\n\n\n\nEvery line included in the block will be executed, not just the first one.\n\n\n\n\n\n\nFix the following code to print “Done!” even when the condition is not met.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that a block ends when the indentation returns to the previous level.\n\n\n\n\n\n\n\n\n\n\n\nNote",
+    "text": "if\nif is one of the basic control flow statements. It allows us to execute some code only if a given condition is met.\n\n\n\n\n\n\nIf the condition is not met the code inside the if block won’t be executed.\n\n\n\n\n\n\nEvery line included in the block will be executed, not just the first one.\n\n\n\n\n\n\nFix the following code to print “Done!” even when the condition is not met.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that a block ends when the indentation returns to the previous level.\n\n\n\n\n\n\n\n\n\n\n\nNote",
     "crumbs": [
       "Control flow",
       "if"
@@ -902,7 +917,7 @@
     "href": "control_flow/if.html#else",
     "title": "if",
     "section": "else",
-    "text": "else\nIt is common that we want to execute some code if the condition is met, and some other code when the condition was not met, for that we use else.\n\n\n\n\n\n\n\n\n\n\n\n\nFix this code:\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite some code capable of, given a pair of numbers, finding out which is the highest.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy would be wrong this solution for the highest number program and in which case would fail?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "text": "else\nIt is common that we want to execute some code if the condition is met, and some other code when the condition was not met, for that we use else.\n\n\n\n\n\n\n\n\n\n\n\n\nFix this code:\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite some code capable of, given a pair of numbers, finding out which is the highest.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFix the following code to prevent the error when a = 0.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
     "crumbs": [
       "Control flow",
       "if"
@@ -913,7 +928,7 @@
     "href": "control_flow/if.html#elif",
     "title": "if",
     "section": "elif",
-    "text": "elif\nelif allows us to test for different conditions sequentialy.\n\n\n\n\n\n\nWhen we have several conditions only the first met will be executed.\n\n\n\n\n\n\nAs a more powerful alternative to elif Python has a match statement.\nWrite a program that classifies a person into: baby, child, teenager, young, and old\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite a program that writes the quote of the selected philosopher.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "text": "elif\nelif allows us to test for different conditions sequentialy.\n\n\n\n\n\n\nWhen several conditions are met only the first True one will be executed.\n\n\n\n\n\n\nAs a more powerful alternative to elif Python has a match statement.\nWrite a program that classifies a person into: baby, child, teenager, young, and old\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite a program that writes the quote of the selected philosopher.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
     "crumbs": [
       "Control flow",
       "if"
@@ -924,7 +939,7 @@
     "href": "control_flow/if.html#boolean-casting",
     "title": "if",
     "section": "Boolean casting",
-    "text": "Boolean casting\nWhen a condition is evaluated, internally the if statement casts anything given to a boolean. So, you will usually see expressions like:\n\n\n\n\n\n\nIt would be very weird to write:\n\n\n\n\n\n\nRemember that everything that we talked about booleans and boolean arithmetic is applicable to the if evaluation.\nFix the following code to prevent the error when a = 0.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "text": "Boolean casting\nWhen a condition is evaluated, internally the if statement casts anything given to a boolean. So, you will usually see expressions like:\n\n\n\n\n\n\nIt would be very weird to write:\n\n\n\n\n\n\nRemember that everything that we talked about booleans and boolean arithmetic is applicable to the if evaluation.",
     "crumbs": [
       "Control flow",
       "if"
