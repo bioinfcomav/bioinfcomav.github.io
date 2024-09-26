@@ -18,6 +18,8 @@ The `documentation <http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/g
 
 But there are other ways to run the EMBOSS software.
 
+You can use `emboss online <https://www.bioinformatics.nl/cgi-bin/emboss/>`_ in the Wageningen server.
+
 There are web `servers <http://emboss.sourceforge.net/servers/#explorer>`_ that provide the EMBOSS tools as a service.
 In those servers the EMBOSS utilities can be accessed as web pages and the server runs the terminal command and return the result.
 
