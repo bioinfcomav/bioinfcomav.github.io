@@ -363,91 +363,69 @@
     ]
   },
   {
-    "objectID": "functions/definition.html",
-    "href": "functions/definition.html",
-    "title": "Function definition",
+    "objectID": "functions/more_on_functions.html",
+    "href": "functions/more_on_functions.html",
+    "title": "More on return and function arguments",
     "section": "",
-    "text": "Functions are the main way of structuring our code. So far we have been writting very small pieces of code, but in most reallistic projects we will need to structure our code, we will have to divide our software in pieces, and functions are one of the main ways of accomplishing that.\nYou can think on a programming function like in a kind of mathematical function, that takes some parameters and returns a result (although as we will see both the parameters and the result are optional).\nflowchart LR\n  radius([\"radius\"])-- calc_area --&gt;area([\"area\"])\nWhen we program what we do is to manipulate data. Think in a program as a series of manipulations on the data that is stored in memory. We take some pieces of data, for example the radius of a circle, and we do a action, like calculating the area. So we need ways of defining that data, and for that we use types (and classes), and we create functions (and methods) to manipulate that data.\nImagine data as things/objects or properties of those objects, and functions as actions that act on the data. For example, we have some data, the radius of a circle, we apply an action to it, calc_area, and we obtain a new piece of data, the area. Both radius and area are pieces of data, whereas cacl_area is an action, a verb.",
+    "text": "More on defining functions in the official documentation.\nOptional arguments and args and kwargs in Real Python.",
     "crumbs": [
       "Functions",
-      "Definition"
+      "More on functions"
     ]
   },
   {
-    "objectID": "functions/definition.html#resources",
-    "href": "functions/definition.html#resources",
-    "title": "Function definition",
-    "section": "Resources",
-    "text": "Resources\n\nPython function and return in Real Python.\nFunctions in the Microsoft Python for beginners course.\nScopes in Python in Real Python.",
+    "objectID": "functions/more_on_functions.html#resources",
+    "href": "functions/more_on_functions.html#resources",
+    "title": "More on return and function arguments",
+    "section": "",
+    "text": "More on defining functions in the official documentation.\nOptional arguments and args and kwargs in Real Python.",
     "crumbs": [
       "Functions",
-      "Definition"
+      "More on functions"
     ]
   },
   {
-    "objectID": "functions/definition.html#definition-and-calling",
-    "href": "functions/definition.html#definition-and-calling",
-    "title": "Function definition",
-    "section": "Definition and calling",
-    "text": "Definition and calling\nIn Python functions are defined by using the def keyword.\n\n\n\n\n\n\nIf you run the previous piece you won’t see any result. Once you define a function, the function will be ready to be used, but in order to use it you need to call it. We call a function by using parentheses (()).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe lines that belong to the function are the lines indented after the function definition line, that’s the lines in the block. Fix the following code:\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIt is important to understand how the flow is changed by the function. Once you call the function the flow goes into the function until the function ends. At that point the flow is send back to the line that called the function.\nTry to fill out the numbers in the prints of the following code to track the flow of execution. In which order will be the lines executed?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
-    "crumbs": [
-      "Functions",
-      "Definition"
-    ]
-  },
-  {
-    "objectID": "functions/definition.html#scopes-and-arguments",
-    "href": "functions/definition.html#scopes-and-arguments",
-    "title": "Function definition",
-    "section": "Scopes and arguments",
-    "text": "Scopes and arguments\nTo understand what do we mean when we say that we pass some data to a function we need to understand the concept of the scope.\nWhen we program we store and access data in memory. As we have seen we refer to the data stored in memory by using variables. We could think that those variables, once they are created, are available in every part of our program. Some programming languages used that approach, but when you try to build a program with more than a few lines of code it becomes very difficult to track which part of the program has changed a variable. So maintining those large programs is very difficult.\nThe scope defines where in the code a variable is available, and functions define their own scope. In a computer program not all data is available to every part of the code. For instance, the variables that are defined inside a function are not available outside of the function.\n\n\n\n\n\n\nWe say that the variables defined in the function are in the function scope, that means that they are not available ouside of the function.\n\n\n\n\n\n\nWe get a “‘name’ is not defined error” because the variable name was created inside the say_hello function, so in the say_hello scope, and is not available outside. A variable can only be used inside its scope. It is said that the function has a local scope in which its variables are available.\nBe careful because Python also has a global scope, and if you create the variable outside the function it will be available inside. We can use the variables defined in the global scope inside any function.\n\n\n\n\n\n\nIn this case the variable name has been created in the global scope, is a global variable available everywhere. In general avoid creating global variables, specially if they are just inmutable constants. As a general rule the use of the global scope is discouraged. Try not to use the global scope, access to the variables. If you think you need a global variable, think twice, in most cases is better not to use them. This is an advance topic, but here’s a tip for the future you, to keep states it might be much better to use objects, instances of a class, that global variables. But this is a too advance topic for now. Just remember, try very hard not to use global varibles, although you can do some exceptions with some inmutable ones use just for global configurations. It is common to use this kind of global variables, inmutables and related to configuration, and, by convention, people name them using all caps variable names.\n\n\n\n\n\n\nPython discourages some uses of the use the global scope, and the behaviour of these variables is atypical.\n\n\n\n\n\n\n\n\n\n\n\n\nSo when the function requires some data to carry an action we should pass that data explictly to the function. For instance, if we want a function to print a personalized greeting it could need the name of the person.\n\n\n\n\n\n\nPassing data to a function is easy, but a lot is going on under the hood:\n\nWe have created a text string (“Jane”). That means that Python has created and stored a object of type str in memory.\n\n\n\n\n\n\nflowchart TB\n    subgraph main [ ]\n    person:::invisible\n    end\n    subgraph say [ ]\n    name:::invisible\n    end\n    Memory:::memory\n    subgraph Memory\n    Jane[\"'Jane'\"]\n    end\n    person --&gt; Jane\n    name --&gt; Jane\n    classDef variable fill:#f96\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n    linkStyle 0,1 stroke-width:0px\n\n\n\n\n\n\n\nWe have assigned the variable person to that string, so now person refers to that str object stored in memory.\n\n\n\n\n\n\nflowchart TB\n    subgraph main [global scope]\n    person\n    end\n    subgraph say [ ]\n    name:::invisible\n    end\n    Memory:::memory\n    subgraph Memory\n    Jane[\"'Jane'\"]:::variable\n    end\n    person --&gt; Jane\n    name --&gt; Jane\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n    linkStyle 1 stroke-width:0px\n\n\n\n\n\n\n\nWhen we call the function we pass the reference of the object, the variable person, to the function.\nThe function receives the reference to the str object and assigns to it a new reference, in this case called name. It is very important to understand that although the object is the same, the “Jane” string, we have created a new reference to it, the new variable name.\n\n\n\n\n\n\nflowchart TB\n    subgraph main [global scope]\n    person\n    end\n    subgraph say [say_hello scope]\n    name\n    end\n    Memory:::memory\n    subgraph Memory\n    Jane[\"'Jane'\"]\n    end\n    person --&gt; Jane\n    name --&gt; Jane\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc",
-    "crumbs": [
-      "Functions",
-      "Definition"
-    ]
-  },
-  {
-    "objectID": "functions/definition.html#return",
-    "href": "functions/definition.html#return",
-    "title": "Function definition",
-    "section": "return",
-    "text": "return\nScopes have also to be taken into account when getting a result out of the function.\n\n\n\n\n\n\nIf we want to pass data to the function we have to use the arguments in the function definition, and if we want to get data out of the function we use the return statement. Let’s see how we can return data to the caller.\n\n\n\n\n\n\nWe use the return statement to return a value generated in the function to the caller. Again, like in the parameters passed to the function, the caller will receive a new reference to the value stored in memory that can assign to a new variable. return is used to move a result in memory between scopes. For instance, in the previous example there is a variable, inside the function, named area, but in the first call we store the reference in a variable named result. area and result are two variables, two references to the same value stored in memory, but they are variables that belong to different scopes. In this case area belongs to the scope of the calc_rect_area function and result to the global scope.\nFix the following code\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nDoes the function return something?\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat would be the result of executing the following code and why?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nEverytime we call a function a new scope with new data is created and the function starts its execution in its first line and ends its execution once it encounters the first return. That’s why no matter how many time we call this function it will always return “Hi” and “Bye” will be never reached.\n\n\n\n\nWrite a program with two functions, one that transforms from Fahrenheit to Celsius, and another one from Celsius to Fahrenheit.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDefine a function that reverses a list, like the reversed funtion.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that indexing has the posibility of reversing using -1 as the step (some_sequence[::-1]).\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote also that each time that the function returns, its scope, the variables created inside the function and available to it, is erased, so each call will be independent. Once a return is executed in a function, the function returns and its scope is destroyed with all its variables.\n\n\n\n\n\n\nWrite a function that returns “odd” or “even” depending on the number that we pass.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
-    "crumbs": [
-      "Functions",
-      "Definition"
-    ]
-  },
-  {
-    "objectID": "functions/definition.html#return-several-variables",
-    "href": "functions/definition.html#return-several-variables",
-    "title": "Function definition",
+    "objectID": "functions/more_on_functions.html#return-several-variables",
+    "href": "functions/more_on_functions.html#return-several-variables",
+    "title": "More on return and function arguments",
     "section": "Return several variables",
-    "text": "Return several variables\nFunctions can return multiple results, we just need to separate them with commas. Complete the following code.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThink about how is possible that all the different options in the following code work. What is going on?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nUnder the hood both functions are returning the same, a tuple, an imutable list.\n\n\n\n\n\n\nSo in the first function “return a, b” is first creating the tuple (a, b), and then returning it.\nWhen we call a function that returns a tuple we can assing the tuple to a variable, like in:\n\n\n\n\n\n\nBut we can also use the mutiple assignment that we studied for lists and tuples.\n\n\n\n\n\n\n\n\n\n\nWrite a function that given a list of numbers it calculates and returns the maximum and the minimum.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nYou could iterate through the numbers using a for loop. In each iteration you could check if the number is lower than the current minimum or is larger than the current maximum. In the first iteration the current minimum and maximum could be None.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nAlternatively you could do it with the min and max functions.\n\n\n\n\n\n\n\n\n\n\nIn fact Python functions can only return just one thing, an object, one object. Every Python function always returns just one object.",
+    "text": "Return several variables\nFunctions can return multiple results, we just need to separate them with commas. Complete the following code.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThink about how is it possible that all the different options in the following code work. What is going on?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nUnder the hood both functions are returning the same, a tuple, an imutable list.\n\n\n\n\n\n\nSo in the first function “return a, b” is first creating the tuple (a, b), and then returning it.\nWhen we call a function that returns a tuple we can assing the tuple to a variable, like in:\n\n\n\n\n\n\nBut we can also use the mutiple assignment that we studied for lists and tuples.\n\n\n\n\n\n\n\n\n\n\nWrite a function that given a list of numbers it calculates and returns the maximum and the minimum.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nYou could iterate through the numbers using a for loop. In each iteration you could check if the number is lower than the current minimum or is larger than the current maximum. In the first iteration the current minimum and maximum could be None.\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nAlternatively you could do it with the min and max functions.\n\n\n\n\n\n\n\n\n\n\nIn fact Python functions can only return just one thing, an object, one object. Every Python function always returns just one object.",
     "crumbs": [
       "Functions",
-      "Definition"
+      "More on functions"
     ]
   },
   {
-    "objectID": "functions/definition.html#methods",
-    "href": "functions/definition.html#methods",
-    "title": "Function definition",
-    "section": "Methods",
-    "text": "Methods\nSo far we haven’t talked about clases and their instances, the objects, because they are a slightly more advanced topic related to Object-oriented programming (OOP).\nPython is a object oriented language, in fact, in Python almost everything is an object. And although we are not going to discuss this topic yet it is important to understand the concept and use of methods, the object “functions”. In fact we have already used methods when dealing with strings.\n\n\n\n\n\n\nupper is a method, a function associated with an object. In this case the object is the string “hello” and upper is a function that acts on that object. By convention functions associated to objects are called methods. So upper is a method, a function associated to the objects of type str. You can think on a method like on a function that has a its first argument the given object. If upper were a standard function, the previous code would be:\ns = \"hello\"\ns = upper(s)\nprint(s)\nSomething similar to that would work if upper were a normal function but, instead is a method associated to an object, so the syntax is different, we use a dot after the object, then the name of the method/function, and then the language makes sure that the object is passed as the first argument to this method.\nIf you want to understand Python you need to learn about objects, classes, methods and properties, because Python is a deeply object-oriented language, but this is a topic that we can leave for later.",
+    "objectID": "functions/more_on_functions.html#keyword-arguments",
+    "href": "functions/more_on_functions.html#keyword-arguments",
+    "title": "More on return and function arguments",
+    "section": "Keyword arguments",
+    "text": "Keyword arguments\nSo far we have seen that functions can be called by passing arguments to them.\n\n\n\n\n\n\nHowever, you will see another syntax in Python code: keyword arguments.\n\n\n\n\n\n\nWhen we use keyword arguments the order in which the arguments is passed is irrelevant.\n\n\n\n\n\n\nYou can even mix arguments passed by its order with arguments passed using keywords.\n\n\n\n\n\n\nThere is only one thing that is not allowed, to pass an argument with no keyword after an argument passed using a keyword.",
     "crumbs": [
       "Functions",
-      "Definition"
+      "More on functions"
     ]
   },
   {
-    "objectID": "functions/definition.html#anonymous-functions-lambdas",
-    "href": "functions/definition.html#anonymous-functions-lambdas",
-    "title": "Function definition",
-    "section": "Anonymous functions, lambdas",
-    "text": "Anonymous functions, lambdas\nIn Python, and many other programming languages, we can create anonymous functions. This is a more abstract idea, but they are used quite commonly in Python, so it would be nice, at least, that you could recognized them.\nlambdas are usually very small functions, just one line, and they are used as parameters for other functions. For instance, they are very common in as the key argument to the sorted function.\n\n\n\n\n\n\nYou can learn more about lambdas in the official documentation or in Real Python.",
+    "objectID": "functions/more_on_functions.html#default-arguments",
+    "href": "functions/more_on_functions.html#default-arguments",
+    "title": "More on return and function arguments",
+    "section": "Default arguments",
+    "text": "Default arguments\nIn function calls it is very common to give, in the function definition, default values to some arguments. These parameters can then be omitted in the function call unless we want to change their values.",
     "crumbs": [
       "Functions",
-      "Definition"
+      "More on functions"
+    ]
+  },
+  {
+    "objectID": "functions/more_on_functions.html#references-to-mutable-objects",
+    "href": "functions/more_on_functions.html#references-to-mutable-objects",
+    "title": "More on return and function arguments",
+    "section": "References to mutable objects",
+    "text": "References to mutable objects\nIn Python variables are references to objects. Try to guess what will be the result of running the following code:\n\n\n\n\n\n\nGive x a value in order the get the result to be 10. Should x be 4 or 6?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWith lists the behaviour seems different.\n\n\n\n\n\n\nWhy do we get these different results?\nLet’s think about what is going on.\n\na = \"hello\"\n\n\n\n\n\n\nflowchart TB\n    subgraph variables\n    a\n    b:::invisible\n    end\n    Memory:::memory\n    subgraph Memory\n    hello1[\"'hello'\"]\n    hello2[\"'HELLO'\"]:::invisible\n    end\n    a --&gt; hello1\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n\n\n\n\n\n\n\n# a.upper() creates a new string, it does not modify\n# the original string that remains intact in memory\n# and now b refers to the new string \"HELLO\"\nb = a.upper()\n\n\n\n\n\n\nflowchart TB\n    subgraph variables\n    a\n    b\n    end\n    Memory:::memory\n    subgraph Memory\n    hello1[\"'hello'\"]\n    hello2[\"'HELLO'\"]:::invisible\n    end\n    a --&gt; hello1\n    b --&gt; hello1\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n\n\n\n\n\n\n\nb = a\n\n\n\n\n\n\nflowchart TB\n    subgraph variables\n    a\n    b\n    end\n    Memory:::memory\n    subgraph Memory\n    hello1[\"'hello'\"]\n    hello2[\"'HELLO'\"]\n    end\n    a --&gt; hello1\n    b --&gt; hello2\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n\n\n\n\n\n\nWith mutable objects, like lists, the result will be different.\n\na = [\"hello\", \"Jane\"]\n\n\n\n\n\n\nflowchart TB\n    subgraph variables\n    a\n    b:::invisible\n    end\n    Memory:::memory\n    subgraph Memory\n    hello1[\"['hello', 'Jane']\"]\n    end\n    a --&gt; hello1\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n\n\n\n\n\n\n\nb = a\n\n\n\n\n\n\nflowchart TB\n    subgraph variables\n    a\n    b\n    end\n    Memory:::memory\n    subgraph Memory\n    hello1[\"['hello', 'Jane']\"]\n    end\n    a --&gt; hello1\n    b --&gt; hello1\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n\n\n\n\n\n\n\n# We are modifying the original list\nb[0] = b[0].upper()\n\n# b[0] refers to the string \"hello\"\n# b[0].upper() creates a new string in memory \"HELLO\"\n# so b[0] = b[0].upper() is equivalent to\nb[0] = \"HELLO\"\n# We are asking to the list refered by b, the same list that a refers to,\n# to change its first member from \"hello\" to \"HELLO\"\n# So we get a modified list [\"HELLO\"] and both a and b refer still to this list\n# that is in fact the same original list, that is has changed its first member\n\n\n\n\n\n\nflowchart TB\n    subgraph variables\n    a\n    b\n    end\n    Memory:::memory\n    subgraph Memory\n    hello1[\"['HELLO', 'Jane']\"]\n    end\n    a --&gt; hello1\n    b --&gt; hello1\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n\n\n\n\n\n\nThis is an aspect that varies from language to language. If you study a different programming language you will need to understand if the variables are ment to be values, pointers or references. In Python they are always references. You can read a Real Python tutorial about Python references.\nIn Python every variable is a reference, and arguments to functions are thus passed by reference. When we pass a text string or a list to a function Python creates new references to these objects. We have to be careful because if you pass a mutable object to a function the function might changed it.\n\n\n\n\n\n\nChanging inside the function a mutable object that have been passed to it without warning the function user is a common source of bugs and problems. This is not a good practice, try to avoid it! The previous code could be written to avoid this problem.\n\n\n\n\n\n\n\nDefault mutable arguments\nWhen you create your own functions with default parameters you have to be careful because there is a gotcha. Remember that there are inmutable objects, like str, int or float, and mutable objects, like lists. A list is mutable because we can change its items after we have created it, but a text string is inmutable because once we have created we can not modify it (although be could derive other strings for it).\n\n\n\n\n\n\nIf you use a mutable object as a default parameter in a function definition, you will get into trouble.\n\n\n\n\n\n\nThe problem is that the default values for the arguments are created when the function is defined, so just once. Thus, in this example there is only one default empty list for all function calls to the create_guest_list function. Every time that we get the default list we are getting the same empty list. This would not be a problem if the object wasn’t mutable, but it is a huge problem with mutable objects. So the pattern that Python programmers use to avoid this problem is the following: setting the default value to None and creating the list, if needed, inside the function. In this way one different default empty list is created for each function call, not like before that only one was created when the function was defined.",
+    "crumbs": [
+      "Functions",
+      "More on functions"
     ]
   },
   {
@@ -1279,58 +1257,91 @@
     ]
   },
   {
-    "objectID": "functions/arguments.html",
-    "href": "functions/arguments.html",
-    "title": "Function arguments",
+    "objectID": "functions/definition.html",
+    "href": "functions/definition.html",
+    "title": "Function definition",
     "section": "",
-    "text": "More on defining functions in the official documentation.\nOptional arguments and args and kwargs in Real Python.",
+    "text": "So far we have been writting very small pieces of code, but in most reallistic projects we will need to structure our code, we will have to divide our software in pieces, and functions are one of the main ways of accomplishing that.\nYou can think on a programming function like in a kind of mathematical function, that takes some parameters and returns a result (although as we will see both the parameters and the result are optional).\nflowchart LR\n  radius([\"radius\"])-- calc_area --&gt;area([\"area\"])\nWhen we are programming what we do is to manipulate data. Think in a program as a series of manipulations on the data that is stored in memory. We take some pieces of data, for example the radius of a circle, and we do a action, like calculating the area. So we need ways of defining that data, and for that we use types (and classes), and we create functions (and methods) to manipulate that data.\nImagine data as things/objects or properties of those objects, and functions as actions that act on the data. For example, we have some data, the radius of a circle, we apply an action to it, calc_area, and we obtain a new piece of data, the area. Both radius and area are pieces of data, whereas cacl_area is an action, a verb.",
     "crumbs": [
       "Functions",
-      "Arguments"
+      "Definition"
     ]
   },
   {
-    "objectID": "functions/arguments.html#resources",
-    "href": "functions/arguments.html#resources",
-    "title": "Function arguments",
-    "section": "",
-    "text": "More on defining functions in the official documentation.\nOptional arguments and args and kwargs in Real Python.",
+    "objectID": "functions/definition.html#resources",
+    "href": "functions/definition.html#resources",
+    "title": "Function definition",
+    "section": "Resources",
+    "text": "Resources\n\nPython function and return in Real Python.\nFunctions in the Microsoft Python for beginners course.\nScopes in Python in Real Python.",
     "crumbs": [
       "Functions",
-      "Arguments"
+      "Definition"
     ]
   },
   {
-    "objectID": "functions/arguments.html#keyword-arguments",
-    "href": "functions/arguments.html#keyword-arguments",
-    "title": "Function arguments",
-    "section": "Keyword arguments",
-    "text": "Keyword arguments\nSo far we have seen that functions can be called by passing arguments.\n\n\n\n\n\n\nHowever, you will see another syntax in Python code, using keyword arguments.\n\n\n\n\n\n\nWhen we use keyword arguments the order in which the arguments is passed is irrelevant.\n\n\n\n\n\n\nYou can even mix arguments passed by its order with arguments passed using keywords.\n\n\n\n\n\n\nThere is only one thing that is not allowed, to pass an argument with no keyword after an argument passed using a keyword.",
+    "objectID": "functions/definition.html#definition-and-calling",
+    "href": "functions/definition.html#definition-and-calling",
+    "title": "Function definition",
+    "section": "Definition and calling",
+    "text": "Definition and calling\nIn Python functions are defined by using the def keyword.\n\n\n\n\n\n\nIf you run the previous piece of code you won’t see any result. Once you define a function, the function will be ready to be used, but in order to use it you need to call it. We call a function by using parentheses (()).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe lines that belong to the function are the lines indented after the function definition line. Those are the lines in the function block block. Fix the following code:\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIt is important to understand how the flow, the order in which the lines are executed, is changed by the function. Once you call the function the flow goes into the function until the function ends. At that point the flow is sent back to the line that called the function.\nTry to fill out the numbers in the prints of the following code to track the flow of execution. In which order will be the lines executed?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
     "crumbs": [
       "Functions",
-      "Arguments"
+      "Definition"
     ]
   },
   {
-    "objectID": "functions/arguments.html#default-arguments",
-    "href": "functions/arguments.html#default-arguments",
-    "title": "Function arguments",
-    "section": "Default arguments",
-    "text": "Default arguments\nIn function calls it is very common to give default values to some arguments. These parameters can then be omitted in the function call unless we want to change their values.\n\n\n\n\n\n\n\nDefault mutable arguments\nWhen you create your own function with default parameters you have to be careful because there is a gotcha. Remember that there are inmutable objects, like str, int or float, and mutable objects, like list. A list is mutable because we can change its members after we have created it, but a text string is inmutable because once we have created we can not modify it (although be could derive other strings for it).\n\n\n\n\n\n\nIf you use a mutable object as a default parameter in a function definition, you will get into trouble.\n\n\n\n\n\n\nThe problem is that the default values for the arguments are created when the function is defined, so just once. Thus, in this example there is only one default empty list for all function calls to the create_guest_list function. Every time that we get the default list we are getting the same empty list. This would not be a problem if the object wasn’t mutable, but it is a huge problem with mutable objects. So the pattern that Python programmers use to avoid this problem is the following, setting the default value to None and creating the list, if needed, inside the function. In this way one different default empty list is created for each function call, not like before that only was created when the function was built.",
+    "objectID": "functions/definition.html#scopes-and-arguments",
+    "href": "functions/definition.html#scopes-and-arguments",
+    "title": "Function definition",
+    "section": "Scopes and arguments",
+    "text": "Scopes and arguments\nThe code inside a function has its own variables, and those are not shared between functions and between the function and the rest of the code. To use a value inside a value, usually, we pass the variable to the function. To understand what do we mean when we say that we pass some data to a function we need to understand the concept of the scope.\nWhen we are programming we store and access data in memory. As we have seen, we refer to the data stored in memory by using variables. We could think that those variables, once they are created, are available in every part of our program. If you used that approach when you tried to build a program with more than a few lines of code, it would become very difficult to track which part of the program had changed a variable. So maintining those large programs would be very difficult.\nThe scope defines where in the code a variable is available, and functions define their own scope. In a computer program not all data is available to every part of the code. For instance, the variables that are defined inside a function are not available outside of the function.\n\n\n\n\n\n\nWe say that the variables defined in the function are in the function scope, that means that they are not available ouside of the function.\n\n\n\n\n\n\nWe get a “‘name’ is not defined error” because the variable name was created inside the say_hello function, so in the say_hello scope, and is not available outside. A variable can only be used when is in the current scope. It is said that the function has a local scope in which its variables are available.\n\nGlobal scope\nBe careful because Python also has a global scope, and if you create the variable outside the function it will be available inside. We can use the variables defined in the global scope inside any function.\n\n\n\n\n\n\nIn this case the variable name has been created in the global scope, it is a global variable available everywhere. In general, avoid creating global variables, specially if they are not inmutable constants. As a general rule the use of the global scope is discouraged, try not to use it. If you think you need a global variable, think twice, in most cases is better not to use them. This is an advanced topic, but here’s a tip for the future you, to keep states it might be much better to use objects, instances of a class, that global variables. For now, this is too advanced. Just remember, try very hard not to use global varibles, although you can allow some exceptions with some inmutable ones used for global configurations. It is common to use this kind of global variables, inmutables and related to configuration, and, by convention, in Python, people name them using all caps variable names.\n\n\n\n\n\n\nPython discourages some uses of the use the global scope, and the behaviour of these variables is atypical.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPassing data to a function, function arguments\nSo, when the function requires some data to carry an action, we should pass that data explictly to the function. For instance, if we want a function to print a personalized greeting, it could need the name of the person.\n\n\n\n\n\n\nPassing data to a function is easy, but a lot is going on under the hood:\n\nWe have created a text string (“Jane”). That means that Python has created and stored a object of type str in memory.\n\n\n\n\n\n\nflowchart TB\n    subgraph main [ ]\n    person:::invisible\n    end\n    subgraph say [ ]\n    name:::invisible\n    end\n    Memory:::memory\n    subgraph Memory\n    Jane[\"'Jane'\"]\n    end\n    person --&gt; Jane\n    name --&gt; Jane\n    classDef variable fill:#f96\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n    linkStyle 0,1 stroke-width:0px\n\n\n\n\n\n\n\nWe have assigned the variable person to that string, so now person refers to that str object stored in memory.\n\n\n\n\n\n\nflowchart TB\n    subgraph main [global scope]\n    person\n    end\n    subgraph say [ ]\n    name:::invisible\n    end\n    Memory:::memory\n    subgraph Memory\n    Jane[\"'Jane'\"]:::variable\n    end\n    person --&gt; Jane\n    name --&gt; Jane\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n    linkStyle 1 stroke-width:0px\n\n\n\n\n\n\n\nWhen we call the function we pass the reference of the object, the variable person, to the function.\nThe function receives the reference to the str object and assigns to it a new reference, in this case called name. It is very important to understand that although the object is the same, the “Jane” string, we have created a new reference to it, the new variable name.\n\n\n\n\n\n\nflowchart TB\n    subgraph main [global scope]\n    person\n    end\n    subgraph say [say_hello scope]\n    name\n    end\n    Memory:::memory\n    subgraph Memory\n    Jane[\"'Jane'\"]\n    end\n    person --&gt; Jane\n    name --&gt; Jane\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc",
     "crumbs": [
       "Functions",
-      "Arguments"
+      "Definition"
     ]
   },
   {
-    "objectID": "functions/arguments.html#references-to-mutable-objects",
-    "href": "functions/arguments.html#references-to-mutable-objects",
-    "title": "Function arguments",
-    "section": "References to mutable objects",
-    "text": "References to mutable objects\nIn Python every variable is a reference, and arguments to functions are thus passed by reference. When we pass a text string or a list to a function Python creates new references to this objects.\nTry to guess what will be the result of running the following code:\n\n\n\n\n\n\nGive x a value in order the get the result to be 10. Should x be 4 or 6?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWith lists the behaviour seems different.\n\n\n\n\n\n\nWhy do we get these different results?\nLet’s think about what is going on.\n\na = \"hello\"\n\n\n\n\n\n\nflowchart TB\n    subgraph variables\n    a\n    b:::invisible\n    end\n    Memory:::memory\n    subgraph Memory\n    hello1[\"'hello'\"]\n    hello2[\"'HELLO'\"]:::invisible\n    end\n    a --&gt; hello1\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n\n\n\n\n\n\n\n# a.upper() creates a new string, it does not modify\n# the original string that remains intact in memory\n# and now b refers to the new string \"HELLO\"\nb = a.upper()\n\n\n\n\n\n\nflowchart TB\n    subgraph variables\n    a\n    b\n    end\n    Memory:::memory\n    subgraph Memory\n    hello1[\"'hello'\"]\n    hello2[\"'HELLO'\"]:::invisible\n    end\n    a --&gt; hello1\n    b --&gt; hello1\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n\n\n\n\n\n\n\nb = a\n\n\n\n\n\n\nflowchart TB\n    subgraph variables\n    a\n    b\n    end\n    Memory:::memory\n    subgraph Memory\n    hello1[\"'hello'\"]\n    hello2[\"'HELLO'\"]\n    end\n    a --&gt; hello1\n    b --&gt; hello2\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n\n\n\n\n\n\nWith mutable objects, like lists, the result will be different.\n\na = [\"hello\", \"Jane\"]\n\n\n\n\n\n\nflowchart TB\n    subgraph variables\n    a\n    b:::invisible\n    end\n    Memory:::memory\n    subgraph Memory\n    hello1[\"['hello', 'Jane']\"]\n    end\n    a --&gt; hello1\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n\n\n\n\n\n\n\nb = a\n\n\n\n\n\n\nflowchart TB\n    subgraph variables\n    a\n    b\n    end\n    Memory:::memory\n    subgraph Memory\n    hello1[\"['hello', 'Jane']\"]\n    end\n    a --&gt; hello1\n    b --&gt; hello1\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n\n\n\n\n\n\n\n# We are modifying the original list\nb[0] = b[0].upper()\n\n# b[0] refers to the string \"hello\"\n# b[0].upper() creates a new string in memory \"HELLO\"\n# so b[0] = b[0].upper() is equivalent to\nb[0] = \"HELLO\"\n# We are asking to the list refered by b, the same list that a refers to,\n# to change its first member from \"hello\" to \"HELLO\"\n# So we get a modified list [\"HELLO\"] and both a and b refer still to this list\n# that is in fact the same original list, that is has changed its first member\n\n\n\n\n\n\nflowchart TB\n    subgraph variables\n    a\n    b\n    end\n    Memory:::memory\n    subgraph Memory\n    hello1[\"['HELLO', 'Jane']\"]\n    end\n    a --&gt; hello1\n    b --&gt; hello1\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n\n\n\n\n\n\nThis is an aspect that varies from language to language. If you study a different programming language you will need to understand if the variables are ment to be values, pointers or references. In Python they are always references. You can read a Real Python tutorial about Python references.",
+    "objectID": "functions/definition.html#return",
+    "href": "functions/definition.html#return",
+    "title": "Function definition",
+    "section": "return",
+    "text": "return\nScopes have also to be taken into account when getting a result out of the function.\n\n\n\n\n\n\nIf we want to get data out of the function we use the return statement. Let’s see how we can return data to the caller.\n\n\n\n\n\n\nWe use the return statement to return a value generated in the function to the caller. Again, like in the arguments passed to the function, the caller will receive a new reference to the value stored in memory that can assign to a new variable. return is used to move a result in memory between scopes. For instance, in the previous example there is a variable, inside the function, named area, but in the first call we store the reference in a variable named result. area and result are two variables, two references to the same value stored in memory, but they are variables that belong to different scopes. In this case area belongs to the scope of the calc_rect_area function and result to the global scope.\nFix the following code\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nDoes the function return something?\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite a function that returns “odd” or “even” depending on the number that we pass.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite a program with two functions, one that transforms from Fahrenheit to Celsius, and another one from Celsius to Fahrenheit.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDefine a function that reverses a list, like the reversed funtion.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that indexing has the posibility of reversing using -1 as the step (some_sequence[::-1]).\n\n\n\n\n\n\n\n\n\n\n\nNote",
     "crumbs": [
       "Functions",
-      "Arguments"
+      "Definition"
+    ]
+  },
+  {
+    "objectID": "functions/definition.html#function-calls-are-independent",
+    "href": "functions/definition.html#function-calls-are-independent",
+    "title": "Function definition",
+    "section": "Function calls are independent",
+    "text": "Function calls are independent\nNote also that each time that the function returns, its scope, the variables created inside the function and available to it, is erased, so each call will be independent. Once a return is executed in a function, the function returns and its scope is destroyed with all its variables.\n\n\n\n\n\n\nWhat would be the result of executing the following code and why?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nEverytime we call a function a new scope with new data is created and the function starts its execution in its first line and ends its execution once it encounters the first return. That’s why no matter how many time we call this function it will always return “Hi” and “Bye” will be never reached.",
+    "crumbs": [
+      "Functions",
+      "Definition"
+    ]
+  },
+  {
+    "objectID": "functions/definition.html#methods",
+    "href": "functions/definition.html#methods",
+    "title": "Function definition",
+    "section": "Methods",
+    "text": "Methods\nSo far we haven’t talked about clases and their instances, the objects, because they are a slightly more advanced topic related to Object-oriented programming (OOP).\nPython is a object oriented language, in fact, in Python almost everything is an object. And although we are not going to discuss this topic yet, it is important to understand the concept and use of methods, the object “functions”. In fact we have already used methods when dealing with strings.\n\n\n\n\n\n\nupper is a method, a function associated with an object. In this case the object is the string “hello” and upper is a function that acts on that object. By convention functions associated to objects are called methods. So upper is a method, a function associated to the objects of type str. You can think on a method like on a function that has as its first argument the given object. If upper were a standard function, the previous code would be:\ns = \"hello\"\ns = upper(s)\nprint(s)\nSomething similar to that would work if upper were a normal function but, instead, upper is a method associated to an object, so the syntax is different, we use a dot after the object, then the name of the method/function, and then the language makes sure that the object is passed as the first argument to this method.\nIf you want to understand Python you need to learn about objects, classes, methods and properties, because Python is a deeply object-oriented language, but this is a topic that we can leave for later.",
+    "crumbs": [
+      "Functions",
+      "Definition"
+    ]
+  },
+  {
+    "objectID": "functions/definition.html#anonymous-functions-lambdas",
+    "href": "functions/definition.html#anonymous-functions-lambdas",
+    "title": "Function definition",
+    "section": "Anonymous functions, lambdas",
+    "text": "Anonymous functions, lambdas\nIn Python, and many other programming languages, we can create anonymous functions, a function with no name. This is a more abstract idea, but they are used quite commonly in Python, so it would be nice, at least, that you could recognized them.\nIn Python anonymous functions are created with the lambda statement. lambdas are usually very small functions, just one line, and they are used as parameters for other functions. For instance, they are very common in as the key argument to the sorted function.\n\n\n\n\n\n\nYou can learn more about lambdas in the official documentation or in Real Python.",
+    "crumbs": [
+      "Functions",
+      "Definition"
     ]
   },
   {
