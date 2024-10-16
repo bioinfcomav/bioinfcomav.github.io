@@ -1202,6 +1202,17 @@
     ]
   },
   {
+    "objectID": "exercises/set2.html#calculate-the-allelic-and-genotypic-frequencies",
+    "href": "exercises/set2.html#calculate-the-allelic-and-genotypic-frequencies",
+    "title": "Exercises 2",
+    "section": "Calculate the allelic and genotypic frequencies",
+    "text": "Calculate the allelic and genotypic frequencies\nFor a gene with two alleles an individual could have the genotypes AA, Aa or aa. Calculate the frequencies of these genotypes in the population. Calculate also the allelic frequencies: the number of A and a.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Exercises",
+      "Exercises 2"
+    ]
+  },
+  {
     "objectID": "exercises/set2.html#read-the-genetic-code-into-a-dictionary",
     "href": "exercises/set2.html#read-the-genetic-code-into-a-dictionary",
     "title": "Exercises 2",
