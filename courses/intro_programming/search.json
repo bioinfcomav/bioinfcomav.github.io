@@ -429,669 +429,6 @@
     ]
   },
   {
-    "objectID": "exercises/set2.html",
-    "href": "exercises/set2.html",
-    "title": "Exercises 2",
-    "section": "",
-    "text": "Download a text file, like Alice in wonderland from Project Gutenberg, count the number of time each word appears and print the 50 most common words.\nTake into account that the Alice in wonderland text really only starts after the line “CHAPTER I.” and ends with the line “THE END”.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nA solution using a dictionary to keep the counts.\n\n\n\n\n\n\nA solution using the Counter class from the collections module.",
-    "crumbs": [
-      "Exercises 2",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "exercises/set2.html#find-the-most-common-words",
-    "href": "exercises/set2.html#find-the-most-common-words",
-    "title": "Exercises 2",
-    "section": "",
-    "text": "Download a text file, like Alice in wonderland from Project Gutenberg, count the number of time each word appears and print the 50 most common words.\nTake into account that the Alice in wonderland text really only starts after the line “CHAPTER I.” and ends with the line “THE END”.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nA solution using a dictionary to keep the counts.\n\n\n\n\n\n\nA solution using the Counter class from the collections module.",
-    "crumbs": [
-      "Exercises 2",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "exercises/set2.html#read-the-genetic-code-into-a-dictionary",
-    "href": "exercises/set2.html#read-the-genetic-code-into-a-dictionary",
-    "title": "Exercises 2",
-    "section": "Read the genetic code into a dictionary",
-    "text": "Read the genetic code into a dictionary\nThe dictionary should have the codon as the key and the aminoacid name as the value.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nsplitlines\n\n\n\n\n\n\n\n\n\n\n\nTip",
-    "crumbs": [
-      "Exercises 2",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "exercises/set2.html#write-a-program-that-translate-a-coding-sequence-into-a-protein",
-    "href": "exercises/set2.html#write-a-program-that-translate-a-coding-sequence-into-a-protein",
-    "title": "Exercises 2",
-    "section": "Write a program that translate a coding sequence into a protein",
-    "text": "Write a program that translate a coding sequence into a protein\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nYou can get the position of every codon using the range function. Remember that range has a step argument that can be set to 3.\n\n\n\n\n\n\n\n\n\n\n\nTip",
-    "crumbs": [
-      "Exercises 2",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "exercises/set2.html#guess-the-number-game",
-    "href": "exercises/set2.html#guess-the-number-game",
-    "title": "Exercises 2",
-    "section": "Guess the number game",
-    "text": "Guess the number game\nWrite a program that chooses a random number between 1 and 10 and asks the user to guess it several times. The program should finish once the user guesses correctly or once the number of available attemps has run out.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThe function randint of the random module creates random integers.\nYou can ask input from a user, like his guess, using the input function. Remember that the input function always return a string.\n\n\n\n\n\n\n\n\n\n\n\nTip",
-    "crumbs": [
-      "Exercises 2",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "exercises/set2.html#write-a-hangman-game",
-    "href": "exercises/set2.html#write-a-hangman-game",
-    "title": "Exercises 2",
-    "section": "Write a Hangman game",
-    "text": "Write a Hangman game\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nimport random\n\nDICTIONARY = ['hola', 'caracola', 'casa', 'barco']\nINITIAL_NUM_ATTEMPS = 10\n\ndef create_revealed_string(secret_word, guessed_letters):\n\n    num_letters_missing = 0\n    revealed_string = ''\n    for letter in secret_word:\n        if letter.upper() in guessed_letters:\n            revealed_letter = letter\n        else:\n            revealed_letter = '-'\n            num_letters_missing += 1\n        revealed_string += revealed_letter\n    return revealed_string\n\n\ndef play_game():\n    secret_word = random.choice(DICTIONARY)\n    guessed_letters = set()\n    num_attempts = INITIAL_NUM_ATTEMPS\n    won = None\n    while True:\n        guessed_letter = input('Pick a letter ')\n        guessed_letters.add(guessed_letter.upper())\n\n        revealed_string = create_revealed_string(secret_word, guessed_letters)\n        num_attempts -= 1\n\n        num_letters_to_guess = revealed_string.count('-')\n        if not num_letters_to_guess:\n            won = True\n            break\n        elif num_letters_to_guess:\n            if num_attempts:\n                print('The guess so far: ', revealed_string, guessed_letters)\n            else:\n                won = False\n                break\n\n    if won:\n        print('Congratulations, you have won the game')\n    else:\n        print('You have lost')\n    print('The secret word was: ', secret_word)\n\n\nplay_game()",
-    "crumbs": [
-      "Exercises 2",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "exercises/set2.html#read-a-fasta-file",
-    "href": "exercises/set2.html#read-a-fasta-file",
-    "title": "Exercises 2",
-    "section": "Read a fasta file",
-    "text": "Read a fasta file\nIn bioinformatics we use fasta files to store DNA sequences. This is an example of a fasta file with three sequences.\n&gt;seq1\nCGCTAGCTAGTCTATCGATCTAGTCTAGCT\n&gt;seq2 some description after the space\nTGTCGATCGTAGTCATCTGATCGACGTATCTA\nCTCGAGTCATGCTATCATCATGCTAG\n&gt;seq3\nTCAGTCGATGCTATCATCGTAGCTGATCGATCTGGCA\nCTAGCAGTCGATC\nWrite a program that reads the sequences found in a fasta file and stores them in a list of dictionaries, one dictionary per sequence.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow, create functions capable of calculating the percentage of GCs in the sequences and their lengths.",
-    "crumbs": [
-      "Exercises 2",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "exercises/set2.html#create-a-restriction-map",
-    "href": "exercises/set2.html#create-a-restriction-map",
-    "title": "Exercises 2",
-    "section": "Create a restriction map",
-    "text": "Create a restriction map\nRestriction enzymes recognize specific sequences, for instance:\n\nEcoRI: GATTC (cuts in the position between G and A, G^ATTC)\nHind III : AAGCTT (cuts in the position between A and A, AAGCT^T)\n\nGiven a sequence, create the restriction fragments that these two sequences would create:\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
-    "crumbs": [
-      "Exercises 2",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "local_install/hello_world2.html",
-    "href": "local_install/hello_world2.html",
-    "title": "Hello world",
-    "section": "",
-    "text": "Real Python introduction to the Terminal.\nMicrosoft instroduction to PowerShell.\nThe Unix Shell in Software Carpentry.\nAn introduction to the Unix Shell (in Spanish)",
-    "crumbs": [
-      "Install and run Python",
-      "Local hello world"
-    ]
-  },
-  {
-    "objectID": "local_install/hello_world2.html#resources",
-    "href": "local_install/hello_world2.html#resources",
-    "title": "Hello world",
-    "section": "",
-    "text": "Real Python introduction to the Terminal.\nMicrosoft instroduction to PowerShell.\nThe Unix Shell in Software Carpentry.\nAn introduction to the Unix Shell (in Spanish)",
-    "crumbs": [
-      "Install and run Python",
-      "Local hello world"
-    ]
-  },
-  {
-    "objectID": "local_install/hello_world2.html#the-terminal",
-    "href": "local_install/hello_world2.html#the-terminal",
-    "title": "Hello world",
-    "section": "The terminal",
-    "text": "The terminal\nWe are used to interact with our computers using Graphical User Interfaces, we click and drag icons and windows, but when we are developing Python programs our main way of interaction will be a command-line interface, a shell running in a terminal.\nIn a command-line interface, there is a prompt that promts the user the write a text command. Once we write the command and hit “enter” the computer runs the command, writes the output in the terminal and, after the command ends, the prompt will be ready for the next command. A command is just a computer program.\nIn different operating systems there are different terminal applications. In Linux and MacOS the application is usually named “terminal”, while in Windows there are different applications but we recommend “PowerShell” running in the “Windows Terminal”.\nDuring the course we recommend to use the editor Visual Studio Code to write Python code and this editor includes its our terminal, so you won’t need any other software. If you haven’t installed Visual Studio Code yet, we recommend that you do it.",
-    "crumbs": [
-      "Install and run Python",
-      "Local hello world"
-    ]
-  },
-  {
-    "objectID": "local_install/hello_world2.html#hello-world-with-uv",
-    "href": "local_install/hello_world2.html#hello-world-with-uv",
-    "title": "Hello world",
-    "section": "Hello world with uv",
-    "text": "Hello world with uv\nFirst, create a folder/directory in which you will create and store the Python programs. Then open Visual Studio Code and in the File menu select Open Folder and Open the Folder that you just created. Now in the Visual Studio File Explorer click with the right mouse button, select “New File…” and create a file named hello.py. All Python programs, by convention, are text files with the extension “.py”.\nAt this point Visual Studio should have created the “hello.py” text file and it will have open it, so we can type our first Python program.\n\nprint(\"Hello\")\n\nHello\n\n\nNow that we have our first program, we can run it in the Visual Studio Code Terminal. In the menu select “Terminal” -&gt; “New Terminal”. That will open a terminal inside Visual Studio Code. The prompt will indicate the folder/directory in which we are working.\nWe could run our Python programs directly using the Python interpreter command: “python”, but we are going to uv. If you haven’t installed uv, go ahead and do it. Once we have uv available, it will manage the Python installation for us and it will also run Python, just write in Visual Studio Terminal:\n\n$ uv run hello.py\n\n(The dollar sign is part of the prompt, we are just including it to show that the command is meant to be written in the prompt, but the dolar sign itself should not be written. In this case you should only write “uv run hello.py”)\nClick enter and, hopefully, you should have run your first Python program in the Terminal.\nIn most courses and tutorials you would not have installed uv, but just Python. In this case you would run the following command instead.\n\n$ python hello.py",
-    "crumbs": [
-      "Install and run Python",
-      "Local hello world"
-    ]
-  },
-  {
-    "objectID": "control_flow/block.html",
-    "href": "control_flow/block.html",
-    "title": "Block",
-    "section": "",
-    "text": "A block of code is a set of statements, functions or instructions that are grouped together. In most programming languages the blocks of code are created by using curly braces ({}). For instance, in C the statements executed when a test condition is met would be written as:\nif (testCondition) {\n   statement1;\n   statement2;\n   statement3;\n}\nIn Python a block of code is created by using indentation.\n\n\n\n\n\n\n\nIn the if and for the code starts with a colon (:)\nThe next line after the colon should be indented\nThe block ends when the indentation goes back to the previous level.\n\nThe standard is to create the indentation by using four spaces.",
-    "crumbs": [
-      "Control flow",
-      "Code blocks"
-    ]
-  },
-  {
-    "objectID": "control_flow/for.html",
-    "href": "control_flow/for.html",
-    "title": "for loops",
-    "section": "",
-    "text": "for statement in the official documentation.\nfor loops in Real Python.",
-    "crumbs": [
-      "Control flow",
-      "for loops"
-    ]
-  },
-  {
-    "objectID": "control_flow/for.html#resources",
-    "href": "control_flow/for.html#resources",
-    "title": "for loops",
-    "section": "",
-    "text": "for statement in the official documentation.\nfor loops in Real Python.",
-    "crumbs": [
-      "Control flow",
-      "for loops"
-    ]
-  },
-  {
-    "objectID": "control_flow/for.html#for",
-    "href": "control_flow/for.html#for",
-    "title": "for loops",
-    "section": "for",
-    "text": "for\nfor allows us to execute a block of code for each item. The variable defined after the for keyword will take the value of each item, one at a time, one for each iteration.\n\n\n\n\n\n\nWhat would happen if we executed the following code? How would you fix it?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInternally the for loop works by calling the next on an iterator from the given iterable. An iterator is an object that, when given to the next function, supports the generation of one item at a time, until it runs out of items. So the previous for loop would be, more or less, equivalent running the following code.\n\n\n\n\n\n\nPython has another way of doing loops, the while statement.",
-    "crumbs": [
-      "Control flow",
-      "for loops"
-    ]
-  },
-  {
-    "objectID": "control_flow/for.html#break",
-    "href": "control_flow/for.html#break",
-    "title": "for loops",
-    "section": "break",
-    "text": "break\nAt any iteration the loop could be completely stopped, broken, by using the break statement.",
-    "crumbs": [
-      "Control flow",
-      "for loops"
-    ]
-  },
-  {
-    "objectID": "control_flow/for.html#continue",
-    "href": "control_flow/for.html#continue",
-    "title": "for loops",
-    "section": "continue",
-    "text": "continue\nThe continue statement allows us to move to the next iteration without running the rest of the code in the block.",
-    "crumbs": [
-      "Control flow",
-      "for loops"
-    ]
-  },
-  {
-    "objectID": "control_flow/for.html#range",
-    "href": "control_flow/for.html#range",
-    "title": "for loops",
-    "section": "range",
-    "text": "range\nThis kind of for loop, the one implemented in Python, in other languages is known as a foreach loop. To have the functionallity available in other programming languages, in which the for statement just iterates over some numbers, you could combine a for loop with the range function.\nWrite a for loop that prints the first 10 natural numbers.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nYou can use a list or the range function.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nWith a list.\n\n\n\n\n\n\nWith the range function.\n\n\n\n\n\n\n\n\n\n\nCreate a program that writes the following:\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThere are many ways of solving this exercise, here you have some.\n\n\n\n\n\n\n\n\n\n\n\n\nUsing map and range.\n\n\n\n\n\n\nUsing a list comprenhension.",
-    "crumbs": [
-      "Control flow",
-      "for loops"
-    ]
-  },
-  {
-    "objectID": "control_flow/for.html#enumerate",
-    "href": "control_flow/for.html#enumerate",
-    "title": "for loops",
-    "section": "enumerate",
-    "text": "enumerate\nIt is quite common to require both the item and its index. We could do it like:\n\n\n\n\n\n\nHowever, this pattern is so common that Python have solved it using the function enumerate.\n\n\n\n\n\n\nEnumerate works by creating an iterator of tuples with two elements: the index, and the original item.\n\n\n\n\n\n\nAnd since Python supports mutiple assigment what we are doing in the for loop is equivalente to:",
-    "crumbs": [
-      "Control flow",
-      "for loops"
-    ]
-  },
-  {
-    "objectID": "packages/modules.html",
-    "href": "packages/modules.html",
-    "title": "Modules and packages",
-    "section": "",
-    "text": "Modules section on the official Python tutorial.\nReal Python tutorials on modules and packages and the import statement.\npip information in wikipedia and in the official documentation.\nVirtual environment primer in Real Python.\nuv documentation.",
-    "crumbs": [
-      "Modules and packages",
-      "Modules"
-    ]
-  },
-  {
-    "objectID": "packages/modules.html#resources",
-    "href": "packages/modules.html#resources",
-    "title": "Modules and packages",
-    "section": "",
-    "text": "Modules section on the official Python tutorial.\nReal Python tutorials on modules and packages and the import statement.\npip information in wikipedia and in the official documentation.\nVirtual environment primer in Real Python.\nuv documentation.",
-    "crumbs": [
-      "Modules and packages",
-      "Modules"
-    ]
-  },
-  {
-    "objectID": "packages/modules.html#modules",
-    "href": "packages/modules.html#modules",
-    "title": "Modules and packages",
-    "section": "Modules",
-    "text": "Modules\nProgramming is about mixing ideas; you take the idea of reading a file with data with the idea of doing a statistical test and of plotting a chart and you have created a program that analyzes and plots the data that you needed. Programming languages are usually quite limited in what they can directly do, but they are expanded by adding preprogrammed functionality. Moreover, if would be very inefficient to program the same functionallity over and over again, for instance, to create the same parsing or statistical functions in every program that you need. Thus programming languages have ways of not repeating yourself.\nIn Python it is very easy to create a piece of code, like a function, in one file and using it in another. Let’s create a file called greeting.py that implements the following function.\n\n\n\n\n\n\nNow, in the same directory we are going to create a new program that will use this function. Let’s create the file hello.py with the following code.\n\n\n\n\n\n\nWhen you run hello.py the first line imports the function print_hello from greeting.py and the function is ready to run. You have created and used your first Python module: greeting.\nimport can be used in a different way. Let’s create the file hello2.py\n\n\n\n\n\n\nIn this case we have imported the greeting module and then we have used the print_hello function inside of this module by using a point notation.",
-    "crumbs": [
-      "Modules and packages",
-      "Modules"
-    ]
-  },
-  {
-    "objectID": "packages/modules.html#packages-and-the-standard-library",
-    "href": "packages/modules.html#packages-and-the-standard-library",
-    "title": "Modules and packages",
-    "section": "Packages and the standard library",
-    "text": "Packages and the standard library\nModules can be organized in directories and subdirectories creating packages. By default Python ships with many packages, collectively called the standard library, ready to be used.",
-    "crumbs": [
-      "Modules and packages",
-      "Modules"
-    ]
-  },
-  {
-    "objectID": "packages/modules.html#installing-packages",
-    "href": "packages/modules.html#installing-packages",
-    "title": "Modules and packages",
-    "section": "Installing packages",
-    "text": "Installing packages\nAs we have already seen Python can import modules found in the same directory, but it is also able to look for packages and modules elsewhere. There is a list of directories in which Python looks for these packages and modules, the python path. If you are curious you can check which are those directories:\n\n\n\n\n\n\nUsually, you don’t need to worry about these details, they are taken care by the tools that install and manage the Python packages. The most popular tool is pip and this is the tool that I have used the most, but I have recently switched to uv.\nPython packages are collected in the pypi repository. Both pip and uv, by default, grab from pypi then packages that you want to install. The Python ecosystem, the amount of functionallity available is huge and no course can describe all the packages available (more than half a million). The best way to find out which are the most relevant packages for your needs are reading about the kind of problems that you want to solve and interacting with the community that works on them.\nBefore installing packages I highly recommend to read about virual environments. If you plan to use Python professionaly you must understand and use them.",
-    "crumbs": [
-      "Modules and packages",
-      "Modules"
-    ]
-  },
-  {
-    "objectID": "files/read_write.html",
-    "href": "files/read_write.html",
-    "title": "Read and write files",
-    "section": "",
-    "text": "Real Python working and reading and writing files tutorials.\nReading and Writting files section in the official Python tutorial.\nContext managers in Real Python.\nOfficial documentation for the with statement.\nA Real Python tutorial about flush.\nIf you ever need to work with temporary files, the tempfile module is very useful.",
-    "crumbs": [
-      "Files",
-      "Read & write"
-    ]
-  },
-  {
-    "objectID": "files/read_write.html#resources",
-    "href": "files/read_write.html#resources",
-    "title": "Read and write files",
-    "section": "",
-    "text": "Real Python working and reading and writing files tutorials.\nReading and Writting files section in the official Python tutorial.\nContext managers in Real Python.\nOfficial documentation for the with statement.\nA Real Python tutorial about flush.\nIf you ever need to work with temporary files, the tempfile module is very useful.",
-    "crumbs": [
-      "Files",
-      "Read & write"
-    ]
-  },
-  {
-    "objectID": "files/read_write.html#open",
-    "href": "files/read_write.html#open",
-    "title": "Read and write files",
-    "section": "open",
-    "text": "open\nIn many ocassions we will need that our programs read information stored in files, thus a very common action will be to open a file. In Python we could open a file with the open function.\nLet’s imagine that we have a text file stored in the same directory/folder as our Python code. For instance, we could had downloaded Alice in wonderland from Project Gutenberg. This file is named 11.txt.utf-8, and we could open it using the following code.\n\nfile_name = \"11.txt.utf-8\"\nfile = open(file_name, 'rt')\n\nThe open function can take several parameters, but the most important ones are the file path and the mode.\nThe mode indicates if we are trying to open an existing file for reading (r mode) or creating new file for writing. Moreover, it indicates if we are dealing with a text or binary files. In this example the mode was “rt”, so we are trying to open a text file for reading and what the open function returns to us is a Text IO file object that will allow us to read the file.\n\nRead text\nNow that we know how to open a file, let’s try to read it. The most common way to read a text file is to use a for loop.\n\nfile_name = \"11.txt.utf-8\"\nfile = open(file_name, 'rt')\n\nfor line in file:\n    print(line)\n\nTry to print only the first 10 lines.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nIt would be easier to use enumerate.",
-    "crumbs": [
-      "Files",
-      "Read & write"
-    ]
-  },
-  {
-    "objectID": "files/read_write.html#write",
-    "href": "files/read_write.html#write",
-    "title": "Read and write files",
-    "section": "Write",
-    "text": "Write\nWe could also create a new file to write in it by using the mode “wt” (write, text). Once we have the file object we can write in it using the write method.\n\nfile_name = \"my_output_file.txt\"\nfile = open(file_name, 'wt')\nfile.write(\"Hello world\")\n\nCreate a file, and write in it two lines, like “Hi” and “Bye”, in it.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
-    "crumbs": [
-      "Files",
-      "Read & write"
-    ]
-  },
-  {
-    "objectID": "files/read_write.html#close-and-with",
-    "href": "files/read_write.html#close-and-with",
-    "title": "Read and write files",
-    "section": "close and with",
-    "text": "close and with\nSo far we have not closed our file object after we are done with them, but we really should. So, the proper way to read a file would be:\n\nfile_name = \"some_file.txt\"\nfile = open(file_name, 'rt')\n\nfor line in file:\n    print(line)\n\nfile.close()\n\nFile objects are limited by the operating system, so that’s one reason for closing them. If we don’t do it Python will try to do it for us after the variable that holds the file object goes out of scope, but it’s better if we do it by ourselves.\nEven better, we could use the with statement. with will take care of closing the file after finishing the with block, even in the event of an exception ocurring within the block.\n\nfile_name = \"some_file.txt\"\n\nwith open(file_name, 'rt') as file:\n    for line in file:\n        print(line)",
-    "crumbs": [
-      "Files",
-      "Read & write"
-    ]
-  },
-  {
-    "objectID": "files/read_write.html#buffers-and-flush",
-    "href": "files/read_write.html#buffers-and-flush",
-    "title": "Read and write files",
-    "section": "Buffers and flush",
-    "text": "Buffers and flush\nClosing the file is even more important when writing files. We could think that every time that we use the write method Python writes the given contents in disk, but this is not so. In fact what the write method does is to write the given content in a memory buffer. It writes in memory because memory is much faster than disk. It would be very slow to write down in disk every time. When does Python decides to really write down in disk? Well, from time to time, but usually we do not take care of that. What we know for sure is that Python writes down everything that is to write when whe close the file calling the close method. So, close the file.\nIf you need to make sure that Python writes down to disk everything you have written so far you could also use the flush method, but don’t do it every time that you write, because that would be very slow.",
-    "crumbs": [
-      "Files",
-      "Read & write"
-    ]
-  },
-  {
-    "objectID": "files/paths.html",
-    "href": "files/paths.html",
-    "title": "Path",
-    "section": "",
-    "text": "File and directory access section in the official documentation.\npathlib module documentation.\nFile sytem entry in wikipedia.\nFile system tutorial (in spanish).",
-    "crumbs": [
-      "Files",
-      "Paths"
-    ]
-  },
-  {
-    "objectID": "files/paths.html#resources",
-    "href": "files/paths.html#resources",
-    "title": "Path",
-    "section": "",
-    "text": "File and directory access section in the official documentation.\npathlib module documentation.\nFile sytem entry in wikipedia.\nFile system tutorial (in spanish).",
-    "crumbs": [
-      "Files",
-      "Paths"
-    ]
-  },
-  {
-    "objectID": "files/paths.html#paths",
-    "href": "files/paths.html#paths",
-    "title": "Path",
-    "section": "Paths",
-    "text": "Paths\nThe location of a file in a file system is given by its path that is composed by its location in the directories, subdirectories and file name. Some examples of paths are: “c:\\users\\jane\\documents\\letter.doc”, “/users/jane/documents/letter.doc”, or “/home/jane/documents/letter.doc”.\nOne relevant difference between Windows and Unix-like (MacOS or Linux) operating systems is that in windows the path elements are separated by the “\\” character, whereas in MacOS and Linux the separator is “/”. Python is a multiplatform language, but we have to take into account these details if we want to write software capable of running in different operating systems.",
-    "crumbs": [
-      "Files",
-      "Paths"
-    ]
-  },
-  {
-    "objectID": "files/paths.html#path-objects",
-    "href": "files/paths.html#path-objects",
-    "title": "Path",
-    "section": "Path objects",
-    "text": "Path objects\nIn Python we could use strings to store path information and, in fact, that used to be the case, but now it is very common to work with Path objects available in the pathlib module. I would recommend to use these convenient objects instead of plain string objects.\n\n\n\n\n\n\nOne advantage of the Path objects is that we can join them together very easily.\n\n\n\n\n\n\nThe Path class some very convenient methods, like home that will give us the $HOME directory for the current user or cwd that will return the current working directory.\n\n\n\n\n\n\nPaths objects have a rich functionality. For instance, we can check if they exist in the file system.\n\n\n\n\n\n\nWe can list the contents of a directory.\n\n\n\n\n\n\nAnd we can get their names and suffixes.\n\n\n\n\n\n\nWe can also:\n\nopen a file using the open method of the Path objects\ncreate a directory using mkdir\nremove a file with unlink or a directory with rmdir.\n\nIn your home directory create a file named “hello.txt”, write in it the text “Hello world”, then get a directory listing and check that the file is really there, after that, open the file and read the text in it. Finally, remove the file and check that it has been really deleted.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n¿Cuál es el directorio de trabajo actual? ¿Hay algún fichero en él? ¿Del primero de los ficheros que aparecen en el listado, cuál es la ruta completa? ¿Se podría extraer de esta ruta el nombre del directorio y el fichero? ¿Cuál es la $HOME de nuestro usuario? ¿Del fichero ‘programa.py’ cuáles son el nombre y la extensión?",
-    "crumbs": [
-      "Files",
-      "Paths"
-    ]
-  },
-  {
-    "objectID": "packages/std_library.html",
-    "href": "packages/std_library.html",
-    "title": "Standard library",
-    "section": "",
-    "text": "There are many packages available in the default Python installation. We have already used some of them, like pathlib. You can find a list with all of them in the official documentation. Here we are just going to mention a couple as an example.",
-    "crumbs": [
-      "Modules and packages",
-      "Standard library"
-    ]
-  },
-  {
-    "objectID": "packages/std_library.html#resources",
-    "href": "packages/std_library.html#resources",
-    "title": "Standard library",
-    "section": "Resources",
-    "text": "Resources\n\nStandard library official documentation.",
-    "crumbs": [
-      "Modules and packages",
-      "Standard library"
-    ]
-  },
-  {
-    "objectID": "packages/std_library.html#shutil",
-    "href": "packages/std_library.html#shutil",
-    "title": "Standard library",
-    "section": "shutil",
-    "text": "shutil\nThe shutil module allow us to copy and delete files and directories. copy copies files, and copytree directories. Remember that in the pathlib module there was more functionality to create an delete files and directories.",
-    "crumbs": [
-      "Modules and packages",
-      "Standard library"
-    ]
-  },
-  {
-    "objectID": "packages/std_library.html#subprocess",
-    "href": "packages/std_library.html#subprocess",
-    "title": "Standard library",
-    "section": "subprocess",
-    "text": "subprocess\nsubprocess allows you to run programs from Python. The easiest way to use it is its run function.",
-    "crumbs": [
-      "Modules and packages",
-      "Standard library"
-    ]
-  },
-  {
-    "objectID": "control_flow/if.html",
-    "href": "control_flow/if.html",
-    "title": "if",
-    "section": "",
-    "text": "Conditional statements in Real Python.\nif statement in the official documentation.\nControl flow in wikipedia.",
-    "crumbs": [
-      "Control flow",
-      "if"
-    ]
-  },
-  {
-    "objectID": "control_flow/if.html#resources",
-    "href": "control_flow/if.html#resources",
-    "title": "if",
-    "section": "",
-    "text": "Conditional statements in Real Python.\nif statement in the official documentation.\nControl flow in wikipedia.",
-    "crumbs": [
-      "Control flow",
-      "if"
-    ]
-  },
-  {
-    "objectID": "control_flow/if.html#if",
-    "href": "control_flow/if.html#if",
-    "title": "if",
-    "section": "if",
-    "text": "if\nif is one of the basic control flow statements. It allows us to execute some code only if a given condition is met.\n\n\n\n\n\n\nIf the condition is not met the code inside the if block won’t be executed.\n\n\n\n\n\n\nEvery line included in the block will be executed, not just the first one.\n\n\n\n\n\n\nFix the following code to print “Done!” even when the condition is not met.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that a block ends when the indentation returns to the previous level.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFix the following code.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote",
-    "crumbs": [
-      "Control flow",
-      "if"
-    ]
-  },
-  {
-    "objectID": "control_flow/if.html#else",
-    "href": "control_flow/if.html#else",
-    "title": "if",
-    "section": "else",
-    "text": "else\nIt is common that we want to execute some code when the condition is met, and some other code when the condition is not met, for that we use else.\n\n\n\n\n\n\n\n\n\n\n\n\nFix this code:\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite some code capable of, given a pair of numbers, finding out which is the highest.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFix the following code to prevent the error when a = 0.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
-    "crumbs": [
-      "Control flow",
-      "if"
-    ]
-  },
-  {
-    "objectID": "control_flow/if.html#elif",
-    "href": "control_flow/if.html#elif",
-    "title": "if",
-    "section": "elif",
-    "text": "elif\nelif allows us to test for different conditions sequentialy.\n\n\n\n\n\n\nWhen several conditions are met only the first True one will be executed.\n\n\n\n\n\n\nIn Python, a more powerful alternative to elif is the match statement.\nWrite a program that classifies a person into: baby, child, teenager, young, and old\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite a program that writes the quote of the selected philosopher.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
-    "crumbs": [
-      "Control flow",
-      "if"
-    ]
-  },
-  {
-    "objectID": "control_flow/if.html#boolean-casting",
-    "href": "control_flow/if.html#boolean-casting",
-    "title": "if",
-    "section": "Boolean casting",
-    "text": "Boolean casting\nWhen a condition is evaluated, internally the if statement casts anything given to a boolean. So, you will usually see expressions like:\n\n\n\n\n\n\nIt would be very weird to write:\n\n\n\n\n\n\nRemember that everything that we talked about booleans and boolean arithmetic is applicable to the if evaluation.",
-    "crumbs": [
-      "Control flow",
-      "if"
-    ]
-  },
-  {
-    "objectID": "control_flow/index.html",
-    "href": "control_flow/index.html",
-    "title": "Control flow",
-    "section": "",
-    "text": "The flow of the code is the order in which the statements, functions or instructions are executed. By default the code is executed line by line:\n\n\n\n\n\n\nBut this order can be altered in different ways, and these modifications are known as control flow. We could:\n\nChoose to execute some statements only if some condition is met.\nRun the same code over and over again for every item.\nCreate new functions and call them.\n\nTo understand the control of the flow of execution we need to understand the concept of a block of code. A block is a set of lines that are grouped together, for instance, the set of lines that will be executed only when a given condition if met.",
-    "crumbs": [
-      "Control flow"
-    ]
-  },
-  {
-    "objectID": "local_install/run_python.html",
-    "href": "local_install/run_python.html",
-    "title": "Installing and running Python",
-    "section": "",
-    "text": "Python code can be run in many different platforms that include: computers with different operating systems, like Windows, MacOS and Linux, embedded systems, and the web browser.\nHowever, a file with Python code, by itself, will not be executable. For instance, imagine that you create an useful Python program and you send it to a colleague. Usually he won’t be able to run it unless he first installs Python. This is what we mean when we say that Python is an interpreted language. We don’t need to compile the Python code to a binary file capable of being run by the operating system. The advantage of this approach is that we don’t need to compile the code for every operating system and architecture, but the limitation is that we need to install Python.\nPython is free and it is not difficult to install, but there are many operating systems and environments and the way in which we install Python in all of them might be different.",
-    "crumbs": [
-      "Install and run Python",
-      "Install"
-    ]
-  },
-  {
-    "objectID": "local_install/run_python.html#python-online",
-    "href": "local_install/run_python.html#python-online",
-    "title": "Installing and running Python",
-    "section": "Python online",
-    "text": "Python online\nSo far we have run the Python code in the web browser. In fact the web pages that we have used so far in the course included a version of the Python interpreter that has run the code inside the browser.\nThere are other sites that allow to run Python code online like:\n\nThe Future Coder IDE allows to write, run and debug Python programs.\nIn the Pyodide REPL the user can execute Python commands.",
-    "crumbs": [
-      "Install and run Python",
-      "Install"
-    ]
-  },
-  {
-    "objectID": "local_install/run_python.html#operating-system-specific-installers",
-    "href": "local_install/run_python.html#operating-system-specific-installers",
-    "title": "Installing and running Python",
-    "section": "Operating system specific installers",
-    "text": "Operating system specific installers\nRunning Python online is great, but for many uses we need to install it in our computer and run it locally. Python is open source and it is freely distributed in python.org. So, one way of getting Python is to go the download section in python.org, download the latest installer for your operating system and install it. That will install Python, but you might have some issues with it:\n\nYou will need to remember to install the Python updates.\nYou will be able to install only one Python version at a time.\nThe PATH operating system variable might end up not being correctly configured. So, although Python will be installed the interpreter won’t be directly available in the command-line shell.\n\nAlternativery, you could use a specific installer for your operating system, like the Microsoft Store for windows or the package manager of your Linux distribution. There are many different cases and alternatives, and they are covered in the Python Setup and Usage in python.org.",
-    "crumbs": [
-      "Install and run Python",
-      "Install"
-    ]
-  },
-  {
-    "objectID": "local_install/run_python.html#anaconda",
-    "href": "local_install/run_python.html#anaconda",
-    "title": "Installing and running Python",
-    "section": "Anaconda",
-    "text": "Anaconda\nAnother alternative to install Python locally is to use the anaconda installer. Anaconda ships Python, R, and many other tools used in data analysis and it is very convenient because the Anaconda installer and navigator make the experience of using Python very similar in different operating systems.",
-    "crumbs": [
-      "Install and run Python",
-      "Install"
-    ]
-  },
-  {
-    "objectID": "local_install/run_python.html#jupyter",
-    "href": "local_install/run_python.html#jupyter",
-    "title": "Installing and running Python",
-    "section": "Jupyter",
-    "text": "Jupyter\nAn alternative way of using Python in the browser, but with a local installation is jupyter. This is a tool commonly used in Data analysis, and it is included in the anaconda distribution.",
-    "crumbs": [
-      "Install and run Python",
-      "Install"
-    ]
-  },
-  {
-    "objectID": "local_install/run_python.html#virtual-environments",
-    "href": "local_install/run_python.html#virtual-environments",
-    "title": "Installing and running Python",
-    "section": "Virtual environments",
-    "text": "Virtual environments\nOnce you start using Python professionaly it will be highly advisable to use virtual environments. This is an advanced topic for this course, but you will have to learn about virtual environments if you plan to use Python. Here you have a couple of resources:\n\nVirtual environments in Real Python.\nvenv module documentation",
-    "crumbs": [
-      "Install and run Python",
-      "Install"
-    ]
-  },
-  {
-    "objectID": "local_install/run_python.html#uv",
-    "href": "local_install/run_python.html#uv",
-    "title": "Installing and running Python",
-    "section": "uv",
-    "text": "uv\nThere is a new way to install Python: uv.\nOnce you install uv, it will:\n\nmanage the installation of different Python versions.\nrun Python scripts\nmanage Python projects, with their virtual environments and dependencies, for you.\n\nIn this course we will assume that you have installed uv.",
-    "crumbs": [
-      "Install and run Python",
-      "Install"
-    ]
-  },
-  {
-    "objectID": "local_install/run_python.html#code-editor",
-    "href": "local_install/run_python.html#code-editor",
-    "title": "Installing and running Python",
-    "section": "Code editor",
-    "text": "Code editor\nTo edit Python code you will need a code editor. Visual Studio Code is now one of the most popular ones.",
-    "crumbs": [
-      "Install and run Python",
-      "Install"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Introduction to programming with Python",
-    "section": "",
-    "text": "This is an introduction to Python aimed to students with no prior programming experience. There are many great introductions to Python, but we thought that it would be useful for us to create a new one that:\n\nIt relies mainly in examples and exercises.\nIt runs those examples and exercises directly in the web, avoiding the need to install Python in the first day of class.\nIt does not try to cover every detail of the Python language, but just what a beginner might need to start the journey.\n\nWe decided to try this approach after following the rustlings path, an exercise set aimed at teaching the Rust programming language. Rustlings assumes that the student has previously read the Rust introductory book. For this course we have decided to add resources to read for each topic, so, the student could start by reading these resources, and then proceed to practice with the code examples and exercises. Alternatively, the examples could be used in a practical session to teach the theory and, then, the exercises could be use as the practice for the students.\n\n\nThere are other very useful languages, like Javascript for the web, R for statistics, C or Rust for system programming, so, why should we start learning how to program in Python?\nPython is:\n\none of the easiest languages to learn and understand. Learning how to program involves getting used to some abstract concepts related to how computers work, so the easier the language, the better the learning experience will be.\nvery productive. The same ease of use that make Python a good learning language make it very productive for professional developers.\nfree software. It is developed by a community and released under an open source licence.\n\nThese characteristics make Python a very popular tool.\nAccording to IEEE Spectrum Python is the top programming language of 2024. In the 2024 stackoverflow survery, 51% of the developers had used Python in the last year; only Javascript, with 62.3%, is a more popular programming language. Moreover, 67.7% of these developers want to learn an use Python.\nAccording to the 2023 Python Developer survey Python is used mostly for:\n\nWeb development (21%)\nData analysis (10%)\nData engineering (6%)\nMachine learning (10%)\nAcademic research (9%)\nEducation (9%)\n\nSo, if you are interested in data analysis or web development, Python is not just a great language to learn, but an interesting professional option.\n\n\n\n\nThe official Python tutorial. Also, available in Spanish, French, Italian, Portuguese, and other languages.\nPython glossary.\nPython Crash Course\nThe Python Coding Book\nHow to Think Like a Computer Scientist\nMicrosoft course: Python for beginners.\nGoogle Python class. Also available in Spanish, German, French, and Indonesian.\nThe Python community maintains a list of Python courses and tutorials.\nIntroducción a la programación con Python3\nA course in Spanish of focused in Data Analysis with Python\n\n\n\n\n\nFuture coder\nAdam Emery’s course\nCodedex Python course\n\n\n\n\nThe official Python documentation.\n\n\n\nThis site has been built with the quarto publishing system complemented by the quarto live extension that allows Python to run in the web browser by using pyodide. Without the effort of these open source developers this resource wouldn’t exist.\n\n\n\nThis content is released under a Creative Commons BY licence.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#why-python",
-    "href": "index.html#why-python",
-    "title": "Introduction to programming with Python",
-    "section": "",
-    "text": "There are other very useful languages, like Javascript for the web, R for statistics, C or Rust for system programming, so, why should we start learning how to program in Python?\nPython is:\n\none of the easiest languages to learn and understand. Learning how to program involves getting used to some abstract concepts related to how computers work, so the easier the language, the better the learning experience will be.\nvery productive. The same ease of use that make Python a good learning language make it very productive for professional developers.\nfree software. It is developed by a community and released under an open source licence.\n\nThese characteristics make Python a very popular tool.\nAccording to IEEE Spectrum Python is the top programming language of 2024. In the 2024 stackoverflow survery, 51% of the developers had used Python in the last year; only Javascript, with 62.3%, is a more popular programming language. Moreover, 67.7% of these developers want to learn an use Python.\nAccording to the 2023 Python Developer survey Python is used mostly for:\n\nWeb development (21%)\nData analysis (10%)\nData engineering (6%)\nMachine learning (10%)\nAcademic research (9%)\nEducation (9%)\n\nSo, if you are interested in data analysis or web development, Python is not just a great language to learn, but an interesting professional option.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#python-books-and-tutorials",
-    "href": "index.html#python-books-and-tutorials",
-    "title": "Introduction to programming with Python",
-    "section": "",
-    "text": "The official Python tutorial. Also, available in Spanish, French, Italian, Portuguese, and other languages.\nPython glossary.\nPython Crash Course\nThe Python Coding Book\nHow to Think Like a Computer Scientist\nMicrosoft course: Python for beginners.\nGoogle Python class. Also available in Spanish, German, French, and Indonesian.\nThe Python community maintains a list of Python courses and tutorials.\nIntroducción a la programación con Python3\nA course in Spanish of focused in Data Analysis with Python",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#other-interactive-python-courses-for-beginers",
-    "href": "index.html#other-interactive-python-courses-for-beginers",
-    "title": "Introduction to programming with Python",
-    "section": "",
-    "text": "Future coder\nAdam Emery’s course\nCodedex Python course",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#python-reference-documentation",
-    "href": "index.html#python-reference-documentation",
-    "title": "Introduction to programming with Python",
-    "section": "",
-    "text": "The official Python documentation.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#technology",
-    "href": "index.html#technology",
-    "title": "Introduction to programming with Python",
-    "section": "",
-    "text": "This site has been built with the quarto publishing system complemented by the quarto live extension that allows Python to run in the web browser by using pyodide. Without the effort of these open source developers this resource wouldn’t exist.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#licence",
-    "href": "index.html#licence",
-    "title": "Introduction to programming with Python",
-    "section": "",
-    "text": "This content is released under a Creative Commons BY licence.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
     "objectID": "exercises/set1.html",
     "href": "exercises/set1.html",
     "title": "Exercises",
@@ -1257,6 +594,713 @@
     ]
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "This is an introduction to Python aimed to students with no prior programming experience. There are many great introductions to Python, but we thought that it would be useful for us to create a new one that:\n\nIt relies mainly in examples and exercises.\nIt runs those examples and exercises directly in the web, avoiding the need to install Python in the first day of class.\nIt does not try to cover every detail of the Python language, but just what a beginner might need to start the journey.\n\nWe decided to try this approach after following the rustlings path, an exercise set aimed at teaching the Rust programming language. Rustlings assumes that the student has previously read the Rust introductory book. For this course we have decided to add resources to read for each topic, so, the student could start by reading these resources, and then proceed to practice with the code examples and exercises. Alternatively, the examples could be used in a practical session to teach the theory and, then, the exercises could be use as the practice for the students.\n\n\nThere are other very useful languages, like Javascript for the web, R for statistics, C or Rust for system programming, so, why should we start learning how to program in Python?\nPython is:\n\none of the easiest languages to learn and understand. Learning how to program involves getting used to some abstract concepts related to how computers work, so the easier the language, the better the learning experience will be.\nvery productive. The same ease of use that make Python a good learning language make it very productive for professional developers.\nfree software. It is developed by a community and released under an open source licence.\n\nThese characteristics make Python a very popular tool.\nAccording to IEEE Spectrum Python is the top programming language of 2024. In the 2024 stackoverflow survery, 51% of the developers had used Python in the last year; only Javascript, with 62.3%, is a more popular programming language. Moreover, 67.7% of these developers want to learn an use Python.\nAccording to the 2023 Python Developer survey Python is used mostly for:\n\nWeb development (21%)\nData analysis (10%)\nData engineering (6%)\nMachine learning (10%)\nAcademic research (9%)\nEducation (9%)\n\nSo, if you are interested in data analysis or web development, Python is not just a great language to learn, but an interesting professional option.\n\n\n\n\nThe official Python tutorial. Also, available in Spanish, French, Italian, Portuguese, and other languages.\nPython glossary.\nPython Crash Course\nThe Python Coding Book\nHow to Think Like a Computer Scientist\nMicrosoft course: Python for beginners.\nGoogle Python class. Also available in Spanish, German, French, and Indonesian.\nThe Python community maintains a list of Python courses and tutorials.\nIntroducción a la programación con Python3\nA course in Spanish of focused in Data Analysis with Python\n\n\n\n\n\nFuture coder\nAdam Emery’s course\nCodedex Python course\n\n\n\n\nThe official Python documentation.\n\n\n\nThis site has been built with the quarto publishing system complemented by the quarto live extension that allows Python to run in the web browser by using pyodide. Without the effort of these open source developers this resource wouldn’t exist.\n\n\n\nThis content is released under a Creative Commons BY licence.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#why-python",
+    "href": "index.html#why-python",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "There are other very useful languages, like Javascript for the web, R for statistics, C or Rust for system programming, so, why should we start learning how to program in Python?\nPython is:\n\none of the easiest languages to learn and understand. Learning how to program involves getting used to some abstract concepts related to how computers work, so the easier the language, the better the learning experience will be.\nvery productive. The same ease of use that make Python a good learning language make it very productive for professional developers.\nfree software. It is developed by a community and released under an open source licence.\n\nThese characteristics make Python a very popular tool.\nAccording to IEEE Spectrum Python is the top programming language of 2024. In the 2024 stackoverflow survery, 51% of the developers had used Python in the last year; only Javascript, with 62.3%, is a more popular programming language. Moreover, 67.7% of these developers want to learn an use Python.\nAccording to the 2023 Python Developer survey Python is used mostly for:\n\nWeb development (21%)\nData analysis (10%)\nData engineering (6%)\nMachine learning (10%)\nAcademic research (9%)\nEducation (9%)\n\nSo, if you are interested in data analysis or web development, Python is not just a great language to learn, but an interesting professional option.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#python-books-and-tutorials",
+    "href": "index.html#python-books-and-tutorials",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "The official Python tutorial. Also, available in Spanish, French, Italian, Portuguese, and other languages.\nPython glossary.\nPython Crash Course\nThe Python Coding Book\nHow to Think Like a Computer Scientist\nMicrosoft course: Python for beginners.\nGoogle Python class. Also available in Spanish, German, French, and Indonesian.\nThe Python community maintains a list of Python courses and tutorials.\nIntroducción a la programación con Python3\nA course in Spanish of focused in Data Analysis with Python",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#other-interactive-python-courses-for-beginers",
+    "href": "index.html#other-interactive-python-courses-for-beginers",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "Future coder\nAdam Emery’s course\nCodedex Python course",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#python-reference-documentation",
+    "href": "index.html#python-reference-documentation",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "The official Python documentation.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#technology",
+    "href": "index.html#technology",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "This site has been built with the quarto publishing system complemented by the quarto live extension that allows Python to run in the web browser by using pyodide. Without the effort of these open source developers this resource wouldn’t exist.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#licence",
+    "href": "index.html#licence",
+    "title": "Introduction to programming with Python",
+    "section": "",
+    "text": "This content is released under a Creative Commons BY licence.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "local_install/run_python.html",
+    "href": "local_install/run_python.html",
+    "title": "Installing and running Python",
+    "section": "",
+    "text": "Python code can be run in many different platforms that include: computers with different operating systems, like Windows, MacOS and Linux, embedded systems, and the web browser.\nHowever, a file with Python code, by itself, will not be executable. For instance, imagine that you create an useful Python program and you send it to a colleague. Usually he won’t be able to run it unless he first installs Python. This is what we mean when we say that Python is an interpreted language. We don’t need to compile the Python code to a binary file capable of being run by the operating system. The advantage of this approach is that we don’t need to compile the code for every operating system and architecture, but the limitation is that we need to install Python.\nPython is free and it is not difficult to install, but there are many operating systems and environments and the way in which we install Python in all of them might be different.",
+    "crumbs": [
+      "Install and run Python",
+      "Install"
+    ]
+  },
+  {
+    "objectID": "local_install/run_python.html#python-online",
+    "href": "local_install/run_python.html#python-online",
+    "title": "Installing and running Python",
+    "section": "Python online",
+    "text": "Python online\nSo far we have run the Python code in the web browser. In fact the web pages that we have used so far in the course included a version of the Python interpreter that has run the code inside the browser.\nThere are other sites that allow to run Python code online like:\n\nThe Future Coder IDE allows to write, run and debug Python programs.\nIn the Pyodide REPL the user can execute Python commands.",
+    "crumbs": [
+      "Install and run Python",
+      "Install"
+    ]
+  },
+  {
+    "objectID": "local_install/run_python.html#operating-system-specific-installers",
+    "href": "local_install/run_python.html#operating-system-specific-installers",
+    "title": "Installing and running Python",
+    "section": "Operating system specific installers",
+    "text": "Operating system specific installers\nRunning Python online is great, but for many uses we need to install it in our computer and run it locally. Python is open source and it is freely distributed in python.org. So, one way of getting Python is to go the download section in python.org, download the latest installer for your operating system and install it. That will install Python, but you might have some issues with it:\n\nYou will need to remember to install the Python updates.\nYou will be able to install only one Python version at a time.\nThe PATH operating system variable might end up not being correctly configured. So, although Python will be installed the interpreter won’t be directly available in the command-line shell.\n\nAlternativery, you could use a specific installer for your operating system, like the Microsoft Store for windows or the package manager of your Linux distribution. There are many different cases and alternatives, and they are covered in the Python Setup and Usage in python.org.",
+    "crumbs": [
+      "Install and run Python",
+      "Install"
+    ]
+  },
+  {
+    "objectID": "local_install/run_python.html#anaconda",
+    "href": "local_install/run_python.html#anaconda",
+    "title": "Installing and running Python",
+    "section": "Anaconda",
+    "text": "Anaconda\nAnother alternative to install Python locally is to use the anaconda installer. Anaconda ships Python, R, and many other tools used in data analysis and it is very convenient because the Anaconda installer and navigator make the experience of using Python very similar in different operating systems.",
+    "crumbs": [
+      "Install and run Python",
+      "Install"
+    ]
+  },
+  {
+    "objectID": "local_install/run_python.html#jupyter",
+    "href": "local_install/run_python.html#jupyter",
+    "title": "Installing and running Python",
+    "section": "Jupyter",
+    "text": "Jupyter\nAn alternative way of using Python in the browser, but with a local installation is jupyter. This is a tool commonly used in Data analysis, and it is included in the anaconda distribution.",
+    "crumbs": [
+      "Install and run Python",
+      "Install"
+    ]
+  },
+  {
+    "objectID": "local_install/run_python.html#virtual-environments",
+    "href": "local_install/run_python.html#virtual-environments",
+    "title": "Installing and running Python",
+    "section": "Virtual environments",
+    "text": "Virtual environments\nOnce you start using Python professionaly it will be highly advisable to use virtual environments. This is an advanced topic for this course, but you will have to learn about virtual environments if you plan to use Python. Here you have a couple of resources:\n\nVirtual environments in Real Python.\nvenv module documentation",
+    "crumbs": [
+      "Install and run Python",
+      "Install"
+    ]
+  },
+  {
+    "objectID": "local_install/run_python.html#uv",
+    "href": "local_install/run_python.html#uv",
+    "title": "Installing and running Python",
+    "section": "uv",
+    "text": "uv\nThere is a new way to install Python: uv.\nOnce you install uv, it will:\n\nmanage the installation of different Python versions.\nrun Python scripts\nmanage Python projects, with their virtual environments and dependencies, for you.\n\nIn this course we will assume that you have installed uv.",
+    "crumbs": [
+      "Install and run Python",
+      "Install"
+    ]
+  },
+  {
+    "objectID": "local_install/run_python.html#code-editor",
+    "href": "local_install/run_python.html#code-editor",
+    "title": "Installing and running Python",
+    "section": "Code editor",
+    "text": "Code editor\nTo edit Python code you will need a code editor. Visual Studio Code is now one of the most popular ones.",
+    "crumbs": [
+      "Install and run Python",
+      "Install"
+    ]
+  },
+  {
+    "objectID": "control_flow/index.html",
+    "href": "control_flow/index.html",
+    "title": "Control flow",
+    "section": "",
+    "text": "The flow of the code is the order in which the statements, functions or instructions are executed. By default the code is executed line by line:\n\n\n\n\n\n\nBut this order can be altered in different ways, and these modifications are known as control flow. We could:\n\nChoose to execute some statements only if some condition is met.\nRun the same code over and over again for every item.\nCreate new functions and call them.\n\nTo understand the control of the flow of execution we need to understand the concept of a block of code. A block is a set of lines that are grouped together, for instance, the set of lines that will be executed only when a given condition if met.",
+    "crumbs": [
+      "Control flow"
+    ]
+  },
+  {
+    "objectID": "control_flow/if.html",
+    "href": "control_flow/if.html",
+    "title": "if",
+    "section": "",
+    "text": "Conditional statements in Real Python.\nif statement in the official documentation.\nControl flow in wikipedia.",
+    "crumbs": [
+      "Control flow",
+      "if"
+    ]
+  },
+  {
+    "objectID": "control_flow/if.html#resources",
+    "href": "control_flow/if.html#resources",
+    "title": "if",
+    "section": "",
+    "text": "Conditional statements in Real Python.\nif statement in the official documentation.\nControl flow in wikipedia.",
+    "crumbs": [
+      "Control flow",
+      "if"
+    ]
+  },
+  {
+    "objectID": "control_flow/if.html#if",
+    "href": "control_flow/if.html#if",
+    "title": "if",
+    "section": "if",
+    "text": "if\nif is one of the basic control flow statements. It allows us to execute some code only if a given condition is met.\n\n\n\n\n\n\nIf the condition is not met the code inside the if block won’t be executed.\n\n\n\n\n\n\nEvery line included in the block will be executed, not just the first one.\n\n\n\n\n\n\nFix the following code to print “Done!” even when the condition is not met.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nRemember that a block ends when the indentation returns to the previous level.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFix the following code.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote",
+    "crumbs": [
+      "Control flow",
+      "if"
+    ]
+  },
+  {
+    "objectID": "control_flow/if.html#else",
+    "href": "control_flow/if.html#else",
+    "title": "if",
+    "section": "else",
+    "text": "else\nIt is common that we want to execute some code when the condition is met, and some other code when the condition is not met, for that we use else.\n\n\n\n\n\n\n\n\n\n\n\n\nFix this code:\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite some code capable of, given a pair of numbers, finding out which is the highest.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFix the following code to prevent the error when a = 0.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Control flow",
+      "if"
+    ]
+  },
+  {
+    "objectID": "control_flow/if.html#elif",
+    "href": "control_flow/if.html#elif",
+    "title": "if",
+    "section": "elif",
+    "text": "elif\nelif allows us to test for different conditions sequentialy.\n\n\n\n\n\n\nWhen several conditions are met only the first True one will be executed.\n\n\n\n\n\n\nIn Python, a more powerful alternative to elif is the match statement.\nWrite a program that classifies a person into: baby, child, teenager, young, and old\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite a program that writes the quote of the selected philosopher.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Control flow",
+      "if"
+    ]
+  },
+  {
+    "objectID": "control_flow/if.html#boolean-casting",
+    "href": "control_flow/if.html#boolean-casting",
+    "title": "if",
+    "section": "Boolean casting",
+    "text": "Boolean casting\nWhen a condition is evaluated, internally the if statement casts anything given to a boolean. So, you will usually see expressions like:\n\n\n\n\n\n\nIt would be very weird to write:\n\n\n\n\n\n\nRemember that everything that we talked about booleans and boolean arithmetic is applicable to the if evaluation.",
+    "crumbs": [
+      "Control flow",
+      "if"
+    ]
+  },
+  {
+    "objectID": "packages/std_library.html",
+    "href": "packages/std_library.html",
+    "title": "Standard library",
+    "section": "",
+    "text": "There are many packages available in the default Python installation. We have already used some of them, like pathlib. You can find a list with all of them in the official documentation. Here we are just going to mention a couple as an example.",
+    "crumbs": [
+      "Modules and packages",
+      "Standard library"
+    ]
+  },
+  {
+    "objectID": "packages/std_library.html#resources",
+    "href": "packages/std_library.html#resources",
+    "title": "Standard library",
+    "section": "Resources",
+    "text": "Resources\n\nStandard library official documentation.",
+    "crumbs": [
+      "Modules and packages",
+      "Standard library"
+    ]
+  },
+  {
+    "objectID": "packages/std_library.html#shutil",
+    "href": "packages/std_library.html#shutil",
+    "title": "Standard library",
+    "section": "shutil",
+    "text": "shutil\nThe shutil module allow us to copy and delete files and directories. copy copies files, and copytree directories. Remember that in the pathlib module there was more functionality to create an delete files and directories.",
+    "crumbs": [
+      "Modules and packages",
+      "Standard library"
+    ]
+  },
+  {
+    "objectID": "packages/std_library.html#subprocess",
+    "href": "packages/std_library.html#subprocess",
+    "title": "Standard library",
+    "section": "subprocess",
+    "text": "subprocess\nsubprocess allows you to run programs from Python. The easiest way to use it is its run function.",
+    "crumbs": [
+      "Modules and packages",
+      "Standard library"
+    ]
+  },
+  {
+    "objectID": "files/paths.html",
+    "href": "files/paths.html",
+    "title": "Path",
+    "section": "",
+    "text": "File and directory access section in the official documentation.\npathlib module documentation.\nFile sytem entry in wikipedia.\nFile system tutorial (in spanish).",
+    "crumbs": [
+      "Files",
+      "Paths"
+    ]
+  },
+  {
+    "objectID": "files/paths.html#resources",
+    "href": "files/paths.html#resources",
+    "title": "Path",
+    "section": "",
+    "text": "File and directory access section in the official documentation.\npathlib module documentation.\nFile sytem entry in wikipedia.\nFile system tutorial (in spanish).",
+    "crumbs": [
+      "Files",
+      "Paths"
+    ]
+  },
+  {
+    "objectID": "files/paths.html#paths",
+    "href": "files/paths.html#paths",
+    "title": "Path",
+    "section": "Paths",
+    "text": "Paths\nThe location of a file in a file system is given by its path that is composed by its location in the directories, subdirectories and file name. Some examples of paths are: “c:\\users\\jane\\documents\\letter.doc”, “/users/jane/documents/letter.doc”, or “/home/jane/documents/letter.doc”.\nOne relevant difference between Windows and Unix-like (MacOS or Linux) operating systems is that in windows the path elements are separated by the “\\” character, whereas in MacOS and Linux the separator is “/”. Python is a multiplatform language, but we have to take into account these details if we want to write software capable of running in different operating systems.",
+    "crumbs": [
+      "Files",
+      "Paths"
+    ]
+  },
+  {
+    "objectID": "files/paths.html#path-objects",
+    "href": "files/paths.html#path-objects",
+    "title": "Path",
+    "section": "Path objects",
+    "text": "Path objects\nIn Python we could use strings to store path information and, in fact, that used to be the case, but now it is very common to work with Path objects available in the pathlib module. I would recommend to use these convenient objects instead of plain string objects.\n\n\n\n\n\n\nOne advantage of the Path objects is that we can join them together very easily.\n\n\n\n\n\n\nThe Path class some very convenient methods, like home that will give us the $HOME directory for the current user or cwd that will return the current working directory.\n\n\n\n\n\n\nPaths objects have a rich functionality. For instance, we can check if they exist in the file system.\n\n\n\n\n\n\nWe can list the contents of a directory.\n\n\n\n\n\n\nAnd we can get their names and suffixes.\n\n\n\n\n\n\nWe can also:\n\nopen a file using the open method of the Path objects\ncreate a directory using mkdir\nremove a file with unlink or a directory with rmdir.\n\nIn your home directory create a file named “hello.txt”, write in it the text “Hello world”, then get a directory listing and check that the file is really there, after that, open the file and read the text in it. Finally, remove the file and check that it has been really deleted.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n¿Cuál es el directorio de trabajo actual? ¿Hay algún fichero en él? ¿Del primero de los ficheros que aparecen en el listado, cuál es la ruta completa? ¿Se podría extraer de esta ruta el nombre del directorio y el fichero? ¿Cuál es la $HOME de nuestro usuario? ¿Del fichero ‘programa.py’ cuáles son el nombre y la extensión?",
+    "crumbs": [
+      "Files",
+      "Paths"
+    ]
+  },
+  {
+    "objectID": "files/read_write.html",
+    "href": "files/read_write.html",
+    "title": "Read and write files",
+    "section": "",
+    "text": "Real Python working and reading and writing files tutorials.\nReading and Writting files section in the official Python tutorial.\nContext managers in Real Python.\nOfficial documentation for the with statement.\nA Real Python tutorial about flush.\nIf you ever need to work with temporary files, the tempfile module is very useful.",
+    "crumbs": [
+      "Files",
+      "Read & write"
+    ]
+  },
+  {
+    "objectID": "files/read_write.html#resources",
+    "href": "files/read_write.html#resources",
+    "title": "Read and write files",
+    "section": "",
+    "text": "Real Python working and reading and writing files tutorials.\nReading and Writting files section in the official Python tutorial.\nContext managers in Real Python.\nOfficial documentation for the with statement.\nA Real Python tutorial about flush.\nIf you ever need to work with temporary files, the tempfile module is very useful.",
+    "crumbs": [
+      "Files",
+      "Read & write"
+    ]
+  },
+  {
+    "objectID": "files/read_write.html#open",
+    "href": "files/read_write.html#open",
+    "title": "Read and write files",
+    "section": "open",
+    "text": "open\nIn many ocassions we will need that our programs read information stored in files, thus a very common action will be to open a file. In Python we could open a file with the open function.\nLet’s imagine that we have a text file stored in the same directory/folder as our Python code. For instance, we could had downloaded Alice in wonderland from Project Gutenberg. This file is named 11.txt.utf-8, and we could open it using the following code.\n\nfile_name = \"11.txt.utf-8\"\nfile = open(file_name, 'rt')\n\nThe open function can take several parameters, but the most important ones are the file path and the mode.\nThe mode indicates if we are trying to open an existing file for reading (r mode) or creating new file for writing. Moreover, it indicates if we are dealing with a text or binary files. In this example the mode was “rt”, so we are trying to open a text file for reading and what the open function returns to us is a Text IO file object that will allow us to read the file.\n\nRead text\nNow that we know how to open a file, let’s try to read it. The most common way to read a text file is to use a for loop.\n\nfile_name = \"11.txt.utf-8\"\nfile = open(file_name, 'rt')\n\nfor line in file:\n    print(line)\n\nTry to print only the first 10 lines.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nIt would be easier to use enumerate.",
+    "crumbs": [
+      "Files",
+      "Read & write"
+    ]
+  },
+  {
+    "objectID": "files/read_write.html#write",
+    "href": "files/read_write.html#write",
+    "title": "Read and write files",
+    "section": "Write",
+    "text": "Write\nWe could also create a new file to write in it by using the mode “wt” (write, text). Once we have the file object we can write in it using the write method.\n\nfile_name = \"my_output_file.txt\"\nfile = open(file_name, 'wt')\nfile.write(\"Hello world\")\n\nCreate a file, and write in it two lines, like “Hi” and “Bye”, in it.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Files",
+      "Read & write"
+    ]
+  },
+  {
+    "objectID": "files/read_write.html#close-and-with",
+    "href": "files/read_write.html#close-and-with",
+    "title": "Read and write files",
+    "section": "close and with",
+    "text": "close and with\nSo far we have not closed our file object after we are done with them, but we really should. So, the proper way to read a file would be:\n\nfile_name = \"some_file.txt\"\nfile = open(file_name, 'rt')\n\nfor line in file:\n    print(line)\n\nfile.close()\n\nFile objects are limited by the operating system, so that’s one reason for closing them. If we don’t do it Python will try to do it for us after the variable that holds the file object goes out of scope, but it’s better if we do it by ourselves.\nEven better, we could use the with statement. with will take care of closing the file after finishing the with block, even in the event of an exception ocurring within the block.\n\nfile_name = \"some_file.txt\"\n\nwith open(file_name, 'rt') as file:\n    for line in file:\n        print(line)",
+    "crumbs": [
+      "Files",
+      "Read & write"
+    ]
+  },
+  {
+    "objectID": "files/read_write.html#buffers-and-flush",
+    "href": "files/read_write.html#buffers-and-flush",
+    "title": "Read and write files",
+    "section": "Buffers and flush",
+    "text": "Buffers and flush\nClosing the file is even more important when writing files. We could think that every time that we use the write method Python writes the given contents in disk, but this is not so. In fact what the write method does is to write the given content in a memory buffer. It writes in memory because memory is much faster than disk. It would be very slow to write down in disk every time. When does Python decides to really write down in disk? Well, from time to time, but usually we do not take care of that. What we know for sure is that Python writes down everything that is to write when whe close the file calling the close method. So, close the file.\nIf you need to make sure that Python writes down to disk everything you have written so far you could also use the flush method, but don’t do it every time that you write, because that would be very slow.",
+    "crumbs": [
+      "Files",
+      "Read & write"
+    ]
+  },
+  {
+    "objectID": "packages/modules.html",
+    "href": "packages/modules.html",
+    "title": "Modules and packages",
+    "section": "",
+    "text": "Modules section on the official Python tutorial.\nReal Python tutorials on modules and packages and the import statement.\npip information in wikipedia and in the official documentation.\nVirtual environment primer in Real Python.\nuv documentation.",
+    "crumbs": [
+      "Modules and packages",
+      "Modules"
+    ]
+  },
+  {
+    "objectID": "packages/modules.html#resources",
+    "href": "packages/modules.html#resources",
+    "title": "Modules and packages",
+    "section": "",
+    "text": "Modules section on the official Python tutorial.\nReal Python tutorials on modules and packages and the import statement.\npip information in wikipedia and in the official documentation.\nVirtual environment primer in Real Python.\nuv documentation.",
+    "crumbs": [
+      "Modules and packages",
+      "Modules"
+    ]
+  },
+  {
+    "objectID": "packages/modules.html#modules",
+    "href": "packages/modules.html#modules",
+    "title": "Modules and packages",
+    "section": "Modules",
+    "text": "Modules\nProgramming is about mixing ideas; you take the idea of reading a file with data with the idea of doing a statistical test and of plotting a chart and you have created a program that analyzes and plots the data that you needed. Programming languages are usually quite limited in what they can directly do, but they are expanded by adding preprogrammed functionality. Moreover, if would be very inefficient to program the same functionallity over and over again, for instance, to create the same parsing or statistical functions in every program that you need. Thus programming languages have ways of not repeating yourself.\nIn Python it is very easy to create a piece of code, like a function, in one file and using it in another. Let’s create a file called greeting.py that implements the following function.\n\n\n\n\n\n\nNow, in the same directory we are going to create a new program that will use this function. Let’s create the file hello.py with the following code.\n\n\n\n\n\n\nWhen you run hello.py the first line imports the function print_hello from greeting.py and the function is ready to run. You have created and used your first Python module: greeting.\nimport can be used in a different way. Let’s create the file hello2.py\n\n\n\n\n\n\nIn this case we have imported the greeting module and then we have used the print_hello function inside of this module by using a point notation.",
+    "crumbs": [
+      "Modules and packages",
+      "Modules"
+    ]
+  },
+  {
+    "objectID": "packages/modules.html#packages-and-the-standard-library",
+    "href": "packages/modules.html#packages-and-the-standard-library",
+    "title": "Modules and packages",
+    "section": "Packages and the standard library",
+    "text": "Packages and the standard library\nModules can be organized in directories and subdirectories creating packages. By default Python ships with many packages, collectively called the standard library, ready to be used.",
+    "crumbs": [
+      "Modules and packages",
+      "Modules"
+    ]
+  },
+  {
+    "objectID": "packages/modules.html#installing-packages",
+    "href": "packages/modules.html#installing-packages",
+    "title": "Modules and packages",
+    "section": "Installing packages",
+    "text": "Installing packages\nAs we have already seen Python can import modules found in the same directory, but it is also able to look for packages and modules elsewhere. There is a list of directories in which Python looks for these packages and modules, the python path. If you are curious you can check which are those directories:\n\n\n\n\n\n\nUsually, you don’t need to worry about these details, they are taken care by the tools that install and manage the Python packages. The most popular tool is pip and this is the tool that I have used the most, but I have recently switched to uv.\nPython packages are collected in the pypi repository. Both pip and uv, by default, grab from pypi then packages that you want to install. The Python ecosystem, the amount of functionallity available is huge and no course can describe all the packages available (more than half a million). The best way to find out which are the most relevant packages for your needs are reading about the kind of problems that you want to solve and interacting with the community that works on them.\nBefore installing packages I highly recommend to read about virual environments. If you plan to use Python professionaly you must understand and use them.",
+    "crumbs": [
+      "Modules and packages",
+      "Modules"
+    ]
+  },
+  {
+    "objectID": "control_flow/for.html",
+    "href": "control_flow/for.html",
+    "title": "for loops",
+    "section": "",
+    "text": "for statement in the official documentation.\nfor loops in Real Python.",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
+    "objectID": "control_flow/for.html#resources",
+    "href": "control_flow/for.html#resources",
+    "title": "for loops",
+    "section": "",
+    "text": "for statement in the official documentation.\nfor loops in Real Python.",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
+    "objectID": "control_flow/for.html#for",
+    "href": "control_flow/for.html#for",
+    "title": "for loops",
+    "section": "for",
+    "text": "for\nfor allows us to execute a block of code for each item. The variable defined after the for keyword will take the value of each item, one at a time, one for each iteration.\n\n\n\n\n\n\nWhat would happen if we executed the following code? How would you fix it?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInternally the for loop works by calling the next on an iterator from the given iterable. An iterator is an object that, when given to the next function, supports the generation of one item at a time, until it runs out of items. So the previous for loop would be, more or less, equivalent running the following code.\n\n\n\n\n\n\nPython has another way of doing loops, the while statement.",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
+    "objectID": "control_flow/for.html#break",
+    "href": "control_flow/for.html#break",
+    "title": "for loops",
+    "section": "break",
+    "text": "break\nAt any iteration the loop could be completely stopped, broken, by using the break statement.",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
+    "objectID": "control_flow/for.html#continue",
+    "href": "control_flow/for.html#continue",
+    "title": "for loops",
+    "section": "continue",
+    "text": "continue\nThe continue statement allows us to move to the next iteration without running the rest of the code in the block.",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
+    "objectID": "control_flow/for.html#range",
+    "href": "control_flow/for.html#range",
+    "title": "for loops",
+    "section": "range",
+    "text": "range\nThis kind of for loop, the one implemented in Python, in other languages is known as a foreach loop. To have the functionallity available in other programming languages, in which the for statement just iterates over some numbers, you could combine a for loop with the range function.\nWrite a for loop that prints the first 10 natural numbers.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nYou can use a list or the range function.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nWith a list.\n\n\n\n\n\n\nWith the range function.\n\n\n\n\n\n\n\n\n\n\nCreate a program that writes the following:\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThere are many ways of solving this exercise, here you have some.\n\n\n\n\n\n\n\n\n\n\n\n\nUsing map and range.\n\n\n\n\n\n\nUsing a list comprenhension.",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
+    "objectID": "control_flow/for.html#enumerate",
+    "href": "control_flow/for.html#enumerate",
+    "title": "for loops",
+    "section": "enumerate",
+    "text": "enumerate\nIt is quite common to require both the item and its index. We could do it like:\n\n\n\n\n\n\nHowever, this pattern is so common that Python have solved it using the function enumerate.\n\n\n\n\n\n\nEnumerate works by creating an iterator of tuples with two elements: the index, and the original item.\n\n\n\n\n\n\nAnd since Python supports mutiple assigment what we are doing in the for loop is equivalente to:",
+    "crumbs": [
+      "Control flow",
+      "for loops"
+    ]
+  },
+  {
+    "objectID": "control_flow/block.html",
+    "href": "control_flow/block.html",
+    "title": "Block",
+    "section": "",
+    "text": "A block of code is a set of statements, functions or instructions that are grouped together. In most programming languages the blocks of code are created by using curly braces ({}). For instance, in C the statements executed when a test condition is met would be written as:\nif (testCondition) {\n   statement1;\n   statement2;\n   statement3;\n}\nIn Python a block of code is created by using indentation.\n\n\n\n\n\n\n\nIn the if and for the code starts with a colon (:)\nThe next line after the colon should be indented\nThe block ends when the indentation goes back to the previous level.\n\nThe standard is to create the indentation by using four spaces.",
+    "crumbs": [
+      "Control flow",
+      "Code blocks"
+    ]
+  },
+  {
+    "objectID": "local_install/hello_world2.html",
+    "href": "local_install/hello_world2.html",
+    "title": "Hello world",
+    "section": "",
+    "text": "Real Python introduction to the Terminal.\nMicrosoft instroduction to PowerShell.\nThe Unix Shell in Software Carpentry.\nAn introduction to the Unix Shell (in Spanish)",
+    "crumbs": [
+      "Install and run Python",
+      "Local hello world"
+    ]
+  },
+  {
+    "objectID": "local_install/hello_world2.html#resources",
+    "href": "local_install/hello_world2.html#resources",
+    "title": "Hello world",
+    "section": "",
+    "text": "Real Python introduction to the Terminal.\nMicrosoft instroduction to PowerShell.\nThe Unix Shell in Software Carpentry.\nAn introduction to the Unix Shell (in Spanish)",
+    "crumbs": [
+      "Install and run Python",
+      "Local hello world"
+    ]
+  },
+  {
+    "objectID": "local_install/hello_world2.html#the-terminal",
+    "href": "local_install/hello_world2.html#the-terminal",
+    "title": "Hello world",
+    "section": "The terminal",
+    "text": "The terminal\nWe are used to interact with our computers using Graphical User Interfaces, we click and drag icons and windows, but when we are developing Python programs our main way of interaction will be a command-line interface, a shell running in a terminal.\nIn a command-line interface, there is a prompt that promts the user the write a text command. Once we write the command and hit “enter” the computer runs the command, writes the output in the terminal and, after the command ends, the prompt will be ready for the next command. A command is just a computer program.\nIn different operating systems there are different terminal applications. In Linux and MacOS the application is usually named “terminal”, while in Windows there are different applications but we recommend “PowerShell” running in the “Windows Terminal”.\nDuring the course we recommend to use the editor Visual Studio Code to write Python code and this editor includes its our terminal, so you won’t need any other software. If you haven’t installed Visual Studio Code yet, we recommend that you do it.",
+    "crumbs": [
+      "Install and run Python",
+      "Local hello world"
+    ]
+  },
+  {
+    "objectID": "local_install/hello_world2.html#hello-world-with-uv",
+    "href": "local_install/hello_world2.html#hello-world-with-uv",
+    "title": "Hello world",
+    "section": "Hello world with uv",
+    "text": "Hello world with uv\nFirst, create a folder/directory in which you will create and store the Python programs. Then open Visual Studio Code and in the File menu select Open Folder and Open the Folder that you just created. Now in the Visual Studio File Explorer click with the right mouse button, select “New File…” and create a file named hello.py. All Python programs, by convention, are text files with the extension “.py”.\nAt this point Visual Studio should have created the “hello.py” text file and it will have open it, so we can type our first Python program.\n\nprint(\"Hello\")\n\nHello\n\n\nNow that we have our first program, we can run it in the Visual Studio Code Terminal. In the menu select “Terminal” -&gt; “New Terminal”. That will open a terminal inside Visual Studio Code. The prompt will indicate the folder/directory in which we are working.\nWe could run our Python programs directly using the Python interpreter command: “python”, but we are going to uv. If you haven’t installed uv, go ahead and do it. Once we have uv available, it will manage the Python installation for us and it will also run Python, just write in Visual Studio Terminal:\n\n$ uv run hello.py\n\n(The dollar sign is part of the prompt, we are just including it to show that the command is meant to be written in the prompt, but the dolar sign itself should not be written. In this case you should only write “uv run hello.py”)\nClick enter and, hopefully, you should have run your first Python program in the Terminal.\nIn most courses and tutorials you would not have installed uv, but just Python. In this case you would run the following command instead.\n\n$ python hello.py",
+    "crumbs": [
+      "Install and run Python",
+      "Local hello world"
+    ]
+  },
+  {
+    "objectID": "exercises/set2.html",
+    "href": "exercises/set2.html",
+    "title": "Exercises 2",
+    "section": "",
+    "text": "Write a function that given a list of items returns a dictionary with the frequency of each kind of item found in the list.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nAlternatively, you could do it using the Counter class and a dict comprenhension.",
+    "crumbs": [
+      "Exercises",
+      "Exercises 2"
+    ]
+  },
+  {
+    "objectID": "exercises/set2.html#calculate-the-frequency-of-each-item-in-a-class",
+    "href": "exercises/set2.html#calculate-the-frequency-of-each-item-in-a-class",
+    "title": "Exercises 2",
+    "section": "",
+    "text": "Write a function that given a list of items returns a dictionary with the frequency of each kind of item found in the list.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nAlternatively, you could do it using the Counter class and a dict comprenhension.",
+    "crumbs": [
+      "Exercises",
+      "Exercises 2"
+    ]
+  },
+  {
+    "objectID": "exercises/set2.html#solve-quadratic-equations",
+    "href": "exercises/set2.html#solve-quadratic-equations",
+    "title": "Exercises 2",
+    "section": "Solve quadratic equations",
+    "text": "Solve quadratic equations\nA quadratic equation would be: a * x**2 + b * x + c = 0 You can solve it with the quadratic formula.\nWrite a function that solves the equation and returns its two roots and another function that checks the result. You can even try to solve equations with complex solutions using the cmath module.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nAlternatively you could even solve equations with complex solutions.",
+    "crumbs": [
+      "Exercises",
+      "Exercises 2"
+    ]
+  },
+  {
+    "objectID": "exercises/set2.html#read-the-genetic-code-into-a-dictionary",
+    "href": "exercises/set2.html#read-the-genetic-code-into-a-dictionary",
+    "title": "Exercises 2",
+    "section": "Read the genetic code into a dictionary",
+    "text": "Read the genetic code into a dictionary\nThe dictionary should have the codon as the key and the aminoacid name as the value.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nsplitlines\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Exercises",
+      "Exercises 2"
+    ]
+  },
+  {
+    "objectID": "exercises/set2.html#write-a-program-that-translates-a-coding-sequence-into-a-protein",
+    "href": "exercises/set2.html#write-a-program-that-translates-a-coding-sequence-into-a-protein",
+    "title": "Exercises 2",
+    "section": "Write a program that translates a coding sequence into a protein",
+    "text": "Write a program that translates a coding sequence into a protein\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nYou can get the position of every codon using the range function. Remember that range has a step argument that can be set to 3.\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Exercises",
+      "Exercises 2"
+    ]
+  },
+  {
+    "objectID": "exercises/set2.html#create-a-restriction-map",
+    "href": "exercises/set2.html#create-a-restriction-map",
+    "title": "Exercises 2",
+    "section": "Create a restriction map",
+    "text": "Create a restriction map\nRestriction enzymes recognize specific sequences, for instance:\n\nEcoRI: GATTC (cuts in the position between G and A, G^ATTC)\nHind III : AAGCTT (cuts in the position between A and A, AAGCT^T)\n\nGiven a sequence, create the restriction fragments that these two sequences would create:\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Exercises",
+      "Exercises 2"
+    ]
+  },
+  {
+    "objectID": "exercises/set3.html",
+    "href": "exercises/set3.html",
+    "title": "Exercises 3",
+    "section": "",
+    "text": "Download a text file, like Alice in wonderland from Project Gutenberg, count the number of time each word appears and print the 50 most common words.\nTake into account that the Alice in wonderland text really only starts after the line “CHAPTER I.” and ends with the line “THE END”.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nA solution using a dictionary to keep the counts.\n\n\n\n\n\n\nA solution using the Counter class from the collections module.",
+    "crumbs": [
+      "Exercises 3",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises/set3.html#find-the-most-common-words",
+    "href": "exercises/set3.html#find-the-most-common-words",
+    "title": "Exercises 3",
+    "section": "",
+    "text": "Download a text file, like Alice in wonderland from Project Gutenberg, count the number of time each word appears and print the 50 most common words.\nTake into account that the Alice in wonderland text really only starts after the line “CHAPTER I.” and ends with the line “THE END”.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nA solution using a dictionary to keep the counts.\n\n\n\n\n\n\nA solution using the Counter class from the collections module.",
+    "crumbs": [
+      "Exercises 3",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises/set3.html#guess-the-number-game",
+    "href": "exercises/set3.html#guess-the-number-game",
+    "title": "Exercises 3",
+    "section": "Guess the number game",
+    "text": "Guess the number game\nWrite a program that chooses a random number between 1 and 10 and asks the user to guess it several times. The program should finish once the user guesses correctly or once the number of available attemps has run out.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThe function randint of the random module creates random integers.\nYou can ask input from a user, like his guess, using the input function. Remember that the input function always return a string.\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Exercises 3",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises/set3.html#write-a-hangman-game",
+    "href": "exercises/set3.html#write-a-hangman-game",
+    "title": "Exercises 3",
+    "section": "Write a Hangman game",
+    "text": "Write a Hangman game\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nimport random\n\nDICTIONARY = ['hola', 'caracola', 'casa', 'barco']\nINITIAL_NUM_ATTEMPS = 10\n\ndef create_revealed_string(secret_word, guessed_letters):\n\n    num_letters_missing = 0\n    revealed_string = ''\n    for letter in secret_word:\n        if letter.upper() in guessed_letters:\n            revealed_letter = letter\n        else:\n            revealed_letter = '-'\n            num_letters_missing += 1\n        revealed_string += revealed_letter\n    return revealed_string\n\n\ndef play_game():\n    secret_word = random.choice(DICTIONARY)\n    guessed_letters = set()\n    num_attempts = INITIAL_NUM_ATTEMPS\n    won = None\n    while True:\n        guessed_letter = input('Pick a letter ')\n        guessed_letters.add(guessed_letter.upper())\n\n        revealed_string = create_revealed_string(secret_word, guessed_letters)\n        num_attempts -= 1\n\n        num_letters_to_guess = revealed_string.count('-')\n        if not num_letters_to_guess:\n            won = True\n            break\n        elif num_letters_to_guess:\n            if num_attempts:\n                print('The guess so far: ', revealed_string, guessed_letters)\n            else:\n                won = False\n                break\n\n    if won:\n        print('Congratulations, you have won the game')\n    else:\n        print('You have lost')\n    print('The secret word was: ', secret_word)\n\n\nplay_game()",
+    "crumbs": [
+      "Exercises 3",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises/set3.html#read-a-fasta-file",
+    "href": "exercises/set3.html#read-a-fasta-file",
+    "title": "Exercises 3",
+    "section": "Read a fasta file",
+    "text": "Read a fasta file\nIn bioinformatics we use fasta files to store DNA sequences. This is an example of a fasta file with three sequences.\n&gt;seq1\nCGCTAGCTAGTCTATCGATCTAGTCTAGCT\n&gt;seq2 some description after the space\nTGTCGATCGTAGTCATCTGATCGACGTATCTA\nCTCGAGTCATGCTATCATCATGCTAG\n&gt;seq3\nTCAGTCGATGCTATCATCGTAGCTGATCGATCTGGCA\nCTAGCAGTCGATC\nWrite a program that reads the sequences found in a fasta file and stores them in a list of dictionaries, one dictionary per sequence.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow, create functions capable of calculating the percentage of GCs in the sequences and their lengths.",
+    "crumbs": [
+      "Exercises 3",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises/set3.html#gene-expression",
+    "href": "exercises/set3.html#gene-expression",
+    "title": "Exercises 3",
+    "section": "Gene expression",
+    "text": "Gene expression\nWe have done a study in which several patients have been given or not given (the placebo group) a drug. We have measured the expression of three genes and now we want to know which is the mean expression for each gene for the treated and placebo groups. We have also recorded the patient sex and we want the mean expression of each gene for males and females and the combined effect of sex and treament, so male-treated, male-placebo, female-treated, and female-placebo.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Exercises 3",
+      "Exercises"
+    ]
+  },
+  {
     "objectID": "functions/definition.html",
     "href": "functions/definition.html",
     "title": "Function definition",
@@ -1294,7 +1338,7 @@
     "href": "functions/definition.html#scopes-and-arguments",
     "title": "Function definition",
     "section": "Scopes and arguments",
-    "text": "Scopes and arguments\nThe code inside a function has its own variables, and those are not shared between functions and between the function and the rest of the code. To use a value inside a value, usually, we pass the variable to the function. To understand what do we mean when we say that we pass some data to a function we need to understand the concept of the scope.\nWhen we are programming we store and access data in memory. As we have seen, we refer to the data stored in memory by using variables. We could think that those variables, once they are created, are available in every part of our program. If you used that approach when you tried to build a program with more than a few lines of code, it would become very difficult to track which part of the program had changed a variable. So maintining those large programs would be very difficult.\nThe scope defines where in the code a variable is available, and functions define their own scope. In a computer program not all data is available to every part of the code. For instance, the variables that are defined inside a function are not available outside of the function.\n\n\n\n\n\n\nWe say that the variables defined in the function are in the function scope, that means that they are not available ouside of the function.\n\n\n\n\n\n\nWe get a “‘name’ is not defined error” because the variable name was created inside the say_hello function, so in the say_hello scope, and is not available outside. A variable can only be used when is in the current scope. It is said that the function has a local scope in which its variables are available.\n\nGlobal scope\nBe careful because Python also has a global scope, and if you create the variable outside the function it will be available inside. We can use the variables defined in the global scope inside any function.\n\n\n\n\n\n\nIn this case the variable name has been created in the global scope, it is a global variable available everywhere. In general, avoid creating global variables, specially if they are not inmutable constants. As a general rule the use of the global scope is discouraged, try not to use it. If you think you need a global variable, think twice, in most cases is better not to use them. This is an advanced topic, but here’s a tip for the future you, to keep states it might be much better to use objects, instances of a class, that global variables. For now, this is too advanced. Just remember, try very hard not to use global varibles, although you can allow some exceptions with some inmutable ones used for global configurations. It is common to use this kind of global variables, inmutables and related to configuration, and, by convention, in Python, people name them using all caps variable names.\n\n\n\n\n\n\nPython discourages some uses of the use the global scope, and the behaviour of these variables is atypical.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPassing data to a function, function arguments\nSo, when the function requires some data to carry an action, we should pass that data explictly to the function. For instance, if we want a function to print a personalized greeting, it could need the name of the person.\n\n\n\n\n\n\nPassing data to a function is easy, but a lot is going on under the hood:\n\nWe have created a text string (“Jane”). That means that Python has created and stored a object of type str in memory.\n\n\n\n\n\n\nflowchart TB\n    subgraph main [ ]\n    person:::invisible\n    end\n    subgraph say [ ]\n    name:::invisible\n    end\n    Memory:::memory\n    subgraph Memory\n    Jane[\"'Jane'\"]\n    end\n    person --&gt; Jane\n    name --&gt; Jane\n    classDef variable fill:#f96\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n    linkStyle 0,1 stroke-width:0px\n\n\n\n\n\n\n\nWe have assigned the variable person to that string, so now person refers to that str object stored in memory.\n\n\n\n\n\n\nflowchart TB\n    subgraph main [global scope]\n    person\n    end\n    subgraph say [ ]\n    name:::invisible\n    end\n    Memory:::memory\n    subgraph Memory\n    Jane[\"'Jane'\"]:::variable\n    end\n    person --&gt; Jane\n    name --&gt; Jane\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n    linkStyle 1 stroke-width:0px\n\n\n\n\n\n\n\nWhen we call the function we pass the reference of the object, the variable person, to the function.\nThe function receives the reference to the str object and assigns to it a new reference, in this case called name. It is very important to understand that although the object is the same, the “Jane” string, we have created a new reference to it, the new variable name.\n\n\n\n\n\n\nflowchart TB\n    subgraph main [global scope]\n    person\n    end\n    subgraph say [say_hello scope]\n    name\n    end\n    Memory:::memory\n    subgraph Memory\n    Jane[\"'Jane'\"]\n    end\n    person --&gt; Jane\n    name --&gt; Jane\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc",
+    "text": "Scopes and arguments\nThe code inside a function has its own variables, and those are not shared between functions and between the function and the rest of the code. To use a value inside a value, usually, we pass the variable to the function. To understand what do we mean when we say that we pass some data to a function we need to understand the concept of the scope.\nWhen we are programming we store and access data in memory. As we have seen, we refer to the data stored in memory by using variables. We could think that those variables, once they are created, are available in every part of our program. If you used that approach when you tried to build a program with more than a few lines of code, it would become very difficult to track which part of the program had changed a variable. So maintining those large programs would be very difficult.\nThe scope defines where in the code a variable is available, and functions define their own scope. In a computer program not all data is available to every part of the code. For instance, the variables that are defined inside a function are not available outside of the function.\n\n\n\n\n\n\nWe say that the variables defined in the function are in the function scope, that means that they are not available ouside of the function.\n\n\n\n\n\n\nWe get a “‘name’ is not defined error” because the variable name was created inside the say_hello function, so in the say_hello scope, and is not available outside. A variable can only be used when is in the current scope. It is said that the function has a local scope in which its variables are available.\nSchema with the scope of a function call:\n\n\n\n\n\n\n\n\n\n\n\nflowchart LR\n    subgraph def[\"def calc_area(width, height):\"]\n        subgraph func_scope[\"Function scope\"]\n            subgraph return\n               ret[\"return area\"]\n            end\n            subgraph in[\"function variables\"]\n               var[\"area = width * height\"]\n            end\n            subgraph arguments\n               width\n               height\n            end\n        end\n    end\n    subgraph result[\"result = calc_area(2, 3)\"]\n        subgraph caller[\"Caller scope\"]\n            subgraph result_[\" \"]\n               result__[\"result =\"]\n            end\n            subgraph funccall[\"Function call\"]\n               call1[\"calc_area(2, 3)\"]\n            end\n        end\n    end\n    return ---&gt; result__\n    call1 ---&gt; arguments\n\n\n\n\n\n\n\nGlobal scope\nBe careful because Python also has a global scope, and if you create the variable outside the function it will be available inside. We can use the variables defined in the global scope inside any function.\n\n\n\n\n\n\nIn this case the variable name has been created in the global scope, it is a global variable available everywhere. In general, avoid creating global variables, specially if they are not inmutable constants. As a general rule the use of the global scope is discouraged, try not to use it. If you think you need a global variable, think twice, in most cases is better not to use them. This is an advanced topic, but here’s a tip for the future you, to keep states it might be much better to use objects, instances of a class, that global variables. For now, this is too advanced. Just remember, try very hard not to use global varibles, although you can allow some exceptions with some inmutable ones used for global configurations. It is common to use this kind of global variables, inmutables and related to configuration, and, by convention, in Python, people name them using all caps variable names.\n\n\n\n\n\n\nPython discourages some uses of the use the global scope, and the behaviour of these variables is atypical.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPassing data to a function, function arguments\nSo, when the function requires some data to carry an action, we should pass that data explictly to the function. For instance, if we want a function to print a personalized greeting, it could need the name of the person.\n\n\n\n\n\n\nPassing data to a function is easy, but a lot is going on under the hood:\n\nWe have created a text string (“Jane”). That means that Python has created and stored a object of type str in memory.\n\n\n\n\n\n\nflowchart TB\n    subgraph main [ ]\n    person:::invisible\n    end\n    subgraph say [ ]\n    name:::invisible\n    end\n    Memory:::memory\n    subgraph Memory\n    Jane[\"'Jane'\"]\n    end\n    person --&gt; Jane\n    name --&gt; Jane\n    classDef variable fill:#f96\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n    linkStyle 0,1 stroke-width:0px\n\n\n\n\n\n\n\nWe have assigned the variable person to that string, so now person refers to that str object stored in memory.\n\n\n\n\n\n\nflowchart TB\n    subgraph main [global scope]\n    person\n    end\n    subgraph say [ ]\n    name:::invisible\n    end\n    Memory:::memory\n    subgraph Memory\n    Jane[\"'Jane'\"]:::variable\n    end\n    person --&gt; Jane\n    name --&gt; Jane\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc\n    linkStyle 1 stroke-width:0px\n\n\n\n\n\n\n\nWhen we call the function we pass the reference of the object, the variable person, to the function.\nThe function receives the reference to the str object and assigns to it a new reference, in this case called name. It is very important to understand that although the object is the same, the “Jane” string, we have created a new reference to it, the new variable name.\n\n\n\n\n\n\nflowchart TB\n    subgraph main [global scope]\n    person\n    end\n    subgraph say [say_hello scope]\n    name\n    end\n    Memory:::memory\n    subgraph Memory\n    Jane[\"'Jane'\"]\n    end\n    person --&gt; Jane\n    name --&gt; Jane\n    classDef invisible opacity:0%\n    classDef memory fill:#ccc",
     "crumbs": [
       "Functions",
       "Definition"
