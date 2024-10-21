@@ -472,31 +472,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-terminal" class="level2">
 <h2 class="anchored" data-anchor-id="the-terminal">The terminal</h2>
 <p>We are used to interact with our computers using <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">Graphical User Interfaces</a>, we click and drag icons and windows, but when we are developing Python programs our main way of interaction will be a <a href="https://en.wikipedia.org/wiki/Command-line_interface">command-line interface</a>, a <a href="https://en.wikipedia.org/wiki/Shell_(computing)">shell</a> running in a <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a>.</p>
-<p>In a command-line interface, there is a <a href="https://en.wikipedia.org/wiki/Command-line_interface#Command_prompt">prompt</a> that promts the user the write a text command. Once we write the command and hit “enter” the computer runs the command, writes the output in the terminal and, after the command ends, the prompt will be ready for the next command. A command is just a computer program.</p>
-<p>In different operating systems there are different terminal applications. In Linux and MacOS the application is usually named “terminal”, while in Windows there are different applications but we recommend “PowerShell” running in the “Windows Terminal”.</p>
-<p>During the course we recommend to use the editor <a href="https://code.visualstudio.com/">Visual Studio Code</a> to write Python code and this editor includes its our terminal, so you won’t need any other software. If you haven’t installed Visual Studio Code yet, we recommend that you do it.</p>
+<p>In a command-line interface, there is a <a href="https://en.wikipedia.org/wiki/Command-line_interface#Command_prompt">prompt</a> that promts the user the write a text command. Once we write the command and hit “enter”, the computer runs the command, writes the output in the terminal and, after the command ends, the prompt will be ready for the next command. A command is just a computer program.</p>
+<p>In different operating systems there are different terminal applications. In Linux and MacOS the application is usually named “terminal”, while in Windows there are different applications, but we recommend “PowerShell” running in the “Windows Terminal”.</p>
+<p>During the course we recommend to use the editor <a href="https://code.visualstudio.com/">Visual Studio Code</a> to write Python code. This editor includes its own terminal, so you won’t need any other terminal software. If you haven’t installed Visual Studio Code yet, we recommend that you do it.</p>
 </section>
 <section id="hello-world-with-uv" class="level2">
 <h2 class="anchored" data-anchor-id="hello-world-with-uv">Hello world with uv</h2>
-<p>First, create a folder/directory in which you will create and store the Python programs. Then open Visual Studio Code and in the File menu select Open Folder and Open the Folder that you just created. Now in the Visual Studio File Explorer click with the right mouse button, select “New File…” and create a file named hello.py. All Python programs, by convention, are text files with the extension “.py”.</p>
+<p>First, create a folder/directory in which you will create and store the Python programs. A Python program is just a text file with Python code in it and the “.py” extension. Open Visual Studio Code, and in the File menu, select Open Folder and Open the Folder that you just created. Now in the Visual Studio File Explorer click with the right mouse button, select “New File…” and create a file named hello.py. All Python programs, by convention, are text files with the extension “.py”.</p>
 <p>At this point Visual Studio should have created the “hello.py” text file and it will have open it, so we can type our first Python program.</p>
-<div id="aee38ee1" class="cell" data-execution_count="1">
+<div id="13c54f99" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello</code></pre>
 </div>
 </div>
 <p>Now that we have our first program, we can run it in the Visual Studio Code Terminal. In the menu select “Terminal” -&gt; “New Terminal”. That will open a terminal inside Visual Studio Code. The prompt will indicate the folder/directory in which we are working.</p>
-<p>We could run our Python programs directly using the Python interpreter command: “python”, but we are going to <a href="https://docs.astral.sh/uv/">uv</a>. If you haven’t <a href="https://docs.astral.sh/uv/getting-started/installation/">installed uv</a>, go ahead and do it. Once we have uv available, it will manage the Python installation for us and it will also run Python, just write in Visual Studio Terminal:</p>
-<pre class="{bash}"><code>
-$ uv run hello.py
-</code></pre>
+<p>We could run our Python programs using <a href="https://docs.astral.sh/uv/">uv</a> or directly using the python command. If you haven’t <a href="https://docs.astral.sh/uv/getting-started/installation/">installed uv</a>, go ahead and do it. Once we have uv available, it will manage the Python installation for us and it will also run Python, just write in Visual Studio Terminal:</p>
+<pre class="{bash}"><code>$ uv run hello.py</code></pre>
 <p>(The dollar sign is part of the prompt, we are just including it to show that the command is meant to be written in the prompt, but the dolar sign itself should not be written. In this case you should only write “uv run hello.py”)</p>
 <p>Click enter and, hopefully, you should have run your first Python program in the Terminal.</p>
-<p>In most courses and tutorials you would not have installed uv, but just Python. In this case you would run the following command instead.</p>
-<pre class="{bash}"><code>
-$ python hello.py
-</code></pre>
+<p>In most courses and tutorials you would not have installed uv, but just Python. If you prefer not to use uv, substitute “uv run” with python, and run:</p>
+<pre class="{bash}"><code>$ python hello.py</code></pre>
 
 
 <script type="ojs-module-contents">
