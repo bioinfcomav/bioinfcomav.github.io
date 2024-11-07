@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Functional programming – Procedural, Object Oriented and functional programming</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./objects_and_classes.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<meta name="mermaid-theme" content="neutral">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar docked fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./functional_programming.html">Functional programming</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Procedural, Object Oriented and functional programming</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./procedural.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Procedural</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./objects_and_classes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Objects and classes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./functional_programming.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Functional programming</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Functional programming</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Another way in which we can approach the structure of a program is <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional Programming</a>.</p>
+<p>One could be tempted to think that Functional Programming is the paradimg that uses functions, but that would be a mistake. As we have already seen, functions are the key concept in the Procedural approach and functions, althought they are called methods, are a key component of the classes used in the Object Oriented approach. It is called Functional Programming, because in this approach functions are used in new ways, they can, for instance, be arguments passed to other functions.</p>
+<p>Functional Programming is normaly explanied in very theoretical terms. This kind of theoretical explanation might have its uses, but you won’t find it here. In my day to day work I use functional programming concepts all the time, but always motivated by a practical need. This functional approach is especially useful when dealing with big data sets, and that it why I use it.</p>
+<p>Let’s do an example. Imagine that we want to sum all the numbers from 1 to 9. We could do it using a procedural approach with the following code.</p>
+<div>
+<div id="pyodide-1" class="exercise-cell">
+
+</div>
+<script type="pyodide-1-contents">
+eyJjb2RlIjoiZGVmIHN1bV9udW1iZXJzKG51bWJlcnMpOlxuICAgIGFjY3VtdWxhdGVkX3N1bSA9IDBcbiAgICBmb3IgbnVtYmVyIGluIG51bWJlcnM6XG4gICAgICAgIGFjY3VtdWxhdGVkX3N1bSArPSBudW1iZXJcbiAgICByZXR1cm4gYWNjdW11bGF0ZWRfc3VtXG5cbm51bWJlcnMgPSBbMSwgMiwgMywgNCwgNSwgNiwgNywgOCwgOV1cbnByaW50KHN1bV9udW1iZXJzKG51bWJlcnMpKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZX19
+</script>
+</div>
+<p>Or we could solve it using a functional approach.</p>
+<div>
+<div id="pyodide-2" class="exercise-cell">
+
+</div>
+<script type="pyodide-2-contents">
+eyJjb2RlIjoibnVtYmVycyA9IHJhbmdlKDEsIDEwKVxucHJpbnQoc3VtKG51bWJlcnMpKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZX19
+</script>
+</div>
+<section id="iterators" class="level2">
+<h2 class="anchored" data-anchor-id="iterators">Iterators</h2>
+<section id="iterators-and-iterables" class="level3">
+<h3 class="anchored" data-anchor-id="iterators-and-iterables">Iterators and iterables</h3>
+<p>To sum some numbers, for instance the first 1000 integers, we don’t need to create a list to hold them, we only need to get those numbers one after the other, one at a time. In Python that’s the difference between a <a href="https://docs.python.org/3/glossary.html#term-sequence">sequence</a> and an <a href="https://docs.python.org/3/glossary.html#term-iterator">iterator</a>.</p>
+<p>Lists or strings are examples of sequences, they are objects that:</p>
+<ul>
+<li>allow for random access, we can access every item by its position in the sequence</li>
+<li>have a length, they can return the number of items that they contain</li>
+</ul>
+<p>We could use those properties to get a list of numbers summed.</p>
+<div>
+<div id="pyodide-3" class="exercise-cell">
+
+</div>
+<script type="pyodide-3-contents">
+eyJjb2RlIjoibnVtYmVycyA9IFsxLCAyLCAzLCA0LCA1LCA2LCA3LCA4LCA5XVxuXG5hY2N1bXVsYXRlZF9zdW0gPSAwXG5mb3IgaSBpbiByYW5nZShsZW4obnVtYmVycykpOlxuICAgIGFjY3VtdWxhdGVkX3N1bSArPSBudW1iZXJzW2ldXG5cbnByaW50KGFjY3VtdWxhdGVkX3N1bSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9fQ==
+</script>
+</div>
+<p>But, we could accomplish the same goal, with much less. We don’t need the items to be ordered, or to know the total number of items or, even, to have all the numbers in memory at the same time; we just need access to each element, one at a time, that’s all.</p>
+<div>
+<div id="pyodide-4" class="exercise-cell">
+
+</div>
+<script type="pyodide-4-contents">
+eyJjb2RlIjoiYWNjdW11bGF0ZWRfc3VtID0gMFxuZm9yIG51bWJlciBpbiByYW5nZSgxLCAxMCk6XG4gICAgYWNjdW11bGF0ZWRfc3VtICs9IG51bWJlclxuXG5wcmludChhY2N1bXVsYXRlZF9zdW0pIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+<p>This time we have used <a href="https://docs.python.org/3/library/functions.html#func-range">range</a>. range objects don’t hold the number in memory, they create them one at a time, when the iteration, the for loop, demmands it. In this way, we have managed to add those numbers using much less memory. What we have done is to approach the problem using the iterator interface. An iterator is an object that:</p>
+<ul>
+<li>represents a stream of data, it yields its items one at a time.</li>
+<li>it raises a <a href="https://docs.python.org/3/library/exceptions.html#StopIteration">StopIteration</a> exception when there are no more items to yield.</li>
+</ul>
+<p>Let’s sum the first ten numbers in a way that reflects the iterator protocol.</p>
+<div>
+<div id="pyodide-5" class="exercise-cell">
+
+</div>
+<script type="pyodide-5-contents">
+eyJjb2RlIjoibnVtYmVycyA9IHJhbmdlKDEwKVxuXG5hY2N1bXVsYXRlZF9zdW0gPSAwXG53aGlsZSBUcnVlOlxuICAgIHRyeTpcbiAgICAgICAgbnVtYmVyID0gbmV4dChudW1iZXJzKVxuICAgIGV4Y2VwdCBTdG9wSXRlcmF0aW9uOlxuICAgICAgICBicmVha1xuICAgIGFjY3VtdWxhdGVkX3N1bSArPSBudW1iZXJcblxucHJpbnQoYWNjdW11bGF0ZWRfc3VtKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZX19
+</script>
+</div>
+<p>We get each number, one at at time, by calling next on the iterator until the iterator raises a StopIteration, and then we break the loop, we are done. That is in fact how the for loop works internally, it keeps calling next on the given object until it gets a StopIteration.</p>
+<p>Well, in fact, the for loop can make use of iterators, but also of other kind of objects. Lists, for instance, are not iterators. If you try to call next on a list you’ll get an error: “TypeError: ‘list’ object is not an iterator”</p>
+<div>
+<div id="pyodide-6" class="exercise-cell">
+
+</div>
+<script type="pyodide-6-contents">
+eyJjb2RlIjoibnVtYmVycyA9IFsxLCAyLCAzLCA0LCA1LCA2LCA3LCA4LCA5XVxubmV4dChudW1iZXJzKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZX19
+</script>
+</div>
+<p>Lists are <a href="https://docs.python.org/3/glossary.html#term-iterable">iterable</a>, and we can create iterators from iterables by using the <a href="https://docs.python.org/3/library/functions.html#iter">iter</a> built-in function.</p>
+<div>
+<div id="pyodide-7" class="exercise-cell">
+
+</div>
+<script type="pyodide-7-contents">
+eyJjb2RlIjoibnVtYmVycyA9IFsxLCAyLCAzLCA0LCA1LCA2LCA3LCA4LCA5XVxubnVtYmVyc19pdGVyYXRvciA9IGl0ZXIobnVtYmVycylcbnByaW50KG5leHQobnVtYmVyc19pdGVyYXRvcikpXG5wcmludChuZXh0KG51bWJlcnNfaXRlcmF0b3IpKVxucHJpbnQobmV4dChudW1iZXJzX2l0ZXJhdG9yKSlcbnByaW50KG5leHQobnVtYmVyc19pdGVyYXRvcikpXG5wcmludChuZXh0KG51bWJlcnNfaXRlcmF0b3IpKVxucHJpbnQobmV4dChudW1iZXJzX2l0ZXJhdG9yKSlcbnByaW50KG5leHQobnVtYmVyc19pdGVyYXRvcikpXG5wcmludChuZXh0KG51bWJlcnNfaXRlcmF0b3IpKVxucHJpbnQobmV4dChudW1iZXJzX2l0ZXJhdG9yKSlcbm5leHQobnVtYmVyc19pdGVyYXRvcikiLCJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9fQ==
+</script>
+</div>
+<p>This is, more or less, what for does for us and, in that way, it can deal with both iterables and iterators.</p>
+<p>Python is fond of iterables and iterators, and has many functions that use them. Many common Python objects, although you might think that are sequences, are, in fact, iterators: objects returned by the dict keys, values and items, range or opened text files. And it also has the itertools module and the map, filter and reduce functions.</p>
+<p>To sum the first numbers, we could even skip the for loop entirely to sum the numbers.</p>
+<div>
+<div id="pyodide-8" class="exercise-cell">
+
+</div>
+<script type="pyodide-8-contents">
+eyJjb2RlIjoicHJpbnQoc3VtKHJhbmdlKDEwKSkpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+<p>Now that we don’t need to hold this numbers in memory we can use much less memory and sum the numbers faster.</p>
+<div>
+<div id="pyodide-9" class="exercise-cell">
+
+</div>
+<script type="pyodide-9-contents">
+eyJjb2RlIjoicHJpbnQoc3VtKHJhbmdlKDEwMDAwMDAwKSkpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+<p>If we would try to do the same creating the whole list, we would need much more time and memory.</p>
+<div>
+<div id="pyodide-10" class="exercise-cell">
+
+</div>
+<script type="pyodide-10-contents">
+eyJjb2RlIjoibnVtYmVycyA9IGxpc3QocmFuZ2UoMTAwMDAwMDApKVxuYWNjdW11bGF0ZWRfc3VtID0gMFxuZm9yIG51bWJlciBpbiBudW1iZXJzOlxuICAgIGFjY3VtdWxhdGVkX3N1bSArPSBudW1iZXJcbnByaW50KGFjY3VtdWxhdGVkX3N1bSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9fQ==
+</script>
+</div>
+</section>
+<section id="lazy-and-eager" class="level3">
+<h3 class="anchored" data-anchor-id="lazy-and-eager">Lazy and eager</h3>
+<p><a href="https://docs.python.org/3/library/functions.html#func-range">range</a> creates the numbers in a <a href="https://en.wikipedia.org/wiki/Lazy_initialization">lazy</a> way, it only creates a number when it is required. The opposite approach, the one used by the list, that creates all items ahead of time, is known as <strong>eager</strong>. Lazy approaches delay <a href="https://en.wikipedia.org/wiki/Lazy_initialization">creation</a> or <a href="https://en.wikipedia.org/wiki/Lazy_evaluation">computation</a> as much as possible, while eager approaches create or compute as soon as they are instantiated or called.</p>
+</section>
+<section id="generators" class="level3">
+<h3 class="anchored" data-anchor-id="generators">Generators</h3>
+<p><a href="https://docs.python.org/3/glossary.html#term-generator">Generators</a> are a very convinient Python mechanism that allow us to create our own iterators. Generators look decively similar to a standard function, with the only difference that they use the <a href="https://docs.python.org/3/reference/simple_stmts.html#yield">yield</a> statement instead of <a href="https://docs.python.org/3/reference/simple_stmts.html#return">return</a>. However, generators behave quite differently than standard functions.</p>
+<div>
+<div id="pyodide-11" class="exercise-cell">
+
+</div>
+<script type="pyodide-11-contents">
+eyJjb2RlIjoiZGVmIG51bWJlcnNfZ2VuZXJhdG9yKG1heF9udW1iZXIpOlxuICAgIGZvciBudW1iZXIgaW4gcmFuZ2UobWF4X251bWJlcik6XG4gICAgICAgIHlpZWxkIG51bWJlclxuXG5wcmludChsaXN0KG51bWJlcnNfZ2VuZXJhdG9yKCkpKVxuXG5kZWYgbnVtYmVyc19mdW5jdChtYXhfbnVtYmVyKTpcbiAgICBmb3IgbnVtYmVyIGluIHJhbmdlKG1heF9udW1iZXIpOlxuICAgICAgICByZXR1cm4gbnVtYmVyXG5cbnByaW50KG51bWJlcnNfZnVuY3QoKSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9fQ==
+</script>
+</div>
+<p>While the function only returns one item and stops, the generator is capable of yielding one item after another until it runs out of items. The call to the generator does not return any item at all, but a <a href="https://docs.python.org/3/glossary.html#term-generator-iterator">generator iterator</a> object that, as any other iterator, will be able to yield items every time we ask for them using next.</p>
+<p>While each function call is independent, the function restarts its execution every time it is called from the very begining, generator iterators resume its execution every time we ask them to yield a new item.</p>
+<div>
+<div id="pyodide-12" class="exercise-cell">
+
+</div>
+<script type="pyodide-12-contents">
+eyJjb2RlIjoiZGVmIGdyZWV0aW5nX2dlbmVyYXRvcigpOlxuICAgIHByaW50KDEpXG4gICAgeWllbGQoXCJIaSFcIilcbiAgICBwcmludCgyKVxuICAgIHlpZWxkKFwiSGVsbG8hXCIpXG4gICAgcHJpbnQoMylcbiAgICB5aWVsZChcIkJ5ZSFcIilcblxuZ3JlZXRpbmdzID0gZ3JlZXRpbmdfZ2VuZXJhdG9yKClcbiMgZ3JlZXRpbmdzIGlzIGEgZ2VuZXJhdG9yIGl0ZXJhdG9yXG5wcmludChuZXh0KGdyZWV0aW5ncykpXG5wcmludChuZXh0KGdyZWV0aW5ncykpXG5wcmludChuZXh0KGdyZWV0aW5ncykpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+<p>Generators are a very convenient way of creating our own iterators. For instance, we could create a generator that yields the first n number (a very similar functionality that the one provided by the built-in range).</p>
+<div>
+<div id="pyodide-13" class="exercise-cell">
+
+</div>
+<script type="pyodide-13-contents">
+eyJjb2RlIjoiZGVmIGZpcnN0X251bWJlcnMobik6XG4gICAgaSA9IDBcbiAgICB3aGlsZSBUcnVlOlxuICAgICAgICB5aWVsZCBpXG4gICAgICAgIGkgKz0gaVxuICAgICAgICBpZiBpID49IG46XG4gICAgICAgICAgICBicmVha1xuXG5wcmludChsaXN0KGZpcnN0X251bWJlcnMoMTApKSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9fQ==
+</script>
+</div>
+<p>Or we could create a generator of endless random numbers.</p>
+<div>
+<div id="pyodide-14" class="exercise-cell">
+
+</div>
+<script type="pyodide-14-contents">
+eyJjb2RlIjoiaW1wb3J0IHJhbmRvbVxuZnJvbSBpdGVydG9vbHMgaW1wb3J0IGlzbGljZVxuXG5kZWYgcmFuZG9tX251bWJlcnMoKTpcbiAgICB3aGlsZSBUcnVlOlxuICAgICAgICB5aWVsZCByYW5kb20ucmFuZG9tKClcblxuXG5udW1iZXJzID0gcmFuZG9tX251bWJlcnMoKVxucHJpbnQobGlzdChpc2xpY2UobnVtYmVycywgMTApKSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9fQ==
+</script>
+</div>
+</section>
+<section id="iterators-are-consumed" class="level3">
+<h3 class="anchored" data-anchor-id="iterators-are-consumed">Iterators are consumed</h3>
+<p>Iterators are great tools, but you have to be aware of their behaviour, in particular, they are consumed.</p>
+<div>
+<div id="pyodide-15" class="exercise-cell">
+
+</div>
+<script type="pyodide-15-contents">
+eyJjb2RlIjoibnVtYmVycyA9IHJhbmdlKDEwKVxucHJpbnQobGlzdChudW1iZXJzKSlcbnByaW50KGxpc3QobnVtYmVycykpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+<p>Lists, on the contrary, are not consumed, we could go through them as many times as we want to.</p>
+<div>
+<div id="pyodide-16" class="exercise-cell">
+
+</div>
+<script type="pyodide-16-contents">
+eyJjb2RlIjoibnVtYmVycyA9IFswLCAxLCAyLCAzLCA0LCA1LCA2LCA3LCA4LCA5XVxucHJpbnQobGlzdChudW1iZXJzKSlcbnByaW50KGxpc3QobnVtYmVycykpXG5wcmludChsaXN0KG51bWJlcnMpKVxucHJpbnQobGlzdChudW1iZXJzKSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9fQ==
+</script>
+</div>
+<p>Think of iterators a stream of items that is seen only once. You should take into account this behaviour when creating algorithms that work with iterators. Although once you get used to them that won’t be a problem for many algorithms, it can be challenging at the begining to think on how to approach certain problems using iterators.</p>
+</section>
+<section id="itertools" class="level3">
+<h3 class="anchored" data-anchor-id="itertools">itertools</h3>
+<p>If you plant to use iterators at all you should take a look at the <a href="https://docs.python.org/3/library/itertools.html#itertools.islice">itertools</a> module, and if you want more functionality, you could check out the <a href="https://github.com/more-itertools/more-itertools">more-itertools</a> package.</p>
+</section>
+</section>
+<section id="pure-and-inmutable" class="level2">
+<h2 class="anchored" data-anchor-id="pure-and-inmutable">Pure and inmutable</h2>
+<section id="pure-functions" class="level3">
+<h3 class="anchored" data-anchor-id="pure-functions">Pure functions</h3>
+<p>A <a href="https://en.wikipedia.org/wiki/Pure_function">pure function</a> is a function that:</p>
+<ul>
+<li>given the same arguments it will return the same values</li>
+<li>does not have any side effect</li>
+</ul>
+<p>Pure functions have some advantages over functions that, for instance, have side effects, that change an external state. As we discussed in the procedural approach, side effects destroy modularity and make code more difficult to reason about and maintain.</p>
+</section>
+<section id="inmutable-objects" class="level3">
+<h3 class="anchored" data-anchor-id="inmutable-objects">Inmutable objects</h3>
+<p>Changing the state of the objects passed to the function breaks modularity. So, programming is much easier, for instance code is easier to debug, when we don’t mutate the state of the objects passed to the function.</p>
+<p>It is nice to have functions that do not change the objects that we lend to them, but the caller does not allways have control over the function implementation and one way to enforce this is to pass to the function only inmutable objects.</p>
+</section>
+</section>
+<section id="cache-and-paralellization" class="level2">
+<h2 class="anchored" data-anchor-id="cache-and-paralellization">Cache and paralellization</h2>
+<p>When using pure functions and inmutable objects we can apply very easyly, tricks to improve the performance of our code.</p>
+<p>We could, for instance, cache the result of time consuming computations. Since the function given the same arguments always returns the same values and the arguments are not changed, we can return a precomputed instance of the result.</p>
+<p>The <a href="https://docs.python.org/3/library/functools.html#functools.lru_cache">lru_cache</a> <a href="https://docs.python.org/3/glossary.html#term-decorator">decorator</a> will cache the result of the function, so if you call the function several times with the same arguments, it will return the cached result and save you some possible expensive computations. Caching can, in some cases, improve code performance by a lot.</p>
+<pre class="{pyodie}"><code>from functools import lru_cache
+
+@lru_cache
+def sum_numbers(a, b):
+    print(f"Summing {a} + {b}")
+    return a + b
+
+print(sum_numbers(1, 1))
+print(sum_numbers(1, 1))
+print(sum_numbers(2, 2))
+print(sum_numbers(1, 1))
+print(sum_numbers(2, 2))</code></pre>
+<p>Of course, lru_cache will not behave propertly with non-pure functions or with mutable arguments.</p>
+<p>Pure functions and inmutable objects are also very convenient when dealing with large amounts of processing because it is much more easier to paralelize programs built with them.</p>
+</section>
+<section id="functions-are-first-class-citizens" class="level2">
+<h2 class="anchored" data-anchor-id="functions-are-first-class-citizens">Functions are first class citizens</h2>
+<p>In Python, like almost anything else, functions are just objects, and they can be used as arguments to other functions or can be returned by other functions. The <a href="https://docs.python.org/3/library/functools.html">functools</a> has many utilies that take functions as arguments and that, in most cases, return functions.</p>
+<p>For instance, the lru_cache <a href="https://docs.python.org/3/glossary.html#term-decorator">decorator</a>, like any other decorator is in fact a function that takes a function as an argument and returns another function.</p>
+<section id="partial" class="level3">
+<h3 class="anchored" data-anchor-id="partial">partial</h3>
+<p><a href="https://docs.python.org/es/3/library/functools.html#functools.partial">partial</a> is another great utility of the functools module, it returns a new function which has some of their arguments precalled (or freezed).</p>
+<pre class="{pyodie}"><code>from functools import partial
+
+def sum_numbers(a, b):
+    return a + b
+
+
+add_2 = partial(sum_numbers, b=2)   # add_2 is a new function, created by partial
+print(add_2(1))
+print(add_2(7))</code></pre>
+</section>
+<section id="lambda" class="level3">
+<h3 class="anchored" data-anchor-id="lambda">lambda</h3>
+<p><a href="https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions">lambdas</a> are small anonymous functions, functions with no name. They are usually passed as arguments to other functions.</p>
+<p>One very common use case is to use them as the key argument of the sorted funtion when <a href="https://docs.python.org/3/howto/sorting.html">sorting</a>.</p>
+<div>
+<div id="pyodide-17" class="exercise-cell">
+
+</div>
+<script type="pyodide-17-contents">
+eyJjb2RlIjoic3R1ZGVudF90dXBsZXMgPSBbXG4gICAgKCdqb2huJywgJ0EnLCAxNSksXG4gICAgKCdqYW5lJywgJ0InLCAxMiksXG4gICAgKCdkYXZlJywgJ0InLCAxMCksXG5dXG5ieV9hZ2UgPSBzb3J0ZWQoc3R1ZGVudF90dXBsZXMsIGtleT1sYW1iZGEgc3R1ZGVudDogc3R1ZGVudFsyXSlcbnByaW50KGJ5X2FnZSlcbmJ5X25hbWUgPSBzb3J0ZWQoc3R1ZGVudF90dXBsZXMsIGtleT1sYW1iZGEgc3R1ZGVudDogc3R1ZGVudFswXSlcbnByaW50KGJ5X25hbWUpXG5ieV9ncmFkZSA9IHNvcnRlZChzdHVkZW50X3R1cGxlcywga2V5PWxhbWJkYSBzdHVkZW50OiBzdHVkZW50WzFdKVxucHJpbnQoYnlfZ3JhZGUpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+</section>
+</section>
+<section id="comprenhensions" class="level2">
+<h2 class="anchored" data-anchor-id="comprenhensions">Comprenhensions</h2>
+<p>All this functional utilities can be combined with several comprenhensions:</p>
+<ul>
+<li><a href="https://docs.python.org/3/glossary.html#term-list-comprehension">list comprehension</a></li>
+<li><a href="https://docs.python.org/3/glossary.html#term-dictionary-comprehension">dict comprehension</a></li>
+<li><a href="https://docs.python.org/3/glossary.html#term-set-comprehension">set comprehension</a></li>
+<li><a href="https://docs.python.org/3/glossary.html#term-generator-expression">generator expression</a></li>
+</ul>
+<p>Comprehensions provide a very consise way to create lists, dict, sets and generators by computing its values.</p>
+<p>The general idea is: for each element in an iterable, if the element matches a condition, do something with the element and store the result in a list/dict/set.</p>
+<div>
+<div id="pyodide-18" class="exercise-cell">
+
+</div>
+<script type="pyodide-18-contents">
+eyJjb2RlIjoiZGVmIG51bWJlcl9pc19vZGQobnVtYmVyKTpcbiAgICByZXR1cm4gYm9vbChudW1iZXIgJSAyKVxuXG5kZWYgcHJvY2Vzc19udW1iZXIobnVtYmVyKTpcbiAgICByZXR1cm4gbnVtYmVyICoqMlxuXG5vZGRzX3NxdWFyZWQgPSBbcHJvY2Vzc19udW1iZXIobnVtYmVyKSBmb3IgbnVtYmVyIGluIHJhbmdlKDEwKSBpZiBudW1iZXJfaXNfb2RkKG51bWJlcildXG5cbiMgb3IgZXZlcnl0aGluZyBpbiBvbmUgbGluZVxuXG5vZGRzX3NxdWFyZWQgPSBbbnVtYmVyKioyIGZvciBudW1iZXIgaW4gcmFuZ2UoMTApIGlmIG51bWJlciAlIDJdXG5wcmludChvZGRzX3NxdWFyZWQpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+<p>The if condition is optional, we can create comprehensions without it.</p>
+<div>
+<div id="pyodide-19" class="exercise-cell">
+
+</div>
+<script type="pyodide-19-contents">
+eyJjb2RlIjoibnVtc19zcXVhcmVkID0gW251bWJlcioqMiBmb3IgbnVtYmVyIGluIHJhbmdlKDEwKV1cbnByaW50KG51bXNfc3F1YXJlZCkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9fQ==
+</script>
+</div>
+<p>The syntaxis for the dict and set comprehensions is very similar.</p>
+<div>
+<div id="pyodide-20" class="exercise-cell">
+
+</div>
+<script type="pyodide-20-contents">
+eyJjb2RlIjoiIyBkaWN0XG5udW1zX3NxdWFyZWQgPSB7bnVtYmVyOiBudW1iZXIqKjIgZm9yIG51bWJlciBpbiByYW5nZSgxMCl9XG5wcmludChudW1zX3NxdWFyZWQpXG5cbiMgc2V0XG5udW1zX3NxdWFyZWRfc2V0ID0ge251bWJlcioqMiBmb3IgbnVtYmVyIGluIHJhbmdlKDEwKX1cbnByaW50KG51bXNfc3F1YXJlZF9zZXQpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+<p>And, finnaly, if we want, instead of creating a list eagerly, we could create a lazy generator, but changing the square brackets by parentheses.</p>
+<div>
+<div id="pyodide-21" class="exercise-cell">
+
+</div>
+<script type="pyodide-21-contents">
+eyJjb2RlIjoib2Rkc19zcXVhcmVkID0gKG51bWJlcioqMiBmb3IgbnVtYmVyIGluIHJhbmdlKDEwKSBpZiBudW1iZXIgJSAyKVxucHJpbnQob2Rkc19zcXVhcmVkKSAjIHRoaXMgaXMgYSBnZW5lcmF0b3IgaXRlcmF0b3Igb2JqZWN0XG5cbiMgVW50aWwgd2UgYXNrIGZvciB0aGUgaXRlbXMgdGhlIGNvbXB1dGF0aW9ucyB3b24ndCBiZSBjYXJyaWVkIG91dCwgYmVjYXVzZSBnZW5lcmF0b3JzIGFyZSBsYXp5XG5cbm9kZHNfc3F1YXJlZCA9IGxpc3Qob2Rkc19zcXVhcmVkKSAjIGhlcmUgdGhlIGNvbXB1dGF0aW9uIGlzIGNhcnJpZWQgb3V0IGJlY2F1c2Ugd2UgaW5zdGFudGlhdGUgdGhlIGZ1bGwgbGlzdFxucHJpbnQob2Rkc19zcXVhcmVkKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZX19
+</script>
+</div>
+</section>
+<section id="filter-map-reduce" class="level2">
+<h2 class="anchored" data-anchor-id="filter-map-reduce">filter, map, reduce</h2>
+<p>Another very useful, and one of the most common, way of using the functional approach is to use <a href="https://docs.python.org/3/library/functions.html#filter">filter</a>, <a href="https://docs.python.org/3/library/functions.html#map">map</a> and <a href="https://docs.python.org/3/library/functools.html#functools.reduce">reduce</a>. All these utilities are designed to work with iterators, with streams of data, and the <a href="https://en.wikipedia.org/wiki/MapReduce">map/reduce</a> pattern was thought as a tool to process big quantities of data.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    subgraph filter
+        f["filter(is_square_funct, item_iterator)"]
+        subgraph filter_drawing
+            subgraph before_filter[" "]
+                1f[" "]
+                2f((" "))
+                3f((" "))
+                4f[" "]
+                5f[" "]
+            end
+            subgraph after_filter[" "]
+                1fa[" "]
+                4fa[" "]
+                5fa[" "]
+            end
+            before_filter ---&gt; after_filter
+        end
+    end
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    subgraph map
+        m["map(to_square_funct, square_iterator)"]
+        subgraph map_drawing[" "]
+            1s[" "]
+            2s[" "]
+            3s[" "]
+            4s[" "]
+            5s[" "]
+
+            1c((" "))
+            2c((" "))
+            3c((" "))
+            4c((" "))
+            5c((" "))
+
+            1s ---&gt; 1c
+            2s ---&gt; 2c
+            3s ---&gt; 3c
+            4s ---&gt; 4c
+            5s ---&gt; 5c
+        end
+    end
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div>
+<div id="pyodide-22" class="exercise-cell">
+
+</div>
+<script type="pyodide-22-contents">
+eyJjb2RlIjoiZnJvbSBmdW5jdG9vbHMgaW1wb3J0IHJlZHVjZVxubnVtYmVycyA9IHJhbmdlKDEwMDAwKVxuXG5vZGRfbnVtYmVycyA9IGZpbHRlcihsYW1iZGEgbnVtYmVyOiBudW1iZXIgJSAyLCBudW1iZXJzKVxub2Rkc19zcXVhcmVkID0gbWFwKGxhbWJkYSBudW1iZXI6IG51bWJlcioqMiwgb2RkX251bWJlcnMpXG5zdW1fYWRkc19zcXVhcmVkID0gcmVkdWNlKGxhbWJkYSB4LCB5OiB4ICsgeSwgb2Rkc19zcXVhcmVkKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZX19
+</script>
+</div>
+<p>This is a somewhat convoluted way of writting the following algorithm:</p>
+<div>
+<div id="pyodide-23" class="exercise-cell">
+
+</div>
+<script type="pyodide-23-contents">
+eyJjb2RlIjoiYWNjdW1tdWxhdGVkX3N1bSA9IDBcbmZvciBpIGluIHJhbmdlKDEwMDAwKTpcbiAgICBpZiBudW1iZXIgJSAyOlxuICAgICAgICBhY2N1bXVsYXRlZF9zdW0gKz0gaSoqMlxucHJpbnQoYWNjbXVsYXRlZF9zdW0pIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+<p>The map-reduce approach splits the iteration functionality into the map and reduce functions, we have transformed the for, a loop statement, into a series of functions.</p>
+<p>This approach offers the possibility of doing the computations in parallel because each call to map and reduce is independent, as long as we are using pure functions (no side effects), and the functions do not modify the objects passed to them (something that we could enforce using inmutable objects).</p>
+<p>Python, for instance, has a multiprocessing <a href="https://docs.python.org/3/library/multiprocessing.html#multiprocessing.pool.Pool.map">map</a> that allow us to apply map in parallel.</p>
+<div>
+<div id="pyodide-24" class="exercise-cell">
+
+</div>
+<script type="pyodide-24-contents">
+eyJjb2RlIjoiZnJvbSBmdW5jdG9vbHMgaW1wb3J0IHJlZHVjZVxuZnJvbSBtdWx0aXByb2Nlc3NpbmcgaW1wb3J0IFBvb2xcbm51bWJlcnMgPSByYW5nZSgxMDAwMClcblxub2RkX251bWJlcnMgPSBmaWx0ZXIobGFtYmRhIG51bWJlcjogbnVtYmVyICUgMiwgbnVtYmVycylcbndpdGggUG9vbCg1KSBhcyBwb29sOlxuICAgIG1hcCA9IHBvb2wuaW1hcF91bm9yZGVyZWRcbiAgICBvZGRzX3NxdWFyZWQgPSBtYXAobGFtYmRhIG51bWJlcjogbnVtYmVyKioyLCBvZGRfbnVtYmVycylcbnN1bV9hZGRzX3NxdWFyZWQgPSByZWR1Y2UobGFtYmRhIHgsIHk6IHggKyB5LCBvZGRzX3NxdWFyZWQpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+<p>If we can transform the computation that we are interested in carrying out into a series of pure functions, we can use this trick to do massive, and time and and memory efficient, computations in parallel. This is one of the main practial uses of the functional approach.</p>
+
+
+<script type="pyodide-data">
+eyJvcHRpb25zIjp7ImluZGV4VVJMIjoiaHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L3B5b2RpZGUvdjAuMjYuMS9mdWxsLyJ9LCJwYWNrYWdlcyI6eyJwa2dzIjpbInB5b2RpZGVfaHR0cCIsIm1pY3JvcGlwIiwiaXB5dGhvbiJdfX0=
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3siaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yNCA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMjQtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0yNC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzI0ID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8yNCwge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0yNCJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yMyA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMjMtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0yMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzIzID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8yMywge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0yMyJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yMiA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMjItY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0yMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzIyID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8yMiwge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0yMiJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yMSA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMjEtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0yMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzIxID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8yMSwge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0yMSJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yMCA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMjAtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0yMC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzIwID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8yMCwge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0yMCJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xOSA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMTktY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0xOS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzE5ID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8xOSwge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0xOSJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xOCA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMTgtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0xOC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzE4ID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8xOCwge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0xOCJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xNyA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMTctY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0xNy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzE3ID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8xNywge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0xNyJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xNiA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMTYtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0xNi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzE2ID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8xNiwge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0xNiJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xNSA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMTUtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0xNS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzE1ID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8xNSwge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0xNSJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xNCA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMTQtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0xNC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzE0ID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8xNCwge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0xNCJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xMyA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMTMtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0xMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEzID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8xMywge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0xMyJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xMiA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMTItY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0xMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEyID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8xMiwge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0xMiJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xMSA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMTEtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0xMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzExID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8xMSwge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0xMSJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xMCA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMTAtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgcHlvZGlkZS0xMC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEwID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8xMCwge30pO1xuIiwibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoicHlvZGlkZS0xMCJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl85ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS05LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtOS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzkgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzksIHt9KTtcbiIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6InB5b2RpZGUtOSJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl84ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS04LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtOC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzggPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzgsIHt9KTtcbiIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6InB5b2RpZGUtOCJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl83ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS03LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzcgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzcsIHt9KTtcbiIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6InB5b2RpZGUtNyJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl82ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS02LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzYgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzYsIHt9KTtcbiIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6InB5b2RpZGUtNiJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl81ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS01LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzUgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzUsIHt9KTtcbiIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6InB5b2RpZGUtNSJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl80ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS00LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzQgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzQsIHt9KTtcbiIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6InB5b2RpZGUtNCJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8zID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzMgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzMsIHt9KTtcbiIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6InB5b2RpZGUtMyJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0yLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzIgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzIsIHt9KTtcbiIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6InB5b2RpZGUtMiJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzEsIHt9KTtcbiIsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6InB5b2RpZGUtMSJ9LHsiaW5saW5lIjpmYWxzZSwic291cmNlIjoicHlvZGlkZU9qcyA9IHtcbiAgY29uc3Qge1xuICAgIFB5b2RpZGVFdmFsdWF0b3IsXG4gICAgUHlvZGlkZUVudmlyb25tZW50TWFuYWdlcixcbiAgICBzZXR1cFB5dGhvbixcbiAgICBzdGFydFB5b2RpZGVXb3JrZXIsXG4gICAgYjY0RGVjb2RlLFxuICAgIGNvbGxhcHNlUGF0aCxcbiAgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc3RhdHVzQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLXN0YXR1c1wiKTtcbiAgY29uc3QgaW5kaWNhdG9yQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaW5kaWNhdG9yQ29udGFpbmVyLmNsYXNzTGlzdC5yZW1vdmUoXCJkLW5vbmVcIik7XG5cbiAgbGV0IHN0YXR1c1RleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpXG4gIHN0YXR1c1RleHQuY2xhc3NMaXN0ID0gXCJleGVyY2lzZS1sb2FkaW5nLWRldGFpbHNcIjtcbiAgc3RhdHVzVGV4dCA9IHN0YXR1c0NvbnRhaW5lci5hcHBlbmRDaGlsZChzdGF0dXNUZXh0KTtcbiAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbml0aWFsaXNlYDtcblxuICAvLyBIb2lzdCBpbmRpY2F0b3Igb3V0IGZyb20gZmluYWwgc2xpZGUgd2hlbiBydW5uaW5nIHVuZGVyIHJldmVhbFxuICBjb25zdCByZXZlYWxTdGF0dXMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCAuZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGlmIChyZXZlYWxTdGF0dXMpIHtcbiAgICByZXZlYWxTdGF0dXMucmVtb3ZlKCk7XG4gICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgPiAuc2xpZGVzXCIpLmFwcGVuZENoaWxkKHJldmVhbFN0YXR1cyk7XG4gIH1cblxuICAvLyBNYWtlIGFueSByZXZlYWwgc2xpZGVzIHdpdGggbGl2ZSBjZWxscyBzY3JvbGxhYmxlXG4gIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIucmV2ZWFsIC5leGVyY2lzZS1jZWxsXCIpLmZvckVhY2goKGVsKSA9PiB7XG4gICAgZWwuY2xvc2VzdCgnc2VjdGlvbi5zbGlkZScpLmNsYXNzTGlzdC5hZGQoXCJzY3JvbGxhYmxlXCIpO1xuICB9KVxuXG4gIC8vIFB5b2RpZGUgc3VwcGxlbWVudGFsIGRhdGEgYW5kIG9wdGlvbnNcbiAgY29uc3QgZGF0YUNvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS1kYXRhXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZGF0YSA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGRhdGFDb250ZW50KSk7XG5cbiAgLy8gR3JhYiBsaXN0IG9mIHJlc291cmNlcyB0byBiZSBkb3dubG9hZGVkXG4gIGNvbnN0IGZpbGVzQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ2ZnMtZmlsZVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGZpbGVzID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZmlsZXNDb250ZW50KSk7XG5cbiAgbGV0IHB5b2RpZGVQcm9taXNlID0gKGFzeW5jICgpID0+IHtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIFB5b2RpZGVgO1xuICAgIGNvbnN0IHB5b2RpZGUgPSBhd2FpdCBzdGFydFB5b2RpZGVXb3JrZXIoZGF0YS5vcHRpb25zKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcGFja2FnZTogbWljcm9waXBgO1xuICAgIGF3YWl0IHB5b2RpZGUubG9hZFBhY2thZ2UoXCJtaWNyb3BpcFwiKTtcbiAgICBjb25zdCBtaWNyb3BpcCA9IGF3YWl0IHB5b2RpZGUucHlpbXBvcnQoXCJtaWNyb3BpcFwiKTtcbiAgICBhd2FpdCBkYXRhLnBhY2thZ2VzLnBrZ3MubWFwKChwa2cpID0+ICgpID0+IHtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcGFja2FnZTogJHtwa2d9YDtcbiAgICAgIHJldHVybiBtaWNyb3BpcC5pbnN0YWxsKHBrZyk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG4gICAgYXdhaXQgbWljcm9waXAuZGVzdHJveSgpO1xuXG4gICAgLy8gRG93bmxvYWQgYW5kIGluc3RhbGwgcmVzb3VyY2VzXG4gICAgYXdhaXQgZmlsZXMubWFwKChmaWxlKSA9PiBhc3luYyAoKSA9PiB7XG4gICAgICBjb25zdCBuYW1lID0gZmlsZS5zdWJzdHJpbmcoZmlsZS5sYXN0SW5kZXhPZignLycpICsgMSk7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHJlc291cmNlOiAke25hbWV9YDtcbiAgICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goZmlsZSk7XG4gICAgICBpZiAoIXJlc3BvbnNlLm9rKSB7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgQ2FuJ3QgZG93bmxvYWQgXFxgJHtmaWxlfVxcYC4gRXJyb3IgJHtyZXNwb25zZS5zdGF0dXN9OiBcIiR7cmVzcG9uc2Uuc3RhdHVzVGV4dH1cIi5gKTtcbiAgICAgIH1cbiAgICAgIGNvbnN0IGRhdGEgPSBhd2FpdCByZXNwb25zZS5hcnJheUJ1ZmZlcigpO1xuXG4gICAgICAvLyBTdG9yZSBVUkxzIGluIHRoZSBjd2Qgd2l0aG91dCBhbnkgc3ViZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgaWYgKGZpbGUuaW5jbHVkZXMoXCI6Ly9cIikpIHtcbiAgICAgICAgZmlsZSA9IG5hbWU7XG4gICAgICB9XG5cbiAgICAgIC8vIENvbGxhcHNlIGhpZ2hlciBkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBmaWxlID0gY29sbGFwc2VQYXRoKGZpbGUpO1xuXG4gICAgICAvLyBDcmVhdGUgZGlyZWN0b3J5IHRyZWUsIGlnbm9yaW5nIFwiZGlyZWN0b3J5IGV4aXN0c1wiIFZGUyBlcnJvcnNcbiAgICAgIGNvbnN0IHBhcnRzID0gZmlsZS5zcGxpdCgnLycpLnNsaWNlKDAsIC0xKTtcbiAgICAgIGxldCBwYXRoID0gJyc7XG4gICAgICB3aGlsZSAocGFydHMubGVuZ3RoID4gMCkge1xuICAgICAgICBwYXRoICs9IHBhcnRzLnNoaWZ0KCkgKyAnLyc7XG4gICAgICAgIHRyeSB7XG4gICAgICAgICAgYXdhaXQgcHlvZGlkZS5GUy5ta2RpcihwYXRoKTtcbiAgICAgICAgfSBjYXRjaCAoZSkge1xuICAgICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICAgIGlmIChlLmVycm5vICE9PSAyMCkge1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0UHRyID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLl9zdHJlcnJvcihlLmVycm5vKTtcbiAgICAgICAgICAgIGNvbnN0IGVycm9yVGV4dCA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5VVEY4VG9TdHJpbmcoZXJyb3JUZXh0UHRyKTtcbiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG5cbiAgICAgIC8vIFdyaXRlIHRoaXMgZmlsZSB0byB0aGUgVkZTXG4gICAgICB0cnkge1xuICAgICAgICByZXR1cm4gYXdhaXQgcHlvZGlkZS5GUy53cml0ZUZpbGUoZmlsZSwgbmV3IFVpbnQ4QXJyYXkoZGF0YSkpO1xuICAgICAgfSBjYXRjaCAoZSkge1xuICAgICAgICBpZiAoZS5uYW1lICE9PSBcIkVycm5vRXJyb3JcIikgdGhyb3cgZTtcbiAgICAgICAgY29uc3QgZXJyb3JUZXh0UHRyID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLl9zdHJlcnJvcihlLmVycm5vKTtcbiAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYEZpbGVzeXN0ZW0gRXJyb3IgJHtlLmVycm5vfSBcIiR7ZXJyb3JUZXh0fVwiLmApO1xuICAgICAgfVxuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBQeW9kaWRlIGVudmlyb25tZW50IHNldHVwYDtcbiAgICBhd2FpdCBzZXR1cFB5dGhvbihweW9kaWRlKTtcblxuICAgIHN0YXR1c1RleHQucmVtb3ZlKCk7XG4gICAgaWYgKHN0YXR1c0NvbnRhaW5lci5jaGlsZHJlbi5sZW5ndGggPT0gMCkge1xuICAgICAgc3RhdHVzQ29udGFpbmVyLnBhcmVudE5vZGUucmVtb3ZlKCk7XG4gICAgfVxuICAgIHJldHVybiBweW9kaWRlO1xuICB9KSgpLmNhdGNoKChlcnIpID0+IHtcbiAgICBzdGF0dXNUZXh0LnN0eWxlLmNvbG9yID0gXCJ2YXIoLS1leGVyY2lzZS1lZGl0b3ItaGwtZXIsICNBRDAwMDApXCI7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGVyci5tZXNzYWdlO1xuICAgIC8vaW5kaWNhdG9yQ29udGFpbmVyLnF1ZXJ5U2VsZWN0b3IoXCIuc3Bpbm5lci1ncm93XCIpLmNsYXNzTGlzdC5hZGQoXCJkLW5vbmVcIik7XG4gICAgdGhyb3cgZXJyO1xuICB9KTtcblxuICAvLyBLZWVwIHRyYWNrIG9mIGluaXRpYWwgT0pTIGJsb2NrIHJlbmRlclxuICBjb25zdCByZW5kZXJlZE9qcyA9IHt9O1xuXG4gIGNvbnN0IHByb2Nlc3MgPSBhc3luYyAoY29udGV4dCwgaW5wdXRzKSA9PiB7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHB5b2RpZGVQcm9taXNlO1xuICAgIGNvbnN0IGV2YWx1YXRvciA9IG5ldyBQeW9kaWRlRXZhbHVhdG9yKHB5b2RpZGUsIGNvbnRleHQpO1xuICAgIGF3YWl0IGV2YWx1YXRvci5wcm9jZXNzKGlucHV0cyk7XG4gICAgcmV0dXJuIGV2YWx1YXRvci5jb250YWluZXI7XG4gIH1cblxuICByZXR1cm4ge1xuICAgIHB5b2RpZGVQcm9taXNlLFxuICAgIHJlbmRlcmVkT2pzLFxuICAgIHByb2Nlc3MsXG4gIH07XG59XG4iLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJjZWxsTmFtZSI6InB5b2RpZGUtcHJlbHVkZSJ9XX0=
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./objects_and_classes.html" class="pagination-link" aria-label="Objects and classes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Objects and classes</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/JoseBlanca/programming_paradigms/blob/main/functional_programming.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/JoseBlanca/programming_paradigms/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

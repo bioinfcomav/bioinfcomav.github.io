@@ -9,7 +9,8 @@ Post-graduate courses:
 	* `Bionformática básica <courses/intro_bioinf/index.html>`_
 	* `NGS sequence analysis <courses/sequence_analysis/index.html>`_
 	* `Linux para las ciencias de la vida <courses/unix/index.html>`_
-	* `Introducción a la programación <courses/intro_programming>`_
+	* `Introduction to programming <courses/intro_programming>`_
+	* `Programming paradigms <courses/programming_paradigms>`_
 
 UPV Biotechnology degree:
 

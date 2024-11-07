@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Object oriented programming – Procedural, Object Oriented and functional programming</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./functional_programming.html" rel="next">
+<link href="./procedural.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar docked fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./objects_and_classes.html">Objects and classes</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Procedural, Object Oriented and functional programming</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./procedural.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Procedural</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./objects_and_classes.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Objects and classes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./functional_programming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functional programming</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Object oriented programming</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>For decades procedural programming was the main tool to structure and divide software into little pieces, but around 1980 a new paradigm <a href="https://en.wikipedia.org/wiki/Object-oriented_programming#History">became popular</a>: <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object Oriented Programming</a> (OOP). However, OOP did not replaced procedural programming, both paradigms still coexist, and, to this day, both of them are the most common programming paradigms. There are languages, like C, that only use functions, others like Java, that only use classes, the building block in Object Oriented Programming languages, and still others, like Python and Rust, are multiparadigmatic: the programmer choses.</p>
+<section id="classes" class="level2">
+<h2 class="anchored" data-anchor-id="classes">Classes</h2>
+<p>In Object Oriented Programming the <a href="https://en.wikipedia.org/wiki/Class_(computer_programming)">class</a> is the main building block. To introduce the concept of the classes let’s write a small program, using first a procedural approach.</p>
+<div>
+<div id="pyodide-1" class="exercise-cell">
+
+</div>
+<script type="pyodide-1-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiZGVmIGNhbGNfcmVjdGFuZ2xlX2FyZWEod2lkdGgsIGhlaWdodCk6XG4gICAgcmV0dXJuIHdpZHRoLCBoZWlnaHRcblxuXG5kZWYgcHJpbnRfcmVjdGFuZ2xlKHdpZHRoLCBoZWlnaHQsIGFyZWEpOlxuICAgIHByaW50KGZcIlRoZSByZWN0YW5nbGUgaGFzIGEgd2lkdGggb2Yge3dpZHRofSwgYSBoZWlnaHQgb2Yge2hlaWdodH0sIGFuZCBhbiBhcmVhIG9mIHthcmVhfS4pXG5cblxucmVjdGFuZ2xlX3dpZHRoID0gMlxucmVjdGFuZ2xlX2hlaWdodCA9IDNcbmFyZWEgPSBjYWxjX3JlY3RhbmdsZV9hcmVhKHJlY3RhbmdsZV93aWR0aCwgcmVjdGFuZ2xlX2hlaWdodClcbnByaW50X3JlY3RhbmdsZShyZWN0YW5nbGVfd2lkdGgsIHJlY3RhbmdsZV9oZWlnaHQsIGFyZWEpIn0=
+</script>
+</div>
+<p>Now let’s do the same, but using classes. (In general any program that you can think of can be programmed using both paradigms).</p>
+<div>
+<div id="pyodide-2" class="exercise-cell">
+
+</div>
+<script type="pyodide-2-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiY2xhc3MgUmVjdGFuZ2xlOlxuICAgIGRlZiBfX2luaXRfXyhzZWxmLCB3aWR0aCwgaGVpZ2h0KTpcbiAgICAgICAgc2VsZi53aWR0aCA9IHdpZHRoXG4gICAgICAgIHNlbGYuaGVpZ2h0ID0gaGVpZ2h0XG4gICAgXG4gICAgZGVmIGNhbGNfYXJlYShzZWxmKTpcbiAgICAgICAgcmV0dXJuIHNlbGYud2lkdGggKiBzZWxmLmhlaWdodFxuXG4gICAgZGVmIHByaW50KHNlbGYpOlxuICAgICAgICBwcmludChmXCJUaGUgcmVjdGFuZ2xlIGhhcyBhIHdpZHRoIG9mIHtzZWxmLndpZHRofSwgYSBoZWlnaHQgb2Yge3NlbGYuaGVpZ2h0fSwgYW5kIGFuIGFyZWEgb2Yge3NlbGYuY2FsY19hcmVhKCl9LilcblxucmVjdGFuZ2xlMSA9IFJlY3RhbmdsZSgyLCAzKVxucmVjdGFuZ2xlMS5wcmludCgpXG5cbnJlY3RhbmdsZTIgPSBSZWN0YW5nbGUoMjQuNSwgNC4zKVxucmVjdGFuZ2xlMi5wcmludCgpIn0=
+</script>
+</div>
+<p>There’s quite a bit to unpack here. We have defined a <a href="https://docs.python.org/3/tutorial/classes.html">class</a> with three methods: <strong>init</strong>, calc_area, and print.</p>
+<p>A method is a function defined within a class. Methods are called with the syntax “object.method_name()”. This is a syntax that you have already seen many times in Python, e.g.&nbsp;text_string.upper() or my_list.append(item).</p>
+<p>In this class, Rectangle, there is a special method: <strong>init</strong>. Every time that we want to initialize an object, the class uses this special method. You can create Python classes without the <strong>init</strong> method, but this is because Python will create a default __init__method for you.</p>
+<p>In the previous example the class that we have defined is Rectangle, and we have also created two objects of that class: rectangle1 and rectangle2. An object is an instance of the class, in this case every object is a particular rectangle, with its width and height.</p>
+<p>The class has properties, data associated, like, in this case, width and height, and also, its methods define some behaviours. Methods are functions and functions are actions that act on data. So a class has methods, actions, behaviors, and objects have data associated to them and the behaviours provided by the class methods. Sometimes it is useful to think of a class as the representation of a type of thing, like rectangles, cars, or web servers. The methods would represent the behaviour of that type of thing and its properties would be the data associated to every particular instance, every object, of that type of thing.</p>
+<p>You could think of a class as a data structure, like a dictionary, with some methods that act on the data stored in that dictionary. It would be something like this:</p>
+<div>
+<div id="pyodide-3" class="exercise-cell">
+
+</div>
+<script type="pyodide-3-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiZGVmIHJlY3RhbmdsZV9hcmVhKHJlY3RhbmdsZSk6XG4gICAgcmV0dXJuIHJlY3RhbmdsZVsnd2lkdGgnXSAqIHJlY3RhbmdsZVsnaGVpZ2h0J11cblxuXG5kZWYgcmVjdGFuZ2xlX3ByaW50KHJlY3RhbmdsZSk6XG4gICAgYXJlYSA9IHJlY3RhbmdsZV9hcmVhKHJlY3RhbmdsZSlcbiAgICBwcmludChmXCJUaGUgcmVjdGFuZ2xlIGhhcyBhIHdpZHRoIG9mIHtyZWN0YW5nbGVbXCJ3aWR0aFwiXX0sIGEgaGVpZ2h0IG9mIHtyZWN0YW5nbGVbXCJoZWlnaHRcIl19LCBhbmQgYW4gYXJlYSBvZiB7YXJlYX0uKVxuXG5cbnJlY3RhbmdsZTEgPSB7XCJ3aWR0aFwiOiAyLCBcImhlaWdodFwiOjN9XG5yZWN0YW5nbGVfcHJpbnQocmVjdGFuZ2xlMSlcblxucmVjdGFuZ2xlMiA9IHtcIndpZHRoXCI6IDI0LjUsIFwiaGVpZ2h0XCI6NC4zfVxuY2lyY2xlX3ByaW50KHJlY3RhbmdsZTIpIn0=
+</script>
+</div>
+<p>So, you could almost think of a class as syntactic sugar that bounds some functions to a data structure, like a dictionary. The data structure that holds the specific data of each object, like rectangle1 and rectangle2, in the class methods is represented by <em>self</em>. That is why, in Python, every standard class method has as a first argument <em>self</em>, the argument that represents the data for a particular object. In some languages, like in the old good Perl, this association of the methods to the data structure to create a class is explicit. In Perl they use the bless statement. They bless the data stored in a data structure with the methods/functions located in what they call a package, that is a kind of Perl module.</p>
+<p>By the way, our Rectangle class has a print method, but in Python it would be better to name that method as <strong>str</strong>:</p>
+<div>
+<div id="pyodide-4" class="exercise-cell">
+
+</div>
+<script type="pyodide-4-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiY2xhc3MgUmVjdGFuZ2xlOlxuICAgIGRlZiBfX2luaXRfXyhzZWxmLCB3aWR0aCwgaGVpZ2h0KTpcbiAgICAgICAgc2VsZi53aWR0aCA9IHdpZHRoXG4gICAgICAgIHNlbGYuaGVpZ2h0ID0gaGVpZ2h0XG4gICAgXG4gICAgZGVmIGNhbGNfYXJlYShzZWxmKTpcbiAgICAgICAgcmV0dXJuIHNlbGYud2lkdGggKiBzZWxmLmhlaWdodFxuXG4gICAgZGVmIF9fc3RyX18oc2VsZik6XG4gICAgICAgIHByaW50KGZcIlRoZSByZWN0YW5nbGUgaGFzIGEgd2lkdGggb2Yge3NlbGYud2lkdGh9LCBhIGhlaWdodCBvZiB7c2VsZi5oZWlnaHR9LCBhbmQgYW4gYXJlYSBvZiB7c2VsZi5jYWxjX2FyZWEoKX0uKVxuXG5yZWN0YW5nbGUxID0gUmVjdGFuZ2xlKDIsIDMpXG5wcmludChyZWN0YW5nbGUxKVxuXG5yZWN0YW5nbGUyID0gUmVjdGFuZ2xlKDI0LjUsIDQuMylcbnByaW50KHJlY3RhbmdsZTIpIn0=
+</script>
+</div>
+<p>These kind of methods, that start and end with two underscores, in Python are called <a href="https://realpython.com/python-magic-methods/">magic methods</a>.</p>
+<section id="attributes-properties-and-methods" class="level3">
+<h3 class="anchored" data-anchor-id="attributes-properties-and-methods">Attributes: properties and methods</h3>
+<p>Finnaly, you will hear about attributes. In Python we talk about methods, properties and attributes. Attributes are the sum of the properties and methods, so all that is accessed with the dot notation: “object.attribute”. In this regard you will also read about other terms like: [fields]. There is no consensus about the exact meaning of all these terms: attribute, field, property, and in different programming languages they tend to use them in sligtly different ways. But remember no matter the exact term used: classes have an interface comprised by data and behaviour.</p>
+<p>If you want to access the list of attributes of an object, you can use the <a href="https://docs.python.org/3/library/functions.html#dir">dir</a> built-in function.</p>
+<div>
+<div id="pyodide-5" class="exercise-cell">
+
+</div>
+<script type="pyodide-5-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiY2xhc3MgUmVjdGFuZ2xlOlxuICAgIGRlZiBfX2luaXRfXyhzZWxmLCB3aWR0aCwgaGVpZ2h0KTpcbiAgICAgICAgc2VsZi53aWR0aCA9IHdpZHRoXG4gICAgICAgIHNlbGYuaGVpZ2h0ID0gaGVpZ2h0XG4gICAgXG4gICAgZGVmIGNhbGNfYXJlYShzZWxmKTpcbiAgICAgICAgcmV0dXJuIHNlbGYud2lkdGggKiBzZWxmLmhlaWdodFxuXG4gICAgZGVmIHByaW50KHNlbGYpOlxuICAgICAgICBwcmludChmXCJUaGUgcmVjdGFuZ2xlIGhhcyBhIHdpZHRoIG9mIHtzZWxmLndpZHRofSwgYSBoZWlnaHQgb2Yge3NlbGYuaGVpZ2h0fSwgYW5kIGFuIGFyZWEgb2Yge3NlbGYuY2FsY19hcmVhKCl9LilcblxucmVjdGFuZ2xlID0gUmVjdGFuZ2xlKDIsIDMpXG5wcmludChkaXIocmVjdGFuYmxlKSkifQ==
+</script>
+</div>
+<p>dir returns a big list of attributes because Python, under the hood, adds a lot of functionality to any object. Moreover, there are quite a lot of methods whose names start and ends with two under scores, like: <strong>init</strong>, <strong>class</strong>, or <strong>name</strong>. These are known as <a href="https://docs.python.org/3/reference/datamodel.html#special-method-names">special</a> or <a href="https://realpython.com/python-magic-methods/">magic</a> methods.</p>
+</section>
+</section>
+<section id="encapsulation" class="level2">
+<h2 class="anchored" data-anchor-id="encapsulation">Encapsulation</h2>
+<section id="classes-and-modularity" class="level3">
+<h3 class="anchored" data-anchor-id="classes-and-modularity">Classes and modularity</h3>
+<p>So, classes we created by the fussion of data structures and methods that worked on those data structures. One could ask, if we can write our rectangle logic using a dict as a data structure and a couple of functions, are classes really necessary and, moreover, why bother? Well, classes are not really necessary. There are many languages, like C, that do not use classes at all, they do not even have the concept, and those languages are used to create huge and successfull software projects. For instance, the Linux kernel, that is mostly C, has more than 28 millions lines of code, and more than 20 thousand contributors.</p>
+<p>So clases are not necessary, but they can be very convinient because they are even more modular than mere functions. By using classes we can isolate the different pieces that comprise the software even more effectively than with functions because they merge the data structure and the behaviour. And in that way the structure of the data becames a hidden detail implementation, it is not part of the interface anymore. In the function based rectangle implementation the data structure, in that case a dictionary, was part of the interface of the rectangle_print funtion, while in the print method of the Rectangle class the way in which the data is given to the method is not a user concern. For instance, we could reimplement the Rectangle class that stores the object data in a different way, but that wouldn’t need to alter the interface.</p>
+<div>
+<div id="pyodide-6" class="exercise-cell">
+
+</div>
+<script type="pyodide-6-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiY2xhc3MgUmVjdGFuZ2xlOlxuICAgIGRlZiBfX2luaXRfXyhzZWxmLCB3aWR0aCwgaGVpZ2h0KTpcbiAgICAgICAgc2VsZi5fc2lkZXMgPSB7XCJ3aWR0aFwiOiB3aWR0aCwgXCJoZWlnaHRcIjogaGVpZ2h0fVxuICAgIFxuICAgIGRlZiBjYWxjX2FyZWEoc2VsZik6XG4gICAgICAgIHJldHVybiBzZWxmLl9zaWRlc1tcIndpZHRoXCJdICogc2VsZi5fc2lkZXNbXCJoZWlnaHRcIl1cblxuICAgIGRlZiBwcmludChzZWxmKTpcbiAgICAgICAgcHJpbnQoZlwiVGhlIHJlY3RhbmdsZSBoYXMgYSB3aWR0aCBvZiB7c2VsZi5fc2lkZXNbJ3dpZHRoJ119LCBhIGhlaWdodCBvZiB7c2VsZi5fc2lkZXNbJ2hlaWdodCddfSwgYW5kIGFuIGFyZWEgb2Yge3NlbGYuY2FsY19hcmVhKCl9LilcblxuICAgIEBwcm9wZXJ0eVxuICAgIGRlZiB3aWR0aChzZWxmKTpcbiAgICAgICAgcmV0dXJuIHNlbGYuc2lkZXNbXCJ3aWR0aFwiXVxuXG4gICAgQHByb3BlcnR5XG4gICAgZGVmIGhlaWdodChzZWxmKTpcbiAgICAgICAgcmV0dXJuIHNlbGYuc2lkZXNbXCJoZWlnaHRcIl1cblxucmVjdGFuZ2xlID0gUmVjdGFuZ2xlKDIsIDMpXG5wcmludChyZWN0YW5nbGUud2lkdGgpXG5wcmludChyZWN0YW5nbGUuaGVpZ2h0KVxucHJpbnQocmVjdGFuZ2xlLnByaW50KCkpIn0=
+</script>
+</div>
+<p>In this particular case, to maintain the same exact interface, we have created a private (more about this later) dictionary to hold the object data, _sides, and we have used the <a href="https://realpython.com/python-property/">property</a> decorator to provide the width and height properties that the previous implementation had.</p>
+<p>Classes are a way of approaching the question of how data and action, data structure and functions, relate. In the procedural approach data structures are part of the interface, whereas in the class they way in which the data is stored is mostly hidden, it is almost an implementation detail.</p>
+<p>This tight relation between data and behaviour is known as <a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)">encapsulation</a>. The class interface is smaller than the combined interface of all the functions required to do the same job. So classes are convinient, among other reasons, because they allow to modularize the software projects more effectively that functions. This is one of the major appeals of the Object Oriented Programming approach, the modularization is deeper than in the procedural case. With the right design, Object Oriented Programs are easier to scale.</p>
+<p>You can create huge projects based on the procedural paradigm, but to have a highly modularized project, you have to be very disciplined when defining and changing the data structures. For instance, you could collect all functions that work with a particular data structure in the same place, like in a file, a Python module. In that way if the data structure would had to be changed, the functions that should be modifed would all be collected together in the same file. This kind of procedural approach would be a limited kind of encapsulaiton and would have some of the benefits of the Object Oriented paradigm.</p>
+<p>Let’s see another example of how hidding the structure of the data helps with modularity. Imagine that we have implemented a Circle class.</p>
+<div>
+<div id="pyodide-7" class="exercise-cell">
+
+</div>
+<script type="pyodide-7-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiZnJvbSBtYXRoIGltcG9ydCBwaVxuXG5jbGFzcyBDaXJjbGU6XG4gICAgZGVmIF9faW5pdF9fKHgsIHksIHJhZGl1cyk6XG4gICAgICAgIHNlbGYueCA9IHhcbiAgICAgICAgc2VsZi55ID0geVxuICAgICAgICBzZWxmLnJhZGl1cyA9IHJhZGl1c1xuICAgIFxuICAgIGRlZiBjYWxjX2NpcmN1bmZlcmVuY2UoKTpcbiAgICAgICAgcmV0dXJuIDIgKiBwaSAqIHNlbGYucmFkaXVzXG5cbiAgICBkZWYgY2FsY19hcmVhKHNlbGYpOlxuICAgICAgICByZXR1cm4gcGkgKiBzZWxmLnJhZGl1cyAqKiAyXG5cbmNpcmNsZSA9IENpcmNsZSgxLCAxLCAzKVxucHJpbnQoY2lyY2xlLmNhbGNfYXJlYSgpKSJ9
+</script>
+</div>
+<p>Now we are asked to add a feature related to ellipses and to avoid extra code we take advantage of the fact that circles are just a special kind of ellipses and we decide to reimplement our Circle class in a completely different way.</p>
+<div>
+<div id="pyodide-8" class="exercise-cell">
+
+</div>
+<script type="pyodide-8-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiY2xhc3MgRWxsaXBzZTpcbiAgICBkZWYgX19pbml0X18oc2VsZiwgeCwgeSwgc2VtaV9tYWpvcl9heGVzLCBzZW1pX21pbm9yX2F4ZXMpOlxuICAgICAgICBzZWxmLnggPSB4XG4gICAgICAgIHNlbGYueSA9IHlcbiAgICAgICAgc2VsZi5zZW1pX21ham9yX2F4ZXMgPSBzZW1pX21ham9yX2F4ZXNcbiAgICAgICAgc2VsZi5zZW1pX21pbm9yX2F4ZXMgPSBzZW1pX21pbm9yX2F4ZXNcblxuICAgIGRlZiBjYWxjdWxhdGVfY2lyY3VtZmVyZW5jZShzZWxmKTpcbiAgICAgICAgYSA9IHNlbGYuc2VtaV9tYWpvcl9heGVzXG4gICAgICAgIGIgPSBzZWxmLnNlbWlfbWlub3JfYXhlc1xuICAgICAgICBoID0gKGEgLSBiKSAqKiAyIC8gKGEgKyBiKSAqKiAyXG4gICAgICAgICMgVGhpcyBmb3JtdWxhIGlzIGFuIGFwcHJveGltYXRpb25cbiAgICAgICAgIyBodHRwczovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9FbGxpcHNlI0NpcmN1bWZlcmVuY2VcbiAgICAgICAgY2lyY3VtZmVyZW5jZSA9IHBpICogKGEgKyBiKSAqICgxICsgMyAqIGggLygxMCArIHNxcnQoNCAtIDMgKiBoKSkpXG4gICAgICAgIHJldHVybiBjaXJjdW1mZXJlbmNlXG5cbiAgICBkZWYgY2FsY3VsYXRlX2FyZWEoc2VsZik6XG4gICAgICAgIGFyZWEgPSBwaSAqIHNlbGYuc2VtaV9tYWpvcl9heGVzICogc2VsZi5zZW1pX21pbm9yX2F4ZXNcbiAgICAgICAgcmV0dXJuIGFyZWFcblxuXG5jbGFzcyBDaXJjbGUoRWxsaXBzZSk6XG4gICAgZGVmIF9faW5pdF9fKHNlbGYsIHgsIHksIHJhZGl1cyk6XG4gICAgICAgIHN1cGVyKCkuX19pbml0X18oeCwgeSwgcmFkaXVzLCByYWRpdXMpXG5cbiAgICBkZWYgY2FsY3VsYXRlX2NpcmN1bWZlcmVuY2Uoc2VsZik6XG4gICAgICAgICMgVGhpcyBmb3JtdWxhIGlzIGV4YWN0LCB1bmxpa2UgdGhlIGVsbGlwc2Ugb25lXG4gICAgICAgIHJldHVybiAyICogcGkgKiBzZWxmLnNlbWlfbWFqb3JfYXhlc1xuXG5cbmNpcmNsZSA9IENpcmNsZSgxLCAxLCAzKVxucHJpbnQoY2lyY2xlLmNhbGNfYXJlYSgpKSJ9
+</script>
+</div>
+<p>We have implemented Circle as a subclass of Ellipse. This is called: object <a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)">inheritance</a>. But this is not the most relevant part here. From the modularization point of view, the most important lines are the two last ones. The user of the Circle class, despite the complete reimplementation of the Circle class, has not changed anything at all in its code. This is what we mean by modularity. This code is modular, the programmers that build the Circle class and the ones that use it could be completely independent and the implementers could radically change their implementation, including the data structures that store the object data, without the users of that funcionality needing, in many cases, to change their code.</p>
+</section>
+<section id="private-and-public-attributes" class="level3">
+<h3 class="anchored" data-anchor-id="private-and-public-attributes">Private and public attributes</h3>
+<p>Classes can hide part of its data and methods from the rest of the program to create an even smaller interface, and the smaller the interface, the looser the conection between the code modules, and the more maintainable and extensible the code will be.</p>
+<p>One way to create smaller interfaces is to limit the variables/properties made available to the class users. This is also part of the encapsulation provided by the object oriented approach, we can make variables private, available only to the class and not the class users. For instance, in our rectangle example we could make the width and height variables private, not available outside the class.</p>
+<div>
+<div id="pyodide-9" class="exercise-cell">
+
+</div>
+<script type="pyodide-9-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiY2xhc3MgUmVjdGFuZ2xlOlxuICAgIGRlZiBfX2luaXRfXyhzZWxmLCB3aWR0aCwgaGVpZ2h0KTpcbiAgICAgICAgc2VsZi5fd2lkdGggPSB3aWR0aFxuICAgICAgICBzZWxmLl9oZWlnaHQgPSBoZWlnaHRcbiAgICBcbiAgICBkZWYgY2FsY19hcmVhKHNlbGYpOlxuICAgICAgICByZXR1cm4gc2VsZi5fd2lkdGggKiBzZWxmLl9oZWlnaHRcblxuICAgIGRlZiBfX3N0cl9fKHNlbGYpOlxuICAgICAgICBwcmludChmXCJUaGUgcmVjdGFuZ2xlIGhhcyBhIHdpZHRoIG9mIHtzZWxmLl93aWR0aH0sIGEgaGVpZ2h0IG9mIHtzZWxmLl9oZWlnaHR9LCBhbmQgYW4gYXJlYSBvZiB7c2VsZi5jYWxjX2FyZWEoKX0uKVxuXG5yZWN0YW5nbGUgPSBSZWN0YW5nbGUoMiwgMylcbnByaW50KHJlY3RhbmdsZSkifQ==
+</script>
+</div>
+<p>The only difference is that now the width and height properties are called _width and _private. In other programming languages they have ways of enforcing the distinction between private and public methods and properties, but that is not the case in Python. In Python everything is public, can be accessed, and privacy is a mere convention. Methods and properties whose names start with an underscore are supposed to be private, they should be only accessed by the class methods. That is not enforced by the language, but be aware that Python maintainers will asume that you understand and honor this convention and, thus, they will change these “private” attributes without any previous warning.</p>
+<p>The main advantage of having private attributes is that they are only used in a limited part of the code, like within the class, and can not used by the rest of the code base. That means that when we need to change something related to a private attribute, the change will be limited to that class, and maybe, to their descendants (more about later). This is particularly useful in large projects where changes are inevitable. In contrast, in procedural programming, a change in any variable used by a function will require changes in several other parts, making it more complex and time-consuming to fix bugs and to functionalities. As a general rule, to guarantee a high level of modularity, make public as few attributes as possible.</p>
+</section>
+</section>
+<section id="objects-store-state" class="level2">
+<h2 class="anchored" data-anchor-id="objects-store-state">Objects store state</h2>
+<p>Sometimes it is necessary to keep track of a state, like the value of a variable, between function calls. In the procedural approach we could do it by storing the state in a variable that is passed every time to the function. Let’s imagine that we want to count how many times a function has been called, we could write something like this:</p>
+<div>
+<div id="pyodide-10" class="exercise-cell">
+
+</div>
+<script type="pyodide-10-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiZGVmIHByaW50X2hlbGxvKG51bV90aW1lcyk6XG4gICAgcHJpbnQoXCJIZWxsb1wiKVxuICAgIG51bV90aW1lcyArPSAxXG4gICAgcmV0dXJuIG51bV90aW1lc1xuXG5cbmRlZiBtYWluKCk6XG4gICAgbnVtX3RpbWVzID0gMFxuICAgIG51bV90aW1lcyA9IHByaW50X2hlbGxvKG51bV90aW1lcylcbiAgICBudW1fdGltZXMgPSBwcmludF9oZWxsbyhudW1fdGltZXMpXG4gICAgcHJpbnQoZlwiVGhlIGZ1bmN0aW9uIGhhcyBiZWVuIGNhbGxlZCB7bnVtX3RpbWVzfVwiKVxuXG5cbm1haW4oKSJ9
+</script>
+</div>
+<p>This would work, but to pass and return the num_times variable everytime to the function it is a bit cumbersome. Moreover, this variable might be only relevant to that function, so having the variable available outside the function scope is uncessary and it would be just a source of problems. Alternatively, we could use a global variable.</p>
+<div>
+<div id="pyodide-11" class="exercise-cell">
+
+</div>
+<script type="pyodide-11-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiTlVNX1RJTUVTID0gMFxuXG5kZWYgcHJpbnRfaGVsbG8oKTpcbiAgICBwcmludChcIkhlbGxvXCIpXG4gICAgZ2xvYmFsIE5VTV9USU1FU1xuICAgIE5VTV9USU1FUyArPSAxXG5cblxuZGVmIG1haW4oKTpcbiAgICBwcmludF9oZWxsbygpXG4gICAgcHJpbnRfaGVsbG8oKVxuICAgIHByaW50KGZcIlRoZSBmdW5jdGlvbiBoYXMgYmVlbiBjYWxsZWQge05VTV9USU1FU31cIilcblxuXG5tYWluKCkifQ==
+</script>
+</div>
+<p>This is much more convinient and requires less code, but we are making use of a global variable to keep track of the state, the number of times that the function has been called, and global variables break modularity because they are avaible in all code base, any part of the code could alter them, and, thus, are prone to create maintainability problems.</p>
+<p>Objects provide a solution that it is both convenient and modular because it does not use global variables.</p>
+<div>
+<div id="pyodide-12" class="exercise-cell">
+
+</div>
+<script type="pyodide-12-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiY2xhc3MgR3JlZXRlcjpcbiAgICBkZWYgX19pbml0X18oc2VsZik6XG4gICAgICAgIHNlbGYubnVtYmVyX29mX3RpbWVzID0gMFxuXG4gICAgZGVmIHByaW50X2hlbGxvKHNlbGYpOlxuICAgICAgICBwcmludChcIkhlbGxvXCIpXG4gICAgICAgIHNlbGYubnVtYmVyX29mX3RpbWVzICs9IDFcblxuXG5kZWYgbWFpbigpOlxuICAgIGdyZWV0ZXIgPSBHcmVldGVyKClcbiAgICBncmVldGVyLnByaW50X2hlbGxvKClcbiAgICBncmVldGVyLnByaW50X2hlbGxvKClcbiAgICBwcmludChmXCJUaGUgZnVuY3Rpb24gaGFzIGJlZW4gY2FsbGVkIHtncmVldGVyLm51bWJlcl9vZl90aW1lc31cIilcblxuXG5tYWluKCkifQ==
+</script>
+</div>
+<p>Now the variable that we are using to store the state, number_of_times, is only available to the greeter objects.</p>
+<p>In this case number_of_times variable is an object property, so it is not shared between objects, it will reflect only how many times the print_hello method has been called in a particular object.</p>
+<div>
+<div id="pyodide-13" class="exercise-cell">
+
+</div>
+<script type="pyodide-13-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiY2xhc3MgR3JlZXRlcjpcbiAgICBkZWYgX19pbml0X18oc2VsZik6XG4gICAgICAgIHNlbGYubnVtYmVyX29mX3RpbWVzID0gMFxuXG4gICAgZGVmIHByaW50X2hlbGxvKHNlbGYpOlxuICAgICAgICBwcmludChcIkhlbGxvXCIpXG4gICAgICAgIHNlbGYubnVtYmVyX29mX3RpbWVzICs9IDFcblxuXG5kZWYgbWFpbigpOlxuICAgIGdyZWV0ZXIxID0gR3JlZXRlcigpXG4gICAgZ3JlZXRlcjEucHJpbnRfaGVsbG8oKVxuICAgIGdyZWV0ZXIyID0gR3JlZXRlcigpXG4gICAgZ3JlZXRlcjIucHJpbnRfaGVsbG8oKVxuICAgIHByaW50KGZcIlRoZSBmdW5jdGlvbiBoYXMgYmVlbiBjYWxsZWQge2dyZWV0ZXIxLm51bWJlcl9vZl90aW1lc30gb24gZ3JlZXRlcjFcIilcbiAgICBwcmludChmXCJUaGUgZnVuY3Rpb24gaGFzIGJlZW4gY2FsbGVkIHtncmVldGVyMi5udW1iZXJfb2ZfdGltZXN9IG9uIGdyZWV0ZXIyXCIpXG5cblxubWFpbigpIn0=
+</script>
+</div>
+<p>However, classes even allow us to create class level variables shared by all objects if we need to.</p>
+<div>
+<div id="pyodide-14" class="exercise-cell">
+
+</div>
+<script type="pyodide-14-contents">
+eyJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9LCJjb2RlIjoiY2xhc3MgR3JlZXRlcjpcbiAgICBudW1iZXJfb2ZfdGltZXMgPSAwXG5cbiAgICBkZWYgcHJpbnRfaGVsbG8oc2VsZik6XG4gICAgICAgIHByaW50KFwiSGVsbG9cIilcbiAgICAgICAgc2VsZi5fX2NsYXNzX18ubnVtYmVyX29mX3RpbWVzICs9IDFcblxuXG5kZWYgbWFpbigpOlxuICAgIGdyZWV0ZXIxID0gR3JlZXRlcigpXG4gICAgZ3JlZXRlcjEucHJpbnRfaGVsbG8oKVxuICAgIGdyZWV0ZXIyID0gR3JlZXRlcigpXG4gICAgZ3JlZXRlcjIucHJpbnRfaGVsbG8oKVxuICAgIHByaW50KGZcIlRoZSBmdW5jdGlvbiBoYXMgYmVlbiBjYWxsZWQge2dyZWV0ZXIxLm51bWJlcl9vZl90aW1lc31cIilcbiAgICBwcmludChmXCJUaGUgZnVuY3Rpb24gaGFzIGJlZW4gY2FsbGVkIHtncmVldGVyMi5udW1iZXJfb2ZfdGltZXN9XCIpXG5cblxubWFpbigpIn0=
+</script>
+</div>
+<p>Be careful with the class level variables because their scope is larger than the object variables, and a more limited scope facilitates code modularity.</p>
+<p>This is another big advantage of the Object Oriented paradigm: it allows us to keep track of a state between calls in a very natural way without having to use global variables.</p>
+</section>
+<section id="abstraction" class="level2">
+<h2 class="anchored" data-anchor-id="abstraction">Abstraction</h2>
+<p>Classes facilitate code reuse by creating hierarchies of classes that share some of their behaviours by using <a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)">inheritance</a>. This is a feature that I do not usually need and that some languages with object oriented capabilities, like Rust, do not implement or do not encourage.</p>
+<p>Another way to share behaviors between different clases is to just use the idea of a shared behaviour, that is, to have similar interfaces. In Python this kind of ideas are widely used. For instance, there are core pythonic ideas that are just interfaces, shared behaviours, like: <a href="https://docs.python.org/3/glossary.html#term-file-object">file-objects</a>, <a href="https://docs.python.org/3/glossary.html#term-iterator">iterators</a>, <a href="https://docs.python.org/3/glossary.html#term-sequence">sequences</a> or <a href="https://docs.python.org/3/glossary.html#term-mapping">mappings</a>. If you are interested in these ideas I recommend to you the Real Python tutorial on <a href="https://realpython.com/python-interface/">interfaces</a>.</p>
+</section>
+<section id="procedural-vs-object-oriented" class="level2">
+<h2 class="anchored" data-anchor-id="procedural-vs-object-oriented">Procedural vs object oriented</h2>
+<p>Python, as we have seen, allows us to write procedural and object oriented code. You can chose different approaches to solve different problems and you can combine them. That forces you to decide what to do in each occasion and there are no strict rules to follow, you will develop your style by reading and writting code.</p>
+
+
+<script type="pyodide-data">
+eyJvcHRpb25zIjp7ImluZGV4VVJMIjoiaHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L3B5b2RpZGUvdjAuMjYuMS9mdWxsLyJ9LCJwYWNrYWdlcyI6eyJwa2dzIjpbInB5b2RpZGVfaHR0cCIsIm1pY3JvcGlwIiwiaXB5dGhvbiJdfX0=
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTQgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTE0LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTQtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xNCA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTQsIHt9KTtcbiIsImNlbGxOYW1lIjoicHlvZGlkZS0xNCJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTMgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTEzLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTMtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xMyA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTMsIHt9KTtcbiIsImNlbGxOYW1lIjoicHlvZGlkZS0xMyJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTIgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTEyLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTItY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xMiA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTIsIHt9KTtcbiIsImNlbGxOYW1lIjoicHlvZGlkZS0xMiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTEgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTExLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTEtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xMSA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTEsIHt9KTtcbiIsImNlbGxOYW1lIjoicHlvZGlkZS0xMSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTAgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTEwLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTAtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xMCA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTAsIHt9KTtcbiIsImNlbGxOYW1lIjoicHlvZGlkZS0xMCJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfOSA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtOS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGBweW9kaWRlLTktY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV85ID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl85LCB7fSk7XG4iLCJjZWxsTmFtZSI6InB5b2RpZGUtOSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfOCA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtOC1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGBweW9kaWRlLTgtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV84ID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl84LCB7fSk7XG4iLCJjZWxsTmFtZSI6InB5b2RpZGUtOCJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfNyA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtNy1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGBweW9kaWRlLTctY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV83ID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl83LCB7fSk7XG4iLCJjZWxsTmFtZSI6InB5b2RpZGUtNyJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfNiA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtNi1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGBweW9kaWRlLTYtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV82ID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl82LCB7fSk7XG4iLCJjZWxsTmFtZSI6InB5b2RpZGUtNiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfNSA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtNS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGBweW9kaWRlLTUtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV81ID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl81LCB7fSk7XG4iLCJjZWxsTmFtZSI6InB5b2RpZGUtNSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfNCA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtNC1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGBweW9kaWRlLTQtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV80ID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl80LCB7fSk7XG4iLCJjZWxsTmFtZSI6InB5b2RpZGUtNCJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMyA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMy1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGBweW9kaWRlLTMtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8zID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8zLCB7fSk7XG4iLCJjZWxsTmFtZSI6InB5b2RpZGUtMyJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMiA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMi1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGBweW9kaWRlLTItY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8yID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8yLCB7fSk7XG4iLCJjZWxsTmFtZSI6InB5b2RpZGUtMiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMSA9IHtcbiAgY29uc3QgeyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtMS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGBweW9kaWRlLTEtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xID0gcHlvZGlkZU9qcy5wcm9jZXNzKF9weW9kaWRlX2VkaXRvcl8xLCB7fSk7XG4iLCJjZWxsTmFtZSI6InB5b2RpZGUtMSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoicHlvZGlkZU9qcyA9IHtcbiAgY29uc3Qge1xuICAgIFB5b2RpZGVFdmFsdWF0b3IsXG4gICAgUHlvZGlkZUVudmlyb25tZW50TWFuYWdlcixcbiAgICBzZXR1cFB5dGhvbixcbiAgICBzdGFydFB5b2RpZGVXb3JrZXIsXG4gICAgYjY0RGVjb2RlLFxuICAgIGNvbGxhcHNlUGF0aCxcbiAgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc3RhdHVzQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLXN0YXR1c1wiKTtcbiAgY29uc3QgaW5kaWNhdG9yQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaW5kaWNhdG9yQ29udGFpbmVyLmNsYXNzTGlzdC5yZW1vdmUoXCJkLW5vbmVcIik7XG5cbiAgbGV0IHN0YXR1c1RleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpXG4gIHN0YXR1c1RleHQuY2xhc3NMaXN0ID0gXCJleGVyY2lzZS1sb2FkaW5nLWRldGFpbHNcIjtcbiAgc3RhdHVzVGV4dCA9IHN0YXR1c0NvbnRhaW5lci5hcHBlbmRDaGlsZChzdGF0dXNUZXh0KTtcbiAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbml0aWFsaXNlYDtcblxuICAvLyBIb2lzdCBpbmRpY2F0b3Igb3V0IGZyb20gZmluYWwgc2xpZGUgd2hlbiBydW5uaW5nIHVuZGVyIHJldmVhbFxuICBjb25zdCByZXZlYWxTdGF0dXMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCAuZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGlmIChyZXZlYWxTdGF0dXMpIHtcbiAgICByZXZlYWxTdGF0dXMucmVtb3ZlKCk7XG4gICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgPiAuc2xpZGVzXCIpLmFwcGVuZENoaWxkKHJldmVhbFN0YXR1cyk7XG4gIH1cblxuICAvLyBNYWtlIGFueSByZXZlYWwgc2xpZGVzIHdpdGggbGl2ZSBjZWxscyBzY3JvbGxhYmxlXG4gIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIucmV2ZWFsIC5leGVyY2lzZS1jZWxsXCIpLmZvckVhY2goKGVsKSA9PiB7XG4gICAgZWwuY2xvc2VzdCgnc2VjdGlvbi5zbGlkZScpLmNsYXNzTGlzdC5hZGQoXCJzY3JvbGxhYmxlXCIpO1xuICB9KVxuXG4gIC8vIFB5b2RpZGUgc3VwcGxlbWVudGFsIGRhdGEgYW5kIG9wdGlvbnNcbiAgY29uc3QgZGF0YUNvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS1kYXRhXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZGF0YSA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGRhdGFDb250ZW50KSk7XG5cbiAgLy8gR3JhYiBsaXN0IG9mIHJlc291cmNlcyB0byBiZSBkb3dubG9hZGVkXG4gIGNvbnN0IGZpbGVzQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ2ZnMtZmlsZVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGZpbGVzID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZmlsZXNDb250ZW50KSk7XG5cbiAgbGV0IHB5b2RpZGVQcm9taXNlID0gKGFzeW5jICgpID0+IHtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIFB5b2RpZGVgO1xuICAgIGNvbnN0IHB5b2RpZGUgPSBhd2FpdCBzdGFydFB5b2RpZGVXb3JrZXIoZGF0YS5vcHRpb25zKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcGFja2FnZTogbWljcm9waXBgO1xuICAgIGF3YWl0IHB5b2RpZGUubG9hZFBhY2thZ2UoXCJtaWNyb3BpcFwiKTtcbiAgICBjb25zdCBtaWNyb3BpcCA9IGF3YWl0IHB5b2RpZGUucHlpbXBvcnQoXCJtaWNyb3BpcFwiKTtcbiAgICBhd2FpdCBkYXRhLnBhY2thZ2VzLnBrZ3MubWFwKChwa2cpID0+ICgpID0+IHtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcGFja2FnZTogJHtwa2d9YDtcbiAgICAgIHJldHVybiBtaWNyb3BpcC5pbnN0YWxsKHBrZyk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG4gICAgYXdhaXQgbWljcm9waXAuZGVzdHJveSgpO1xuXG4gICAgLy8gRG93bmxvYWQgYW5kIGluc3RhbGwgcmVzb3VyY2VzXG4gICAgYXdhaXQgZmlsZXMubWFwKChmaWxlKSA9PiBhc3luYyAoKSA9PiB7XG4gICAgICBjb25zdCBuYW1lID0gZmlsZS5zdWJzdHJpbmcoZmlsZS5sYXN0SW5kZXhPZignLycpICsgMSk7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHJlc291cmNlOiAke25hbWV9YDtcbiAgICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goZmlsZSk7XG4gICAgICBpZiAoIXJlc3BvbnNlLm9rKSB7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgQ2FuJ3QgZG93bmxvYWQgXFxgJHtmaWxlfVxcYC4gRXJyb3IgJHtyZXNwb25zZS5zdGF0dXN9OiBcIiR7cmVzcG9uc2Uuc3RhdHVzVGV4dH1cIi5gKTtcbiAgICAgIH1cbiAgICAgIGNvbnN0IGRhdGEgPSBhd2FpdCByZXNwb25zZS5hcnJheUJ1ZmZlcigpO1xuXG4gICAgICAvLyBTdG9yZSBVUkxzIGluIHRoZSBjd2Qgd2l0aG91dCBhbnkgc3ViZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgaWYgKGZpbGUuaW5jbHVkZXMoXCI6Ly9cIikpIHtcbiAgICAgICAgZmlsZSA9IG5hbWU7XG4gICAgICB9XG5cbiAgICAgIC8vIENvbGxhcHNlIGhpZ2hlciBkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBmaWxlID0gY29sbGFwc2VQYXRoKGZpbGUpO1xuXG4gICAgICAvLyBDcmVhdGUgZGlyZWN0b3J5IHRyZWUsIGlnbm9yaW5nIFwiZGlyZWN0b3J5IGV4aXN0c1wiIFZGUyBlcnJvcnNcbiAgICAgIGNvbnN0IHBhcnRzID0gZmlsZS5zcGxpdCgnLycpLnNsaWNlKDAsIC0xKTtcbiAgICAgIGxldCBwYXRoID0gJyc7XG4gICAgICB3aGlsZSAocGFydHMubGVuZ3RoID4gMCkge1xuICAgICAgICBwYXRoICs9IHBhcnRzLnNoaWZ0KCkgKyAnLyc7XG4gICAgICAgIHRyeSB7XG4gICAgICAgICAgYXdhaXQgcHlvZGlkZS5GUy5ta2RpcihwYXRoKTtcbiAgICAgICAgfSBjYXRjaCAoZSkge1xuICAgICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICAgIGlmIChlLmVycm5vICE9PSAyMCkge1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0UHRyID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLl9zdHJlcnJvcihlLmVycm5vKTtcbiAgICAgICAgICAgIGNvbnN0IGVycm9yVGV4dCA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5VVEY4VG9TdHJpbmcoZXJyb3JUZXh0UHRyKTtcbiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG5cbiAgICAgIC8vIFdyaXRlIHRoaXMgZmlsZSB0byB0aGUgVkZTXG4gICAgICB0cnkge1xuICAgICAgICByZXR1cm4gYXdhaXQgcHlvZGlkZS5GUy53cml0ZUZpbGUoZmlsZSwgbmV3IFVpbnQ4QXJyYXkoZGF0YSkpO1xuICAgICAgfSBjYXRjaCAoZSkge1xuICAgICAgICBpZiAoZS5uYW1lICE9PSBcIkVycm5vRXJyb3JcIikgdGhyb3cgZTtcbiAgICAgICAgY29uc3QgZXJyb3JUZXh0UHRyID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLl9zdHJlcnJvcihlLmVycm5vKTtcbiAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYEZpbGVzeXN0ZW0gRXJyb3IgJHtlLmVycm5vfSBcIiR7ZXJyb3JUZXh0fVwiLmApO1xuICAgICAgfVxuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBQeW9kaWRlIGVudmlyb25tZW50IHNldHVwYDtcbiAgICBhd2FpdCBzZXR1cFB5dGhvbihweW9kaWRlKTtcblxuICAgIHN0YXR1c1RleHQucmVtb3ZlKCk7XG4gICAgaWYgKHN0YXR1c0NvbnRhaW5lci5jaGlsZHJlbi5sZW5ndGggPT0gMCkge1xuICAgICAgc3RhdHVzQ29udGFpbmVyLnBhcmVudE5vZGUucmVtb3ZlKCk7XG4gICAgfVxuICAgIHJldHVybiBweW9kaWRlO1xuICB9KSgpLmNhdGNoKChlcnIpID0+IHtcbiAgICBzdGF0dXNUZXh0LnN0eWxlLmNvbG9yID0gXCJ2YXIoLS1leGVyY2lzZS1lZGl0b3ItaGwtZXIsICNBRDAwMDApXCI7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGVyci5tZXNzYWdlO1xuICAgIC8vaW5kaWNhdG9yQ29udGFpbmVyLnF1ZXJ5U2VsZWN0b3IoXCIuc3Bpbm5lci1ncm93XCIpLmNsYXNzTGlzdC5hZGQoXCJkLW5vbmVcIik7XG4gICAgdGhyb3cgZXJyO1xuICB9KTtcblxuICAvLyBLZWVwIHRyYWNrIG9mIGluaXRpYWwgT0pTIGJsb2NrIHJlbmRlclxuICBjb25zdCByZW5kZXJlZE9qcyA9IHt9O1xuXG4gIGNvbnN0IHByb2Nlc3MgPSBhc3luYyAoY29udGV4dCwgaW5wdXRzKSA9PiB7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHB5b2RpZGVQcm9taXNlO1xuICAgIGNvbnN0IGV2YWx1YXRvciA9IG5ldyBQeW9kaWRlRXZhbHVhdG9yKHB5b2RpZGUsIGNvbnRleHQpO1xuICAgIGF3YWl0IGV2YWx1YXRvci5wcm9jZXNzKGlucHV0cyk7XG4gICAgcmV0dXJuIGV2YWx1YXRvci5jb250YWluZXI7XG4gIH1cblxuICByZXR1cm4ge1xuICAgIHB5b2RpZGVQcm9taXNlLFxuICAgIHJlbmRlcmVkT2pzLFxuICAgIHByb2Nlc3MsXG4gIH07XG59XG4iLCJjZWxsTmFtZSI6InB5b2RpZGUtcHJlbHVkZSJ9XX0=
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./procedural.html" class="pagination-link" aria-label="Procedural">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Procedural</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./functional_programming.html" class="pagination-link" aria-label="Functional programming">
+        <span class="nav-page-text">Functional programming</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/JoseBlanca/programming_paradigms/blob/main/objects_and_classes.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/JoseBlanca/programming_paradigms/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
