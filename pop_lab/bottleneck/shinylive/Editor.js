@@ -1,4 +1,4 @@
-// Shinylive 0.9.1
+// Shinylive 0.9.2
 // Copyright 2024 Posit, PBC
 import {
   Icon,
@@ -13,7 +13,7 @@ import {
   require_jsx_runtime,
   require_react,
   stringToUint8Array
-} from "./chunk-PHWSSKUM.js";
+} from "./chunk-UJID553F.js";
 import {
   __commonJS,
   __esm,
@@ -23,7 +23,7 @@ import {
   __publicField,
   __toCommonJS,
   __toESM
-} from "./chunk-O5P2LFOG.js";
+} from "./chunk-GEC2HOGB.js";
 
 // node_modules/events/events.js
 var require_events = __commonJS({
@@ -41179,7 +41179,7 @@ function Editor({
     await saveFileContentsToDirectory(fileContents, dirHandle);
   }, [files, syncActiveFileState, localDirHandle]);
   const downloadFiles = React4.useCallback(async () => {
-    if (!window.confirm("Downlad all project files?"))
+    if (!window.confirm("Download all project files?"))
       return;
     syncActiveFileState();
     const fileContents = editorFilesToFileContents(files);

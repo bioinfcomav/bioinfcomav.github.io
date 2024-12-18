@@ -1,4 +1,4 @@
-// Shinylive 0.9.1
+// Shinylive 0.9.2
 // Copyright 2024 Posit, PBC
 import {
   FCJSONtoFC,
@@ -16,14 +16,14 @@ import {
   sleep,
   stringToUint8Array,
   uint8ArrayToString
-} from "./chunk-PHWSSKUM.js";
+} from "./chunk-UJID553F.js";
 import {
   __commonJS,
   __privateAdd,
   __privateMethod,
   __require,
   __toESM
-} from "./chunk-O5P2LFOG.js";
+} from "./chunk-GEC2HOGB.js";
 
 // node_modules/scheduler/cjs/scheduler.development.js
 var require_scheduler_development = __commonJS({
@@ -32704,7 +32704,7 @@ var D;
 async function T2() {
   if (!g2 || (V2 = (await import("node:url")).default, H = await import("node:fs"), D = await import("node:fs/promises"), z = (await import("node:vm")).default, L2 = await import("node:path"), U2 = L2.sep, typeof O2 < "u"))
     return;
-  let e = H, t = await import("node:crypto"), i = await import("./browser-OYYBATHK.js"), r = await import("node:child_process"), a2 = { fs: e, crypto: t, ws: i, child_process: r };
+  let e = H, t = await import("node:crypto"), i = await import("./browser-SIIZ45E2.js"), r = await import("node:child_process"), a2 = { fs: e, crypto: t, ws: i, child_process: r };
   globalThis.require = function(n) {
     return a2[n];
   };
@@ -33698,8 +33698,8 @@ async def _install_requirements_from_dir(dir: str) -> None:
                 extras.update({e.strip() for e in match_extras.group(2).split(",")})
 
         if pkg_name not in micropip.list():
-            print(f"Installing {pkg_name} ...")
-            await micropip.install(pkg_name)
+            print(f"Installing {req} ...")
+            await micropip.install(req)
 
         if len(extras) == 0:
             continue
