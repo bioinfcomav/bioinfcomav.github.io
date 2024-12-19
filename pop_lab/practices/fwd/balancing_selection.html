@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Balancing selection practice &#8212; Pop lab  documentation</title>
+    <title>Balancing selection &#8212; Pop lab  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1102ebc" />
     <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=686e5160" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
@@ -16,6 +16,8 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="One locus foward in time" href="one_locus.html" />
+    <link rel="prev" title="Selection" href="selection.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -33,9 +35,48 @@
 
           <div class="body" role="main">
             
-  <section id="balancing-selection-practice">
-<h1>Balancing selection practice<a class="headerlink" href="#balancing-selection-practice" title="Link to this heading">¶</a></h1>
-<p><a class="reference internal" href="#../../balancing_selection"><span class="xref myst">Simulation app.</span></a></p>
+  <section id="balancing-selection">
+<h1>Balancing selection<a class="headerlink" href="#balancing-selection" title="Link to this heading">¶</a></h1>
+<p>Selection usually removes diversity from the gene pool because it removes all alleles that are not being selected for.
+However, in some cases a balancing selection can increase the diversity in the selected locus.</p>
+<p>In this practice we are going to simulate two populations.
+We will be able to control the fitnesses in both populations independently, so, for instance in one population we could select in favor of genotype AA and in the other in favor of aa.</p>
+<p>There will be also, migration between both populations, so genotypes from one can go to the other.
+We will have control of the immigration rate, the proportion of individuals in each generation that come from the other population.</p>
+<p><a class="reference external" href="http:../../balancing_selection/">Balancing selection simulation application</a></p>
+<section id="same-selection-preasure">
+<h2>Same selection preasure<a class="headerlink" href="#same-selection-preasure" title="Link to this heading">¶</a></h2>
+<p>Let’s start by running a simulation with setting the same fitness in both populations.
+For instance, let’s select for a dominat A allele (fitness AA: 1, Aa: 1, aa: 0.5) starting with an allelic frequency of 0.01 for A in both populations.
+This is a standard situation in which a beneficial allele appears in a population. For instance, one allele that confers resistance to a disease, so it is selected for.</p>
+<p>How do you think that the A allelic frequency will evolve?
+Which will be the consenquences for the diversity?
+Run the simulation and explain the observed result.</p>
+</section>
+<section id="different-selection-preasure">
+<h2>Different selection preasure<a class="headerlink" href="#different-selection-preasure" title="Link to this heading">¶</a></h2>
+<p>Now let’s imagine that we have two populations with different selection preassures.
+For instance, we can have a domesticated population in which animals or plants are selected by breeders to have some characteristics, like size or color, that are selected against in nature.
+Another case would be populations of different breeds in which different phenotypes are selected for a trait in the different breeds, like the fur color in different cat or dog breeds or the fruit size in cherry and salad tomatoes.
+Another possible case is an allele that defends against a predator that is present in one population, but absent in the other.</p>
+<p>Let’s imagine that a dominant allele appears in low frequency that is selected for in one of the populations and against in the other.
+At the begining the A allelic frequency will be low in both populations.</p>
+<section id="no-migration">
+<h3>No migration<a class="headerlink" href="#no-migration" title="Link to this heading">¶</a></h3>
+<p>Start by thinking about a situation with no migration.
+What do you think that will happen to the allele frequencies and diversities?
+Run the simulation and explain the result.</p>
+</section>
+<section id="migration">
+<h3>Migration<a class="headerlink" href="#migration" title="Link to this heading">¶</a></h3>
+<p>Now let’s assume that 10% of the alleles of both population in each generation are due to genetic flow, migration, from one population to the other.
+How that migration will alter the allelic frequencies? Will the allele selected against in each population disapear?
+What would happen to the expected heterozygosity?
+Run the simulations and explain the result.</p>
+<p>How will the the final diversity depend on the migration rates?
+Run simulation with different rates and explain the result.</p>
+</section>
+</section>
 </section>
 
 
@@ -64,15 +105,24 @@
     </div>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="drift.html">Drift practice</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="drift.html">Drift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selection.html">Selection</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Balancing selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="one_locus.html">One locus foward in time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coalescence/bottleneck.html">Bottleneck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coalescence/founder.html">Founder effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coalescence/drifting_pops.html">Drifting populations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coalescence/admixture.html">Admixture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coalescence/selective_sweep.html">Selective sweep</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="selection.html" title="previous chapter">Selection</a></li>
+      <li>Next: <a href="one_locus.html" title="next chapter">One locus foward in time</a></li>
   </ul></li>
 </ul>
 </div>

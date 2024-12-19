@@ -16,6 +16,8 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Balancing selection" href="balancing_selection.html" />
+    <link rel="prev" title="Drift" href="drift.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -35,6 +37,70 @@
             
   <section id="selection">
 <h1>Selection<a class="headerlink" href="#selection" title="Link to this heading">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
+<p>In this practice we are going to simulate one locus with two alleles (A and a).
+You will be able to set either the initial allelic frequencies (assuming Hardy-Weinberg) or each genotypic frequency independently.
+Besides the population size and the number of generations you can also change the fitness for each genotype as well the mutation rates from allele A to allele a and vice-versa.</p>
+<p><a class="reference external" href="http:../../simple_selection/">Selection simulation application</a></p>
+</section>
+<section id="selection-in-favour-of-a-minor-allele">
+<h2>Selection in favour of a minor allele<a class="headerlink" href="#selection-in-favour-of-a-minor-allele" title="Link to this heading">¶</a></h2>
+<p>Let’s suppose that at the beginning the genotypes for all individuals are aa, but that we have a mutation rate of 0.005 from allele a to allele A. That means that in each generation some a alleles will mutate to A, so some aa genotypes will be in fact Aa.
+Let’s start by assuming that the AA homozygote has a fitness of 1, the aa genotype of 0.8 and that the mutation is recessive, so Aa has a fitness of 0.8.</p>
+<p>What do you think that will happen the the A allelic frequency in this situation?
+Run the simulation and find out which is the result.
+You might try to remove the genetic drift to only take into account the effect of the selection.</p>
+<p>Take a look at the genotypic frequencies and explain what happens with them, especially with the ones for the heterozygote.</p>
+<section id="what-is-the-influence-of-the-selection-strength">
+<h3>What is the influence of the selection strength<a class="headerlink" href="#what-is-the-influence-of-the-selection-strength" title="Link to this heading">¶</a></h3>
+<p>How would you increase or decrease the strength of the selection?
+Think about what would happen if you increase or decrease the aa and Aa genotypes fitnesses to make them more or less similar to the AA fitness, that should always be 1.
+Run the simulation and find out what happens.
+Which is the relation between the selection strength and the number of generations require to reach an equilibrium?</p>
+</section>
+<section id="recessive-and-dominant-alleles">
+<h3>Recessive and dominant alleles<a class="headerlink" href="#recessive-and-dominant-alleles" title="Link to this heading">¶</a></h3>
+<p>So far we have been considering that the beneficial allele (A) was recessive, so aa and Aa had the same fitness.
+What do you think that would change if A would be dominant, so AA and Aa had the same fitness: 1.
+Run the simulation and compare the two scenarios.</p>
+</section>
+</section>
+<section id="selection-and-drift">
+<h2>Selection and drift<a class="headerlink" href="#selection-and-drift" title="Link to this heading">¶</a></h2>
+<p>Do you think that drift would affect in any way the selection process.</p>
+<section id="drift-and-beneficial-alleles">
+<h3>Drift and beneficial alleles<a class="headerlink" href="#drift-and-beneficial-alleles" title="Link to this heading">¶</a></h3>
+<p>Let’s imagine that we have a beneficial allele A that appears by mutation in a population that at the start of the simulation has only aa individuals.
+Set the number of individuals at 100 and the mutation rate from a to A at 0.001.
+The mutation should be recessive, so Aa and aa should have the same fitness, let’s say a fitness of 0.8.</p>
+<p>Compare the result of the simulation when the population size is 100 and the case of no-drift (so infinite size).</p>
+</section>
+<section id="drift-and-deletereous-alleles">
+<h3>Drift and deletereous alleles<a class="headerlink" href="#drift-and-deletereous-alleles" title="Link to this heading">¶</a></h3>
+<p>Now the AA genotype is lethal, so it’s fitness is 0, but recessive, so Aa and aa have a fitness of 1. Let’s set it’s initial frequency to 0.01 and remove the mutation. What do you think that will happen to the allele?
+Run the simulation with a population of 100 individuals and an infinite one and explain the result.
+Does the deleterous allele dissapears when there is no drift?</p>
+<p>What would happen if if add a minimal mutation rate of 0.001 from a to the deletereous allele A?</p>
+<p>Set different fitnesses for AA and check what happens.</p>
+<p>Compare the result with a dominant lethal allele, so now both AA and Aa are lethal.</p>
+</section>
+</section>
+<section id="disruptive-evolution">
+<h2>Disruptive evolution<a class="headerlink" href="#disruptive-evolution" title="Link to this heading">¶</a></h2>
+<p>In some cases both homozygotes are OK, but the heterozygote is not viable.
+This could happen, for instance, in the case in which a large chromosomal inversion has happened. Both homozygotes can reproduce without any problem between them, but the heterozygote cannot reproduce, so it has a fitness of zero.</p>
+<p>What do you think would happen in this case?
+Run the simulation several times starting with the following starting genotypic frequencies (AA: 0.5, Aa: 0, aa: 0.5) and explain the result.</p>
+<p>Would the result change if we would start with the following genotypic frequencies: AA: 0.01, Aa: 0.98, aa: 0.01?</p>
+</section>
+<section id="heterozygote-advantage">
+<h2>Heterozygote advantage<a class="headerlink" href="#heterozygote-advantage" title="Link to this heading">¶</a></h2>
+<p>In some very rare cases, the heterozygote could had a higher fitness than both homozygotes.
+That is the case, for instance, of the <a class="reference external" href="https://en.wikipedia.org/wiki/Sickle_cell_disease">sickle cell anemia</a>. In this case one genotype (AA) is susceptible to malaria, so let’s set its fitness to 0.6, while the other homozygote (aa) has a serious condition (assume a fitness of 0.3) while the heterozygote has an advantage because it has no sickle cell anemia and is somewhat resistant to malaria.
+This is an example of balancing selection.</p>
+<p>What do you think will be the outcome in this case? Would one allele became fixed?</p>
+</section>
 </section>
 
 
@@ -63,15 +129,24 @@
     </div>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="drift.html">Drift practice</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="drift.html">Drift</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="balancing_selection.html">Balancing selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="one_locus.html">One locus foward in time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coalescence/bottleneck.html">Bottleneck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coalescence/founder.html">Founder effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coalescence/drifting_pops.html">Drifting populations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coalescence/admixture.html">Admixture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coalescence/selective_sweep.html">Selective sweep</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="drift.html" title="previous chapter">Drift</a></li>
+      <li>Next: <a href="balancing_selection.html" title="next chapter">Balancing selection</a></li>
   </ul></li>
 </ul>
 </div>
