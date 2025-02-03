@@ -475,7 +475,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="open">open</h2>
 <p>In many ocassions we will need that our programs read information stored in files, thus a very common action will be to open a file. In Python we could open a file with the <a href="https://docs.python.org/3/library/functions.html#open">open</a> function.</p>
 <p>Let’s imagine that we have a text file stored in the same directory/folder as our Python code. For instance, we could had download <a href="https://www.gutenberg.org/ebooks/11.txt.utf-8">Alice in wonderland</a> from <a href="https://www.gutenberg.org/">Project Gutenberg</a>. This file is named 11.txt.utf-8. Once download it, we could open it using the following code.</p>
-<div id="f0772bb4" class="cell" data-execution_count="1">
+<div id="23deb89f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>file_name <span class="op">=</span> <span class="st">"11.txt.utf-8"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(file_name, <span class="st">'rt'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -485,7 +485,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="read-text" class="level3">
 <h3 class="anchored" data-anchor-id="read-text">Read text</h3>
 <p>Now that we know how to open a file, let’s try to read it. The most common way to read a text file is to use a for loop.</p>
-<div id="05bcce75" class="cell" data-execution_count="2">
+<div id="83967e5b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>file_name <span class="op">=</span> <span class="st">"11.txt.utf-8"</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(file_name, <span class="st">'rt'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -540,7 +540,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJjb21wbGV0aW9uIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFs
 <section id="write" class="level2">
 <h2 class="anchored" data-anchor-id="write">Write</h2>
 <p>We could also create a new file to write in it by using the mode “wt” (<strong>w</strong>rite, <strong>t</strong>ext). Once we have the file object we can write in it using the <a href="https://docs.python.org/3/library/io.html#io.TextIOBase.write">write</a> method.</p>
-<div id="43a65316" class="cell" data-execution_count="3">
+<div id="1a1627c0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>file_name <span class="op">=</span> <span class="st">"my_output_file.txt"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(file_name, <span class="st">'wt'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.write(<span class="st">"Hello world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -583,7 +583,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJjb21wbGV0aW9uIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFs
 <section id="close-and-with" class="level2">
 <h2 class="anchored" data-anchor-id="close-and-with">close and with</h2>
 <p>So far we have not closed our file objects after we are done with them, but we really should. So, the proper way to read a file would be:</p>
-<div id="61931dd8" class="cell" data-execution_count="4">
+<div id="d34ef92e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>file_name <span class="op">=</span> <span class="st">"some_file.txt"</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(file_name, <span class="st">'rt'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -594,7 +594,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJjb21wbGV0aW9uIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFs
 </div>
 <p>The number of file objects that we can open are limited by the operating system, so that’s one reason for closing them. If we don’t do it, Python will try to close them for us after the variable that holds the file object goes out of scope, but it’s better if we do it by ourselves.</p>
 <p>Even better, we could use the <a href="https://docs.python.org/3/reference/compound_stmts.html#with">with</a> statement. <strong>with</strong> will take care of closing the file after finishing the with block, even in the event of an exception ocurring within the block.</p>
-<div id="8ca242a1" class="cell" data-execution_count="5">
+<div id="d6154aa8" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>file_name <span class="op">=</span> <span class="st">"some_file.txt"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(file_name, <span class="st">'rt'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
