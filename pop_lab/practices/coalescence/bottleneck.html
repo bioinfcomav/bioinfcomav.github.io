@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Bottleneck &#8212; Pop lab  documentation</title>
+    <title>Bottlenecks and Genetic Diversity &#8212; Pop lab  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
@@ -35,40 +35,138 @@
 
           <div class="body" role="main">
             
-  <section id="bottleneck">
-<h1>Bottleneck<a class="headerlink" href="#bottleneck" title="Link to this heading">¶</a></h1>
-<p>A population bottleneck is a shrap reduction in the number of individuals, the population size, during some time.
-It could be caused, for instance, by an environmental factor, like a drought or a viral disease.</p>
-<p>In this practice we are going to analyze the bottleneck effect in genetic diversity.</p>
+  <section id="bottlenecks-and-genetic-diversity">
+<h1>Bottlenecks and Genetic Diversity<a class="headerlink" href="#bottlenecks-and-genetic-diversity" title="Link to this heading">¶</a></h1>
+<p>A population bottleneck is a sharp reduction in population size over a period of time.
+This could be caused by environmental factors such as droughts, viral diseases, or human-induced events like habitat destruction.
+During a bottleneck, only a fraction of the original population survives, which can have significant effects on genetic diversity.</p>
+<p>In this practice, we will analyze how a population evolves over time due to a bottleneck.</p>
+<p>You will be able to modify:</p>
+<ul class="simple">
+<li><p>The population size before, during and after the bottleneck.</p></li>
+<li><p>The duration of the bottleneck.</p></li>
+<li><p>The time elapsed after the bottleneck.</p></li>
+</ul>
+<p>Here, we will simulate the mutations and recombinations that occur in a genomic segment.
+At the end of the simulation, the genomic segment will contain variable loci that have arisen through mutation and have been reshuffled through recombination.
+You could have the option of modifying other parameters like:</p>
+<ul class="simple">
+<li><p>The recombination rate.</p></li>
+<li><p>The mutation rate.</p></li>
+<li><p>The sequence length.</p></li>
+<li><p>The sample size, the number of individuals taken from the population to calculate the different paramenters.</p></li>
+</ul>
+<p>After running the simulation, you will have access to several genetic diversity metrics:</p>
+<ul class="simple">
+<li><p>Expected heterozygosity (a measure of genetic variation).</p></li>
+<li><p>Number of variant loci.</p></li>
+<li><p>Number and proportion of polymorphic variants.</p></li>
+<li><p>Allele Frequency Spectrum (AFS) (distribution of allele frequencies).</p></li>
+</ul>
 <p><a class="reference external" href="https://bioinf.comav.upv.es/pop_lab/bottleneck/">Bottleneck simulation application</a></p>
 <section id="bottlenecks-and-diversity">
 <h2>Bottlenecks and diversity<a class="headerlink" href="#bottlenecks-and-diversity" title="Link to this heading">¶</a></h2>
-<p>Imagine that our population goes through a bottleneck. What do you think will be the effect on:</p>
+<p>Imagine a population goes through a bottleneck. How do you think this event will affect its genetic diversity?</p>
+<p>Before running the simulation, consider what do you expect will happen to:</p>
 <ul class="simple">
-<li><p>Expected heterozygosity</p></li>
-<li><p>Number of variants</p></li>
-<li><p>Number and rate of polymorphic variants</p></li>
+<li><p>The expected heterozygosity?</p></li>
+<li><p>The number of genetic variants?</p></li>
+<li><p>The number and proportion of polymorphic variants?</p></li>
+<li><p>After the bottleneck is over, do you think the population will recover its initial genetic diversity? Why or why not?</p></li>
 </ul>
-<p>Do the simulation and compare your expectations with the result of the simulation.
-Remember that you can get the values of these parameters before, during and after the bottleneck in the different plots and tables.</p>
-<p>Does the expected heterozygosity, number of variants and number of polymorphic (95%) variants recover its initial value after the bottleneck is over?</p>
+<p>Run the simulation and examine the results before, during, and after the bottleneck.
+Compare your expectations with the observed changes in:</p>
+<ul class="simple">
+<li><p>Expected heterozygosity.</p></li>
+<li><p>The number of genetic variants.</p></li>
+<li><p>The number and proportion of polymorphic variants (95% threshold).</p></li>
+</ul>
+<p>Remember that you can get the values of these parameters before, during and after the bottleneck in the different plots and tables.</p>
 <p>How does the bottleneck affect the Allele Frequency Spectrum? (Compare the oldest sample of the population and the most recent one (0))</p>
 <p>Could you explain the effect of the bottleneck in the ratio of polymorphic (95%) variants?</p>
+<p>After a bottleneck, a population can recover in size, but does this also restore its genetic diversity?
+Does the expected heterozygosity, number of variants and number of polymorphic (95%) variants recover its initial value after the bottleneck is over? Why?</p>
 </section>
 <section id="effect-of-the-population-size-and-time-after-the-bottleneck">
 <h2>Effect of the population size and time after the bottleneck<a class="headerlink" href="#effect-of-the-population-size-and-time-after-the-bottleneck" title="Link to this heading">¶</a></h2>
-<p>Does increasing the number of individuals, population size, after the bottleneck improve the bottleneck recovery? Why? Which is the evolutive force that, eventually, would drive this recovery?</p>
-<p>Does increasing the time since the bottleneck manages to overcome the drop in diversity?</p>
+<section id="scenario-1-increasing-population-size-after-the-bottleneck">
+<h3>Scenario 1: Increasing Population Size After the Bottleneck<a class="headerlink" href="#scenario-1-increasing-population-size-after-the-bottleneck" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Increase the population size after the bottleneck and observe the effect.</p></li>
+<li><p>Does a larger post-bottleneck population help restore genetic diversity? Why or why not?</p></li>
+<li><p>What evolutionary force would drive this recovery over time?</p></li>
+</ul>
+</section>
+<section id="scenario-2-time-elapsed-since-the-bottleneck">
+<h3>Scenario 2: Time Elapsed Since the Bottleneck<a class="headerlink" href="#scenario-2-time-elapsed-since-the-bottleneck" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Run simulations with different numbers of generations after the bottleneck.</p></li>
+<li><p>Does increasing the time since the bottleneck help recover lost diversity?</p></li>
+<li><p>Which genetic parameters recover, and which remain altered?</p></li>
+</ul>
+</section>
 </section>
 <section id="effect-of-the-bottleneck-strength">
 <h2>Effect of the bottleneck strength<a class="headerlink" href="#effect-of-the-bottleneck-strength" title="Link to this heading">¶</a></h2>
-<p>How does the number of individuals, population size, during the bottleneck and the bottleneck duration affect all the diversity parameters?
-Is there a number of individuals that make the bottleneck almost irrelevant?</p>
+<p>Not all bottlenecks have the same severity. Let’s explore how different bottleneck conditions impact genetic diversity.</p>
+<p>Vary the number of individuals that survive the bottleneck.
+How does the severity of the bottleneck (number of individuals surviving) affect:</p>
+<ul class="simple">
+<li><p>Expected heterozygosity?</p></li>
+<li><p>Number of variants?</p></li>
+<li><p>Proportion of polymorphic loci?</p></li>
+<li><p>Is there a minimum number of individuals that makes the bottleneck effect negligible?</p></li>
+</ul>
+<p>Vary the duration of the bottleneck.</p>
+<ul class="simple">
+<li><p>How does increasing the duration of the bottleneck influence diversity loss?</p></li>
+<li><p>Would an extreme bottleneck, even a short one, still be problematic?</p></li>
+</ul>
 </section>
-<section id="real-population-consequences">
-<h2>Real population consequences<a class="headerlink" href="#real-population-consequences" title="Link to this heading">¶</a></h2>
-<p>How do you think that these result inform the management of real populations, like an endangered species that recovers a big population size or a breeding population created from a handful of selected individuals?</p>
-<p>Which actions would you propose to recover the diversity on these populations that have suffered a bottleneck?</p>
+<section id="real-world-consequences-conservation-and-breeding">
+<h2>Real-World consequences: Conservation and Breeding<a class="headerlink" href="#real-world-consequences-conservation-and-breeding" title="Link to this heading">¶</a></h2>
+<p>Bottlenecks are not just theoretical; they have real-world implications for population management.</p>
+<section id="endangered-species-recovery">
+<h3>Endangered Species Recovery<a class="headerlink" href="#endangered-species-recovery" title="Link to this heading">¶</a></h3>
+<p>Imagine an endangered species that has gone through a severe bottleneck but later recovers in population size.</p>
+<ul class="simple">
+<li><p>Will its genetic diversity fully recover over time?</p></li>
+<li><p>What risks does low genetic diversity pose for long-term survival (e.g., inbreeding, disease susceptibility)?</p></li>
+</ul>
+</section>
+<section id="breeding-populations">
+<h3>Breeding Populations<a class="headerlink" href="#breeding-populations" title="Link to this heading">¶</a></h3>
+<p>Some domesticated populations, like for instance the cultivated tomato or the “piel de sapo” melon variety, originate from a handful of individuals.
+How could this impact their genetic diversity and long-term adaptability?</p>
+</section>
+<section id="how-can-we-restore-genetic-diversity">
+<h3>How can we restore genetic diversity?<a class="headerlink" href="#how-can-we-restore-genetic-diversity" title="Link to this heading">¶</a></h3>
+<p>Imagine that you are trying to improve the diversity of a population that has gone through a bottleneck. It could be, for instance, a population of a wild species that has suffered a drought or a particular variety of a cultivated plant that has lost most of its genetic diversity.</p>
+<p>Could you propose an intervention to recover the lost genetic diversity?</p>
+<ul class="simple">
+<li><p>Could controlled breeding programs help?</p></li>
+<li><p>Would introducing individuals from other populations be beneficial?</p></li>
+<li><p>What role does mutation play in restoring diversity?</p></li>
+</ul>
+</section>
+</section>
+<section id="conclusions">
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Link to this heading">¶</a></h2>
+<p>Summarize your findings:</p>
+<ul class="simple">
+<li><p>How does a bottleneck impact genetic diversity?</p></li>
+<li><p>Can diversity recover after a bottleneck, and under what conditions?</p></li>
+</ul>
+<p>Discuss key evolutionary forces at play:</p>
+<ul class="simple">
+<li><p>What role does genetic drift play during and after a bottleneck?</p></li>
+<li><p>How do mutation and natural selection contribute to long-term recovery?</p></li>
+</ul>
+<p>Apply your knowledge to real-world cases:</p>
+<ul class="simple">
+<li><p>What lessons can we learn for conservation biology and breeding programs?</p></li>
+<li><p>How can we mitigate the negative effects of bottlenecks in endangered or managed or breeding populations?</p></li>
+</ul>
 </section>
 </section>
 
@@ -103,7 +201,7 @@ Is there a number of individuals that make the bottleneck almost irrelevant?</p>
 <li class="toctree-l1"><a class="reference internal" href="../fwd/selection.html">Selection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../fwd/balancing_selection.html">Balancing selection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../fwd/one_locus.html">One locus foward in time</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Bottleneck</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bottlenecks and Genetic Diversity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="founder.html">Founder effect</a></li>
 <li class="toctree-l1"><a class="reference internal" href="drifting_pops.html">Drifting populations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="admixture.html">Admixture</a></li>
