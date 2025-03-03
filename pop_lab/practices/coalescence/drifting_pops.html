@@ -37,22 +37,87 @@
             
   <section id="drifting-populations">
 <h1>Drifting populations<a class="headerlink" href="#drifting-populations" title="Link to this heading">¶</a></h1>
-<p>Imagine that we have three populations that, originally, are created from the same ancestral population and that, once created, they evolve independently with time.
-Let’s think about what genetic drift would do to those populations.</p>
+<p>In this practice, we will simulate the evolution of three populations that originate from the same ancestral population but evolve independently over time due to genetic drift.
+Through these simulations, we will observe how genetic drift influences population divergence and genetic distances.</p>
+<p>You will be able to modify:</p>
+<ul class="simple">
+<li><p>The population size of each group.</p></li>
+<li><p>The number of generations they evolve after the split.</p></li>
+</ul>
+<p>Here, we will simulate the mutations and recombinations that occur in a genomic segment.
+At the end of the simulation, the genomic segment will contain variable loci that have arisen through mutation and have been reshuffled through recombination.
+You could have the option of modifying other parameters like:</p>
+<ul class="simple">
+<li><p>The recombination rate.</p></li>
+<li><p>The mutation rate.</p></li>
+<li><p>The sequence length.</p></li>
+<li><p>The sample size, the number of individuals taken from the population to calculate the different paramenters.</p></li>
+</ul>
+<p>To quantify how genetic drift influences the populations, we will analyze several population genetic metrics. These will help us understand changes in genetic diversity and population divergence over time. The metrics available include:</p>
+<ul class="simple">
+<li><p>The expected heterozygosity.</p></li>
+<li><p>The number of variable loci.</p></li>
+<li><p>The number and ratio of polymorphic loci.</p></li>
+<li><p>A Principal Component Analysis (PCA) carried out with the genotype of the sampled individuals.</p></li>
+<li><p>The Dest genetic distances between pairs of populations.</p></li>
+</ul>
+<p>The PCA will provide a visual representation of genetic relationships, while the distance matrix will quantify differences between populations. Together, they allow us to track genetic divergence over time.</p>
 <p><a class="reference external" href="https://bioinf.comav.upv.es/pop_lab/drifting_pops/">Drifting populations simulation application</a></p>
 <section id="genetic-distances">
 <h2>Genetic distances<a class="headerlink" href="#genetic-distances" title="Link to this heading">¶</a></h2>
-<p>What do you think that will happen with the genetic distances of those population with time?
-Run the simulation, analyze and explain the result.</p>
-<p>Think about what do you expect to see in the Principal Component Analysis (PCA) also.</p>
+<p>Imagine you have three populations that initially share the same genetic composition. As they evolve independently, how do you think genetic drift will influence their genetic distances?</p>
+<p>Before running the simulation, take a moment to predict the outcome::</p>
+<ul class="simple">
+<li><p>How do you expect the genetic distances between the populations to change over time?</p></li>
+<li><p>Will they remain similar, or will they diverge?</p></li>
+<li><p>How do you think the Principal Component Analysis (PCA) and the distance matrix will reflect these changes?</p></li>
+</ul>
+<p>Simulation &amp; Analysis:</p>
+<ul class="simple">
+<li><p>Run the simulation for a given number of generations.</p></li>
+<li><p>Observe the genetic distances between populations at different time points.</p></li>
+<li><p>Examine the PCA plot: What patterns do you observe? How do populations cluster over time?</p></li>
+<li><p>Compare your initial predictions with the actual results.</p></li>
+<li><p>How does this result align with what you learned in the practice on genetic drift with one locus?</p></li>
+</ul>
 </section>
 <section id="population-size-influence">
 <h2>Population size influence<a class="headerlink" href="#population-size-influence" title="Link to this heading">¶</a></h2>
-<p>What would happen if you increase the size of all populations up to 2000 individuals?
-Would the distances will be bigger, smaller or similar?</p>
-<p>Do you expect the the PCA to be different? Run the simulation and explain the result</p>
-<p>Now repeat the experiment with two big populations of 2000 individuals and one of 100.
-Which would be the behaviour of the small population compared with the larger ones?</p>
+<p>Genetic drift has a stronger effect in small populations than in large ones. Let’s test this by modifying population sizes.</p>
+<section id="scenario-1-large-populations">
+<h3>Scenario 1: Large Populations<a class="headerlink" href="#scenario-1-large-populations" title="Link to this heading">¶</a></h3>
+<p>Increase the size of all three populations to 2000 individuals.</p>
+<p>Predict what will happen:</p>
+<ul class="simple">
+<li><p>Will the genetic distances between populations be larger, smaller, or similar compared to smaller populations?</p></li>
+<li><p>Will the PCA and distance matrix show more or less divergence?</p></li>
+</ul>
+<p>Run the simulation and analyze the results.
+Compare with your predictions and explain the outcome.</p>
+</section>
+<section id="scenario-2-mixed-population-sizes">
+<h3>Scenario 2: Mixed Population Sizes<a class="headerlink" href="#scenario-2-mixed-population-sizes" title="Link to this heading">¶</a></h3>
+<p>Set two populations to 2000 individuals and one population to 100 individuals.</p>
+<p>Predict what will happen:</p>
+<ul class="simple">
+<li><p>Will the smaller population behave differently from the larger ones?</p></li>
+<li><p>How will its genetic distance change compared to the larger populations?</p></li>
+<li><p>What do you expect to see in the PCA and the distance matrix?</p></li>
+</ul>
+<p>Run the simulation and analyze the results.</p>
+<ul class="simple">
+<li><p>Does the smaller population experience more drift than the larger ones?</p></li>
+</ul>
+</section>
+</section>
+<section id="conclusions">
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Summarize your findings on how genetic drift affects genetic distances.</p></li>
+<li><p>Discuss the role of population size in genetic drift.</p></li>
+<li><p>Explain how PCA can be used to visualize genetic relationships between populations over time.</p></li>
+<li><p>Can this process help explain speciation or genetic differentiation between isolated human populations or breeding populations?</p></li>
+</ul>
 </section>
 </section>
 
