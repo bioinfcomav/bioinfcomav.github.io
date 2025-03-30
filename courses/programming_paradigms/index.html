@@ -133,6 +133,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Functional programming</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -163,10 +169,13 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>These notes are meant to reflect about how to organize the code, specially about how and when to structure the code in a <a href="https://en.wikipedia.org/wiki/Procedural_programming">procedural</a>, <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">object oriented</a> or <a href="https://en.wikipedia.org/wiki/Functional_programming">functional</a> way. This is not a course on how to structure your code, but just an introduction to the ideas to have in mind when thinking about which approach to use to structure your code. I think that structuring the code is an art, a craft, that can only be adquired through practice and experience, especially with the experience of working with other good programmers, and it is a skill that is never completely mastered, but let’s hope that thinking about the motivations and tools involved one could develop this craft faster, and moreover, that one would learn about the importance of writting nicely structured code instead of an unmaintainalbe mess.</p>
-<p>It is a common mistake, specially among beginers, to think that our aim when we write computer code is to create fast and memory efficient, very performant, programs. Of course we’d like our programs to run faster, but that’s not our only, or main, goal, otherwise every program would be writen in assembly, a language capable of squeezing out every bit of computing power out of our machines. However, <a href="https://survey.stackoverflow.co/2024/technology/#most-popular-technologies">few programmers</a> write in assembly.</p>
+<blockquote class="blockquote">
+<p>Beautiful is better than ugly. Readability counts. (From the <a href="https://peps.python.org/pep-0020/">Zen of Python</a>)</p>
+</blockquote>
+<p>Have you ever written a quick script that turned into an unmanageable mess of code? These notes are meant to reflect about how to organize the code, specially about how and when to structure the code in a <a href="https://en.wikipedia.org/wiki/Procedural_programming">procedural</a>, <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">object oriented</a> or <a href="https://en.wikipedia.org/wiki/Functional_programming">functional</a> way. This is not a course on how to structure your code, but just an introduction to the ideas to have in mind when thinking about which approach to use to structure your code. I think that structuring the code is an art, a craft, that can only be adquired through practice and experience, especially with the experience of working with other good programmers, and it is a skill that is never completely mastered, but let’s hope that thinking about the motivations and tools involved one could develop this craft faster, and moreover, that one would learn about the importance of writing nicely structured code instead of an unmaintainalbe mess.</p>
+<p>It is a common mistake, specially among beginners, to think that our aim when we write computer code is to create fast and memory efficient, very performant, programs. Of course we’d like our programs to run faster, but that’s not our only, or main, goal, otherwise every program would be writen in assembly, a language capable of squeezing out every bit of computing power out of our machines. However, <a href="https://survey.stackoverflow.co/2024/technology/#most-popular-technologies">few programmers</a> write in assembly.</p>
 <p>When one starts to code spends a lot of time thinking about how to implement the algorithms required to accomplish the task at hand, but as you gain experience in your programming carreer you focus your attention more and more in the structure of your code. Unstructured, spaghetti, code, could still be the option if you just need a 20 line script to solve a specific task, but for anything more complex than that you will realize that you need to think on the structure.</p>
-<p>Performance is important, but programmers also have other aims like writting:</p>
+<p>Performance is important, but programmers also have other aims like writing:</p>
 <ul>
 <li>a working product before the universe ends, and, even better, before their managers and clients run out of patience.</li>
 <li>realiable code that can be trusted.</li>
@@ -181,6 +190,7 @@ ul.task-list li input[type="checkbox"] {
 <p>So, we have to structure our code, but there are different ways of creating this structure. For instance, we could use a procedural, object oriented or functional approach. The aim of these notes is to help us reflect on the advantages and limitations of these approaches.</p>
 <p>There are other texts that take a theoretical approach, but here we aim to be practical. One can think, for instance abouth functional programming, in a very theoretical way, but our notes on the functional approach won’t be that. I write code in Python, a multiparadigm language. I can choose to use a procedural, object oriented or functional approach, and I can mix these ways of structuring the code in the same project. So, which is the best way to do it? We won’t be able to provide absolute rules to answer this question, nobody does, but let’s hope that these lines help us to think about it in a more productive way.</p>
 <p>If you have just started coding, I guess that all this ideas might sound very abstract, but, maybe, reading about these paradigms, these approaches, might, at least, convince you that you have to care about the structure of your code, and that, with time, you’ll have to improve on this skill.</p>
+<p>In the following sections, we’ll explore three approaches to structuring code: Procedural, Object-Oriented, and Functional.</p>
 </section>
 <section id="licence" class="level2">
 <h2 class="anchored" data-anchor-id="licence">Licence</h2>
