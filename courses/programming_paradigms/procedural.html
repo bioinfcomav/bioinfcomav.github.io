@@ -208,11 +208,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="it-all-started-with-the-spaghetti" class="level2">
 <h2 class="anchored" data-anchor-id="it-all-started-with-the-spaghetti">It all started with the spaghetti</h2>
-<p>At the begining, when computers were simple, when programs were very small and performed just one task programmers didn’t need to worry about dividing the code in modules/parts/sections that dealt with different tasks. However, very soon computers became more powerful, programs grew and code became unwieldy and the <a href="https://en.wikipedia.org/wiki/Spaghetti_code">spaghetti code</a> was born. Programmers thought about how to solve the issue, on how to unravel the spaghetti, and they came with the idea that they had to divide the code into small subtasks. This allows for:</p>
+<p>At the begining, when computers were simple, when <strong>programs were very small</strong> and performed just one task programmers didn’t need to worry about dividing the code in modules/parts/sections that dealt with different tasks. However, very soon computers became more powerful, programs grew and code became unwieldy and the <a href="https://en.wikipedia.org/wiki/Spaghetti_code">spaghetti code</a> was born. Programmers thought about how to solve the issue, on how to unravel the spaghetti, and they came with the idea that they had to <strong>divide</strong> the code <strong>into</strong> small <strong>subtasks</strong>. This allows for:</p>
 <ul>
-<li>The reuse of these small pieces of functionality.</li>
-<li>The division of labor in teams of programmers in which different people can implement and maintain different parts of the code.</li>
-<li>The testing of the functionality of every piece of code. If every module has a well defined task to do, we can test if that code is doing what is supposed to be doing.</li>
+<li>The <strong>reuse</strong> of these small pieces of functionality.</li>
+<li>The <strong>testing</strong> of the functionality of every piece of code. If every module has a well defined task to do, we can test if that code is doing what is supposed to be doing.</li>
+<li>The division of labor in <strong>teams</strong> of programmers in which different people can implement and maintain different parts of the code.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -220,14 +220,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Spaghetti vs structured</figcaption>
 </figure>
 </div>
-<p>If you are writing a small script that performs a just one very well defined and small task, it might be OK not to structure your code. But for anything else, thinking about the structure is one of the most important programming tasks; and the main question to answer is: how do I divide this code into pieces that:</p>
+<p>If you are writing a small script that performs a just one very well defined and small task, it might be OK not to structure your code. But for anything else, thinking about the <strong>structure</strong> is one of the most important programming tasks; and the main question to answer is: <strong>how do I divide this code into pieces that</strong>:</p>
 <ul>
-<li>perform only one task</li>
-<li>have access only to the data that they require to complete the task</li>
-<li>have a well defined interface</li>
+<li><strong>perform</strong> only <strong>one task</strong></li>
+<li>have access only to the <strong>data that they require</strong> to complete the task</li>
+<li>have a well defined <strong>interface</strong></li>
 </ul>
-<p>Of course, not all programmers are experienced and disciplined and lots of code is unstructured, an entangle mess. Spaghetti code might work, but it is unmaintainable: bugs are difficult to fix, features impossible to add, and new programmers unfamiliar with the code will have a hard time working with it.</p>
-<p>Fortunately programmers are resourceful, and very soon they realized that the key to maintainable code was to divide it in small pieces that performed a well defined task and that communicated with the rest of the program only through its declared interface. Different <a href="https://en.wikipedia.org/wiki/Programming_paradigm">programming paradigms</a> have been proprosed to help structuring the code, like <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object Oriented Programming</a> (OOP) or <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional Programming</a>, but the most basic one, and a very used one, is <a href="https://en.wikipedia.org/wiki/Procedural_programming">Procedural Programing</a>.</p>
+<p>Of course, not all programmers are experienced and disciplined and lots of code is unstructured, an entangle mess. <strong>Spaghetti code</strong> might work, but it is <strong>unmaintainable</strong>: <strong>bugs</strong> are difficult to fix, <strong>features</strong> impossible to add, and new programmers unfamiliar with the code will have a hard time working with it.</p>
+<p>Fortunately programmers are resourceful, and very soon they realized that the key to maintainable code was to divide it in small <strong>pieces</strong> that performed a well defined task and that communicated with the rest of the program only through its <strong>declared interface</strong>. Different <a href="https://en.wikipedia.org/wiki/Programming_paradigm">programming paradigms</a> have been proprosed to help structuring the code, like <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object Oriented Programming</a> (OOP) or <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional Programming</a>, but the most basic one, and a very used one, is <a href="https://en.wikipedia.org/wiki/Procedural_programming">Procedural Programing</a>.</p>
 </section>
 <section id="functions-to-disentangle-the-spaghetti" class="level2">
 <h2 class="anchored" data-anchor-id="functions-to-disentangle-the-spaghetti">Functions to disentangle the spaghetti</h2>
@@ -261,7 +261,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGNhbGNfcmVjdGFuZ2xl
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBGdW5jdGlvbiBkZWZpbml0aW9uXG5kZWYgcHJpbnRfaGVsbG8oKTpcbiAgICBwcmludChcIkhpIVwiKVxuXG4jIEZ1bmN0aW9uIGNhbGxcbnByaW50X2hlbGxvKCkifQ==
 </script>
 </div>
-<p>A function is a somewhat isolated block of code, a box with some inputs and some outputs. They are somewhat similar to a mathematical function, they might take some inputs, that could be numbers of any other kind of data, they do some calculations, some transformations, and they might return a result.</p>
+<p>A function is a <strong>somewhat isolated block</strong> of code, a box with some <strong>inputs</strong> and some <strong>outputs</strong>. They are somewhat similar to a mathematical function, they might take some inputs, that could be numbers of any other kind of data, they do some calculations, some transformations, and they might return a result.</p>
 <div>
 <div id="pyodide-4" class="exercise-cell">
 
@@ -301,15 +301,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBGdW5jdGlvbiBkZWZpbml0
 </div>
 <p>The function:</p>
 <ul>
-<li>might take some data into the function</li>
-<li>performs an action</li>
-<li>might return some data out of the function</li>
+<li>might <strong>take</strong> some <strong>data</strong> into the function</li>
+<li>performs an <strong>action</strong></li>
+<li>might <strong>return</strong> some <strong>data</strong> out of the function</li>
 </ul>
-<p>It is useful to think about the function as an action carried out on some data. Usually the data is a thing, like a cicle, and the function is an action performed on that thing, like calculting an area. Take that into account when naming the functions, they are actions and they take data related to things, nouns. A function name like “calc_circle_area()” reflects the action, a name like “circle_area()” does not.</p>
+<p>It is useful to think about the function as an action carried out on some data. Usually the <strong>data is a thing</strong>, like a cicle, and the function is an action performed on that thing, like calculting an area. Take that into account when naming the functions, they are actions and they take data related to things, nouns. A function name like “calc_circle_area()” reflects the action, a name like “circle_area()” does not.</p>
 <p>The function can be divided in:</p>
 <ul>
-<li>an interface: the part of the function that interacts, interfaces, with the rest of the program</li>
-<li>an implementation: the details about how the action is carried out</li>
+<li>an <strong>interface</strong>: the part of the function that interacts, interfaces, with the rest of the program</li>
+<li>an <strong>implementation</strong>: the details about how the action is carried out</li>
 </ul>
 <p>A function can be thought as as a lego piece that has a defined shape and that we could use in our projects every time that we need that particular shape.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -319,7 +319,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBGdW5jdGlvbiBkZWZpbml0
 </figure>
 </div>
 <p>The interface of the function is its shape, everytime that we need to perform an action on a piece of data we can use that function, that block of code, in the same way.</p>
-<p>When thinking about the program structure, it is useful to fix our attention of the interfaces of the different parts of the program, on the shapes of the different blocks, because that is how the whole program will fit together, through its interfaces. The implementation of each part could be regarded almost as a detail. For instance, we could change the implementation the previous function without changing its interface.</p>
+<p>When thinking about the program structure, it is useful to <strong>fix</strong> our <strong>attention</strong> on the <strong>interfaces</strong> of the different parts of the program, on the shapes of the different blocks, because that is how the whole program will fit together, through its interfaces. The <strong>implementation</strong> of each part could be regarded almost as a <strong>detail</strong>. For instance, we could change the implementation the previous function without changing its interface.</p>
 <div>
 <div id="pyodide-5" class="exercise-cell">
 
@@ -328,16 +328,16 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBGdW5jdGlvbiBkZWZpbml0
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBtYXRoIGltcG9ydCBwaVxuXG5kZWYgY2FsY19jaXJjbGVfYXJlYShyYWRpdXMpOlxuICAgICMgd2UgaGF2ZSBjaGFuZ2VkIHRoZSBpbXBsZW1lbnRhdGlvblxuICAgIGFyZWEgPSBwaSAqIHJhZGl1cyoqMlxuICAgIHJldHVybiBhcmVhXG5cblxuIyBUaGUgY29kZSB0aGF0IHVzZXMgdGhlIGZ1bmN0aW9uIGludGVyZmFjZSBoYXMgbm90IGNoYW5nZWRcbmNpcmNsZV9hcmVhID0gY2FsY19jaXJjbGVfYXJlYSgzKSJ9
 </script>
 </div>
-<p>An interface is a kind of contract, we are committing ourselves to providing a functionality that will be served by that particular interface, and as long as the caller continues using the same interface the function will continue honoring the contract, providing its functionality.</p>
+<p>An interface is a kind of <strong>contract</strong>, we are committing ourselves to providing a functionality that will be served by that particular interface, and as long as the caller continues using the same interface the function will continue honoring the contract, providing its functionality.</p>
 </section>
 <section id="the-advantages-of-modularity" class="level3">
 <h3 class="anchored" data-anchor-id="the-advantages-of-modularity">The advantages of modularity</h3>
-<p>This is one of the big advantages of the procedural programming, we can divide the program into smaller, and somewhat independent pieces of code, because we have limited the interaction between different parts of the program to their interfaces. We have turned a big piece of code into a collection of small interacting modules, a plate of spaghetti into a lego construction. This modularity is key and it helps with:</p>
+<p>This is one of the big advantages of the procedural programming, we can divide the program into smaller, and somewhat independent pieces of code, because we have <strong>limited the interaction</strong> between different parts of the program to their interfaces. We have turned a big piece of code into a collection of small interacting modules, a plate of spaghetti into a lego construction. This modularity is key and it helps with:</p>
 <ul>
-<li>Understanding the code: it is easier to understand little pieces that have well defined responsibilities than a huge blocks of code. It is easier to understand how a lego construction works than a plate of spaghetti. New programers, or even programmers already familiar with the code, will have a better time, a lower cognitive load, and will need less time understanding what the program is doing and how is doing it.</li>
-<li>Bug fixing: it is much easier to locate which part of the code is responsible for a particular bug, like the calculus of the circle area if the functionality of the program is divided into small pieces. If an error occurs in a program organized with functions, a developer can locate and correct the error more quickly than in a poorly organized code.</li>
-<li>Testing: it is possible to check if a block of code is honoring its interface, because it now has an interface, a contract, to honor.</li>
-<li>Extendability: new functionalities will be also easier to create. It is much easier to add new pieces to a lego construction than to a mess of spaghetti.</li>
+<li><strong>Understanding the code</strong>: it is easier to understand little pieces that have well defined responsibilities than a huge blocks of code. It is easier to understand how a lego construction works than a plate of spaghetti. New programers, or even programmers already familiar with the code, will have a better time, a lower cognitive load, and will need less time understanding what the program is doing and how is doing it.</li>
+<li><strong>Bug fixing</strong>: it is much easier to locate which part of the code is responsible for a particular bug, like the calculus of the circle area if the functionality of the program is divided into small pieces. If an error occurs in a program organized with functions, a developer can locate and correct the error more quickly than in a poorly organized code.</li>
+<li><strong>Testing</strong>: it is possible to check if a block of code is honoring its interface, because it now has an interface, a contract, to honor.</li>
+<li><strong>Extendability</strong>: new functionalities will be also easier to create. It is much easier to add new pieces to a lego construction than to a mess of spaghetti.</li>
 </ul>
 </section>
 <section id="code-reuse" class="level3">
@@ -411,15 +411,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGNhbGNfcmVjdF9hcmVh
 </section>
 <section id="scope" class="level2">
 <h2 class="anchored" data-anchor-id="scope">Scope</h2>
-<p>To understand what do we mean when we say that we <em>pass</em> some data to a function we need to understand the concept of the scope.</p>
-<p>When we are programming we store and access data in memory. As we have seen, we refer to the data stored in memory by using variables. We could think that those variables, once they are created, are available in every part of our program. If you would used that approach when you tried to build a program with more than a few lines of code, it would become very difficult to track which part of the program had changed a variable. So maintining those large programs would be very difficult.</p>
+<p>To understand what do we mean when we say that we <em>pass</em> some data to a function we need to understand the concept of the <a href="https://en.wikipedia.org/wiki/Scope_(computer_science)">scope</a>.</p>
+<p>When we are programming we store and access <strong>data in memory</strong>. As we have seen, we <strong>access</strong> data stored in memory by using <strong>variables</strong>. We could think that, idealy, those variables, once they created, should be <strong>globally available</strong> in every part of our program. If you would used that approach when you tried to build a program with more than a few lines of code, it would become very difficult to track <strong>which part</strong> of the program had <strong>changed a variable</strong>. So <strong>maintining</strong> those large programs would be very <strong>difficult</strong>.</p>
 <p>Functions do not only structure the code in logical blocks, but they also limit the data that every one of those blocks can access. Functions can use:</p>
 <ul>
 <li>the variables that are defined inside them.</li>
 <li>the arguments that we pass to them.</li>
 </ul>
-<p>We say that functions define a <a href="https://en.wikipedia.org/wiki/Scope_(computer_science)">scope</a>, an area of the program in which certain variables can be accessed. In a computer program not all data is available to every part of the code. The scope defines where in the code a variable is available, and functions define their own scope. The code inside a function has its own variables, and those are not shared between functions or between the function and the rest of the code.</p>
-<p>For instance, the variables that are defined inside a function are not available outside of the function.</p>
+<p>We say that functions define a <strong>scope, an area of the program in which certain variables can be accessed</strong>. In a computer program not all data is available to every part of the code. The scope defines where in the code a variable is available, and functions define their own scope. The code inside a function has its own variables, and those are not shared between functions or between the function and the rest of the code.</p>
+<p>For instance, variables that are defined inside a function are <strong>not available outside</strong> the function.</p>
 <div>
 <div id="pyodide-12" class="exercise-cell">
 
@@ -438,7 +438,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIHNheV9oZWxsbygpOlxu
 </script>
 </div>
 <p>We get a “‘name’ is not defined error” because the variable name was created inside the say_hello function, so in the say_hello scope, and is not available outside. A variable can only be used when is in the current scope. It is said that the function has a local scope in which its variables are available.</p>
-<p>To use a value inside a function, usually, we pass the variable to the function.</p>
+<p><strong>To use a value</strong> inside a function, usually, <strong>we pass the variable</strong> to the function.</p>
 <p>Schema with the scope of a function call:</p>
 <div>
 <div id="pyodide-14" class="exercise-cell">
@@ -486,7 +486,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGNhbGNfYXJlYSh3aWR0
 </div>
 </div>
 </div>
-<p>A variable points to some data stored in memory. Strictly speaking the variable belongs to a scope, the data pointed by the variable does not. For instance, if we store an object in memory, like the value 2, that object does not belong to a scope, the variables that might point to it do.</p>
+<p>A variable points to some data stored in memory. Strictly speaking <strong>the variable belongs to a scope, the data pointed by the variable does not</strong>. For instance, if we store an object in memory, like the value 2, that object does not belong to a scope, the variables that point to it do.</p>
 <div>
 <div id="pyodide-15" class="exercise-cell">
 
@@ -506,9 +506,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5kZWYgc29tZV9mdW5jdGlv
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiR0xPQkFMX0dSRUVUSU5HID0gXCJIZWxsbyFcIlxuXG5kZWYgcHJpbnRfZ3JlZXRpbmcoKTpcbiAgICBwcmludChHTE9CQUxfR1JFRVRJTkcpXG5cbnByaW50X2dyZWV0aW5nKClcbnByaW50KEdMT0JBTF9HUkVFVElORykifQ==
 </script>
 </div>
-<p>In this case the variable name has been created in the global scope, it is a global variable available everywhere. In general, avoid creating global variables, specially if they are not immutable constants. As a general rule, the use of the global scope is discouraged, try not to use it. If you think you need a global variable, think twice, in most cases is better not to use them.</p>
+<p>In this case the variable name has been created in the global scope, it is a global variable available everywhere. In general, <strong>avoid creating global variables</strong>, specially if they are not immutable constants. As a general rule, the use of the global scope is discouraged, try not to use it. If you think you need a global variable, think twice, in most cases is better not to use them.</p>
 <p>Here’s a tip for the future you, to keep states it might be much better to use objects, instances of a class, than global variables.</p>
-<p>Just remember, try very hard not to use global varibles, although you can allow some exceptions with some immutable ones used for global configurations. (By the way, if you follow the <a href="https://peps.python.org/pep-0008/">PEP8</a> style guide, as you should, contants defined in the global scope are written with all capital letters.) It is common to use this kind of global variables, immutables and related to configuration, and, by convention, in Python, people name them using all-caps variable names.</p>
+<p>Just remember, try very hard not to use global varibles, although you can allow some exceptions with <strong>some immutable</strong> ones used for global configurations. (By the way, if you follow the <a href="https://peps.python.org/pep-0008/">PEP8</a> style guide, as you should, contants defined in the global scope are written with all capital letters.) It is common to use this kind of global variables, immutables and related to configuration, and, by convention, in Python, people name them using all-caps variable names.</p>
 <div>
 <div id="pyodide-17" class="exercise-cell">
 
@@ -554,7 +554,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiTlVNX1RIUkVBRFMgPSAxXG5c
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiQ09ORklHID0geydudW1fdGhyZWFkcyc6IDF9XG5cbmRlZiBzb21lX2Z1bmN0aW9uX3VzaW5nX3RocmVhZHMoKTpcbiAgICBDT05GSUdbJ251bV90aHJlYWRzJ10gKz0gMVxuICAgIHByaW50KGZcIlRoZSBudW1iZXIgb2YgdGhyZWFkcyBpcyB7Q09ORklHWydudW1fdGhyZWFkcyddfVwiKVxuXG5zb21lX2Z1bmN0aW9uX3VzaW5nX3RocmVhZHMoKVxucHJpbnQoZlwiV2UgaGF2ZSBjaGFuZ2VkIHRoZSBnbG9iYWwgbnVtYmVyIG9mIHRocmVhZHMsIG5vdyB0aGV5IGFyZToge0NPTkZJR1snbnVtX3RocmVhZHMnXX1cIikifQ==
 </script>
 </div>
-<p>In general, try not to abuse of the global scope. Functions were desing to modify only its scope and having side effects goes agaist the modularity achived by having functions in the first place. If you abuse of the global scope:</p>
+<p>In general, try not to abuse of the global scope. Functions were desinged to modify only its scope and having <strong>side effects goes agaist the modularity</strong> achived by having functions in the first place. If you abuse of the global scope:</p>
 <ul>
 <li>Proceed at your own risk.</li>
 <li>Be aware, there might be dragons ahead.</li>
@@ -600,35 +600,38 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGNhbGNfcmVjdF9hcmVh
 <section id="argument-and-return-types" class="level2">
 <h2 class="anchored" data-anchor-id="argument-and-return-types">Argument and return types</h2>
 <p>Python is a dynamic language, it does not require to defined the types of the arguments and return values, and, by default, does not enforce those types even when they are defined. The type annotations are meant as a way of documenting the code.</p>
+<pre><code>def calc_rect_area(width:float, height:float) -&gt; float:
+    area = width * height
+    return area</code></pre>
 <p>There are <a href="https://typing.readthedocs.io/">typing tools</a>, like <a href="https://mypy-lang.org/">mypy</a> that can be used to enforce the use of the types, but they are not part of the language proper.</p>
 </section>
 <section id="the-function-interface" class="level2">
 <h2 class="anchored" data-anchor-id="the-function-interface">The function interface</h2>
 <p>Now that we have talked about how to define functions, and how to pass and get data from them, we can deliniate what the function interface is. Remember, when thinking about a function, or any other form of modularizing the code, of dividing it in pieces, take into accounts two aspects:</p>
 <ul>
-<li>the interface: how the function interacts with the rest of the program</li>
-<li>the implementation: how the task is carried out</li>
+<li>the <strong>interface</strong>: how the function interacts with the rest of the program</li>
+<li>the <strong>implementation</strong>: how the task is carried out</li>
 </ul>
-<p>For the structure of the program interfaces are more important than implementations, because if you change an implementation, for instance to speed it up or to fix a bug, the rest of the program will be unafected as long as you keep the interface. Think of the interface as a promise done to the rest of the program, as a contract that the function will honor. Thus, for the rest of the program, the implementation is just a detail, what matters is how to interact with that piece of the code. The program is a complex machine build with small, and hopefully understandable, pieces, and the interface is the shape of each piece.</p>
-<p>We could split the interface in two: the explicit or interface proper, and the implicit interface. We could also call to these two parts: interface and side effects.</p>
+<p>For the structure of the program interfaces are more important than implementations, because <strong>if you change an implementation</strong>, for instance to speed it up or to fix a bug, <strong>the rest of the program will be unafected</strong> as long as you keep the interface. Think of the interface as a promise done to the rest of the program, as a contract that the function will honor. Thus, for the rest of the program, the implementation is just <strong>a detail</strong>, what matters is how to interact with that piece of the code. The program is a complex machine build with small, and hopefully understandable, pieces, and <strong>the interface is the shape</strong> of each <strong>piece</strong>.</p>
+<p>We could split the interface in two: the <strong>explicit</strong> or interface proper, and the <strong>implicit</strong> interface. We could also call to these two parts: <strong>interface and side effects</strong>.</p>
 <p>The interface proper is comprised by:</p>
 <ul>
 <li>the function name, and possible the namespace in which that name is found</li>
 <li>the arguments accepted by the function as well as its types</li>
 <li>the returned values and its types</li>
 </ul>
-<p>A more suttle part of the interface, the implicit interface, or the <a href="https://en.wikipedia.org/wiki/Side_effect_(computer_science)">side effects</a>, an effect other than reading the value of the function arguments and returning the intended result. Side effects are interactions of the function with the rest of the program that are not explicitly declared like:</p>
+<p>A more suttle part of the interface, the implicit interface, or the <a href="https://en.wikipedia.org/wiki/Side_effect_(computer_science)">side effects</a>, <strong>an effect other than reading the value of the function arguments and returning</strong> the intended result. Side effects are interactions of the function with the rest of the program that are not explicitly declared like:</p>
 <ul>
-<li>any modification of the state of the objects passed to the function that are not clearly stated in the interface and, thus, not expected by the user.</li>
-<li>any modification to the mutable objects passed to the function not clearly estated</li>
-<li>any modification of the global state, like changing the value of a global variable</li>
+<li>any <strong>modification</strong> of the <strong>state of the objects</strong> passed to the function that are not clearly stated in the interface and, thus, not expected by the user.</li>
+<li>any modification to the <strong>mutable objects</strong> passed to the function not clearly estated</li>
+<li>any modification of the <strong>global state</strong>, like changing the value of a global variable</li>
 <li>any use of the global scope, like the reading of a global variable</li>
 </ul>
-<p>The interface proper is the stated contract that the function explicitely declares to follow and its at the base of the software modularity. Side effects are a modularity violation and a throw back to the spaghetti code, to an unmaintainable mess. (Although, in some cases these side effects can be useful, or even completely necesary).</p>
+<p>The interface proper is the stated contract that the function explicitely declares to follow and its at the base of the software modularity. Side effects are a modularity violation and a throw back to the <strong>spaghetti code</strong>, to an unmaintainable mess. (Although, in some cases these side effects can be useful, or even completely necesary).</p>
 <section id="name-and-namespace" class="level3">
 <h3 class="anchored" data-anchor-id="name-and-namespace">Name and namespace</h3>
 <p>The function name is a critical part of the function interface, if we would change it, the rest of the code that uses that function would have to be changed.</p>
-<p>The namespace, where the function can be found, is also important. For instance, in Python the <a href="https://docs.python.org/3/library/math.html#math.sqrt">sqrt</a> function is located in the <a href="https://docs.python.org/3/library/math.html">math</a> module of the standard library, so to use it we have to import it from there.</p>
+<p>The namespace, <strong>where the function can be found</strong>, is also important. For instance, in Python the <a href="https://docs.python.org/3/library/math.html#math.sqrt">sqrt</a> function is located in the <a href="https://docs.python.org/3/library/math.html">math</a> module of the standard library, so to use it we have to import it from there.</p>
 <div>
 <div id="pyodide-25" class="exercise-cell">
 
@@ -637,7 +640,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGNhbGNfcmVjdF9hcmVh
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBtYXRoIGltcG9ydCBzcXJ0XG5cbnByaW50KHNxcnQoMikpIn0=
 </script>
 </div>
-<p>If the Python developers were to change the location of the sqrt function, we would have to change our code accordingly. By the way, in the Python standard library there is a different <a href="https://docs.python.org/3/library/cmath.html#cmath.sqrt">sqrt</a> function with a different interface, a function that return <a href="https://docs.python.org/3/library/functions.html#complex">complex</a> numbers instead of <a href="https://docs.python.org/3/library/functions.html#float">floats</a>, and we differenciate between these two functions because they are imported from different namespaces, from different modules.</p>
+<p>If Python developers were to change the location of the sqrt function, we would have to change our code accordingly. By the way, in the Python standard library there is a different <a href="https://docs.python.org/3/library/cmath.html#cmath.sqrt">sqrt</a> function with a different interface, a function that return <a href="https://docs.python.org/3/library/functions.html#complex">complex</a> numbers instead of <a href="https://docs.python.org/3/library/functions.html#float">floats</a>, and we differenciate between these two functions because they are imported from different namespaces, from different modules.</p>
 <div>
 <div id="pyodide-26" class="exercise-cell">
 
@@ -654,7 +657,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBtYXRoIGltcG9ydCBz
 <section id="returned-values" class="level3">
 <h3 class="anchored" data-anchor-id="returned-values">Returned values</h3>
 <p>Returned values and types are also part of the interface, if we change what we return we will have to alter the calls to the function.</p>
-<p>By the way, I think that it is not a very good practice to change the number or type of the values returned depending on the function call. Imagine that we did a function that returned either a float or a complex number depending on the input.</p>
+<p>By the way, I think that it is <strong>not</strong> a very good practice to <strong>change the number or type of the values returned depending on the function call</strong>. Imagine that we did a function that returned either a float or a complex number depending on the input.</p>
 <div>
 <div id="pyodide-27" class="exercise-cell">
 
@@ -683,11 +686,11 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBtYXRoIGltcG9ydCBz
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBtYXRoIGltcG9ydCBzcXJ0IGFzIHNxcnRcblxuZGVmIHNxcnQobnVtYmVyOmZsb2F0KSAtPiBmbG9hdHxOb25lOlxuICAgIHRyeTpcbiAgICAgICAgcmVzdWx0ID0gc3FydChudW1iZXIpXG4gICAgZXhjZXB0IFZhbHVlRXJyb3I6XG4gICAgICAgIHJlc3VsdCA9IE5vbmVcbiAgICByZXR1cm4gcmVzdWx0XG5cbnJlcyA9IHNxcnQoMSlcbmlmIHJlcyBpcyBOb25lOlxuICAgIHByaW50KFwiRnVuY3Rpb24gZmFpbGVkIHRvIGNhbGN1bGF0ZVwiKVxuZWxzZTpcbiAgICBwcmludChmXCJXZSBjYW4gZ28gb24gd2l0aCBvdXIgY2FsY3VsYXRpb25zLCB0aGVyZSdzIGEgcmVzdWx0IHZhbHVlOiB7cmVzfVwiKSJ9
 </script>
 </div>
-<p>In this case it’d be better to just let the error be raised, like the standard library sqrt function does. In that way the caller we’ll be aware that a problem happened, and will have to deal the the error only when it needs to, and not in every call in the <a href="https://en.wikipedia.org/wiki/Call_stack">call stack</a>.</p>
+<p>In this case it’d be better to just let the error be raised, like the standard library sqrt function does. In that way the caller we’ll be aware that a problem happened, and will have to deal the the error only when it needs to, and not in every call in the <a href="https://en.wikipedia.org/wiki/Call_stack">call stack</a>. Remember the <a href="https://peps.python.org/pep-0020/">Zen</a>: explicit is better than implicit.</p>
 </section>
 <section id="object-state-change" class="level3">
 <h3 class="anchored" data-anchor-id="object-state-change">Object state change</h3>
-<p>A function could change the state of an object passed as an argument. For instance, imagine that you are reading from a file and that you pass the file object to a function, that function could change the state of the file object, for instance by consuming from the file or by closing it.</p>
+<p>A function could change the state of an object passed as an argument. For instance, imagine that you are reading from a file and that you pass the file object to a function, that function could change the state of the file object, for instance by <strong>consuming</strong> from <strong>the file</strong> or by closing it.</p>
 <div>
 <div id="pyodide-30" class="exercise-cell">
 
@@ -696,22 +699,22 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBtYXRoIGltcG9ydCBz
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBpbyBpbXBvcnQgU3RyaW5nSU9cblxudGV4dCA9IFwiXCJcIkZhciBvdXQgaW4gdGhlIHVuY2hhcnRlZCBiYWNrd2F0ZXJzIG9mIHRoZSB1bmZhc2hpb25hYmxlIGVuZCBvZiB0aGUgd2VzdGVybiBzcGlyYWwgYXJtIG9mIHRoZSBHYWxheHlcbmxpZXMgYSBzbWFsbCB1bnJlZ2FyZGVkIHllbGxvdyBzdW4uIE9yYml0aW5nIHRoaXMgYXQgYSBkaXN0YW5jZSBvZiByb3VnaGx5IG5pbmV0eS10d28gbWlsbGlvbiBtaWxlcyBpc1xuYW4gdXR0ZXJseSBpbnNpZ25pZmljYW50IGxpdHRsZSBibHVlIGdyZWVuIHBsYW5ldCB3aG9zZSBhcGUtZGVzY2VuZGVkIGxpZmUgZm9ybXMgYXJlIHNvIGFtYXppbmdseSBwcmltaXRpdmVcbnRoYXQgdGhleSBzdGlsbCB0aGluayBkaWdpdGFsIHdhdGNoZXMgYXJlIGEgcHJldHR5IG5lYXQgaWRlYS5cblwiXCJcIlxuXG4jIG5vIGZ1bmN0aW9uIGNhbGxcbmZpbGUgPSBTdHJpbmdJTyh0ZXh0KVxucHJpbnQobGVuKGxpc3QoZmlsZSkpKVxuXG5kZWYgY29uc3VtZV9vbmVfbGluZShmaWxlKTpcbiAgICBuZXh0KGZpbGUpXG5cbiMgd2l0aCBhIGZ1bmN0aW9uIGNhbGwgdGhhdCBjaGFuZ2VzIHRoZSBzdGF0ZSBvZiB0aGUgZmlsZSBvYmplY3RcbiMgYnkgY29uc3VtaW5nIG9uZSBsaW5lXG5maWxlID0gU3RyaW5nSU8odGV4dClcbmNvbnN1bWVfb25lX2xpbmUoZmlsZSlcbnByaW50KGxlbihsaXN0KGZpbGUpKSlcblxuZGVmIGJhZF9hY3Rvcl9jbG9zZXNfZmlsZShmaWxlKTpcbiAgICBmaWxlLmNsb3NlKClcblxuIyB3aXRoIGEgZnVuY3Rpb24gY2FsbCB0aGF0IGNoYW5nZXMgdGhlIHN0YXRlIG9mIHRoZSBmaWxlIG9iamVjdFxuIyBieSBjbG9zaW5nIGl0XG5maWxlID0gU3RyaW5nSU8odGV4dClcbmJhZF9hY3Rvcl9jbG9zZXNfZmlsZShmaWxlKVxucHJpbnQobGVuKGxpc3QoZmlsZSkpKSJ9
 </script>
 </div>
-<p>After calling to the different functions the behaviour of the program will be quite different, so the change in the state of the file object is a side effect, a implicit part of the function interface. It is always a good policy to informe to the caller/user of the function about these changes of state by making them explici t. ### Gobal variables</p>
+<p>After calling to the different functions the behaviour of the program will be quite different, so the change in the state of the file object is a <strong>side effect</strong>, a implicit part of the function interface. It is always a good policy to informe to the caller/user of the function about these changes of state by making them explici t. ### Gobal variables</p>
 <p>Another kind of side effect is to affect the global scope. This is highly discuraged, there is a global scope and many times it is reasonable to use it to read, for instance, immutable configuration variables. But altering a variable in the global state takes us back to the path of unmaintanable spaghetti code.</p>
 <p>In Python the global scope is frequently used to store configuration constants.</p>
 <p>Altering global variables makes the progam less modular because although the change of these variable could be considered part of the interface of the function, it is not an explicit part, it is not declared as an argument or as a return. So, by modifying global variables we get code that is more spaghetti like, and that so the program will be less maintainable.</p>
-<p>If you think that you need to alter the global state, think twice, because, in general, this is a very bad idea. If after thinking it carefully you still think you need to do it, think it again. There is another mechanism to store states between funcion calls that respects the modularity: classes and objects. Objects are modular and they allow us to store states between calls. That is one of the big difference between the procedural and the object oriented approach.</p>
+<p>If you think that you need to <strong>alter the global state</strong>, think twice, because, in general, this is a <strong>very bad idea</strong>. If after thinking it carefully you still think you need to do it, think it again. There is another mechanism to store states between funcion calls that respects the modularity: classes and objects. Objects are modular and they allow us to store states between calls. That is one of the big difference between the procedural and the object oriented approach.</p>
 </section>
 <section id="value-change-of-mutable-objects" class="level3">
 <h3 class="anchored" data-anchor-id="value-change-of-mutable-objects">Value change of mutable objects</h3>
-<p>In general, we could pass data to a function if two different ways by:</p>
+<p>In general, we could pass data to a function in two different ways by:</p>
 <ul>
-<li>copying it</li>
-<li>using a reference or a pointer</li>
+<li><strong>copy</strong>ing it</li>
+<li>using a <strong>reference</strong> or a pointer</li>
 </ul>
 <p>In the first case we copy the value. Imagine that we were passing a variable that holds the integer 2. We would pass that data to the function by creating a copy of that number in a different part of the memory and, thus, the variable inside the function would reference to a different 2 than the variable outside the function.</p>
 <p>In the second case both variables, the one inside the function and the ones outside, would end up referencing the same value, the same 2. In some languages, like C or Rust one can chose how to proceed, do we want to copy the data or to create a reference or a pointer to it, and that is made explicit in the function interface.</p>
-<p>One of the Python objectives was to be simple, and that is why, maybe, his creator chose to avoid this complexty and to make all arguments passings to any function by reference. Moreover, in Python all variables are always references.</p>
+<p>One of the Python objectives was to be simple, and that is why, maybe, his creator chose to avoid this complexty and to make all arguments passings to any function by reference. Moreover, <strong>in Python all variables are always references</strong>.</p>
 <div>
 <div id="pyodide-31" class="exercise-cell">
 
@@ -811,7 +814,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIHNheV9oZWxsbyhuYW1l
 </div>
 </div>
 </div>
-<p>For immutable types having several references to the same object is not a problem at all because even if different variables hold references to the same object, none of them could change its value, but with mutable data types we have a problem. For instance, a function could change a list, that has been passed to it by a caller, by appending values to it without the caller awarenes. So, in Python mutable objects could be altered inside any function and that is part of the interface, but an implicit part.</p>
+<p>For <strong>immutable</strong> types having <strong>several references</strong> to the same object is <strong>not a problem</strong> at all because even if different variables hold references to the same object, none of them could change its value, but with mutable data types we have a problem. For instance, a function could change a list, that has been passed to it by a caller, by appending values to it without the caller awarenes. So, in Python <strong>mutable objects could be altered inside any function</strong> and that is part of the interface, but an implicit part.</p>
 <p>Try to guess what will be the result of running the following code:</p>
 <div>
 <div id="pyodide-32" class="exercise-cell">
@@ -866,8 +869,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYSA9IFtcImhlbGxvXCIsIFwi
 </div>
 <p>Why do we get these different results?</p>
 <p>Let’s think about what is going on.</p>
-<div id="d65cef69" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">"hello"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e2fef0c3" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">"hello"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -893,11 +896,11 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYSA9IFtcImhlbGxvXCIsIFwi
 </div>
 </div>
 </div>
-<div id="9d6eab86" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a.upper() creates a new string, it does not modify</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the original string that remains intact in memory</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># and now b refers to the new string "HELLO"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a.upper()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="4f0125fa" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a.upper() creates a new string, it does not modify</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the original string that remains intact in memory</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># and now b refers to the new string "HELLO"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a.upper()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -924,8 +927,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYSA9IFtcImhlbGxvXCIsIFwi
 </div>
 </div>
 </div>
-<div id="423dcff2" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="69848da4" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -953,8 +956,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYSA9IFtcImhlbGxvXCIsIFwi
 </div>
 </div>
 <p>With mutable objects, like lists, the result will be different.</p>
-<div id="1d1ab77c" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="st">"hello"</span>, <span class="st">"Jane"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="503327d0" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="st">"hello"</span>, <span class="st">"Jane"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -979,8 +982,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYSA9IFtcImhlbGxvXCIsIFwi
 </div>
 </div>
 </div>
-<div id="f0825683" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ae4b1129" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -1006,18 +1009,18 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYSA9IFtcImhlbGxvXCIsIFwi
 </div>
 </div>
 </div>
-<div id="3fe278e9" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We are modifying the original list</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>b[<span class="dv">0</span>] <span class="op">=</span> b[<span class="dv">0</span>].upper()</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># b[0] refers to the string "hello"</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># b[0].upper() creates a new string in memory "HELLO"</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># so b[0] = b[0].upper() is equivalent to</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>b[<span class="dv">0</span>] <span class="op">=</span> <span class="st">"HELLO"</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># We are asking to the list refered by b, the same list that a refers to,</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># to change its first member from "hello" to "HELLO"</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># So we get a modified list ["HELLO"] and both a and b refer still to this list</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># that is in fact the same original list, that is has changed its first member</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d0220cb0" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We are modifying the original list</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>b[<span class="dv">0</span>] <span class="op">=</span> b[<span class="dv">0</span>].upper()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># b[0] refers to the string "hello"</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># b[0].upper() creates a new string in memory "HELLO"</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># so b[0] = b[0].upper() is equivalent to</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>b[<span class="dv">0</span>] <span class="op">=</span> <span class="st">"HELLO"</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># We are asking to the list refered by b, the same list that a refers to,</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># to change its first member from "hello" to "HELLO"</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># So we get a modified list ["HELLO"] and both a and b refer still to this list</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># that is in fact the same original list, that is has changed its first member</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -1044,7 +1047,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYSA9IFtcImhlbGxvXCIsIFwi
 </div>
 </div>
 <p>This is an aspect that varies from language to language. If you study a different programming language you will need to understand if the variables are ment to be values, <a href="https://en.wikipedia.org/wiki/Pointer_(computer_programming)">pointers</a> or references. In Python they are always references. You can read a Real Python tutorial about how Python pass <a href="https://realpython.com/python-pass-by-reference/">by reference</a>.</p>
-<p>Changing inside the function a mutable object that have been passed to it without warning the function user is a common source of bugs and problems. This is not a good practice, try to avoid it! The previous code could be written to avoid this problem.</p>
+<p><strong>Changing</strong> inside the function a <strong>mutable object</strong> that have been passed to it without warning the function user is a <strong>common source of bugs</strong> and problems. This is not a good practice, try to avoid it! The previous code could be written to avoid this problem.</p>
 <div>
 <div id="pyodide-36" class="exercise-cell">
 
