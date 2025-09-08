@@ -3,7 +3,7 @@ Bioinformatics
 ==============
 
 This introduction to bioinformatics will deal mainly with sequence analysis and it is aimed to the 3rd course of the degree in Biotechnology.
-The main course ideas are covered in these `Slides <https://drive.google.com/drive/folders/1nNoDSoCWKvYyTnACVK7EBKgnn8FJZpl9?usp=drive_link>`_.
+The main course ideas are covered in these `Slides <https://drive.google.com/drive/folders/1TsbsuhZhKeYG8IYLJstGb9fDaOMUDD6e?usp=sharing>`_.
 
 The lessons will be mainly practical. They will have a brief theoretical introduction and several practical exercises.
 
@@ -12,7 +12,7 @@ The lessons will be mainly practical. They will have a brief theoretical introdu
 Introduction
 ------------
 
-`What is bioinformatics? <https://docs.google.com/presentation/d/1hVpN-2054kZky6CW7OUMCiin7wogFUhHf5qqX0JfB_0/edit?usp=sharing>`_
+`What is bioinformatics? <https://docs.google.com/presentation/d/1xF38ad2dlUtOVogkZ6Ec6ver7iv7j8L5CESOR8oBc00/edit?usp=drive_link>`_
 
 Norms
 -----
