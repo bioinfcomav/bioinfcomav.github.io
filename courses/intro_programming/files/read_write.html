@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../files/paths.html" rel="next">
+<link href="../packages/modules.html" rel="next">
 <link href="../local_install/hello_world2.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -369,12 +369,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Read &amp; write</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../files/paths.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Paths</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -434,6 +428,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
+ <span class="menu-text">Everyday Python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../everyday_python/everyday_python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Everyday Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../everyday_python/typing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Typing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Loop utilities</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../everyday_python/range.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">range</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../everyday_python/enumerate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">enumerate</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../everyday_python/zip.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">zip</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">File utilities</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../everyday_python/paths.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paths</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../everyday_python/shutil.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">shutil</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../everyday_python/comprehensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comprehensions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -477,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="open">open</h2>
 <p>In many ocassions we will need that our programs read information stored in files, thus a very common action will be to open a file. In Python we could open a file with the <a href="https://docs.python.org/3/library/functions.html#open">open</a> function.</p>
 <p>Let’s imagine that we have a text file stored in the same directory/folder as our Python code. For instance, we could had download <a href="https://www.gutenberg.org/ebooks/11.txt.utf-8">Alice in wonderland</a> from <a href="https://www.gutenberg.org/">Project Gutenberg</a>. This file is named 11.txt.utf-8. Once download it, we could open it using the following code.</p>
-<div id="d77696e8" class="cell" data-execution_count="1">
+<div id="b2821516" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>file_name <span class="op">=</span> <span class="st">"11.txt.utf-8"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(file_name, <span class="st">'rt'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -487,7 +562,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="read-text" class="level3">
 <h3 class="anchored" data-anchor-id="read-text">Read text</h3>
 <p>Now that we know how to open a file, let’s try to read it. The most common way to read a text file is to use a for loop.</p>
-<div id="e913c3a6" class="cell" data-execution_count="2">
+<div id="dff90127" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>file_name <span class="op">=</span> <span class="st">"11.txt.utf-8"</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(file_name, <span class="st">'rt'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -542,7 +617,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJjb21wbGV0aW9uIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFs
 <section id="write" class="level2">
 <h2 class="anchored" data-anchor-id="write">Write</h2>
 <p>We could also create a new file to write in it by using the mode “wt” (<strong>w</strong>rite, <strong>t</strong>ext). Once we have the file object we can write in it using the <a href="https://docs.python.org/3/library/io.html#io.TextIOBase.write">write</a> method.</p>
-<div id="c6c399a8" class="cell" data-execution_count="3">
+<div id="b3a59c7c" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>file_name <span class="op">=</span> <span class="st">"my_output_file.txt"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(file_name, <span class="st">'wt'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.write(<span class="st">"Hello world"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -585,7 +660,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJjb21wbGV0aW9uIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFs
 <section id="close-and-with" class="level2">
 <h2 class="anchored" data-anchor-id="close-and-with">close and with</h2>
 <p>So far we have not closed our file objects after we are done with them, but we really should. So, the proper way to read a file would be:</p>
-<div id="3c1d15b3" class="cell" data-execution_count="4">
+<div id="c1a7ee0c" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>file_name <span class="op">=</span> <span class="st">"some_file.txt"</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(file_name, <span class="st">'rt'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -596,7 +671,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJjb21wbGV0aW9uIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFs
 </div>
 <p>The number of file objects that we can open are limited by the operating system, so that’s one reason for closing them. If we don’t do it, Python will try to close them for us after the variable that holds the file object goes out of scope, but it’s better if we do it by ourselves.</p>
 <p>Even better, we could use the <a href="https://docs.python.org/3/reference/compound_stmts.html#with">with</a> statement. <strong>with</strong> will take care of closing the file after finishing the with block, even in the event of an exception ocurring within the block.</p>
-<div id="2e327af3" class="cell" data-execution_count="5">
+<div id="9d3744e8" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>file_name <span class="op">=</span> <span class="st">"some_file.txt"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(file_name, <span class="st">'rt'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
@@ -1048,8 +1123,8 @@ window._ojs.runtime.interpretFromScriptTags();
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../files/paths.html" class="pagination-link" aria-label="Paths">
-        <span class="nav-page-text">Paths</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../packages/modules.html" class="pagination-link" aria-label="Modules">
+        <span class="nav-page-text">Modules</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

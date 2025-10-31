@@ -429,6 +429,164 @@
     ]
   },
   {
+    "objectID": "everyday_python/typing.html",
+    "href": "everyday_python/typing.html",
+    "title": "Typing",
+    "section": "",
+    "text": "Typing documentation in the official Python documentation.\nType checking guide in Real Python.",
+    "crumbs": [
+      "Everyday Python",
+      "Typing"
+    ]
+  },
+  {
+    "objectID": "everyday_python/typing.html#resources",
+    "href": "everyday_python/typing.html#resources",
+    "title": "Typing",
+    "section": "",
+    "text": "Typing documentation in the official Python documentation.\nType checking guide in Real Python.",
+    "crumbs": [
+      "Everyday Python",
+      "Typing"
+    ]
+  },
+  {
+    "objectID": "everyday_python/typing.html#typing",
+    "href": "everyday_python/typing.html#typing",
+    "title": "Typing",
+    "section": "Typing",
+    "text": "Typing\nIn Python, like in any other language, objects have types, like int, float, str or list. However, variables can hold objects of any type and they can change the type of object that they hold without any restriction.\n\n\n\n\n\n\nIn other languages, like C, Java or Rust the previous code would not even compile because a variable, once it has a type, it can’t change its type (or at least this is the general rule). Languages like Python in which variables and function arguments can change the type of objects they hold are called dynamic languages, and languages like C or Rust are called static.\nAlso, in Python function arguments can receive any type.\n\n\n\n\n\n\nThis can cause problems because you could cause an error by calling the function with incorrect types.\n\n\n\n\n\n\nTo avoid this kind of problems Python has added types, so now you can inform the user of the function about the expected types.\n\n\n\n\n\n\nNow, thanks to the typing information the caller of the function knows which types are expected. Typing is optional, so you don’t need to annotate variables and function arguments with typing information and most Python code is not typed. In fact typing in Python has been introduced more as documentation than anything else, Python is still a dynamic language. Moreover, Python does not enforce this typing at runtime, so the caller would still be able to call the functions with incorrect types.\n\n\n\n\n\n\nIf you want to enforce the use of types in your code you could take a look at mypy, ty or pyrefly.",
+    "crumbs": [
+      "Everyday Python",
+      "Typing"
+    ]
+  },
+  {
+    "objectID": "everyday_python/comprehensions.html",
+    "href": "everyday_python/comprehensions.html",
+    "title": "Comprenhensions",
+    "section": "",
+    "text": "Official documentation about list comprehensions.\nReal Python series “When to use” about list, dictionary and set comprehensions.",
+    "crumbs": [
+      "Everyday Python",
+      "Comprehensions"
+    ]
+  },
+  {
+    "objectID": "everyday_python/comprehensions.html#resources",
+    "href": "everyday_python/comprehensions.html#resources",
+    "title": "Comprenhensions",
+    "section": "",
+    "text": "Official documentation about list comprehensions.\nReal Python series “When to use” about list, dictionary and set comprehensions.",
+    "crumbs": [
+      "Everyday Python",
+      "Comprehensions"
+    ]
+  },
+  {
+    "objectID": "everyday_python/comprehensions.html#list-comprehensions",
+    "href": "everyday_python/comprehensions.html#list-comprehensions",
+    "title": "Comprenhensions",
+    "section": "List comprehensions",
+    "text": "List comprehensions\nList comprehensions allow us to create lists by processing an iterable, item by item, in a concise way. Each element of the resulting list will result from applying an operation to a corresponding item of the original iterable.\nImagine that we want to create a list with the squares of the integers from 1 to 10. We could write a for loop that keeps on adding elements to a previously created list.\n\n\n\n\n\n\nAn alternative way of accomplishing the same task very concisely is to create a list comprehension.\n\n\n\n\n\n\nSo, comprehensions take elements from an iterable and do an operation on each element.\nMoreover, we can even filter the elements. For instance, we could choose to generate only the squares from the odd integers.",
+    "crumbs": [
+      "Everyday Python",
+      "Comprehensions"
+    ]
+  },
+  {
+    "objectID": "everyday_python/comprehensions.html#other-comprehensions",
+    "href": "everyday_python/comprehensions.html#other-comprehensions",
+    "title": "Comprenhensions",
+    "section": "Other comprehensions",
+    "text": "Other comprehensions\nComprehensions are not limited to lists we can also create dictionaries.\n\n\n\n\n\n\nOr sets:",
+    "crumbs": [
+      "Everyday Python",
+      "Comprehensions"
+    ]
+  },
+  {
+    "objectID": "everyday_python/comprehensions.html#generator-expressions",
+    "href": "everyday_python/comprehensions.html#generator-expressions",
+    "title": "Comprenhensions",
+    "section": "Generator expressions",
+    "text": "Generator expressions\nFinally, you can also create comprehensions that are lazily evaluated, they are generators expressions.\n\n\n\n\n\n\nBe careful because generators are consumed when used.",
+    "crumbs": [
+      "Everyday Python",
+      "Comprehensions"
+    ]
+  },
+  {
+    "objectID": "everyday_python/everyday_python.html",
+    "href": "everyday_python/everyday_python.html",
+    "title": "Everyday Python",
+    "section": "",
+    "text": "In the rest of this course we have focused our attention in programming fundamental topics like:\n\nvariables\nbasic types\ncomposed types\nflow control\nfunctions\n\nIn this section we are going to cover some Python fundamentals. In most cases you are not required to use these tools, but you will find them in most Python code written by others and, also, if you use them, will make your Python programming more idiomatic, convenient and powerful.",
+    "crumbs": [
+      "Everyday Python",
+      "Everyday Python"
+    ]
+  },
+  {
+    "objectID": "everyday_python/everyday_python.html#everyday-python",
+    "href": "everyday_python/everyday_python.html#everyday-python",
+    "title": "Everyday Python",
+    "section": "",
+    "text": "In the rest of this course we have focused our attention in programming fundamental topics like:\n\nvariables\nbasic types\ncomposed types\nflow control\nfunctions\n\nIn this section we are going to cover some Python fundamentals. In most cases you are not required to use these tools, but you will find them in most Python code written by others and, also, if you use them, will make your Python programming more idiomatic, convenient and powerful.",
+    "crumbs": [
+      "Everyday Python",
+      "Everyday Python"
+    ]
+  },
+  {
+    "objectID": "everyday_python/range.html",
+    "href": "everyday_python/range.html",
+    "title": "range",
+    "section": "",
+    "text": "Official documentation for the range function.",
+    "crumbs": [
+      "Everyday Python",
+      "Loop utilities",
+      "range"
+    ]
+  },
+  {
+    "objectID": "everyday_python/range.html#resources",
+    "href": "everyday_python/range.html#resources",
+    "title": "range",
+    "section": "",
+    "text": "Official documentation for the range function.",
+    "crumbs": [
+      "Everyday Python",
+      "Loop utilities",
+      "range"
+    ]
+  },
+  {
+    "objectID": "everyday_python/range.html#range",
+    "href": "everyday_python/range.html#range",
+    "title": "range",
+    "section": "range",
+    "text": "range\nrange returns an iterator that will yield the integers up to the given stop or from the given start up to the given stop.\n\n\n\n\n\n\n\n\n\n\n\n\nBe aware that the range object is an iterator, so it will be consumed.\n\n\n\n\n\n\nYou will see the range object most commonly used in the for loops, for when you want an index instead of itering through an iterable object.",
+    "crumbs": [
+      "Everyday Python",
+      "Loop utilities",
+      "range"
+    ]
+  },
+  {
+    "objectID": "everyday_python/range.html#exercises",
+    "href": "everyday_python/range.html#exercises",
+    "title": "range",
+    "section": "Exercises",
+    "text": "Exercises\nCreate a list of numbers up to 20\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPrint, in a for loop, the numbers from 20 to 30.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSum all integers from 1 to 1000\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreate a list of all multiples of 7 smaller than 100.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote",
+    "crumbs": [
+      "Everyday Python",
+      "Loop utilities",
+      "range"
+    ]
+  },
+  {
     "objectID": "exercises/set1.html",
     "href": "exercises/set1.html",
     "title": "Exercises",
@@ -872,50 +1030,6 @@
     ]
   },
   {
-    "objectID": "files/paths.html",
-    "href": "files/paths.html",
-    "title": "Path",
-    "section": "",
-    "text": "File and directory access section in the official documentation.\npathlib module documentation.\nFile sytem entry in wikipedia.\nFile system tutorial (in spanish).",
-    "crumbs": [
-      "Files",
-      "Paths"
-    ]
-  },
-  {
-    "objectID": "files/paths.html#resources",
-    "href": "files/paths.html#resources",
-    "title": "Path",
-    "section": "",
-    "text": "File and directory access section in the official documentation.\npathlib module documentation.\nFile sytem entry in wikipedia.\nFile system tutorial (in spanish).",
-    "crumbs": [
-      "Files",
-      "Paths"
-    ]
-  },
-  {
-    "objectID": "files/paths.html#paths",
-    "href": "files/paths.html#paths",
-    "title": "Path",
-    "section": "Paths",
-    "text": "Paths\nThe location of a file in a file system is given by its path that is composed by its location in the directories, subdirectories and file name. Some examples of paths are: “c:\\users\\jane\\documents\\letter.doc”, “/users/jane/documents/letter.doc”, or “/home/jane/documents/letter.doc”.\nOne relevant difference between Windows and Unix-like (MacOS or Linux) operating systems is that in windows the path elements are separated by the “\\” character, whereas in MacOS and Linux the separator is “/”. Python is a multiplatform language, but we have to take into account these details if we want to write software capable of running in different operating systems.",
-    "crumbs": [
-      "Files",
-      "Paths"
-    ]
-  },
-  {
-    "objectID": "files/paths.html#path-objects",
-    "href": "files/paths.html#path-objects",
-    "title": "Path",
-    "section": "Path objects",
-    "text": "Path objects\nIn Python we could use strings to store path information and, in fact, that used to be the case, but now it is very common to work with Path objects available in the pathlib module. I would recommend to use these convenient objects instead of plain string objects.\n\n\n\n\n\n\nOne advantage of the Path objects is that we can join them together very easily.\n\n\n\n\n\n\nThe Path class some very convenient methods, like home that will give us the $HOME directory for the current user or cwd that will return the current working directory.\n\n\n\n\n\n\nPaths objects have a rich functionality. For instance, we can check if they exist in the file system.\n\n\n\n\n\n\nWe can list the contents of a directory.\n\n\n\n\n\n\nAnd we can get their names and suffixes.\n\n\n\n\n\n\nWe can also:\n\nopen a file using the open method of the Path objects\ncreate a directory using mkdir\nremove a file with unlink or a directory with rmdir.\n\nIn your home directory create a file named “hello.txt”, write in it the text “Hello world”, then get a directory listing and check that the file is really there, after that, open the file and read the text in it. Finally, remove the file and check that it has been really deleted.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n¿Cuál es el directorio de trabajo actual? ¿Hay algún fichero en él? ¿Del primero de los ficheros que aparecen en el listado, cuál es la ruta completa? ¿Se podría extraer de esta ruta el nombre del directorio y el fichero? ¿Cuál es la $HOME de nuestro usuario? ¿Del fichero ‘programa.py’ cuáles son el nombre y la extensión?",
-    "crumbs": [
-      "Files",
-      "Paths"
-    ]
-  },
-  {
     "objectID": "files/read_write.html",
     "href": "files/read_write.html",
     "title": "Read and write files",
@@ -1312,6 +1426,162 @@
     ]
   },
   {
+    "objectID": "everyday_python/enumerate.html",
+    "href": "everyday_python/enumerate.html",
+    "title": "enumerate",
+    "section": "",
+    "text": "Official documentation for the enumerate function.",
+    "crumbs": [
+      "Everyday Python",
+      "Loop utilities",
+      "enumerate"
+    ]
+  },
+  {
+    "objectID": "everyday_python/enumerate.html#resources",
+    "href": "everyday_python/enumerate.html#resources",
+    "title": "enumerate",
+    "section": "",
+    "text": "Official documentation for the enumerate function.",
+    "crumbs": [
+      "Everyday Python",
+      "Loop utilities",
+      "enumerate"
+    ]
+  },
+  {
+    "objectID": "everyday_python/enumerate.html#enumerate",
+    "href": "everyday_python/enumerate.html#enumerate",
+    "title": "enumerate",
+    "section": "enumerate",
+    "text": "enumerate\nIn Python the natural way of writing for loops is to iterate through iterable objects or iterators.\n\n\n\n\n\n\nSometimes it is useful to know the index of the item that we’re processing in the loop. We could get it by doing:\n\n\n\n\n\n\nTo solve this issue in an easy way Python has the enumerate function.\n\n\n\n\n\n\nInternally, enumerate works by creating an iterable object that keeps yielding tuples with the index and the item in the original iterable.\n\n\n\n\n\n\n\n\n\n\n\n\nAn each tuple is then unpacked in the for loop by using the standard tuple unpacking mechanism.",
+    "crumbs": [
+      "Everyday Python",
+      "Loop utilities",
+      "enumerate"
+    ]
+  },
+  {
+    "objectID": "everyday_python/shutil.html",
+    "href": "everyday_python/shutil.html",
+    "title": "shutil",
+    "section": "",
+    "text": "Official documentation of the shutil module.",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "shutil"
+    ]
+  },
+  {
+    "objectID": "everyday_python/shutil.html#resources",
+    "href": "everyday_python/shutil.html#resources",
+    "title": "shutil",
+    "section": "",
+    "text": "Official documentation of the shutil module.",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "shutil"
+    ]
+  },
+  {
+    "objectID": "everyday_python/shutil.html#copying-moving-and-deleting-files-and-directories",
+    "href": "everyday_python/shutil.html#copying-moving-and-deleting-files-and-directories",
+    "title": "shutil",
+    "section": "Copying, moving and deleting files and directories",
+    "text": "Copying, moving and deleting files and directories\nIf you need to copy, move or delete a file or directory you can use the shutil utilities.\n\nshutil.copy(path_to_file1, path_to_file2) copies the file in path_to_file1 src to the file path_to_file2.\nshutil.copytree(path_to_dir1, path_to_dir2) copies recursively the contents of path_to_dir1 to path_to_dir2\nshutil.rmtree(path_to_dir) deletes the entire directory tree.\nshutil.move(path1, path2) moves the file or directory from path1 to path2.\n\nTo remove a file, not a directory, you could use the unlink method of a Path object.",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "shutil"
+    ]
+  },
+  {
+    "objectID": "everyday_python/paths.html",
+    "href": "everyday_python/paths.html",
+    "title": "Path",
+    "section": "",
+    "text": "File and directory access section in the official documentation.\npathlib module documentation.\nFile sytem entry in wikipedia.\nFile system tutorial (in spanish).",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "Paths"
+    ]
+  },
+  {
+    "objectID": "everyday_python/paths.html#resources",
+    "href": "everyday_python/paths.html#resources",
+    "title": "Path",
+    "section": "",
+    "text": "File and directory access section in the official documentation.\npathlib module documentation.\nFile sytem entry in wikipedia.\nFile system tutorial (in spanish).",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "Paths"
+    ]
+  },
+  {
+    "objectID": "everyday_python/paths.html#paths",
+    "href": "everyday_python/paths.html#paths",
+    "title": "Path",
+    "section": "Paths",
+    "text": "Paths\nThe location of a file in a file system is given by its path that is composed by its location in the directories, subdirectories and file name. Some examples of paths are: “c:\\users\\jane\\documents\\letter.doc”, “/users/jane/documents/letter.doc”, or “/home/jane/documents/letter.doc”.\nOne relevant difference between Windows and Unix-like (MacOS or Linux) operating systems is that in windows the path elements are separated by the “\\” character, whereas in MacOS and Linux the separator is “/”. Python is a multiplatform language, but we have to take into account these details if we want to write software capable of running in different operating systems.",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "Paths"
+    ]
+  },
+  {
+    "objectID": "everyday_python/paths.html#path-objects",
+    "href": "everyday_python/paths.html#path-objects",
+    "title": "Path",
+    "section": "Path objects",
+    "text": "Path objects\nIn Python we could use strings to store path information and, in fact, that used to be the case, but now it is very common to work with Path objects available in the pathlib module. I would recommend to use these convenient objects instead of plain string objects.\n\n\n\n\n\n\nOne advantage of the Path objects is that we can join them together very easily.\n\n\n\n\n\n\nThe Path class some very convenient methods, like home that will give us the $HOME directory for the current user or cwd that will return the current working directory.\n\n\n\n\n\n\nPaths objects have a rich functionality. For instance, we can check if they exist in the file system.\n\n\n\n\n\n\nWe can list the contents of a directory.\n\n\n\n\n\n\nAnd we can get their names and suffixes.\n\n\n\n\n\n\nWe can also:\n\nopen a file using the open method of the Path objects\ncreate a directory using mkdir\nremove a file with unlink or a directory with rmdir.\n\nIn your home directory create a file named “hello.txt”, write in it the text “Hello world”, then get a directory listing and check that the file is really there, after that, open the file and read the text in it. Finally, remove the file and check that it has been really deleted.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n¿Cuál es el directorio de trabajo actual? ¿Hay algún fichero en él? ¿Del primero de los ficheros que aparecen en el listado, cuál es la ruta completa? ¿Se podría extraer de esta ruta el nombre del directorio y el fichero? ¿Cuál es la $HOME de nuestro usuario? ¿Del fichero ‘programa.py’ cuáles son el nombre y la extensión?",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "Paths"
+    ]
+  },
+  {
+    "objectID": "everyday_python/zip.html",
+    "href": "everyday_python/zip.html",
+    "title": "zip",
+    "section": "",
+    "text": "Official documentation for the zip function.",
+    "crumbs": [
+      "Everyday Python",
+      "Loop utilities",
+      "zip"
+    ]
+  },
+  {
+    "objectID": "everyday_python/zip.html#resources",
+    "href": "everyday_python/zip.html#resources",
+    "title": "zip",
+    "section": "",
+    "text": "Official documentation for the zip function.",
+    "crumbs": [
+      "Everyday Python",
+      "Loop utilities",
+      "zip"
+    ]
+  },
+  {
+    "objectID": "everyday_python/zip.html#zip",
+    "href": "everyday_python/zip.html#zip",
+    "title": "zip",
+    "section": "zip",
+    "text": "zip\nIt is common to iterate over two iterators in parallel. We could try to implement it in the following way.\n\n\n\n\n\n\nHowever, the zip functions allows us to accomplish this task in a less cumbersome way.\n\n\n\n\n\n\nzip works by producing tuples with one item from each iterable at a time.\n\n\n\n\n\n\n\n\n\n\n\n\nAnd then we use the standard tuple unpacking to access to the variables in the for loop.",
+    "crumbs": [
+      "Everyday Python",
+      "Loop utilities",
+      "zip"
+    ]
+  },
+  {
     "objectID": "functions/definition.html",
     "href": "functions/definition.html",
     "title": "Function definition",
@@ -1327,7 +1597,7 @@
     "href": "functions/definition.html#resources",
     "title": "Function definition",
     "section": "Resources",
-    "text": "Resources\n\nPython function and return in Real Python.\nFunctions in the Microsoft Python for beginners course.\nScopes in Python in Real Python.",
+    "text": "Resources\n\nPython function and return in Real Python.\nFunctions in the Microsoft Python for beginners course.\nScopes in Python in Real Python.\nFunctions, a complete reference.",
     "crumbs": [
       "Functions",
       "Definition"
