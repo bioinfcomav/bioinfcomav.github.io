@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Standard library – Introduction to programming with Python</title>
+<title>subprocess – Introduction to programming with Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../exceptions.html" rel="next">
-<link href="../packages/modules.html" rel="prev">
+<link href="../everyday_python/comprehensions.html" rel="next">
+<link href="../everyday_python/shutil.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -87,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../packages/modules.html">Modules and packages</a></li><li class="breadcrumb-item"><a href="../packages/std_library.html">Standard library</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../everyday_python/everyday_python.html">Everyday Python</a></li><li class="breadcrumb-item"><a href="../everyday_python/subprocess.html">subprocess</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -353,7 +388,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../packages/std_library.html" class="sidebar-item-text sidebar-link active">
+  <a href="../packages/std_library.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Standard library</span></a>
   </div>
 </li>
@@ -468,7 +503,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../everyday_python/subprocess.html" class="sidebar-item-text sidebar-link">
+  <a href="../everyday_python/subprocess.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">subprocess</span></a>
   </div>
 </li>
@@ -501,9 +536,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../packages/modules.html">Modules and packages</a></li><li class="breadcrumb-item"><a href="../packages/std_library.html">Standard library</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../everyday_python/everyday_python.html">Everyday Python</a></li><li class="breadcrumb-item"><a href="../everyday_python/subprocess.html">subprocess</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Standard library</h1>
+<h1 class="title">subprocess</h1>
 </div>
 
 
@@ -520,24 +555,254 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>There are many packages available in the default Python installation. We have already used some of them, like pathlib. You can find a <a href="https://docs.python.org/3/library/index.html">list</a> with all of them in the official documentation. Here we are just going to mention a couple as an example.</p>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <ul>
-<li><a href="https://docs.python.org/3/library/index.html">Standard library</a> official documentation.</li>
+<li>Official <a href="https://docs.python.org/3/library/subprocess.html">subprocess</a> module documentation.</li>
+<li><a href="https://realpython.com/python-subprocess/">subprocess</a> Real Python tutorial.</li>
 </ul>
 </section>
-<section id="shutil" class="level2">
-<h2 class="anchored" data-anchor-id="shutil">shutil</h2>
-<p>The <a href="https://docs.python.org/3/library/shutil.html">shutil</a> module allow us to copy and delete files and directories. <a href="https://docs.python.org/3/library/shutil.html#shutil.copy">copy</a> copies files, and <a href="https://docs.python.org/3/library/shutil.html#shutil.copytree">copytree</a> directories. Remember that in the <a href="https://docs.python.org/3/library/pathlib.html">pathlib</a> module there was more functionality to create an delete files and directories.</p>
+<section id="run" class="level2">
+<h2 class="anchored" data-anchor-id="run">run</h2>
+<p>When scripting a task it is common to need to run a external process, for instance a program to do a particular data analysis. This external process will be a subprocess launched by our Python running process. The <a href="https://docs.python.org/3/library/subprocess.html">subprocess</a> module includes the <a href="https://docs.python.org/3/library/subprocess.html#subprocess.run">run</a> function to run external processes.</p>
+<p>Let’s image that we want to run the <code>ls</code> command (<code>dir</code> in windows).</p>
+<div id="a9ab1d01" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> run</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> [<span class="st">'ls'</span>]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>run(cmd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>collections.html
+collections.qmd
+collections.quarto_ipynb
+comprehensions.html
+comprehensions.qmd
+comprehensions.quarto_ipynb
+enumerate.html
+enumerate.qmd
+enumerate.quarto_ipynb
+everyday_python.html
+everyday_python.qmd
+lambda.html
+lambda.qmd
+lambda.quarto_ipynb
+paths.html
+paths.qmd
+paths.quarto_ipynb
+range.html
+range.qmd
+range.quarto_ipynb
+shutil.html
+shutil.qmd
+shutil.quarto_ipynb
+subprocess.qmd
+subprocess.quarto_ipynb
+typing.html
+typing.qmd
+typing.quarto_ipynb
+zip.qmd
+zip.quarto_ipynb</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>CompletedProcess(args=['ls'], returncode=0)</code></pre>
+</div>
+</div>
+<p>Run, by default, expects a list of strings, not a string with the command. For instance, image that our command includes a parameter.</p>
+<div id="fb0f9e3b" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> run</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> [<span class="st">'ls'</span>, <span class="st">'-l'</span>]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>run(cmd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>total 676
+-rw-rw-r-- 1 jose jose 72054 nov  3 15:49 collections.html
+-rw-rw-r-- 1 jose jose  3719 nov  3 15:37 collections.qmd
+-rw-rw-r-- 1 jose jose  5495 nov  3 15:49 collections.quarto_ipynb
+-rw-rw-r-- 1 jose jose 79228 nov  3 15:50 comprehensions.html
+-rw-rw-r-- 1 jose jose  4361 nov  3 15:07 comprehensions.qmd
+-rw-rw-r-- 1 jose jose  6545 nov  3 15:50 comprehensions.quarto_ipynb
+-rw-rw-r-- 1 jose jose 57780 nov  3 15:49 enumerate.html
+-rw-rw-r-- 1 jose jose  1786 oct 30 14:43 enumerate.qmd
+-rw-rw-r-- 1 jose jose  3137 nov  3 15:49 enumerate.quarto_ipynb
+-rw-rw-r-- 1 jose jose 43109 nov  3 15:49 everyday_python.html
+-rw-rw-r-- 1 jose jose   640 oct 30 09:43 everyday_python.qmd
+-rw-rw-r-- 1 jose jose 55691 nov  3 15:50 lambda.html
+-rw-rw-r-- 1 jose jose  2191 oct 31 11:41 lambda.qmd
+-rw-rw-r-- 1 jose jose  3434 nov  3 15:50 lambda.quarto_ipynb
+-rw-rw-r-- 1 jose jose 64463 nov  3 15:50 paths.html
+-rw-rw-r-- 1 jose jose  4608 sep 15  2024 paths.qmd
+-rw-rw-r-- 1 jose jose  6430 nov  3 15:50 paths.quarto_ipynb
+-rw-rw-r-- 1 jose jose 68064 nov  3 15:49 range.html
+-rw-rw-r-- 1 jose jose  1657 oct 31 10:02 range.qmd
+-rw-rw-r-- 1 jose jose  3159 nov  3 15:49 range.quarto_ipynb
+-rw-rw-r-- 1 jose jose 63211 nov  3 15:50 shutil.html
+-rw-rw-r-- 1 jose jose  2885 nov  3 14:38 shutil.qmd
+-rw-rw-r-- 1 jose jose  4383 nov  3 15:50 shutil.quarto_ipynb
+-rw-rw-r-- 1 jose jose  3762 nov  3 15:48 subprocess.qmd
+-rw-rw-r-- 1 jose jose  6913 nov  3 15:49 subprocess.quarto_ipynb
+-rw-rw-r-- 1 jose jose 57163 nov  3 15:50 typing.html
+-rw-rw-r-- 1 jose jose  2450 oct 30 10:54 typing.qmd
+-rw-rw-r-- 1 jose jose  3721 nov  3 15:50 typing.quarto_ipynb
+-rw-rw-r-- 1 jose jose  1356 oct 30 14:46 zip.qmd
+-rw-rw-r-- 1 jose jose  2549 nov  3 15:49 zip.quarto_ipynb</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>CompletedProcess(args=['ls', '-l'], returncode=0)</code></pre>
+</div>
+</div>
+<p>In any case the run function will launch the external process and will also wait for the process to finish, and only then will the function return a <a href="https://docs.python.org/3/library/subprocess.html#subprocess.CompletedProcess">CompletedProcess</a> object.</p>
+<div id="8db63115" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> run</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> [<span class="st">'ls'</span>, <span class="st">'-l'</span>]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>process <span class="op">=</span> run(cmd)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(process.returncode)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>total 676
+-rw-rw-r-- 1 jose jose 72054 nov  3 15:49 collections.html
+-rw-rw-r-- 1 jose jose  3719 nov  3 15:37 collections.qmd
+-rw-rw-r-- 1 jose jose  5495 nov  3 15:49 collections.quarto_ipynb
+-rw-rw-r-- 1 jose jose 79228 nov  3 15:50 comprehensions.html
+-rw-rw-r-- 1 jose jose  4361 nov  3 15:07 comprehensions.qmd
+-rw-rw-r-- 1 jose jose  6545 nov  3 15:50 comprehensions.quarto_ipynb
+-rw-rw-r-- 1 jose jose 57780 nov  3 15:49 enumerate.html
+-rw-rw-r-- 1 jose jose  1786 oct 30 14:43 enumerate.qmd
+-rw-rw-r-- 1 jose jose  3137 nov  3 15:49 enumerate.quarto_ipynb
+-rw-rw-r-- 1 jose jose 43109 nov  3 15:49 everyday_python.html
+-rw-rw-r-- 1 jose jose   640 oct 30 09:43 everyday_python.qmd
+-rw-rw-r-- 1 jose jose 55691 nov  3 15:50 lambda.html
+-rw-rw-r-- 1 jose jose  2191 oct 31 11:41 lambda.qmd
+-rw-rw-r-- 1 jose jose  3434 nov  3 15:50 lambda.quarto_ipynb
+-rw-rw-r-- 1 jose jose 64463 nov  3 15:50 paths.html
+-rw-rw-r-- 1 jose jose  4608 sep 15  2024 paths.qmd
+-rw-rw-r-- 1 jose jose  6430 nov  3 15:50 paths.quarto_ipynb
+-rw-rw-r-- 1 jose jose 68064 nov  3 15:49 range.html
+-rw-rw-r-- 1 jose jose  1657 oct 31 10:02 range.qmd
+-rw-rw-r-- 1 jose jose  3159 nov  3 15:49 range.quarto_ipynb
+-rw-rw-r-- 1 jose jose 63211 nov  3 15:50 shutil.html
+-rw-rw-r-- 1 jose jose  2885 nov  3 14:38 shutil.qmd
+-rw-rw-r-- 1 jose jose  4383 nov  3 15:50 shutil.quarto_ipynb
+-rw-rw-r-- 1 jose jose  3762 nov  3 15:48 subprocess.qmd
+-rw-rw-r-- 1 jose jose  6913 nov  3 15:49 subprocess.quarto_ipynb
+-rw-rw-r-- 1 jose jose 57163 nov  3 15:50 typing.html
+-rw-rw-r-- 1 jose jose  2450 oct 30 10:54 typing.qmd
+-rw-rw-r-- 1 jose jose  3721 nov  3 15:50 typing.quarto_ipynb
+-rw-rw-r-- 1 jose jose  1356 oct 30 14:46 zip.qmd
+-rw-rw-r-- 1 jose jose  2549 nov  3 15:49 zip.quarto_ipynb
+0</code></pre>
+</div>
+</div>
 </section>
-<section id="subprocess" class="level2">
-<h2 class="anchored" data-anchor-id="subprocess">subprocess</h2>
-<p><a href="https://docs.python.org/3/library/subprocess.html">subprocess</a> allows you to run programs from Python. The easiest way to use it is its <a href="https://docs.python.org/3/library/subprocess.html#subprocess.run">run</a> function.</p>
+<section id="launching-without-waiting" class="level2">
+<h2 class="anchored" data-anchor-id="launching-without-waiting">Launching without waiting</h2>
+</section>
+<section id="return-code" class="level2">
+<h2 class="anchored" data-anchor-id="return-code">return code</h2>
+<p>Every process once is finished return a <a href="https://en.wikipedia.org/wiki/Exit_status">return code</a> or exit status. This return code is an integer and the standard is to return 0 when everything has been fine or any other number in the event of an error happening in the subprocess. You can access to the exit code of the subprocess.</p>
+<div>
+<div id="pyodide-1" class="exercise-cell">
+
+</div>
+<script type="pyodide-1-contents">
+eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJjb21wbGV0aW9uIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6ImZyb20gc3VicHJvY2VzcyBpbXBvcnQgcnVuXG5cbmNtZCA9IFsnbHMnXVxucHJvY2VzcyA9IHJ1bihjbWQpXG5wcmludChwcm9jZXNzLnJldHVybmNvZGUpXG5cbmNtZCA9IFsnbHMnLCBcIi9oZWxsb1wiXVxucHJvY2VzcyA9IHJ1bihjbWQpXG5wcmludChwcm9jZXNzLnJldHVybmNvZGUpIn0=
+</script>
+</div>
+<p>If you want the run function to fail in the event of the called process having any problem you could use the check argument.</p>
+<div>
+<div id="pyodide-2" class="exercise-cell">
+
+</div>
+<script type="pyodide-2-contents">
+eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJjb21wbGV0aW9uIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6ImZyb20gc3VicHJvY2VzcyBpbXBvcnQgcnVuXG5cbmNtZCA9IFsnbHMnLCAnL2hlbGxvJ11cbnByb2Nlc3MgPSBydW4oY21kLCBjaGVjaz1UcnVlKSJ9
+</script>
+</div>
+</section>
+<section id="stdout-and-stdin" class="level2">
+<h2 class="anchored" data-anchor-id="stdout-and-stdin">stdout and stdin</h2>
+<p>You can store the result of <a href="https://en.wikipedia.org/wiki/Standard_streams#Standard_output_(stdout)">stdout</a> and <a href="https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)">stderr</a> as properties of the completed process object.</p>
+<div id="c35cf2f0" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> run</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> [<span class="st">'ls'</span>, <span class="st">'/hello'</span>]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>process <span class="op">=</span> run(cmd, capture_output<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(process.stdout)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(process.stderr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>b''
+b"ls: no se puede acceder a '/hello': No existe el fichero o el directorio\n"</code></pre>
+</div>
+</div>
+<p>Be aware that, by default, the standard output streams will be binary objects, if you want them to be strings you have to provide an encoding.</p>
+<div id="448fc95a" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> run</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> [<span class="st">'ls'</span>, <span class="st">'/hello'</span>]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>process <span class="op">=</span> run(cmd, capture_output<span class="op">=</span><span class="va">True</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(process.stdout)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(process.stderr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ls: no se puede acceder a '/hello': No existe el fichero o el directorio
+</code></pre>
+</div>
+</div>
+</section>
+<section id="popen" class="level2">
+<h2 class="anchored" data-anchor-id="popen">Popen</h2>
+<p>The <code>run</code> function will wait for the subprocess to finnish before returning. If you just want to launch the process, but not wait for it to finish you can use the <a href="https://docs.python.org/3/library/subprocess.html#subprocess.Popen">Popen</a> class.</p>
+<p>The use of <code>Popen</code> is very similar to the use of <code>run</code>, the main difference being that <code>Popen</code> will return a <a href="https://docs.python.org/3/library/subprocess.html#popen-objects">Popen</a> object immediately, without waiting for it to finish.</p>
+<p>Once you have that object, you could check if the process has already finished or you could also wait for the process to finish.</p>
+<div id="fbf14f63" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> Popen</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> [<span class="st">'ls'</span>]</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>process <span class="op">=</span> Popen(cmd)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(process.poll())</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(process.wait())</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(process.returncode)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>None
+collections.html
+collections.qmd
+collections.quarto_ipynb
+comprehensions.html
+comprehensions.qmd
+comprehensions.quarto_ipynb
+enumerate.html
+enumerate.qmd
+enumerate.quarto_ipynb
+everyday_python.html
+everyday_python.qmd
+lambda.html
+lambda.qmd
+lambda.quarto_ipynb
+paths.html
+paths.qmd
+paths.quarto_ipynb
+range.html
+range.qmd
+range.quarto_ipynb
+shutil.html
+shutil.qmd
+shutil.quarto_ipynb
+subprocess.qmd
+subprocess.quarto_ipynb
+typing.html
+typing.qmd
+typing.quarto_ipynb
+zip.qmd
+zip.quarto_ipynb
+0
+0</code></pre>
+</div>
+</div>
 
 
+<script type="pyodide-data">
+eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yOC4xL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
+</script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W119
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0yLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzIgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzIsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJweW9kaWRlT2pzID0ge1xuICBjb25zdCB7XG4gICAgUHlvZGlkZUV2YWx1YXRvcixcbiAgICBQeW9kaWRlRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUHl0aG9uLFxuICAgIHN0YXJ0UHlvZGlkZVdvcmtlcixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoLFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gUHlvZGlkZSBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICBsZXQgcHlvZGlkZVByb21pc2UgPSAoYXN5bmMgKCkgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgUHlvZGlkZWA7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHN0YXJ0UHlvZGlkZVdvcmtlcihkYXRhLm9wdGlvbnMpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiBtaWNyb3BpcGA7XG4gICAgYXdhaXQgcHlvZGlkZS5sb2FkUGFja2FnZShcIm1pY3JvcGlwXCIpO1xuICAgIGNvbnN0IG1pY3JvcGlwID0gYXdhaXQgcHlvZGlkZS5weWltcG9ydChcIm1pY3JvcGlwXCIpO1xuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIG1pY3JvcGlwLmluc3RhbGwocGtnKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcbiAgICBhd2FpdCBtaWNyb3BpcC5kZXN0cm95KCk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCBweW9kaWRlLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgICAgaWYgKGUuZXJybm8gIT09IDIwKSB7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHRyeSB7XG4gICAgICAgIHJldHVybiBhd2FpdCBweW9kaWRlLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICB9XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFB5b2RpZGUgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUHl0aG9uKHB5b2RpZGUpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHB5b2RpZGU7XG4gIH0pKCkuY2F0Y2goKGVycikgPT4ge1xuICAgIHN0YXR1c1RleHQuc3R5bGUuY29sb3IgPSBcInZhcigtLWV4ZXJjaXNlLWVkaXRvci1obC1lciwgI0FEMDAwMClcIjtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gZXJyLm1lc3NhZ2U7XG4gICAgLy9pbmRpY2F0b3JDb250YWluZXIucXVlcnlTZWxlY3RvcihcIi5zcGlubmVyLWdyb3dcIikuY2xhc3NMaXN0LmFkZChcImQtbm9uZVwiKTtcbiAgICB0aHJvdyBlcnI7XG4gIH0pO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgcHlvZGlkZVByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFB5b2RpZGVFdmFsdWF0b3IocHlvZGlkZSwgY29udGV4dCk7XG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHlvZGlkZVByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gICAgcHJvY2VzcyxcbiAgfTtcbn1cbiJ9XX0=
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
@@ -558,7 +823,7 @@ eyJjb250ZW50cyI6W119
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../../packages";
+window._ojs.paths.runtimeToDoc = "../../everyday_python";
 window._ojs.paths.runtimeToRoot = "../..";
 window._ojs.paths.docToRoot = "..";
 window._ojs.selfContained = false;
@@ -966,13 +1231,13 @@ window._ojs.runtime.interpretFromScriptTags();
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../packages/modules.html" class="pagination-link" aria-label="Modules">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Modules</span>
+      <a href="../everyday_python/shutil.html" class="pagination-link" aria-label="shutil">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">shutil</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../exceptions.html" class="pagination-link" aria-label="Exceptions">
-        <span class="nav-page-text">Exceptions</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../everyday_python/comprehensions.html" class="pagination-link" aria-label="Comprehensions">
+        <span class="nav-page-text">Comprehensions</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -981,4 +1246,4 @@ window._ojs.runtime.interpretFromScriptTags();
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/JoseBlanca/intro_programing_python/blob/main/packages/std_library.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/JoseBlanca/intro_programing_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/JoseBlanca/intro_programing_python/blob/main/everyday_python/subprocess.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/JoseBlanca/intro_programing_python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
