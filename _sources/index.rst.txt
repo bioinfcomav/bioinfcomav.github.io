@@ -6,41 +6,23 @@
 Bioinformatics & genomics
 =========================
 
-The COMAV institute is devoted to the preservation of the horticultural plant variability and to the plant breeding on horticultural species.
-To accomplish these goals we have developed some software that it might be of some use to other researchers like ngs_backbone or sff_extract.
-We also provide analysis and technical support to other molecular genetic researchers. Our main research interests are:
+The bioinformatic and genomics group of the COMAV institute is devoted to the application of bioinformatic tools and genomic analysis to the study of plant horticultural species.
+Our main areas of interest are:
 
-  * Genomic and transcriptomic analysis
-  * Development of genetic markers
-  * Analysis of NGS sequences
   * Study of variation in cultivated and wild populations.
-
-Services
---------
-
-We have a broad experience on the field of sequence analysis, both sanger and NGS based, that we make available to the biological and biomedical communities. Our portfolio of bioinformatic :doc:`services` includes:
-
-  * NGS sequence analysis.
-  * NGS library construction.
-  * Bioinformatic technology consultancy.
-  * Basic and advanced training in bioinformatics.
-  * Custom bioinformatic tool development.
-  * Genome database and web site development.
-
-
-.. _COMAV: http://www.comav.upv.es/index2_eng.html
+  * Crop history
+  * Genomic and transcriptomic analysis
+  * Genomic, bioinformatics and genetics education
+  * Software and tool development
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
    self
-   software
-   genomics
-   services
+   courses
    people
    publications
-   courses
    git <http://github.com/JoseBlanca/>
    getting_here
 
