@@ -429,206 +429,8 @@
     ]
   },
   {
-    "objectID": "everyday_python/subprocess.html",
-    "href": "everyday_python/subprocess.html",
-    "title": "subprocess",
-    "section": "",
-    "text": "Official subprocess module documentation.\nsubprocess Real Python tutorial.",
-    "crumbs": [
-      "Everyday Python",
-      "subprocess"
-    ]
-  },
-  {
-    "objectID": "everyday_python/subprocess.html#resources",
-    "href": "everyday_python/subprocess.html#resources",
-    "title": "subprocess",
-    "section": "",
-    "text": "Official subprocess module documentation.\nsubprocess Real Python tutorial.",
-    "crumbs": [
-      "Everyday Python",
-      "subprocess"
-    ]
-  },
-  {
-    "objectID": "everyday_python/subprocess.html#run",
-    "href": "everyday_python/subprocess.html#run",
-    "title": "subprocess",
-    "section": "run",
-    "text": "run\nWhen scripting a task it is common to need to run a external process, for instance a program to do a particular data analysis. This external process will be a subprocess launched by our Python running process. The subprocess module includes the run function to run external processes.\nLet’s image that we want to run the ls command (dir in windows).\n\nfrom subprocess import run\n\ncmd = ['ls']\nrun(cmd)\n\ncollections.html\ncollections.qmd\ncollections.quarto_ipynb\ncomprehensions.html\ncomprehensions.qmd\ncomprehensions.quarto_ipynb\nenumerate.html\nenumerate.qmd\nenumerate.quarto_ipynb\neveryday_python.html\neveryday_python.qmd\nlambda.html\nlambda.qmd\nlambda.quarto_ipynb\npaths.html\npaths.qmd\npaths.quarto_ipynb\nrange.html\nrange.qmd\nrange.quarto_ipynb\nshutil.html\nshutil.qmd\nshutil.quarto_ipynb\nsubprocess.qmd\nsubprocess.quarto_ipynb\ntyping.html\ntyping.qmd\ntyping.quarto_ipynb\nzip.qmd\nzip.quarto_ipynb\n\n\nCompletedProcess(args=['ls'], returncode=0)\n\n\nRun, by default, expects a list of strings, not a string with the command. For instance, image that our command includes a parameter.\n\nfrom subprocess import run\n\ncmd = ['ls', '-l']\nrun(cmd)\n\ntotal 676\n-rw-rw-r-- 1 jose jose 72054 nov  3 15:49 collections.html\n-rw-rw-r-- 1 jose jose  3719 nov  3 15:37 collections.qmd\n-rw-rw-r-- 1 jose jose  5495 nov  3 15:49 collections.quarto_ipynb\n-rw-rw-r-- 1 jose jose 79228 nov  3 15:50 comprehensions.html\n-rw-rw-r-- 1 jose jose  4361 nov  3 15:07 comprehensions.qmd\n-rw-rw-r-- 1 jose jose  6545 nov  3 15:50 comprehensions.quarto_ipynb\n-rw-rw-r-- 1 jose jose 57780 nov  3 15:49 enumerate.html\n-rw-rw-r-- 1 jose jose  1786 oct 30 14:43 enumerate.qmd\n-rw-rw-r-- 1 jose jose  3137 nov  3 15:49 enumerate.quarto_ipynb\n-rw-rw-r-- 1 jose jose 43109 nov  3 15:49 everyday_python.html\n-rw-rw-r-- 1 jose jose   640 oct 30 09:43 everyday_python.qmd\n-rw-rw-r-- 1 jose jose 55691 nov  3 15:50 lambda.html\n-rw-rw-r-- 1 jose jose  2191 oct 31 11:41 lambda.qmd\n-rw-rw-r-- 1 jose jose  3434 nov  3 15:50 lambda.quarto_ipynb\n-rw-rw-r-- 1 jose jose 64463 nov  3 15:50 paths.html\n-rw-rw-r-- 1 jose jose  4608 sep 15  2024 paths.qmd\n-rw-rw-r-- 1 jose jose  6430 nov  3 15:50 paths.quarto_ipynb\n-rw-rw-r-- 1 jose jose 68064 nov  3 15:49 range.html\n-rw-rw-r-- 1 jose jose  1657 oct 31 10:02 range.qmd\n-rw-rw-r-- 1 jose jose  3159 nov  3 15:49 range.quarto_ipynb\n-rw-rw-r-- 1 jose jose 63211 nov  3 15:50 shutil.html\n-rw-rw-r-- 1 jose jose  2885 nov  3 14:38 shutil.qmd\n-rw-rw-r-- 1 jose jose  4383 nov  3 15:50 shutil.quarto_ipynb\n-rw-rw-r-- 1 jose jose  3762 nov  3 15:48 subprocess.qmd\n-rw-rw-r-- 1 jose jose  6913 nov  3 15:49 subprocess.quarto_ipynb\n-rw-rw-r-- 1 jose jose 57163 nov  3 15:50 typing.html\n-rw-rw-r-- 1 jose jose  2450 oct 30 10:54 typing.qmd\n-rw-rw-r-- 1 jose jose  3721 nov  3 15:50 typing.quarto_ipynb\n-rw-rw-r-- 1 jose jose  1356 oct 30 14:46 zip.qmd\n-rw-rw-r-- 1 jose jose  2549 nov  3 15:49 zip.quarto_ipynb\n\n\nCompletedProcess(args=['ls', '-l'], returncode=0)\n\n\nIn any case the run function will launch the external process and will also wait for the process to finish, and only then will the function return a CompletedProcess object.\n\nfrom subprocess import run\n\ncmd = ['ls', '-l']\nprocess = run(cmd)\nprint(process.returncode)\n\ntotal 676\n-rw-rw-r-- 1 jose jose 72054 nov  3 15:49 collections.html\n-rw-rw-r-- 1 jose jose  3719 nov  3 15:37 collections.qmd\n-rw-rw-r-- 1 jose jose  5495 nov  3 15:49 collections.quarto_ipynb\n-rw-rw-r-- 1 jose jose 79228 nov  3 15:50 comprehensions.html\n-rw-rw-r-- 1 jose jose  4361 nov  3 15:07 comprehensions.qmd\n-rw-rw-r-- 1 jose jose  6545 nov  3 15:50 comprehensions.quarto_ipynb\n-rw-rw-r-- 1 jose jose 57780 nov  3 15:49 enumerate.html\n-rw-rw-r-- 1 jose jose  1786 oct 30 14:43 enumerate.qmd\n-rw-rw-r-- 1 jose jose  3137 nov  3 15:49 enumerate.quarto_ipynb\n-rw-rw-r-- 1 jose jose 43109 nov  3 15:49 everyday_python.html\n-rw-rw-r-- 1 jose jose   640 oct 30 09:43 everyday_python.qmd\n-rw-rw-r-- 1 jose jose 55691 nov  3 15:50 lambda.html\n-rw-rw-r-- 1 jose jose  2191 oct 31 11:41 lambda.qmd\n-rw-rw-r-- 1 jose jose  3434 nov  3 15:50 lambda.quarto_ipynb\n-rw-rw-r-- 1 jose jose 64463 nov  3 15:50 paths.html\n-rw-rw-r-- 1 jose jose  4608 sep 15  2024 paths.qmd\n-rw-rw-r-- 1 jose jose  6430 nov  3 15:50 paths.quarto_ipynb\n-rw-rw-r-- 1 jose jose 68064 nov  3 15:49 range.html\n-rw-rw-r-- 1 jose jose  1657 oct 31 10:02 range.qmd\n-rw-rw-r-- 1 jose jose  3159 nov  3 15:49 range.quarto_ipynb\n-rw-rw-r-- 1 jose jose 63211 nov  3 15:50 shutil.html\n-rw-rw-r-- 1 jose jose  2885 nov  3 14:38 shutil.qmd\n-rw-rw-r-- 1 jose jose  4383 nov  3 15:50 shutil.quarto_ipynb\n-rw-rw-r-- 1 jose jose  3762 nov  3 15:48 subprocess.qmd\n-rw-rw-r-- 1 jose jose  6913 nov  3 15:49 subprocess.quarto_ipynb\n-rw-rw-r-- 1 jose jose 57163 nov  3 15:50 typing.html\n-rw-rw-r-- 1 jose jose  2450 oct 30 10:54 typing.qmd\n-rw-rw-r-- 1 jose jose  3721 nov  3 15:50 typing.quarto_ipynb\n-rw-rw-r-- 1 jose jose  1356 oct 30 14:46 zip.qmd\n-rw-rw-r-- 1 jose jose  2549 nov  3 15:49 zip.quarto_ipynb\n0",
-    "crumbs": [
-      "Everyday Python",
-      "subprocess"
-    ]
-  },
-  {
-    "objectID": "everyday_python/subprocess.html#launching-without-waiting",
-    "href": "everyday_python/subprocess.html#launching-without-waiting",
-    "title": "subprocess",
-    "section": "Launching without waiting",
-    "text": "Launching without waiting",
-    "crumbs": [
-      "Everyday Python",
-      "subprocess"
-    ]
-  },
-  {
-    "objectID": "everyday_python/subprocess.html#return-code",
-    "href": "everyday_python/subprocess.html#return-code",
-    "title": "subprocess",
-    "section": "return code",
-    "text": "return code\nEvery process once is finished return a return code or exit status. This return code is an integer and the standard is to return 0 when everything has been fine or any other number in the event of an error happening in the subprocess. You can access to the exit code of the subprocess.\n\n\n\n\n\n\nIf you want the run function to fail in the event of the called process having any problem you could use the check argument.",
-    "crumbs": [
-      "Everyday Python",
-      "subprocess"
-    ]
-  },
-  {
-    "objectID": "everyday_python/subprocess.html#stdout-and-stdin",
-    "href": "everyday_python/subprocess.html#stdout-and-stdin",
-    "title": "subprocess",
-    "section": "stdout and stdin",
-    "text": "stdout and stdin\nYou can store the result of stdout and stderr as properties of the completed process object.\n\nfrom subprocess import run\n\ncmd = ['ls', '/hello']\nprocess = run(cmd, capture_output=True)\nprint(process.stdout)\nprint(process.stderr)\n\nb''\nb\"ls: no se puede acceder a '/hello': No existe el fichero o el directorio\\n\"\n\n\nBe aware that, by default, the standard output streams will be binary objects, if you want them to be strings you have to provide an encoding.\n\nfrom subprocess import run\n\ncmd = ['ls', '/hello']\nprocess = run(cmd, capture_output=True, encoding='utf-8')\nprint(process.stdout)\nprint(process.stderr)\n\n\nls: no se puede acceder a '/hello': No existe el fichero o el directorio",
-    "crumbs": [
-      "Everyday Python",
-      "subprocess"
-    ]
-  },
-  {
-    "objectID": "everyday_python/subprocess.html#popen",
-    "href": "everyday_python/subprocess.html#popen",
-    "title": "subprocess",
-    "section": "Popen",
-    "text": "Popen\nThe run function will wait for the subprocess to finnish before returning. If you just want to launch the process, but not wait for it to finish you can use the Popen class.\nThe use of Popen is very similar to the use of run, the main difference being that Popen will return a Popen object immediately, without waiting for it to finish.\nOnce you have that object, you could check if the process has already finished or you could also wait for the process to finish.\n\nfrom subprocess import Popen\n\ncmd = ['ls']\nprocess = Popen(cmd)\nprint(process.poll())\nprint(process.wait())\nprint(process.returncode)\n\nNone\ncollections.html\ncollections.qmd\ncollections.quarto_ipynb\ncomprehensions.html\ncomprehensions.qmd\ncomprehensions.quarto_ipynb\nenumerate.html\nenumerate.qmd\nenumerate.quarto_ipynb\neveryday_python.html\neveryday_python.qmd\nlambda.html\nlambda.qmd\nlambda.quarto_ipynb\npaths.html\npaths.qmd\npaths.quarto_ipynb\nrange.html\nrange.qmd\nrange.quarto_ipynb\nshutil.html\nshutil.qmd\nshutil.quarto_ipynb\nsubprocess.qmd\nsubprocess.quarto_ipynb\ntyping.html\ntyping.qmd\ntyping.quarto_ipynb\nzip.qmd\nzip.quarto_ipynb\n0\n0",
-    "crumbs": [
-      "Everyday Python",
-      "subprocess"
-    ]
-  },
-  {
-    "objectID": "everyday_python/typing.html",
-    "href": "everyday_python/typing.html",
-    "title": "Typing",
-    "section": "",
-    "text": "Typing documentation in the official Python documentation.\nType checking guide in Real Python.",
-    "crumbs": [
-      "Everyday Python",
-      "Typing"
-    ]
-  },
-  {
-    "objectID": "everyday_python/typing.html#resources",
-    "href": "everyday_python/typing.html#resources",
-    "title": "Typing",
-    "section": "",
-    "text": "Typing documentation in the official Python documentation.\nType checking guide in Real Python.",
-    "crumbs": [
-      "Everyday Python",
-      "Typing"
-    ]
-  },
-  {
-    "objectID": "everyday_python/typing.html#typing",
-    "href": "everyday_python/typing.html#typing",
-    "title": "Typing",
-    "section": "Typing",
-    "text": "Typing\nIn Python, like in any other language, objects have types, like int, float, str or list. However, variables can hold objects of any type and they can change the type of object that they hold without any restriction.\n\n\n\n\n\n\nIn other languages, like C, Java or Rust the previous code would not even compile because a variable, once it has a type, it can’t change its type (or at least this is the general rule). Languages like Python in which variables and function arguments can change the type of objects they hold are called dynamic languages, and languages like C or Rust are called static.\nAlso, in Python function arguments can receive any type.\n\n\n\n\n\n\nThis can cause problems because you could cause an error by calling the function with incorrect types.\n\n\n\n\n\n\nTo avoid this kind of problems Python has added types, so now you can inform the user of the function about the expected types.\n\n\n\n\n\n\nNow, thanks to the typing information the caller of the function knows which types are expected. Typing is optional, so you don’t need to annotate variables and function arguments with typing information and most Python code is not typed. In fact typing in Python has been introduced more as documentation than anything else, Python is still a dynamic language. Moreover, Python does not enforce this typing at runtime, so the caller would still be able to call the functions with incorrect types.\n\n\n\n\n\n\nIf you want to enforce the use of types in your code you could take a look at mypy, ty or pyrefly.",
-    "crumbs": [
-      "Everyday Python",
-      "Typing"
-    ]
-  },
-  {
-    "objectID": "everyday_python/comprehensions.html",
-    "href": "everyday_python/comprehensions.html",
-    "title": "Comprenhensions",
-    "section": "",
-    "text": "Official documentation about list comprehensions.\nReal Python series “When to use” about list, dictionary and set comprehensions.",
-    "crumbs": [
-      "Everyday Python",
-      "Comprehensions"
-    ]
-  },
-  {
-    "objectID": "everyday_python/comprehensions.html#resources",
-    "href": "everyday_python/comprehensions.html#resources",
-    "title": "Comprenhensions",
-    "section": "",
-    "text": "Official documentation about list comprehensions.\nReal Python series “When to use” about list, dictionary and set comprehensions.",
-    "crumbs": [
-      "Everyday Python",
-      "Comprehensions"
-    ]
-  },
-  {
-    "objectID": "everyday_python/comprehensions.html#list-comprehensions",
-    "href": "everyday_python/comprehensions.html#list-comprehensions",
-    "title": "Comprenhensions",
-    "section": "List comprehensions",
-    "text": "List comprehensions\nList comprehensions allow us to create lists by processing an iterable, item by item, in a concise way. Each element of the resulting list will result from applying an operation to a corresponding item of the original iterable.\nImagine that we want to create a list with the squares of the integers from 1 to 10. We could write a for loop that keeps on adding elements to a previously created list.\n\n\n\n\n\n\nAn alternative way of accomplishing the same task very concisely is to create a list comprehension.\n\n\n\n\n\n\nSo, comprehensions take elements from an iterable and do an operation on each element.\nMoreover, we can even filter the elements. For instance, we could choose to generate only the squares from the odd integers.",
-    "crumbs": [
-      "Everyday Python",
-      "Comprehensions"
-    ]
-  },
-  {
-    "objectID": "everyday_python/comprehensions.html#other-comprehensions",
-    "href": "everyday_python/comprehensions.html#other-comprehensions",
-    "title": "Comprenhensions",
-    "section": "Other comprehensions",
-    "text": "Other comprehensions\nComprehensions are not limited to lists we can also create dictionaries.\n\n\n\n\n\n\nOr sets:",
-    "crumbs": [
-      "Everyday Python",
-      "Comprehensions"
-    ]
-  },
-  {
-    "objectID": "everyday_python/comprehensions.html#generator-expressions",
-    "href": "everyday_python/comprehensions.html#generator-expressions",
-    "title": "Comprenhensions",
-    "section": "Generator expressions",
-    "text": "Generator expressions\nFinally, you can also create comprehensions that are lazily evaluated, they are generators expressions.\n\n\n\n\n\n\nBe careful because generators are consumed when used.",
-    "crumbs": [
-      "Everyday Python",
-      "Comprehensions"
-    ]
-  },
-  {
-    "objectID": "everyday_python/comprehensions.html#exercises",
-    "href": "everyday_python/comprehensions.html#exercises",
-    "title": "Comprenhensions",
-    "section": "Exercises",
-    "text": "Exercises\nGiven a list of words, create a list with the length of each word and the maximum length.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nUppercase every word in the list.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nUppercase only the words smaller than 5 characters in the list.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nTag integers as odd or even. You can use a list comprehension with the ternary operator.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nGiven a string, build a set comprehension with the vowels present.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
-    "crumbs": [
-      "Everyday Python",
-      "Comprehensions"
-    ]
-  },
-  {
-    "objectID": "everyday_python/everyday_python.html",
-    "href": "everyday_python/everyday_python.html",
-    "title": "Everyday Python",
-    "section": "",
-    "text": "In the rest of this course we have focused our attention in programming fundamental topics like:\n\nvariables\nbasic types\ncomposed types\nflow control\nfunctions\n\nIn this section we are going to cover some Python fundamentals. In most cases you are not required to use these tools, but you will find them in most Python code written by others and, also, if you use them, will make your Python programming more idiomatic, convenient and powerful.",
-    "crumbs": [
-      "Everyday Python",
-      "Everyday Python"
-    ]
-  },
-  {
-    "objectID": "everyday_python/everyday_python.html#everyday-python",
-    "href": "everyday_python/everyday_python.html#everyday-python",
-    "title": "Everyday Python",
-    "section": "",
-    "text": "In the rest of this course we have focused our attention in programming fundamental topics like:\n\nvariables\nbasic types\ncomposed types\nflow control\nfunctions\n\nIn this section we are going to cover some Python fundamentals. In most cases you are not required to use these tools, but you will find them in most Python code written by others and, also, if you use them, will make your Python programming more idiomatic, convenient and powerful.",
-    "crumbs": [
-      "Everyday Python",
-      "Everyday Python"
-    ]
-  },
-  {
-    "objectID": "everyday_python/collections.html",
-    "href": "everyday_python/collections.html",
+    "objectID": "everyday_python/counter.html",
+    "href": "everyday_python/counter.html",
     "title": "Counter",
     "section": "",
     "text": "Official collections module documentation.\nReal Python tutorial on Counter.\nReal Python introduction to defaultdict",
@@ -638,8 +440,8 @@
     ]
   },
   {
-    "objectID": "everyday_python/collections.html#resources",
-    "href": "everyday_python/collections.html#resources",
+    "objectID": "everyday_python/counter.html#resources",
+    "href": "everyday_python/counter.html#resources",
     "title": "Counter",
     "section": "",
     "text": "Official collections module documentation.\nReal Python tutorial on Counter.\nReal Python introduction to defaultdict",
@@ -649,8 +451,8 @@
     ]
   },
   {
-    "objectID": "everyday_python/collections.html#collections-module",
-    "href": "everyday_python/collections.html#collections-module",
+    "objectID": "everyday_python/counter.html#collections-module",
+    "href": "everyday_python/counter.html#collections-module",
     "title": "Counter",
     "section": "collections module",
     "text": "collections module\nThe standard library collections module holds some little useful tools like: Counter, OrderedDict or defaultdict.",
@@ -660,8 +462,8 @@
     ]
   },
   {
-    "objectID": "everyday_python/collections.html#counter",
-    "href": "everyday_python/collections.html#counter",
+    "objectID": "everyday_python/counter.html#counter",
+    "href": "everyday_python/counter.html#counter",
     "title": "Counter",
     "section": "Counter",
     "text": "Counter\nCounter is the pythonic way of counting items.\nLet’s simulate that we throw a dice 1000 times and then we count the number of times that we get each number.",
@@ -671,14 +473,179 @@
     ]
   },
   {
-    "objectID": "everyday_python/collections.html#exercises",
-    "href": "everyday_python/collections.html#exercises",
+    "objectID": "everyday_python/counter.html#exercises",
+    "href": "everyday_python/counter.html#exercises",
     "title": "Counter",
     "section": "Exercises",
     "text": "Exercises\nCreate a Counter to count how many times each nucleotide appears in a DNA sequence.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nGiven a list of words, count how many end in “ing” and how many do not.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nCount the words in a text.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nCount the words in “El Quijote”, you can get the text file from the Gutenberg project. To do it in just one line you might find useful to use nested generator expressions. It might also be useful to have a list with the punctuation signs that you can find in the string module.\nWhich are the 10 most common words?\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nUsing zip and Counter count the number of matches and mismatches in two aligned DNA sequences.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
     "crumbs": [
       "Everyday Python",
       "Counter"
+    ]
+  },
+  {
+    "objectID": "everyday_python/lambda.html",
+    "href": "everyday_python/lambda.html",
+    "title": "lambda",
+    "section": "",
+    "text": "Official sorting tutorial.\nSorting Real Python tutorial.\nReal Python introduction to lambda functions.",
+    "crumbs": [
+      "Everyday Python",
+      "lambda"
+    ]
+  },
+  {
+    "objectID": "everyday_python/lambda.html#resources",
+    "href": "everyday_python/lambda.html#resources",
+    "title": "lambda",
+    "section": "",
+    "text": "Official sorting tutorial.\nSorting Real Python tutorial.\nReal Python introduction to lambda functions.",
+    "crumbs": [
+      "Everyday Python",
+      "lambda"
+    ]
+  },
+  {
+    "objectID": "everyday_python/lambda.html#lambda-functions",
+    "href": "everyday_python/lambda.html#lambda-functions",
+    "title": "lambda",
+    "section": "lambda functions",
+    "text": "lambda functions\nPython lambda functions are anonymous functions.\nFor instance we could create an anonymous function that squares a number.\n\n\n\n\n\n\nThis function is not bound to a name, so we have no way of calling it directly.\nAnonymous functions are usually used as arguments that we give to other functions. For instance, let’s image that we want to sort a list of words.\n\n\n\n\n\n\nThe sorting function uses the ASCII value of the letters to do the ordering, that’s why we get first the uppercase words, and then the lowercase ones. We’d like the sorted function to sort according to the lowercase version of each word, but we don’t want to alter the words themselves and that is exactly one of the uses of the lambda functions. We can pass to the sorted function a key argument with a function that will be called for every word and the ordering key will be the returned value of that function.\n\n\n\n\n\n\nLambdas are just a convenient way of writing small throw away functions. We could have written the previous code as:\n\n\n\n\n\n\nSo, lambdas are not really required, they are just syntactic sugar, but they are very commonly used when functions are passed as function arguments.",
+    "crumbs": [
+      "Everyday Python",
+      "lambda"
+    ]
+  },
+  {
+    "objectID": "everyday_python/paths.html",
+    "href": "everyday_python/paths.html",
+    "title": "Path",
+    "section": "",
+    "text": "File and directory access section in the official documentation.\npathlib module documentation.\nFile sytem entry in wikipedia.\nFile system tutorial (in spanish).",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "Paths"
+    ]
+  },
+  {
+    "objectID": "everyday_python/paths.html#resources",
+    "href": "everyday_python/paths.html#resources",
+    "title": "Path",
+    "section": "",
+    "text": "File and directory access section in the official documentation.\npathlib module documentation.\nFile sytem entry in wikipedia.\nFile system tutorial (in spanish).",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "Paths"
+    ]
+  },
+  {
+    "objectID": "everyday_python/paths.html#paths",
+    "href": "everyday_python/paths.html#paths",
+    "title": "Path",
+    "section": "Paths",
+    "text": "Paths\nThe location of a file in a file system is given by its path that is composed by its location in the directories, subdirectories and file name. Some examples of paths are: “c:\\users\\jane\\documents\\letter.doc”, “/users/jane/documents/letter.doc”, or “/home/jane/documents/letter.doc”.\nOne relevant difference between Windows and Unix-like (MacOS or Linux) operating systems is that in windows the path elements are separated by the “\\” character, whereas in MacOS and Linux the separator is “/”. Python is a multiplatform language, but we have to take into account these details if we want to write software capable of running in different operating systems.",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "Paths"
+    ]
+  },
+  {
+    "objectID": "everyday_python/paths.html#path-objects",
+    "href": "everyday_python/paths.html#path-objects",
+    "title": "Path",
+    "section": "Path objects",
+    "text": "Path objects\nIn Python we could use strings to store path information and, in fact, that used to be the case, but now it is very common to work with Path objects available in the pathlib module. I would recommend to use these convenient objects instead of plain string objects.\n\n\n\n\n\n\nOne advantage of the Path objects is that we can join them together very easily.\n\n\n\n\n\n\nThe Path class some very convenient methods, like home that will give us the $HOME directory for the current user or cwd that will return the current working directory.\n\n\n\n\n\n\nPaths objects have a rich functionality. For instance, we can check if they exist in the file system.\n\n\n\n\n\n\nWe can list the contents of a directory.\n\n\n\n\n\n\nAnd we can get their names and suffixes.\n\n\n\n\n\n\nWe can also:\n\nopen a file using the open method of the Path objects\ncreate a directory using mkdir\nremove a file with unlink or a directory with rmdir.\n\nIn your home directory create a file named “hello.txt”, write in it the text “Hello world”, then get a directory listing and check that the file is really there, after that, open the file and read the text in it. Finally, remove the file and check that it has been really deleted.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n¿Cuál es el directorio de trabajo actual? ¿Hay algún fichero en él? ¿Del primero de los ficheros que aparecen en el listado, cuál es la ruta completa? ¿Se podría extraer de esta ruta el nombre del directorio y el fichero? ¿Cuál es la $HOME de nuestro usuario? ¿Del fichero ‘programa.py’ cuáles son el nombre y la extensión?",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "Paths"
+    ]
+  },
+  {
+    "objectID": "everyday_python/shutil.html",
+    "href": "everyday_python/shutil.html",
+    "title": "shutil",
+    "section": "",
+    "text": "Official documentation of the shutil module.",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "shutil"
+    ]
+  },
+  {
+    "objectID": "everyday_python/shutil.html#resources",
+    "href": "everyday_python/shutil.html#resources",
+    "title": "shutil",
+    "section": "",
+    "text": "Official documentation of the shutil module.",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "shutil"
+    ]
+  },
+  {
+    "objectID": "everyday_python/shutil.html#copying-moving-and-deleting-files-and-directories",
+    "href": "everyday_python/shutil.html#copying-moving-and-deleting-files-and-directories",
+    "title": "shutil",
+    "section": "Copying, moving and deleting files and directories",
+    "text": "Copying, moving and deleting files and directories\nIf you need to copy, move or delete a file or directory you can use the shutil utilities.\n\nshutil.copy(path_to_file1, path_to_file2) copies the file in path_to_file1 src to the file path_to_file2.\nshutil.copytree(path_to_dir1, path_to_dir2) copies recursively the contents of path_to_dir1 to path_to_dir2\nshutil.rmtree(path_to_dir) deletes the entire directory tree.\nshutil.move(path1, path2) moves the file or directory from path1 to path2.\n\nTo remove a file, not a directory, you could use the unlink method of a Path object.",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "shutil"
+    ]
+  },
+  {
+    "objectID": "everyday_python/shutil.html#exercises",
+    "href": "everyday_python/shutil.html#exercises",
+    "title": "shutil",
+    "section": "Exercises",
+    "text": "Exercises\nWarning: Be very careful with rmtree because it could delete your files.\nCreate a directory named project1, with the files analysis_result1.txt and analysis_result2.txt in it.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow remove the file analysis_result2.txt.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nNow remove the project dir recursively, including all its contents. Be very careful with the use of rmtree\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "crumbs": [
+      "Everyday Python",
+      "File utilities",
+      "shutil"
+    ]
+  },
+  {
+    "objectID": "everyday_python/enumerate.html",
+    "href": "everyday_python/enumerate.html",
+    "title": "enumerate",
+    "section": "",
+    "text": "Official documentation for the enumerate function.",
+    "crumbs": [
+      "Everyday Python",
+      "Loop utilities",
+      "enumerate"
+    ]
+  },
+  {
+    "objectID": "everyday_python/enumerate.html#resources",
+    "href": "everyday_python/enumerate.html#resources",
+    "title": "enumerate",
+    "section": "",
+    "text": "Official documentation for the enumerate function.",
+    "crumbs": [
+      "Everyday Python",
+      "Loop utilities",
+      "enumerate"
+    ]
+  },
+  {
+    "objectID": "everyday_python/enumerate.html#enumerate",
+    "href": "everyday_python/enumerate.html#enumerate",
+    "title": "enumerate",
+    "section": "enumerate",
+    "text": "enumerate\nIn Python the natural way of writing for loops is to iterate through iterable objects or iterators.\n\n\n\n\n\n\nSometimes it is useful to know the index of the item that we’re processing in the loop. We could get it by doing:\n\n\n\n\n\n\nTo solve this issue in an easy way Python has the enumerate function.\n\n\n\n\n\n\nInternally, enumerate works by creating an iterable object that keeps yielding tuples with the index and the item in the original iterable.\n\n\n\n\n\n\n\n\n\n\n\n\nAn each tuple is then unpacked in the for loop by using the standard tuple unpacking mechanism.",
+    "crumbs": [
+      "Everyday Python",
+      "Loop utilities",
+      "enumerate"
     ]
   },
   {
@@ -1569,168 +1536,201 @@
     ]
   },
   {
-    "objectID": "everyday_python/enumerate.html",
-    "href": "everyday_python/enumerate.html",
-    "title": "enumerate",
+    "objectID": "everyday_python/everyday_python.html",
+    "href": "everyday_python/everyday_python.html",
+    "title": "Everyday Python",
     "section": "",
-    "text": "Official documentation for the enumerate function.",
+    "text": "In the rest of this course we have focused our attention in programming fundamental topics like:\n\nvariables\nbasic types\ncomposed types\nflow control\nfunctions\n\nIn this section we are going to cover some Python fundamentals. In most cases you are not required to use these tools, but you will find them in most Python code written by others and, also, if you use them, will make your Python programming more idiomatic, convenient and powerful.",
     "crumbs": [
       "Everyday Python",
-      "Loop utilities",
-      "enumerate"
+      "Everyday Python"
     ]
   },
   {
-    "objectID": "everyday_python/enumerate.html#resources",
-    "href": "everyday_python/enumerate.html#resources",
-    "title": "enumerate",
+    "objectID": "everyday_python/everyday_python.html#everyday-python",
+    "href": "everyday_python/everyday_python.html#everyday-python",
+    "title": "Everyday Python",
     "section": "",
-    "text": "Official documentation for the enumerate function.",
+    "text": "In the rest of this course we have focused our attention in programming fundamental topics like:\n\nvariables\nbasic types\ncomposed types\nflow control\nfunctions\n\nIn this section we are going to cover some Python fundamentals. In most cases you are not required to use these tools, but you will find them in most Python code written by others and, also, if you use them, will make your Python programming more idiomatic, convenient and powerful.",
     "crumbs": [
       "Everyday Python",
-      "Loop utilities",
-      "enumerate"
+      "Everyday Python"
     ]
   },
   {
-    "objectID": "everyday_python/enumerate.html#enumerate",
-    "href": "everyday_python/enumerate.html#enumerate",
-    "title": "enumerate",
-    "section": "enumerate",
-    "text": "enumerate\nIn Python the natural way of writing for loops is to iterate through iterable objects or iterators.\n\n\n\n\n\n\nSometimes it is useful to know the index of the item that we’re processing in the loop. We could get it by doing:\n\n\n\n\n\n\nTo solve this issue in an easy way Python has the enumerate function.\n\n\n\n\n\n\nInternally, enumerate works by creating an iterable object that keeps yielding tuples with the index and the item in the original iterable.\n\n\n\n\n\n\n\n\n\n\n\n\nAn each tuple is then unpacked in the for loop by using the standard tuple unpacking mechanism.",
-    "crumbs": [
-      "Everyday Python",
-      "Loop utilities",
-      "enumerate"
-    ]
-  },
-  {
-    "objectID": "everyday_python/shutil.html",
-    "href": "everyday_python/shutil.html",
-    "title": "shutil",
+    "objectID": "everyday_python/comprehensions.html",
+    "href": "everyday_python/comprehensions.html",
+    "title": "Comprenhensions",
     "section": "",
-    "text": "Official documentation of the shutil module.",
+    "text": "Official documentation about list comprehensions.\nReal Python series “When to use” about list, dictionary and set comprehensions.",
     "crumbs": [
       "Everyday Python",
-      "File utilities",
-      "shutil"
+      "Comprehensions"
     ]
   },
   {
-    "objectID": "everyday_python/shutil.html#resources",
-    "href": "everyday_python/shutil.html#resources",
-    "title": "shutil",
+    "objectID": "everyday_python/comprehensions.html#resources",
+    "href": "everyday_python/comprehensions.html#resources",
+    "title": "Comprenhensions",
     "section": "",
-    "text": "Official documentation of the shutil module.",
+    "text": "Official documentation about list comprehensions.\nReal Python series “When to use” about list, dictionary and set comprehensions.",
     "crumbs": [
       "Everyday Python",
-      "File utilities",
-      "shutil"
+      "Comprehensions"
     ]
   },
   {
-    "objectID": "everyday_python/shutil.html#copying-moving-and-deleting-files-and-directories",
-    "href": "everyday_python/shutil.html#copying-moving-and-deleting-files-and-directories",
-    "title": "shutil",
-    "section": "Copying, moving and deleting files and directories",
-    "text": "Copying, moving and deleting files and directories\nIf you need to copy, move or delete a file or directory you can use the shutil utilities.\n\nshutil.copy(path_to_file1, path_to_file2) copies the file in path_to_file1 src to the file path_to_file2.\nshutil.copytree(path_to_dir1, path_to_dir2) copies recursively the contents of path_to_dir1 to path_to_dir2\nshutil.rmtree(path_to_dir) deletes the entire directory tree.\nshutil.move(path1, path2) moves the file or directory from path1 to path2.\n\nTo remove a file, not a directory, you could use the unlink method of a Path object.",
+    "objectID": "everyday_python/comprehensions.html#list-comprehensions",
+    "href": "everyday_python/comprehensions.html#list-comprehensions",
+    "title": "Comprenhensions",
+    "section": "List comprehensions",
+    "text": "List comprehensions\nList comprehensions allow us to create lists by processing an iterable, item by item, in a concise way. Each element of the resulting list will result from applying an operation to a corresponding item of the original iterable.\nImagine that we want to create a list with the squares of the integers from 1 to 10. We could write a for loop that keeps on adding elements to a previously created list.\n\n\n\n\n\n\nAn alternative way of accomplishing the same task very concisely is to create a list comprehension.\n\n\n\n\n\n\nSo, comprehensions take elements from an iterable and do an operation on each element.\nMoreover, we can even filter the elements. For instance, we could choose to generate only the squares from the odd integers.",
     "crumbs": [
       "Everyday Python",
-      "File utilities",
-      "shutil"
+      "Comprehensions"
     ]
   },
   {
-    "objectID": "everyday_python/shutil.html#exercises",
-    "href": "everyday_python/shutil.html#exercises",
-    "title": "shutil",
+    "objectID": "everyday_python/comprehensions.html#other-comprehensions",
+    "href": "everyday_python/comprehensions.html#other-comprehensions",
+    "title": "Comprenhensions",
+    "section": "Other comprehensions",
+    "text": "Other comprehensions\nComprehensions are not limited to lists we can also create dictionaries.\n\n\n\n\n\n\nOr sets:",
+    "crumbs": [
+      "Everyday Python",
+      "Comprehensions"
+    ]
+  },
+  {
+    "objectID": "everyday_python/comprehensions.html#generator-expressions",
+    "href": "everyday_python/comprehensions.html#generator-expressions",
+    "title": "Comprenhensions",
+    "section": "Generator expressions",
+    "text": "Generator expressions\nFinally, you can also create comprehensions that are lazily evaluated, they are generators expressions.\n\n\n\n\n\n\nBe careful because generators are consumed when used.",
+    "crumbs": [
+      "Everyday Python",
+      "Comprehensions"
+    ]
+  },
+  {
+    "objectID": "everyday_python/comprehensions.html#exercises",
+    "href": "everyday_python/comprehensions.html#exercises",
+    "title": "Comprenhensions",
     "section": "Exercises",
-    "text": "Exercises\nWarning: Be very careful with rmtree because it could delete your files.\nCreate a directory named project1, with the files analysis_result1.txt and analysis_result2.txt in it.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow remove the file analysis_result2.txt.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nNow remove the project dir recursively, including all its contents. Be very careful with the use of rmtree\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
+    "text": "Exercises\nGiven a list of words, create a list with the length of each word and the maximum length.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nUppercase every word in the list.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nUppercase only the words smaller than 5 characters in the list.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nTag integers as odd or even. You can use a list comprehension with the ternary operator.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\nGiven a string, build a set comprehension with the vowels present.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip",
     "crumbs": [
       "Everyday Python",
-      "File utilities",
-      "shutil"
+      "Comprehensions"
     ]
   },
   {
-    "objectID": "everyday_python/paths.html",
-    "href": "everyday_python/paths.html",
-    "title": "Path",
+    "objectID": "everyday_python/typing.html",
+    "href": "everyday_python/typing.html",
+    "title": "Typing",
     "section": "",
-    "text": "File and directory access section in the official documentation.\npathlib module documentation.\nFile sytem entry in wikipedia.\nFile system tutorial (in spanish).",
+    "text": "Typing documentation in the official Python documentation.\nType checking guide in Real Python.",
     "crumbs": [
       "Everyday Python",
-      "File utilities",
-      "Paths"
+      "Typing"
     ]
   },
   {
-    "objectID": "everyday_python/paths.html#resources",
-    "href": "everyday_python/paths.html#resources",
-    "title": "Path",
+    "objectID": "everyday_python/typing.html#resources",
+    "href": "everyday_python/typing.html#resources",
+    "title": "Typing",
     "section": "",
-    "text": "File and directory access section in the official documentation.\npathlib module documentation.\nFile sytem entry in wikipedia.\nFile system tutorial (in spanish).",
+    "text": "Typing documentation in the official Python documentation.\nType checking guide in Real Python.",
     "crumbs": [
       "Everyday Python",
-      "File utilities",
-      "Paths"
+      "Typing"
     ]
   },
   {
-    "objectID": "everyday_python/paths.html#paths",
-    "href": "everyday_python/paths.html#paths",
-    "title": "Path",
-    "section": "Paths",
-    "text": "Paths\nThe location of a file in a file system is given by its path that is composed by its location in the directories, subdirectories and file name. Some examples of paths are: “c:\\users\\jane\\documents\\letter.doc”, “/users/jane/documents/letter.doc”, or “/home/jane/documents/letter.doc”.\nOne relevant difference between Windows and Unix-like (MacOS or Linux) operating systems is that in windows the path elements are separated by the “\\” character, whereas in MacOS and Linux the separator is “/”. Python is a multiplatform language, but we have to take into account these details if we want to write software capable of running in different operating systems.",
+    "objectID": "everyday_python/typing.html#typing",
+    "href": "everyday_python/typing.html#typing",
+    "title": "Typing",
+    "section": "Typing",
+    "text": "Typing\nIn Python, like in any other language, objects have types, like int, float, str or list. However, variables can hold objects of any type and they can change the type of object that they hold without any restriction.\n\n\n\n\n\n\nIn other languages, like C, Java or Rust the previous code would not even compile because a variable, once it has a type, it can’t change its type (or at least this is the general rule). Languages like Python in which variables and function arguments can change the type of objects they hold are called dynamic languages, and languages like C or Rust are called static.\nAlso, in Python function arguments can receive any type.\n\n\n\n\n\n\nThis can cause problems because you could cause an error by calling the function with incorrect types.\n\n\n\n\n\n\nTo avoid this kind of problems Python has added types, so now you can inform the user of the function about the expected types.\n\n\n\n\n\n\nNow, thanks to the typing information the caller of the function knows which types are expected. Typing is optional, so you don’t need to annotate variables and function arguments with typing information and most Python code is not typed. In fact typing in Python has been introduced more as documentation than anything else, Python is still a dynamic language. Moreover, Python does not enforce this typing at runtime, so the caller would still be able to call the functions with incorrect types.\n\n\n\n\n\n\nIf you want to enforce the use of types in your code you could take a look at mypy, ty or pyrefly.",
     "crumbs": [
       "Everyday Python",
-      "File utilities",
-      "Paths"
+      "Typing"
     ]
   },
   {
-    "objectID": "everyday_python/paths.html#path-objects",
-    "href": "everyday_python/paths.html#path-objects",
-    "title": "Path",
-    "section": "Path objects",
-    "text": "Path objects\nIn Python we could use strings to store path information and, in fact, that used to be the case, but now it is very common to work with Path objects available in the pathlib module. I would recommend to use these convenient objects instead of plain string objects.\n\n\n\n\n\n\nOne advantage of the Path objects is that we can join them together very easily.\n\n\n\n\n\n\nThe Path class some very convenient methods, like home that will give us the $HOME directory for the current user or cwd that will return the current working directory.\n\n\n\n\n\n\nPaths objects have a rich functionality. For instance, we can check if they exist in the file system.\n\n\n\n\n\n\nWe can list the contents of a directory.\n\n\n\n\n\n\nAnd we can get their names and suffixes.\n\n\n\n\n\n\nWe can also:\n\nopen a file using the open method of the Path objects\ncreate a directory using mkdir\nremove a file with unlink or a directory with rmdir.\n\nIn your home directory create a file named “hello.txt”, write in it the text “Hello world”, then get a directory listing and check that the file is really there, after that, open the file and read the text in it. Finally, remove the file and check that it has been really deleted.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n¿Cuál es el directorio de trabajo actual? ¿Hay algún fichero en él? ¿Del primero de los ficheros que aparecen en el listado, cuál es la ruta completa? ¿Se podría extraer de esta ruta el nombre del directorio y el fichero? ¿Cuál es la $HOME de nuestro usuario? ¿Del fichero ‘programa.py’ cuáles son el nombre y la extensión?",
-    "crumbs": [
-      "Everyday Python",
-      "File utilities",
-      "Paths"
-    ]
-  },
-  {
-    "objectID": "everyday_python/lambda.html",
-    "href": "everyday_python/lambda.html",
-    "title": "lambda",
+    "objectID": "everyday_python/subprocess.html",
+    "href": "everyday_python/subprocess.html",
+    "title": "subprocess",
     "section": "",
-    "text": "Official sorting tutorial.\nSorting Real Python tutorial.\nReal Python introduction to lambda functions.",
+    "text": "Official subprocess module documentation.\nsubprocess Real Python tutorial.",
     "crumbs": [
       "Everyday Python",
-      "lambda"
+      "subprocess"
     ]
   },
   {
-    "objectID": "everyday_python/lambda.html#resources",
-    "href": "everyday_python/lambda.html#resources",
-    "title": "lambda",
+    "objectID": "everyday_python/subprocess.html#resources",
+    "href": "everyday_python/subprocess.html#resources",
+    "title": "subprocess",
     "section": "",
-    "text": "Official sorting tutorial.\nSorting Real Python tutorial.\nReal Python introduction to lambda functions.",
+    "text": "Official subprocess module documentation.\nsubprocess Real Python tutorial.",
     "crumbs": [
       "Everyday Python",
-      "lambda"
+      "subprocess"
     ]
   },
   {
-    "objectID": "everyday_python/lambda.html#lambda-functions",
-    "href": "everyday_python/lambda.html#lambda-functions",
-    "title": "lambda",
-    "section": "lambda functions",
-    "text": "lambda functions\nPython lambda functions are anonymous functions.\nFor instance we could create an anonymous function that squares a number.\n\n\n\n\n\n\nThis function is not bound to a name, so we have no way of calling it directly.\nAnonymous functions are usually used as arguments that we give to other functions. For instance, let’s image that we want to sort a list of words.\n\n\n\n\n\n\nThe sorting function uses the ASCII value of the letters to do the ordering, that’s why we get first the uppercase words, and then the lowercase ones. We’d like the sorted function to sort according to the lowercase version of each word, but we don’t want to alter the words themselves and that is exactly one of the uses of the lambda functions. We can pass to the sorted function a key argument with a function that will be called for every word and the ordering key will be the returned value of that function.\n\n\n\n\n\n\nLambdas are just a convenient way of writing small throw away functions. We could have written the previous code as:\n\n\n\n\n\n\nSo, lambdas are not really required, they are just syntactic sugar, but they are very commonly used when functions are passed as function arguments.",
+    "objectID": "everyday_python/subprocess.html#run",
+    "href": "everyday_python/subprocess.html#run",
+    "title": "subprocess",
+    "section": "run",
+    "text": "run\nWhen scripting a task it is common to need to run a external process, for instance a program to do a particular data analysis. This external process will be a subprocess launched by our Python running process. The subprocess module includes the run function to run external processes.\nLet’s image that we want to run the ls command (dir in windows).\n\nfrom subprocess import run\n\ncmd = ['ls']\nrun(cmd)\n\ncomprehensions.html\ncomprehensions.qmd\ncomprehensions.quarto_ipynb\ncounter.qmd\ncounter.quarto_ipynb\nenumerate.html\nenumerate.qmd\nenumerate.quarto_ipynb\neveryday_python.html\neveryday_python.qmd\nlambda.html\nlambda.qmd\nlambda.quarto_ipynb\npaths.html\npaths.qmd\npaths.quarto_ipynb\nrange.html\nrange.qmd\nrange.quarto_ipynb\nshutil.html\nshutil.qmd\nshutil.quarto_ipynb\nsubprocess.qmd\nsubprocess.quarto_ipynb\ntyping.html\ntyping.qmd\ntyping.quarto_ipynb\nzip.qmd\nzip.quarto_ipynb\n\n\nCompletedProcess(args=['ls'], returncode=0)\n\n\nRun, by default, expects a list of strings, not a string with the command. For instance, image that our command includes a parameter.\n\nfrom subprocess import run\n\ncmd = ['ls', '-l']\nrun(cmd)\n\ntotal 604\n-rw-rw-r-- 1 jose jose 79216 nov  4 14:57 comprehensions.html\n-rw-rw-r-- 1 jose jose  4361 nov  3 15:07 comprehensions.qmd\n-rw-rw-r-- 1 jose jose  6545 nov  4 14:57 comprehensions.quarto_ipynb\n-rw-rw-r-- 1 jose jose  3719 nov  3 15:37 counter.qmd\n-rw-rw-r-- 1 jose jose  5739 nov  4 14:57 counter.quarto_ipynb\n-rw-rw-r-- 1 jose jose 57776 nov  4 14:57 enumerate.html\n-rw-rw-r-- 1 jose jose  1786 oct 30 14:43 enumerate.qmd\n-rw-rw-r-- 1 jose jose  3137 nov  4 14:57 enumerate.quarto_ipynb\n-rw-rw-r-- 1 jose jose 43105 nov  4 14:57 everyday_python.html\n-rw-rw-r-- 1 jose jose   640 oct 30 09:43 everyday_python.qmd\n-rw-rw-r-- 1 jose jose 55679 nov  4 14:57 lambda.html\n-rw-rw-r-- 1 jose jose  2191 oct 31 11:41 lambda.qmd\n-rw-rw-r-- 1 jose jose  3434 nov  4 14:57 lambda.quarto_ipynb\n-rw-rw-r-- 1 jose jose 64459 nov  4 14:57 paths.html\n-rw-rw-r-- 1 jose jose  4608 sep 15  2024 paths.qmd\n-rw-rw-r-- 1 jose jose  6430 nov  4 14:57 paths.quarto_ipynb\n-rw-rw-r-- 1 jose jose 68060 nov  4 14:57 range.html\n-rw-rw-r-- 1 jose jose  1657 oct 31 10:02 range.qmd\n-rw-rw-r-- 1 jose jose  3159 nov  4 14:57 range.quarto_ipynb\n-rw-rw-r-- 1 jose jose 63207 nov  4 14:57 shutil.html\n-rw-rw-r-- 1 jose jose  2885 nov  3 14:38 shutil.qmd\n-rw-rw-r-- 1 jose jose  4383 nov  4 14:57 shutil.quarto_ipynb\n-rw-rw-r-- 1 jose jose  3762 nov  3 15:48 subprocess.qmd\n-rw-rw-r-- 1 jose jose  6913 nov  4 14:57 subprocess.quarto_ipynb\n-rw-rw-r-- 1 jose jose 57159 nov  4 14:57 typing.html\n-rw-rw-r-- 1 jose jose  2450 oct 30 10:54 typing.qmd\n-rw-rw-r-- 1 jose jose  3721 nov  4 14:57 typing.quarto_ipynb\n-rw-rw-r-- 1 jose jose  1356 oct 30 14:46 zip.qmd\n-rw-rw-r-- 1 jose jose  2549 nov  4 14:57 zip.quarto_ipynb\n\n\nCompletedProcess(args=['ls', '-l'], returncode=0)\n\n\nIn any case the run function will launch the external process and will also wait for the process to finish, and only then will the function return a CompletedProcess object.\n\nfrom subprocess import run\n\ncmd = ['ls', '-l']\nprocess = run(cmd)\nprint(process.returncode)\n\ntotal 604\n-rw-rw-r-- 1 jose jose 79216 nov  4 14:57 comprehensions.html\n-rw-rw-r-- 1 jose jose  4361 nov  3 15:07 comprehensions.qmd\n-rw-rw-r-- 1 jose jose  6545 nov  4 14:57 comprehensions.quarto_ipynb\n-rw-rw-r-- 1 jose jose  3719 nov  3 15:37 counter.qmd\n-rw-rw-r-- 1 jose jose  5739 nov  4 14:57 counter.quarto_ipynb\n-rw-rw-r-- 1 jose jose 57776 nov  4 14:57 enumerate.html\n-rw-rw-r-- 1 jose jose  1786 oct 30 14:43 enumerate.qmd\n-rw-rw-r-- 1 jose jose  3137 nov  4 14:57 enumerate.quarto_ipynb\n-rw-rw-r-- 1 jose jose 43105 nov  4 14:57 everyday_python.html\n-rw-rw-r-- 1 jose jose   640 oct 30 09:43 everyday_python.qmd\n-rw-rw-r-- 1 jose jose 55679 nov  4 14:57 lambda.html\n-rw-rw-r-- 1 jose jose  2191 oct 31 11:41 lambda.qmd\n-rw-rw-r-- 1 jose jose  3434 nov  4 14:57 lambda.quarto_ipynb\n-rw-rw-r-- 1 jose jose 64459 nov  4 14:57 paths.html\n-rw-rw-r-- 1 jose jose  4608 sep 15  2024 paths.qmd\n-rw-rw-r-- 1 jose jose  6430 nov  4 14:57 paths.quarto_ipynb\n-rw-rw-r-- 1 jose jose 68060 nov  4 14:57 range.html\n-rw-rw-r-- 1 jose jose  1657 oct 31 10:02 range.qmd\n-rw-rw-r-- 1 jose jose  3159 nov  4 14:57 range.quarto_ipynb\n-rw-rw-r-- 1 jose jose 63207 nov  4 14:57 shutil.html\n-rw-rw-r-- 1 jose jose  2885 nov  3 14:38 shutil.qmd\n-rw-rw-r-- 1 jose jose  4383 nov  4 14:57 shutil.quarto_ipynb\n-rw-rw-r-- 1 jose jose  3762 nov  3 15:48 subprocess.qmd\n-rw-rw-r-- 1 jose jose  6913 nov  4 14:57 subprocess.quarto_ipynb\n-rw-rw-r-- 1 jose jose 57159 nov  4 14:57 typing.html\n-rw-rw-r-- 1 jose jose  2450 oct 30 10:54 typing.qmd\n-rw-rw-r-- 1 jose jose  3721 nov  4 14:57 typing.quarto_ipynb\n-rw-rw-r-- 1 jose jose  1356 oct 30 14:46 zip.qmd\n-rw-rw-r-- 1 jose jose  2549 nov  4 14:57 zip.quarto_ipynb\n0",
     "crumbs": [
       "Everyday Python",
-      "lambda"
+      "subprocess"
+    ]
+  },
+  {
+    "objectID": "everyday_python/subprocess.html#launching-without-waiting",
+    "href": "everyday_python/subprocess.html#launching-without-waiting",
+    "title": "subprocess",
+    "section": "Launching without waiting",
+    "text": "Launching without waiting",
+    "crumbs": [
+      "Everyday Python",
+      "subprocess"
+    ]
+  },
+  {
+    "objectID": "everyday_python/subprocess.html#return-code",
+    "href": "everyday_python/subprocess.html#return-code",
+    "title": "subprocess",
+    "section": "return code",
+    "text": "return code\nEvery process once is finished return a return code or exit status. This return code is an integer and the standard is to return 0 when everything has been fine or any other number in the event of an error happening in the subprocess. You can access to the exit code of the subprocess.\n\n\n\n\n\n\nIf you want the run function to fail in the event of the called process having any problem you could use the check argument.",
+    "crumbs": [
+      "Everyday Python",
+      "subprocess"
+    ]
+  },
+  {
+    "objectID": "everyday_python/subprocess.html#stdout-and-stdin",
+    "href": "everyday_python/subprocess.html#stdout-and-stdin",
+    "title": "subprocess",
+    "section": "stdout and stdin",
+    "text": "stdout and stdin\nYou can store the result of stdout and stderr as properties of the completed process object.\n\nfrom subprocess import run\n\ncmd = ['ls', '/hello']\nprocess = run(cmd, capture_output=True)\nprint(process.stdout)\nprint(process.stderr)\n\nb''\nb\"ls: no se puede acceder a '/hello': No existe el fichero o el directorio\\n\"\n\n\nBe aware that, by default, the standard output streams will be binary objects, if you want them to be strings you have to provide an encoding.\n\nfrom subprocess import run\n\ncmd = ['ls', '/hello']\nprocess = run(cmd, capture_output=True, encoding='utf-8')\nprint(process.stdout)\nprint(process.stderr)\n\n\nls: no se puede acceder a '/hello': No existe el fichero o el directorio",
+    "crumbs": [
+      "Everyday Python",
+      "subprocess"
+    ]
+  },
+  {
+    "objectID": "everyday_python/subprocess.html#popen",
+    "href": "everyday_python/subprocess.html#popen",
+    "title": "subprocess",
+    "section": "Popen",
+    "text": "Popen\nThe run function will wait for the subprocess to finnish before returning. If you just want to launch the process, but not wait for it to finish you can use the Popen class.\nThe use of Popen is very similar to the use of run, the main difference being that Popen will return a Popen object immediately, without waiting for it to finish.\nOnce you have that object, you could check if the process has already finished or you could also wait for the process to finish.\n\nfrom subprocess import Popen\n\ncmd = ['ls']\nprocess = Popen(cmd)\nprint(process.poll())\nprint(process.wait())\nprint(process.returncode)\n\nNone\ncomprehensions.html\ncomprehensions.qmd\ncomprehensions.quarto_ipynb\ncounter.qmd\ncounter.quarto_ipynb\nenumerate.html\nenumerate.qmd\nenumerate.quarto_ipynb\neveryday_python.html\neveryday_python.qmd\nlambda.html\nlambda.qmd\nlambda.quarto_ipynb\npaths.html\npaths.qmd\npaths.quarto_ipynb\nrange.html\nrange.qmd\nrange.quarto_ipynb\nshutil.html\nshutil.qmd\nshutil.quarto_ipynb\nsubprocess.qmd\nsubprocess.quarto_ipynb\ntyping.html\ntyping.qmd\ntyping.quarto_ipynb\nzip.qmd\nzip.quarto_ipynb\n0\n0",
+    "crumbs": [
+      "Everyday Python",
+      "subprocess"
     ]
   },
   {
