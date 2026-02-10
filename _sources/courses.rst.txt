@@ -4,17 +4,21 @@ Courses
 Course Materials
 _________________
 
-Post-graduate courses:
+Bioinformatics:
 
 	* `NGS sequence analysis <courses/sequence_analysis/index.html>`_
-	* `Linux para las ciencias de la vida <courses/unix/index.html>`_
+	* `An introduction to bioinformatics  <courses/biotech3/index.html>`_
+
+Python:
+
 	* `Introduction to programming <courses/intro_programming>`_
+	* `Python project management with uv <https://github.com/JoseBlanca/uv_seminar>`_
+	* `Iterables and iterators <courses/iterables_and_iterators>`_
 	* `Programming paradigms <courses/programming_paradigms>`_
-	* `Bionformática básica <courses/intro_bioinf/index.html>`_
 
-UPV Biotechnology degree:
+Linux:
 
-	* `Bioinformatica  <courses/biotech3/index.html>`_
+	* `Linux para las ciencias de la vida <courses/unix/index.html>`_
 
 Máster en mejora genética:
 

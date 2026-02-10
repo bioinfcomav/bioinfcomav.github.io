@@ -1,0 +1,274 @@
+[
+  {
+    "objectID": "generators.html",
+    "href": "generators.html",
+    "title": "Generators",
+    "section": "",
+    "text": "In Python we can create our own iterators and generators classes implementing the required methods, but there is a very simple way of creating new custom iterators, the generator way.\n\n\n\n\n\n\nA generator looks just like a function, but instead of return it uses yield. A generator function returns a generator iterator, not a value, and, like any other generator they can be iterated over until they are consumed."
+  },
+  {
+    "objectID": "generators.html#generators",
+    "href": "generators.html#generators",
+    "title": "Generators",
+    "section": "",
+    "text": "In Python we can create our own iterators and generators classes implementing the required methods, but there is a very simple way of creating new custom iterators, the generator way.\n\n\n\n\n\n\nA generator looks just like a function, but instead of return it uses yield. A generator function returns a generator iterator, not a value, and, like any other generator they can be iterated over until they are consumed."
+  },
+  {
+    "objectID": "generators.html#generators-are-not-functions",
+    "href": "generators.html#generators-are-not-functions",
+    "title": "Generators",
+    "section": "Generators are not functions",
+    "text": "Generators are not functions\nWhich would be the result of running the following code?\n\n\n\n\n\n\nGenerators might look like functions, but they are not. When we call a function we get a result back a soon as the function reaches the first return and that’s it. If we call the function again, the function execution will start from the top all over again. Generators have a very different behavior. When we call them they create a generator prepared to yield one element after another when we ask for it. Every time that we enter the generator it resumes the execution where it left.\n\n\n\n\n\n\nThe generator will raise a StopIteration if it reaches a return.\n\n\n\n\n\n\nyield produces a value and pauses execution while return ends the generator and raises StopIteration."
+  },
+  {
+    "objectID": "generators.html#generators-instead-of-container-types",
+    "href": "generators.html#generators-instead-of-container-types",
+    "title": "Generators",
+    "section": "Generators instead of container types",
+    "text": "Generators instead of container types\nOne very common use case, when you don’t need to have all members materialized in memory at the same time, is to create generators instead of list. For instance, we could create lists of squares:\n\n\n\n\n\n\nWe have created an empty list, we have appended the squares one by one and, finally, we have returned the whole list. If we don’t need to hold all elements in memory at once we could do the same with a generator.\n\n\n\n\n\n\nBy the way, the generator option uses much less memory and can be also faster. In my computer calculating the sum of the first 100.000 squares one thousand times required 3.2 seconds when using lists and 2.8 when using generators."
+  },
+  {
+    "objectID": "generators.html#generator-expressions",
+    "href": "generators.html#generator-expressions",
+    "title": "Generators",
+    "section": "Generator expressions",
+    "text": "Generator expressions\nGenerators are easy to create, but generator expressions are even simpler.\n\n\n\n\n\n\nGenerator expressions have exactly the same syntax as the list comprehensions but instead of square brackets they use parentheses.\nGenerators are easy to create, but generator expressions are even simpler."
+  },
+  {
+    "objectID": "generators.html#generators-are-iterators",
+    "href": "generators.html#generators-are-iterators",
+    "title": "Generators",
+    "section": "Generators are iterators",
+    "text": "Generators are iterators\nGenerators are iterators, so they have the strengths, but also the limitations of the iterators.\nGenerators have no length.\n\n\n\n\n\n\nGenerators are consumed.\n\n\n\n\n\n\nYou have to be careful if you want to create a numpy array out of it."
+  },
+  {
+    "objectID": "iterators_and_iterables.html",
+    "href": "iterators_and_iterables.html",
+    "title": "Iterators and iterables",
+    "section": "",
+    "text": "In bioinformatics, VCF files (Variant Call Format) are everywhere: variant calling, genotyping, population genetics… and they can be huge (millions of variants).\nWe could create a Python script to count the number of SNPs and to list the chromosomes.\n\n\n\n\n\n\nThis has worked just fine, but what would happen if the file would had millions of lines?\n\n\n\n\n\n\nEven with 10,000 SNPs this is fine, but notice what is happening: we are building a Python list of length 10,000 and storing 10,000 tuples. If this were 10 million lines, that list could take a lot of memory. We can’t read millions of SNPs in memory, we would run out of memory, and that it exactly what the snps list is trying to do in this code.\nBut… do we really need to store every SNP to answer simple questions like:\n\nHow many SNP records are there?\nWhich chromosomes appear in the file?\n\nNo. We can compute those answers while streaming the file, without keeping all SNPs.\nNow we’ll write a function that does not build a list. It reads the VCF line by line and only keeps:\n\na counter (count)\na set of chromosomes (chroms)\n\nThat’s a small amount of memory, no matter how many lines the VCF has.\n\n\n\n\n\n\nWith this approach at no point we have stored all the SNPs in a list. (In this case we have stored all lines in the io.StringIO file-like object, but if you would read a standard file from your disk Python would never load the whole big file in memory all at once.)\nA file is something you can loop over:\nfor line in vcf_fhand:\n    ...\nThe big idea is that the for loop gets one line at a time, so you don’t need more in memory.\n\nIf you would try to build a list, you would keep everything in memory.\nIf you create a stream of data, you only keep in memory what you need (counters, sets, summaries).",
+    "crumbs": [
+      "Iterators and iterables"
+    ]
+  },
+  {
+    "objectID": "iterators_and_iterables.html#reading-a-large-file",
+    "href": "iterators_and_iterables.html#reading-a-large-file",
+    "title": "Iterators and iterables",
+    "section": "",
+    "text": "In bioinformatics, VCF files (Variant Call Format) are everywhere: variant calling, genotyping, population genetics… and they can be huge (millions of variants).\nWe could create a Python script to count the number of SNPs and to list the chromosomes.\n\n\n\n\n\n\nThis has worked just fine, but what would happen if the file would had millions of lines?\n\n\n\n\n\n\nEven with 10,000 SNPs this is fine, but notice what is happening: we are building a Python list of length 10,000 and storing 10,000 tuples. If this were 10 million lines, that list could take a lot of memory. We can’t read millions of SNPs in memory, we would run out of memory, and that it exactly what the snps list is trying to do in this code.\nBut… do we really need to store every SNP to answer simple questions like:\n\nHow many SNP records are there?\nWhich chromosomes appear in the file?\n\nNo. We can compute those answers while streaming the file, without keeping all SNPs.\nNow we’ll write a function that does not build a list. It reads the VCF line by line and only keeps:\n\na counter (count)\na set of chromosomes (chroms)\n\nThat’s a small amount of memory, no matter how many lines the VCF has.\n\n\n\n\n\n\nWith this approach at no point we have stored all the SNPs in a list. (In this case we have stored all lines in the io.StringIO file-like object, but if you would read a standard file from your disk Python would never load the whole big file in memory all at once.)\nA file is something you can loop over:\nfor line in vcf_fhand:\n    ...\nThe big idea is that the for loop gets one line at a time, so you don’t need more in memory.\n\nIf you would try to build a list, you would keep everything in memory.\nIf you create a stream of data, you only keep in memory what you need (counters, sets, summaries).",
+    "crumbs": [
+      "Iterators and iterables"
+    ]
+  },
+  {
+    "objectID": "iterators_and_iterables.html#iterables",
+    "href": "iterators_and_iterables.html#iterables",
+    "title": "Iterators and iterables",
+    "section": "Iterables",
+    "text": "Iterables\nAn iterable is an object that can return an iterator (something that can be looped over, iterated over) and iterators are the objectes that are iterated over, one item at a time (the object doing the looping). For example, a list is an iterable and we can iterate over its elements one at a time. Other examples of Python iterables are: tuple, str, dict, set, or range.\n\n\n\n\n\nflowchart LR\n    A[\"x = [1, 2, 3]\"] --&gt;|\"iter()\"| B[\"Iterator\"]\n    B --&gt;|\"next()\"| 1\n    B --&gt;|\"next()\"| 2\n    B --&gt;|\"next()\"| 3\n    B --&gt;|\"next()\"| StopIteration\n\n\n\n\n\n\nFor instance, let’s imagine that we want to sum the squares from 1 to 10. We could create a list and then we could iterate over it using a for loop.\n\n\n\n\n\n\nA list is an iterable because we can get its elements one at a time. But the list has extra capabilities, the main one being that it holds its members in memory, and that is not required to be an iterable.\nIn fact, the we don’t need the members of the iterable to exist before we ask for them. For instance, range is also an iterable and it will create the elements when we ask for them. We could use range in the sum of squares example.\n\n\n\n\n\n\nIn the first approach we created a list, but not in the second one.\n\n\n\n\n\n\n\nThe lazy advantage\nAn iterable could be lazy, we don’t need to have all the data in memory, or even to exists at the creation time of the object, in order to be able to access to it. The fundamental difference between a rangeand a list is explained in the Python documentation:\n\nThe advantage of the range type over a regular list or tuple is that a range object will always take the same (small) amount of memory, no matter the size of the range it represents (as it only stores the start, stop and step values, calculating individual items and subranges as needed). Ranges are lazy, they build the numbers when they are needed but not before.\n\nOne of the advantages of the iterables is that they can be used to analyze data that can not be hold in memory all at once, moreover, it allows us to analyze that data having only one item at a time in memory. We could create a range capable of returning many numbers and it would cost almost no time and memory.\n\n\n\n\n\n\nHowever, if you would try the transform this range into a list you would run out of memory (don’t run the next cell.)\n\n\n\n\n\n\nSo in order to process this data we don’t need to materialize all the data in memory in order to iterate over it, we just need to be able to iterate over it, so we can skip the memory intensive part.",
+    "crumbs": [
+      "Iterators and iterables"
+    ]
+  },
+  {
+    "objectID": "iterators_and_iterables.html#iterators",
+    "href": "iterators_and_iterables.html#iterators",
+    "title": "Iterators and iterables",
+    "section": "Iterators",
+    "text": "Iterators\nThere is another concept, the iterator, that its related to the iterable. If the iterable was the object that could be iterated over, the iterator is the actual object that does the iteration. Iterators are to iterables what bookmarks are to books, we can iterate over the pages of a book, but during a particular iteration we will be at any time in a particular page, and that position should be held somewhere, for instance by just leaving the book opened at that particular page or by a bookmark. You can think of an iterable as a book that can be read many times, while the iterator would be the bookmark that moves along.\nYou can think of an iterator as an stream of data to be processed that will be seen one at a time.\nIn technical terms, as we have already shown iterables are objects from which we can create iterators, using the __iter__ special method, while the iterators will be, once created, the objects that will be used to do the iteration.\n\nIterators: iter and next\nWhile the defining characteristic of an iterable is the __iter__ method, the capability of creating iterators, the crucial trait of the iterator is that we can ask for the next item using the next function. Any object capable of returning its members one at a time when we request them using the next function is an iterator.\nWe can always create an iterator from an iterable using the iter function. For example, we could create an iterator from a list using iter, and then we could iterate over it using next.\n\n\n\n\n\n\nIf iter(x) works, x is iterable, if next(x) works, x is an iterator.\n\nIterable: works with iter(x)\nIterator: works with next(x)\n\nAn iterator will keep yielding items until it is exhausted, and then it will raise a StopIteration exception.\n\n\n\n\n\n\nSo that’s the all that there’s to it, an iterator will yield one item at a time until all its items are consumed and then will raise a StopIteration exception marking the end of the iteration.\n\n\nfile objects are iterators\nPython is very fond of iterables and iterators, it uses them for many tasks. For instance, every time that you open a file you get a file object that is in iterator.\n\n\n\n\n\n\n\n\nIterators are consumed, iterables are not\nCheck out the next cell and predict the expected result. Now, run the cell, and explain the result of the second sum (this is the biggest iterator Gotcha.)\n\n\n\n\n\n\nThis kind of errors are common when dealing with files:\n\nf = open(\"variants.vcf\")\n# First pass: count lines\ncount = sum(1 for line in f)\n\n# Second pass: try to process data\nfor line in f:\n    print(line)  # WARNING: This will do nothing! The iterator is empty.\n\nAs we have explained an iterator is an object that represents an stream of data, it yields item after item until it is consumed. Iterators generate items until they are exhausted, and then they are exhausted for good.\n\n\n\n\n\n\nHowever, iterables are not consumed, you can iterate over them as many times as you want because functions that iterate over them, internally, create a new iterator every time they start a fresh iteration. Iterables are not exhausted because you don’t really iterate over them, you iterate over the iterator objects that are generated from them.\n\n\n\n\n\n\nSo, iterables are reusable while iterators are consumable.\nAs we have seen for loops can work both with iterables and iterators, but iterators will be consumed, while iterables can be iterated over as many times as you desire.\n\n\n\n\n\n\nBe careful because iterators return themselves when you pass them to the iter function, so the original one will be still consumed even when you might thought that you created a new one.\n\n\n\n\n\n\n\n\niterators are iterable, but iterables are not iterators\nAll iterators are iterable because they implement the __iter__ special method (usually by returning themselves). So, if you pass to the iter function an iterator it just returns itself, that’s why for can work both with iterators and iterables, while if you pass it an iterable it will create a new iterator every time.\n\n\n\n\n\n\nHowever, iterables are usually not iterators because they do not implement the __next__ special method. Remember, the requirement to be an iterable is to be able to create iterators, not to be an iterator yourself. So if you try to use the next function directly on an iterable you will get a TypeError exception.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\niterators have no length\nOne limitation is that iterators usually have no length. (Some iterators might have a length_hint, but that’s not the usual case and the length is not guaranteed).\nWhat we have is the guarantee that they will always give us something back when we ask with the next function, either an item or a StopIteration exception, but the items are given one at a time and we usually don’t know how many of them are.\n\n\n\n\n\n\n\n\nYou can materialize them by using list\nIf you ever try to print an iterator you won’t get much.\n\n\n\n\n\n\nIf for any reason you need to materialize them you can always use list or tuple.\n\n\n\n\n\n\nIf you use NumPy, be aware that you can’t directly materialize an iterator into a numpy array and you might get really odd results.\n\n\n\n\n\n\nYou could get the correct result by transforming the iterator into a list first.\n\n\n\n\n\n\nBe aware that this solution will work for small lists, but if the number of items is large the list will take much memory. As an alternative numpy has a safer way that materializes the iterator directly into a numpy array: numpy.fromiter.\n\n\n\n\n\n\nRemember that numpy assumes that you have all elements materialized in memory and that you know the number of elements. fromiter will have a better performance if you tell it how many elements will be in the final array , using the count argument (if you now it).",
+    "crumbs": [
+      "Iterators and iterables"
+    ]
+  },
+  {
+    "objectID": "iterators_and_iterables.html#more-about-the-iterables-and-iterators",
+    "href": "iterators_and_iterables.html#more-about-the-iterables-and-iterators",
+    "title": "Iterators and iterables",
+    "section": "More about the iterables and iterators",
+    "text": "More about the iterables and iterators\n\nPython is fond of iterables\nMany Python classes are iterable, like list, tuple, set, and frozenset, or range.\nDictionaries are also iterable, by default you will get their keys, but you can also iterate over its values, and items.\n\n\n\n\n\n\nStrings are also iterable over their characters.\n\n\n\n\n\n\n\n\nHow for works\nThe most usual way of iterating over an iterable is to use it in a for loop.\n\n\n\n\n\n\nAt this point somebody could raise the question: if we have said that iterables create iterators and then iterators are iterated over, how’s that for can iterate directly over the iterable without requiring an iterator? That would be a very good question, if you are not used to these kind of objects they could be quite confusing because it would look like for iterates over iterable objects, but that’s not really the case, in fact the functions and statements, like the for statement, that iterate over things, internally, create an iterator before starting the iteration, and then they iterate over that iterator. The for loop does not iterate over the iterable, it iterates over the iterator returned by the iterable.\nSo what for really does is:\n\nCalls iter(…) once\nCalls next(…) until it catches a StopIteration exception thrown by the iterable.\n\nfor i in iterable:\n  ...\n\nreally means:\n  1. iterator = iter(iterable)\n  2. repeat:\n    x = next(iterator)\n    execute body\n    until StopIteration\nWe can reproduce the for behavior using iter and while.\n\n\n\n\n\n\nfor will accept any object that iter accepts and the first thing that it does is to create an iterator from that object.\nWe can show the internal call to iter by creating specially chatty iterable and iterator classes. (You don’t need to worry about how to implement these classes, we will study a much easier way of implementing our own custom iterators by using generators.)\n\n\n\n\n\n\n\n\nThe iterable users\nfor is not the only iterable user the uses the iterator trick, many other Python functions do, like: zip, sum, max, min, any, all, enumerate,map, list, etc.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nitertools and more-itertools\nOnce you start using iterables and iterators you should take a look at the itertools standard library module. In there you will find many tools to get the most of these tools.\n\n\nIterables don’t need to be sequences\nIterables just need to be iterable, nothing else. Lists or ranges have extra capabilities that go further than the iterable requirement, to be able to be iterated over, but these are not required. For instance, lists have random access, we can ask for any of its members at any time.\n\n\n\n\n\n\nBut that’s not a requirement to be an iterable. For instance, sets have no random access, but they are iterable.\n\n\n\n\n\n\nAlso, iterables do not need to have a stable order.\n\n\n\n\n\n\nIterables do not even need to have a finite number of elements or even length. Let’s create an iterable that produces random integers for ever.\n\n\n\n\n\n\nInfiniteRandomInts is iterable because we have implemented the __iter__ magic method, and that’s all an iterable needs to be iterable.\nIf you ever need to represent more constrained behaviors, like the behavior of an object with stable order, random access and a length you have other protocols available, like the sequence.",
+    "crumbs": [
+      "Iterators and iterables"
+    ]
+  },
+  {
+    "objectID": "iterators_and_iterables.html#other-resources",
+    "href": "iterators_and_iterables.html#other-resources",
+    "title": "Iterators and iterables",
+    "section": "Other resources",
+    "text": "Other resources\n\nA Real Python tutorial on iterators and iterables.\nThe itertool standard library module.",
+    "crumbs": [
+      "Iterators and iterables"
+    ]
+  },
+  {
+    "objectID": "exercises.html",
+    "href": "exercises.html",
+    "title": "Iterator exercises",
+    "section": "",
+    "text": "For each object below, answer:\nIs it an iterable, an iterator, both, or neither? Can it be used in a for loop? Will it work with next?",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#iterable-or-not",
+    "href": "exercises.html#iterable-or-not",
+    "title": "Iterator exercises",
+    "section": "",
+    "text": "For each object below, answer:\nIs it an iterable, an iterator, both, or neither? Can it be used in a for loop? Will it work with next?",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#reusable-or-not",
+    "href": "exercises.html#reusable-or-not",
+    "title": "Iterator exercises",
+    "section": "Reusable or not?",
+    "text": "Reusable or not?\nBefore running the code, predict the output, write down what you think will be printed.",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#why-these-two-pieces-of-code-behave-in-a-different-way",
+    "href": "exercises.html#why-these-two-pieces-of-code-behave-in-a-different-way",
+    "title": "Iterator exercises",
+    "section": "Why these two pieces of code behave in a different way?",
+    "text": "Why these two pieces of code behave in a different way?\nWhat will this code print and why?",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#even-numbers",
+    "href": "exercises.html#even-numbers",
+    "title": "Iterator exercises",
+    "section": "Even numbers",
+    "text": "Even numbers\nWrite a generator function called even_numbers(n) that yields even numbers from 0 up to n (inclusive).",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#the-fibonacci-generator",
+    "href": "exercises.html#the-fibonacci-generator",
+    "title": "Iterator exercises",
+    "section": "The fibonacci generator",
+    "text": "The fibonacci generator\nCreate an infinite fibonacci sequence generator.",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#dna-sequence-generator",
+    "href": "exercises.html#dna-sequence-generator",
+    "title": "Iterator exercises",
+    "section": "DNA sequence generator",
+    "text": "DNA sequence generator\nCreate a generator of random DNA sequences.",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#list-vs-generator",
+    "href": "exercises.html#list-vs-generator",
+    "title": "Iterator exercises",
+    "section": "List vs generator",
+    "text": "List vs generator\nRewrite this code using a generator expression:",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#use-zip-to-pair-lists",
+    "href": "exercises.html#use-zip-to-pair-lists",
+    "title": "Iterator exercises",
+    "section": "Use zip to pair lists",
+    "text": "Use zip to pair lists\nUse the zip function to pair the values in two lists, and using a for loop print the name of the sample along with its gc_content.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing zip and dict create a dictionary from the same two lists with the names of the samples as keys.",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#divide-the-vcf-parser",
+    "href": "exercises.html#divide-the-vcf-parser",
+    "title": "Iterator exercises",
+    "section": "Divide the VCF parser",
+    "text": "Divide the VCF parser\nWe are parsing a VCF file and we want to get the variants and for each one we want a numeric index. This is our first attempt:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis code works but it has several issues.\n\nIt is creating a list in memory with all the variants.\nThe read_and_index_variants is doing two tasks: parsing the variants and indexing them.\n\nIt would be better to create a generator that only parses the vcf file and then to index the variants outside that generator. Moreover, by using a generator we would avoid using too much memory.",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#count-the-number-of-variants-per-chromosome",
+    "href": "exercises.html#count-the-number-of-variants-per-chromosome",
+    "title": "Iterator exercises",
+    "section": "Count the number of variants per chromosome",
+    "text": "Count the number of variants per chromosome\nUse the parser created in the last exercise count the number of variants per chromosome.",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#fix-the-bug",
+    "href": "exercises.html#fix-the-bug",
+    "title": "Iterator exercises",
+    "section": "Fix the bug",
+    "text": "Fix the bug\nThe following code is supposed to compute the mean of some values. What is wrong with this code? Fix it without changing the input data.",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#write-a-fasta-file-parser-that-yields-one-sequence-at-a-time",
+    "href": "exercises.html#write-a-fasta-file-parser-that-yields-one-sequence-at-a-time",
+    "title": "Iterator exercises",
+    "section": "Write a fasta file parser that yields one sequence at a time",
+    "text": "Write a fasta file parser that yields one sequence at a time",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#filter-short-sequences-and-calc-gc-content",
+    "href": "exercises.html#filter-short-sequences-and-calc-gc-content",
+    "title": "Iterator exercises",
+    "section": "Filter short sequences and calc GC content",
+    "text": "Filter short sequences and calc GC content\nFilter the sequences generated by the fasta parser, remove the ones with the length below a threshold, then calculate the mean GC content of the longer ones.",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#sliding-window-the-k-mer-generator",
+    "href": "exercises.html#sliding-window-the-k-mer-generator",
+    "title": "Iterator exercises",
+    "section": "Sliding Window (The k-mer Generator)",
+    "text": "Sliding Window (The k-mer Generator)\nIn bioinformatics, we often analyze “k-mers” (subsequences of length k). Write a generator function generate_kmers(sequence, k) that takes a DNA string and an integer k and yields every possible k-mer as you slide along the sequence. Using to analyze a whole fasta file and print the final kmer count.\n\n\n\n\n\n\n\nfrom io import StringIO from collections import Counter\nfasta_lines = “““&gt;seq1 ACTGTGCGTCTAGCTAGCTG &gt;seq2 CTAGCTAGTGCTGATGCTGAT CGTACTAGTCTA &gt;seq3 CAGTCTGATCTAGCGT”“”\ndef parse_fasta(file): seq = None for line in file: line = line.strip() if not line: continue if line.startswith(‘&gt;’): if seq: yield tuple(seq) name = line.split()[0][1:] seq = [name, “”] else: seq[1] += line if seq: yield tuple(seq)\ndef generate_kmers(seq, kmer_len): seq = seq[1] return ( seq[i : i + kmer_len] for i in range(len(seq) - kmer_len + 1) )\nkmer_len = 5 file = StringIO(fasta_lines) seqs = parse_fasta(file) kmers = (kmer for seq in seqs for kmer in generate_kmers(seq, kmer_len)) kmer_counts = Counter(kmers) print(kmer_counts)",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Iterables and iterators",
+    "section": "",
+    "text": "Python leans heavily on iteration: a simple, efficient way to process data one element at a time.\nThat’s why so many everyday objects—like list, dict, str, and files iterable.\nThis tutorial explains:\n\nwhat an iterable is, and how it differs from an iterator\nhow for loops work under the hood (iter() and next())\nwhy iterators are essential for working with large datasets efficiently\ncommon pitfalls (like “why did my iterator become empty?”) and how to avoid them\n\nYou can run the code snippets and solve the exercises in your favorite code editor, but the tutorial is fully usable online, so you don’t need to install Python to follow it.\nIf you work with data (tables, logs, VCF/FASTQ files, streams…), understanding iterables and iterators will help you write code that is cleaner and more memory-efficient.\n\n\n\nIterables and iterators\nCore concepts, the iteration protocol, and how for really works.\nGenerators\nCreating iterators with yield, infinite sequences, and streaming patterns.\nExercises\nHands-on practice to reinforce the concepts and spot common mistakes.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#contents",
+    "href": "index.html#contents",
+    "title": "Iterables and iterators",
+    "section": "",
+    "text": "Iterables and iterators\nCore concepts, the iteration protocol, and how for really works.\nGenerators\nCreating iterators with yield, infinite sequences, and streaming patterns.\nExercises\nHands-on practice to reinforce the concepts and spot common mistakes.",
+    "crumbs": [
+      "Home"
+    ]
+  }
+]
