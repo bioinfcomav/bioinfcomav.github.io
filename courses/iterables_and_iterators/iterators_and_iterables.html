@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./exercises.html" rel="next">
+<link href="./generators.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -176,7 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./iterators_and_iterables.html" class="sidebar-item-text sidebar-link">
+  <a href="./generators.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Generators</span></a>
   </div>
 </li>
@@ -374,31 +374,122 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoib3VyX2l0ZXJhYmxlID0gWzEs
 </div>
 <p>So that’s the all that there’s to it, an iterator will yield one item at a time until all its items are consumed and then will raise a StopIteration exception marking the end of the iteration.</p>
 </section>
-<section id="file-objects-are-iterators" class="level3">
-<h3 class="anchored" data-anchor-id="file-objects-are-iterators">file objects are iterators</h3>
-<p>Python is very fond of iterables and iterators, it uses them for many tasks. For instance, every time that you <a href="https://docs.python.org/3/library/functions.html#open">open</a> a file you get a <a href="https://docs.python.org/3/glossary.html#term-file-object">file</a> object that is in iterator.</p>
+<section id="iterators-have-no-length" class="level3">
+<h3 class="anchored" data-anchor-id="iterators-have-no-length">iterators have no length</h3>
+<p>One limitation is that iterators usually have no length. (Some iterators might have a <strong>length_hint</strong>, but that’s not the usual case and the length is not guaranteed).</p>
+<p>What we have is the guarantee that they will always give us something back when we ask with the <code>next</code> function, either an item or a StopIteration exception, but the items are given one at a time and we usually don’t know how many of them are.</p>
 <div>
 <div id="pyodide-11" class="exercise-cell">
 
 </div>
 <script type="pyodide-11-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IGlvXG5cbmZpbGVfbGlrZV9vYmplY3QgPSBpby5TdHJpbmdJTyhcIlwiXCJGYXIgb3V0IGluIHRoZSB1bmNoYXJ0ZWQgYmFja3dhdGVycyBvZiB0aGUgdW5mYXNoaW9uYWJsZSBlbmQgb2YgdGhlIFdlc3Rlcm4gc3BpcmFsIGFybSBvZiB0aGUgZ2FsYXh5IGxpZXMgYSBzbWFsbCB1bnJlZ2FyZGVkIHllbGxvdyBzdW4uXG5PcmJpdGluZyB0aGlzLCBhdCBhIGRpc3RhbmNlIG9mIHJvdWdobHkgbmluZXR5IG1pbGxpb24gbWlsZXMgaXMgYW4gdXR0ZXJseSBpbnNpZ25pZmljYW50IGxpdHRsZSBibHVlLWdyZWVuIHBsYW5ldCxcbndob3NlIGFwZSBkZXNjZW5kZWQgbGlmZSBmb3JtcyBhcmUgc28gYW1hemluZ2x5IHByaW1pdGl2ZSB0aGF0IHRoZXkgc3RpbGwgdGhpbmsgZGlnaXRhbCB3YXRjaGVzIGFyZSBhIHByZXR0eSBuZWF0IGlkZWEuXCJcIlwiKVxuXG5wcmludChuZXh0KGZpbGVfbGlrZV9vYmplY3QpKVxucHJpbnQobmV4dChmaWxlX2xpa2Vfb2JqZWN0KSlcbnByaW50KG5leHQoZmlsZV9saWtlX29iamVjdCkpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IGl0ZXIocmFuZ2UoMV8wMDBfMDAwXzAwMCkpXG5wcmludChsZW4obnVtYmVycykpIn0=
 </script>
 </div>
 </section>
-<section id="iterators-are-consumed-iterables-are-not" class="level3">
-<h3 class="anchored" data-anchor-id="iterators-are-consumed-iterables-are-not">Iterators are consumed, iterables are not</h3>
-<p>Check out the next cell and predict the expected result. Now, run the cell, and explain the result of the second sum (this is the biggest iterator <a href="https://en.wikipedia.org/wiki/Gotcha_(programming)">Gotcha</a>.)</p>
+<section id="iterables-dont-need-to-be-sequences" class="level3">
+<h3 class="anchored" data-anchor-id="iterables-dont-need-to-be-sequences">Iterables don’t need to be sequences</h3>
+<p>Iterables just need to be iterable, nothing else. Lists or ranges have extra capabilities that go further than the iterable requirement, to be able to be iterated over, but these are not required. For instance, lists have <a href="https://en.wikipedia.org/wiki/Random_access">random access</a>, we can ask for any of its members at any time.</p>
 <div>
 <div id="pyodide-12" class="exercise-cell">
 
 </div>
 <script type="pyodide-12-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoieHMgPSBtYXAoaW50LCBbXCIxXCIsXCIyXCIsXCIzXCJdKVxucHJpbnQoXCJzdW0xXCIsIHN1bSh4cykpXG5wcmludChcInN1bTJcIiwgc3VtKHhzKSkifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IFsxLCAyLCAzLCA0LCA1XVxucHJpbnQobnVtYmVyc1szXSlcbnByaW50KG51bWJlcnNbMF0pXG5wcmludChudW1iZXJzWzRdKSJ9
+</script>
+</div>
+<p>But that’s not a requirement to be an iterable. For instance, <a href="https://docs.python.org/3/tutorial/datastructures.html#sets">sets</a> have no random access, but they are iterable.</p>
+<div>
+<div id="pyodide-13" class="exercise-cell">
+
+</div>
+<script type="pyodide-13-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IHsxLCAyLCAzLCA0LCA1fVxucHJpbnQobnVtYmVyc1szXSlcblxuZm9yIGkgaW4gbnVtYmVyczpcbiAgICBwcmludChpKSJ9
+</script>
+</div>
+<p>Also, iterables do not need to have a stable order.</p>
+<div>
+<div id="pyodide-14" class="exercise-cell">
+
+</div>
+<script type="pyodide-14-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVyczEgPSB7MSwgMiwgMywgNCwgNX1cbm51bWJlcnMyID0gezUsIDIsIDMsIDEsIDR9XG5wcmludChudW1iZXJzMSA9PSBudW1iZXJzMikifQ==
+</script>
+</div>
+<p>Iterables do not even need to have a finite number of elements or even length. Let’s create an iterable that produces random integers for ever.</p>
+<div>
+<div id="pyodide-15" class="exercise-cell">
+
+</div>
+<script type="pyodide-15-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHJhbmRvbVxuXG5jbGFzcyBJbmZpbml0ZVJhbmRvbUl0ZXJhdG9yOlxuICAgIFwiXCJcIlRoZSBhY3R1YWwgaXRlcmF0b3IgdGhhdCBwZXJmb3JtcyB0aGUgd29yay5cIlwiXCJcbiAgICBkZWYgX19uZXh0X18oc2VsZik6XG4gICAgICAgICMgVGhpcyBpcyBjYWxsZWQgZXZlcnkgdGltZSB0aGUgZm9yIGxvb3AgYXNrcyBmb3IgYSBuZXcgdmFsdWVcbiAgICAgICAgcmV0dXJuIHJhbmRvbS5yYW5kaW50KDAsIDkpXG5cbiAgICBkZWYgX19pdGVyX18oc2VsZik6XG4gICAgICAgICMgSXRlcmF0b3JzIGFyZSByZXF1aXJlZCB0byByZXR1cm4gdGhlbXNlbHZlcyB3aGVuIGl0ZXIoKSBpcyBjYWxsZWRcbiAgICAgICAgcmV0dXJuIHNlbGZcblxuY2xhc3MgSW5maW5pdGVSYW5kb21JbnRzOlxuICAgIFwiXCJcIlRoZSBpdGVyYWJsZSB0aGF0IGNhbiBiZSB1c2VkIGluIGEgZm9yIGxvb3AuXCJcIlwiXG4gICAgZGVmIF9faXRlcl9fKHNlbGYpOlxuICAgICAgICAjIEV2ZXJ5IHRpbWUgd2Ugc3RhcnQgYSBmb3IgbG9vcCwgd2UgY3JlYXRlIGEgZnJlc2ggaXRlcmF0b3JcbiAgICAgICAgcmV0dXJuIEluZmluaXRlUmFuZG9tSXRlcmF0b3IoKVxuXG5ybmcgPSBJbmZpbml0ZVJhbmRvbUludHMoKVxuXG5mb3IgeCBpbiBybmc6XG4gICAgcHJpbnQoeClcbiAgICBpZiB4ID09IDc6XG4gICAgICAgIGJyZWFrIn0=
+</script>
+</div>
+<p><code>InfiniteRandomInts</code> is iterable because we have implemented the <a href="https://docs.python.org/3/reference/datamodel.html#object.__iter__"><code>__iter__</code></a> magic method, and that’s all an iterable needs to be iterable.</p>
+<p>If you ever need to represent more constrained behaviors, like the behavior of an object with stable order, random access and a length you have other <a href="https://realpython.com/python-protocol/">protocols</a> available, like the <a href="https://docs.python.org/3/glossary.html#term-sequence">sequence</a>.</p>
+</section>
+<section id="you-can-materialize-them-by-using-list" class="level3">
+<h3 class="anchored" data-anchor-id="you-can-materialize-them-by-using-list">You can materialize them by using list</h3>
+<p>If you ever try to print an iterator you won’t get much.</p>
+<div>
+<div id="pyodide-16" class="exercise-cell">
+
+</div>
+<script type="pyodide-16-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IGl0ZXIoWzEsIDIsIDMsIDQsIDVdKVxucHJpbnQobnVtYmVycykifQ==
+</script>
+</div>
+<p>If for any reason you need to materialize them you can always use <a href="https://docs.python.org/3/library/functions.html#func-list">list</a> or <a href="https://docs.python.org/3/library/functions.html#func-tuple">tuple</a>.</p>
+<div>
+<div id="pyodide-17" class="exercise-cell">
+
+</div>
+<script type="pyodide-17-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IGl0ZXIocmFuZ2UoMTApKVxucHJpbnQobnVtYmVycylcbm51bWJlcnMgPSBsaXN0KG51bWJlcnMpXG5wcmludChudW1iZXJzKSJ9
+</script>
+</div>
+<p>If you use NumPy, be aware that you can’t directly materialize an iterator into a numpy array and you might get really odd results.</p>
+<div>
+<div id="pyodide-18" class="exercise-cell">
+
+</div>
+<script type="pyodide-18-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG51bXB5XG5cbm51bWJlcnMgPSBpdGVyKFsxLCAyLCAzLCA0LCA1XSlcbm51bWJlcnMgPSBudW1weS5hcnJheShudW1iZXJzKVxucHJpbnQobnVtYmVycykifQ==
+</script>
+</div>
+<p>You could get the correct result by transforming the iterator into a list first.</p>
+<div>
+<div id="pyodide-19" class="exercise-cell">
+
+</div>
+<script type="pyodide-19-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG51bXB5XG5cbm51bWJlcnMgPSBpdGVyKFsxLCAyLCAzLCA0LCA1XSlcbm51bWJlcnMgPSBudW1weS5hcnJheShsaXN0KG51bWJlcnMpKVxucHJpbnQobnVtYmVycykifQ==
+</script>
+</div>
+<p>Be aware that this solution will work for small lists, but if the number of items is large the list will take much memory. As an alternative numpy has a safer way that materializes the iterator directly into a numpy array: <a href="https://numpy.org/doc/stable/reference/generated/numpy.fromiter.html">numpy.fromiter</a>.</p>
+<div>
+<div id="pyodide-20" class="exercise-cell">
+
+</div>
+<script type="pyodide-20-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG51bXB5XG5cbm51bWJlcnMgPSBpdGVyKFsxLCAyLCAzLCA0LCA1XSlcbm51bWJlcnMgPSBudW1weS5mcm9taXRlcihudW1iZXJzLCBkdHlwZT1udW1weS5pbnQ4LCBjb3VudD01KVxucHJpbnQobnVtYmVycykifQ==
+</script>
+</div>
+<p>Remember that numpy assumes that you have all elements materialized in memory and that you know the number of elements. <code>fromiter</code> will have a better performance if you tell it how many elements will be in the final array , using the count argument (if you now it).</p>
+</section>
+<section id="iterators-are-consumed-iterables-are-not" class="level3">
+<h3 class="anchored" data-anchor-id="iterators-are-consumed-iterables-are-not">Iterators are consumed, iterables are not</h3>
+<p>Check out the next cell and predict the expected result. Now, run the cell, and explain the result of the second sum (this is the biggest iterator <a href="https://en.wikipedia.org/wiki/Gotcha_(programming)">Gotcha</a>.)</p>
+<div>
+<div id="pyodide-21" class="exercise-cell">
+
+</div>
+<script type="pyodide-21-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoieHMgPSBpdGVyKFsxLCAyLCAzXSlcbnByaW50KFwic3VtMVwiLCBzdW0oeHMpKVxucHJpbnQoXCJzdW0yXCIsIHN1bSh4cykpIn0=
 </script>
 </div>
 <p>This kind of errors are common when dealing with files:</p>
-<div id="41d52ef8" class="cell" data-execution_count="1">
+<div id="2250b16e" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">"variants.vcf"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># First pass: count lines</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="bu">sum</span>(<span class="dv">1</span> <span class="cf">for</span> line <span class="kw">in</span> f)</span>
@@ -409,155 +500,39 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoieHMgPSBtYXAoaW50LCBbXCIx
 </div>
 <p>As we have explained an <a href="https://docs.python.org/3/glossary.html#term-iterator">iterator</a> is an object that represents an stream of data, it yields item after item until it is consumed. Iterators generate items until they are exhausted, and then they are exhausted for good.</p>
 <div>
-<div id="pyodide-13" class="exercise-cell">
-
-</div>
-<script type="pyodide-13-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IGl0ZXIocmFuZ2UoNSkpXG5cbnByaW50KCduZXh0OiAnLCBuZXh0KG51bWJlcnMpKVxucHJpbnQoJ25leHQ6ICcsIG5leHQobnVtYmVycykpXG5cbmZvciBpIGluIG51bWJlcnM6XG4gICAgcHJpbnQoaSlcblxucHJpbnQoXCJObyBtb3JlIG51bWJlcnMgd2lsbCBiZSBwcmludGVkXCIpXG5mb3IgaSBpbiBudW1iZXJzOlxuICAgIHByaW50KGkpXG5cbnByaW50KFwic3VtOlwiLCBzdW0obnVtYmVycykpIn0=
-</script>
-</div>
-<p>However, iterables are not consumed, you can iterate over them as many times as you want because functions that iterate over them, internally, create a new iterator every time they start a fresh iteration. Iterables are not exhausted because you don’t really iterate over them, you iterate over the iterator objects that are generated from them.</p>
-<div>
-<div id="pyodide-14" class="exercise-cell">
-
-</div>
-<script type="pyodide-14-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IHJhbmdlKDUpXG5cbmZvciBpIGluIG51bWJlcnM6XG4gICAgcHJpbnQoaSlcblxuZm9yIGkgaW4gbnVtYmVyczpcbiAgICBwcmludChpKVxuXG5wcmludChzdW0obnVtYmVycykpIn0=
-</script>
-</div>
-<p>So, iterables are reusable while iterators are consumable.</p>
-<p>As we have seen <code>for</code> loops can work both with iterables and iterators, but iterators will be consumed, while iterables can be iterated over as many times as you desire.</p>
-<div>
-<div id="pyodide-15" class="exercise-cell">
-
-</div>
-<script type="pyodide-15-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVyczEgPSByYW5nZSg1KVxuXG5mb3IgaSBpbiBudW1iZXJzMTpcbiAgICBwcmludChpKVxucHJpbnQoXCJTdW0gYWZ0ZXIxOlwiLCBzdW0obnVtYmVyczEpKVxuXG5udW1iZXJzMiA9IGl0ZXIocmFuZ2UoNSkpXG5cbmZvciBpIGluIG51bWJlcnMyOlxuICAgIHByaW50KGkpXG5wcmludChcIlN1bSBhZnRlcjI6XCIsIHN1bShudW1iZXJzMikpIn0=
-</script>
-</div>
-<p>Be careful because iterators return themselves when you pass them to the <code>iter</code> function, so the original one will be still consumed even when you might thought that you created a new one.</p>
-<div>
-<div id="pyodide-16" class="exercise-cell">
-
-</div>
-<script type="pyodide-16-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaXRlcjEgPSBpdGVyKHJhbmdlKDUpKVxuaXRlcjIgPSBpdGVyKGl0ZXIxKVxucHJpbnQoaXRlcjEgaXMgaXRlcjIpXG5wcmludChuZXh0KGl0ZXIxKSlcbnByaW50KG5leHQoaXRlcjIpKVxucHJpbnQobmV4dChpdGVyMSkpXG5wcmludChuZXh0KGl0ZXIyKSlcbnByaW50KG5leHQoaXRlcjIpKVxucHJpbnQobmV4dChpdGVyMikpXG5wcmludChuZXh0KGl0ZXIxKSkifQ==
-</script>
-</div>
-</section>
-<section id="iterators-are-iterable-but-iterables-are-not-iterators" class="level3">
-<h3 class="anchored" data-anchor-id="iterators-are-iterable-but-iterables-are-not-iterators">iterators are iterable, but iterables are not iterators</h3>
-<p>All iterators are iterable because they implement the <code>__iter__</code> special method (usually by returning themselves). So, if you pass to the <code>iter</code> function an iterator it just returns itself, that’s why <code>for</code> can work both with iterators and iterables, while if you pass it an iterable it will create a new iterator every time.</p>
-<div>
-<div id="pyodide-17" class="exercise-cell">
-
-</div>
-<script type="pyodide-17-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IHJhbmdlKDUpXG5wcmludChpdGVyKG51bWJlcnMpIGlzIGl0ZXIobnVtYmVycykpXG5pdCA9IGl0ZXIobnVtYmVycylcbnByaW50KGl0ZXIoaXQpIGlzIGl0KSJ9
-</script>
-</div>
-<p>However, iterables are usually not iterators because they do not implement the <code>__next__</code> special method. Remember, the requirement to be an iterable is to be able to create iterators, not to be an iterator yourself. So if you try to use the next function directly on an iterable you will get a <a href="https://docs.python.org/3/library/exceptions.html#TypeError">TypeError</a> exception.</p>
-<div>
-<div id="pyodide-18" class="exercise-cell">
-
-</div>
-<script type="pyodide-18-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IHJhbmdlKDUpXG5uZXh0KG51bWJlcnMpIn0=
-</script>
-</div>
-<div>
-<div id="pyodide-19" class="exercise-cell">
-
-</div>
-<script type="pyodide-19-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IFsxLCAyLCAzLCA0LCA1XVxubmV4dChudW1iZXJzKSJ9
-</script>
-</div>
-</section>
-<section id="iterators-have-no-length" class="level3">
-<h3 class="anchored" data-anchor-id="iterators-have-no-length">iterators have no length</h3>
-<p>One limitation is that iterators usually have no length. (Some iterators might have a <strong>length_hint</strong>, but that’s not the usual case and the length is not guaranteed).</p>
-<p>What we have is the guarantee that they will always give us something back when we ask with the <code>next</code> function, either an item or a StopIteration exception, but the items are given one at a time and we usually don’t know how many of them are.</p>
-<div>
-<div id="pyodide-20" class="exercise-cell">
-
-</div>
-<script type="pyodide-20-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IGl0ZXIocmFuZ2UoMV8wMDBfMDAwXzAwMCkpXG5wcmludChsZW4obnVtYmVycykpIn0=
-</script>
-</div>
-</section>
-<section id="you-can-materialize-them-by-using-list" class="level3">
-<h3 class="anchored" data-anchor-id="you-can-materialize-them-by-using-list">You can materialize them by using list</h3>
-<p>If you ever try to print an iterator you won’t get much.</p>
-<div>
-<div id="pyodide-21" class="exercise-cell">
-
-</div>
-<script type="pyodide-21-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IGl0ZXIoWzEsIDIsIDMsIDQsIDVdKVxucHJpbnQobnVtYmVycykifQ==
-</script>
-</div>
-<p>If for any reason you need to materialize them you can always use <a href="https://docs.python.org/3/library/functions.html#func-list">list</a> or <a href="https://docs.python.org/3/library/functions.html#func-tuple">tuple</a>.</p>
-<div>
 <div id="pyodide-22" class="exercise-cell">
 
 </div>
 <script type="pyodide-22-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IGl0ZXIocmFuZ2UoMTApKVxucHJpbnQobnVtYmVycylcbm51bWJlcnMgPSBsaXN0KG51bWJlcnMpXG5wcmludChudW1iZXJzKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IGl0ZXIoWzEsIDIsIDMsIDQsIDVdKVxuXG5wcmludCgnbmV4dDogJywgbmV4dChudW1iZXJzKSlcbnByaW50KCduZXh0OiAnLCBuZXh0KG51bWJlcnMpKVxuXG5mb3IgaSBpbiBudW1iZXJzOlxuICAgIHByaW50KGkpXG5cbnByaW50KFwiTm8gbW9yZSBudW1iZXJzIHdpbGwgYmUgcHJpbnRlZFwiKVxuZm9yIGkgaW4gbnVtYmVyczpcbiAgICBwcmludChpKVxuXG5wcmludChcInN1bTpcIiwgc3VtKG51bWJlcnMpKSJ9
 </script>
 </div>
-<p>If you use NumPy, be aware that you can’t directly materialize an iterator into a numpy array and you might get really odd results.</p>
+<p>However, iterables are not consumed, you can iterate over them as many times as you want because functions that iterate over them, internally, create a new iterator every time they start a fresh iteration. Iterables are not exhausted because you don’t really iterate over them, you iterate over the iterator objects that are generated from them.</p>
 <div>
 <div id="pyodide-23" class="exercise-cell">
 
 </div>
 <script type="pyodide-23-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG51bXB5XG5cbm51bWJlcnMgPSBpdGVyKFsxLCAyLCAzLCA0LCA1XSlcbm51bWJlcnMgPSBudW1weS5hcnJheShudW1iZXJzKVxucHJpbnQobnVtYmVycykifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IFsxLCAyLCAzLCA0LCA1XVxuXG5mb3IgaSBpbiBudW1iZXJzOlxuICAgIHByaW50KGkpXG5cbmZvciBpIGluIG51bWJlcnM6XG4gICAgcHJpbnQoaSlcblxucHJpbnQoc3VtKG51bWJlcnMpKSJ9
 </script>
 </div>
-<p>You could get the correct result by transforming the iterator into a list first.</p>
+<p>So, iterables are reusable while iterators are consumable.</p>
+<p>As we have seen <code>for</code> loops can work both with iterables and iterators, but iterators will be consumed, while iterables can be iterated over as many times as you desire.</p>
 <div>
 <div id="pyodide-24" class="exercise-cell">
 
 </div>
 <script type="pyodide-24-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG51bXB5XG5cbm51bWJlcnMgPSBpdGVyKFsxLCAyLCAzLCA0LCA1XSlcbm51bWJlcnMgPSBudW1weS5hcnJheShsaXN0KG51bWJlcnMpKVxucHJpbnQobnVtYmVycykifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVyczEgPSByYW5nZSg1KVxuXG5mb3IgaSBpbiBudW1iZXJzMTpcbiAgICBwcmludChpKVxucHJpbnQoXCJTdW0gYWZ0ZXIxOlwiLCBzdW0obnVtYmVyczEpKVxuXG5udW1iZXJzMiA9IGl0ZXIocmFuZ2UoNSkpXG5cbmZvciBpIGluIG51bWJlcnMyOlxuICAgIHByaW50KGkpXG5wcmludChcIlN1bSBhZnRlcjI6XCIsIHN1bShudW1iZXJzMikpIn0=
 </script>
 </div>
-<p>Be aware that this solution will work for small lists, but if the number of items is large the list will take much memory. As an alternative numpy has a safer way that materializes the iterator directly into a numpy array: <a href="https://numpy.org/doc/stable/reference/generated/numpy.fromiter.html">numpy.fromiter</a>.</p>
+<p>Be careful because iterators return themselves when you pass them to the <code>iter</code> function, so the original one will be still consumed even when you might thought that you created a new one.</p>
 <div>
 <div id="pyodide-25" class="exercise-cell">
 
 </div>
 <script type="pyodide-25-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG51bXB5XG5cbm51bWJlcnMgPSBpdGVyKFsxLCAyLCAzLCA0LCA1XSlcbm51bWJlcnMgPSBudW1weS5mcm9taXRlcihudW1iZXJzLCBkdHlwZT1udW1weS5pbnQ4LCBjb3VudD01KVxucHJpbnQobnVtYmVycykifQ==
-</script>
-</div>
-<p>Remember that numpy assumes that you have all elements materialized in memory and that you know the number of elements. <code>fromiter</code> will have a better performance if you tell it how many elements will be in the final array , using the count argument (if you now it).</p>
-</section>
-</section>
-<section id="more-about-the-iterables-and-iterators" class="level2">
-<h2 class="anchored" data-anchor-id="more-about-the-iterables-and-iterators">More about the iterables and iterators</h2>
-<section id="python-is-fond-of-iterables" class="level3">
-<h3 class="anchored" data-anchor-id="python-is-fond-of-iterables">Python is fond of iterables</h3>
-<p>Many Python classes are iterable, like list, <a href="https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences">tuple</a>, <a href="https://docs.python.org/3/tutorial/datastructures.html#sets">set</a>, and <a href="https://docs.python.org/3/library/stdtypes.html#frozenset">frozenset</a>, or range.</p>
-<p>Dictionaries are also iterable, by default you will get their keys, but you can also iterate over its values, and items.</p>
-<div>
-<div id="pyodide-26" class="exercise-cell">
-
-</div>
-<script type="pyodide-26-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZCA9IHsnbmFtZSc6ICdBcnRodXInLCAnc3VybmFtZSc6ICdEZW50J31cbnByaW50KGxpc3QoZCkpXG5wcmludChkLmtleXMoKSlcbnByaW50KGQudmFsdWVzKCkpXG5wcmludChkLml0ZW1zKCkpIn0=
-</script>
-</div>
-<p>Strings are also iterable over their characters.</p>
-<div>
-<div id="pyodide-27" class="exercise-cell">
-
-</div>
-<script type="pyodide-27-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoidm93ZWxzID0gJ2FlaW91J1xucHJpbnQobGlzdCh2b3dlbHMpKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaXRlcjEgPSBpdGVyKHJhbmdlKDUpKVxuaXRlcjIgPSBpdGVyKGl0ZXIxKVxucHJpbnQoaXRlcjEgaXMgaXRlcjIpXG5wcmludChuZXh0KGl0ZXIxKSlcbnByaW50KG5leHQoaXRlcjIpKVxucHJpbnQobmV4dChpdGVyMSkpXG5wcmludChuZXh0KGl0ZXIyKSlcbnByaW50KG5leHQoaXRlcjIpKVxucHJpbnQobmV4dChpdGVyMikpXG5wcmludChuZXh0KGl0ZXIxKSkifQ==
 </script>
 </div>
 </section>
@@ -565,10 +540,10 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoidm93ZWxzID0gJ2FlaW91J1xu
 <h3 class="anchored" data-anchor-id="how-for-works">How <code>for</code> works</h3>
 <p>The most usual way of iterating over an iterable is to use it in a for loop.</p>
 <div>
-<div id="pyodide-28" class="exercise-cell">
+<div id="pyodide-26" class="exercise-cell">
 
 </div>
-<script type="pyodide-28-contents">
+<script type="pyodide-26-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IFsxLCAyLCAzLCA0LCA1XVxubnVtX2l0ZXIgPSBpdGVyKG51bWJlcnMpXG5cbmZvciBudW1iZXIgaW4gbnVtX2l0ZXI6XG4gICAgcHJpbnQobnVtYmVyKSJ9
 </script>
 </div>
@@ -589,21 +564,87 @@ really means:
     until StopIteration</code></pre>
 <p>We can reproduce the <code>for</code> behavior using <code>iter</code> and <code>while</code>.</p>
 <div>
-<div id="pyodide-29" class="exercise-cell">
+<div id="pyodide-27" class="exercise-cell">
 
 </div>
-<script type="pyodide-29-contents">
+<script type="pyodide-27-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaXQgPSBpdGVyKFsxLDIsM10pXG53aGlsZSBUcnVlOlxuICAgIHRyeTpcbiAgICAgICAgcHJpbnQobmV4dChpdCkpXG4gICAgZXhjZXB0IFN0b3BJdGVyYXRpb246XG4gICAgICAgIGJyZWFrIn0=
 </script>
 </div>
 <p><code>for</code> will accept any object that <code>iter</code> accepts and the first thing that it does is to create an iterator from that object.</p>
 <p>We can show the internal call to <code>iter</code> by creating specially chatty iterable and iterator classes. (You don’t need to worry about how to implement these classes, we will study a much easier way of implementing our own custom iterators by using generators.)</p>
 <div>
+<div id="pyodide-28" class="exercise-cell">
+
+</div>
+<script type="pyodide-28-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2xhc3MgVHJhY2VkSXRlcmFibGU6XG4gICAgZGVmIF9faXRlcl9fKHNlbGYpOlxuICAgICAgICBwcmludChcIl9faXRlcl9fIGNhbGxlZFwiKVxuICAgICAgICByZXR1cm4gVHJhY2VkSXRlcmF0b3IoKVxuXG5jbGFzcyBUcmFjZWRJdGVyYXRvcjpcbiAgICBkZWYgX19pbml0X18oc2VsZik6XG4gICAgICAgIHNlbGYuaSA9IDBcblxuICAgIGRlZiBfX2l0ZXJfXyhzZWxmKTpcbiAgICAgICAgcmV0dXJuIHNlbGZcblxuICAgIGRlZiBfX25leHRfXyhzZWxmKTpcbiAgICAgICAgcHJpbnQoXCJfX25leHRfXyBjYWxsZWRcIilcbiAgICAgICAgaWYgc2VsZi5pID49IDM6XG4gICAgICAgICAgICBwcmludCgnUmFpc2luZyBzdG9wIGl0ZXJhdGlvbicpXG4gICAgICAgICAgICByYWlzZSBTdG9wSXRlcmF0aW9uXG4gICAgICAgIHNlbGYuaSArPSAxXG4gICAgICAgIHJldHVybiBzZWxmLmlcblxuZm9yIHggaW4gVHJhY2VkSXRlcmFibGUoKTpcbiAgICBwcmludChcInZhbHVlOlwiLCB4KSJ9
+</script>
+</div>
+</section>
+<section id="iterators-are-iterable-but-iterables-are-not-iterators" class="level3">
+<h3 class="anchored" data-anchor-id="iterators-are-iterable-but-iterables-are-not-iterators">iterators are iterable, but iterables are not iterators</h3>
+<p>All iterators are iterable because they implement the <code>__iter__</code> special method (usually by returning themselves). So, if you pass to the <code>iter</code> function an iterator it just returns itself, that’s why <code>for</code> can work both with iterators and iterables, while if you pass it an iterable it will create a new iterator every time.</p>
+<div>
+<div id="pyodide-29" class="exercise-cell">
+
+</div>
+<script type="pyodide-29-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IHJhbmdlKDUpXG5pdGVyMSA9IGl0ZXIobnVtYmVycylcbml0ZXIyID0gaXRlcihudW1iZXJzKVxucHJpbnQoaXRlcjEgaXMgaXRlcjIpXG5cbml0ZXIzID0gaXRlcihudW1iZXJzKVxuaXRlcjQgPSBpdGVyKGl0ZXIzKVxucHJpbnQoaXRlcjMgaXMgaXRlcjQpIn0=
+</script>
+</div>
+<p>However, iterables are usually not iterators because they do not implement the <code>__next__</code> special method. Remember, the requirement to be an iterable is to be able to create iterators, not to be an iterator yourself. So if you try to use the next function directly on an iterable you will get a <a href="https://docs.python.org/3/library/exceptions.html#TypeError">TypeError</a> exception.</p>
+<div>
 <div id="pyodide-30" class="exercise-cell">
 
 </div>
 <script type="pyodide-30-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2xhc3MgVHJhY2VkSXRlcmFibGU6XG4gICAgZGVmIF9faXRlcl9fKHNlbGYpOlxuICAgICAgICBwcmludChcIl9faXRlcl9fIGNhbGxlZFwiKVxuICAgICAgICByZXR1cm4gVHJhY2VkSXRlcmF0b3IoKVxuXG5jbGFzcyBUcmFjZWRJdGVyYXRvcjpcbiAgICBkZWYgX19pbml0X18oc2VsZik6XG4gICAgICAgIHNlbGYuaSA9IDBcblxuICAgIGRlZiBfX2l0ZXJfXyhzZWxmKTpcbiAgICAgICAgcmV0dXJuIHNlbGZcblxuICAgIGRlZiBfX25leHRfXyhzZWxmKTpcbiAgICAgICAgcHJpbnQoXCJfX25leHRfXyBjYWxsZWRcIilcbiAgICAgICAgaWYgc2VsZi5pID49IDM6XG4gICAgICAgICAgICBwcmludCgnUmFpc2luZyBzdG9wIGl0ZXJhdGlvbicpXG4gICAgICAgICAgICByYWlzZSBTdG9wSXRlcmF0aW9uXG4gICAgICAgIHNlbGYuaSArPSAxXG4gICAgICAgIHJldHVybiBzZWxmLmlcblxuZm9yIHggaW4gVHJhY2VkSXRlcmFibGUoKTpcbiAgICBwcmludChcInZhbHVlOlwiLCB4KSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IHJhbmdlKDUpXG5uZXh0KG51bWJlcnMpIn0=
+</script>
+</div>
+<div>
+<div id="pyodide-31" class="exercise-cell">
+
+</div>
+<script type="pyodide-31-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IFsxLCAyLCAzLCA0LCA1XVxubmV4dChudW1iZXJzKSJ9
+</script>
+</div>
+</section>
+</section>
+<section id="more-about-the-iterables-and-iterators" class="level2">
+<h2 class="anchored" data-anchor-id="more-about-the-iterables-and-iterators">More about the iterables and iterators</h2>
+<section id="python-is-fond-of-iterables" class="level3">
+<h3 class="anchored" data-anchor-id="python-is-fond-of-iterables">Python is fond of iterables</h3>
+<p>Many Python classes are iterable, like list, <a href="https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences">tuple</a>, <a href="https://docs.python.org/3/tutorial/datastructures.html#sets">set</a>, and <a href="https://docs.python.org/3/library/stdtypes.html#frozenset">frozenset</a>, or range.</p>
+<p>Dictionaries are also iterable, by default you will get their keys, but you can also iterate over its values, and items.</p>
+<div>
+<div id="pyodide-32" class="exercise-cell">
+
+</div>
+<script type="pyodide-32-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZCA9IHsnbmFtZSc6ICdBcnRodXInLCAnc3VybmFtZSc6ICdEZW50J31cbnByaW50KGxpc3QoZCkpXG5wcmludChkLmtleXMoKSlcbnByaW50KGQudmFsdWVzKCkpXG5wcmludChkLml0ZW1zKCkpIn0=
+</script>
+</div>
+<p>Strings are also iterable over their characters.</p>
+<div>
+<div id="pyodide-33" class="exercise-cell">
+
+</div>
+<script type="pyodide-33-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoidm93ZWxzID0gJ2FlaW91J1xucHJpbnQobGlzdCh2b3dlbHMpKSJ9
+</script>
+</div>
+</section>
+<section id="file-objects-are-iterators" class="level3">
+<h3 class="anchored" data-anchor-id="file-objects-are-iterators">file objects are iterators</h3>
+<p>Python is very fond of iterables and iterators, it uses them for many tasks. For instance, every time that you <a href="https://docs.python.org/3/library/functions.html#open">open</a> a file you get a <a href="https://docs.python.org/3/glossary.html#term-file-object">file</a> object that is in iterator.</p>
+<div>
+<div id="pyodide-34" class="exercise-cell">
+
+</div>
+<script type="pyodide-34-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IGlvXG5cbmZpbGVfbGlrZV9vYmplY3QgPSBpby5TdHJpbmdJTyhcIlwiXCJGYXIgb3V0IGluIHRoZSB1bmNoYXJ0ZWQgYmFja3dhdGVycyBvZiB0aGUgdW5mYXNoaW9uYWJsZSBlbmQgb2YgdGhlIFdlc3Rlcm4gc3BpcmFsIGFybSBvZiB0aGUgZ2FsYXh5IGxpZXMgYSBzbWFsbCB1bnJlZ2FyZGVkIHllbGxvdyBzdW4uXG5PcmJpdGluZyB0aGlzLCBhdCBhIGRpc3RhbmNlIG9mIHJvdWdobHkgbmluZXR5IG1pbGxpb24gbWlsZXMgaXMgYW4gdXR0ZXJseSBpbnNpZ25pZmljYW50IGxpdHRsZSBibHVlLWdyZWVuIHBsYW5ldCxcbndob3NlIGFwZSBkZXNjZW5kZWQgbGlmZSBmb3JtcyBhcmUgc28gYW1hemluZ2x5IHByaW1pdGl2ZSB0aGF0IHRoZXkgc3RpbGwgdGhpbmsgZGlnaXRhbCB3YXRjaGVzIGFyZSBhIHByZXR0eSBuZWF0IGlkZWEuXCJcIlwiKVxuXG5wcmludChuZXh0KGZpbGVfbGlrZV9vYmplY3QpKVxucHJpbnQobmV4dChmaWxlX2xpa2Vfb2JqZWN0KSlcbnByaW50KG5leHQoZmlsZV9saWtlX29iamVjdCkpIn0=
 </script>
 </div>
 </section>
@@ -611,34 +652,34 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2xhc3MgVHJhY2VkSXRlcmFi
 <h3 class="anchored" data-anchor-id="the-iterable-users">The iterable users</h3>
 <p><code>for</code> is not the only iterable user the uses the iterator trick, many other Python functions do, like: <a href="https://docs.python.org/3/library/functions.html#zip">zip</a>, <a href="https://docs.python.org/3/library/functions.html#sum">sum</a>, <a href="https://docs.python.org/3/library/functions.html#max">max</a>, <a href="https://docs.python.org/3/library/functions.html#min">min</a>, <a href="https://docs.python.org/3/library/functions.html#any">any</a>, <a href="https://docs.python.org/3/library/functions.html#all">all</a>, <a href="https://docs.python.org/3/library/functions.html#enumerate">enumerate</a>,<a href="https://docs.python.org/3/library/functions.html#map">map</a>, <a href="https://docs.python.org/3/library/functions.html#func-list">list</a>, etc.</p>
 <div>
-<div id="pyodide-31" class="exercise-cell">
+<div id="pyodide-35" class="exercise-cell">
 
 </div>
-<script type="pyodide-31-contents">
+<script type="pyodide-35-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IHJhbmdlKDEwMDApXG5wcmludChcIk1heDpcIiwgbWF4KG51bWJlcnMpKVxucHJpbnQoXCJNaW46XCIsIG1pbihudW1iZXJzKSlcbnByaW50KFwiU3VtOlwiLCBzdW0obnVtYmVycykpIn0=
 </script>
 </div>
 <div>
-<div id="pyodide-32" class="exercise-cell">
+<div id="pyodide-36" class="exercise-cell">
 
 </div>
-<script type="pyodide-32-contents">
+<script type="pyodide-36-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibDEgPSBbVHJ1ZSwgVHJ1ZSwgRmFsc2VdXG5sMiA9IFtGYWxzZSwgRmFsc2UsIEZhbHNlXVxubDMgPSBbVHJ1ZSwgVHJ1ZSwgVHJ1ZV1cbnByaW50KFwiYW55KGwxKVwiLCBhbnkobDEpKVxucHJpbnQoXCJhbnkobDIpXCIsIGFueShsMikpXG5wcmludChcImFueShsMylcIiwgYW55KGwzKSlcbnByaW50KFwiYWxsKGwxKVwiLCBhbGwobDEpKVxucHJpbnQoXCJhbGwobDIpXCIsIGFsbChsMikpXG5wcmludChcImFsbChsMylcIiwgYWxsKGwzKSkifQ==
 </script>
 </div>
 <div>
-<div id="pyodide-33" class="exercise-cell">
+<div id="pyodide-37" class="exercise-cell">
 
 </div>
-<script type="pyodide-33-contents">
+<script type="pyodide-37-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoidm93ZWxzID0gXCJhZWlvdVwiXG5lID0gZW51bWVyYXRlKHZvd2VscylcbnByaW50KG5leHQoZSkpXG5wcmludChuZXh0KGUpKVxucHJpbnQobmV4dChlKSlcbnByaW50KG5leHQoZSkpXG5wcmludChuZXh0KGUpKSJ9
 </script>
 </div>
 <div>
-<div id="pyodide-34" class="exercise-cell">
+<div id="pyodide-38" class="exercise-cell">
 
 </div>
-<script type="pyodide-34-contents">
+<script type="pyodide-38-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoidm93ZWxzID0gXCJhZWlvdVwiXG5udW1iZXJzID0gcmFuZ2UoMSwgNilcbnogPSB6aXAodm93ZWxzLCBudW1iZXJzKVxucHJpbnQobmV4dCh6KSlcbnByaW50KG5leHQoeikpXG5wcmludChuZXh0KHopKVxucHJpbnQobmV4dCh6KSlcbnByaW50KG5leHQoeikpIn0=
 </script>
 </div>
@@ -646,47 +687,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoidm93ZWxzID0gXCJhZWlvdVwi
 <section id="itertools-and-more-itertools" class="level3">
 <h3 class="anchored" data-anchor-id="itertools-and-more-itertools">itertools and more-itertools</h3>
 <p>Once you start using iterables and iterators you should take a look at the <a href="https://docs.python.org/3/library/itertools.html">itertools</a> standard library module. In there you will find many tools to get the most of these tools.</p>
-</section>
-<section id="iterables-dont-need-to-be-sequences" class="level3">
-<h3 class="anchored" data-anchor-id="iterables-dont-need-to-be-sequences">Iterables don’t need to be sequences</h3>
-<p>Iterables just need to be iterable, nothing else. Lists or ranges have extra capabilities that go further than the iterable requirement, to be able to be iterated over, but these are not required. For instance, lists have <a href="https://en.wikipedia.org/wiki/Random_access">random access</a>, we can ask for any of its members at any time.</p>
-<div>
-<div id="pyodide-35" class="exercise-cell">
-
-</div>
-<script type="pyodide-35-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IFsxLCAyLCAzLCA0LCA1XVxucHJpbnQobnVtYmVyc1szXSlcbnByaW50KG51bWJlcnNbMF0pXG5wcmludChudW1iZXJzWzRdKSJ9
-</script>
-</div>
-<p>But that’s not a requirement to be an iterable. For instance, <a href="https://docs.python.org/3/tutorial/datastructures.html#sets">sets</a> have no random access, but they are iterable.</p>
-<div>
-<div id="pyodide-36" class="exercise-cell">
-
-</div>
-<script type="pyodide-36-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVycyA9IHsxLCAyLCAzLCA0LCA1fVxucHJpbnQobnVtYmVyc1szXSlcblxuZm9yIGkgaW4gbnVtYmVyczpcbiAgICBwcmludChpKSJ9
-</script>
-</div>
-<p>Also, iterables do not need to have a stable order.</p>
-<div>
-<div id="pyodide-37" class="exercise-cell">
-
-</div>
-<script type="pyodide-37-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibnVtYmVyczEgPSB7MSwgMiwgMywgNCwgNX1cbm51bWJlcnMyID0gezUsIDIsIDMsIDEsIDR9XG5wcmludChudW1iZXJzMSA9PSBudW1iZXJzMikifQ==
-</script>
-</div>
-<p>Iterables do not even need to have a finite number of elements or even length. Let’s create an iterable that produces random integers for ever.</p>
-<div>
-<div id="pyodide-38" class="exercise-cell">
-
-</div>
-<script type="pyodide-38-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHJhbmRvbVxuXG5jbGFzcyBJbmZpbml0ZVJhbmRvbUl0ZXJhdG9yOlxuICAgIFwiXCJcIlRoZSBhY3R1YWwgaXRlcmF0b3IgdGhhdCBwZXJmb3JtcyB0aGUgd29yay5cIlwiXCJcbiAgICBkZWYgX19uZXh0X18oc2VsZik6XG4gICAgICAgICMgVGhpcyBpcyBjYWxsZWQgZXZlcnkgdGltZSB0aGUgZm9yIGxvb3AgYXNrcyBmb3IgYSBuZXcgdmFsdWVcbiAgICAgICAgcmV0dXJuIHJhbmRvbS5yYW5kaW50KDAsIDkpXG5cbiAgICBkZWYgX19pdGVyX18oc2VsZik6XG4gICAgICAgICMgSXRlcmF0b3JzIGFyZSByZXF1aXJlZCB0byByZXR1cm4gdGhlbXNlbHZlcyB3aGVuIGl0ZXIoKSBpcyBjYWxsZWRcbiAgICAgICAgcmV0dXJuIHNlbGZcblxuY2xhc3MgSW5maW5pdGVSYW5kb21JbnRzOlxuICAgIFwiXCJcIlRoZSBpdGVyYWJsZSB0aGF0IGNhbiBiZSB1c2VkIGluIGEgZm9yIGxvb3AuXCJcIlwiXG4gICAgZGVmIF9faXRlcl9fKHNlbGYpOlxuICAgICAgICAjIEV2ZXJ5IHRpbWUgd2Ugc3RhcnQgYSBmb3IgbG9vcCwgd2UgY3JlYXRlIGEgZnJlc2ggaXRlcmF0b3JcbiAgICAgICAgcmV0dXJuIEluZmluaXRlUmFuZG9tSXRlcmF0b3IoKVxuXG5ybmcgPSBJbmZpbml0ZVJhbmRvbUludHMoKVxuXG5mb3IgeCBpbiBybmc6XG4gICAgcHJpbnQoeClcbiAgICBpZiB4ID09IDc6XG4gICAgICAgIGJyZWFrIn0=
-</script>
-</div>
-<p><code>InfiniteRandomInts</code> is iterable because we have implemented the <a href="https://docs.python.org/3/reference/datamodel.html#object.__iter__"><code>__iter__</code></a> magic method, and that’s all an iterable needs to be iterable.</p>
-<p>If you ever need to represent more constrained behaviors, like the behavior of an object with stable order, random access and a length you have other <a href="https://realpython.com/python-protocol/">protocols</a> available, like the <a href="https://docs.python.org/3/glossary.html#term-sequence">sequence</a>.</p>
 </section>
 </section>
 <section id="other-resources" class="level2">
@@ -1135,8 +1135,8 @@ window._ojs.runtime.interpretFromScriptTags();
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./exercises.html" class="pagination-link" aria-label="Exercises">
-        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./generators.html" class="pagination-link" aria-label="Generators">
+        <span class="nav-page-text">Generators</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
