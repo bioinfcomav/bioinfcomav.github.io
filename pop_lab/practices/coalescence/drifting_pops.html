@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Drifting populations &#8212; Pop lab  documentation</title>
+    <title>Drifting Populations &#8212; Pop lab  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
@@ -36,50 +36,51 @@
           <div class="body" role="main">
             
   <section id="drifting-populations">
-<h1>Drifting populations<a class="headerlink" href="#drifting-populations" title="Link to this heading">¶</a></h1>
-<p>In this practice, we will simulate the evolution of three populations that originate from the same ancestral population but evolve independently over time due to genetic drift.
-Through these simulations, we will observe how genetic drift influences population divergence and genetic distances.</p>
+<h1>Drifting Populations<a class="headerlink" href="#drifting-populations" title="Link to this heading">¶</a></h1>
+<p>In this practice, we will simulate the evolution of three populations that originate from the same ancestral population but evolve independently over time due to genetic drift. Through these simulations, we will observe how genetic drift influences population divergence and genetic distances.</p>
 <p>You will be able to modify:</p>
 <ul class="simple">
 <li><p>The population size of each group.</p></li>
 <li><p>The number of generations they evolve after the split.</p></li>
 </ul>
-<p>Here, we will simulate the mutations and recombinations that occur in a genomic segment.
-At the end of the simulation, the genomic segment will contain variable loci that have arisen through mutation and have been reshuffled through recombination.
-You could have the option of modifying other parameters like:</p>
+<p>Here, we will simulate the mutations and recombination events that occur in a genomic segment. At the end of the simulation, the genomic segment will contain variable loci that have arisen through mutation and have been reshuffled through recombination.</p>
+<p>You will also have the option to modify additional parameters such as:</p>
 <ul class="simple">
-<li><p>The recombination rate.</p></li>
-<li><p>The mutation rate.</p></li>
-<li><p>The sequence length.</p></li>
-<li><p>The sample size, the number of individuals taken from the population to calculate the different paramenters.</p></li>
+<li><p>The recombination rate</p></li>
+<li><p>The mutation rate</p></li>
+<li><p>The sequence length</p></li>
+<li><p>The sample size (the number of individuals sampled from each population to calculate the different parameters)</p></li>
 </ul>
-<p>To quantify how genetic drift influences the populations, we will analyze several population genetic metrics. These will help us understand changes in genetic diversity and population divergence over time. The metrics available include:</p>
+<p>To quantify how genetic drift influences populations, we will analyze several population genetic metrics. These will help us understand changes in genetic diversity and population divergence over time. The available metrics include:</p>
 <ul class="simple">
-<li><p>The expected heterozygosity.</p></li>
-<li><p>The number of variable loci.</p></li>
-<li><p>The number and ratio of polymorphic loci.</p></li>
-<li><p>A Principal Component Analysis (PCA) carried out with the genotype of the sampled individuals.</p></li>
-<li><p>The Dest genetic distances between pairs of populations.</p></li>
+<li><p>Expected heterozygosity</p></li>
+<li><p>Number of variable loci</p></li>
+<li><p>Number and proportion of polymorphic loci</p></li>
+<li><p>Principal Component Analysis (PCA) performed on the genotypes of sampled individuals</p></li>
+<li><p>Dest genetic distances between pairs of populations</p></li>
 </ul>
 <p>The PCA will provide a visual representation of genetic relationships, while the distance matrix will quantify differences between populations. Together, they allow us to track genetic divergence over time.</p>
+<p>Be aware that the PCA might fail if too few SNPs remain after filtering. Because mutations occur at random, results may vary from run to run—if this happens, simply repeat the simulation.</p>
 <p><a class="reference external" href="https://plantgenomics.es/pop_lab/drifting_pops/">Drifting populations simulation application</a></p>
 <section id="genetic-distances">
 <h2>Genetic distances<a class="headerlink" href="#genetic-distances" title="Link to this heading">¶</a></h2>
 <p>Imagine you have three populations that initially share the same genetic composition. As they evolve independently, how do you think genetic drift will influence their genetic distances?</p>
-<p>Before running the simulation, take a moment to predict the outcome::</p>
+<p>Before running the simulation, take a moment to predict the outcome:</p>
 <ul class="simple">
-<li><p>How do you expect the genetic distances between the populations to change over time?</p></li>
+<li><p>How do you expect genetic distances between populations to change over time?</p></li>
 <li><p>Will they remain similar, or will they diverge?</p></li>
-<li><p>How do you think the Principal Component Analysis (PCA) and the distance matrix will reflect these changes?</p></li>
+<li><p>How do you think the PCA and distance matrix will reflect these changes?</p></li>
 </ul>
-<p>Simulation &amp; Analysis:</p>
+<section id="simulation-and-analysis">
+<h3>Simulation and Analysis<a class="headerlink" href="#simulation-and-analysis" title="Link to this heading">¶</a></h3>
 <ul class="simple">
-<li><p>Run the simulation for a given number of generations.</p></li>
-<li><p>Observe the genetic distances between populations at different time points.</p></li>
+<li><p>Run the simulation for a chosen number of generations.</p></li>
+<li><p>Observe genetic distances between populations at different time points.</p></li>
 <li><p>Examine the PCA plot: What patterns do you observe? How do populations cluster over time?</p></li>
-<li><p>Compare your initial predictions with the actual results.</p></li>
-<li><p>How does this result align with what you learned in the practice on genetic drift with one locus?</p></li>
+<li><p>Compare your predictions with the results.</p></li>
+<li><p>How does this align with what you learned in the single-locus drift exercise?</p></li>
 </ul>
+</section>
 </section>
 <section id="population-size-influence">
 <h2>Population size influence<a class="headerlink" href="#population-size-influence" title="Link to this heading">¶</a></h2>
@@ -89,11 +90,10 @@ You could have the option of modifying other parameters like:</p>
 <p>Increase the size of all three populations to 2000 individuals.</p>
 <p>Predict what will happen:</p>
 <ul class="simple">
-<li><p>Will the genetic distances between populations be larger, smaller, or similar compared to smaller populations?</p></li>
+<li><p>Will genetic distances between populations be larger, smaller, or similar compared to smaller populations?</p></li>
 <li><p>Will the PCA and distance matrix show more or less divergence?</p></li>
 </ul>
-<p>Run the simulation and analyze the results.
-Compare with your predictions and explain the outcome.</p>
+<p>Run the simulation and analyze the results. Compare them with your predictions and explain the outcome.</p>
 </section>
 <section id="scenario-2-mixed-population-sizes">
 <h3>Scenario 2: Mixed Population Sizes<a class="headerlink" href="#scenario-2-mixed-population-sizes" title="Link to this heading">¶</a></h3>
@@ -101,22 +101,31 @@ Compare with your predictions and explain the outcome.</p>
 <p>Predict what will happen:</p>
 <ul class="simple">
 <li><p>Will the smaller population behave differently from the larger ones?</p></li>
-<li><p>How will its genetic distance change compared to the larger populations?</p></li>
-<li><p>What do you expect to see in the PCA and the distance matrix?</p></li>
+<li><p>How will its genetic distance change relative to the larger populations?</p></li>
+<li><p>What do you expect to see in the PCA and distance matrix?</p></li>
 </ul>
 <p>Run the simulation and analyze the results.</p>
 <ul class="simple">
-<li><p>Does the smaller population experience more drift than the larger ones?</p></li>
+<li><p>Does the smaller population experience stronger drift than the larger ones?</p></li>
 </ul>
 </section>
+</section>
+<section id="time-scale-of-divergence">
+<h2>Time Scale of Divergence<a class="headerlink" href="#time-scale-of-divergence" title="Link to this heading">¶</a></h2>
+<p>Keep population size constant at 500 for all three populations, but vary generations (e.g. 50, 200, 1000).</p>
+<p>Questions:</p>
+<ul class="simple">
+<li><p>How does the genetic distances between population 1 and 2 scale with time?</p></li>
+<li><p>Does divergence increase linearly?</p></li>
+</ul>
 </section>
 <section id="conclusions">
 <h2>Conclusions<a class="headerlink" href="#conclusions" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Summarize your findings on how genetic drift affects genetic distances.</p></li>
-<li><p>Discuss the role of population size in genetic drift.</p></li>
+<li><p>Discuss the role of population size in drift.</p></li>
 <li><p>Explain how PCA can be used to visualize genetic relationships between populations over time.</p></li>
-<li><p>Can this process help explain speciation or genetic differentiation between isolated human populations or breeding populations?</p></li>
+<li><p>Can this process help explain speciation or genetic differentiation among isolated human or breeding populations?</p></li>
 </ul>
 </section>
 </section>
@@ -154,7 +163,7 @@ Compare with your predictions and explain the outcome.</p>
 <li class="toctree-l1"><a class="reference internal" href="../fwd/one_locus.html">One locus foward in time</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bottleneck.html">Bottlenecks and Genetic Diversity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="founder.html">Founder Effect and Genetic Diversity</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Drifting populations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Drifting Populations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="admixture.html">Admixture</a></li>
 </ul>
 
