@@ -13,6 +13,7 @@ Python:
 
 	* `Introduction to programming <courses/intro_programming>`_
 	* `Python project management with uv <https://github.com/JoseBlanca/uv_seminar>`_
+	* `Testing tutorial <courses/testing_tutorial>`_
 	* `Iterables and iterators <courses/iterables_and_iterators>`_
 	* `Programming paradigms <courses/programming_paradigms>`_
 
