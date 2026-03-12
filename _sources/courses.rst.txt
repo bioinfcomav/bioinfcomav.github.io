@@ -29,7 +29,18 @@ Máster en mejora genética:
 Grado en ingeniería biomédica:
 
     * Materiales para el curso de `bioética <https://drive.google.com/drive/folders/100WJpcPj30_456OczrIyHI6vFvIV6T82?usp=sharing>`_.
-    * Materiales para el curso de Python para `análisis de datos <https://drive.google.com/drive/folders/1RHV-Gni3eDTZHiiLzJPQPYrJdbVuuEbt?usp=drive_link>`_.
+    * Materiales para el curso de Python:
+
+		* `Course plan <https://docs.google.com/presentation/d/1JN1vwbaWHg0PFeGWrr_pwTmE9FgEDjC9CvVyyI5Kpzg/edit?usp=drive_link>`_.
+		* `Python 101 <courses/intro_programming>`_
+		* `Testing tutorial <courses/testing_tutorial>`_
+		* `Project management with uv <https://github.com/JoseBlanca/uv_seminar>`_
+		* Data analysis topics:
+
+			* `Iterables and iterators <courses/iterables_and_iterators>`_
+			* Data analysis `libraries <https://github.com/JoseBlanca/py_industriales/blob/main/python_para_analysis_de_datos.md>`_
+
+		* Programming paradigms `course <courses/programming_paradigms>`_ and `slides <https://docs.google.com/presentation/d/1nWWS07IteRFVYaFLmLpnPnA_6UxEC1b6pbRVhHc4CwM/edit?usp=drive_link>`_.
 
 Seminario de `agricultura y moral <https://drive.google.com/drive/folders/1XYM2AvF9a_ObQXRDbbiljoGlTu24JjRh?usp=sharing>`_.
 
