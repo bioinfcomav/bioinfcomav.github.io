@@ -567,7 +567,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="run">run</h2>
 <p>When scripting a task it is common to need to run a external process, for instance a program to do a particular data analysis. This external process will be a subprocess launched by our Python running process. The <a href="https://docs.python.org/3/library/subprocess.html">subprocess</a> module includes the <a href="https://docs.python.org/3/library/subprocess.html#subprocess.run">run</a> function to run external processes.</p>
 <p>Let’s image that we want to run the <code>ls</code> command (<code>dir</code> in windows).</p>
-<div id="a0bd4a4f" class="cell" data-execution_count="1">
+<div id="df5e573b" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> run</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> [<span class="st">'ls'</span>]</span>
@@ -608,49 +608,49 @@ zip.quarto_ipynb</code></pre>
 </div>
 </div>
 <p>Run, by default, expects a list of strings, not a string with the command. For instance, image that our command includes a parameter.</p>
-<div id="2753d20c" class="cell" data-execution_count="2">
+<div id="08349266" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> run</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> [<span class="st">'ls'</span>, <span class="st">'-l'</span>]</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>run(cmd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>total 604
--rw-rw-r-- 1 jose jose 79268 mar 12 10:20 comprehensions.html
+-rw-rw-r-- 1 jose jose 79268 mar 25 15:50 comprehensions.html
 -rw-rw-r-- 1 jose jose  4361 feb 17 09:16 comprehensions.qmd
--rw-rw-r-- 1 jose jose  6545 mar 12 10:20 comprehensions.quarto_ipynb
+-rw-rw-r-- 1 jose jose  6545 mar 25 15:50 comprehensions.quarto_ipynb
 -rw-rw-r-- 1 jose jose  3719 feb 17 09:16 counter.qmd
--rw-rw-r-- 1 jose jose  5739 mar 12 10:20 counter.quarto_ipynb
--rw-rw-r-- 1 jose jose 57828 mar 12 10:20 enumerate.html
+-rw-rw-r-- 1 jose jose  5739 mar 25 15:50 counter.quarto_ipynb
+-rw-rw-r-- 1 jose jose 57828 mar 25 15:50 enumerate.html
 -rw-rw-r-- 1 jose jose  1786 feb 17 09:16 enumerate.qmd
--rw-rw-r-- 1 jose jose  3137 mar 12 10:20 enumerate.quarto_ipynb
--rw-rw-r-- 1 jose jose 43157 mar 12 10:20 everyday_python.html
+-rw-rw-r-- 1 jose jose  3137 mar 25 15:50 enumerate.quarto_ipynb
+-rw-rw-r-- 1 jose jose 43157 mar 25 15:50 everyday_python.html
 -rw-rw-r-- 1 jose jose   640 feb 17 09:16 everyday_python.qmd
--rw-rw-r-- 1 jose jose 55731 mar 12 10:20 lambda.html
+-rw-rw-r-- 1 jose jose 55731 mar 25 15:50 lambda.html
 -rw-rw-r-- 1 jose jose  2191 feb 17 09:16 lambda.qmd
--rw-rw-r-- 1 jose jose  3434 mar 12 10:20 lambda.quarto_ipynb
--rw-rw-r-- 1 jose jose 64511 mar 12 10:20 paths.html
+-rw-rw-r-- 1 jose jose  3434 mar 25 15:50 lambda.quarto_ipynb
+-rw-rw-r-- 1 jose jose 64511 mar 25 15:50 paths.html
 -rw-rw-r-- 1 jose jose  4608 feb 17 09:16 paths.qmd
--rw-rw-r-- 1 jose jose  6430 mar 12 10:20 paths.quarto_ipynb
--rw-rw-r-- 1 jose jose 68112 mar 12 10:20 range.html
+-rw-rw-r-- 1 jose jose  6430 mar 25 15:50 paths.quarto_ipynb
+-rw-rw-r-- 1 jose jose 68112 mar 25 15:50 range.html
 -rw-rw-r-- 1 jose jose  1657 feb 17 09:16 range.qmd
--rw-rw-r-- 1 jose jose  3159 mar 12 10:20 range.quarto_ipynb
--rw-rw-r-- 1 jose jose 63259 mar 12 10:20 shutil.html
+-rw-rw-r-- 1 jose jose  3159 mar 25 15:50 range.quarto_ipynb
+-rw-rw-r-- 1 jose jose 63259 mar 25 15:50 shutil.html
 -rw-rw-r-- 1 jose jose  2885 feb 17 09:16 shutil.qmd
--rw-rw-r-- 1 jose jose  4383 mar 12 10:20 shutil.quarto_ipynb
+-rw-rw-r-- 1 jose jose  4383 mar 25 15:50 shutil.quarto_ipynb
 -rw-rw-r-- 1 jose jose  3762 feb 17 09:16 subprocess.qmd
--rw-rw-r-- 1 jose jose  6913 mar 12 10:20 subprocess.quarto_ipynb
--rw-rw-r-- 1 jose jose 57211 mar 12 10:20 typing.html
+-rw-rw-r-- 1 jose jose  6913 mar 25 15:50 subprocess.quarto_ipynb
+-rw-rw-r-- 1 jose jose 57211 mar 25 15:50 typing.html
 -rw-rw-r-- 1 jose jose  2450 feb 17 09:16 typing.qmd
--rw-rw-r-- 1 jose jose  3721 mar 12 10:20 typing.quarto_ipynb
+-rw-rw-r-- 1 jose jose  3721 mar 25 15:50 typing.quarto_ipynb
 -rw-rw-r-- 1 jose jose  1356 feb 17 09:16 zip.qmd
--rw-rw-r-- 1 jose jose  2549 mar 12 10:20 zip.quarto_ipynb</code></pre>
+-rw-rw-r-- 1 jose jose  2549 mar 25 15:50 zip.quarto_ipynb</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>CompletedProcess(args=['ls', '-l'], returncode=0)</code></pre>
 </div>
 </div>
 <p>In any case the run function will launch the external process and will also wait for the process to finish, and only then will the function return a <a href="https://docs.python.org/3/library/subprocess.html#subprocess.CompletedProcess">CompletedProcess</a> object.</p>
-<div id="446f7b78" class="cell" data-execution_count="3">
+<div id="9a5fa300" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> run</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> [<span class="st">'ls'</span>, <span class="st">'-l'</span>]</span>
@@ -658,35 +658,35 @@ zip.quarto_ipynb</code></pre>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(process.returncode)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>total 604
--rw-rw-r-- 1 jose jose 79268 mar 12 10:20 comprehensions.html
+-rw-rw-r-- 1 jose jose 79268 mar 25 15:50 comprehensions.html
 -rw-rw-r-- 1 jose jose  4361 feb 17 09:16 comprehensions.qmd
--rw-rw-r-- 1 jose jose  6545 mar 12 10:20 comprehensions.quarto_ipynb
+-rw-rw-r-- 1 jose jose  6545 mar 25 15:50 comprehensions.quarto_ipynb
 -rw-rw-r-- 1 jose jose  3719 feb 17 09:16 counter.qmd
--rw-rw-r-- 1 jose jose  5739 mar 12 10:20 counter.quarto_ipynb
--rw-rw-r-- 1 jose jose 57828 mar 12 10:20 enumerate.html
+-rw-rw-r-- 1 jose jose  5739 mar 25 15:50 counter.quarto_ipynb
+-rw-rw-r-- 1 jose jose 57828 mar 25 15:50 enumerate.html
 -rw-rw-r-- 1 jose jose  1786 feb 17 09:16 enumerate.qmd
--rw-rw-r-- 1 jose jose  3137 mar 12 10:20 enumerate.quarto_ipynb
--rw-rw-r-- 1 jose jose 43157 mar 12 10:20 everyday_python.html
+-rw-rw-r-- 1 jose jose  3137 mar 25 15:50 enumerate.quarto_ipynb
+-rw-rw-r-- 1 jose jose 43157 mar 25 15:50 everyday_python.html
 -rw-rw-r-- 1 jose jose   640 feb 17 09:16 everyday_python.qmd
--rw-rw-r-- 1 jose jose 55731 mar 12 10:20 lambda.html
+-rw-rw-r-- 1 jose jose 55731 mar 25 15:50 lambda.html
 -rw-rw-r-- 1 jose jose  2191 feb 17 09:16 lambda.qmd
--rw-rw-r-- 1 jose jose  3434 mar 12 10:20 lambda.quarto_ipynb
--rw-rw-r-- 1 jose jose 64511 mar 12 10:20 paths.html
+-rw-rw-r-- 1 jose jose  3434 mar 25 15:50 lambda.quarto_ipynb
+-rw-rw-r-- 1 jose jose 64511 mar 25 15:50 paths.html
 -rw-rw-r-- 1 jose jose  4608 feb 17 09:16 paths.qmd
--rw-rw-r-- 1 jose jose  6430 mar 12 10:20 paths.quarto_ipynb
--rw-rw-r-- 1 jose jose 68112 mar 12 10:20 range.html
+-rw-rw-r-- 1 jose jose  6430 mar 25 15:50 paths.quarto_ipynb
+-rw-rw-r-- 1 jose jose 68112 mar 25 15:50 range.html
 -rw-rw-r-- 1 jose jose  1657 feb 17 09:16 range.qmd
--rw-rw-r-- 1 jose jose  3159 mar 12 10:20 range.quarto_ipynb
--rw-rw-r-- 1 jose jose 63259 mar 12 10:20 shutil.html
+-rw-rw-r-- 1 jose jose  3159 mar 25 15:50 range.quarto_ipynb
+-rw-rw-r-- 1 jose jose 63259 mar 25 15:50 shutil.html
 -rw-rw-r-- 1 jose jose  2885 feb 17 09:16 shutil.qmd
--rw-rw-r-- 1 jose jose  4383 mar 12 10:20 shutil.quarto_ipynb
+-rw-rw-r-- 1 jose jose  4383 mar 25 15:50 shutil.quarto_ipynb
 -rw-rw-r-- 1 jose jose  3762 feb 17 09:16 subprocess.qmd
--rw-rw-r-- 1 jose jose  6913 mar 12 10:20 subprocess.quarto_ipynb
--rw-rw-r-- 1 jose jose 57211 mar 12 10:20 typing.html
+-rw-rw-r-- 1 jose jose  6913 mar 25 15:50 subprocess.quarto_ipynb
+-rw-rw-r-- 1 jose jose 57211 mar 25 15:50 typing.html
 -rw-rw-r-- 1 jose jose  2450 feb 17 09:16 typing.qmd
--rw-rw-r-- 1 jose jose  3721 mar 12 10:20 typing.quarto_ipynb
+-rw-rw-r-- 1 jose jose  3721 mar 25 15:50 typing.quarto_ipynb
 -rw-rw-r-- 1 jose jose  1356 feb 17 09:16 zip.qmd
--rw-rw-r-- 1 jose jose  2549 mar 12 10:20 zip.quarto_ipynb
+-rw-rw-r-- 1 jose jose  2549 mar 25 15:50 zip.quarto_ipynb
 0</code></pre>
 </div>
 </div>
@@ -718,7 +718,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJjb21wbGV0aW9uIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFs
 <section id="stdout-and-stdin" class="level2">
 <h2 class="anchored" data-anchor-id="stdout-and-stdin">stdout and stdin</h2>
 <p>You can store the result of <a href="https://en.wikipedia.org/wiki/Standard_streams#Standard_output_(stdout)">stdout</a> and <a href="https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)">stderr</a> as properties of the completed process object.</p>
-<div id="93039ba2" class="cell" data-execution_count="4">
+<div id="a5d3f09a" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> run</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> [<span class="st">'ls'</span>, <span class="st">'/hello'</span>]</span>
@@ -731,7 +731,7 @@ b"ls: no se puede acceder a '/hello': No existe el fichero o el directorio\n"</c
 </div>
 </div>
 <p>Be aware that, by default, the standard output streams will be binary objects, if you want them to be strings you have to provide an encoding.</p>
-<div id="cb6b4862" class="cell" data-execution_count="5">
+<div id="99ee8844" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> run</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> [<span class="st">'ls'</span>, <span class="st">'/hello'</span>]</span>
@@ -750,7 +750,7 @@ ls: no se puede acceder a '/hello': No existe el fichero o el directorio
 <p>The <code>run</code> function will wait for the subprocess to finnish before returning. If you just want to launch the process, but not wait for it to finish you can use the <a href="https://docs.python.org/3/library/subprocess.html#subprocess.Popen">Popen</a> class.</p>
 <p>The use of <code>Popen</code> is very similar to the use of <code>run</code>, the main difference being that <code>Popen</code> will return a <a href="https://docs.python.org/3/library/subprocess.html#popen-objects">Popen</a> object immediately, without waiting for it to finish.</p>
 <p>Once you have that object, you could check if the process has already finished or you could also wait for the process to finish.</p>
-<div id="300473a7" class="cell" data-execution_count="6">
+<div id="9b188624" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> Popen</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> [<span class="st">'ls'</span>]</span>
