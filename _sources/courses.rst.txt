@@ -14,6 +14,7 @@ Python:
 	* `Introduction to programming <courses/intro_programming>`_
 	* `Python project management with uv <https://github.com/JoseBlanca/uv_seminar>`_
 	* `Testing tutorial <courses/testing_tutorial>`_
+	* `Git tutorial <courses/git_tutorial>`_
 	* `Iterables and iterators <courses/iterables_and_iterators>`_
 	* `Programming paradigms <courses/programming_paradigms>`_
 
@@ -34,6 +35,7 @@ Grado en ingeniería biomédica:
 		* `Course plan <https://docs.google.com/presentation/d/1JN1vwbaWHg0PFeGWrr_pwTmE9FgEDjC9CvVyyI5Kpzg/edit?usp=drive_link>`_.
 		* `Python 101 <courses/intro_programming>`_
 		* `Testing tutorial <courses/testing_tutorial>`_
+		* `Git tutorial <courses/git_tutorial>`_
 		* `Project management with uv <https://github.com/JoseBlanca/uv_seminar>`_
 		* Data analysis topics:
 

@@ -1,0 +1,163 @@
+[
+  {
+    "objectID": "git_and_github.html",
+    "href": "git_and_github.html",
+    "title": "Version control with Git and GitHub",
+    "section": "",
+    "text": "Imagine you are writing a report. You save it as report.docx. Then you make changes and save it as report_v2.docx. Then report_final.docx. Then report_final_REALLY_final.docx. Sound familiar?\nNow imagine that with code. You have a folder full of files, you make a change that breaks everything, and you desperately try to remember what it looked like before. Or a colleague wants to work on the same code at the same time and you have to email files back and forth, merging changes by hand.\nA Version Control System (VCS) solves all of this. It is a tool that tracks every change you make to your files over time. You can think of it as a very detailed “undo history” for your entire project, one that never forgets, even after you close your editor.\nWith a VCS you can:\n\nGo back in time — restore any previous version of any file.\nSee what changed — compare two versions and see exactly which lines were added, removed, or modified.\nUnderstand why it changed — every saved version has a message explaining what was done and who did it.\nCollaborate safely — multiple people can work on the same project simultaneously without overwriting each other’s work.\nExperiment without fear — try a risky idea knowing you can always undo it completely.\n\nGit is by far the most popular VCS in the world. It is used by millions of developers, from solo hobbyists to the teams that build Linux, Python, and virtually every major software project you can think of."
+  },
+  {
+    "objectID": "git_and_github.html#what-is-version-control",
+    "href": "git_and_github.html#what-is-version-control",
+    "title": "Version control with Git and GitHub",
+    "section": "",
+    "text": "Imagine you are writing a report. You save it as report.docx. Then you make changes and save it as report_v2.docx. Then report_final.docx. Then report_final_REALLY_final.docx. Sound familiar?\nNow imagine that with code. You have a folder full of files, you make a change that breaks everything, and you desperately try to remember what it looked like before. Or a colleague wants to work on the same code at the same time and you have to email files back and forth, merging changes by hand.\nA Version Control System (VCS) solves all of this. It is a tool that tracks every change you make to your files over time. You can think of it as a very detailed “undo history” for your entire project, one that never forgets, even after you close your editor.\nWith a VCS you can:\n\nGo back in time — restore any previous version of any file.\nSee what changed — compare two versions and see exactly which lines were added, removed, or modified.\nUnderstand why it changed — every saved version has a message explaining what was done and who did it.\nCollaborate safely — multiple people can work on the same project simultaneously without overwriting each other’s work.\nExperiment without fear — try a risky idea knowing you can always undo it completely.\n\nGit is by far the most popular VCS in the world. It is used by millions of developers, from solo hobbyists to the teams that build Linux, Python, and virtually every major software project you can think of."
+  },
+  {
+    "objectID": "git_and_github.html#installing-git",
+    "href": "git_and_github.html#installing-git",
+    "title": "Version control with Git and GitHub",
+    "section": "Installing Git",
+    "text": "Installing Git\nFollow the git install instructions from the official git page."
+  },
+  {
+    "objectID": "git_and_github.html#telling-git-who-you-are",
+    "href": "git_and_github.html#telling-git-who-you-are",
+    "title": "Version control with Git and GitHub",
+    "section": "Telling Git who you are",
+    "text": "Telling Git who you are\nBefore using git for the first time, you need to tell it your name and email. Git records this information alongside every change you make, so collaborators know who did what.\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"you@example.com\"\nYou only need to do this once. You can verify it worked:\ngit config --global user.name\ngit config --global user.email"
+  },
+  {
+    "objectID": "git_and_github.html#the-project-we-will-build",
+    "href": "git_and_github.html#the-project-we-will-build",
+    "title": "Version control with Git and GitHub",
+    "section": "The project we will build",
+    "text": "The project we will build\nThroughout this tutorial we will build a small Python utility called converter.py — a script with a couple of unit conversion functions. It is intentionally simple: the goal is to learn git, not Python.\nBy the end, our project folder will contain:\nunit-converter/\n├── converter.py\n└── README.md"
+  },
+  {
+    "objectID": "git_and_github.html#creating-a-repository",
+    "href": "git_and_github.html#creating-a-repository",
+    "title": "Version control with Git and GitHub",
+    "section": "Creating a repository",
+    "text": "Creating a repository\nA repository (or “repo”) is a project folder that git is tracking. To create one, navigate to the folder you want to use and run git init.\nLet’s start from scratch:\n# Create a new folder and enter it\nmkdir unit-converter\ncd unit-converter\n\n# Initialise a git repository inside it\ngit init\nYou should see something like:\nInitialized empty Git repository in /home/yourname/unit-converter/.git/\nGit created a hidden folder called .git/ inside your project. That folder is where git stores all its history. You should never need to touch it manually, just know it’s there."
+  },
+  {
+    "objectID": "git_and_github.html#checking-the-status-of-your-repository",
+    "href": "git_and_github.html#checking-the-status-of-your-repository",
+    "title": "Version control with Git and GitHub",
+    "section": "Checking the status of your repository",
+    "text": "Checking the status of your repository\ngit status is one of the most useful commands. It tells you the current state of your repository: which files have changed, which are new, which are ready to be saved.\ngit status\nRight now the repository is empty, so you will see:\nOn branch main\n\nNo commits yet\n\nnothing to commit (create/copy files and start tracking)"
+  },
+  {
+    "objectID": "git_and_github.html#creating-our-first-file",
+    "href": "git_and_github.html#creating-our-first-file",
+    "title": "Version control with Git and GitHub",
+    "section": "Creating our first file",
+    "text": "Creating our first file\nLet’s create the README file. A README.md is a Markdown file that describes the project. It is the first thing people read when they find your project.\nCreate a file called README.md in the unit-converter/ folder with this content:\n# Unit Converter\n\nA small Python utility to convert between common units.\n\n## Functions\n\n- `km_to_miles(km)` — converts kilometres to miles.\n- `celsius_to_fahrenheit(c)` — converts Celsius to Fahrenheit.\n\n## Usage\n\n```python\nfrom converter import km_to_miles, celsius_to_fahrenheit\n\nprint(km_to_miles(10))        # 6.21\nprint(celsius_to_fahrenheit(100))  # 212.0\n```\nNow run git status again:\ngit status\nOn branch main\n\nNo commits yet\n\nUntracked files:\n  (use \"git add &lt;file&gt;...\" to include in what will be committed)\n        README.md\n\nnothing added to commit but untracked files present\nGit has noticed the new file, but it says it is untracked. Git does not automatically record every file, you have to explicitly tell it which ones to watch."
+  },
+  {
+    "objectID": "git_and_github.html#the-three-areas-of-git",
+    "href": "git_and_github.html#the-three-areas-of-git",
+    "title": "Version control with Git and GitHub",
+    "section": "The three areas of Git",
+    "text": "The three areas of Git\nBefore going further, it helps to understand how git thinks about files. There are three areas:\nWorking directory  →  Staging area  →  Repository (history)\n   (your files)        (git add)         (git commit)\n\nWorking directory: the actual files on your computer. This is where you do your work.\nStaging area (also called the “index”): a waiting room. You decide which changed files to include in the next saved snapshot.\nRepository: the permanent history. Once a snapshot is committed here, it is recorded forever.\n\nThis two-step process (stage, then commit) might seem unnecessary at first, but it gives you fine-grained control over what goes into each saved snapshot."
+  },
+  {
+    "objectID": "git_and_github.html#staging-files-with-git-add",
+    "href": "git_and_github.html#staging-files-with-git-add",
+    "title": "Version control with Git and GitHub",
+    "section": "Staging files with git add",
+    "text": "Staging files with git add\nTo tell git to start tracking a file (and to stage it for the next commit), use git add:\ngit add README.md\nRun git status again:\ngit status\nOn branch main\n\nNo commits yet\n\nChanges to be committed:\n  (use \"git rm --cached &lt;file&gt;...\" to unstage)\n        new file:   README.md\nThe file has moved from “untracked” to “changes to be committed”. It is in the staging area, ready to be committed."
+  },
+  {
+    "objectID": "git_and_github.html#saving-a-snapshot-with-git-commit",
+    "href": "git_and_github.html#saving-a-snapshot-with-git-commit",
+    "title": "Version control with Git and GitHub",
+    "section": "Saving a snapshot with git commit",
+    "text": "Saving a snapshot with git commit\nA commit is a permanent snapshot of the staged changes, saved into the repository history. Every commit has:\n\nA message: a short description of what changed and why.\nA timestamp: when it was created.\nAn author: who made it.\nA unique ID: a long string of letters and numbers (called a hash) that uniquely identifies this commit.\n\ngit commit -m \"Add README with project description\"\n[main (root-commit) a3f9c12] Add README with project description\n 1 file changed, 15 insertions(+)\n create mode 100644 README.md\nYou have just made your first commit. The history of this project now has one entry.\n\n\n\n\n\n\nTipWriting good commit messages\n\n\n\nA commit message should complete the sentence: “If applied, this commit will…”\n\n✅ “Add README with project description”\n✅ “Fix bug in celsius_to_fahrenheit for negative values”\n❌ “changes”\n❌ “asdfgh”\n❌ “fix stuff”\n\nClear messages make the history readable — especially when you are trying to understand what happened six months ago."
+  },
+  {
+    "objectID": "git_and_github.html#adding-the-python-code",
+    "href": "git_and_github.html#adding-the-python-code",
+    "title": "Version control with Git and GitHub",
+    "section": "Adding the Python code",
+    "text": "Adding the Python code\nNow let’s create converter.py:\n# converter.py\n\ndef km_to_miles(km):\n    \"\"\"Convert kilometres to miles.\"\"\"\n    return km * 0.621371\n\ndef celsius_to_fahrenheit(celsius):\n    \"\"\"Convert Celsius degrees to Fahrenheit.\"\"\"\n    return celsius * 9 / 5 + 32\nStage it and commit:\ngit add converter.py\ngit commit -m \"Add converter.py with km_to_miles and celsius_to_fahrenheit\"\nWe now have two commits. Let’s look at the history."
+  },
+  {
+    "objectID": "git_and_github.html#viewing-the-history-with-git-log",
+    "href": "git_and_github.html#viewing-the-history-with-git-log",
+    "title": "Version control with Git and GitHub",
+    "section": "Viewing the history with git log",
+    "text": "Viewing the history with git log\ngit log shows the list of all commits, most recent first:\ngit log\ncommit 7b2e841f3c09a1d5e84f2c01b3a7d9e5f6c2b1a0\nAuthor: Your Name &lt;you@example.com&gt;\nDate:   Mon Mar 10 11:32:05 2025 +0100\n\n    Add converter.py with km_to_miles and celsius_to_fahrenheit\n\ncommit a3f9c12d8e6b4a7c2f1d0e9b3c5a7f8d2e1c6b9\nAuthor: Your Name &lt;you@example.com&gt;\nDate:   Mon Mar 10 11:20:41 2025 +0100\n\n    Add README with project description\nEach commit shows:\n\nThe hash — the long unique ID (you usually only need the first 7 characters).\nThe author and date.\nThe commit message.\n\nFor a more compact view, use:\ngit log --oneline\n7b2e841 Add converter.py with km_to_miles and celsius_to_fahrenheit\na3f9c12 Add README with project description\nThis is the view you will use most often."
+  },
+  {
+    "objectID": "git_and_github.html#making-changes-and-seeing-the-difference",
+    "href": "git_and_github.html#making-changes-and-seeing-the-difference",
+    "title": "Version control with Git and GitHub",
+    "section": "Making changes and seeing the difference",
+    "text": "Making changes and seeing the difference\nLet’s improve our converter by adding a new function. Open converter.py and add a third function at the end:\n# converter.py\n\ndef km_to_miles(km):\n    \"\"\"Convert kilometres to miles.\"\"\"\n    return km * 0.621371\n\ndef celsius_to_fahrenheit(celsius):\n    \"\"\"Convert Celsius degrees to Fahrenheit.\"\"\"\n    return celsius * 9 / 5 + 32\n\ndef kg_to_pounds(kg):\n    \"\"\"Convert kilograms to pounds.\"\"\"\n    return kg * 2.20462\nBefore staging the change, let’s use git diff to see exactly what we modified:\ngit diff\ndiff --git a/converter.py b/converter.py\nindex 4b3c1a2..9f7d3e8 100644\n--- a/converter.py\n+++ b/converter.py\n@@ -7,3 +7,7 @@ def celsius_to_fahrenheit(celsius):\n     \"\"\"Convert Celsius degrees to Fahrenheit.\"\"\"\n     return celsius * 9 / 5 + 32\n+\n+def kg_to_pounds(kg):\n+    \"\"\"Convert kilograms to pounds.\"\"\"\n+    return kg * 2.20462\nLines starting with + are additions, lines with - are deletions. This is exactly what has changed since the last commit.\nNow stage and commit:\ngit add converter.py\ngit commit -m \"Add kg_to_pounds function to converter\"\nAlso update the README to mention the new function:\n## Functions\n\n- `km_to_miles(km)` — converts kilometres to miles.\n- `celsius_to_fahrenheit(c)` — converts Celsius to Fahrenheit.\n- `kg_to_pounds(kg)` — converts kilograms to pounds.\ngit add README.md\ngit commit -m \"Update README to document kg_to_pounds\"\nOur log now has four commits:\ngit log --oneline\nd4a1f93 Update README to document kg_to_pounds\nc8e2b74 Add kg_to_pounds function to converter\n7b2e841 Add converter.py with km_to_miles and celsius_to_fahrenheit\na3f9c12 Add README with project description"
+  },
+  {
+    "objectID": "git_and_github.html#staging-all-modified-files-at-once",
+    "href": "git_and_github.html#staging-all-modified-files-at-once",
+    "title": "Version control with Git and GitHub",
+    "section": "Staging all modified files at once",
+    "text": "Staging all modified files at once\nWhen you have modified several files and want to stage all of them, you can use:\ngit add .\nThe . means “everything in the current folder”. This is convenient, but use it carefully — you might accidentally stage files you did not mean to include."
+  },
+  {
+    "objectID": "git_and_github.html#going-back-in-time",
+    "href": "git_and_github.html#going-back-in-time",
+    "title": "Version control with Git and GitHub",
+    "section": "Going back in time",
+    "text": "Going back in time\nOne of the most powerful features of git is the ability to look at, or even restore, any previous state of your project.\n\nViewing an old version\nTo inspect what a file looked like at a particular commit, use git show followed by the commit hash and the file name:\ngit show a3f9c12:README.md\nThis prints the content of README.md as it was in that first commit, without changing anything in your working directory.\n\n\nComparing two commits\nTo see what changed between two commits, use git diff with two hashes:\ngit diff a3f9c12 d4a1f93\nThis shows every change that happened between the first commit and the latest one.\n\n\nTemporarily travelling to an old commit\nTo actually switch your entire project back to a previous state, use git switch --detach with a commit hash:\ngit switch --detach 7b2e841\nHEAD is now at 7b2e841 Add converter.py with km_to_miles and celsius_to_fahrenheit\nGit will tell you that HEAD is detached. This just means you are looking at an old snapshot. You can open and read files, they will all look as they did at that commit. To go back to the present (the latest commit):\ngit switch main\nEverything is restored to the latest state. Nothing was lost.\n\n\nUndoing changes to a file\nIf you have made changes to a file that you have not committed yet and you want to discard them and go back to the last committed version:\ngit restore converter.py\n\n\n\n\n\n\nWarningBe careful with restore\n\n\n\ngit restore &lt;file&gt; permanently discards your uncommitted changes to that file. Unlike most things in git, changes that were never committed cannot be recovered. Use it with care.\n\n\n\n\nUndoing a commit safely with git revert\nWhat if you want to undo a commit that is already in the history? The safest way is git revert. It creates a new commit that undoes the changes from the target commit, without rewriting the history:\n# Undo the last commit (but keep the history intact)\ngit revert HEAD\nGit will open a text editor for you to write a commit message (you can accept the default). After saving, a new commit will appear in the log that cancels out the previous one. This approach is safe to use even when collaborating with others.\n\n\n\n\n\n\nTipIf git opens an unfamiliar editor\n\n\n\nBy default, git may open vim, which can be confusing. To save and exit vim, press Esc, then type :wq and press Enter. To avoid the editor entirely, you can use git revert HEAD --no-edit to accept the default message.\nYou can also configure git to use a friendlier editor, for example VS Code:\ngit config --global core.editor \"code --wait\""
+  },
+  {
+    "objectID": "git_and_github.html#what-should-go-in-a-repository",
+    "href": "git_and_github.html#what-should-go-in-a-repository",
+    "title": "Version control with Git and GitHub",
+    "section": "What should go in a repository?",
+    "text": "What should go in a repository?\nNot everything belongs in git. The general rule is: commit source files, not generated files.\nDo commit:\n\nYour Python source files (.py)\nDocumentation and README files (.md)\nConfiguration files\n\nDo not commit:\n\nGenerated files (compiled code, build outputs)\nLarge binary files (images, datasets, videos)\nFiles with secrets (passwords, API keys)\nEditor or OS clutter (__pycache__/, .DS_Store)\n\n\nThe .gitignore file\nYou can tell git to ignore certain files by creating a file called .gitignore in your project root. Each line is a pattern of files to ignore:\n# .gitignore\n__pycache__/\n*.pyc\n.DS_Store\n.env\nCreate this file, then stage and commit it:\ngit add .gitignore\ngit commit -m \"Add .gitignore to exclude Python cache files\"\nFrom now on, git will not suggest staging those files."
+  },
+  {
+    "objectID": "git_and_github.html#introducing-github",
+    "href": "git_and_github.html#introducing-github",
+    "title": "Version control with Git and GitHub",
+    "section": "Introducing GitHub",
+    "text": "Introducing GitHub\nSo far, everything has happened on your own computer. GitHub is a website that hosts git repositories online. It adds several things on top of git:\n\nA remote backup of your repository.\nA way to share your code with the world (or just your team).\nTools for collaboration — colleagues can download your code, make changes, and propose them back to you.\nA visual interface to browse your history, compare commits, and read your README beautifully rendered.\n\n\n\n\n\n\n\nNote\n\n\n\nGitHub is not the only option, GitLab and Bitbucket are alternatives, but it is by far the most widely used.\n\n\n\nCreating a GitHub account\nGo to https://github.com and sign up for a free account if you do not have one already.\n\n\nCreating a remote repository on GitHub\n\nOnce logged in, click the + button in the top-right corner and choose New repository.\nGive it the name unit-converter.\nLeave it Public (or choose Private if you prefer).\nDo not check “Add a README file” — we already have one locally.\nClick Create repository.\n\nGitHub will show you a page with instructions. We want the section called “…or push an existing repository from the command line”.\n\n\nConnecting your local repo to GitHub\nGitHub will show you two commands. Run them in your terminal:\n# Tell your local repo where the remote one is (replace with your actual URL)\ngit remote add origin https://github.com/your-username/unit-converter.git\n\n# Push your commits to GitHub\ngit push -u origin main\norigin is just the nickname git uses to refer to the remote repository. You could call it anything, but origin is the convention everyone uses.\nAfter the push, refresh your GitHub page, you should see your files and your commit history there.\n\n\nPushing future commits\nAfter the first push, whenever you make new commits locally and want to send them to GitHub, you only need:\ngit push"
+  },
+  {
+    "objectID": "git_and_github.html#collaborating-with-a-colleague",
+    "href": "git_and_github.html#collaborating-with-a-colleague",
+    "title": "Version control with Git and GitHub",
+    "section": "Collaborating with a colleague",
+    "text": "Collaborating with a colleague\nHere is how two people can work on the same project.\n\nYour colleague clones the repository\nYour colleague goes to your GitHub repository page, copies the URL, and runs:\ngit clone https://github.com/your-username/unit-converter.git\ncd unit-converter\ngit clone downloads the entire repository — all files and all history — to their computer. They now have an identical copy.\n\n\nYour colleague makes a change and pushes it\nYour colleague adds a new function to converter.py:\ndef miles_to_km(miles):\n    \"\"\"Convert miles to kilometres.\"\"\"\n    return miles / 0.621371\nThey save the file, commit, and push:\ngit add converter.py\ngit commit -m \"Add miles_to_km function\"\ngit push\nTheir changes are now on GitHub.\n\n\nYou pull the changes\nBack on your computer, you run:\ngit pull\nGit downloads the new commits from GitHub and updates your local files. You now have the miles_to_km function too, without having to copy any files manually.\ngit pull is something you should run at the start of every working session when collaborating, to make sure you have the latest version of the code.\n\n\n\n\n\n\nWarningWhat if git push is rejected?\n\n\n\nIf your colleague pushed changes before you did, your git push will fail with a message saying your branch is behind the remote. This is normal — git is protecting you from overwriting their work. Simply run git pull first to download their changes, and then git push again.\nMost of the time git pull will merge everything automatically. But if you and your colleague both edited the same lines in the same file, git does not know which version to keep. This is called a merge conflict.\nWhen a conflict happens, git will mark the affected lines in the file like this:\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nyour version of the line\n=======\nyour colleague's version of the line\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; their-commit-hash\nTo resolve the conflict, open the file, decide which version to keep (or combine both), remove the &lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, and &gt;&gt;&gt;&gt;&gt;&gt;&gt; markers, and then stage and commit the result. Most editors, including VS Code, highlight conflicts and offer buttons to accept one side or the other, making the process much easier.\nConflicts are a normal part of collaboration — they are not errors. They simply mean two people touched the same spot and a human needs to decide the final version."
+  },
+  {
+    "objectID": "git_and_github.html#a-typical-daily-workflow",
+    "href": "git_and_github.html#a-typical-daily-workflow",
+    "title": "Version control with Git and GitHub",
+    "section": "A typical daily workflow",
+    "text": "A typical daily workflow\nHere is a summary of what a typical working session looks like:\n# 1. Start by getting the latest changes from your team\ngit pull\n\n# 2. Do your work — edit files, add new ones, etc.\n\n# 3. Check what has changed\ngit status\ngit diff\n\n# 4. Stage the files you want to commit\ngit add converter.py\ngit add README.md\n# or: git add . (to stage everything)\n\n# 5. Commit with a clear message\ngit commit -m \"Add litres_to_gallons function\"\n\n# 6. Push your work to GitHub\ngit push"
+  },
+  {
+    "objectID": "git_and_github.html#using-git-from-a-graphical-interface",
+    "href": "git_and_github.html#using-git-from-a-graphical-interface",
+    "title": "Version control with Git and GitHub",
+    "section": "Using git from a graphical interface",
+    "text": "Using git from a graphical interface\nThroughout this tutorial we have used the terminal to run git commands. This is useful for understanding what git does under the hood, but in practice most developers use a graphical interface for their day-to-day git work.\nVS Code, for example, has excellent built-in git support. The Source Control panel (the branch icon in the left sidebar, or Ctrl+Shift+G) lets you do everything we have covered — staging files, writing commit messages, viewing diffs, pushing, pulling — with just a few clicks. Other editors like PyCharm, RStudio, and Sublime Text offer similar integrations.\nThere are also standalone git GUIs such as GitHub Desktop or GitKraken, which provide a visual overview of your branches and history.\nWhichever tool you choose, the concepts are the same: staging, committing, pushing, pulling. The terminal commands you learned here map directly to the buttons in any GUI, so you will always know what is happening behind the scenes."
+  },
+  {
+    "objectID": "git_and_github.html#quick-reference",
+    "href": "git_and_github.html#quick-reference",
+    "title": "Version control with Git and GitHub",
+    "section": "Quick reference",
+    "text": "Quick reference\n\n\n\nCommand\nWhat it does\n\n\n\n\ngit init\nCreate a new repository in the current folder\n\n\ngit status\nShow which files have changed\n\n\ngit add &lt;file&gt;\nStage a file for the next commit\n\n\ngit add .\nStage all changed files\n\n\ngit commit -m \"message\"\nSave a snapshot with a message\n\n\ngit log\nShow the full commit history\n\n\ngit log --oneline\nShow a compact commit history\n\n\ngit diff\nShow unstaged changes\n\n\ngit diff &lt;hash1&gt; &lt;hash2&gt;\nCompare two commits\n\n\ngit show &lt;hash&gt;:&lt;file&gt;\nView a file at a specific commit\n\n\ngit switch --detach &lt;hash&gt;\nTemporarily view a past commit\n\n\ngit switch main\nReturn to the latest commit\n\n\ngit restore &lt;file&gt;\nDiscard uncommitted changes in a file\n\n\ngit revert HEAD\nSafely undo the last commit\n\n\ngit remote add origin &lt;url&gt;\nConnect your repo to a GitHub remote\n\n\ngit push\nUpload your commits to GitHub\n\n\ngit pull\nDownload commits from GitHub\n\n\ngit clone &lt;url&gt;\nDownload a remote repository"
+  },
+  {
+    "objectID": "git_and_github.html#exercises",
+    "href": "git_and_github.html#exercises",
+    "title": "Version control with Git and GitHub",
+    "section": "Exercises",
+    "text": "Exercises\n\n\n\n\n\n\nNoteExercise 1 — Your first repository\n\n\n\nCreate a new folder called my-first-repo, initialise a git repository inside it, and follow these steps:\n\nCreate a file called notes.txt and write a sentence or two inside it.\nStage and commit it with the message \"Add notes.txt\".\nAdd two more sentences to notes.txt and make a second commit.\nRun git log --oneline and make sure you see two commits.\n\n\n\n\n\n\n\n\n\nNoteExercise 2 — Building the converter step by step\n\n\n\nCreate a new folder called converter-project and initialise a git repository. Then build the project one commit at a time:\n\nCreate a README.md that just says # My Converter and commit it.\nCreate a converter.py with a single function cm_to_inches(cm) (1 inch = 2.54 cm) and commit it.\nAdd a second function litres_to_gallons(litres) (1 gallon = 3.78541 litres) and commit it.\nUpdate the README to list both functions and commit that change.\nRun git log --oneline — you should see four commits.\n\n\n\n\n\n\n\n\n\nNoteExercise 3 — Time travel\n\n\n\nUsing the repository from Exercise 2:\n\nUse git log --oneline to find the hash of your very first commit.\nUse git show &lt;hash&gt;:README.md to view the README as it was in that first commit.\nUse git diff &lt;first-hash&gt; &lt;last-hash&gt; to see everything that changed between your first and last commit.\nUse git switch --detach &lt;hash&gt; to travel back to that first commit.\nRun ls to confirm that converter.py does not exist yet at that point.\nReturn to the present with git switch main.\nConfirm that converter.py is back.\n\n\n\n\n\n\n\n\n\nNoteExercise 4 — Introducing .gitignore\n\n\n\nIn your converter-project:\n\nCreate a file called secret.txt with the text my-api-key-12345 in it (this simulates a file you should never commit).\nRun git status — notice that git wants to track it.\nCreate a .gitignore file that tells git to ignore secret.txt.\nRun git status again — secret.txt should no longer appear.\nCommit the .gitignore file with a suitable message.\n\n\n\n\n\n\n\n\n\nNoteExercise 5 — GitHub collaboration (pair exercise)\n\n\n\nDo this exercise with a classmate.\nPerson A:\n\nCreate a new GitHub repository called shared-converter.\nClone it locally, add a converter.py with one function, commit and push.\nAdd your classmate as a collaborator: go to the repository Settings → Collaborators → Add people.\n\nPerson B:\n\nClone the repository.\nAdd a different function to converter.py.\nCommit and push.\n\nPerson A:\n\nRun git pull and verify that Person B’s function is now in your local file.\n\nBoth:\n\nLook at the commit history on the GitHub website. Can you see who made each commit?\n\nNote: in this exercise you added your classmate as a collaborator so they could push directly. In larger projects, contributors typically work on their own copy (called a “fork”) and propose changes through “pull requests” — but that is a topic for another day."
+  }
+]

@@ -203,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="your-first-test" class="level2">
 <h2 class="anchored" data-anchor-id="your-first-test">Your first test</h2>
 <p>Let’s start with the simplest possible example: a function that adds two numbers.</p>
-<div id="8d5b5ee6" class="cell" data-execution_count="1">
+<div id="65b4db20" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -217,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This looks correct, but running it by hand every time we change the code is tedious and error-prone. Let’s write a test instead. Save this code in a file named add.py</p>
 <p>In pytest, a test is just a regular Python function whose name starts with <code>test_</code>. Inside it, we use <a href="https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement">assert</a> to check that something is true.</p>
 <p>Here is what the test file would look like. Save it as <code>test_add.py</code>:</p>
-<div id="7b533917" class="cell" data-execution_count="2">
+<div id="5d87880b" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> add <span class="im">import</span> add</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -272,11 +272,11 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBMZXQncyBzZWUgd2hhdCBh
 <section id="falining-tests" class="level2">
 <h2 class="anchored" data-anchor-id="falining-tests">Falining tests</h2>
 <p>Let’s create a wrong subtract function and its tests.</p>
-<div id="a31bcede" class="cell" data-execution_count="3">
+<div id="8337663c" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> subtract(a, b):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="563fdce2" class="cell" data-execution_count="4">
+<div id="714211b9" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subtract <span class="im">import</span> subtract</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -304,7 +304,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBMZXQncyBzZWUgd2hhdCBh
 <h2 class="anchored" data-anchor-id="testing-unit-conversions">Testing unit conversions</h2>
 <p>Unit conversion functions are great for practising tests because the expected results are mathematically defined and easy to verify.</p>
 <p>Let’s write the module temperature.py with the temperature conversion functions:</p>
-<div id="2c72fa8a" class="cell" data-execution_count="5">
+<div id="06ccd3bb" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> celsius_to_fahrenheit(celsius):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> celsius <span class="op">*</span> <span class="dv">9</span> <span class="op">/</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">32</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -321,7 +321,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBMZXQncyBzZWUgd2hhdCBh
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fahrenheit_to_celsius(<span class="dv">212</span>))  <span class="co"># Should be 100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now let’s write tests. Notice how the test names describe the scenario being tested, this makes failing tests much easier to understand:</p>
-<div id="4b3a1ade" class="cell" data-execution_count="6">
+<div id="537a4c28" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> temperature <span class="im">import</span> celsius_to_fahrenheit, fahrenheit_to_celsius</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -358,7 +358,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBUaGlzIGxvb2tzIGxpa2Ug
 </script>
 </div>
 <p>Because of this, comparing floating-point numbers with <code>==</code> can fail even when the values are essentially correct. pytest provides a helper called <code>approx</code> to handle this:</p>
-<div id="563f0b8a" class="cell" data-execution_count="7">
+<div id="3a2564b7" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pytest <span class="im">import</span> approx</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_body_temperature():</span>
