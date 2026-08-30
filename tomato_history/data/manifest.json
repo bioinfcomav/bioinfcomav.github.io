@@ -1,0 +1,31 @@
+{
+ "built_at": "2026-08-30T14:42:04+00:00",
+ "restricted": false,
+ "documents_total": 411,
+ "documents_exported": 320,
+ "documents_excluded": 91,
+ "documents_by_rights": {
+  "public_domain_presumed": 247,
+  "third_party_copyright": 73,
+  "ours_unpublished": 11,
+  "unpublished_embargoed": 80
+ },
+ "rights_publishable": [
+  "public_domain_presumed",
+  "third_party_copyright"
+ ],
+ "rights_full_text": [
+  "public_domain_presumed"
+ ],
+ "pages_exported": 7502,
+ "pages_in_corpus": 37499,
+ "concepts_used": [
+  "tomato",
+  "fruit_shape",
+  "varieties",
+  "processing",
+  "origin_and_arrival",
+  "medicinal_and_toxic"
+ ],
+ "thesaurus_sha256": "aa4b9645bb85ca35"
+}
