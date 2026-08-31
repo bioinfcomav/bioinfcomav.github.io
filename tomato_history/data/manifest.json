@@ -1,14 +1,15 @@
 {
- "built_at": "2026-08-30T14:42:04+00:00",
+ "built_at": "2026-08-31T15:09:34+00:00",
  "restricted": false,
- "documents_total": 411,
- "documents_exported": 320,
- "documents_excluded": 91,
+ "documents_total": 909,
+ "documents_exported": 780,
+ "documents_excluded": 129,
  "documents_by_rights": {
-  "public_domain_presumed": 247,
-  "third_party_copyright": 73,
-  "ours_unpublished": 11,
-  "unpublished_embargoed": 80
+  "public_domain_presumed": 703,
+  "third_party_copyright": 77,
+  "ours_unpublished": 16,
+  "unpublished_embargoed": 112,
+  "unknown": 1
  },
  "rights_publishable": [
   "public_domain_presumed",
@@ -17,15 +18,28 @@
  "rights_full_text": [
   "public_domain_presumed"
  ],
- "pages_exported": 7502,
- "pages_in_corpus": 37499,
+ "documents_by_tier": {
+  "full": 703,
+  "cite_only": 77,
+  "withheld": 129
+ },
+ "text_status_thresholds": {
+  "unread_chars_per_source_page": 200,
+  "partial_pages_fraction": 0.5
+ },
+ "requiring_attribution": 3,
+ "pages_exported": 13915,
+ "excerpts_exported": 1871,
+ "excerpts_withheld_not_full_tier": 3532,
+ "pages_in_corpus": 58277,
  "concepts_used": [
   "tomato",
   "fruit_shape",
   "varieties",
   "processing",
   "origin_and_arrival",
-  "medicinal_and_toxic"
+  "medicinal_and_toxic",
+  "cjk_search"
  ],
- "thesaurus_sha256": "aa4b9645bb85ca35"
+ "thesaurus_sha256": "632883c151e6f50d"
 }

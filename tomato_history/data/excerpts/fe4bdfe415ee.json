@@ -1,0 +1,28 @@
+{
+ "id": "evidence/texts/latin_aleman/1611.hortus_eystettensis.besler/1613_BESLER. Imagen coloreada",
+ "key": "fe4bdfe415ee",
+ "excerpts": [
+  {
+   "excerpt_id": "741c6dde7d2e",
+   "identification": "ok",
+   "page_from": 1,
+   "page_to": 1,
+   "char_start": 29,
+   "char_end": 1411,
+   "raw": "BESLER, Basil (1561-1629)\n[Red tomato] Poma amoris fructu rubro\n\nTomato. Solanum lycopersicum (as Poma amoris fructu rubro) Bessler, Basilius, Hortus Eystettensis, Tertius ordo collectarum plantarum autumnalium, vol. 3: t. 322 (1620) [B. Besler]\n\nEichstatt: 1640, 2nd edition. Hand-coloured engraving. Sheet size: 20 5/8 x 16 1/4 inches.\nBasil Besler published \"Hortus Eystettensis\", the earliest large folio botanical, at Eichstatt near Nuremburg, in 1613. He worked on the drawings for the 374 copper engravings over a period of sixteen years using the plants in the garden of Bishop Johann Conrad von Gemmingen, his patron. Depicted in this florilegium were flowers, herbs, vegetables and newly discovered plants such as tobacco and peppers. Besler was, in modern terms, a botanist and horticulturalist, and he was familiar with real and alleged medicinal properties of various plants. Besler had the good fortune to live at a time when exotic plants were being shipped to Europe from all over the world. The garden that he organized and illustrated for his patron was both ornamental and experimental, and the large book he had engraved after his drawings was unique. The prints, made by a team of master engravers, are strong and exquisitely done.\n- See more at: http://www.donaldheald.com/pages/books/15422/basil-besler/red-tomato-poma-amoris-fructu-rubro#sthash.9pPLOtkG.dpuf",
+   "repaired": "BESLER, Basil (1561-1629)\n[Red tomato] Poma amoris fructu rubro\n\nTomato. Solanum lycopersicum (as Poma amoris fructu rubro) Bessler, Basilius, Hortus Eystettensis, Tertius ordo collectarum plantarum autumnalium, vol. 3: t. 322 (1620) [B. Besler]\n\nEichstatt: 1640, 2nd edition. Hand-coloured engraving. Sheet size: 20 5/8 x 16 1/4 inches.\nBasil Besler published \"Hortus Eystettensis\", the earliest large folio botanical, at Eichstatt near Nuremburg, in 1613. He worked on the drawings for the 374 copper engravings over a period of sixteen years using the plants in the garden of Bishop Johann Conrad von Gemmingen, his patron. Depicted in this florilegium were flowers, herbs, vegetables and newly discovered plants such as tobacco and peppers. Besler was, in modern terms, a botanist and horticulturalist, and he was familiar with real and alleged medicinal properties of various plants. Besler had the good fortune to live at a time when exotic plants were being shipped to Europe from all over the world. The garden that he organized and illustrated for his patron was both ornamental and experimental, and the large book he had engraved aster his drawings was unique. The prints, made by a team of master engravers, are strong and exquisitely done.\n- See more at: http://www.donaldheald.com/pages/books/15422/basil-besler/red-tomato-poma-amoris-fructu-rubro#sthash.9pPLOtkG.dpuf",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "lycopersic",
+    "pomaamoris",
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

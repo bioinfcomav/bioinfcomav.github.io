@@ -1,0 +1,46 @@
+{
+ "id": "evidence/texts/1837.flora_de_filipinas.blanco/1837.flora_de_filipinas.blanco",
+ "key": "1db70323e584",
+ "excerpts": [
+  {
+   "excerpt_id": "9e382a8051a5",
+   "identification": "ok",
+   "page_from": 148,
+   "page_to": 148,
+   "char_start": 1036,
+   "char_end": 1206,
+   "raw": "immenso del fruto, que hacen entrad en casi todas\nsus comidas. Con sus hojas tiñen de verde sucio las\ntelas de algodón. Flor, en todos los meses. % Ty Cam\nmatis, Tomates.",
+   "repaired": "immenso del fruto, que hacen entrad en casi todas\nsus comidas. Con sus hojas tiñen de verde sucio las\ntelas de algodón. Flor, en todos los meses. % Ty Cam\nmatis, Tomates.",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  },
+  {
+   "excerpt_id": "6061afb77cfc",
+   "identification": "ok",
+   "page_from": 150,
+   "page_to": 150,
+   "char_start": 1452,
+   "char_end": 2412,
+   "raw": "n Pasig. La corola\ntiene unas manchitas moradas. La altura de la planta\nes na palmo. Flor, en Febr.\n\nPhysalisAngulata. PhysaUde angulada. =rEsta planta qne\n\n13»\nno Kd pocli jo examinar ü m¡ gusto, la coloco aquí unica-\nxaente porque haviendo visto el fmto un Cuva tero\nEsp.)ñoi que huvia estado muchos aS^s en Ameri::a,\nniií aseguró ser esta especie. Es común en B.itang>t8\nen un sitio llamado Vin.imoc • can y en Ylocos. Es la\nque llamiin en España tomates dt Bvihitpga. La altu-\nra de la planta dos cuartas y el fruto esta- cubierto\ncon el cáliz y es hermoso y como un» guinda. Los\nindios de fiit^ingas no U ccnocen.Los physalUéS\ntienen propiedades muí medicina]es:hacen orinar\nmucho y sin estimular los orgmos de la vegiga.\nAprovechan en la ictericia é ischuria, y aun se b>n\nempleado con suceso en la epilepsia. Algunos hi-\ndrópicos han sanado comiendo hasta anas ocho frutas\nk la Semana: también han causado gran majr^rtJ á los\ngotosos comidas igualmente.",
+   "repaired": "n Pasig. La corola\ntiene unas manchitas moradas. La altura de la planta\nes na palmo. Flor, en Febr.\n\nPhysalis Angulata. PhysaUde angulada. =rEsta planta qne\n\n13»\nno Kd pocli jo examinar ü m¡ gusto, la coloco aquí unica-\nxaente porque haviendo visto el fmto un Cuva tero\nEsp.)ñoi que huvia estado muchos aS^s en Ameri::a,\nniií aseguró ser esta especie. Es común en B.itang>t8\nen un sitio llamado Vin.imoc • can y en Ylocos. Es la\nque llamiin en España tomates dt Bvihitpga. La altura de la planta dos cuartas y el fruto esta- cubierto\ncon el cáliz y es hermoso y como un» guinda. Los\nindios de fiit^ingas no U ccnocen.Los physalUéS\ntienen propiedades muí medicina]es:hacen orinar\nmucho y sin estimular los orgmos de la vegiga.\nAprovechan en la ictericia é ischuria, y aun se b>n\nempleado con suceso en la epilepsia. Algunos hidrópicos han sanado comiendo hasta anas ocho frutas\nk la Semana: también han causado gran majr^rtJ á los\ngotosos comidas igualmente.",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

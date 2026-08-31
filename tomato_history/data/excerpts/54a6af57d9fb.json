@@ -1,0 +1,46 @@
+{
+ "id": "evidence/texts/1865.vocabulario_de_la_lengua_bicol.lisboa/1865.vocabulario_de_la_lengua_bicol.lisboa",
+ "key": "54a6af57d9fb",
+ "excerpts": [
+  {
+   "excerpt_id": "99172726fd34",
+   "identification": "ok",
+   "page_from": 373,
+   "page_to": 373,
+   "char_start": 0,
+   "char_end": 678,
+   "raw": "TAG\n—572—\nTAG\ncasa, cuando sube mucha gente á ella. Nata-\ngostos, 1, nag, crujir, ó sonar asi las ataduras,\ny un insecto que daña al palay.\nTAGOTOGNAN. pe. Una fruta silvestre, como to-\nmates, y es de comer, y la hoja, como verengena.\nTAGPE. pe. Golpe, que se dá con el ancho del\ncuchillo. Napatatagpé, dar con el ancho del cu-\nchillo, ó de la espada, como de revés, ó plano.\nPinatatagpean, serle dado de revés ó plano, Ypi-\nnatatagpé, la espada, ó cuchillo, icon que se dá,\ntiempo, y causa.\nTAGPO. pe. Un árbol asi llamado, que dá una\nfruta menuda comestible: lo mismo es, Alitatpó.\nTAGPOC. pe. Imperat. Natagpoc, 1, nag, dar pu-\nñalada, con algún cuchillo, balarao, ó puñal.\n.",
+   "repaired": "TAG\n—572—\nTAG\ncasa, cuando sube mucha gente á ella. Nata-\ngostos, 1, nag, crujir, ó sonar asi las ataduras,\ny un insecto que daña al palay.\nTAGOTOGNAN. pe. Una fruta silvestre, como tomates, y es de comer, y la hoja, como verengena.\nTAGPE. pe. Golpe, que se dá con el ancho del\ncuchillo. Napatatagpé, dar con el ancho del cuchillo, ó de la espada, como de revés, ó plano.\nPinatatagpean, serle dado de revés ó plano, Ypi-\nnatatagpé, la espada, ó cuchillo, icon que se dá,\ntiempo, y causa.\nTAGPO. pe. Un árbol asi llamado, que dá una\nfruta menuda comestible: lo mismo es, Alitatpó.\nTAGPOC. pe. Imperat. Natagpoc, 1, nag, dar puñalada, con algún cuchillo, balarao, ó puñal.\n.",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  },
+  {
+   "excerpt_id": "33fa653f031d",
+   "identification": "ok",
+   "page_from": 464,
+   "page_to": 464,
+   "char_start": 0,
+   "char_end": 562,
+   "raw": "G\\R\n—45—\nGER\nFruta demasiado madura. itomon, pe. Rabdag.\nFruta, como de tomates comestible. Togotognan, pcv\nFruta comestible llamada: Talisay, pp.\nFruta comestible aceda buena para conserva. Tila, pe.\nFruta, que es como el tártago de españa. Tuba, pp.\nFruta caida de el árbol. Logna, pe.\nFruta comestible llamada: Ablao, pe.\nFruta, ya madura, tí en sazón. Hinog, pe,\nFructificar cualquiera árbol, planta, ele. Bogna, pp,\nFrutilla comestible llamada: Adloy, pe/\nFrutilla comestible á la manera de ubas. Hamhe, pe. Baligang,\nFrutilla colorada con que pesan el oro.",
+   "repaired": "G\\R\n—45—\nGER\nFruta demasiado madura. itomon, pe. Rabdag.\nFruta, como de tomates comestible. Togotognan, pcv\nFruta comestible llamada: Talisay, pp.\nFruta comestible aceda buena para conserva. Tila, pe.\nFruta, que es como el tártago de españa. Tuba, pp.\nFruta caida de el árbol. Logna, pe.\nFruta comestible llamada: Ablao, pe.\nFruta, ya madura, tí en sazón. Hinog, pe,\nFructificar cualquiera árbol, planta, ele. Bogna, pp,\nFrutilla comestible llamada: Adloy, pe/\nFrutilla comestible á la manera de ubas. Hamhe, pe. Baligang,\nFrutilla colorada con que pesan el oro.",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

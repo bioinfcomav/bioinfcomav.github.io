@@ -1,0 +1,27 @@
+{
+ "id": "evidence/texts/16xx.hortus_amsterdam_catalogus.snippendaal/16xx.hortus_amsterdam_catalogus.snippendaal",
+ "key": "00bf4f495c55",
+ "excerpts": [
+  {
+   "excerpt_id": "58beb60da6fd",
+   "identification": "ok",
+   "page_from": 100,
+   "page_to": 100,
+   "char_start": 0,
+   "char_end": 724,
+   "raw": "page 100\nPlygonaton angustif.\nPolygonatum verticillatum (L.) All.\n=\nRuscaceae\nPolygonatum verticillatum (L.) All.\nKranssalamonszegel\nSP 315\nPolypodium.\nPolypodium vulgare L.\n=\nPolypodiaceae\nPolypodium vulgare L.\nPolypodii querni R / Eikenvaren\nGewone eikvaren\nSP 1085\nPomum amoris majus rub.\nSolanum lycopersicum L.\n=\nSolanaceae\nSolanum Lycopersicum L.\nTomaat\nSP 185\nPomum amoris fructu luteo.\nSolanum lycopersicum L.\n=\nSolanaceae\nSolanum Lycopersicum L.\nTomaat\nSP 185\nPortulaca angustifol.\nPortulaca oleracea L.\n=\nPortulacaceae\nPortulaca oleracea L.\nPortulacae S / Postelijnzaad; Portulacae, Comp.\nPostelein\nSP 445\nPorrum junceum s. Scaenoprassum.\nAllium schoenoprasum L.\n=\nAlliaceae\nAllium Schoenoprasum L.\nBieslook\nSP 301",
+   "repaired": "page 100\nPlygonaton angustis.\nPolygonatum verticillatum (L.) All.\n=\nRuscaceae\nPolygonatum verticillatum (L.) All.\nKranssalamonszegel\nSP 315\nPolypodium.\nPolypodium vulgare L.\n=\nPolypodiaceae\nPolypodium vulgare L.\nPolypodii querni R / Eikenvaren\nGewone eikvaren\nSP 1085\nPomum amoris majus rub.\nSolanum lycopersicum L.\n=\nSolanaceae\nSolanum Lycopersicum L.\nTomaat\nSP 185\nPomum amoris fructu luteo.\nSolanum lycopersicum L.\n=\nSolanaceae\nSolanum Lycopersicum L.\nTomaat\nSP 185\nPortulaca angustifol.\nPortulaca oleracea L.\n=\nPortulacaceae\nPortulaca oleracea L.\nPortulacae S / Postelijnzaad; Portulacae, Comp.\nPostelein\nSP 445\nPorrum junceum s. Scaenoprassum.\nAllium schoenoprasum L.\n=\nAlliaceae\nAllium Schoenoprasum L.\nBieslook\nSP 301",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "lycopersic",
+    "pomumamoris"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

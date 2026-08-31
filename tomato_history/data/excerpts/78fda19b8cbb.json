@@ -1,0 +1,27 @@
+{
+ "id": "evidence/texts/1665.hortus_regius_parisiensis.vallot/1665.hortus_regius_parisiensis.vallot",
+ "key": "78fda19b8cbb",
+ "excerpts": [
+  {
+   "excerpt_id": "26e682cc0d4b",
+   "identification": "ok",
+   "page_from": 191,
+   "page_to": 191,
+   "char_start": 0,
+   "char_end": 1497,
+   "raw": "Solanum veficàrium B. pin. Halicacabon Tragi.\nIdem foliis ex luteo variis.\nSolanum veficarium Indicum B. pin. Halicacabum fiveSo*\nlanum Indicum Camer. liort.\nSolanum Virginianum, fru&uluteo. AlKeKengi feu Hali-\ncacabum Virçinenfe Parkinf.\nSolanum fiu*#vB)tif>a.cro» B. pin. lethale Belladonà Cluf. Hift.\nSolanum fomniferum verticillatum B. pin. fomniferum\n, antiquorum Profp Alp. de exot.\nSolanum fruticofum bacciferum B, pin. Amomum Plinij\nObf. & Icon. Lob.\nSolanum fruticofum femina fine fruclu & flore.\nSolanum quadrifolium bacciferum B. pin. tetraphylluai\nfive herba Paris Icon. Lob.\nSolanum fcandens, feu Dulcamara B; pin. amara Dulcis\nIcon. Lob.\nIdem florealboB. pin. variât. Dulcamara flore albo ParK*\nSolanum fcandens foliis variegatis.\nSolanum tuberofum efculentum B. pin. ArachidnaTheo-*\nphrafti, forte Papas Periianorum Cluf. Hift.\nIdem flore albo.\nSolanum racemofum Indicum. magnum Virginianum ru-\nbrum ParKinf.\nSolanum pomiferum frudtu rotundo ftriato molli B. pin?\nPoma amoris Camer. epit.\nIdem fructu rubro pallefcente.\nIdem fru6tu lureo B. pin. variât. Poma amoris fru&u lu-.\nteo hort. Eyfter. aurea MalaDod.\nSolanum racemofum Ceraforum forma B. prod.\nIdem fructu luteo.\nSolanum pomiferum fru&u rotundo ftriato duro B. pin?\nMala œthiopica Dod.\nSolanum peregrinum fru£tu rotundo B. pin. an Hyofa-\nmus peregrinus Dal. Hift. Lugd.\nSolanum pomiferum frudtu oblongo B. pin. Mala infana\nDod. Melongena Camer. epit.\nIdem fru6bu carneo.\nSolanum pomiferum frudu oblongo albo B. pin. variât.",
+   "repaired": "Solanum veficàrium B. pin. Halicacabon Tragi.\nIdem foliis ex luteo variis.\nSolanum veficarium Indicum B. pin. Halicacabum fiveSo*\nlanum Indicum Camer. liort.\nSolanum Virginianum, fru&uluteo. AlKeKengi feu Halicacabum Virçinenfe Parkins.\nSolanum fiu*#vB)tif>a.cro» B. pin. lethale Belladonà Clus. Hist.\nSolanum fomniferum verticillatum B. pin. fomniferum\n, antiquorum Profp Alp. de exot.\nSolanum fruticofum bacciferum B, pin. Amomum Plinij\nObf. & Icon. Lob.\nSolanum fruticofum semina fine fruclu & flore.\nSolanum quadrifolium bacciferum B. pin. tetraphylluai\nfive herba Paris Icon. Lob.\nSolanum scandens, feu Dulcamara B; pin. amara Dulcis\nIcon. Lob.\nIdem florealboB. pin. variât. Dulcamara flore albo ParK*\nSolanum scandens foliis variegatis.\nSolanum tuberosum esculentum B. pin. Arachidna Theo-*\nphrafti, forte Papas Periianorum Clus. Hist.\nIdem flore albo.\nSolanum racemosum Indicum. magnum Virginianum rubrum Parkins.\nSolanum pomiferum frudtu rotundo striato molli B. pin?\nPoma amoris Camer. epit.\nIdem fructu rubro pallescente.\nIdem fru6tu lureo B. pin. variât. Poma amoris fru&u lu-.\nteo hort. Eyfter. aurea MalaDod.\nSolanum racemosum Cerasorum forma B. prod.\nIdem fructu luteo.\nSolanum pomiferum fru&u rotundo striato duro B. pin?\nMala oethiopica Dod.\nSolanum peregrinum fru£tu rotundo B. pin. an Hyofa-\nmus peregrinus Dal. Hist. Lugd.\nSolanum pomiferum frudtu oblongo B. pin. Mala insana\nDod. Melongena Camer. epit.\nIdem fru6bu carneo.\nSolanum pomiferum frudu oblongo albo B. pin. variât.",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "pomaamoris",
+    "solanumpomiferum"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

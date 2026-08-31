@@ -1,0 +1,26 @@
+{
+ "id": "evidence/texts/1938.general_history_of_plants.don/text",
+ "key": "4022b602e62a",
+ "excerpts": [
+  {
+   "excerpt_id": "8b08e76e4493",
+   "identification": "ok",
+   "page_from": 1,
+   "page_to": 1,
+   "char_start": 0,
+   "char_end": 1502,
+   "raw": "L. pimpinellifolium\nThere are no hairs\n\nL. Peruvianum\nvery common in the provinces of Lima and Chancay,\nIn Peru the plant is called Tomatte Cimarron, wild golden Apple.\nBerry size of a pea, rather villous.\nPlant with a pleasant smell\n\nL. pyriforme\nberries obconical\nberry pear-shaped\n\nL. Humboldtii\nvery like L. cerasiforme, but differs in the racemes of flowers being smaller, the calycine segments being never the length of the corolla; and the berries being one-half smaller size of a cherry and red. Berry 2-3 celled, smoothish, and when cultivated, not less angular than those of L. esculentum\n\nL. cerasiforme\nNative of Peru, by the sea-side and in gardens\nVery like L. esculentum and L. pyriforme, but differs in the berries being cherry-formed, 2-celled, size of a plumn, but not furrowed lengthsie, rather villous.\nTomate redondo the peruvian name\n\nL. esculentum.\nberries torulose.\nMany flowers are joined in one, which makes them appear of may parts, having from 2 to 5 joined pistils, and as many bundle of stamens.\nThe fruit is smooth, depressed at both ends, and furroweb on the sides; it varies in size, but seldom exceeds that of an ordinary golden-pippin apple.\nVarieties. Those in genral cultivation are called, the large, and small, cherry and pear-shaped red, and the large and small, or cherry-shaped yellow. The first sort is in most estimation for domestic purposes, and should be cultivated accordingly, while a few plant of the other kinds may be raised for variety of the fruit.",
+   "repaired": "L. pimpinellifolium\nThere are no hairs\n\nL. Peruvianum\nvery common in the provinces of Lima and Chancay,\nIn Peru the plant is called Tomatte Cimarron, wild golden Apple.\nBerry size of a pea, rather villous.\nPlant with a pleasant smell\n\nL. pyriforme\nberries obconical\nberry pear-shaped\n\nL. Humboldtii\nvery like L. cerasiforme, but differs in the racemes of flowers being smaller, the calycine segments being never the length of the corolla; and the berries being one-half smaller size of a cherry and red. Berry 2-3 celled, smoothish, and when cultivated, not less angular than those of L. esculentum\n\nL. cerasiforme\nNative of Peru, by the sea-side and in gardens\nVery like L. esculentum and L. pyriforme, but differs in the berries being cherry-formed, 2-celled, size of a plumn, but not furrowed length sie, rather villous.\nTomate redondo the peruvian name\n\nL. esculentum.\nberries torulose.\nMany flowers are joined in one, which makes them appear of may parts, having from 2 to 5 joined pistils, and as many bundle of stamens.\nThe fruit is smooth, depressed at both ends, and furroweb on the sides; it varies in size, but seldom exceeds that of an ordinary golden-pippin apple.\nVarieties. Those in genral cultivation are called, the large, and small, cherry and pear-shaped red, and the large and small, or cherry-shaped yellow. The first sort is in most estimation for domestic purposes, and should be cultivated accordingly, while a few plant of the other kinds may be raised for variety of the fruit.",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}
