@@ -1,0 +1,26 @@
+{
+ "id": "evidence/texts/1590.historia_natural_y_moral_de_las_indias.acosta/1590.historia_natural_y_moral_de_las_indias.acosta",
+ "key": "2816b2b3795c",
+ "excerpts": [
+  {
+   "excerpt_id": "c43f3137223f",
+   "identification": "ok",
+   "page_from": 1,
+   "page_to": 1,
+   "char_start": 0,
+   "char_end": 357,
+   "raw": "https://www.cervantesvirtual.com/obra/historia-natural-y-moral-de-las-indias--0/\n\ncapítulo XX\n\nPara templar el ají usan de sal, que le corrige mucho, porque son entre sí muy contrarios, y el uno al otro se enfrenan; usan también tomates, que son frescos y sanos, y es un género de granos gruesos jugosos, y hacen gustosa salsa, y por sí son buenos de comer.",
+   "repaired": "https://www.cervantesvirtual.com/obra/historia-natural-y-moral-de-las-indias--0/\n\ncapítulo XX\n\nPara templar el ají usan de sal, que le corrige mucho, porque son entre sí muy contrarios, y el uno al otro se enfrenan; usan también tomates, que son frescos y sanos, y es un género de granos gruesos jugosos, y hacen gustosa salsa, y por sí son buenos de comer.",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

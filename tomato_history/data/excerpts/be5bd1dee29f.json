@@ -1,0 +1,28 @@
+{
+ "id": "evidence/texts/latin_aleman/1611.hortus_eystettensis.besler/1611.hortus_eystettensis.besler",
+ "key": "be5bd1dee29f",
+ "excerpts": [
+  {
+   "excerpt_id": "e18c50095170",
+   "identification": "ok",
+   "page_from": 1,
+   "page_to": 1,
+   "char_start": 0,
+   "char_end": 274,
+   "raw": "‘Hortus Eystettensis’, 1611\n\nBESLER, Basil (1561-1629)\n[Red tomato] Poma amoris fructu rubro\n\nTomato. Solanum lycopersicum (as Poma amoris fructu rubro) Bessler, Basilius, Hortus Eystettensis, Tertius ordo collectarum plantarum autumnalium, vol. 3: t. 322 (1620) [B. Besler]",
+   "repaired": "‘Hortus Eystettensis’, 1611\n\nBESLER, Basil (1561-1629)\n[Red tomato] Poma amoris fructu rubro\n\nTomato. Solanum lycopersicum (as Poma amoris fructu rubro) Bessler, Basi lius, Hortus Eystettensis, Tertius ordo collecta rum plantarum autumn alium, vol. 3: t. 322 (1620) [B. Besler]",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "lycopersic",
+    "pomaamoris",
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

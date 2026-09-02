@@ -1,0 +1,27 @@
+{
+ "id": "evidence/texts/latin_aleman/1615.hortulus.reuter/1615_Hortulus Monheimensis. Descripción imagen",
+ "key": "1c9c025d86e2",
+ "excerpts": [
+  {
+   "excerpt_id": "ef321a1c0dc9",
+   "identification": "ok",
+   "page_from": 1,
+   "page_to": 1,
+   "char_start": 0,
+   "char_end": 275,
+   "raw": "http://bildsuche.digitale-sammlungen.de/index.html?c=suche_sim&bandnummer=bsb00011751&pimage=00299&einzelsegmentsuche=1&einzelsegment=1&l=en\n\nGartenblume Goldapfel (Tomatenpflanze) (144r)\nof: Hortulus Monheimensis - BSB Cod.icon. 31 [Cod.icon. 31], [S.l.] Süddeutschland 1615",
+   "repaired": "http://bild suche.digitale-sammlungen.de/index.html?c=suche_sim&band nummer=bsb00011751&pimage=00299&einzelsegmentsuche=1&einzelsegment=1&l=en\n\nGarten blume Goldapfel (Tomatenpflanze) (144r)\nof: Hort ulus Monheimensis - BSB Cod.icon. 31 [Cod.icon. 31], [S.l.] Süddeutschland 1615",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "goldapfel",
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

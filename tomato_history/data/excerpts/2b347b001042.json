@@ -1,0 +1,26 @@
+{
+ "id": "evidence/images/paintings/ximo_jose/1826.still_life_james_peale/description",
+ "key": "2b347b001042",
+ "excerpts": [
+  {
+   "excerpt_id": "403f0b664072",
+   "identification": "ok",
+   "page_from": 1,
+   "page_to": 1,
+   "char_start": 0,
+   "char_end": 237,
+   "raw": "https://artsandculture.google.com/asset/still-life-with-vegetables-james-peale/JgEgSyUeb2iDOg\nStill Life with Vegetables\nJames Peale\n1826\nSabemos que es el primer bodegón con tomate pintado en EEUU porque lo dice \"The tomateo in America\"",
+   "repaired": "https://artsandculture.google.com/asset/still-life-with-vegetables-james-peale/JgEgSyUeb2iDOg\nStill Life with Vegetables\nJames Peale\n1826\nSabemos que es el primer bodegón con tomate pintado en EEUU porque lo dice \"The tomateo in America\"",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

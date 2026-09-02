@@ -1,0 +1,26 @@
+{
+ "id": "evidence/texts/1689.traite_de_la_maniere_de_semer.anon/transcription",
+ "key": "c8bce0c0ccf9",
+ "excerpts": [
+  {
+   "excerpt_id": "4e97d3d67594",
+   "identification": "ok",
+   "page_from": 1,
+   "page_to": 1,
+   "char_start": 0,
+   "char_end": 1033,
+   "raw": "Traite de la maniere de semer dans toutes les saisons de l'annee toutes sortes\nde graines et plantes (Paris: C. de Sercy, 1689), printed page 25, signature C.\nTranscribed from the leaf image bpt6k87030059_f25.jpg (Gallica); running head\n\"en toutes les Saisons de l'Annee. 25\".\n\n\"de toutes couleurs.\nPoids de la Chine, couleur de feu.\nPoids chique, pour faire malice.\nPoivre d'Indes, couleur de feu.\nPoivre de Guinee des deux especes.\nPommes de Mandragores.\nPommes d'Ethiopie, couleur de feu, faites en Bigarades.\nPommes de Datura, epineuse & verte.\nPommes d'amour, rouges & jaunes.\nPinan d'Indes, jaune.\nLe grand Plumeau des Indes, panache de trois couleurs.\nQueue de Renard des quatre especes, couleur de feu.\nRabacrestes violettes & blanches.\nRinsinus.\nRoses d'Indes, de toutes les belles especes, doubles &\"\n\nA seed list, and an ornamental one: the neighbours are amaranths (Queue de\nRenard, le grand Plumeau des Indes), marigolds (Roses d'Indes), datura and\nmandrake. \"Rouges & jaunes\" -- sold by colour, two forms kept distinct.",
+   "repaired": "Traite de la maniere de semer dans toutes les saisons de l'annee toutes sortes\nde graines et plantes (Paris: C. de Sercy, 1689), printed page 25, signature C.\nTranscribed from the leaf image bpt6k87030059_f25.jpg (Gallica); running head\n\"en toutes les Saisons de l'Annee. 25\".\n\n\"de toutes couleurs.\nPoids de la Chine, couleur de feu.\nPoids chique, pour faire malice.\nPoivre d'Indes, couleur de feu.\nPoivre de Guinee des deux especes.\nPommes de Mandragores.\nPommes d'Ethiopie, couleur de feu, faites en Bigarades.\nPommes de Datura, epi neuse & verte.\nPommes d'amour, rouges & jaunes.\nPinan d'Indes, jaune.\nLe grand Plumeau des Indes, panache de trois couleurs.\nQueue de Renard des quatre especes, couleur de feu.\nRabacrestes violettes & blanches.\nRinsinus.\nRoses d'Indes, de toutes les belles especes, doubles &\"\n\nA seed list, and an ornamental one: the neighbours are amaranths (Queue de\nRenard, le grand Plumeau des Indes), marigolds (Roses d'Indes), datura and\nmandrake. \"Rouges & jaunes\" -- sold by colour, two forms kept distinct.",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "pommesd'amour"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

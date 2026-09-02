@@ -1,0 +1,26 @@
+{
+ "id": "evidence/texts/1712.wakan_sansai_zue.terajima_ryoan.togaki_is_the_fig/1712.wakan_sansai_zue.terajima_ryoan.togaki_is_the_fig",
+ "key": "37b3c06cc2d9",
+ "excerpts": [
+  {
+   "excerpt_id": "74522fe6eff4",
+   "identification": "ok",
+   "page_from": 1,
+   "page_to": 1,
+   "char_start": 0,
+   "char_end": 659,
+   "raw": "# 和漢三才図会 — 唐柿 = 無花果 (THE FIG), not the tomato\n# NDL pid 2569764 (文政7/1824 printing) and pid 2596415 (Edo-period printing)\n# Text quoted from the NDL full-text (OCR) index, 2026-08-31. NO SCAN IS HELD.\n\nいちじゆく たうかき 無花果 映日果 … 俗云 丁熟 又云 唐柿\n\n按 無花果 其實似柹 而本邦俗曰 唐柿 一月而熟 故名\n\n\"The fig (ichijiku), whose fruit resembles a persimmon; in our country it is\ncommonly called TOGAKI, because it ripens in one month, hence the name.\"\n\nTHE POINT: 唐柿 in Japanese most commonly denotes FICUS CARICA, the fig, NOT the\ntomato. Attested in two independent printings of the standard Japanese illustrated\nencyclopedia. See the false_friends/japanese_togaki entry in docs/thesaurus.yaml.",
+   "repaired": "# 和漢三才図会 — 唐柿 = 無花果 (THE FIG), not the tomato\n# NDL pid 2569764 (文政7/1824 printing) and pid 2596415 (Edo-period printing)\n# Text quoted from the NDL full-text (OCR) index, 2026-08-31. NO SCAN IS HELD.\n\nいちじゆく たうかき 無花果 映日果 … 俗云 丁熟 又云 唐柿\n\n按 無花果 其實似柹 而本邦俗曰 唐柿 一月而熟 故名\n\n\"The fig (ichijiku), whose fruit resembles a persimmon; in our country it is\ncommonly called TOGAKI, because it ripens in one month, hence the name.\"\n\nTHE POINT: 唐柿 in Japanese most commonly denotes FICUS CARICA, the fig, NOT the\ntomato. Attested in two independent print ings of the standard Japanese illustrated\nencyclopedia. See the false_friends/japanese_togaki entry in docs/thesaurus.yaml.",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

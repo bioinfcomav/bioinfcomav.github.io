@@ -1,0 +1,26 @@
+{
+ "id": "evidence/texts/1888.keiben_seiyo_ryorihoshinan.akanasu_recipe/1888.keiben_seiyo_ryorihoshinan.akanasu_recipe",
+ "key": "7de9464e78c0",
+ "excerpts": [
+  {
+   "excerpt_id": "90332de95c1e",
+   "identification": "ok",
+   "page_from": 1,
+   "page_to": 1,
+   "char_start": 0,
+   "char_end": 641,
+   "raw": "# 軽便西洋料理法指南 (1888) — A JAPANESE TOMATO RECIPE, PRE-1900\n# NDL pid 849039. Text quoted from the NDL full-text index, 2026-08-31.\n# NO SCAN IS HELD. Only the table-of-contents line has been read.\n\n赤茄子の煮方 \"How to cook akanasu (tomatoes)\" (0025.jp2)\n\nSIGNIFICANCE: 1888 is FIVE YEARS EARLIER than Fukuba's cultivation manual (1893,\nheld in this corpus), and this is a COOKERY book, not a horticultural one — so the\ntomato had reached the Japanese kitchen, not merely the seed trade, before 1890.\n\nCAUTION: only the CONTENTS LINE has been seen. The recipe text itself has not been\nread. Acquire canvas 25 before quoting anything beyond the title.",
+   "repaired": "# 軽便西洋料理法指南 (1888) — A JAPANESE TOMATO RECIPE, PRE-1900\n# NDL pid 849039. Text quoted from the NDL full-text index, 2026-08-31.\n# NO SCAN IS HELD. Only the table-of-contents line has been read.\n\n赤茄子の煮方 \"How to cook akanasu (tomatoes)\" (0025.jp2)\n\nSIGNIFICANCE: 1888 is SIVE YEARS EARLIER than Fukuba's cultivation manual (1893,\nheld in this corpus), and this is a COOKERY book, not a horticultural one — so the\ntomato had reached the Japanese kitchen, not merely the seed trade, before 1890.\n\nCAUTION: only the CONTENTS LINE has been seen. The recipe text itself has not been\nread. Acquire canvas 25 before quoting anything beyond the title.",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "id": "evidence/texts/1577.historia_general.sahagun/1577.historia_general.sahagun",
+ "key": "b9fc8d8b8b28",
+ "excerpts": [
+  {
+   "excerpt_id": "bbd287cffc8d",
+   "identification": "ok",
+   "page_from": 1,
+   "page_to": 1,
+   "char_start": 0,
+   "char_end": 206,
+   "raw": "Bernardino de Sahagún. Historia General de las cosas de Nueva España. Códice Florentino. Libro X: del pueblo, sus virtudes y vicios, y otras naciones, p. 49 (vendedores de tomates) p. 58 (clases de tomates)",
+   "repaired": "Bernardino de Sahagún. Historia General de las cosas de Nueva España. Códice Florentino. Libro X: del pueblo, sus virtudes y vicios, y otras naciones, p. 49 (vendedores de tomates) p. 58 (clases de tomates)",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

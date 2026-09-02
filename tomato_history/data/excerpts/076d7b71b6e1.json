@@ -1,0 +1,27 @@
+{
+ "id": "evidence/texts/1922.shokubutsu_meii.matsumura_jinzo/1922.shokubutsu_meii.matsumura_jinzo",
+ "key": "076d7b71b6e1",
+ "excerpts": [
+  {
+   "excerpt_id": "49c6dc0cab05",
+   "identification": "ok",
+   "page_from": 1,
+   "page_to": 1,
+   "char_start": 0,
+   "char_end": 723,
+   "raw": "# 松村任三『植物名彙』(1922) — THE JAPANESE SYNONYM SET FOR THE TOMATO\n# NDL pid 930944. Quoted from the NDL full-text index, 2026-08-31. NO SCAN HELD.\n\nLycopersicum esculentum, Mill. aka-nasu アカナス\n六月柿 · 番茄 (H.N.) · 紅耳仔蜜 (FORMOSA) · 蕃柿 (群芳譜)(湧幢小品) · 小金瓜\n\nWHY THIS IS USEFUL TO THE PROJECT:\n1. It cites 群芳譜 AND 湧幢小品 BY NAME for 蕃柿 — an independent Japanese\nbotanical authority corroborating the two Chinese sources held in evidence/.\n2. 紅耳仔蜜 is given as the FORMOSA (Taiwanese) name. NOTE that this is NOT the\n柑仔蜜 of the Taiwan gazetteers held in this corpus. Different first character.\nBoth are Taiwanese names for the tomato; DO NOT normalise one to the other.\n3. It fixes アカナス as the Japanese name, matching Fukuba 1893's 蕃茄［アカナス］.",
+   "repaired": "# 松村任三『植物名彙』(1922) — THE JAPANESE SYNONYM SET FOR THE TOMATO\n# NDL pid 930944. Quoted from the NDL full-text index, 2026-08-31. NO SCAN HELD.\n\nLycopersicum esculentum, Mill. aka-nasu アカナス\n六月柿 · 番茄 (H.N.) · 紅耳仔蜜 (FORMOSA) · 蕃柿 (群芳譜)(湧幢小品) · 小金瓜\n\nWHY THIS IS USEFUL TO THE PROJECT:\n1. It cites 群芳譜 AND 湧幢小品 BY NAME for 蕃柿 — an independent Japanese\nbotanical authority corroborating the two Chinese sources held in evidence/.\n2. 紅耳仔蜜 is given as the FORMOSA (Taiwan ese) name. NOTE that this is NOT the\n柑仔蜜 of the Taiwan gazetteers held in this corpus. Different first character.\nBoth are Taiwan ese names for the tomato; DO NOT normal ise one to the other.\n3. It fixes アカナス as the Japanese name, matching Fukuba 1893's 蕃茄［アカナス］.",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "lycopersic",
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}

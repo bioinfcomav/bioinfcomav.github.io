@@ -1,0 +1,67 @@
+{
+ "id": "evidence/texts/1863-1900.catalogues.vilmorin_andrieux/1869.graines_et_plantes/1869.graines_et_plantes",
+ "key": "6954aaf33910",
+ "excerpts": [
+  {
+   "excerpt_id": "1db3600bd82a",
+   "identification": "ok",
+   "page_from": 22,
+   "page_to": 22,
+   "char_start": 534,
+   "char_end": 664,
+   "raw": "gros: carré OURS. , 1:55\nMONSÉTUEUX . , » . .\ntomate rouge « . . . . . . . » 40!\ntomate jaune\". : ,, , . » 40!\nMI ne no)\nCECI SC Î",
+   "repaired": "gros: carré OURS. , 1:55\nMONSÉTUEUX . , » . .\ntomate rouge « . . . . . . . » 40!\ntomate jaune\". : ,, , . » 40!\nMI ne no)\nCECI SC Î",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  },
+  {
+   "excerpt_id": "e8f8aaeab54f",
+   "identification": "ok",
+   "page_from": 24,
+   "page_to": 24,
+   "char_start": 1959,
+   "char_end": 2276,
+   "raw": "RADIS LONG ou RAVE. SET or E\nae “707 Pi mine à, Serpoteti HER TENNIS 0 » 5 |.4 50\nfl blanche à collet vert. . . . .« . . .: » »; » 40] TOMATE ou POMME D'AMOUR. |\nk blanche: à..collet violet. +} 5 ,»1,% rouge grosse, . , . pag. » 40! » »i » 60\n: VIDIC RING Ut Ci NL AN ET EN *ROUGE À TIGE ROIDE de Laye, » 60! » »i 5 »",
+   "repaired": "RADIS LONG ou RAVE. SET or E\nae “707 Pi mine à, Serpoteti HER TENNIS 0 » 5 |.4 50\nfl blanche à collet vert. . . . .« . . .: » »; » 40] TOMATE ou POMME D'AMOUR. |\nk blanche: à..collet violet. +} 5 ,»1,% rouge grosse, . , . pag. » 40! » »i » 60\n: VIDIC RING Ut Ci NL AN ET EN *ROUGE À TIGE ROIDE de Laye, » 60! » »i 5 »",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "pommed'amour",
+    "tomat"
+   ],
+   "translation": "LONG RADISH or TURNIP. SET or E\nae “707 Pi mine à, Serpoteti HER TENNIS 0 » 5 |.4 50\nwhite radish with green collar. . . . .« . . .: » »; » 40] TOMATO or LOVE APPLE. |\nwhite: with ..purple collar. +} 5 ,»1,% large red, . , . pag. » 40! » »i » 60\n: VIDIC RING Ut Ci NL AN ET EN *RED WITH STIFF STEM of Laye, » 60! » »i 5 »",
+   "translation_lang": "en",
+   "translation_of": "repaired",
+   "translation_status": "machine"
+  },
+  {
+   "excerpt_id": "7a27bd494eec",
+   "identification": "ok",
+   "page_from": 74,
+   "page_to": 74,
+   "char_start": 698,
+   "char_end": 1864,
+   "raw": "16e Ce\n» 60 | SOLANUM suite)\nmarginatum (OX...\n» 60 R ACEMIGERUM (©) Tomate groseille) (nou. )\n} 60 Espèce des plus ornementales. C’est\n» 60 une véritable Tomate dont les tiges\n» 60 presque grimpantes se ramifient à l'in-\n» 60 fini et se chargent d’un nombre : consi-\n| dérable de grappes simples on rameu-\nses, longues de 15 à 20 centimètres,\nSE composé es de nombreux fruits ronds,\n» 60 d'un ronge écarlate très-vif, de la\n» 60 grosseur d’une forte Groseille à grappe.\n» 60 Culture des Tomates du potager,\n» 60 ROBOSEUR GX à\n» 60 sisymbrifolium ©. . . . . .\nTexanum RS ep PME a ta\n» 60 ©\n10 SOLDANELLA Alpina %+..\n» 4\nSOLEIL double jaune ©).\n» 60 H. macrophyllus giganteus ©.\n» 20 nain double © . . . . ae\n» 20 de Californie double Oo an\n» 60 DU TEXAS à flle argentée. H argophyllus @.\nHelianthus uniflorus ©). . LE\n» 20 | SONCHUS Plumieri Œ. . . . . .\nSOUCI\ndouble des jardins (©). 30 gram.\n» 40 — à la reine ow de Trianon ©). . . .\npluvial OC) See, Core\n» 40 | Re\n» . | de Ponge à fleur double ©.\n»\n» 40 |! SPERGULA\n» 40 | pilifera, Sagina subulata (pour gazon)% +.\n» 40 |\n» 60 | SPHENOGYNE speciosa © .\n» 60 |\n» 60\n» 60\n» 60\n» 60\n» 60 |\n» 60\n» 60\n» 60 |\n» 60 ||",
+   "repaired": "16e Ce\n» 60 | SOLANUM suite)\nmarginatum (OX...\n» 60 R ACEMIGERUM (©) Tomate groseille) (nou. )\n} 60 Espèce des plus ornementales. C’est\n» 60 une véritable Tomate dont les tiges\n» 60 presque grimpantes se ramifient à l'in-\n» 60 fini et se chargent d’un nombre : consi-\n| dérable de grappes simples on rameuses, longues de 15 à 20 centimètres,\nSE composé es de nombreux fruits ronds,\n» 60 d'un ronge écarlate très-vif, de la\n» 60 grosseur d’une forte Groseille à grappe.\n» 60 Culture des Tomates du potager,\n» 60 ROBOSEUR GX à\n» 60 sisymbrifolium ©. . . . . .\nTexanum RS ep PME a ta\n» 60 ©\n10 SOLDANELLA Alpina %+..\n» 4\nSOLEIL double jaune ©).\n» 60 H. macrophyllus giganteus ©.\n» 20 nain double © . . . . ae\n» 20 de Californie double Oo an\n» 60 DU TEXAS à flle argentée. H argophyllus @.\nHelianthus uniflorus ©). . LE\n» 20 | SONCHUS Plumieri Œ. . . . . .\nSOUCI\ndouble des jardins (©). 30 gram.\n» 40 — à la reine ow de Trianon ©). . . .\npluvial OC) See, Core\n» 40 | Re\n» . | de Ponge à fleur double ©.\n»\n» 40 |! SPERGULA\n» 40 | pilifera, Sagina subulata (pour gazon)% +.\n» 40 |\n» 60 | SPHENOGYNE speciosa © .\n» 60 |\n» 60\n» 60\n» 60\n» 60\n» 60 |\n» 60\n» 60\n» 60 |\n» 60 ||",
+   "concepts": [
+    "tomato"
+   ],
+   "terms": [
+    "tomat"
+   ],
+   "translation": null,
+   "translation_lang": null,
+   "translation_of": null,
+   "translation_status": "untranslated"
+  }
+ ]
+}
