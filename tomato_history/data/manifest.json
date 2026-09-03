@@ -1,13 +1,13 @@
 {
- "built_at": "2026-09-02T12:41:27+00:00",
+ "built_at": "2026-09-03T14:10:46+00:00",
  "restricted": false,
- "documents_total": 602,
- "documents_exported": 492,
- "documents_excluded": 110,
+ "documents_total": 601,
+ "documents_exported": 503,
+ "documents_excluded": 98,
  "documents_by_rights": {
-  "public_domain_presumed": 413,
   "third_party_copyright": 79,
-  "ours_unpublished": 24,
+  "public_domain_presumed": 424,
+  "ours_unpublished": 12,
   "unpublished_embargoed": 86
  },
  "rights_publishable": [
@@ -18,19 +18,26 @@
   "public_domain_presumed"
  ],
  "documents_by_tier": {
-  "full": 413,
-  "cite_only": 79,
-  "withheld": 110
+  "cite_only": 131,
+  "full": 372,
+  "withheld": 98
  },
  "text_status_thresholds": {
   "unread_chars_per_source_page": 200,
   "partial_pages_fraction": 0.5
  },
- "requiring_attribution": 21,
- "pages_exported": 23145,
- "excerpts_exported": 2702,
- "excerpts_withheld_not_full_tier": 3538,
- "pages_in_corpus": 98493,
+ "requiring_attribution": 66,
+ "pages_exported": 18158,
+ "images_exported": 139,
+ "images_withheld": {
+  "not_cleared": 41,
+  "no_licence_record": 11
+ },
+ "image_max_px": 800,
+ "image_thumb_px": 320,
+ "excerpts_exported": 2034,
+ "excerpts_withheld_not_full_tier": 3550,
+ "pages_in_corpus": 80350,
  "concepts_used": [
   "tomato",
   "fruit_shape",
@@ -40,5 +47,5 @@
   "medicinal_and_toxic",
   "cjk_search"
  ],
- "thesaurus_sha256": "63f044b36ac2324f"
+ "thesaurus_sha256": "b64e2f3123d47205"
 }
