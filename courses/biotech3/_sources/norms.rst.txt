@@ -3,7 +3,7 @@
 Norms
 -----
 
-Bioinformatics 2025-2026, norms and regulations
+Bioinformatics 2026-2027, norms and regulations
 
 Contact
 =======
@@ -21,7 +21,7 @@ Contact
    ext: 88473
 
 
-  `Group web page <http://bioinf.comav.upv.es/index.html>`_
+  `Group web page <https://plantgenomics.es/>`_
 
 Methodology
 ===========
