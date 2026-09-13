@@ -1,119 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dotplot</title>
-    <script type="module" crossorigin src="/edu/alignment_app/assets/index-mwrkHpde.js"></script>
-    <link rel="stylesheet" crossorigin href="/edu/alignment_app/assets/index-CLnbpSaw.css">
-  </head>
-  <body>
-    <main class="page">
-      <h1 class="visually-hidden">Sequence tools</h1>
-      <nav class="tabs" aria-label="Tools">
-        <a id="tab-dotplot" href="#dotplot">Dotplot</a>
-        <a id="tab-inversion" href="#inversion">Inversion</a>
-        <a id="tab-alignment" href="#alignment">Smith-Waterman</a>
-      </nav>
-
-      <section id="tool-dotplot" class="tool">
-        <div class="inputs">
-          <div class="input">
-            <label class="input-label" for="top-sequence">Top sequence <em>(columns)</em></label>
-            <textarea id="top-sequence" spellcheck="false" rows="3">TTGACCTTAGGCTTGACC</textarea>
-            <label class="toggle">
-              <input id="top-revcomp" type="checkbox" />
-              Reverse complement
-            </label>
-          </div>
-          <div class="input">
-            <label class="input-label" for="left-sequence">Left sequence <em>(rows)</em></label>
-            <textarea id="left-sequence" spellcheck="false" rows="3">TTGACCTTAGGCTTGACC</textarea>
-            <label class="toggle">
-              <input id="left-revcomp" type="checkbox" />
-              Reverse complement
-            </label>
-          </div>
-        </div>
-
-        <div class="controls">
-          <label class="control">
-            <span class="input-label">Comparison</span>
-            <select id="comparison-mode">
-              <option value="direct" selected>Direct — one residue at a time</option>
-              <option value="windowed">Windowed — a run of residues</option>
-            </select>
-          </label>
-          <div id="window-controls" class="control-group" hidden>
-            <label class="control">
-              <span class="input-label">Window size</span>
-              <input id="window-size" type="number" min="1" max="30" step="1" value="4" />
-            </label>
-            <label class="control">
-              <span class="input-label">Identities required</span>
-              <input id="min-matches" type="number" min="1" max="4" step="1" value="4" />
-            </label>
-          </div>
-        </div>
-
-        <p id="status" class="status"></p>
-        <p id="readout" class="readout"></p>
-
-        <div id="plot" class="plot-scroll"></div>
-      </section>
-
-      <section id="tool-inversion" class="tool" hidden>
-        <div class="inputs">
-          <div class="input">
-            <label class="input-label" for="inversion-first">First portion</label>
-            <textarea id="inversion-first" class="portion-a" spellcheck="false" rows="2">ATGCATTAG</textarea>
-            <button id="inversion-first-invert" type="button">Invert this portion</button>
-          </div>
-          <div class="input">
-            <label class="input-label" for="inversion-second">Second portion</label>
-            <textarea id="inversion-second" class="portion-b" spellcheck="false" rows="2">CCGTTAAGG</textarea>
-            <button id="inversion-second-invert" type="button">Invert this portion</button>
-          </div>
-        </div>
-
-        <div id="inversion-molecule"></div>
-
-      </section>
-      <section id="tool-alignment" class="tool" hidden>
-        <div class="inputs">
-          <div class="input">
-            <label class="input-label" for="align-top">Top sequence <em>(columns)</em></label>
-            <textarea id="align-top" spellcheck="false" rows="2">TGTTACGG</textarea>
-          </div>
-          <div class="input">
-            <label class="input-label" for="align-left">Left sequence <em>(rows)</em></label>
-            <textarea id="align-left" spellcheck="false" rows="2">GGTTGACTA</textarea>
-          </div>
-        </div>
-
-        <div class="controls">
-          <label class="control tinted rule-match">
-            <span class="input-label">Match</span>
-            <input id="align-match" type="number" step="1" value="3" />
-          </label>
-          <label class="control tinted rule-mismatch">
-            <span class="input-label">Mismatch</span>
-            <input id="align-mismatch" type="number" step="1" value="-3" />
-          </label>
-          <label class="control tinted rule-gap-open">
-            <span class="input-label">Gap open</span>
-            <input id="align-gap-open" type="number" min="0" step="1" value="4" />
-          </label>
-          <label class="control tinted rule-gap-extend">
-            <span class="input-label">Gap extend</span>
-            <input id="align-gap-extend" type="number" min="0" step="1" value="1" />
-          </label>
-        </div>
-
-        <p id="align-status" class="status"></p>
-
-        <div id="align-matrix"></div>
-      </section>
-    </main>
-  </body>
+<head>
+<meta charset="utf-8">
+<title>Moved</title>
+<link rel="canonical" href="/edu/software/alignment/index.html">
+<meta http-equiv="refresh" content="0; url=/edu/software/alignment/index.html">
+</head>
+<body>
+<p>This page has moved to <a href="/edu/software/alignment/index.html">/edu/software/alignment/index.html</a>.</p>
+</body>
 </html>

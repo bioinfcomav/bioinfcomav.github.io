@@ -1,32 +1,43 @@
-
 Software
 ========
-Some of the software produced by the bioinformatic group at COMAV might be useful from other researchers. We make available with that hope.
 
+We develop tools for our own research and teaching, and we make them available
+in the hope that they are useful to others. Both of the tools below run entirely
+in the browser: there is nothing to install, and no data ever leaves your
+computer.
 
-Old and unused software
------------------------
+ABI viewer
+----------
 
-ngs_crumbs
-__________
-:doc:`ngs_crumbs <ngs_crumbs/index>` ngs_crumbs aims to be a collection of small ngs data processing utilities.
+`ABI viewer </abi-viewer/>`_ displays and compares Applied Biosystems fragment
+analysis files (.fsa and .ab1). Drop the files onto the page and it will show
+the electropherograms, let you switch between fluorescence channels, overlay the
+size standard, and calibrate scan positions to base pairs so that samples align
+by fragment size.
 
-ngs_backbone
-____________
+Electropherograms can be panned, zoomed and locked together so that every
+sample moves at once, and the peaks detected in all channels can be exported as
+a CSV file.
 
-:doc:`ngs_backbone <ngs_backbone/index>` is a bioinformatic application created to work on sequence analysis by using NGS (Next Generation Sequencing)  and sanger sequences. It is capable of cleaning reads, do de novo assembly or mapping against a reference and annotate SNPs, SSRs, ORFs, GO terms and sequence descriptions.
+The source is on `GitHub <https://github.com/JoseBlanca/abi_viewer>`_.
 
-clean_reads
-___________
+Population genetics simulations
+-------------------------------
 
-:doc:`clean_reads <clean_reads/index>` cleans Next Generation Sequencing reads from the following platforms: 454, Illumina, solid and Sanger.
+`Pop lab </pop_lab/>`_ is a set of simulations written for our population
+genetics practices. Each one is a small interactive application: you set the
+parameters of a population, run the simulation, and see how the allele
+frequencies respond.
 
-sff_extract
-___________
+The available practices cover:
 
-:doc:`sff_extract <sff_extract/index>` reads the information from the 454 sff files and stores the sequence, quality and adapter clips in fasta and xml files.
+  * genetic drift, and drift in populations exchanging migrants,
+  * selection, and balancing selection,
+  * the behaviour of one locus forward in time,
+  * the loss of diversity caused by bottlenecks and by founder effects,
+  * admixture between populations.
 
-EST2uni
-_______
+They are meant to be used in class, but they need no installation and can be
+run by anyone.
 
-EST2uni was a tool similar to backbone, but unable to handle NGS data. EST2uni has been deprecated in favor of :doc:`ngs_backbone <ngs_backbone/index>`.
+The source is on `GitHub <https://github.com/JoseBlanca/pop_lab>`_.

@@ -14,8 +14,8 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Genomics" href="genomics.html" />
-    <link rel="prev" title="Bioinformatics &amp; genomics" href="index.html" />
+    <link rel="next" title="People" href="people.html" />
+    <link rel="prev" title="Courses" href="courses.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -35,29 +35,41 @@
             
   <section id="software">
 <h1>Software<a class="headerlink" href="#software" title="Link to this heading">¶</a></h1>
-<p>Some of the software produced by the bioinformatic group at COMAV might be useful from other researchers. We make available with that hope.</p>
-<section id="old-and-unused-software">
-<h2>Old and unused software<a class="headerlink" href="#old-and-unused-software" title="Link to this heading">¶</a></h2>
-<section id="ngs-crumbs">
-<h3>ngs_crumbs<a class="headerlink" href="#ngs-crumbs" title="Link to this heading">¶</a></h3>
-<p><span class="xref std std-doc">ngs_crumbs</span> ngs_crumbs aims to be a collection of small ngs data processing utilities.</p>
+<p>We develop tools for our own research and teaching, and we make them available
+in the hope that they are useful to others. Both of the tools below run entirely
+in the browser: there is nothing to install, and no data ever leaves your
+computer.</p>
+<section id="abi-viewer">
+<h2>ABI viewer<a class="headerlink" href="#abi-viewer" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="/abi-viewer/">ABI viewer</a> displays and compares Applied Biosystems fragment
+analysis files (.fsa and .ab1). Drop the files onto the page and it will show
+the electropherograms, let you switch between fluorescence channels, overlay the
+size standard, and calibrate scan positions to base pairs so that samples align
+by fragment size.</p>
+<p>Electropherograms can be panned, zoomed and locked together so that every
+sample moves at once, and the peaks detected in all channels can be exported as
+a CSV file.</p>
+<p>The source is on <a class="reference external" href="https://github.com/JoseBlanca/abi_viewer">GitHub</a>.</p>
 </section>
-<section id="ngs-backbone">
-<h3>ngs_backbone<a class="headerlink" href="#ngs-backbone" title="Link to this heading">¶</a></h3>
-<p><span class="xref std std-doc">ngs_backbone</span> is a bioinformatic application created to work on sequence analysis by using NGS (Next Generation Sequencing)  and sanger sequences. It is capable of cleaning reads, do de novo assembly or mapping against a reference and annotate SNPs, SSRs, ORFs, GO terms and sequence descriptions.</p>
-</section>
-<section id="clean-reads">
-<h3>clean_reads<a class="headerlink" href="#clean-reads" title="Link to this heading">¶</a></h3>
-<p><span class="xref std std-doc">clean_reads</span> cleans Next Generation Sequencing reads from the following platforms: 454, Illumina, solid and Sanger.</p>
-</section>
-<section id="sff-extract">
-<h3>sff_extract<a class="headerlink" href="#sff-extract" title="Link to this heading">¶</a></h3>
-<p><a class="reference internal" href="sff_extract/index.html"><span class="doc">sff_extract</span></a> reads the information from the 454 sff files and stores the sequence, quality and adapter clips in fasta and xml files.</p>
-</section>
-<section id="est2uni">
-<h3>EST2uni<a class="headerlink" href="#est2uni" title="Link to this heading">¶</a></h3>
-<p>EST2uni was a tool similar to backbone, but unable to handle NGS data. EST2uni has been deprecated in favor of <span class="xref std std-doc">ngs_backbone</span>.</p>
-</section>
+<section id="population-genetics-simulations">
+<h2>Population genetics simulations<a class="headerlink" href="#population-genetics-simulations" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="/pop_lab/">Pop lab</a> is a set of simulations written for our population
+genetics practices. Each one is a small interactive application: you set the
+parameters of a population, run the simulation, and see how the allele
+frequencies respond.</p>
+<p>The available practices cover:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>genetic drift, and drift in populations exchanging migrants,</p></li>
+<li><p>selection, and balancing selection,</p></li>
+<li><p>the behaviour of one locus forward in time,</p></li>
+<li><p>the loss of diversity caused by bottlenecks and by founder effects,</p></li>
+<li><p>admixture between populations.</p></li>
+</ul>
+</div></blockquote>
+<p>They are meant to be used in class, but they need no installation and can be
+run by anyone.</p>
+<p>The source is on <a class="reference external" href="https://github.com/JoseBlanca/pop_lab">GitHub</a>.</p>
 </section>
 </section>
 
@@ -92,12 +104,10 @@
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Bioinformatics &amp; genomics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="courses.html">Courses</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Software</a></li>
-<li class="toctree-l1"><a class="reference internal" href="genomics.html">Genomics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
 <li class="toctree-l1"><a class="reference internal" href="people.html">People</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="courses.html">Courses</a></li>
 <li class="toctree-l1"><a class="reference external" href="http://github.com/JoseBlanca/">git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_here.html">Getting here</a></li>
 </ul>
@@ -106,8 +116,8 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Bioinformatics &amp; genomics</a></li>
-      <li>Next: <a href="genomics.html" title="next chapter">Genomics</a></li>
+      <li>Previous: <a href="courses.html" title="previous chapter">Courses</a></li>
+      <li>Next: <a href="people.html" title="next chapter">People</a></li>
   </ul></li>
 </ul>
 </div>
