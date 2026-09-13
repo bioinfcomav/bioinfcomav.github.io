@@ -171,7 +171,7 @@ What did happen with the mileup snps?. Detect the mistake on the command.
 SNP calling using calmd
 _______________________
 
-Use freebayes to identify snps in these :download:`Celegans alignments <downloads/alignments.bam>` against :download:`this reference sequence <downloads/ref.fasta>`. Take into account that this bam file has not been processed by samtools calmd. Search for snps with pre calmd processed alignment file and with the post processed file.
+Use freebayes to identify snps in these `Celegans alignments <https://github.com/bioinfcomav/bioinfcomav.github.io/releases/download/site-assets-v1/alignments.bam>`_ against :download:`this reference sequence <downloads/ref.fasta>`. Take into account that this bam file has not been processed by samtools calmd. Search for snps with pre calmd processed alignment file and with the post processed file.
 
 ::
 
