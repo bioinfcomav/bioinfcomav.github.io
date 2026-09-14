@@ -30,20 +30,19 @@ Máster en mejora genética:
 Grado en ingeniería biomédica:
 
     * Materiales para el curso de `bioética <https://drive.google.com/drive/folders/100WJpcPj30_456OczrIyHI6vFvIV6T82?usp=sharing>`_.
-    * Materiales para el curso de Python:
-
-		* `Course plan <https://docs.google.com/presentation/d/1JN1vwbaWHg0PFeGWrr_pwTmE9FgEDjC9CvVyyI5Kpzg/edit?usp=drive_link>`_.
-		* `Python 101 <edu/intro_programming>`_
-		* `Testing tutorial <edu/testing_tutorial>`_
-		* `Git tutorial <edu/git_tutorial>`_
-		* `Project management with uv <https://github.com/JoseBlanca/uv_seminar>`_
-		* Data analysis topics:
-
-			* `Iterables and iterators <edu/iterables_and_iterators>`_
-			* Data analysis `libraries <https://github.com/JoseBlanca/py_industriales/blob/main/python_para_analysis_de_datos.md>`_
-
-		* Programming paradigms `course <edu/programming_paradigms>`_ and `slides <https://docs.google.com/presentation/d/1nWWS07IteRFVYaFLmLpnPnA_6UxEC1b6pbRVhHc4CwM/edit?usp=drive_link>`_.
 
 Seminario de `agricultura y moral <https://drive.google.com/drive/folders/1XYM2AvF9a_ObQXRDbbiljoGlTu24JjRh?usp=sharing>`_.
 
-If you are interested in organize these courses in your organization, please contact us.
+Software
+________
+
+`Population genetics simulations <pop_lab/index.html>`_ are the simulations
+written for our population genetics practices. Each one is a small interactive
+application: set the parameters of a population, run it, and watch the allele
+frequencies respond.
+
+`Sequence comparison tools <edu/software/alignment/index.html>`_ teach basic
+bioinformatic concepts.
+
+Both run entirely in the browser: there is nothing to install, and no sequence
+you type is sent anywhere.

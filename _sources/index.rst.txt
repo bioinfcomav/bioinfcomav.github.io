@@ -20,7 +20,7 @@ Our main areas of interest are:
    :hidden:
 
    self
-   courses
+   edu
    software
    people
    publications

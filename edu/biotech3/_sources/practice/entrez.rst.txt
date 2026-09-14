@@ -204,13 +204,54 @@ Which would be the most convenient database to look for human diseases?
 Exercise 3
 ==========
 
-Look for information related to the possible carcinogenic effects of: nicotine, milk, cannabis and banana.
 
-Look for information in Google and Pubmed?
+Scientific evidence and cancer: can scientific papers disagree?
+
+Choose one of the following topics:
+
+* Nicotine
+* Milk
+* Cannabis
+* Banana
+
+Your aim is not to find the “correct” answer. Your aim is to explore how scientific evidence is generated and why different studies may reach different conclusions.
+
+Search the Internet.
+--------------------
+
+Use a general search engine such as Google and search for information about your topic and cancer.
+
+Find one interesting or relevant claim and identify where it comes from.
+
+Search PubMed
+-------------
+Now search PubMed
+
+Find two scientific papers that report different results or reach different conclusions.
+
+You do not need to read the papers in detail. Try to identify:
+
+* What was studied?
+
+* What was the main result?
+
+* What was the conclusion?
+
+Think about the differences. If two scientific papers reach different conclusions, what could explain the difference?
 
 
-* 
-  How many references have you found in both searches? Are the references consistent? Can you get solid conclusion? Which evidences would you value the most?
+Discussion
+----------
 
-* 
-  Look in Pubmed, but only in the "meta-analysis" references. Which conclusions can you reach now?
+Be prepared to briefly explain to the class:
+
+* What did you find on the Internet?
+
+*  What did the two scientific papers find?
+
+*  How could their different results be explained?
+
+Final question
+--------------
+
+* If two published scientific papers disagree, does that mean that one of them must be wrong? Why or why not?
