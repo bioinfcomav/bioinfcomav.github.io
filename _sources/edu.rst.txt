@@ -42,7 +42,10 @@ application: set the parameters of a population, run it, and watch the allele
 frequencies respond.
 
 `Sequence comparison tools <edu/software/alignment/index.html>`_ teach basic
-bioinformatic concepts.
+bioinformatic concepts: the `dotplot <edu/software/alignment/#dotplot>`_,
+`inversions <edu/software/alignment/#inversion>`_,
+`manual alignment <edu/software/alignment/#manual>`_, which scores an alignment
+typed by hand, and `Smith-Waterman <edu/software/alignment/#alignment>`_.
 
 Both run entirely in the browser: there is nothing to install, and no sequence
 you type is sent anywhere.

@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dotplot</title>
-    <script type="module" crossorigin src="/edu/software/alignment/assets/index-mwrkHpde.js"></script>
-    <link rel="stylesheet" crossorigin href="/edu/software/alignment/assets/index-CLnbpSaw.css">
+    <script type="module" crossorigin src="/edu/software/alignment/assets/index-CGJ1c7q2.js"></script>
+    <link rel="stylesheet" crossorigin href="/edu/software/alignment/assets/index-BN7Ti-Zn.css">
   </head>
   <body>
     <main class="page">
@@ -13,6 +13,7 @@
       <nav class="tabs" aria-label="Tools">
         <a id="tab-dotplot" href="#dotplot">Dotplot</a>
         <a id="tab-inversion" href="#inversion">Inversion</a>
+        <a id="tab-manual" href="#manual">Manual alignment</a>
         <a id="tab-alignment" href="#alignment">Smith-Waterman</a>
       </nav>
 
@@ -113,6 +114,61 @@
         <p id="align-status" class="status"></p>
 
         <div id="align-matrix"></div>
+      </section>
+
+      <section id="tool-manual" class="tool" hidden>
+        <div class="gapped-rows">
+          <label class="input-label" for="manual-top">Top row</label>
+          <input id="manual-top" type="text" spellcheck="false" autocomplete="off" value="TGTT-ACGG" />
+          <label class="input-label" for="manual-bottom">Bottom row</label>
+          <input id="manual-bottom" type="text" spellcheck="false" autocomplete="off" value="GGTTGACTA" />
+          <p class="hint">Type <kbd>-</kbd> for a gap. The table below lines the columns up.</p>
+        </div>
+
+        <div class="controls">
+          <label class="control tinted rule-match">
+            <span class="input-label">Match</span>
+            <input id="manual-match" type="number" step="1" value="3" />
+          </label>
+          <label class="control tinted rule-mismatch">
+            <span class="input-label">Mismatch</span>
+            <input id="manual-mismatch" type="number" step="1" value="-3" />
+          </label>
+          <label class="control tinted rule-gap-open">
+            <span class="input-label">Gap open</span>
+            <input id="manual-gap-open" type="number" min="0" step="1" value="4" />
+          </label>
+          <label class="control tinted rule-gap-extend">
+            <span class="input-label">Gap extend</span>
+            <input id="manual-gap-extend" type="number" min="0" step="1" value="1" />
+          </label>
+        </div>
+        <p class="hint">A gap of <em>n</em> residues costs gap open + (<em>n</em> − 1) × gap extend.</p>
+
+        <div class="controls">
+          <label class="control">
+            <span class="input-label">Alignment</span>
+            <select id="manual-mode">
+              <option value="global" selected>Global — every column scored</option>
+              <option value="local">Local — one stretch of columns scored</option>
+            </select>
+          </label>
+          <div id="manual-region" class="control-group" hidden>
+            <label class="control">
+              <span class="input-label">First column</span>
+              <input id="manual-first" type="number" min="1" step="1" value="1" />
+            </label>
+            <label class="control">
+              <span class="input-label">Last column</span>
+              <input id="manual-last" type="number" min="1" step="1" />
+            </label>
+            <p class="hint region-hint">Or click a column: the nearer end of the stretch moves to it.</p>
+          </div>
+        </div>
+
+        <p id="manual-status" class="status"></p>
+
+        <div id="manual-alignment"></div>
       </section>
     </main>
   </body>
