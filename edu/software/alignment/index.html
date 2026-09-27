@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dotplot</title>
-    <script type="module" crossorigin src="/edu/software/alignment/assets/index-CGJ1c7q2.js"></script>
-    <link rel="stylesheet" crossorigin href="/edu/software/alignment/assets/index-BN7Ti-Zn.css">
+    <script type="module" crossorigin src="/edu/software/alignment/assets/index-D9FTBJ6V.js"></script>
+    <link rel="stylesheet" crossorigin href="/edu/software/alignment/assets/index-BirW9A1l.css">
   </head>
   <body>
     <main class="page">
@@ -15,6 +15,7 @@
         <a id="tab-inversion" href="#inversion">Inversion</a>
         <a id="tab-manual" href="#manual">Manual alignment</a>
         <a id="tab-alignment" href="#alignment">Smith-Waterman</a>
+        <a id="tab-blast" href="#blast">BLAST words</a>
       </nav>
 
       <section id="tool-dotplot" class="tool">
@@ -169,6 +170,82 @@
         <p id="manual-status" class="status"></p>
 
         <div id="manual-alignment"></div>
+      </section>
+
+      <section id="tool-blast" class="tool" hidden>
+        <nav class="stages" aria-label="Stages">
+          <button id="blast-step-hash" class="step" type="button">1 · Hash</button>
+          <button id="blast-step-words" class="step" type="button">2 · Words</button>
+          <button id="blast-step-index" class="step" type="button">3 · Index</button>
+          <button id="blast-step-search" class="step" type="button">4 · Search</button>
+        </nav>
+
+        <div class="controls">
+          <label class="control">
+            <span class="input-label">Word size</span>
+            <input id="blast-k" type="number" min="2" max="8" step="1" value="4" />
+          </label>
+        </div>
+
+        <p id="blast-status" class="status"></p>
+
+        <section id="blast-stage-hash" class="stage-panel">
+          <p class="hint">
+            With A=0, C=1, G=2 and T=3 a word is a number written in base 4 — two bits a base.
+            There are 4<sup>k</sup> possible words and 4<sup>k</sup> shelves, so every word has a
+            shelf of its own, and no two words ever collide.
+          </p>
+          <div class="controls">
+            <label class="control">
+              <span class="input-label">Word</span>
+              <input id="blast-word" type="text" spellcheck="false" autocomplete="off" value="CCTT" />
+            </label>
+          </div>
+          <div id="blast-hash-out"></div>
+        </section>
+
+        <section id="blast-stage-words" class="stage-panel" hidden>
+          <div class="gapped-rows">
+            <label class="input-label" for="blast-sequence">
+              Sequence <em>(the same sequence is the query in stage 4)</em>
+            </label>
+            <textarea id="blast-sequence" spellcheck="false" rows="2">CCTTCAAAATAGTCTTTTGTCCGAACACAG</textarea>
+          </div>
+          <div id="blast-words-out"></div>
+        </section>
+
+        <section id="blast-stage-index" class="stage-panel" hidden>
+          <div class="inputs">
+            <div class="input">
+              <label class="input-label" for="blast-subject-1">Subject S1</label>
+              <textarea id="blast-subject-1" spellcheck="false" rows="3">ATCAACTCATTCTCTACCTCTAATTCGCGTTTAATGGGCCGGCACG</textarea>
+            </div>
+            <div class="input">
+              <label class="input-label" for="blast-subject-2">Subject S2</label>
+              <textarea id="blast-subject-2" spellcheck="false" rows="3">TCGTGAACTTCAAAATAGTCTCTTGTCCGAACATGAGGGCGTCA</textarea>
+            </div>
+            <div class="input">
+              <label class="input-label" for="blast-subject-3">Subject S3</label>
+              <textarea id="blast-subject-3" spellcheck="false" rows="3">CATAGACTGAGTGGCACGTCGCATCCCGTCATATCGGTTAAACTAATGGGAA</textarea>
+            </div>
+          </div>
+          <p class="hint">
+            Every word of every subject is filed on the shelf its number names, with the subject it
+            came from and the position it sits at. Classic BLAST does this the other way round — it
+            builds the table from the query and streams the database past it — but a database index
+            is real too: it is what <code>makembindex</code> builds for indexed megablast. The
+            lookup is the same either way.
+          </p>
+          <div id="blast-index-out"></div>
+        </section>
+
+        <section id="blast-stage-search" class="stage-panel" hidden>
+          <div class="gapped-rows">
+            <label class="input-label" for="blast-query">Query</label>
+            <textarea id="blast-query" spellcheck="false" rows="2">CCTTCAAAATAGTCTTTTGTCCGAACACAG</textarea>
+          </div>
+          <div id="blast-search-out"></div>
+        </section>
       </section>
     </main>
   </body>
