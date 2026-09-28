@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SNP calling</title>
+    <script type="module" crossorigin src="/edu/software/snp_calling/assets/index-C4QzhoFH.js"></script>
+    <link rel="stylesheet" crossorigin href="/edu/software/snp_calling/assets/index-BAi2QxAG.css">
+  </head>
+  <body>
+    <main class="page">
+      <h1 class="visually-hidden">SNP calling: heuristics, likelihood and Bayes</h1>
+      <nav class="tabs" aria-label="Stages">
+        <a id="tab-setup" href="#setup">Setup</a>
+        <a id="tab-heuristic" href="#heuristic">Heuristic</a>
+        <a id="tab-likelihood" href="#likelihood">Maximum likelihood</a>
+        <a id="tab-bayes" href="#bayes">Bayes</a>
+      </nav>
+
+      <section id="tool-setup" class="tool">
+        <div class="prose">
+          <h2>The practice</h2>
+          <p>
+            A genome is sequenced, and you have to say what this individual carries at every
+            position. You will do it three times — with thresholds you choose, with maximum
+            likelihood, and with Bayes — and score all three on the same reads. Everything below
+            is simulated, so the truth is known and every call can be marked.
+          </p>
+
+          <h3>The genome</h3>
+          <p>
+            A locus is polymorphic in the population with probability <em>v</em>, the variant rate.
+            At a polymorphic locus the alternative allele has frequency <em>q</em>, and what this
+            individual carries is drawn from
+          </p>
+          <p class="formula">
+            P(hom ref) = p² + F·p·q &nbsp;&nbsp; P(het) = 2pq(1 − F) &nbsp;&nbsp; P(hom alt) = q² +
+            F·p·q
+          </p>
+          <p>
+            with p = 1 − q. <em>F</em> is Wright's inbreeding coefficient: at F = 0 the genotypes
+            are in Hardy-Weinberg proportions, and as F rises heterozygotes are emptied into the two
+            homozygous classes. Note what follows — a polymorphic locus can leave this individual
+            homozygous for the reference, and at such a position there is nothing in the reads to
+            find. Calls are scored against the individual's genotype, not against whether the locus
+            is variable in the population.
+          </p>
+
+          <h3>The sequencing</h3>
+          <p>
+            Every position is sequenced, variable or not. It receives a Poisson number of reads with
+            the mean depth you set, so some positions arrive with three reads and others with
+            seventeen. Each read draws one of the two alleles the individual carries, with
+            probability one half each, and carries a Phred quality <em>Q</em> of its own. The base
+            is then misread with probability
+          </p>
+          <p class="formula">e = 10<sup>−Q/10</sup></p>
+          <p>
+            becoming one of the three other bases. The quality is honest by construction: a base
+            reported at Q20 really is wrong one time in a hundred. Whether a caller believes it is
+            another matter.
+          </p>
+
+          <h3>What you have to build</h3>
+          <p>
+            Three callers, one in each tab, all scored on these same reads. Each reports the same
+            two tables: whether a variant is there at all, and which genotype was called. Start at
+            10×, where every method looks good, then drop the depth to 4× and look again — the
+            differences between the three live at low depth.
+          </p>
+        </div>
+
+        <div class="controls">
+          <label class="control">
+            <span class="input-label">Positions</span>
+            <input id="setup-positions" type="number" min="1000" max="200000" step="1000" value="50000" />
+          </label>
+          <label class="control">
+            <span class="input-label">Variant rate</span>
+            <input id="setup-variant-rate" type="number" min="0" max="1" step="0.001" value="0.005" />
+          </label>
+          <label class="control">
+            <span class="input-label">Alt frequency q</span>
+            <input id="setup-alt-frequency" type="number" min="0" max="1" step="0.05" value="0.5" />
+          </label>
+          <label class="control">
+            <span class="input-label">Inbreeding F</span>
+            <input id="setup-inbreeding" type="number" min="0" max="1" step="0.05" value="0" />
+          </label>
+        </div>
+        <div class="controls">
+          <label class="control">
+            <span class="input-label">Mean depth</span>
+            <input id="setup-depth" type="number" min="1" max="80" step="1" value="10" />
+          </label>
+          <label class="control">
+            <span class="input-label">Lowest quality</span>
+            <input id="setup-min-quality" type="number" min="2" max="60" step="1" value="15" />
+          </label>
+          <label class="control">
+            <span class="input-label">Highest quality</span>
+            <input id="setup-max-quality" type="number" min="2" max="60" step="1" value="30" />
+          </label>
+          <label class="control">
+            <span class="input-label">Seed</span>
+            <input id="setup-seed" type="number" min="1" max="99999" step="1" value="1" />
+          </label>
+        </div>
+
+        <p id="setup-status" class="status"></p>
+        <div id="setup-summary"></div>
+      </section>
+
+      <section id="tool-heuristic" class="tool" hidden>
+        <div class="prose">
+          <h2>Heuristic</h2>
+          <p>
+            Count the reads carrying the alternative base, divide by the reads carrying either
+            allele, and compare the ratio with two thresholds somebody chose: below the first it is
+            homozygous reference, above the second homozygous alternative, in between a
+            heterozygote. Positions with too few reads are left uncalled, and reads below the
+            quality cutoff are thrown away rather than weighed — throwing information away is what
+            a heuristic does with a quality value.
+          </p>
+          <p>
+            No probability is computed anywhere. The thresholds are the whole model, and finding
+            out what they cost is the exercise.
+          </p>
+        </div>
+
+        <div class="controls">
+          <label class="control">
+            <span class="input-label">Min depth</span>
+            <input id="heuristic-min-depth" type="number" min="0" max="50" step="1" value="5" />
+          </label>
+          <label class="control">
+            <span class="input-label">Min base quality</span>
+            <input id="heuristic-min-quality" type="number" min="0" max="60" step="1" value="20" />
+          </label>
+          <label class="control">
+            <span class="input-label">Het from ratio</span>
+            <input id="heuristic-het-low" type="number" min="0" max="1" step="0.05" value="0.2" />
+          </label>
+          <label class="control">
+            <span class="input-label">Het up to ratio</span>
+            <input id="heuristic-het-high" type="number" min="0" max="1" step="0.05" value="0.8" />
+          </label>
+          <label class="toggle">
+            <input id="heuristic-mistakes" type="checkbox" checked />
+            Show only mistakes
+          </label>
+        </div>
+
+        <p id="heuristic-status" class="status"></p>
+        <div id="heuristic-results"></div>
+      </section>
+
+      <section id="tool-likelihood" class="tool" hidden>
+        <div class="prose">
+          <h2>Maximum likelihood</h2>
+          <p>
+            For each of the three genotypes, ask how probable these very reads would be if that
+            genotype were the truth, and take the genotype that makes them most probable. One read
+            showing base <em>b</em> from an individual carrying alleles A₁ and A₂ contributes
+          </p>
+          <p class="formula">
+            P(b | A) = 1 − e if b is A, else e/3 &nbsp;&nbsp;&nbsp; P(b | A₁A₂) = ½ P(b | A₁) + ½ P(b
+            | A₂)
+          </p>
+          <p>
+            and the reads multiply, since each is independent. Every quality is used as a weight
+            here rather than as a filter: a poor base argues for its genotype more weakly instead of
+            not at all.
+          </p>
+        </div>
+
+        <div class="controls">
+          <label class="control">
+            <span class="input-label">Error model</span>
+            <select id="likelihood-error-model">
+              <option value="quality" selected>Believe each read's quality</option>
+              <option value="flat">One flat error rate</option>
+            </select>
+          </label>
+          <label class="control" id="likelihood-flat-control" hidden>
+            <span class="input-label">Assumed error</span>
+            <input id="likelihood-flat-error" type="number" min="0.0001" max="0.5" step="0.001" value="0.01" />
+          </label>
+          <label class="control">
+            <span class="input-label">Min log₁₀ ratio</span>
+            <input id="likelihood-min-margin" type="number" min="0" max="20" step="0.5" value="0" />
+          </label>
+          <label class="toggle">
+            <input id="likelihood-mistakes" type="checkbox" checked />
+            Show only mistakes
+          </label>
+        </div>
+
+        <p id="likelihood-status" class="status"></p>
+        <div id="likelihood-results"></div>
+      </section>
+
+      <section id="tool-bayes" class="tool" hidden>
+        <div class="prose">
+          <h2>Bayes</h2>
+          <p>
+            The same likelihoods as the previous tab, multiplied by a prior over the three
+            genotypes and normalised:
+          </p>
+          <p class="formula">P(G | reads) ∝ P(G) · P(reads | G)</p>
+          <p>
+            The prior is where the variant rate, the allele frequency and F belong. Most positions
+            of a genome are not variable at all, so
+          </p>
+          <p class="formula">
+            P(hom ref) = (1 − v) + v(p² + F·p·q) &nbsp;&nbsp; P(het) = v·2pq(1 − F) &nbsp;&nbsp;
+            P(hom alt) = v(q² + F·p·q)
+          </p>
+          <p>
+            These are the model's assumptions, not the genome's. They start at the values the
+            simulation used; set them wrong on purpose and watch what a confident prior does to a
+            weak piece of evidence. That is the lesson of the tab: a posterior is only as good as
+            the prior it was built on.
+          </p>
+        </div>
+
+        <div class="controls">
+          <label class="control">
+            <span class="input-label">Error model</span>
+            <select id="bayes-error-model">
+              <option value="quality" selected>Believe each read's quality</option>
+              <option value="flat">One flat error rate</option>
+            </select>
+          </label>
+          <label class="control" id="bayes-flat-control" hidden>
+            <span class="input-label">Assumed error</span>
+            <input id="bayes-flat-error" type="number" min="0.0001" max="0.5" step="0.001" value="0.01" />
+          </label>
+          <label class="control">
+            <span class="input-label">Min posterior</span>
+            <input id="bayes-min-posterior" type="number" min="0" max="0.999" step="0.05" value="0" />
+          </label>
+          <label class="toggle">
+            <input id="bayes-mistakes" type="checkbox" checked />
+            Show only mistakes
+          </label>
+        </div>
+        <div class="controls">
+          <label class="control">
+            <span class="input-label">Prior variant rate</span>
+            <input id="bayes-variant-rate" type="number" min="0" max="1" step="0.001" value="0.005" />
+          </label>
+          <label class="control">
+            <span class="input-label">Prior q</span>
+            <input id="bayes-alt-frequency" type="number" min="0" max="1" step="0.05" value="0.5" />
+          </label>
+          <label class="control">
+            <span class="input-label">Prior F</span>
+            <input id="bayes-inbreeding" type="number" min="0" max="1" step="0.05" value="0" />
+          </label>
+          <button id="bayes-match-truth" type="button">Use the genome's own values</button>
+        </div>
+
+        <p id="bayes-status" class="status"></p>
+        <div id="bayes-results"></div>
+      </section>
+    </main>
+  </body>
+</html>

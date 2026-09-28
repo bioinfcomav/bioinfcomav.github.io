@@ -49,5 +49,11 @@ typed by hand, `Smith-Waterman <edu/software/alignment/#alignment>`_, and
 `BLAST words <edu/software/alignment/#blast>`_, which turn a database search
 into a lookup.
 
-Both run entirely in the browser: there is nothing to install, and no sequence
-you type is sent anywhere.
+`SNP calling <edu/software/snp_calling/index.html>`_ is the practice for
+statistical inference: one simulated set of reads called three times over --
+with thresholds, by `maximum likelihood <edu/software/snp_calling/#likelihood>`_
+and by `Bayes <edu/software/snp_calling/#bayes>`_ -- and scored against a truth
+that is known because it was simulated.
+
+All of them run entirely in the browser: there is nothing to install, and no
+sequence you type is sent anywhere.
