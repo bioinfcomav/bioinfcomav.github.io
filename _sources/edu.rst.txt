@@ -55,5 +55,10 @@ with thresholds, by `maximum likelihood <edu/software/snp_calling/#likelihood>`_
 and by `Bayes <edu/software/snp_calling/#bayes>`_ -- and scored against a truth
 that is known because it was simulated.
 
+`Do cows fly? <edu/software/cow_p_val/index.html>`_ is the p-value practice. A
+friend claims that cows fly; the claim says for how many hours a day, the farm
+has so many cows, we look over the gate and see none of them in the air, and the
+page works out what that observation does and does not let us reject.
+
 All of them run entirely in the browser: there is nothing to install, and no
 sequence you type is sent anywhere.
