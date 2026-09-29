@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A positive HIV test</title>
+    <script type="module" crossorigin src="/edu/software/infection_prob/assets/index-n1J4OiI4.js"></script>
+    <link rel="stylesheet" crossorigin href="/edu/software/infection_prob/assets/index-CqDL4hIY.css">
+  </head>
+  <body>
+    <main class="page">
+      <h1>A positive HIV test</h1>
+
+      <div class="prose">
+        <p>
+          Somebody goes to the doctor, is tested for HIV, and the result comes back positive. The
+          doctor can tell them how often the test is wrong on a person who is not infected — its
+          false positive rate. They want to know something else: whether they are infected.
+        </p>
+        <p>
+          Those are two different probabilities, and what separates them is how common the infection
+          is among the people being tested. Change the three numbers below and see how far apart
+          they can get.
+        </p>
+      </div>
+
+      <div class="controls">
+        <label class="control">
+          <span class="input-label">Scenario</span>
+          <select id="scenario">
+            <option value="custom">Your own numbers</option>
+          </select>
+        </label>
+        <label class="control">
+          <span class="input-label">Prevalence %</span>
+          <input id="prevalence" type="number" min="0" max="100" step="0.05" value="0.1" />
+        </label>
+        <label class="control">
+          <span class="input-label">False positive %</span>
+          <input id="false-positive" type="number" min="0" max="100" step="0.1" value="0.2" />
+        </label>
+        <label class="control">
+          <span class="input-label">False negative %</span>
+          <input id="false-negative" type="number" min="0" max="100" step="0.1" value="0.1" />
+        </label>
+        <label class="control">
+          <span class="input-label">People imagined</span>
+          <select id="people">
+            <option value="1000">1 000</option>
+            <option value="10000" selected>10 000</option>
+            <option value="100000">100 000</option>
+          </select>
+        </label>
+      </div>
+
+      <p id="told" class="told"></p>
+      <p id="answer" class="answer"></p>
+      <p id="complement" class="complement"></p>
+      <p id="odds" class="status"></p>
+
+      <h2>The same thing, with Bayes</h2>
+      <div id="bayes" class="bayes-slot"></div>
+
+      <h2>The same thing, in people</h2>
+      <div id="table" class="table-slot"></div>
+      <p id="counts" class="status"></p>
+
+      <p class="caption">everybody imagined, one square each</p>
+      <div id="people-grid" class="grid-slot"></div>
+      <p class="legend">
+        <span class="key true-positive"></span> infected, test positive
+        <span class="key false-negative"></span> infected, test negative
+        <span class="key false-positive"></span> not infected, test positive
+        <span class="key true-negative"></span> not infected, test negative
+      </p>
+
+      <p class="caption">only the people who tested positive</p>
+      <div id="positives" class="grid-slot"></div>
+      <p id="positives-note" class="status"></p>
+
+      <p id="negative" class="status"></p>
+    </main>
+  </body>
+</html>
