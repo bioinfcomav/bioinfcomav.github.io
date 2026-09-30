@@ -4,24 +4,101 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bayesian coin</title>
-    <script type="module" crossorigin src="/edu/software/bayesian_coin/assets/index-B3wqMHMC.js"></script>
-    <link rel="stylesheet" crossorigin href="/edu/software/bayesian_coin/assets/index-B8vKVnBa.css">
+    <script type="module" crossorigin src="/edu/software/bayesian_coin/assets/index-e6Xiwqwr.js"></script>
+    <link rel="stylesheet" crossorigin href="/edu/software/bayesian_coin/assets/index-DuzfKOxP.css">
   </head>
   <body>
     <main class="page">
-      <h1 class="visually-hidden">Bayesian coin</h1>
-      <nav class="tabs" aria-label="Tabs">
-        <a id="tab-coin" href="#coin">Coin</a>
+      <h1>A coin, three ways</h1>
+
+      <div class="prose">
+        <p>
+          A coin has some bias — a probability <span class="formula">θ</span> of landing heads — and
+          we do not know what it is. Toss it, write down what happened, and then reason about it
+          three times over: with a classical test, with maximum likelihood, and with Bayes. The
+          tosses below belong to all three tabs, so what changes between them is the method and
+          nothing else.
+        </p>
+      </div>
+
+      <div class="gapped-rows">
+        <label class="input-label" for="observations">The tosses, as H and T</label>
+        <textarea id="observations" spellcheck="false" rows="2">HHTHHHTHHH</textarea>
+      </div>
+      <div class="controls">
+        <button id="play" type="button">Toss by toss</button>
+        <button id="clear" type="button">Clear</button>
+      </div>
+      <div id="toss-strip" class="toss-slot"></div>
+      <p id="counts" class="status"></p>
+
+      <nav class="tabs" aria-label="Approaches">
+        <a id="tab-test" href="#test">Classical test</a>
+        <a id="tab-mle" href="#mle">Maximum likelihood</a>
+        <a id="tab-bayesian" href="#bayesian">Bayes</a>
         <a id="tab-generator" href="#generator">Generator</a>
       </nav>
 
-      <section id="tool-coin" class="tool">
+      <section id="tool-test" class="tool">
         <div class="prose">
           <p>
-            A coin has some bias — a probability <span class="formula">θ</span> of landing heads —
-            and we do not know what it is. A prior says what we think of it before any toss; the
-            tosses say what they say; and the posterior is the two of them multiplied together and
-            normalised.
+            Put a hypothesis about the coin on trial. The hypothesis has to say how often the coin
+            lands heads — its <span class="formula">P(heads)</span>: a fair coin is 0.5, a two-headed
+            one is 1. If the coin really did land heads that often, how surprising would the tosses we
+            have be? That is the p-value, and if it falls below α the hypothesis is rejected.
+          </p>
+        </div>
+
+        <div class="controls">
+          <label class="control">
+            <span class="input-label">Hypothesised P(heads)</span>
+            <input id="null-bias" type="number" min="0" max="1" step="0.05" value="0.5" />
+          </label>
+          <label class="control">
+            <span class="input-label">α</span>
+            <input id="alpha" type="number" min="0.0001" max="0.5" step="0.01" value="0.05" />
+          </label>
+          <!-- Shortcuts into the same box, not hypotheses of a different kind. -->
+          <button id="set-fair" type="button">Fair coin, 0.5</button>
+          <button id="set-two-headed" type="button">Two-headed, 1</button>
+        </div>
+
+        <div class="belief">
+          <div id="test-chart" class="chart-slot"></div>
+          <div id="test-numbers" class="numbers-slot"></div>
+        </div>
+        <p id="test-verdict" class="verdict"></p>
+        <p id="test-interval" class="status"></p>
+      </section>
+
+      <section id="tool-mle" class="tool" hidden>
+        <div class="prose">
+          <p>
+            Take the bias that makes these tosses likeliest, which for a coin is the share of heads.
+            The line across the curve is 1.92 log-units below its peak, and everything above that
+            line is the likelihood-ratio interval. That share of heads is the best estimate of
+            P(heads), written <span class="formula">θ̂</span>, and the Wald interval —
+            <span class="formula">θ̂ ± 1.96 √(θ̂(1 − θ̂)/n)</span> — is drawn beside it.
+          </p>
+        </div>
+
+        <div class="belief">
+          <div id="mle-chart" class="chart-slot"></div>
+          <div id="mle-numbers" class="numbers-slot"></div>
+        </div>
+        <p class="legend">
+          <span class="key band-ratio"></span> likelihood-ratio interval
+          <span class="key band-wald"></span> Wald interval
+          <span class="key mean"></span> θ̂
+        </p>
+        <p id="mle-note" class="status"></p>
+      </section>
+
+      <section id="tool-bayesian" class="tool" hidden>
+        <div class="prose">
+          <p>
+            A prior says what we think of the coin before any toss; the posterior is the prior and
+            the likelihood multiplied together and normalised.
           </p>
         </div>
 
@@ -58,19 +135,6 @@
           <div id="prior-numbers" class="numbers-slot"></div>
         </div>
         <p id="prior-note" class="status"></p>
-
-        <h2>The tosses</h2>
-        <div class="gapped-rows">
-          <label class="input-label" for="observations">Heads and tails, as H and T</label>
-          <textarea id="observations" spellcheck="false" rows="2">HHTHHHTHHH</textarea>
-        </div>
-        <div class="controls">
-          <button id="play" type="button">Toss by toss</button>
-          <button id="clear" type="button">Clear</button>
-        </div>
-
-        <div id="toss-strip" class="toss-slot"></div>
-        <p id="counts" class="status"></p>
 
         <p class="caption">likelihood: how likely is the observation</p>
         <div id="likelihood-chart" class="chart-slot"></div>
@@ -123,6 +187,9 @@
           </label>
         </div>
       </section>
+
+      <p class="caption">the same tosses, three answers</p>
+      <div id="headlines"></div>
     </main>
   </body>
 </html>

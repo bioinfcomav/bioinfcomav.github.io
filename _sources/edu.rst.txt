@@ -66,11 +66,15 @@ P(positive | not infected); what the person wants is P(infected | positive). The
 page works both out from the prevalence and the error rates of the test, and
 shows the same answer again as whole people.
 
-`Bayesian coin <edu/software/bayesian_coin/index.html>`_ is the practice on
-priors. Pick a prior over the coin's bias -- every bias equally likely, a normal
-cut off at 0 and 1, or just two coins, fair or two-headed -- type in the tosses
-as H and T, and watch the posterior. Toss by toss, one at a time, so how much
-evidence it takes to move a confident prior can be seen rather than asserted.
+`A coin, three ways <edu/software/bayesian_coin/index.html>`_ takes one string
+of coin tosses and reasons about it three times over: a
+`classical test <edu/software/bayesian_coin/#test>`_,
+`maximum likelihood <edu/software/bayesian_coin/#mle>`_ and
+`Bayes <edu/software/bayesian_coin/#bayesian>`_, with all three answers on show
+at once. Ten heads out of ten reject a fair coin, estimate the bias as exactly
+one with an interval of zero width, and leave a posterior mean of 0.917: the same
+tosses, three languages. Toss by toss, one at a time, so how much evidence it
+takes to move each of them can be seen rather than asserted.
 
 All of them run entirely in the browser: there is nothing to install, and no
 sequence you type is sent anywhere.
