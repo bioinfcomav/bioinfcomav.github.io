@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bayesian coin</title>
+    <script type="module" crossorigin src="/edu/software/bayesian_coin/assets/index-B3wqMHMC.js"></script>
+    <link rel="stylesheet" crossorigin href="/edu/software/bayesian_coin/assets/index-B8vKVnBa.css">
+  </head>
+  <body>
+    <main class="page">
+      <h1 class="visually-hidden">Bayesian coin</h1>
+      <nav class="tabs" aria-label="Tabs">
+        <a id="tab-coin" href="#coin">Coin</a>
+        <a id="tab-generator" href="#generator">Generator</a>
+      </nav>
+
+      <section id="tool-coin" class="tool">
+        <div class="prose">
+          <p>
+            A coin has some bias — a probability <span class="formula">θ</span> of landing heads —
+            and we do not know what it is. A prior says what we think of it before any toss; the
+            tosses say what they say; and the posterior is the two of them multiplied together and
+            normalised.
+          </p>
+        </div>
+
+        <h2>The prior</h2>
+        <div class="controls">
+          <label class="control">
+            <span class="input-label">Family</span>
+            <select id="family">
+              <option value="uniform" selected>Equiprobable: every bias equally likely</option>
+              <option value="normal">Normal, cut off at 0 and 1</option>
+              <option value="hypotheses">Two coins: fair, or two-headed</option>
+            </select>
+          </label>
+          <div id="normal-controls" class="control-group" hidden>
+            <label class="control">
+              <span class="input-label">Mean</span>
+              <input id="prior-mean" type="number" min="0" max="1" step="0.05" value="0.5" />
+            </label>
+            <label class="control">
+              <span class="input-label">Variance</span>
+              <input id="prior-variance" type="number" min="0.0001" max="1" step="0.005" value="0.02" />
+            </label>
+          </div>
+          <div id="hypotheses-controls" class="control-group" hidden>
+            <label class="control">
+              <span class="input-label">P(two-headed)</span>
+              <input id="trick-weight" type="number" min="0" max="1" step="0.01" value="0.01" />
+            </label>
+          </div>
+        </div>
+
+        <div class="belief">
+          <div id="prior-chart" class="chart-slot"></div>
+          <div id="prior-numbers" class="numbers-slot"></div>
+        </div>
+        <p id="prior-note" class="status"></p>
+
+        <h2>The tosses</h2>
+        <div class="gapped-rows">
+          <label class="input-label" for="observations">Heads and tails, as H and T</label>
+          <textarea id="observations" spellcheck="false" rows="2">HHTHHHTHHH</textarea>
+        </div>
+        <div class="controls">
+          <button id="play" type="button">Toss by toss</button>
+          <button id="clear" type="button">Clear</button>
+        </div>
+
+        <div id="toss-strip" class="toss-slot"></div>
+        <p id="counts" class="status"></p>
+
+        <p class="caption">likelihood: how likely is the observation</p>
+        <div id="likelihood-chart" class="chart-slot"></div>
+
+        <h2>The posterior</h2>
+        <div class="belief">
+          <div id="posterior-chart" class="chart-slot"></div>
+          <div id="posterior-numbers" class="numbers-slot"></div>
+        </div>
+        <p class="legend">
+          <span class="key primary"></span> posterior
+          <span class="key overlay"></span> the prior, for comparison
+          <span class="key mean"></span> posterior mean
+        </p>
+        <p id="posterior-note" class="status"></p>
+      </section>
+
+      <section id="tool-generator" class="tool" hidden>
+        <div class="prose">
+          <p>
+            A coin whose bias we get to choose, tossed as many times as we like. The seed makes the
+            tosses repeatable, so a whole class can work on the same string.
+          </p>
+        </div>
+
+        <div class="controls">
+          <label class="control">
+            <span class="input-label">P(heads)</span>
+            <input id="heads-chance" type="number" min="0" max="1" step="0.05" value="0.5" />
+          </label>
+          <label class="control">
+            <span class="input-label">Tosses</span>
+            <input id="toss-count" type="number" min="1" max="100" step="1" value="20" />
+          </label>
+          <label class="control">
+            <span class="input-label">Seed</span>
+            <input id="seed" type="number" min="1" max="99999" step="1" value="1" />
+          </label>
+          <button id="toss" type="button">Toss the coin</button>
+        </div>
+
+        <p id="generated" class="generated"></p>
+        <p id="generated-note" class="status"></p>
+
+        <div class="controls">
+          <button id="send" type="button">Use these tosses</button>
+          <label class="toggle">
+            <input id="reveal" type="checkbox" />
+            Mark the coin's real bias on the posterior
+          </label>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
