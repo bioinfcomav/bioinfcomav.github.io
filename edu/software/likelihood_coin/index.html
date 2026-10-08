@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Likelihood</title>
+    <script type="module" crossorigin src="/edu/software/likelihood_coin/assets/index-YgB3RyH7.js"></script>
+    <link rel="stylesheet" crossorigin href="/edu/software/likelihood_coin/assets/index-BpU_-OQZ.css">
+  </head>
+  <body>
+    <main class="page">
+      <h1>The likelihood of a coin</h1>
+
+      <div class="gapped-rows">
+        <label class="input-label" for="observations">The tosses, as H and T</label>
+        <textarea id="observations" spellcheck="false" rows="2">HHTHHHTHHH</textarea>
+      </div>
+      <div class="controls">
+        <label class="control">
+          <span class="input-label">The coin's P(heads)</span>
+          <input id="coin-chance" type="number" min="0" max="1" step="0.05" value="0.5" />
+        </label>
+        <label class="control">
+          <span class="input-label">Tosses</span>
+          <input id="toss-count" type="number" min="1" max="100" step="1" value="20" />
+        </label>
+        <button id="toss" type="button">Toss the coin</button>
+      </div>
+      <div id="toss-strip" class="toss-slot"></div>
+      <p id="counts" class="status"></p>
+
+      <nav class="tabs" aria-label="Steps">
+        <a id="tab-value" href="#value">One value</a>
+        <a id="tab-explore" href="#explore">Looking for the best</a>
+      </nav>
+
+      <section id="tool-value" class="tool">
+        <div class="controls">
+          <label class="control">
+            <span class="input-label">P(heads)</span>
+            <input id="value-chance" type="number" min="0" max="1" step="0.05" value="0.5" />
+          </label>
+        </div>
+        <div id="value-sum" class="sum"></div>
+      </section>
+
+      <section id="tool-explore" class="tool" hidden>
+        <div class="controls">
+          <label class="control slider">
+            <span class="input-label">P(heads)</span>
+            <input id="explore-chance" type="range" min="0" max="1" step="0.01" value="0.5" />
+          </label>
+          <label class="toggle">
+            <input id="show-curve" type="checkbox" />
+            Show the whole curve
+          </label>
+        </div>
+        <div class="belief">
+          <div id="explore-chart" class="chart-slot"></div>
+          <div id="explore-numbers" class="numbers-slot"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

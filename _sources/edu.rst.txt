@@ -68,6 +68,14 @@ P(positive | not infected); what the person wants is P(infected | positive). The
 page works both out from the prevalence and the error rates of the test, and
 shows the same answer again as whole people.
 
+`The likelihood of a coin <edu/software/likelihood_coin/index.html>`_ is the
+maximum likelihood practice, done by hand. The
+`first tab <edu/software/likelihood_coin/#value>`_ works out the likelihood of
+one P(heads) -- the probability of the count of heads seen, if the coin landed
+heads that often -- and the `second <edu/software/likelihood_coin/#explore>`_
+moves P(heads) with a slider, leaving a trail, to go looking for the value that
+makes the tosses likeliest.
+
 `A coin, three ways <edu/software/bayesian_coin/index.html>`_ takes one string
 of coin tosses and reasons about it three times over: a
 `classical test <edu/software/bayesian_coin/#test>`_,
