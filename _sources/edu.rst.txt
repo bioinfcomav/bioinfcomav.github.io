@@ -56,9 +56,11 @@ and by `Bayes <edu/software/snp_calling/#bayes>`_ -- and scored against a truth
 that is known because it was simulated.
 
 `Do cows fly? <edu/software/cow_p_val/index.html>`_ is the p-value practice. A
-friend claims that cows fly; the claim says for how many hours a day, the farm
-has so many cows, we look over the gate and see none of them in the air, and the
-page works out what that observation does and does not let us reject.
+friend claims that cows fly, for so many hours a day. Every visit to every farm
+finds every cow on the ground, so what changes from one experiment to the next
+is the farm -- and a field of nine cows with nothing in the air is the same
+observation as a field of ninety, and nothing like the same evidence. At one
+hour a day it takes a farm of 71 cows before that empty sky rejects the claim.
 
 `A positive HIV test <edu/software/infection_prob/index.html>`_ is the inverse
 probability practice. The doctor can quote the test's false positive rate,

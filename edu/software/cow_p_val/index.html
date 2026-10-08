@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Do cows fly?</title>
-    <script type="module" crossorigin src="/edu/software/cow_p_val/assets/index-H1WqUPyD.js"></script>
-    <link rel="stylesheet" crossorigin href="/edu/software/cow_p_val/assets/index-CPCxS075.css">
+    <script type="module" crossorigin src="/edu/software/cow_p_val/assets/index-8A_aWu2i.js"></script>
+    <link rel="stylesheet" crossorigin href="/edu/software/cow_p_val/assets/index-BMgQV3_r.css">
   </head>
   <body>
     <main class="page">
@@ -23,9 +23,19 @@
           probability <span class="formula">hours / 24</span>, and the number of cows we should catch
           in the air follows a binomial distribution.
         </p>
-        <p>We go to the farm, we look, and <strong>not one cow is flying</strong>.</p>
+        <p>
+          We go to a farm, we look, and <strong>every cow is on the ground</strong> — which is what
+          every visit to every farm finds. So what changes from one experiment to the next is not
+          the result but the farm: each one is picked at random, up to the size set below, and the
+          same empty sky means something very different over a herd of nine and a herd of ninety.
+          So the plot is over the farms themselves: one bar for every farm we might walk into, and
+          its height is the p-value of finding every cow in it on the ground. The cutoff is the line
+          across them, and the red bars are the farms big enough to reject the claim.
+        </p>
       </div>
 
+      <!-- The hypothesis: what is being claimed, and about which farm. -->
+      <p class="row-label">The hypothesis</p>
       <div class="controls">
         <label class="control">
           <span class="input-label">Hypothesis</span>
@@ -39,51 +49,35 @@
           <input id="hours" type="number" min="0" max="24" step="0.5" value="1" />
         </label>
         <label class="control">
-          <span class="input-label">Cows in the farm</span>
-          <input id="cows" type="number" min="1" max="2000" step="1" value="50" />
-        </label>
-        <label class="control">
-          <span class="input-label">α</span>
-          <input id="alpha" type="number" min="0.0001" max="0.5" step="0.01" value="0.05" />
-        </label>
-        <label class="control">
-          <span class="input-label">Tests done</span>
-          <input id="tests" type="number" min="1" max="1000" step="1" value="1" />
-        </label>
-        <label class="toggle">
-          <input id="bonferroni" type="checkbox" />
-          Bonferroni correction
+          <span class="input-label">Cows per farm, at most</span>
+          <input id="cows" type="number" min="1" max="2000" step="1" value="100" />
         </label>
       </div>
 
-      <p id="result" class="result"></p>
-      <p id="verdict" class="verdict"></p>
-
-      <div id="chart" class="chart-slot"></div>
-
-      <!-- Under the chart, because between them these two explain what is drawn
-           on it: where the expected line sits, and what the threshold costs. -->
-      <p id="claim" class="status"></p>
-      <p id="repeats" class="status repeats"></p>
-
-      <div class="prose">
-        <h2>The same number, counted instead</h2>
-        <p>
-          Run a few hundred imaginary farms where cows really do fly as much as the claim says, look
-          once at each of them, and count how many have no cow in the air. That share is the
-          p-value. The outlines on the chart are where those farms landed.
-        </p>
-      </div>
-
+      <!-- The cutoff: which outcomes would count against the hypothesis. -->
+      <p class="row-label">The rule for rejecting it</p>
       <div class="controls">
         <label class="control">
-          <span class="input-label">Imaginary farms</span>
-          <input id="farms" type="number" min="1" max="20000" step="100" value="500" />
+          <span class="input-label">p-value cutoff</span>
+          <input id="cutoff" type="number" min="0.0001" max="0.5" step="0.01" value="0.05" />
         </label>
-        <button id="run-farms" type="button">Visit them</button>
+        <p id="region" class="status region"></p>
       </div>
 
-      <p id="farms-result" class="status"></p>
+      <div id="chart" class="chart-slot"></div>
+      <p id="claim" class="status"></p>
+
+      <!-- The experiment: go to the farm and count. -->
+      <p class="row-label">The experiment</p>
+      <div class="controls">
+        <button id="run" type="button">Run experiment</button>
+        <button id="forget" type="button">Forget them</button>
+      </div>
+      <p id="result" class="result"></p>
+      <p id="verdict" class="verdict"></p>
+      <p id="tally" class="tally"></p>
+      <p id="repeats" class="status repeats"></p>
+
     </main>
   </body>
 </html>
