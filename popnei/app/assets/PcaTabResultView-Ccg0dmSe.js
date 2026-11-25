@@ -1,0 +1,1 @@
+import{t as e}from"./react~probe~popgen~popgen2-DxwtgPCm.js";import{xo as t}from"./shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js";import{t as n}from"./shared~popgen~PcaTabResultView-B8BfPUzI.js";var r=e();function i(e){return(0,r.jsx)(n,{...e,analysis:t})}export{i as PcaTabResultView};

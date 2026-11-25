@@ -1,0 +1,391 @@
+{
+  "_modulepreload-polyfill-CNwmrHH9.js": {
+    "file": "assets/modulepreload-polyfill-CNwmrHH9.js",
+    "name": "modulepreload-polyfill"
+  },
+  "_react~probe~popgen~popgen2-DxwtgPCm.js": {
+    "file": "assets/react~probe~popgen~popgen2-DxwtgPCm.js",
+    "name": "react~probe~popgen~popgen2",
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js"
+    ]
+  },
+  "_shared~PopulationsTabView~DistancesTabView-Z8ccKDLx.js": {
+    "file": "assets/shared~PopulationsTabView~DistancesTabView-Z8ccKDLx.js",
+    "name": "shared~PopulationsTabView~DistancesTabView",
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2-sF9FUO2h.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen2~PopulationsTabView~DistancesTabView~SectionPlots-D0Ln4w40.js",
+      "_shared~popgen2-CxDtwBJl.js"
+    ]
+  },
+  "_shared~popgen2-CxDtwBJl.js": {
+    "file": "assets/shared~popgen2-CxDtwBJl.js",
+    "name": "shared~popgen2",
+    "imports": [
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen2~PopulationsTabView~DistancesTabView~SectionPlots-D0Ln4w40.js"
+    ]
+  },
+  "_shared~popgen2~PopulationsTabView~DistancesTabView~SectionPlots-D0Ln4w40.js": {
+    "file": "assets/shared~popgen2~PopulationsTabView~DistancesTabView~SectionPlots-D0Ln4w40.js",
+    "name": "shared~popgen2~PopulationsTabView~DistancesTabView~SectionPlots",
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2-sF9FUO2h.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js"
+    ]
+  },
+  "_shared~popgen~DistancesTabView-BAwx22rR.js": {
+    "file": "assets/shared~popgen~DistancesTabView-BAwx22rR.js",
+    "name": "shared~popgen~DistancesTabView",
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2-sF9FUO2h.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView-BQO3N6yc.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView-gQDHXZSD.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-CCMaQW1M.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~PcaTabResultView--Hj3-CEw.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots-BRRNRy5j.js",
+      "_shared~popgen~DistancesTabView~PcaTabResultView-DuANDHJE.js"
+    ],
+    "css": [
+      "assets/shared~popgen~DistancesTabView-vhqwF0br.css"
+    ]
+  },
+  "_shared~popgen~DistancesTabView-vhqwF0br.css": {
+    "file": "assets/shared~popgen~DistancesTabView-vhqwF0br.css",
+    "src": "_shared~popgen~DistancesTabView-vhqwF0br.css"
+  },
+  "_shared~popgen~DistancesTabView~PcaTabResultView-DuANDHJE.js": {
+    "file": "assets/shared~popgen~DistancesTabView~PcaTabResultView-DuANDHJE.js",
+    "name": "shared~popgen~DistancesTabView~PcaTabResultView",
+    "imports": [
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView~pca3d-DkdnEH2N.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-CCMaQW1M.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~PcaTabResultView--Hj3-CEw.js"
+    ]
+  },
+  "_shared~popgen~PcaTabResultView-B8BfPUzI.js": {
+    "file": "assets/shared~popgen~PcaTabResultView-B8BfPUzI.js",
+    "name": "shared~popgen~PcaTabResultView",
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2-sF9FUO2h.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView-BQO3N6yc.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView~pca3d-DkdnEH2N.js",
+      "_shared~popgen~PopulationsTabView~SectionPlots~PcaTabResultView-CNZ4eFu9.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-CCMaQW1M.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~PcaTabResultView--Hj3-CEw.js",
+      "_shared~popgen~DistancesTabView~PcaTabResultView-DuANDHJE.js"
+    ],
+    "dynamicImports": [
+      "src/charts/pca3d.ts"
+    ],
+    "css": [
+      "assets/shared~popgen~PcaTabResultView-CYFqi7UK.css"
+    ]
+  },
+  "_shared~popgen~PcaTabResultView-CYFqi7UK.css": {
+    "file": "assets/shared~popgen~PcaTabResultView-CYFqi7UK.css",
+    "src": "_shared~popgen~PcaTabResultView-CYFqi7UK.css"
+  },
+  "_shared~popgen~PopulationsTabView-BKSyn9PJ.css": {
+    "file": "assets/shared~popgen~PopulationsTabView-BKSyn9PJ.css",
+    "src": "_shared~popgen~PopulationsTabView-BKSyn9PJ.css"
+  },
+  "_shared~popgen~PopulationsTabView-BlG1fGzE.js": {
+    "file": "assets/shared~popgen~PopulationsTabView-BlG1fGzE.js",
+    "name": "shared~popgen~PopulationsTabView",
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2-sF9FUO2h.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView-BQO3N6yc.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView~pca3d-DkdnEH2N.js",
+      "_shared~popgen~PopulationsTabView~SectionPlots~PcaTabResultView-CNZ4eFu9.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView-gQDHXZSD.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-CCMaQW1M.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~PcaTabResultView--Hj3-CEw.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots-BRRNRy5j.js",
+      "_shared~popgen~PopulationsTabView~SectionPlots-BBeCe_4c.js"
+    ],
+    "css": [
+      "assets/shared~popgen~PopulationsTabView-BKSyn9PJ.css"
+    ]
+  },
+  "_shared~popgen~PopulationsTabView~DistancesTabView-gQDHXZSD.js": {
+    "file": "assets/shared~popgen~PopulationsTabView~DistancesTabView-gQDHXZSD.js",
+    "name": "shared~popgen~PopulationsTabView~DistancesTabView",
+    "imports": [
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-CCMaQW1M.js"
+    ]
+  },
+  "_shared~popgen~PopulationsTabView~DistancesTabView~PcaTabResultView--Hj3-CEw.js": {
+    "file": "assets/shared~popgen~PopulationsTabView~DistancesTabView~PcaTabResultView--Hj3-CEw.js",
+    "name": "shared~popgen~PopulationsTabView~DistancesTabView~PcaTabResultView",
+    "imports": [
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView~pca3d-DkdnEH2N.js"
+    ]
+  },
+  "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots-BRRNRy5j.js": {
+    "file": "assets/shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots-BRRNRy5j.js",
+    "name": "shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots",
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js"
+    ]
+  },
+  "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-BLTzrHWz.css": {
+    "file": "assets/shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-BLTzrHWz.css",
+    "src": "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-BLTzrHWz.css"
+  },
+  "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-CCMaQW1M.js": {
+    "file": "assets/shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-CCMaQW1M.js",
+    "name": "shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView",
+    "imports": [
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView~pca3d-DkdnEH2N.js"
+    ],
+    "css": [
+      "assets/shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-BLTzrHWz.css"
+    ]
+  },
+  "_shared~popgen~PopulationsTabView~SectionPlots-4rWhmdHJ.css": {
+    "file": "assets/shared~popgen~PopulationsTabView~SectionPlots-4rWhmdHJ.css",
+    "src": "_shared~popgen~PopulationsTabView~SectionPlots-4rWhmdHJ.css"
+  },
+  "_shared~popgen~PopulationsTabView~SectionPlots-BBeCe_4c.js": {
+    "file": "assets/shared~popgen~PopulationsTabView~SectionPlots-BBeCe_4c.js",
+    "name": "shared~popgen~PopulationsTabView~SectionPlots",
+    "imports": [
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView~pca3d-DkdnEH2N.js",
+      "_shared~popgen~PopulationsTabView~SectionPlots~PcaTabResultView-CNZ4eFu9.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-CCMaQW1M.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots-BRRNRy5j.js"
+    ],
+    "css": [
+      "assets/shared~popgen~PopulationsTabView~SectionPlots-4rWhmdHJ.css"
+    ]
+  },
+  "_shared~popgen~PopulationsTabView~SectionPlots~PcaTabResultView-CNZ4eFu9.js": {
+    "file": "assets/shared~popgen~PopulationsTabView~SectionPlots~PcaTabResultView-CNZ4eFu9.js",
+    "name": "shared~popgen~PopulationsTabView~SectionPlots~PcaTabResultView",
+    "imports": [
+      "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-CCMaQW1M.js"
+    ]
+  },
+  "_shared~popgen~SectionPlots-BouDyiBM.js": {
+    "file": "assets/shared~popgen~SectionPlots-BouDyiBM.js",
+    "name": "shared~popgen~SectionPlots",
+    "imports": [
+      "_shared~popgen~popgen2-sF9FUO2h.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js"
+    ]
+  },
+  "_shared~popgen~popgen2-B-vQ1V0g.css": {
+    "file": "assets/shared~popgen~popgen2-B-vQ1V0g.css",
+    "src": "_shared~popgen~popgen2-B-vQ1V0g.css"
+  },
+  "_shared~popgen~popgen2-sF9FUO2h.js": {
+    "file": "assets/shared~popgen~popgen2-sF9FUO2h.js",
+    "name": "shared~popgen~popgen2",
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView-BQO3N6yc.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView~pca3d-DkdnEH2N.js"
+    ],
+    "css": [
+      "assets/shared~popgen~popgen2-B-vQ1V0g.css"
+    ],
+    "assets": [
+      "assets/runnerWorker-W3VdzDTU.js",
+      "assets/filesRunner-ur_o-67_.js"
+    ]
+  },
+  "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView-BQO3N6yc.js": {
+    "file": "assets/shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView-BQO3N6yc.js",
+    "name": "shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView",
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js"
+    ],
+    "css": [
+      "assets/shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView-Bl7Gn95a.css"
+    ]
+  },
+  "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView-Bl7Gn95a.css": {
+    "file": "assets/shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView-Bl7Gn95a.css",
+    "src": "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView-Bl7Gn95a.css"
+  },
+  "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js": {
+    "file": "assets/shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+    "name": "shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView",
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView~pca3d-DkdnEH2N.js"
+    ],
+    "css": [
+      "assets/shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-lDsv1DQv.css"
+    ]
+  },
+  "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-lDsv1DQv.css": {
+    "file": "assets/shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-lDsv1DQv.css",
+    "src": "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-lDsv1DQv.css"
+  },
+  "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView~pca3d-DkdnEH2N.js": {
+    "file": "assets/shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView~pca3d-DkdnEH2N.js",
+    "name": "shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView~pca3d"
+  },
+  "popgen.html": {
+    "file": "assets/popgen-C_Cp41oo.js",
+    "name": "popgen",
+    "src": "popgen.html",
+    "isEntry": true,
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2-sF9FUO2h.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView-BQO3N6yc.js",
+      "_shared~popgen~PcaTabResultView-B8BfPUzI.js",
+      "_shared~popgen~PopulationsTabView-BlG1fGzE.js",
+      "_shared~popgen~PopulationsTabView~SectionPlots-BBeCe_4c.js",
+      "_shared~popgen~DistancesTabView-BAwx22rR.js",
+      "_shared~popgen~SectionPlots-BouDyiBM.js"
+    ],
+    "css": [
+      "assets/popgen-ChH8OZ5r.css"
+    ]
+  },
+  "popgen2.html": {
+    "file": "assets/popgen2-CJNsbEOB.js",
+    "name": "popgen2",
+    "src": "popgen2.html",
+    "isEntry": true,
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2-sF9FUO2h.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView-BQO3N6yc.js",
+      "_shared~popgen2~PopulationsTabView~DistancesTabView~SectionPlots-D0Ln4w40.js",
+      "_shared~popgen2-CxDtwBJl.js"
+    ],
+    "dynamicImports": [
+      "src/ui/analyses/diversity/PopulationsTabView.tsx",
+      "src/ui/analyses/popDists/DistancesTabView.tsx",
+      "src/ui/analyses/pca/PcaTabResultView.tsx",
+      "src/ui/variants/SectionPlots.tsx"
+    ],
+    "css": [
+      "assets/popgen2-D9F3UeiW.css"
+    ]
+  },
+  "probe.html": {
+    "file": "assets/probe-Dfg_ySJF.js",
+    "name": "probe",
+    "src": "probe.html",
+    "isEntry": true,
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js"
+    ],
+    "assets": [
+      "assets/probeWorker-B3jPtBeg.js"
+    ]
+  },
+  "src/charts/pca3d.ts": {
+    "file": "assets/pca3d-Mt82uU3k.js",
+    "name": "pca3d",
+    "src": "src/charts/pca3d.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_shared~popgen~PcaTabResultView-B8BfPUzI.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView~pca3d-DkdnEH2N.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-CCMaQW1M.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView~PcaTabResultView--Hj3-CEw.js",
+      "_shared~popgen~DistancesTabView~PcaTabResultView-DuANDHJE.js"
+    ]
+  },
+  "src/ui/analyses/diversity/PopulationsTabView.tsx": {
+    "file": "assets/PopulationsTabView-D9YBV0d5.js",
+    "name": "PopulationsTabView",
+    "src": "src/ui/analyses/diversity/PopulationsTabView.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2-sF9FUO2h.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen~PopulationsTabView-BlG1fGzE.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView-gQDHXZSD.js",
+      "_shared~popgen2~PopulationsTabView~DistancesTabView~SectionPlots-D0Ln4w40.js",
+      "_shared~popgen2-CxDtwBJl.js",
+      "popgen2.html",
+      "_shared~PopulationsTabView~DistancesTabView-Z8ccKDLx.js"
+    ]
+  },
+  "src/ui/analyses/pca/PcaTabResultView.tsx": {
+    "file": "assets/PcaTabResultView-Ccg0dmSe.js",
+    "name": "PcaTabResultView",
+    "src": "src/ui/analyses/pca/PcaTabResultView.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen~PcaTabResultView-B8BfPUzI.js"
+    ]
+  },
+  "src/ui/analyses/popDists/DistancesTabView.tsx": {
+    "file": "assets/DistancesTabView-LvDaJAto.js",
+    "name": "DistancesTabView",
+    "src": "src/ui/analyses/popDists/DistancesTabView.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~PcaTabResultView-BQO3N6yc.js",
+      "_shared~popgen~PopulationsTabView~DistancesTabView-gQDHXZSD.js",
+      "_shared~popgen~DistancesTabView-BAwx22rR.js",
+      "_shared~popgen2~PopulationsTabView~DistancesTabView~SectionPlots-D0Ln4w40.js",
+      "_shared~popgen2-CxDtwBJl.js",
+      "popgen2.html",
+      "_shared~PopulationsTabView~DistancesTabView-Z8ccKDLx.js"
+    ]
+  },
+  "src/ui/variants/SectionPlots.tsx": {
+    "file": "assets/SectionPlots-Xv-SVKZz.js",
+    "name": "SectionPlots",
+    "src": "src/ui/variants/SectionPlots.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_modulepreload-polyfill-CNwmrHH9.js",
+      "_react~probe~popgen~popgen2-DxwtgPCm.js",
+      "_shared~popgen~popgen2-sF9FUO2h.js",
+      "_shared~popgen~popgen2~PopulationsTabView~DistancesTabView~SectionPlots~PcaTabResultView-WgWvZHSm.js",
+      "_shared~popgen~PopulationsTabView~SectionPlots-BBeCe_4c.js",
+      "_shared~popgen~SectionPlots-BouDyiBM.js",
+      "_shared~popgen2~PopulationsTabView~DistancesTabView~SectionPlots-D0Ln4w40.js",
+      "popgen2.html"
+    ],
+    "css": [
+      "assets/SectionPlots-CnNyjCkW.css"
+    ]
+  }
+}
